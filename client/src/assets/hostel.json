@@ -7,40 +7,40 @@
         "Name": "Dr. M. Saravanakumar",
         "Phone No": "0422-2984002",
         "Designation": "Warden/Dean",
-        "Email ID": "ucedean-kovai@annauniv.edu"
+        "Email ID": "ucedean-kovai@annauniv.edu",
+        "photo":"/DEAN1.jpeg"
       }
     ],
-    "Deputy Wardens": [
+    "Deputy_Wardens": [
       {
         "Name": "Dr. M. Yuvaraju",
         "Designation": "Deputy Warden 1 (Boys Hostel)",
         "Phone No": "9952461315",
-        "Email ID": "rajaucbe@gmail.com"
+        "Email ID": "rajaucbe@gmail.com",
+        "photo":"/Yuvaraju.webp"
       },
       {
         "Name": "Dr. R. Vijayabhasker",
         "Designation": "Deputy Warden 2 (Boys Hostel)",
         "Phone No": "9842616953",
-        "Email ID": "kaviji04@gmail.com"
+        "Email ID": "kaviji04@gmail.com",
+        "photo":"/VB.webp"
       },
       {
         "Name": "Mr. D. Prabhu",
         "Designation": "Deputy Warden 3 (Boys Hostel)",
         "Phone No": "9626477744",
-        "Email ID": "prabhu2kraj@gmail.com"
+        "Email ID": "prabhu2kraj@gmail.com",
+        "photo":"/prabhu.webp"
       },
       {
         "Name": "Dr. S. Sumathi",
         "Designation": "Deputy Warden 1 (Girls Hostel)",
         "Phone No": "0422-2984009",
-        "Email ID": "sumathime@gmail.com"
-      },
-      {
-        "Name": "Dr. N. Fareena",
-        "Designation": "Deputy Warden 2 (Girls Hostel)",
-        "Phone No": "0422-2984009",
-        "Email ID": "fareena.aurcc@gmail.com"
+        "Email ID": "sumathime@gmail.com",
+        "photo":"/SUMATHI-S.webp"
       }
+
     ],
     "Hostel Office Staffs": [
       {

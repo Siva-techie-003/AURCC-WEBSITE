@@ -33,11 +33,11 @@ const ExamCell = () => {
                     title="About the Exam Cell"
                     icon="ℹ️"
                 >
-                    <div className="text-left bg-[rgb(220,140,140)]/50 p-6 rounded-2xl border border-[rgb(200,120,120)] shadow-sm">
+                   
                         <div className="text-lg sm:text-xl lg:text-2xl font-bold text-[rgb(100,25,25)] mb-4">Our Mission: Ensuring fairness, transparency, and efficiency in all university examinations.</div>
-                        <div className="w-20 h-1.5 bg-gradient-to-r from-[rgb(115,63,63)] to-[rgb(115,25,25)] rounded-full mb-6"></div>
-                        <p className="text-base lg:text-lg xl:text-xl font-medium text-gray-800 leading-relaxed italic">{data.description}</p>
-                    </div>
+                        {/* <div className="w-20 h-1.5 bg-gradient-to-r from-[rgb(115,63,63)] to-[rgb(115,25,25)] rounded-full mb-6"></div> */}
+                        <p className="lg:text-lg xl:text-lg font-md text-gray-800 leading-relaxed italic">{data.description}</p>
+                  
                 </OfficeContentSection>
 
                 {/* Services */}

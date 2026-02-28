@@ -15,5 +15,28 @@
       "பெயர்": "முனைவர். சூ. வே. மணிசேகரன்",
       "அவர்களின் மின்னஞ்சல்": "svmanisekaran@yahoo.co.in"
     }
-  }
+  },
+  "achievements": [
+    {
+      "event": "State Level Football Tournament",
+      "organized_by": "Tamil Nadu Sports Authority",
+      "name": "Runner Up",
+      "date": "02-05-2024",
+      "awards": "Silver Medal"
+    },
+    {
+      "event": "Inter College Cricket Championship",
+      "organized_by": "Anna University",
+      "name": "Champions",
+      "date": "2023",
+      "awards": "Gold Trophy"
+    },
+    {
+      "event": "Inter College p",
+      "organized_by": "srm University",
+      "name": "Champions",
+      "date": "03-01-2023",
+      "awards": "Gold Trophy"
+    }
+  ] 
 }

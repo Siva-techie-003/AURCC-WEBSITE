@@ -1,6 +1,6 @@
 {
   "name": "National Service Scheme",
-  "description": "ABOUT US\n\nNational Service Scheme, under the Ministry of Youth Affairs & Sports, Govt. of India, popularly known as NSS. It was launched on Gandhiji's Birth Centenary Year 1969, in 37 Universities involving 40,000 students with primary focus on the development of personality of students through community service.\n\nNational Service Scheme provides diversified opportunities to students in colleges and Universities to develop their personality through community services. Community services rendered by University level students have covered several aspects like adoption of villages for intensive development work, mass tree plantation, technology transfer programmes, technologies for rural development, various technical training programmes for self-help groups and rural youth etc.,",
+  "description": "National Service Scheme, under the Ministry of Youth Affairs & Sports, Govt. of India, popularly known as NSS. It was launched on Gandhiji's Birth Centenary Year 1969, in 37 Universities involving 40,000 students with primary focus on the development of personality of students through community service.\n\nNational Service Scheme provides diversified opportunities to students in colleges and Universities to develop their personality through community services. Community services rendered by University level students have covered several aspects like adoption of villages for intensive development work, mass tree plantation, technology transfer programmes, technologies for rural development, various technical training programmes for self-help groups and rural youth etc.,",
   "activities": [
     "Training programme for institutional Programme Officers",
     "Services in Slums",
@@ -26,16 +26,38 @@
     "Office Bearers": [
       {
         "Name": "Dr. M. Yuvaraju",
-        "Designation": "Regional Coordinator"
+        "Designation": "Regional Coordinator",
+        "Photo": "/Yuvaraju.webp"
       },
       {
         "Name": "Dr. S. V. Manisekaran",
-        "Designation": "Programme Officer"
-      },
-      {
-        "Name": "Dr. J. Lakshmi",
-        "Designation": "Assistant Professor"
-      }
+        "Designation": "Programme Officer",
+        "Photo": "/mani.webp"
+       }
+     
     ]
-  }
+  },
+  "achievements": [
+    {
+      "event": "State Level Football Tournament",
+      "organized_by": "Tamil Nadu Sports Authority",
+      "name": "Runner Up",
+      "date": "02-05-2024",
+      "awards": "Silver Medal"
+    },
+    {
+      "event": "Inter College Cricket Championship",
+      "organized_by": "Anna University",
+      "name": "Champions",
+      "date": "2023",
+      "awards": "Gold Trophy"
+    },
+    {
+      "event": "Inter College p",
+      "organized_by": "srm University",
+      "name": "Champions",
+      "date": "03-01-2023",
+      "awards": "Gold Trophy"
+    }
+  ]
 }

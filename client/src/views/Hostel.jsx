@@ -1,5 +1,6 @@
 ﻿import React, { useState, useEffect } from 'react';
 import hostelData from '../assets/hostel.json';
+import pdf from '../assets/Rules_of_hostel.pdf';
 import './Hostel.css';
 
 const Hostel = () => {
@@ -55,7 +56,7 @@ const Hostel = () => {
     };
 
     return (
-        <div className="min-h-screen flex flex-col bg-gray-50 text-left relative overflow-hidden">
+        <div className="min-h-screen flex flex-col bg-gray-50 text-left relative">
             <div className="absolute inset-0 pointer-events-none opacity-20 z-0 overflow-hidden">
                 <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
                     <pattern id="square-pattern" width="40" height="40" patternUnits="userSpaceOnUse">
@@ -70,14 +71,14 @@ const Hostel = () => {
             <section className="relative w-full h-48 sm:h-60 md:h-80 lg:h-[50vh] overflow-hidden">
                 <img src="/hostel.webp" alt="Hostel" className="absolute inset-0 w-full h-full object-cover object-center" />
                 <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-black/60 via-black/30 to-transparent"></div>
-                <div className="container mx-auto relative z-10 flex flex-col items-center justify-center h-full pb-8 px-4">
+                <div className="backdrop-blur-md rounded-2xl shadow-lg px-6 py-6 md:py-10 flex flex-col items-center max-w-2xl mx-auto border border-white/30 animate-popIn mt-20">
                     <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold mb-4 text-white drop-shadow-lg tracking-tight text-center">Hostel Life</h1>
                     <p className="text-base lg:text-xl text-white drop-shadow text-center font-medium opacity-90">Your Home Away From Our Home</p>
                 </div>
             </section>
 
             {/* Sticky Horizontal Tab Bar */}
-            <div className="sticky top-0 z-30">
+            <div className="sticky top-4 z-30">
                 <div className="max-w-7xl mx-auto px-4">
                     <div className="bg-white/95 backdrop-blur-md shadow-lg rounded-full -mt-6 py-2 px-3 flex justify-center overflow-x-auto no-scrollbar gap-2 border border-[rgb(220,140,140)]">
                         {sections.map((section) => (
@@ -140,7 +141,7 @@ const Hostel = () => {
                                 <p>Each hostel features well-ventilated rooms, modern amenities, and dedicated staff for cleaning, security, and maintenance. The mess provides nutritious meals in a hygienic environment.</p>
                                 <p>Experienced wardens and deputy wardens ensure a safe and supportive atmosphere. CCTV surveillance and strict entry protocols further enhance safety for all residents.</p>
                             </div>
-                            <div className="bg-[rgb(220,140,140)] p-6 rounded-2xl border border-[rgb(200,120,120)] space-y-4">
+                            <div className="bg-[rgb(248,195,195)] p-6 rounded-2xl border border-[rgb(200,120,120)] space-y-4">
                                 <h4 className="font-bold text-[rgb(100,25,25)] border-b border-[rgb(180,100,100)] pb-2">Facility Highlights</h4>
                                 <ul className="space-y-3">
                                     {['24/7 RO Purified Water', 'Nutritious & Hygienic Mess', 'Wi-Fi Connectivity', 'Common Room with TV', 'Safe & Secure with CCTV', 'Recreational Sports Area'].map((item, i) => (
@@ -154,49 +155,138 @@ const Hostel = () => {
                     </div>
                 </section>
 
-                {/* Administration Section */}
-                <section id="Administration" className="bg-white rounded-3xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-lg transition-all animate-fadeIn">
-                    <div className="bg-gradient-to-r from-[rgb(115,63,63)] to-[rgb(115,25,25)] py-6 px-8 text-center text-white">
-                        <h2 className="text-2xl lg:text-3xl font-bold flex items-center justify-center gap-3"><span>🧑‍💼</span> Administration</h2>
-                    </div>
-                    <div className="p-8 space-y-10">
-                        <div>
-                            <h3 className="text-xl font-bold text-[rgb(100,25,25)] mb-6 flex items-center gap-2">Chief Warden / Dean</h3>
-                            <div className="bg-[rgb(220,140,140)] border border-[rgb(200,120,120)] p-8 rounded-2xl shadow-sm flex flex-col md:flex-row gap-6 items-center">
-                                <div className="text-center md:text-left flex-grow">
-                                    <h4 className="text-xl font-black text-[rgb(90,20,20)] mb-1">Dr. M. Saravanakumar</h4>
-                                    <p className="font-bold text-[rgb(110,35,35)] mb-4">Chief Warden / Dean</p>
-                                    <div className="flex flex-wrap gap-x-8 gap-y-2 text-sm lg:text-base">
-                                        <span className="text-gray-700 font-medium">📞 0422-2984002</span>
-                                        <a href="mailto:ucedean-kovai@annauniv.edu" className="text-[rgb(115,40,40)] font-bold hover:underline">✉ ucedean-kovai@annauniv.edu</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                
 
-                        <div>
-                            <h3 className="text-xl font-bold text-[rgb(100,25,25)] mb-6 flex items-center gap-2">Deputy Wardens</h3>
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                {[
-                                    { name: 'Dr. M. Yuvaraju', role: 'Deputy Warden 1 (Boys)', phone: '9952461315', email: 'rajaucbe@gmail.com' },
-                                    { name: 'Dr. R. Vijayabhasker', role: 'Deputy Warden 2 (Boys)', phone: '9842616953', email: 'kaviji04@gmail.com' },
-                                    { name: 'Mr. D. Prabhu', role: 'Deputy Warden 3 (Boys)', phone: '9626477744', email: 'prabhu2kraj@gmail.com' },
-                                    { name: 'Dr. S. Sumathi', role: 'Deputy Warden 1 (Girls)', phone: '0422-2984009', email: 'sumathime@gmail.com' },
-                                    { name: 'Dr. N. Fareena', role: 'Deputy Warden 2 (Girls)', phone: '0422-2984009', email: 'fareena.aurcc@gmail.com' }
-                                ].map((dw, i) => (
-                                    <div key={i} className="bg-white border border-gray-100 p-6 rounded-2xl shadow-sm hover:shadow-md transition-all group">
-                                        <h4 className="text-lg font-bold text-[rgb(100,25,25)] group-hover:text-[rgb(115,40,40)] transition-colors uppercase">{dw.name}</h4>
-                                        <p className="text-sm font-bold text-gray-500 mb-4">{dw.role}</p>
-                                        <div className="space-y-2 text-sm text-gray-700">
-                                            <p className="font-medium">📞 {dw.phone}</p>
-                                            <a href={`mailto:${dw.email}`} className="text-[rgb(115,40,40)] hover:underline inline-block truncate max-w-full">✉ {dw.email}</a>
-                                        </div>
-                                    </div>
-                                ))}
+                {/* Administration Section */}
+                        <section id="Administration" className="bg-white rounded-3xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-lg transition-all animate-fadeIn">
+                            
+                            <div className="bg-gradient-to-r from-[rgb(115,63,63)] to-[rgb(115,25,25)] py-6 px-8 text-center text-white">
+                                <h2 className="text-2xl lg:text-3xl font-bold flex items-center justify-center gap-3">
+                                    <span>🧑‍💼</span> Administration
+                                </h2>
                             </div>
-                        </div>
-                    </div>
-                </section>
+
+                            <div className="p-8 space-y-10">
+
+                                {/* Warden */}
+                                <div>
+                                    <h3 className="text-xl font-bold text-[rgb(100,25,25)] 
+                                                mb-6 flex items-center justify-center gap-2 text-center">
+                                        Chief Warden / Dean
+                                    </h3>
+
+                                    {hostelData.Administration.Wardens.map((warden, index) => (
+                                        <div
+                                            key={index}
+                                            className="bg-[rgb(233,169,169)] border border-[rgb(200,120,120)] 
+                                            p-6 rounded-2xl shadow-md hover:shadow-xl 
+                                            transition-all duration-300 
+                                            flex items-center justify-between 
+                                            max-w-md mx-auto"
+                                            >
+
+                                            {/* LEFT SIDE - Content */}
+                                            <div className="flex-1 text-left">
+                                                <h4 className="text-lg font-black text-[rgb(90,20,20)] mb-1">
+                                                {warden.Name}
+                                                </h4>
+
+                                                <p className="text-sm font-bold text-[rgb(110,35,35)] mb-3">
+                                                {warden.Designation}
+                                                </p>
+
+                                                <div className="space-y-2 text-sm">
+                                                <a
+                                                    href={`tel:${warden["Phone No"]}`}
+                                                    className="block text-gray-700 font-medium hover:underline"
+                                                >
+                                                    📞 {warden["Phone No"]}
+                                                </a>
+
+                                                <a
+                                                    href={`mailto:${warden["Email ID"]}`}
+                                                    className="block text-[rgb(115,40,40)] font-bold hover:underline truncate"
+                                                >
+                                                    ✉ {warden["Email ID"]}
+                                                </a>
+                                                </div>
+                                            </div>
+
+                                            {/* RIGHT SIDE - Photo */}
+                                            <div className="ml-4 w-28 h-30 rounded-lg overflow-hidden border-4 border-[rgb(120,45,45)] shadow-md">
+                                                <img
+                                                src={warden.photo || "/default-profile.jpg"}
+                                                alt={warden.Name}
+                                                className="w-full h-full object-cover"
+                                                />
+                                            </div>
+
+                                            </div>
+                                    ))}
+                                </div>
+
+                                {/* Deputy Wardens */}
+                                <div>
+                                    <h3 className="text-xl font-bold text-[rgb(100,25,25)] 
+                                                mb-6 flex items-center justify-center gap-10 text-center">
+                                        Deputy Wardens
+                                    </h3>
+
+                                            <div className="grid grid-cols-1 sm:grid-cols-2 lg: gap-1 justify-items-center">                                                
+                                                {hostelData.Administration.Deputy_Wardens.map((dw, i) => (
+                                            <div
+                                            key={i}
+                                            className="bg-white border border-gray-200 
+                                                        p-5 rounded-2xl shadow-md 
+                                                        hover:shadow-xl transition-all duration-300 
+                                                        flex items-center justify-center 
+                                                        max-w-md w-full"                                            >
+
+                                            {/* LEFT SIDE - Content */}
+                                            <div className="flex-1 text-left">
+                                                <h4 className="text-lg font-bold text-[rgb(100,25,25)] mb-1 uppercase">
+                                                {dw.Name}
+                                                </h4>
+
+                                                <p className="text-sm font-semibold text-gray-500 mb-3">
+                                                {dw.Designation}
+                                                </p>
+
+                                                <div className="space-y-2 text-sm text-gray-700">
+                                                <a
+                                                    href={`tel:${dw["Phone No"]}`}
+                                                    className="block font-medium hover:underline"
+                                                >
+                                                    📞 {dw["Phone No"]}
+                                                </a>
+
+                                                {dw["Email ID"] && (
+                                                    <a
+                                                    href={`mailto:${dw["Email ID"]}`}
+                                                    className="block text-[rgb(115,40,40)] hover:underline truncate"
+                                                    >
+                                                    ✉ {dw["Email ID"]}
+                                                    </a>
+                                                )}
+                                                </div>
+                                            </div>
+
+                                            {/* RIGHT SIDE - Photo */}
+                                            <div className="ml-6 w-28 h-30 rounded-lg overflow-hidden border-4 border-[rgb(120,45,45)] shadow-md">
+                                                <img
+                                                src={dw.photo || "/default-profile.jpg"}
+                                                alt={dw.Name}
+                                                className="w-full h-full object-cover"
+                                                />
+                                            </div>
+
+                                            </div>
+                  ))}
+                                        </div>
+                                </div>
+
+                            </div>
+                        </section>
 
                 {/* Fees Structure Section */}
                 <section id="FeesStructure" className="bg-white rounded-3xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-lg transition-all animate-fadeIn">
@@ -206,12 +296,12 @@ const Hostel = () => {
                     <div className="p-8 text-center space-y-10">
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-4xl mx-auto">
                             <a href={hostelData['Fees Structure']['New Admission']} className="p-8 bg-[rgb(220,140,140)] border border-[rgb(200,120,120)] rounded-3xl hover:bg-white hover:shadow-xl transition-all group">
-                                <div className="w-16 h-16 bg-[rgb(115,40,40)] text-white rounded-2xl flex items-center justify-center text-3xl mx-auto mb-4 group-hover:rotate-12 transition-transform">📄</div>
+                                <div className="w-16 h-16 bg-[rgb(115,40,40)] text-white rounded-2xl flex items-center justify-center text-3xl mx-auto mb-4 group-hover: transition-transform">📄</div>
                                 <h4 className="text-xl font-bold text-[rgb(100,25,25)] mb-2">New Admission</h4>
                                 <p className="text-sm font-medium text-gray-500 uppercase tracking-widest">Download Fee Details</p>
                             </a>
                             <a href={hostelData['Fees Structure']['Existing Students']} className="p-8 bg-[rgb(220,140,140)] border border-[rgb(200,120,120)] rounded-3xl hover:bg-white hover:shadow-xl transition-all group">
-                                <div className="w-16 h-16 bg-[rgb(115,40,40)] text-white rounded-2xl flex items-center justify-center text-3xl mx-auto mb-4 group-hover:rotate-12 transition-transform">📄</div>
+                                <div className="w-16 h-16 bg-[rgb(115,40,40)] text-white rounded-2xl flex items-center justify-center text-3xl mx-auto mb-4 group-hover: transition-transform">📄</div>
                                 <h4 className="text-xl font-bold text-[rgb(100,25,25)] mb-2">Existing Students</h4>
                                 <p className="text-sm font-medium text-gray-500 uppercase tracking-widest">Download Fee Details</p>
                             </a>
@@ -231,14 +321,27 @@ const Hostel = () => {
                 </section>
 
                 {/* Rules Section */}
-                <section id="RulesandRegulations" className="bg-white rounded-3xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-lg transition-all animate-fadeIn">
+                 <section id="RulesandRegulations" className="bg-white rounded-3xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-lg transition-all animate-fadeIn">
                     <div className="bg-gradient-to-r from-[rgb(115,63,63)] to-[rgb(115,25,25)] py-6 px-8 text-center text-white">
                         <h2 className="text-2xl lg:text-3xl font-bold flex items-center justify-center gap-3"><span>📜</span> Rules and Regulations</h2>
                     </div>
                     <div className="p-8">
-                        <div className="rounded-2xl overflow-hidden shadow-2xl border border-gray-200">
-                            <iframe src="/rules.pdf" className="w-full h-[600px] lg:h-[800px]" frameBorder="0" title="Hostel Rules"></iframe>
+                        <div className="rounded-2xl overflow-hidden shadow-2xl border border-gray-200 mx-auto max-w-4xl">                            
+                            <iframe
+                            src={`${pdf}#toolbar=0&navpanes=0&scrollbar=0`}
+                            className="w-[900px] h-[400px] rounded-xl"
+                            title="Hostel Rules"
+                            />
                         </div>
+                    </div>
+                    <div className="text-center mb-6">
+                        <a
+                            href={pdf}
+                            download="Hostel_Rules.pdf"
+                            className="inline-flex items-center gap-3 px-6 py-3 bg-[rgb(115,40,40)] text-white font-bold rounded-2xl shadow-lg hover:shadow-xl hover:scale-105 transition-all"
+                        >
+                            ⬇ Download Rules & Regulations PDF
+                        </a>
                     </div>
                 </section>
             </main>

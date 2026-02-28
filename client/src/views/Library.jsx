@@ -36,11 +36,11 @@ const Library = () => {
             <section className="relative w-full h-48 sm:h-60 md:h-80 lg:h-[50vh] overflow-hidden">
                 <img src="/library.webp" alt="Library" className="absolute inset-0 w-full h-full object-cover object-center" />
                 <div className="absolute top-0 left-0 w-full h-full bg-black/50"></div>
-                <div className="container mx-auto py-8 text-center relative z-10 px-4 flex flex-col items-center justify-center h-full">
+                <div className="backdrop-blur-md rounded-2xl shadow-lg px-6 py-6 md:py-10 flex flex-col items-center max-w-2xl mx-auto border border-white/30 animate-popIn mt-20">
                     <h1 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-extrabold mb-4 drop-shadow-lg font-serif text-white animate-fadeInUp">
                         Library
                     </h1>
-                    <p className="text-sm sm:text-base lg:text-lg max-w-3xl mx-auto leading-relaxed drop-shadow-lg font-sans text-white opacity-90 animate-fadeInUp">
+                    <p className="text-sm sm:text-base lg:text-lg max-w-3xl mx-auto leading-relaxed drop-shadow-lg font-sans text-white opacity-90 animate-fadeInUp text-center">
                         Explore our extensive library resources and services, including books, e-journals, and more.
                     </p>
                 </div>
@@ -74,7 +74,8 @@ const Library = () => {
                         <h2 className="text-xl lg:text-2xl font-bold text-white text-center">About Library</h2>
                     </div>
                     <div className="p-8">
-                        <p className="text-base lg:text-lg xl:text-xl font-medium text-gray-700 leading-loose text-justify italic">
+                        <p className=" lg:text-lg xl:text-lg font-md text-white-400  text-center">
+
                             {libraryData.description}
                         </p>
                     </div>
@@ -122,7 +123,7 @@ const Library = () => {
                         <h2 className="text-xl lg:text-2xl font-bold text-center">Library Resources</h2>
                     </div>
                     <div className="p-8">
-                        <p className="text-base lg:text-lg font-bold text-gray-700 mb-8 max-w-4xl mx-auto text-center">{libraryData.library_resources.description}</p>
+                        <p className=" lg:text-lg xl:text-lg font-md text-white-400 mb-8 max-w-8x1 mx-auto text-center">{libraryData.library_resources.description}</p>
                         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
                             {Object.entries(libraryData.library_resources.collection).map(([key, value], i) => (
                                 <div key={i} className="p-6 bg-[rgb(220,140,140)]/50 rounded-2xl border border-[rgb(200,120,120)] flex flex-col items-center text-center group hover:bg-white hover:shadow-md transition-all">
@@ -146,8 +147,8 @@ const Library = () => {
                         <h2 className="text-xl lg:text-2xl font-bold">Digital Library</h2>
                     </div>
                     <div className="p-8 text-center">
-                        <div className="max-w-3xl mx-auto">
-                            <p className="text-lg lg:text-xl font-bold text-[rgb(100,25,25)] mb-8">{libraryData.digital_library.description}</p>
+                        <div className="max-w-5xl mx-auto">
+                            <p className=" lg:text-lg xl:text-lg font-md text-white-400 mb-8">{libraryData.digital_library.description}</p>
                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                                 <div className="p-6 bg-white border border-gray-200 rounded-2xl shadow-sm flex items-center gap-4 group hover:bg-[rgb(220,140,140)] transition-colors">
                                     <div className="w-12 h-12 bg-[rgb(200,120,120)] rounded-xl flex items-center justify-center text-[rgb(115,40,40)] text-2xl group-hover:bg-[rgb(115,40,40)] group-hover:text-white transition-all">🌐</div>
@@ -196,30 +197,84 @@ const Library = () => {
                     </div>
                 </section>
 
-                {/* Faculty */}
-                <section id="Faculty" className="bg-white rounded-3xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-lg transition-all animate-fadeIn">
-                    <div className="bg-gradient-to-r from-[rgb(115,63,63)] to-[rgb(115,25,25)] py-6 px-8 text-center text-white">
-                        <h2 className="text-xl lg:text-2xl font-bold">Library Team</h2>
+             {/* Faculty */}
+            <section
+            id="Faculty"
+            className="w-full bg-gray-100 py-12 px-4"
+            >
+            {/* Header */}
+            <div className="bg-gradient-to-r from-[rgb(115,63,63)] to-[rgb(115,25,25)] py-6 text-center text-white rounded-t-3xl max-w-6xl mx-auto">
+                <h2 className="text-xl lg:text-2xl font-bold">Library Team</h2>
+            </div>
+
+            {/* Cards Container */}
+            <div className="max-w-6xl mx-auto bg-white rounded-3xl shadow-md 
+                            border border-[rgb(180,100,100)] 
+                            px-6 lg:px-12 py-14">
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 
+                            gap-8 justify-items-center">
+
+                {libraryData.faculty.map((faculty, i) => (
+                
+                <div
+                    key={i}
+                    className="relative w-[320px] bg-white rounded-3xl 
+                            border border-[rgb(180,100,100)] 
+                            shadow-md hover:shadow-xl 
+                            transition-all duration-300 
+                            overflow-hidden"
+                >
+
+                    {/* Top Gradient */}
+                    <div className="h-24 bg-gradient-to-r 
+                                    from-[rgb(115,63,63)] 
+                                    to-[rgb(115,25,25)]">
                     </div>
-                    <div className="p-8">
-                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 max-w-4xl mx-auto">
-                            {libraryData.faculty.map((faculty, i) => (
-                                <div key={i} className="bg-gray-50/50 rounded-3xl p-8 border border-gray-100 flex flex-col items-center text-center hover:bg-white hover:shadow-lg transition-all group">
-                                    <div className="relative mb-6">
-                                        <img
-                                            src={`/${faculty.img}`}
-                                            alt={faculty.name}
-                                            className="w-32 h-32 md:w-40 md:h-40 rounded-full object-cover border-4 border-white shadow-xl group-hover:rotate-6 transition-transform"
-                                        />
-                                    </div>
-                                    <h4 className="text-xl lg:text-2xl font-black text-[rgb(100,25,25)] mb-1">{faculty.name}</h4>
-                                    <div className="h-1 w-12 bg-[rgb(180,100,100)] my-2 rounded-full"></div>
-                                    <p className="text-sm lg:text-base font-bold text-gray-500 uppercase tracking-widest">{faculty.designation}</p>
-                                </div>
-                            ))}
-                        </div>
+
+                    {/* Profile Image */}
+                    <div className="absolute top-12 left-1/2 -translate-x-1/2">
+                    <img
+                        src={`/${faculty.img}`}
+                        alt={faculty.name}
+                        className="w-32 h-[152px] object-cover 
+                                rounded-full border-4 
+                                border-white shadow-lg"
+                    />
                     </div>
-                </section>
+
+                    {/* Content */}
+                    <div className="pt-28 pb-8 px-6 text-center">
+
+                    <h3 className="text-lg font-bold text-[rgb(115,25,25)]">
+                        {faculty.name}
+                    </h3>
+
+                    <p className="text-gray-600 font-semibold mt-2">
+                        {faculty.designation}
+                    </p>
+
+                    <p className="text-gray-500 text-sm mt-1">
+                        {faculty.email}
+                    </p>
+
+                    <button className="mt-6 px-6 py-2 
+                                        bg-[rgb(115,25,25)] 
+                                        text-white rounded-lg 
+                                        hover:bg-[rgb(90,15,15)] 
+                                        transition-all duration-300">
+                        View Profile
+                    </button>
+
+                    </div>
+
+                </div>
+
+                ))}
+
+            </div>
+            </div>
+            </section>
             </div>
         </main>
     );
