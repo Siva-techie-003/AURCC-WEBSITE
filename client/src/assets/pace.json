@@ -1,0 +1,37 @@
+{
+  "description": "The PACE (Placement and Competitive Exam) Cell at Anna University Regional Campus Coimbatore plays a pivotal role in guiding and empowering students to excel in various government and competitive examinations. Established with the vision of nurturing career-ready graduates, the cell is well-equipped with a wide range of books, study materials, and online resources focusing on competitive exams such as TNPSC, UPSC, Banking, SSC, Railway, and other central and state-level government exams. The PACE Cell regularly organizes training programs, workshops, mock tests, and expert sessions to enhance students' general awareness, analytical thinking, and problem-solving skills. Through collaborations with subject matter experts and reputed training institutions, it ensures that students receive the best preparation guidance. Furthermore, the Cell provides continuous support via mentoring, peer groups, and dedicated volunteer teams. With two Coordinators, two Assistant Coordinators, overall Student Coordinators, and a committed team of Student Volunteers, the PACE Cell ensures a well-structured and inclusive support system that benefits students from all departments across the campus.",
+
+  "staff": [
+    {
+      "name": "Dr. I. Jayaraman",
+      "position": "Assistant Librarian",
+      "image": "jayaram.webp"
+    },
+    {
+      "name": "Dr. L. Babitha",
+      "position": "Assistant Professor, S&H",
+      "image": "bapitha.webp"
+    },
+    {
+      "name": "Ms. P. Shobana",
+      "position": "Support Staff",
+      "image": ""
+    },
+    {
+      "name": "Mr. S. Suresh",
+      "position": "Support Staff",
+      "image": ""
+    },
+    {
+      "name": "Ms. S. Pandiarkkarasi",
+      "position": "Support Staff",
+      "image": ""
+    }
+  ],
+
+  "contact": {
+    "email": "ijayaraman71@gmail.com",
+    "phone": "+919566920349",
+    "website": "https://drive.google.com/open?id=1WKjQt0IhIfX1bNiRC9-b17YAYNMTozzA"
+  }
+}

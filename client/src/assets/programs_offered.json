@@ -1,0 +1,15 @@
+{
+  "UG programmes": [
+    { "S.No": 1, "Courses Offered": "B.E. (COMPUTER SCIENCE AND ENGINEERING)", "Intake": 60 },
+    { "S.No": 2, "Courses Offered": "B.E. (ELECTRONICS AND COMMUNICATION ENGINEERING)", "Intake": 60 },
+    { "S.No": 3, "Courses Offered": "B.E. (ELECTRICAL AND ELECTRONICS ENGINEERING)", "Intake": 60 },
+    { "S.No": 4, "Courses Offered": "B.E. (MECHANICAL ENGINEERING)", "Intake": 60 },
+    { "S.No": 5, "Courses Offered": "B.Tech. (ARTIFICIAL INTELLIGENCE AND DATA SCIENCE)", "Intake": 60 },
+    { "S.No": 6, "Courses Offered": "B.E. ELECTRONICS ENGINEERING (VLSI DESIGN AND TECHNOLOGY)", "Intake": 60 }
+  ],
+  "PG programmes": [
+    { "S.No": 1, "Department": "MBA", "Courses Offered": "MASTER OF BUSINESS ADMINISTRATION", "Intake": 60 },
+    { "S.No": 2, "Department": "MBA", "Courses Offered": "MASTER OF BUSINESS ADMINISTRATION(BUSINESS ANALYTICS)", "Intake": 60 }
+  ]
+}
+  

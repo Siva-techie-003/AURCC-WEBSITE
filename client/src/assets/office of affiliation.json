@@ -1,0 +1,31 @@
+{
+  "description": {
+    "About Office of Affiliation and its activities": "Functioning as a liaisoning office between the University and the affiliated institutions and effectively facilitating the granting of affiliation to the affiliated institutions in Coimbatore Region every year as directed by the Director, Centre for Affiliation of Institutions, Anna University, Chennai."
+  },
+  "staff": [
+    {
+      "name": "Dr. S. MARSHAL ANTHONI",
+      "qualification": "M.Sc., M.Phil., Ph.D.",
+      "position": "Deputy Director - Affiliation",
+      "image": "Marshal.webp"
+    },
+    {
+      "name": "Mr. R. Hamsaraj",
+      "position": "Executive Asst (Admin)",
+      "phone": "0422-2984010",
+      "email": "aucbeaffln@gmail.com",
+      "image": "staff/hamsaraj.jpg"
+    },
+    {
+      "name": "Mr. Karthi",
+      "position": "Professional Assistant - II",
+      "image": "staff/karthi.jpg"
+    }
+  ],
+  "contact_details": {
+    "office": "Deputy Director - Affiliations",
+    "address": "Anna University Regional Campus, Maruthamalai Main Road, Coimbatore(Dt), Pin - 641 046.",
+    "phone": "0422-2984010",
+    "email": "aucbeaffln@gmail.com"
+  }
+}

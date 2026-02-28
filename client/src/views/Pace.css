@@ -1,0 +1,20 @@
+/* Pace.css - Custom styles for the PACE Cell view */
+
+.font-serif {
+    font-family: 'Georgia', 'Times New Roman', Times, serif;
+}
+
+.staff-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.staff-card-hover {
+    transition: transform 0.18s cubic-bezier(.4, 2, .6, 1), box-shadow 0.18s cubic-bezier(.4, 2, .6, 1);
+}
+
+.staff-card-hover:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1);
+}

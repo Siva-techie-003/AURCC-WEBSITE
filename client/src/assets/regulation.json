@@ -1,0 +1,15 @@
+{
+    "regulations": [
+      {
+        "S.No": 1,
+        "Regulation": "UG Programmes",
+        "PDF Link": "assets/ug_regulations.pdf"
+      },
+      {
+        "S.No": 2,
+        "Regulation": "PG Programmes",
+        "PDF Link": "assets/pg_regulations.pdf"
+      }
+    ]
+  }
+  

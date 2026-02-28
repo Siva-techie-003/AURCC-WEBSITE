@@ -1,0 +1,24 @@
+[
+  {
+    "description": [
+      "To act as a Liaison Office between the University and the Affiliated Colleges, with regard to conduct of examinations and Central Valuation.",
+      "Distribution of answer books and sheets, question papers and other records of the University to the Colleges.",
+      "Monitoring the conduct of Practical and Theory Examinations.",
+      "Collection of Answer book and other related documents after the Examinations are over.",
+      "Arranging for the Central Valuation for the Affiliated Colleges as directed by the Controller of Examinations."
+    ],
+    "zoneListPDF": "zonal-list.pdf",
+    "staff": [
+      {
+        "name": "Dr. S. Chandrakumarmangalam",
+        "image": "chandra.webp",
+        "designation": "Zonal Coordinator"
+      },
+      {
+        "name": "Dr. S. V. Manisekaran",
+        "image": "mani.webp",
+        "designation": "Zonal Officer"
+      }
+    ]
+  }
+]

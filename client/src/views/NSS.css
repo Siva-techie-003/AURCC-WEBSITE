@@ -1,0 +1,36 @@
+/* NSS.css - Custom styles for the NSS view */
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fadeIn {
+    animation: fadeIn 1.2s ease-out forwards;
+}
+
+.animate-fadeInUp {
+    animation: fadeInUp 1.2s ease-out forwards;
+}
+
+/* Custom styles for activity transitions */
+.activity-carousel-item {
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}

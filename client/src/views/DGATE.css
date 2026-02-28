@@ -1,0 +1,48 @@
+/* DGATE.css - Custom styles for the DGATE Cell view */
+
+.notice-ticker {
+    display: flex;
+    flex-direction: column;
+    animation: vertical-scroll 30s linear infinite;
+}
+
+.notice-ticker:hover {
+    animation-play-state: paused;
+}
+
+@keyframes vertical-scroll {
+    0% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(-50%);
+    }
+}
+
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+.no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.project-card {
+    transition: box-shadow 0.3s, transform 0.3s;
+    box-shadow: 0 4px 16px 0 rgba(60, 72, 180, 0.08);
+}
+
+.project-card:hover {
+    box-shadow: 0 8px 32px 0 rgba(60, 72, 180, 0.16);
+    transform: translateY(-8px) scale(1.03);
+}
+
+.line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}

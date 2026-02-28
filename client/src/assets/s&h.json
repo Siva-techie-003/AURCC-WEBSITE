@@ -1,0 +1,478 @@
+{
+    "name": "Science and Humanities",
+    "image": "s&h.webp",
+    "description": "The Department of Science and Humanities comprises of the faculty of Mathematics and English. The Faculty members of the department have rich academic experience in respective areas and research experience with outstanding research publications in reputed journals. The strength of the department is the excellent coordination in carrying out the academic responsibilities. It caters to the needs of the society and instills in students the spirit and commitment for acquiring knowledge and community service.",
+    "vision": "The vision of the Department of Science and Humanities is to be recognized globally for establishing Research and Development programme in all the areas of Fundamental Sciences that support Engineering and Technology",
+  "mission":[
+  
+    "To attain excellence in pedagogy, and provide potential skills in the areas of Humanities and Sciences",
+    " To enrich the students to possess the ability and passion to work wisely, creatively, and effectively for the benefit of society.",
+    "To prepare professional leaders to face the emerging global challenges and to foster cultural enrichment",
+    " To create an atmosphere of learning to enable the students to develop sound cognitive and problem solving skills."
+    ],
+  
+     "courses_offered":["Ph.D.,(FULL TIME and PART TIME) in English and Mathematics and need based Mathematics course to various UG , PG Programmes in the regional campus ,Coimbatore"], 
+    "faculty": {
+      "hod_desk": [
+        {
+          "name": "Dr. S. N. Mahalakshmi",
+          "position": "Assistant Professor and Head(i/c)",
+          "department": "Department of Science and Humanities (English)",
+          "email": "mahalakshmi@aurcc.ac.in",
+          "profile": "Dr S N Mahalakshmi, a distinguished scholar, boasts an illustrious academic journey marked by an unwavering commitment to English language pedagogy and scholarly exploration. With 23 years of dedication to English language teaching and profound research endeavors, she has made significant contributions to the field. Her scholarly footprint is evident through 27 publications in esteemed international and national journals. She has graced several platforms, such as 18 international and national conferences, with captivating presentations that illuminate the forefront of linguistic inquiry. An author of 12 seminal textbooks and workbooks tailored to the rigorous standards of technical English pertaining to the Anna University syllabus, her publications serve as guiding beacons, nurturing the linguistic prowess of countless students. Notably, seven of her scholars have been awarded PhD under her guidance, and currently, 2 research scholars are pursuing part-time PhD in English Language Teaching and Literature. As the Head of the Department of Science and Humanities at Anna University Regional Campus, Coimbatore, she orchestrates academic excellence with finesse, shaping the intellects of future generations along with her erudite members of faculty.",
+          "education": [
+              "M.A. in English",
+              "M.Phil in English",
+              "Ph.D. in English"
+          ],
+          "professional_experience": [
+              {
+                  "position": "Lecturer in English",
+                  "institution": "Bannari Amman Institute of Technology, Sathyamangalam",
+                  "duration": "2001 - 2004"
+              },
+              {
+                  "position": "Lecturer in English",
+                  "institution": "Sri Krishna College of Engineering and Technology",
+                  "duration": "2004 - 2008"
+              },
+              {
+                  "position": "Assistant Professor in English",
+                  "institution": "Anna University Regional Campus, Coimbatore",
+                  "duration": "2008 - Till date"
+              }
+          ],
+          "publications": "Published 27 papers.",
+          "conferences": "Attended 18 international and national conferences.",
+          "drive_link": "https://drive.google.com/open?id=1RBR_4m7ZGuhQGRlnNMgPO2l_Ivi4kOD3",
+          "google_scholar": "https://scholar.google.com/citations?user=ODDosSEAAAAJ&hl=en",
+          "image": "Dr.S.N.M - mahalakshmi subramanian.webp"
+      }  
+      ],
+      "assistant_professors": [
+        {
+          "name": "Dr. S. Marshal Anthoni",
+          "position": "Associate Professor",
+          "department": "Department of Science & Humanities (Mathematics)",
+          "email": "marshal@aurcc.ac.in",
+          "profile": "Dr Marshal Anthoni S, an accomplished scholar in Systems and Control Theory, hails from P Puliampatti, Erode district. A proud alumnus of Gobi Arts and Science College, Gobichettipalayam, he received his B Sc, M Sc degrees in Mathematics, and his M Phil, and PhD degrees from Bharathiar University, Coimbatore. He has held teaching positions in various prestigious institutions and was a BK21 Post-Doctoral Fellow at Yonsei University, Seoul, South Korea. Since 2008, he has been a faculty member at Anna University Regional Campus, Coimbatore, where he currently serves as an Associate Professor. With over 90 research papers published in reputed Science Citation Indexed journals, his research contributions are widely recognized. Dr Marshal has also served as a program committee member and reviewer for various international journals and conferences. His academic pursuits have taken him to Japan, Spain, Brazil, Canada, Switzerland, China, South Korea, Nepal, and Oman.",
+          "education": [
+              "B.Sc. in Mathematics, Gobi Arts and Science College, Gobichettipalayam (1993)",
+              "M.Sc. in Mathematics, Gobi Arts and Science College, Gobichettipalayam (1995)",
+              "M.Phil. in Mathematics, Bharathiar University, Coimbatore (1996)",
+              "Ph.D. in Mathematics, Bharathiar University, Coimbatore (2001)"
+          ],
+          "professional_experience": [
+              {
+                  "position": "Lecturer in Mathematics",
+                  "institution": "Kumaraguru College of Technology, Coimbatore",
+                  "duration": "1st June 2001 - 24th Mar 2003"
+              },
+              {
+                  "position": "Post Doctoral Fellow",
+                  "institution": "Yonsei University, Seoul, South Korea",
+                  "duration": "15th Apr 2003 - 7th Dec 2004"
+              },
+              {
+                  "position": "Lecturer in Mathematics",
+                  "institution": "Periyar University, Salem",
+                  "duration": "9th Dec 2004 - 13th Aug 2008"
+              },
+              {
+                  "position": "Assistant Professor in Mathematics",
+                  "institution": "Anna University of Technology, Coimbatore",
+                  "duration": "14th Aug 2008 - 13th Aug 2011"
+              },
+              {
+                  "position": "Associate Professor in Mathematics",
+                  "institution": "Anna University of Technology, Coimbatore",
+                  "duration": "14th Aug 2011 - 31st July 2012"
+              },
+              {
+                  "position": "Associate Professor in Mathematics",
+                  "institution": "Anna University Regional Campus, Coimbatore",
+                  "duration": "1st Aug 2012 - till date"
+              }
+          ],
+          "publications": "Published over 90 research papers in reputed Science Citation Indexed journals.",
+          "conferences": "Delivered invited talks at several universities and institutes in India and abroad, and served as a program committee member and reviewer for various international journals and conferences.",
+          "research_projects": [
+              {
+                  "name": "CSIR Project",
+                  "title": "Controllability of Nonlinear Stochastic Integrodifferential Systems",
+                  "scheme_number": "25(0150)/06/EMR-II dated 11.09.2006",
+                  "amount": "Rs.1,65,000/-"
+              },
+              {
+                  "name": "NBHM Project",
+                  "title": "Design and Analysis of Robust Control for Uncertain Dynamical Systems",
+                  "scheme_number": "2/48(4)/2013/NBHM(R.P.)/R&D II/687 dated 16.01.2014",
+                  "amount": "Rs.11,50,500/-"
+              }
+          ],
+          "drive_link": "https://drive.google.com/open?id=1TVGOETNL3gzKWWxFdO9hq2kUeGlYXlfP",
+          "google_scholar": "https://scholar.google.com/citations?user=4v1nHC0AAAAJ&hl=en&oi=ao",
+          "image": "Marshal.webp"
+        },
+        {
+          "name": "Dr. K. Rajasekar",
+          "position": "Assistant Professor",
+          "department": "Department of Chemistry (S&H)",
+          "email": "rajasekar@aurcc.ac.in",
+          "profile": "Dr K Rajasekar holds a B Sc and M Sc in Chemistry from Govt Arts College, Salem, affiliated with the University of Madras. He earned his PhD in Chemistry from Anna University Guindy Campus, Chennai in 2007 and pursued post-doctoral research at the Massachusetts Institute of Technology (MIT), USA during 2009-2010. Recognized for his research potential, he was awarded the Raman Fellowship by UGC in 2016-17, conducting research at the National Renewable Energy Laboratory, Denver, USA. Dr. Rajasekar has received funding from the Department of Science and Technology for several projects. With over 40 research publications in esteemed journals such as Nature Nanotechnology, he currently supervises four Ph.D. candidates. He serves as a regular referee for prestigious journals including Materials Science & Engineering B and Journal of Hazardous Materials. His research interests encompass 2D materials, Catalysis, Multifunctional Nanomaterials for renewable energy, and low-dimensional carbon materials.",
+          "education": [
+              "B.Sc in Chemistry",
+              "M.Sc in Chemistry",
+              "Ph.D. in Chemistry"
+          ],
+          "professional_experience": [
+              {
+                  "position": "Lecturer, Department of Chemistry",
+                  "institution": "Kothari Technological Institute, Chennai, INDIA",
+                  "duration": "September 2000 - November 2001"
+              },
+              {
+                  "position": "Junior Research Fellow under DRDO Project Scheme",
+                  "institution": "Anna University, Chennai, INDIA",
+                  "duration": "December 2001 - November 2003"
+              },
+              {
+                  "position": "Lecturer, Department of Chemistry",
+                  "institution": "Thiyagarajar College of Engineering, Madurai, INDIA",
+                  "duration": "October 2005 - September 2008"
+              },
+              {
+                  "position": "Assistant Professor, Department of Nanotechnology",
+                  "institution": "Anna University of Technology Coimbatore, Tamilnadu, INDIA",
+                  "duration": "September 2008 - Till now"
+              },
+              {
+                  "position": "Post Doctoral Fellow, Department of Chemical Engineering",
+                  "institution": "Massachusetts Institute of Technology (MIT), Cambridge, USA",
+                  "duration": "June 2009 – June 2010"
+              }
+          ],
+          "publications": "Published over 40 papers.",
+          "conferences": "Attended various international and national conferences.",
+          "drive_link": "https://drive.google.com/open?id=1Qqw5lD0RjvGhI_y6axNWEWegT36cifB0",
+          "google_scholar": "https://scholar.google.com/citations?user=hQG-NTcAAAAJ&hl=en",
+          "image": "rajasekar.webp"
+        },
+        {
+          "name": "Dr. P. Renuka Devi",
+          "position": "Assistant Professor",
+          "department": "Department of Science and Humanities",
+          "email": "renukadevi@aurcc.ac.in",
+          "profile": "I, Dr. P. Renuka Devi, have 25 years of experience in the academic sector in the field of bioscience, with around 45 research papers. I have completed 9 Ph.D. and 1 PDF research scholars and more than 40 M.Tech. students (Biotechnology and Nanotechnology) in the field of Plant Biotechnology, Food Biotechnology and Nanobiotechnology. I am an expert in biocompounds isolation, nanomaterial synthesis and characterization, and their utilization in various biomedical applications.",
+          "education": [
+              "Ph.D. in Bioscience",
+              "PDF in Bioscience"
+          ],
+          "professional_experience": [
+              {
+                  "position": "Lecturer",
+                  "institution": "Kovai Kalaimagal College of Arts and Science, Coimbatore",
+                  "duration": "Jan 1999 - Aug 2008"
+              },
+              {
+                  "position": "Lecturer",
+                  "institution": "Anna University, Coimbatore",
+                  "duration": "Aug 2008 - Dec 2009"
+              },
+              {
+                  "position": "Director i/c Biotechnology Center",
+                  "institution": "Anna University of Technology, Coimbatore",
+                  "duration": "Jan 2010 - Aug 2012"
+              },
+              {
+                  "position": "HoD i/c, Department of Biotechnology",
+                  "institution": "Anna University, Regional Campus, Coimbatore",
+                  "duration": "Aug 2011 - Nov 2022"
+              },
+              {
+                  "position": "Assistant Professor",
+                  "institution": "Department of Science and Humanities, Anna University, Regional Campus, Coimbatore",
+                  "duration": "Nov 2022 - till date"
+              }
+          ],
+          "publications": "https://scholar.google.co.in/citations?user=B5BUeTsAAAAJ&hl=en",
+          "drive_link": "https://drive.google.com/open?id=1jzWlxcSO4lrJ_XGU0HhZ6Uyf4Gi6k1uH",
+          "image": "Renuka.webp"
+        },
+        {
+          "name": "Dr. A. Leelamani",
+          "position": "Assistant Professor",
+          "department": "Department of Mathematics",
+          "email": "leelamani@aurcc.ac.in",
+          "profile": "Dr. A. Leelamani is currently working as an Assistant Professor in the Department of Mathematics. She received her Ph.D. degree in 2006 from Bharathiar University, Coimbatore. Her areas of interest include Control Theory and Differential Equations. She has published research papers in national and international journals. She was awarded the University second rank holder in her M.Sc degree examination in 2001 by Bharathiar University, Coimbatore. To her credit, 13 scholars have completed their Ph.D. degrees under her guidance. She is a life member of Industrial & Applied Mathematics.",
+          "education": [
+              "Ph.D. in Mathematics"
+          ],
+          "professional_experience": [
+              {
+                  "position": "Guest Lecturer",
+                  "institution": "Bharathiar University",
+                  "duration": "2004 - 2006"
+              },
+              {
+                  "position": "Lecturer",
+                  "institution": "Park College of Engineering and Technology",
+                  "duration": "2006 - 2008"
+              },
+              {
+                  "position": "Assistant Professor",
+                  "institution": "Anna University Regional Campus, Coimbatore",
+                  "duration": "2008 - till date"
+              }
+          ],
+          "publications": "Details not provided.",
+          "conferences": "Details not provided.",
+          "drive_link": "https://drive.google.com/open?id=1pEev3iwFB-aQZ8dTEZtqo-7GKdfS0BZm",
+          "google_scholar": "Details not provided.",
+          "image": "leela.webp"
+      },
+      {
+          "name": "Dr. J. Lakshmi",
+          "position": "Assistant Professor",
+          "department": "Department of Science and Humanities",
+          "email": "lakshmi.ucet@gmail.com",
+          "profile": "Dr. Lakshmi J is currently working as an Assistant Professor in the Department of Science and Humanities. Her areas of expertise include ELT, Caribbean Literature, Soft Skills, and Life Skills. She has published 36 research papers in various international and national journals and has delivered and conducted over 100 invited talks and workshops for faculty members and students across different universities and colleges.",
+          "education": [
+              "Details not provided."
+          ],
+          "professional_experience": [
+              {
+                  "position": "Assistant Professor",
+                  "institution": "Anna University Regional Campus Coimbatore",
+                  "duration": "Feb 2024 - till date"
+              },
+              {
+                  "position": "Assistant Professor",
+                  "institution": "University College of Engineering Tindivanam",
+                  "duration": "Dec 2009 - Feb 2024"
+              },
+              {
+                  "position": "Senior Lecturer",
+                  "institution": "Surya College of Engineering & Technology",
+                  "duration": "Aug 2008 - Dec 2009"
+              },
+              {
+                  "position": "Lecturer",
+                  "institution": "Sri Manakula Vinayagar Engineering College, Pondicherry",
+                  "duration": "Aug 2005 - Jul 2008"
+              },
+              {
+                  "position": "Lecturer",
+                  "institution": "Nadar Saraswathi College",
+                  "duration": "Jun 2001 - Feb 2004"
+              }
+          ],
+          "publications": "Details not provided.",
+          "conferences": "Details not provided.",
+          "drive_link": "https://drive.google.com/open?id=1YdyTn7venJgd6_jw1EI-zMa7GfkorWCk",
+          "google_scholar": "Details not provided.",
+          "image": "lakshmi.webp"
+        },
+      {
+          "name": "Dr. P. Revathi",
+          "position": "Teaching Fellow",
+          "department": "Department of Science and Humanities (Mathematics)",
+          "email": "revmaths@gmail.com",
+          "profile": "I am Dr. P. Revathi, working as a Teaching Fellow at Anna University Regional Campus, Coimbatore since September 2008. I am from Coimbatore. I completed my school studies at Government Higher Secondary School, Karamadai. I obtained my UG, PG, and M.Phil. in Mathematics from Kongunadu Arts and Science College, Coimbatore from 2002-2008. I completed my Doctorate in 'Stochastic Differential Equations' in 2014 at Anna University under the guidance of Dr. R. Sakthivel and Dr. S. Marshal Anthoni. I have 12 years of teaching experience and am known for my hard work, adaptability to new environments, and motivating students.",
+          "professional_experience": [
+              {
+                  "position": "Teaching Fellow",
+                  "institution": "Anna University Regional Campus, Coimbatore",
+                  "duration": "Sep 2008 - Dec 2015"
+              },
+              {
+                  "position": "Teaching Fellow",
+                  "institution": "Anna University Regional Campus, Coimbatore",
+                  "duration": "Jan 2018 - till date"
+              }
+          ],
+          "publications": "Published 7 papers in journals.",
+          "conferences": "Participated in 9 national conferences; presented papers at 4 international and national conferences.",
+          "drive_link": "https://drive.google.com/open?id=1-GwwhNPmGbO-Hv_YJJX0kinui1ZX130P",
+          "google_scholar": null,
+          "image": "revathi.webp"
+      },
+      {
+          "name": "Dr. S. J. Sardhar Basha",
+          "position": "Assistant Professor",
+          "department": "Department of Science and Humanities (Chemistry)",
+          "email": "jsardhar@aurcc.ac.in",
+          "profile": "I have completed research work in the field of synthesis and characterization of novel mesoporous materials supported Ni-Mo catalysts for hydrotreating process. Also experienced in the preparation of various porous materials like mesoporous aluminosilicates (MAS), SBA-15 and KIT-6 and its composites with different metal hydrotreating catalysts and various physico-chemical characterization techniques. Currently doing research in the area of super capacitors and waste water treatment using novel nano materials and composites.",
+          "professional_experience": [
+              {
+                  "position": "Junior Research Fellow and Senior Research Fellow",
+                  "institution": "DRDO sponsored project, Anna University Chennai",
+                  "duration": "2003 - 2006"
+              },
+              {
+                  "position": "Post Doctoral Researcher",
+                  "institution": "National Chung Cheng University, Taiwan",
+                  "duration": "2006 - 2008"
+              },
+              {
+                  "position": "Senior Lecturer",
+                  "institution": "Sona College of Technology, Salem",
+                  "duration": "2008 - 2009"
+              },
+              {
+                  "position": "Assistant Professor",
+                  "institution": "University College of Engineering Ramanathapuram",
+                  "duration": "2009 - 2015"
+              },
+              {
+                  "position": "Assistant Professor",
+                  "institution": "Anna University Regional Campus Coimbatore",
+                  "duration": "2015 - Till date"
+              }
+          ],
+          "publications": "Published 16 papers in journals. Patent granted on 17/08/2023.",
+          "conferences": null,
+          "drive_link": "https://drive.google.com/open?id=1XfwNbkwva-mLJEIVRK2xarmRkJBa91iV",
+          "google_scholar": null,
+          "image": "baasha.webp"
+      },
+      {
+          "name": "Dr. J. Vernold Vivin",
+          "position": "Assistant Professor",
+          "department": "Department of Science & Humanities (Mathematics)",
+          "email": "jvvivin@gmail.com",
+          "profile": "Dr Vernold Vivin.J, is presently working as Assistant Professor in the Department of Science and Humanities (Mathematics), Anna University Regional Campus-Coimbatore, Coimbatore. He has more than 16 years of teaching experience. He completed his Doctoral Degree in Mathematics, in the research area of Graph Theory, particularly in Graph Colorings under Bharathiar University, Coimbatore. Under his guidance, 05 candidates have completed their Ph.D. degree under Anna University Chennai. He has published more than 75 research papers in International and National Journals. He has also co-authored one book in Engineering Mathematics. He has delivered more than 10 invited Lectures in LaTeX and graph theory in reputed Institutions. He has presented 24 research papers in International and National Conferences both in India and Taiwan. He is a Reviewer for American Mathematical Society and has served as Referee for reputed International Journals.",
+          "professional_experience": [
+              {
+                  "position": "Assistant Professor",
+                  "institution": "Department of Science & Humanities (Mathematics), Anna University Regional Campus-Coimbatore",
+                  "duration": "From 03/08/2023 to till date"
+              },
+              {
+                  "position": "Assistant Professor",
+                  "institution": "Department of Mathematics, University College of Engineering Nagercoil",
+                  "duration": "From 20/08/2010 to 02/08/2023"
+              },
+              {
+                  "position": "Assistant Professor",
+                  "institution": "Department of Mathematics, Sri Shakthi Institute of Engineering and Technology, Coimbatore",
+                  "duration": "From 17/07/2007 to 19/08/2010"
+              }
+          ],
+          "publications": "Published more than 75 research papers in International and National Journals.",
+          "conferences": "Presented 24 research papers in International and National Conferences both in India and Taiwan.",
+          "drive_link": "https://drive.google.com/open?id=1wtLrakLXToiFlf5k36V_ys4XOh31rlj_",
+          "google_scholar": "https://scholar.google.co.in/citations?user=-XgxYQoAAAAJ&hl=en",
+          "image": "vivin.webp"
+      },
+      {
+          "name": "Dr. L. Bapitha",
+          "position": "Assistant Professor",
+          "department": "Department of Science and Humanities",
+          "email": "bapithaenglish@gmail.com",
+          "profile": "Dr. Bapitha L is an Assistant Professor of English at the Department of Science and Humanities, Anna University Regional Campus Coimbatore. She obtained her Master’s degree in English Literature from Bharathiar University, Coimbatore, and her M.Phil. and Ph.D. in English from the same university. She has 15 years of experience in teaching English and has published articles and papers in both national and international journals. Her research interests include English Language Teaching, Literary Theory, and Postcolonial Studies.",
+          "professional_experience": [
+              {
+                  "position": "Assistant Professor",
+                  "institution": "Department of Science and Humanities, Anna University Regional Campus Coimbatore",
+                  "duration": "From 2010 - Till date"
+              }
+          ],
+          "publications": "Published 20 articles and papers in national and international journals.",
+          "conferences": "Participated in 15 national and international conferences.",
+          "drive_link": "https://drive.google.com/open?id=1r6tXbAPtD4ZT8D1Ryn9P3xB4j8fvVQoV",
+          "google_scholar": null,
+          "image": "bapitha.webp"
+        },
+        {
+          "name": "Ms. S. Kalaivani",
+          "position": "Teaching Fellow",
+          "department": "Department of Science and Humanities (Tamil)",
+          "email": "mabedkalaivani@gmail.com",
+          "profile": "My native is Namakkal. My educational qualifications are M.A., M.Phil., B.Ed., and NET. I am currently pursuing Ph.D. research on the topic 'Namakkal Mavatta Ilakiya Amaippugalin Selnerigal' at Vivekananda College of Arts and Science (Autonomous). I completed my schooling at Government Higher Secondary School, Swamy Sivananda Salai, Rasipuram. I earned my UG degree from Vivekananda College of Arts and Science (Autonomous), and my Master's and M.Phil degrees from Bharatiyar University. I passed the UGC NET Exam in June 2012. My strengths include typing in Tamil, efficiency in basic computer skills, adaptability to new environments, self-confidence, eagerness to learn new things, and motivating students.",
+          "professional_experience": [
+              {
+                  "position": "Teacher",
+                  "institution": "Sri Sakthi Sai Nursery and Primary School, Salem",
+                  "duration": "2014 - 2015"
+              },
+              {
+                  "position": "Assistant Professor",
+                  "institution": "Jairam Arts and Science College, Salem",
+                  "duration": "2015 - 2021"
+              },
+              {
+                  "position": "Assistant Professor and Head of the Department",
+                  "institution": "Thangavel Women's Arts and Science College, Salem",
+                  "duration": "2021 - 2023"
+              },
+              {
+                  "position": "Teaching Fellow",
+                  "institution": "Anna University Regional Campus Coimbatore",
+                  "duration": "2023 - Till date"
+              }
+          ],
+          "publications": "One of the Authors of 'Heritage of Tamils' (Textbook for first-year Engineering students).",
+          "conferences": "Keynote speaker in International Conference, Attended National and International Conferences.",
+          "drive_link": "https://drive.google.com/open?id=1BbHCN8pe6UkwD_wS2BRKIfRL4F4NvTBD",
+          "google_scholar": null,
+          "image": "kalaivani.webp"
+      },
+      {
+          "name": "Ms. B. Kiruba",
+          "position": "Teaching Fellow",
+          "department": "Department of Science and Humanities (Chemistry)",
+          "email": "kirunila4@gmail.com",
+          "profile": "I am B. Kiruba, working as a Teaching Fellow at Anna University Regional Campus Coimbatore since September 2018. I am from Mayiladuthurai and completed my schooling at St. Paul's Girls Higher Secondary School, Mayiladuthurai. I earned my UG degree in Chemistry from AVC College, Mannampandal during the academic year 1999-2002, and my M.Sc. and M.Phil. in Chemistry from Bharathidasan University from 2002-2006. I qualified the SET exam in 2016. My thesis is entitled 'Synthesis, Characterization, and Antimicrobial, Anticancer, and Antioxidant Properties of Certain Random Copolyesters Containing Arylidene Moiety in the Main Chain.' With 15 years of teaching experience, I am interested in the field of Polymers, eager to learn new things, flexible to the environment, and motivated to inspire students.",
+          "professional_experience": [
+              {
+                  "position": "Guest Lecturer",
+                  "institution": "Bharathidasan Institute of Technology",
+                  "duration": "2006 - 2007"
+              },
+              {
+                  "position": "Assistant Professor",
+                  "institution": "Kings Engineering College",
+                  "duration": "2007 - 2018"
+              },
+              {
+                  "position": "Teaching Fellow",
+                  "institution": "Anna University Regional Campus Coimbatore",
+                  "duration": "2018 - Till date"
+              }
+          ],
+          "publications": "Published 2 papers.",
+          "conferences": "Attended 5 international and national conferences.",
+          "drive_link": "https://drive.google.com/open?id=1xR0YYxW7ldeuC4Cz2YQ68PFQWObr6ZrC",
+          "google_scholar": null,
+          "image": "kiruba.webp"
+      },
+      {
+          "name": "Ms. S. Meena",
+          "position": "Executive Assistant",
+          "department": "Department of Science and Humanities",
+          "email": "meena171976@gmail.com",
+          "profile": "I joined this prestigious institution in 2008 with qualifications of M.Sc. and M.Phil. in Mathematics. From 2008 to 2018, I worked in the Office of Affiliation. Since 2018, I have been working in the Department of Science and Humanities. I am very proud and happy to assist students with my administrative experience and academic excellence.",
+          "professional_experience": [
+              {
+                  "position": "Executive Assistant",
+                  "institution": "Department of Science and Humanities",
+                  "duration": "Since 2018"
+              },
+              {
+                  "position": "Office of Affiliation",
+                  "institution": "Institution",
+                  "duration": "2008 - 2018"
+              }
+          ],
+          "publications": "Nil",
+          "conferences": "Nil",
+          "drive_link": "https://drive.google.com/open?id=1gMCBm1liLuV6rALUZuAusvGAs8t5J48f",
+          "google_scholar": null,
+          "image": "meena.webp"
+      }
+        
+      ]
+    }
+  }
+  

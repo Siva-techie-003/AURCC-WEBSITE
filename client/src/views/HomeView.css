@@ -1,0 +1,172 @@
+@keyframes slideUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes subtleZoom {
+    from {
+        transform: scale(1.1);
+    }
+
+    to {
+        transform: scale(1.2);
+    }
+}
+
+@keyframes popIn {
+    0% {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.animate-subtle-zoom {
+    animation: subtleZoom 10s ease-in-out infinite alternate;
+}
+
+/* Modern Component Styles */
+@keyframes fadeScale {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Utility Classes */
+.animate-fade-scale {
+    animation: fadeScale 0.6s ease-out forwards;
+}
+
+/* Custom Scrollbar */
+.scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+    display: none;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(calc(-100% + 300px));
+    }
+}
+
+.news-scroll,
+.events-scroll {
+    animation: scroll 20s linear infinite;
+    padding-bottom: 300px;
+}
+
+.news-scroll:hover,
+.events-scroll:hover {
+    animation-play-state: paused;
+}
+
+/* Animated List Styling */
+.animated-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.animated-list li {
+    position: relative;
+    padding-left: 20px;
+    transition: all 0.3s ease;
+}
+
+.animated-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 3px;
+    height: 0;
+    background-color: #3B82F6;
+    transition: height 0.3s ease;
+}
+
+.animated-list li:hover::before {
+    height: 80%;
+}
+
+/* Details animation for FAQs */
+details summary::-webkit-details-marker {
+    display: none;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        height: 0;
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+
+    to {
+        opacity: 1;
+        height: var(--auto-height, auto);
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+    }
+}
+
+details[open]>*:not(summary) {
+    animation: slideDown 0.3s ease-in-out;
+}
+
+details>summary {
+    list-style: none;
+    transition: all 0.3s;
+}
+
+.mobile-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+
+.mobile-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+    .mobile-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}

@@ -1,0 +1,130 @@
+{
+  "GENERAL ADMINISTRATION-I": {
+    "ESTABLISHMENT_SECTION": {
+      "DEPUTY_MANAGER": [
+        {
+          "name": "Mr. A. Sundararajan",
+          "position": "Deputy Manager(Finance)",
+          "image": "sundararajan.webp"
+        }
+      ],
+      "STAFFS": [
+        {
+          "name": "Mr. C. Ramasamy",
+          "position": "Executive Assistant(Finance)",
+          "image": "C.Ramasamy.webp"
+        },
+        {
+          "name": "Ms. R. Bharathi",
+          "position": "Executive Assistant(Admin)",
+          "image": "bharathiragupathi.webp"
+        },
+        {
+          "name": "Mr. M. S. Murugesan",
+          "position": "Executive Assistant(Admin)",
+          "image": "murugesanmurugesan.webp"
+        },
+       
+        {
+          "name": "Mr. A. Marimuthu",
+          "position": "Professional Assistant-II",
+          "image": "muthumari.webp"
+        },
+        {
+          "name": "Ms. Ganga",
+          "position": "Professional Assistant",
+          "image": ""
+        }
+      ]
+    }
+  },
+  "GENERAL ADMINISTRATION-II": {
+    "Purchase and Finance Section": {
+      "DEPUTY_MANAGER": [
+        {
+          "name": "Mr. G. Punniyamoorthy",
+          "position": "Deputy Manager(Finance)",
+          "image": "gurupunniyamoorthy.webp"
+        }
+      ],
+      "STAFFS": [
+        {
+          "name": "Mr. S. Murugavel",
+          "position": "Executive Assistant(Admin)",
+          "image": "murugavelsoundararajan.webp"
+        },
+        {
+          "name": "Ms. S. Bhuvaneswari",
+          "position": "Executive Assistant(Admin)",
+          "image": "S.Bhuvana.webp"
+        },
+        {
+          "name": "Ms. R. Deepa",
+          "position": "Executive Assistant",
+          "image": ""
+        },
+        {
+          "name": "Ms. Premalatha",
+          "position": "Executive Assistant",
+          "image": ""
+        },
+       
+        {
+          "name": "Ms. K. Yokanayaki",
+          "position": "",
+          "image": "yoganayaki.webp"
+        },
+        {
+          "name": "Mr. G. Chinnaraj",
+          "position": "",
+          "image": "chinna.webp"
+        }
+      ]
+    }
+  },
+  "GENERAL ADMINISTRATION-III": {
+    "STUDENT_SECTION": {
+      "DEPUTY_MANAGER": [
+        {
+          "name": "Dr. M. Rathinasamy",
+          "position": "Deputy Manager(Finance)",
+          "email": "win.rrv@gmail.com",
+          "image": "rathinasamy.webp"
+        }
+      ],
+      "STAFFS": [
+        {
+          "name": "Ms. N. Sathyabama",
+          "position": "Executive Assistant(Admin)",
+          "image": "SATHYABAMA.webp"
+        },
+        {
+          "name": "Ms. S. Usha",
+          "position": "Executive Assistant(Finance)",
+          "image": "ushaaAbi.webp"
+        },
+        {
+          "name": "Mr. V. Sureshkumar",
+          "position": "Executive Assistant",
+          "image": "V.Sureshkumar.webp"
+        },
+        {
+          "name": "Dr. C. Neelaveni",
+          "position": "Assistant",
+          "image": "neelavenichinnaswamy.webp"
+        },
+       
+        {
+          "name": "Mr. P. Dhanasekaran",
+          "position": "Professional Assistant-II",
+          "image": "dhanasekarpalaniswamy.webp"
+        },
+        {
+          "name": "Ms. V. Shanthi",
+          "position": "Clerical Assistant",
+          "image": "saidharssini.webp"
+        }
+      ]
+    }
+  }
+}

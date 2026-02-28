@@ -1,0 +1,12 @@
+{
+  "name": "Department of Physical Education",
+  "image":"sports.webp",
+  "description": "About the Department of Physical Education\n\n\"Healthy Mind and Healthy body\" the Department of Physical Education part of our University Sports board. Right from inspection it has been outstanding not only in academic side it has been in the sports and games activities. We have take part Zonal, Inter zonal tournaments and also to organize zone ,inter zonal level completion both men and women. Department of Physical Education encouraging and promoting the sports spirit of the students community. The department equipped with necessary facilities and equipment's.\n\nScope of the department\nTo bring the discipline and character in the the mind of students. To improve the students physical fitness through to participation of sports and games. To create employment opportunity to the sports men. To encourage the sportsmanship's and healthy competitions.",
+  "facilities": {
+    "IndoorGames": ["Table Tennis", "Carrom", "Chess"],
+    "OutdoorGames": ["Badminton", "Kabaddi", "Volley Ball", "Football", "Cricket", "Hockey", "Basketball", "Kho-Kho", "Open Gym"]
+  },
+  "contact_us": {
+    "Address": "Anna University Regional Campus,\nMaruthamalai Main Road,\n Navavoor,\n Coimbatore(Dt.),\n Pin - 641046."
+  }
+}

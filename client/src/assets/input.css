@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Global Paragraph Text Justification */
+@layer base {
+  p {
+    text-align: justify;
+    text-justify: inter-word;
+    line-height: 1.6;
+    word-spacing: 0.1em;
+    hyphens: auto;
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    -ms-hyphens: auto;
+  }
+  
+  /* Ensure readability on mobile devices */
+  @media (max-width: 768px) {
+    p {
+      text-align: left;
+      word-spacing: normal;
+      hyphens: none;
+      -webkit-hyphens: none;
+      -moz-hyphens: none;
+      -ms-hyphens: none;
+    }
+  }
+  
+  /* Maintain justification on larger screens */
+  @media (min-width: 769px) {
+    p {
+      text-align: justify;
+      text-justify: inter-word;
+    }
+  }
+  
+  /* Special handling for justified text in cards and containers */
+  .mobile-card p,
+  .admin-card p,
+  .faculty-card p {
+    text-align: justify;
+    text-justify: inter-word;
+  }
+  
+  /* Override for specific text alignment classes */
+  .text-left p {
+    text-align: left !important;
+  }
+  
+  .text-center p {
+    text-align: center !important;
+  }
+  
+  .text-right p {
+    text-align: right !important;
+  }
+}

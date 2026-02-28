@@ -1,0 +1,32 @@
+{
+  "name": "Examination Cell",
+  "description": "Welcome to the Office of Examinations Cell at Anna University. Anna University is a technical university in Tamil Nadu, India, named after Thiru C.N.Annadurai, a multi-faceted personality and the former Chief Minister of Tamil Nadu. It was formed on 4th September 1978 as a unitary University. The new University encompasses College of Engineering, Guindy (one of the oldest technical institutes in the world with a history spanning 220 years), Alagappa College of Technology, Madras Institute of Technology, and the School of Architecture and Planning. It became an affiliating University in 2001, monitoring about 250 Engineering colleges in Tamil Nadu. Again, in 2010, it regained the unitary status. In 2011, as per Act No.20 (Tamil Nadu University Laws Amendment and Repeal Act) of the Government of Tamil Nadu, it became again an affiliating type University by merging all Anna Universities of Technology with Anna University, Chennai on 1st August 2012. The Examinations Cell of Regional Campus, Anna University, Coimbatore, is responsible for maintaining the standard of all the University Examinations of Anna University, Chennai. It is the duty of the Examinations Cell to arrange for the preparation, conduct of University Examinations, arranging for the distribution of answer scripts, and all other incidental matters connected with the conduct of examinations for all the Departments of Anna University, Regional Campus, Coimbatore.",
+  "services": [
+    "1. Updation of Staff and Students Profile",
+    "2. Collection of Exam Fees",
+    "3. Announcing the B.E/M.E/M.Tech Courses results of Anna University, Chennai in time",
+    "4. Collection of Revaluation Fees",
+    "5. Issuing of certificates like Statement of Grades/Marks, Consolidated Statement of Grades/Marks, and Provisional Degree Certificates"
+  ],
+  "office_bearers": [
+  {
+    "name": "Dr. M. Saravanakumar",
+    "position": "Dean of AURCC",
+    "email_id": "saravanakumar@aurcc.edu.in",
+    "image": "Dean.webp"
+  },
+  {
+    "name": "Dr. S. J. Sardhar Basha",
+    "position": "Exam Cell Coordinator",
+    "email_id": "sardharbasha@aurcc.edu.in",
+    "image": "baasha.webp"
+  },
+  {
+    "name": "Mr. S. Natarajan",
+    "position": "Executive Assistant (Finance)",
+    "email_id": "snatarajan@aurcc.edu.in",
+    "image": "snatarajan.jpg"
+  }
+]
+
+}

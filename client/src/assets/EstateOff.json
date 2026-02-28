@@ -1,0 +1,32 @@
+{
+  "name": "Estate Office",
+  "description": "In the year June 2022, the Estate Office was established in the Regional Campus. From then on all the construction activities, maintenance of buildings, water supply, sewage treatment and disposal, electrical supply and maintenance and gardening are under the purview of the Estate office.",
+  "services": [
+    "1. Construction and Maintenance of Building",
+    "2. Maintaining Water Supply, Sewage Treatment and Disposal",
+    "3. Maintenance of Electrical System",
+    "4. Construction and Maintenance of Roads",
+    "5. Lawns, Gardens and other places",
+    "6. Monitoring and Rent Collection of Central Facilities",
+    "7. Housekeeping",
+    "8. Security"
+  ],
+  "office_bearers": [
+    {
+      "name": "Dr. R. Vijayabhasker",
+      "position": "Estate Office Incharge",
+      "image": "VB.webp"
+    },
+    {
+      "name": "Mr. M. Muralidharan",
+      "position": "EA (Admin)",
+      "image": "m_muralidharan.jpg"
+    },
+    {
+      "name": "Ms. Girija",
+      "position": "EA (Admin)",
+      "image": "girija.jpg"
+    }
+  ],
+  "contact_us": "estateoffice@aurcc.ac.in"
+}

@@ -1,0 +1,36 @@
+{
+    "departments": [
+      {
+        "name": "Dr. M. Saravanakumar",
+        "department": "MBA",
+        "photo": "Dean.webp"
+      },
+      {
+        "name": "Dr. S. V. Manisekaran",
+        "department": "CSE",
+        "photo": "mani.webp"
+      },
+      {
+        "name": "Dr. S. Saravanakumar",
+        "department": "EEE",
+        "photo": "Saravanakumar-S.webp"
+      },
+      {
+        "name": "Dr. N. Kumaresan",
+        "department": "ECE",
+        "photo": "Kumaresan-N.webp"
+      },
+      {
+        "name": "Dr. K. Soorya Prakash",
+        "department": "MECH",
+        "photo": "sooryaprakash.webp"
+      },
+      
+      {
+        "name": "Dr. S. Mahalakshmi",
+        "department": "Science and Humanities",
+        "photo": "Dr.S.N.M - mahalakshmi subramanian.webp"
+      }
+    ]
+  }
+  

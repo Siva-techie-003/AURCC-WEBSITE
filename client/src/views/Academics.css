@@ -1,0 +1,24 @@
+/* Academics.css - Custom styles for the Academics view */
+
+.flex-grow {
+    display: flex;
+    flex-direction: column;
+    min-height: calc(100vh - 400px);
+    /* Account for header/footer approximately */
+}
+
+/* Ensure smooth transitions for sidebar buttons */
+.transition-all {
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Adjust scroll margin for sections if needed */
+.scroll-mt-20 {
+    scroll-margin-top: 5rem;
+}
+
+@media (max-width: 768px) {
+    .flex-grow {
+        min-height: auto;
+    }
+}

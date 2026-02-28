@@ -1,0 +1,102 @@
+{
+  "name": "DGATE cell",
+  "description": {
+    "DGATE": "The Digital Governance and Technology Enhancement (DGATE) Cell was established at our campus on 15th September 2022 with the vision of streamlining and modernizing all communication processes within the institution. The cell is committed to driving digital transformation by enhancing both internal and external communications, ensuring efficiency, transparency, and accessibility across campus operations. Through innovative technology adoption and strategic digital initiatives, DGATE aims to foster a connected, responsive, and future-ready campus environment.",
+    "activities": {
+      "curricular_activities": [
+        {
+          "name": "Motivational Talk on 'CRACK the CODE'",
+          "date": "5.04.2023",
+          "audience": "Second and Third Year",
+          "resource_person": "Mr.N.Sudharssan, Student of II BE AI & DS, Sri Easwar College of Engineering, Coimbatore"
+        }
+      ],
+      "social_responsibilities": [
+        {
+          "event": "Inauguration of UYIR Club",
+          "date": "11.05.2023",
+          "organizers": "DGATE & NSS, AURCCBE in association with UYIR Club",
+          "topic": "Road safety Awareness Initiative for Safe Environment (RAISE)",
+          "resource_persons": [
+            "Mr.K.SathiyaKumar (RTO-Central)",
+            "Mr.R.Thirumoorthi (Project Lead, UYIR)"
+          ]
+        }
+      ],
+      "internal_activities": [
+        "Revamping Campus Website",
+        "Digital Flyer Designing",
+        "Digital Brochure Designing",
+        "Digital Invitation Designing",
+        "Digital Signature for Faculty",
+        "Digital Leave Letter for Staff",
+        "Certificate Designing (For Appreciating Faculty and Students)",
+        "Designing Digital visiting cards for Faculty",
+        "Creating Digital Boards",
+        "Interdisciplinary projects"
+      ],
+      "external_activities": [
+        "Publishing Campus events (Curricular / Co-Curricular/Extra Curricular) on Social Media (Facebook, Twitter, Instagram, and WhatsApp)",
+        "Digital Flyer Designing",
+        "Digital Brochure Designing",
+        "Digital Invitation Designing",
+        "Consultancy projects",
+        "Technology transfer to Industries"
+      ]
+    },
+    "projects_completed": [
+      {
+        "name": "DLAPP (Digital Permission App)",
+        "description": "An app for staff members to avail Permission. Features include Tracking, approving / denying staff Permission requests. Fully paper-free and available 24/7."
+      },
+      {
+        "name": "KIOSK (Digital Notice Board Software Solution)",
+        "description": "Software solution for displaying information circular and communication to staff and students. Also used for displaying A Kural - a - Day, vital internal communications, visitor's communications, and emergency alerts."
+      },
+      {
+        "name": "Cloud Based IoT Device for Virtually Opening the Gym",
+        "description": "Designed an IoT device for virtually opening the Gym. Proposed by DGATE Cell."
+      }
+    ],
+    "ongoing_projects": [
+      "AU-SMART (Students' Monitoring and Reporting Tool)",
+      "Hostel Leave App",
+      "Virtual Campus Experience",
+      "Hostel"
+    ],
+    "participation_in_hackathon": [
+      {
+        "project": "Road Safety Project",
+        "achievement": "Team won the First Prize in the Hackathon organized by KPR Institute of Engineering and Technology in association with UYIR Club, Coimbatore."
+      },
+      {
+        "project": "STARS (Smart Traffic management and Regulatory System)",
+        "achievement": "Team won the First Prize organized by Kumaraguru College of Technology in association with UYIR Club, Coimbatore."
+      }
+    ]
+  },
+    "staff_members": [
+      {
+        "name": "Dr. J. Preethi",
+        "designation": "AP(Sr.Grade)/CSE",
+        "phone_no": "",
+        "email_id": "dgate@aurcc.ac.in",
+        "image": "preethi.webp"
+      },
+      {
+        "name": "Dr. M. Newlin Rajkumar",
+        "designation": "AP/EEE",
+        "phone_no": "",
+        "email_id": "dgate@aurcc.ac.in",
+        "image": "newlin.webp"
+      },
+      {
+        "name": "Ms. T. Mohanapriya",
+        "designation": "Professional Assistant-II",
+        "phone_no": "",
+        "email_id": "dgate@aurcc.ac.in",
+        "image": ""
+      }
+    ]
+  }
+  

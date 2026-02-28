@@ -1,0 +1,28 @@
+{
+"administrator": [
+    {
+      "name": "Mr. C. Samayamoorthy, I.A.S.",
+      "position": "Convenor",
+      "university": "Anna University, Chennai",
+      "image": "Samayamoorthy.webp"
+    },
+    {
+      "name": "Ms. J. Innocent Divya, I.A.S.",
+      "position": "Member",
+      "university": "Anna University, Chennai",
+      "image": "Divya.webp"
+    },
+    {
+      "name": "Dr. J. Prakash",
+      "position": "Registrar",
+      "university": "Anna University, Chennai",
+      "image": "Prakash.webp"
+    },
+    {
+      "name": "Dr. P. Hariharan",
+      "position": "Director(CCC)",
+      "university": "Anna University, Chennai",
+      "image": "Hariharan.webp"
+    }
+  ]
+}

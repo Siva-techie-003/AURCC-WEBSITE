@@ -1,0 +1,62 @@
+{
+  "description": [
+    "The Office of the Student Affairs is carrying out the following activities pertaining to the students of Anna University Regional Office, Coimbatore.",
+    "1. Issue of Bonafide Certificate",
+    "2. Issue of Student Identity Card",
+    "3. Issue of Course Completion Certificate",
+    "4. Issue of Transfer Certificate",
+    "5. Re-admission",
+    "6. Student Grievances Redressal",
+    "7. Scholarships"
+  ],
+  "Re-Admission": "The students who come under the category of lack of attendance and are unable to appear for the end semester examinations can rejoin the course following the procedure for re-admission available in the University website (www.annauniv.edu/dsa). The students who intend to temporarily discontinue the programme in the middle of the semester for genuine reasons can rejoin the course following the procedure of break of study available in the University website (www.annauniv.edu/dsa).",
+  "Scholarship": {
+    "description": "The students who are admitted at Anna University Regional Office, Coimbatore can avail relevant scholarships based on their eligible criteria available in the following websites.",
+    "list of scholarships": [
+      "BC/MBC Scholarship(UG & PG).",
+      "SC/ST Scholarship(UG & PG)",
+      "SC/ST Special Higher Education Scholarship(UG & PG).",
+      "Merit Cum Means Scholarship (UG & PG) National Scholarship Portal.",
+      "Central Sector Scholarship Scheme (UG & PG) National Scholarship Portal",
+      "Financial Assistance for Education to the wards of Beedi, Cini, IOM, LSDM for Post Matric (UG & PG) National Scholarship Portal.",
+      "Pragati and Saksham Scheme Scholarship (Implemented by AICTE for Girls and Differently Abled. UG Students).",
+      "AU CUIC Renault Nissan Technology & Business Centre India Private Limited (RNTBCI) CSR Initiative (Phase-4) Scholarship BE 2nd year (2022 Passing out students)."
+    ]
+  },
+  "fees details": "For more details on fees, visit: https://www.aukdc.edu.in/",
+  "Office bearers": {
+    "Administration staff": [
+      {
+        "S.No": 1,
+        "Name of the Staff": "Dr. M. Rathinasamy",
+        "Name of the Post": "Deputy Manager (Finance)",
+        "Image": "rathinasamy.webp"
+      },
+      {
+        "S.No": 2,
+        "Name of the Staff": "Ms. N. Sathyabama",
+        "Name of the Post": "Executive Asst. (Admin)",
+        "Image": "SATHYABAMA.webp"
+      },
+      {
+        "S.No": 3,
+        "Name of the Staff": "Mr. V. Sureshkumar",
+        "Name of the Post": "Executive Asst. (Admin)",
+        "Image": "V.Sureshkumar.webp"
+      },
+      {
+        "S.No": 4,
+        "Name of the Staff": "Ms. S. Usha",
+        "Name of the Post": "Executive Asst. (Finance)",
+        "Image": "usha.webp"
+      },
+      {
+        "S.No": 5,
+        "Name of the Staff": "Dr. C. Neelaveni",
+        "Name of the Post": "Assistant",
+        "Image": "neelavenichinnaswamy.webp"
+      }
+    ]
+  },
+  "contact us": "Anna University Regional Campus, Maruthamalai Main Road, Coimbatore (Dt), Pin-641 046 Phone: 0422 2984009, 0422 2964011, E-Mail: zugaurce@gmail.com"
+}

@@ -1,0 +1,41 @@
+{
+  "name": "National Service Scheme",
+  "description": "ABOUT US\n\nNational Service Scheme, under the Ministry of Youth Affairs & Sports, Govt. of India, popularly known as NSS. It was launched on Gandhiji's Birth Centenary Year 1969, in 37 Universities involving 40,000 students with primary focus on the development of personality of students through community service.\n\nNational Service Scheme provides diversified opportunities to students in colleges and Universities to develop their personality through community services. Community services rendered by University level students have covered several aspects like adoption of villages for intensive development work, mass tree plantation, technology transfer programmes, technologies for rural development, various technical training programmes for self-help groups and rural youth etc.,",
+  "activities": [
+    "Training programme for institutional Programme Officers",
+    "Services in Slums",
+    "Blood donation camps",
+    "Legal education for illiterate people of slums and village",
+    "Regular and Special Camp for NSS Volunteers",
+    "PRE- RD Selection camp for NSS volunteers University Level",
+    "Participation in the Winter and Summer Adventure cmap, Mega Camp and Youth Festival being conducted by the of Government of India",
+    "Legal Awarness Programme for NSS Programme officers",
+    "Pulse polio Immunization",
+    "Tree plantation and Campus cleaning",
+    "Child labor awarness Programme",
+    "HIV Awareness Programme",
+    "Population Awareness Programme",
+    "Womens Motivation Programme",
+    "Village adoption",
+    "Campaign againist early marriage",
+    "Campaign againist durg abuse",
+    "Campaign againist use of plastic items",
+    "Various technical and Training Programmes etc.,"
+  ],
+  "nss_coordinator": {
+    "Office Bearers": [
+      {
+        "Name": "Dr. M. Yuvaraju",
+        "Designation": "Regional Coordinator"
+      },
+      {
+        "Name": "Dr. S. V. Manisekaran",
+        "Designation": "Programme Officer"
+      },
+      {
+        "Name": "Dr. J. Lakshmi",
+        "Designation": "Assistant Professor"
+      }
+    ]
+  }
+}

@@ -1,0 +1,70 @@
+{
+    "name": "ED cell",
+    "description": {
+      "ED cell": "Entrepreneurship is the person who plays a certain price for a product to resell it at an uncertain price, hereby making decisions about obtaining and using the resources while consequently admitting the risk of enterprise. Irish-French economist Richard Castillo 'Dictionaries Universal de Commerce', 1723.",
+      "objectives": [
+        "To develop entrepreneurial skills and self-employment opportunities among student community.",
+        "To develop employment opportunities, value added jobs and services.",
+        "To identify the current business opportunities through financial institutions and venture capitalist and to assist business development, growth, operate and reduce the failure of start-up businesses.",
+        "To create awareness about technology incubation and commercialization of R&D products and processes."
+      ],
+      "key_activities": [
+        {
+          "name": "Business Incubator - Micro Small and Medium Enterprise",
+          "location": "New Delhi",
+          "details": "10 Incubates will be provided with financial Assistants with maximum grant of 6.25 lakh."
+        },
+        {
+          "name": "Innovation & Entrepreneurship Development Programme (IEDP)",
+          "location": "Coimbatore",
+          "details": "Entrepreneurship Development Institute (EDI) - An Autonomous Society of the Government of Tamil Nadu assisted programme. 28 Institutions are joined as spoke institution for this IEDP."
+        },
+        {
+          "name": "Centre of Excellence 'Industrial Automation' (CoEIA)",
+          "location": "Established by Micro Small and Medium Enterprise - (PPDC), Agra",
+          "details": "Cater training on Industrial Automation and Robotics."
+        }
+      ]
+    },
+    "MOU": [
+      "Micro Small and Medium Enterprise - MSME(PPDC),Agra.",
+      "Coimbatore Industries Infrastructure Association - COINDIA",
+      "South Indian Engineering Manufacturers Association- SIEMA"
+    ],
+    "links": [
+      "www.dgsnd.gov.in",
+      "www.nic.in",
+      "www.nsic.co.in",
+      "www.kvic.org.in",
+      "www.coirboard.gov.in",
+      "www.nceuis.nic.in",
+      "www.nisiet.gov.in",
+      "www.sidbi.in",
+      "www.iie.nic.in",
+      "www.nmcc.nic.in",
+      "www.cecri-india.com",
+      "www.csir.res.in",
+      "www.nissat.org",
+      "www.cmeri.res.in",
+      "www.entrepreneur.com",
+      "www.howtoexportimport.com"
+    ],
+    "office_bearers": [
+  {
+    "position": "Coordinator",
+    "email": "kanthavelkk@gmail.com",
+    "name": "Dr. K. Kanthavel",
+    "organization": "ED-Cell, AURCC",
+    "image": "Kanthavel.webp"
+  },
+  {
+    "position": "Field Co-ordinator",
+    "email": "",
+    "name": "Mr. S. Sam Jaikumar",
+    "organization": "Ed cell, AURCC",
+    "image": "/images/edcell/jaikumar.jpg"
+  }
+]
+
+  }
+  

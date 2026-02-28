@@ -1,0 +1,73 @@
+{
+    "curriculamSyllabus": [
+      {
+        "UG programmes": [
+          { "S.No": 1, "Curriculum & Syllabus": "B.E. Mechanical Engineering - Semester 1" },
+          { "S.No": 2, "Curriculum & Syllabus": "B.E. Electrical and Electronics Engineering - Semester 2" },
+          { "S.No": 3, "Curriculum & Syllabus": "B.E. Computer Science and Engineering - Semester 3" }
+        ]
+      },
+      {
+        "PG programmes": [
+          { "S.No": 1, "Curriculum & Syllabus": "M.E. Engineering Design - Semester 1" },
+          { "S.No": 2, "Curriculum & Syllabus": "M.E. Power Systems Engineering - Semester 2" },
+          { "S.No": 3, "Curriculum & Syllabus": "Master of Business Administration - Semester 3" }
+        ]
+      }
+    ],
+    "programsOffered": [
+      {
+        "type": "PG programmes",
+        "data": [
+          { "S.No": 1, "Courses Offered": "M.E. Engineering Design", "Intake": 18 },
+          { "S.No": 2, "Courses Offered": "M.E. Power Systems Engineering", "Intake": 18 },
+          { "S.No": 3, "Courses Offered": "Master of Business Administration", "Intake": 120 }
+        ]
+      }
+    ],
+    "regulation": [
+      { "S.No": 1, "Regulation": "UG programmes" },
+      { "S.No": 2, "Regulation": "PG programmes" }
+    ],
+    "studentAffairs": [
+      {
+        "description": [
+          "The Office of the Student Affairs is carrying out the following activities pertaining to the students of Anna University Regional Office, Coimbatore.",
+          "1. Issue of Bonafide Certificate",
+          "2. Issue of Student Identity Card",
+          "3. Issue of Course Completion Certificate",
+          "4. Issue of Transfer Certificate",
+          "5. Re-admission",
+          "6. Student Grievances Redressal",
+          "7. Scholarships"
+        ],
+        "Re-Admission": "The students who come under the category of lack of attendance and are unable to appear for the end semester examinations can rejoin the course following the procedure for re-admission available in the University website (www.annauniv.edu/dsa). The students who intend to temporarily discontinue the programme in the middle of the semester for genuine reasons can rejoin the course following the procedure of break of study available in the University website (www.annauniv.edu/dsa).",
+        "Scholarship": {
+          "description": "The students who are admitted at Anna University Regional Office, Coimbatore can avail relevant scholarships based on their eligible criteria available in the following websites.",
+          "list of scholarships": [
+            "* BC/MBC Scholarship(UG & PG).",
+            "* SC/ST Scholarship(UG & PG)",
+            "* SC/ST Special Higher Education Scholarship(UG & PG).",
+            "* Merit Cum Means Scholarship (UG & PG) National Scholarship Portal.",
+            "* Central Sector Scholarship Scheme (UG & PG) National Scholarship Portal",
+            "* Financial Assistance for Education to the wards of Beedi, Cini, IOM, LSDM for Post Matric (UG & PG) National Scholarship Portal.",
+            "* Pragati and Saksham Scheme Scholarship (Implemented by AICTE for Girls and Differently Abled. UG Students).",
+            "* AU CUIC Renault Nissan Technology & Business Centre India Private Limited (RNTBCI) CSR Initiative (Phase-4) Scholarship BE 2nd year (2022 Passing out students)."
+          ]
+        },
+        "fees details": "",
+        "Office bearers": [
+          "Administration staff",
+          [
+            { "S.No": 1, "Name of the Staff": "Dr.M.Rathinasamy", "Name of the Post": "Deputy Manager (Finance)" },
+            { "S.No": 2, "Name of the Staff": "Mrs.Sathyabama.N", "Name of the Post": "Executive Asst. (Admin)" },
+            { "S.No": 3, "Name of the Staff": "Mr.V.Sureshkumar", "Name of the Post": "Executive Asst. (Admin)" },
+            { "S.No": 4, "Name of the Staff": "Mrs.S.Usha", "Name of the Post": "Executive Asst. (Finance)" },
+            { "S.No": 5, "Name of the Staff": "Dr. C. Neelaveni", "Name of the Post": "Assistant" }
+          ]
+        ],
+        "contact us": "Anna University Regional Campus, Maruthamalai Main Road, Coimbatore (Dt), Pin-641 046 Phone: 0422 2984009, 0422 2964011 E-Mail zugaurce@gmail.com"
+      }
+    ]
+  }
+  

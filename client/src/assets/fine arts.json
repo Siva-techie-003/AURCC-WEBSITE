@@ -1,0 +1,75 @@
+{
+  "name": "layam",
+  "description": "About the LAYAM AAM RHYTHM OF ARTS MUSIC & DANCE \"LAYAM\", the Fine Arts Club of the campus, serves as a platform to showcase the innate talents of the budding engineers be it music (Vocal & Instrumental), Dance (Western and Classical), Drawing Painting Pencil Sketching, participate in Photography, the Vegetable intra-departmental Carving, competition Cookery Wealth organized out of every Waste year. The students enthusiastically the even semester in commemoration of the Annual Day Celebration. The involvement and enchantment of the members steers the office bearers to organize the events and here originates the delightful rhythm LAYAM\".",
+  "office_bearers": [
+    {
+      "SL.NO": 1,
+      "Name": "Vishnu Ram K",
+      "Designation": "President",
+      "Department": "II MECH"
+    },
+    {
+      "SL.NO": 2,
+      "Name": "Jeevitha G",
+      "Designation": "President",
+      "Department": "IEEE"
+    },
+    {
+      "SL.NO": 3,
+      "Name": "RaghuY",
+      "Designation": "Vice President",
+      "Department": "IICSE"
+    },
+    {
+      "SL.NO": 4,
+      "Name": "Sharan Raj K",
+      "Designation": "Secretary",
+      "Department": "II MECH"
+    },
+    {
+      "SL.NO": 5,
+      "Name": "Janani M",
+      "Designation": "Joint Secretary",
+      "Department": "HECE"
+    },
+    {
+      "SL.NO": 6,
+      "Name": "Giri Raja E",
+      "Designation": "Executive Member",
+      "Department": "IME"
+    },
+    {
+      "SL.NO": 7,
+      "Name": "Karthikeyan D",
+      "Designation": "Executive Member",
+      "Department": "IMBA"
+    },
+    {
+      "SL.NO": 8,
+      "Name": "Tamilmani B",
+      "Designation": "Executive Member",
+      "Department": "IME"
+    },
+    {
+      "SL.NO": 9,
+      "Name": "Pragathi P",
+      "Designation": "Executive Member",
+      "Department": "IlECE"
+    },
+    {
+      "SL.NO": 10,
+      "Name": "Naveen Raj K",
+      "Designation": "Executive Member",
+      "Department": "IEEE"
+    }
+  ],
+  "Coordinator": {
+    "Name": "Dr. S. N. Mahalakshmi",
+    "Designation": "Assistant Professor",
+    "Department": "Department of Science and Humanities (English)",
+    "University": "Anna University Regional Campus Coimbatore",
+    "Address": "Navavoor, Coimbatore-641 046",
+    "Mobile": "9443364660",
+    "Email": "s.n.mahala@gmail.com"
+  }
+}

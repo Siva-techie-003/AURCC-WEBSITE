@@ -1,0 +1,119 @@
+{
+  "name": "hostel",
+  "description": " Anna University Regional Office Coimbatore provides accommodation to both boys and girls students who wish to reside in hostel. There are totally 33 rooms in each hostel. A total strength of 360 can be accommodated with boys 140 and girls 240 in both Hostels. Every student who has been admitted to the hostel is required to pay the prescribed hostel fee and establishment charges along with a refundable caution deposit. These charges are subject to revision from time to time. The overall supervision of the hostel administration is headed by the Warden (Dean) followed by Executive Varden, separate Deputy Wardens, Account Officer, Residential Tutors and Supervisors for both the hostels Hostel office has full-fledged supporting staff for cleaning, gardening, cooking and security purposes The mess operates on DIVIDING SYSTEM basis and caters to the taste of students. Messes are equipped with excellent furniture and purified RO water, CCTV Camara provide for security purpose. Proper timing schedule is 4 separate outing note booK Is provided for students outside visiting followed for breakfast, lunch and dinner. along with a suggestion and grievance note book where the students can enroll their views time to time. A number of recreational sports and social activities take place in the hostel during the academic year. Students can relax in the evenings or on holidays to spend their leisure time in the recreation room which is equipped with a television.",
+  "Administration": {
+    "Wardens": [
+      {
+        "Name": "Dr. M. Saravanakumar",
+        "Phone No": "0422-2984002",
+        "Designation": "Warden/Dean",
+        "Email ID": "ucedean-kovai@annauniv.edu"
+      }
+    ],
+    "Deputy Wardens": [
+      {
+        "Name": "Dr. M. Yuvaraju",
+        "Designation": "Deputy Warden 1 (Boys Hostel)",
+        "Phone No": "9952461315",
+        "Email ID": "rajaucbe@gmail.com"
+      },
+      {
+        "Name": "Dr. R. Vijayabhasker",
+        "Designation": "Deputy Warden 2 (Boys Hostel)",
+        "Phone No": "9842616953",
+        "Email ID": "kaviji04@gmail.com"
+      },
+      {
+        "Name": "Mr. D. Prabhu",
+        "Designation": "Deputy Warden 3 (Boys Hostel)",
+        "Phone No": "9626477744",
+        "Email ID": "prabhu2kraj@gmail.com"
+      },
+      {
+        "Name": "Dr. S. Sumathi",
+        "Designation": "Deputy Warden 1 (Girls Hostel)",
+        "Phone No": "0422-2984009",
+        "Email ID": "sumathime@gmail.com"
+      },
+      {
+        "Name": "Dr. N. Fareena",
+        "Designation": "Deputy Warden 2 (Girls Hostel)",
+        "Phone No": "0422-2984009",
+        "Email ID": "fareena.aurcc@gmail.com"
+      }
+    ],
+    "Hostel Office Staffs": [
+      {
+        "Name": "Uma Maheswari M",
+        "Designation": "Hostel Clerk",
+        "Phone No": "",
+        "Email ID": ""
+      },
+      {
+        "Name": "Ishwarya R",
+        "Designation": "Hostel Assistant",
+        "Phone No": "",
+        "Email ID": ""
+      }
+    ],
+    "Residential Tutors": [
+      {
+        "Name": "Praveen Ganesh",
+        "Designation": "Residential Tutors (Boys Hostel)",
+        "Phone No": "8300772076",
+        "Email ID": ""
+      },
+      {
+        "Name": "Vikneshwaran N",
+        "Designation": "Residential Tutors (Boys Hostel)",
+        "Phone No": "9080363989",
+        "Email ID": ""
+      },
+      {
+        "Name": "Yogapriya M",
+        "Designation": "Residential Tutors (Girls Hostel)",
+        "Phone No": "7708711443",
+        "Email ID": ""
+      },
+      {
+        "Name": "Karunya Selvaraj",
+        "Designation": "Residential Tutors (Girls Hostel)",
+        "Phone No": "8754350748",
+        "Email ID": ""
+      }
+    ],
+    "Student Secretaries": {
+      "Boys Hostel Student Secretary": [
+        {
+          "Secretary": "Hostel",
+          "Name of the Student": "Gokul",
+          "Year/Branch/Dept": "IV/B.E/ECE"
+        },
+        {
+          "Secretary": "Mess",
+          "Name of the Student": "Vinoth",
+          "Year/Branch/Dept": "IV/B.E/Mech"
+        }
+      ],
+      "Girls Hostel Student Secretary": [
+        {
+          "Phone No": "9095344271",
+          "Secretary": "Hostel",
+          "Name of the Student": "Nandhini Devi",
+          "Year/Branch/Dept": "IV/B.E/EEE"
+        },
+        {
+          "Phone No": "8220515079",
+          "Secretary": "Mess",
+          "Name of the Student": "Nivetha",
+          "Year/Branch/Dept": "IV/B.E/EEE"
+        }
+      ]
+    }
+  },
+  "Fees Structure": {
+    "New Admission": "https://services.sabpaisa.in/pages/annauniversityregionalcampus.html",
+    "Existing Students": "http://www.aurcc.ac.in/amenity/hostel/Hostel.pdf"
+  },
+  "Rules and Regulations": "http://www.aurcc.ac.in/amenity/hostel/hostel-rules.php"
+}

@@ -1,0 +1,90 @@
+{
+  "description": [
+    "The Campus Research Co-ordination Cell (CRCC) was started in 2017 to carry out various activities related to research.",
+    "It collects data on research activities, facilitates research proposals and PG projects, maintains records, and aims to enhance the research environment on campus.",
+    "The CRCC communicates with the International Centre for Research Facilitation and Training (ICRFT) at Anna University Chennai to establish a Research Facilitation Centre (RFC) at the Regional Campus, Coimbatore.",
+    "Both RFNC and RFC will provide a platform for accessing international databases, computing facilities, intellectual property protection, and manpower training."
+  ],
+  "supervisors": [
+    {
+      "department": "MECHANICAL",
+      "phdCompletedFullTime": 7,
+      "phdCompletedPartTime": 10,
+      "phdRegisteredFullTime": 4,
+      "phdRegisteredPartTime": 16,
+      "completedFTPT": 17,
+      "registeredFTPT": 20,
+      "overallFTPT": 37
+    },
+    {
+      "department": "EEE",
+      "phdCompletedFullTime": 11,
+      "phdCompletedPartTime": 17,
+      "phdRegisteredFullTime": 6,
+      "phdRegisteredPartTime": 10,
+      "completedFTPT": 28,
+      "registeredFTPT": 16,
+      "overallFTPT": 44
+    },
+    {
+      "department": "ECE",
+      "phdCompletedFullTime": 3,
+      "phdCompletedPartTime": 8,
+      "phdRegisteredFullTime": 0,
+      "phdRegisteredPartTime": 0,
+      "completedFTPT": 11,
+      "registeredFTPT": 10,
+      "overallFTPT": 10
+    },
+    {
+      "department": "CSE",
+      "phdCompletedFullTime": 0,
+      "phdCompletedPartTime": 0,
+      "phdRegisteredFullTime": 4,
+      "phdRegisteredPartTime": 6,
+      "completedFTPT": 0,
+      "registeredFTPT": 10,
+      "overallFTPT": 10
+    },
+    {
+      "department": "NANO TECH",
+      "phdCompletedFullTime": 4,
+      "phdCompletedPartTime": 1,
+      "phdRegisteredFullTime": 3,
+      "phdRegisteredPartTime": 0,
+      "completedFTPT": 5,
+      "registeredFTPT": 3,
+      "overallFTPT": 8
+    },
+    {
+      "department": "BIOTECH",
+      "phdCompletedFullTime": 5,
+      "phdCompletedPartTime": 1,
+      "phdRegisteredFullTime": 2,
+      "phdRegisteredPartTime": 2,
+      "completedFTPT": 6,
+      "registeredFTPT": 4,
+      "overallFTPT": 10
+    },
+    {
+      "department": "MBA",
+      "phdCompletedFullTime": 7,
+      "phdCompletedPartTime": 87,
+      "phdRegisteredFullTime": 3,
+      "phdRegisteredPartTime": 13,
+      "completedFTPT": 94,
+      "registeredFTPT": 16,
+      "overallFTPT": 110
+    },
+    {
+      "department": "S&H",
+      "phdCompletedFullTime": 14,
+      "phdCompletedPartTime": 11,
+      "phdRegisteredFullTime": 9,
+      "phdRegisteredPartTime": 4,
+      "completedFTPT": 25,
+      "registeredFTPT": 13,
+      "overallFTPT": 38
+    }
+  ]
+}

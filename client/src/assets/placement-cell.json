@@ -1,0 +1,34 @@
+
+{
+    "description":"The Placement Cell of our Regional Office handles all aspects of campus placements for the graduating students of all Departments. The Cell is well equipped with excellent infrastructure to support each and every stage of the placement process. The cell has two Placement Coordinators, two Assistant Placement Coordinator, one Training Coordinator, one Executive Assistant, one overall Student Coordinator, and one Student Volunteer from every branch of all the departments. The Placement staff members assist in arranging Pre-Placement Training, Written Tests, Group Discussions, Mock Interviews, Awareness about value added courses and opportunities in government sectors including academic and R & D centers as per the requirements of the students.",
+    "recruitment":"The procedure followed in placement cell for bringing companies is very simple and transparent. At first, the cell sends e-mail invitations to companies along with the potential strength, academic performance and specialization of our students. If the company is interested in recruiting our students, then a Pre-Placement Talk is conducted on preferred schedule. Based on the company's eligibility criteria and on the student interest, interview is conducted either in our campus or at the company's recruitment section. Once the company furnishes the final list of selected students and offers a job, then as per the approval from the Dean, he or she is ineligible to continue in the selection he or she is ineligible to continue in the selection processes of other company or apply to other company.",
+    "cuic":"The placement cell is registered with Centre for University Industry Collaboration, Anna University, Chennal and is active in preparing our students for centralized campus recruitments. Further, this cell arranges Industrial Visit, Inplant Training, Project Internship to our students in consultation with CUIC. Also, this cell conducts Soft Skill Development and Competency Building Programmes to the students to increase their employability skills.",
+    "our_recruiters":"",
+    "placement_brouchure":"",
+    "placed_students":"",
+    "staff_members":[
+              {
+                  "si.no": 1,
+                  "name": "Dr. Preethi",
+                  "designation": "Placement Coordinator",
+                   "image": "preethi.webp"
+                },
+                {
+                  "si.no": 2,
+                  "name": "Dr. T. Suganthalakshmi",
+                  "designation": "Placement Coordinator",
+                  "image":"suganthalakshmi.webp"
+                },
+               
+                {
+                  "si.no": 3,
+                  "name": "Ms. M. A. Kavitha",
+                  "designation": "Executive Asst. (Admin)"
+                },
+                {
+                  "si.no": 4,
+                  "name": "Ms. T. Mohanapriya",
+                  "designation": "Professional Assistant-II"
+                }
+                    ]
+}

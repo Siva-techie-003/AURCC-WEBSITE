@@ -1,0 +1,49 @@
+{
+    "contacts": [
+      {
+        "office": "CONTACT OFFICE",
+        "number": "0422-2984001"
+      },
+      {
+        "office": "DEAN",
+        "number": "0422-2984002"
+      },
+      {
+        "office": "DEAN OFFICE",
+        "number": "0422-2984002"
+      },
+      {
+        "office": "ZONAL OFFICE(Zone-IX)",
+        "number": "0422-2984003"
+      },
+      {
+        "office": "EXAM CELL",
+        "number": "0422-2984005"
+      },
+      {
+        "office": "GENERAL ADMINISTRATION-I",
+        "number": "0422-2984006"
+      },
+      {
+        "office": "GENERAL ADMINISTRATION-II",
+        "number": "0422-2984007"
+      },
+      {
+        "office": "GENERAL ADMINISTRATION-III",
+        "number": "0422-2984007"
+      },
+      {
+        "office": "STUDENT AFFAIRS/ACADEMIC",
+        "number": "0422-2984009"
+      },
+      {
+        "office": "STUDENT AFFAIRS/ACADEMIC",
+        "number": "0422-2984011"
+      },
+      {
+        "office": "AFFILIATION",
+        "number": "0422-2984010"
+      }
+    ]
+  }
+  

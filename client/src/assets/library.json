@@ -1,0 +1,113 @@
+{
+  "name": "University Library",
+  "image":"library.webp",
+  "description": "The University Library, which has been established in the year 2007 in school of management studies. It is located at the south wing of the new campus building. The total area of the Library building is about 4700 sq.ft. Central Library is a true reflection of Anna University, Regional Centre, Coimbatore culture of excellence which is known in India. Central Library during the year continued to march its mission of facilitating the creation of new knowledge through the collection, organization and dissemination of Information. It offered many knowledge-based services like that of Reference services, Resource sharing, Online journal service, Online Data Base, CD-ROM Databases, Internet browsing and e-services are provided by the library for its users.",
+  "library_resources": {
+    "description": "Resources building is one of the important functions of the library that supports academic and research work of the students, faculty, staff and other users. Library collection comprising of books, journals, thesis, reports, standards, pamphlets and other reading material in science, engineering, technology, humanities, social sciences and management is considered the best asset.",
+    "collection": {
+      "books": 22196,
+      "reference_books": 2291,
+      "cds": 250,
+      "donation_books_collection": 128,
+      "bound_volumes_of_journals": 202,
+      "project_reports": 4015,
+      "subscription_to_journals": 355
+    },
+    "journal_binding": {
+      "volumes": 2751
+    },
+    "members_details": [
+    {
+      "sino": 1,
+      "members_details": "Professors, Associate Professors & Assistant Professors",
+      "no_of_books": 10,
+      "validity": "90 days"
+    },
+    {
+      "sino": 2,
+      "members_details": "Teaching Fellow",
+      "no_of_books": 3,
+      "validity": "30 days"
+    },
+    {
+      "sino": 3,
+      "members_details": "Research Scholars",
+      "no_of_books": 3,
+      "validity": "30 days"
+    },
+    {
+      "sino": 4,
+      "members_details": "Non-Teaching Staff",
+      "no_of_books": 2,
+      "validity": "30 days"
+    },
+    {
+      "sino": 5,
+      "members_details": "Students",
+      "no_of_books": 3,
+      "validity": "15 days"
+    }
+  ]
+  },
+  "digital_library": {
+    "description": "Digital Library has 32 no of computers systems with high speed internet facility, Central Library is a member of AICTE Consortium, New Delhi. So that it has provides web-based access like IEEE. The library is a part of the institute-wide network and has adequate computing infrastructure to cater to the needs of the users. Library provides over, 10,000 electronic journals (e-journals, Magazines, Conference proceedings) for access to the users with free of cost.",
+    "e_resources": "The Central Library provides web-based access to over 10,000 full text journals on institute wide network.",
+    "multimedia": "CDs received along with books, internet browsing, PPT, Mini Projects, etc are accessible in the digital Library."
+  },
+  "e_journals": {
+    "description": "Central Library membership with 1. IEEE, 2. DELNET.",
+    "library_salient_features": [
+      "E-granthalaya Automation Software",
+      "Biometric Gate Attendance",
+      "Circulation Services",
+      "CCTV Security System",
+      "Digital Library",
+      "Special Collection of books for Competitive Exams and GATE",
+      "Interesting Tamizhi Collection of good writers"
+    ],
+    "library_services": [
+      "Circulation Service",
+      "Reference Service",
+      "Current Awareness Service",
+      "Online Journal Services",
+      "Reference and information services",
+      "Question Bank",
+      "Scanning and Print out"
+    ]
+  },
+  "open_access_resources": [
+    "American Chemical Society",
+    "American Institute of Physics",
+    "American Physical Society",
+    "Annual Review",
+    "Cambridge University Press",
+    "DOAJ",
+    "IAS",
+    "Institute of Physics",
+    "NTLTD",
+    "OAISTER",
+    "Oxford University Press",
+    "Wiley Online Library",
+    "Annual Reviews",
+    "Popular Pdf Books in English"
+  ],
+  "library_section": {
+    "reading_hall": "The reading hall has covers 1150 sqft of vast area with good ventilation, lighting facility, 80 no's of users can read at a time in the reading hall. It is very near to the stack section for the user's convenience. It has beautiful chairs & Reading tables with glass partition.",
+    "reference_section": "Reference service helps users to make full use of library resources and services. It provides necessary assistance to users in locating information or document of their choice. Reference section consists of valuable books & rare books. There are ready reference books and Long range reference books. Total no of reference section books are 2291.",
+    "circulation_section": "The Library issued 7248 books and other documents to its members during the year. In addition to members, 694 visitors including students, research scholars, engineers and faculty members used the library. It is open from 09.00 am to 5.30 pm on all working days.",
+    "periodical_section": "Prints as well as e-Journals are subscribed by the Central Library on the recommendations received from the academic departments. Print journals are displayed in the wooden display racks kept on displayed in periodical section. All back volumes have been arranged in pigeon rack hole. Periodical section has received 202 journals both National & International regularly."
+  },
+  "user_education": "Users education is an important regular activity of the library to inform, alert, educate and train users about various resources and services of the library. In addition to orientation programmes organized for new students, the library conducted short duration training programmes on 'How to Use the library resources for our faculty and students so that they are able to use these resources more effectively. For users desiring to learn more about any service, online journals access, ready reference, books search or any resource, the library provides one-on-one training. The library also organized interactive sessions on 'Enhancing User Awareness' for new faculty and research scholars to familiarize them with various resources and services. The library makes good use of various mailing lists, and news groups to interact and communicate with the user community, to inform them about the new activities and services, and to obtain their comments and suggestions. A books exhibition was also organized along with the workshop so that the participants as well as AURC, CBE community could browse and select the latest publications for the personal collection or for their libraries.",
+  "faculty": [
+    {
+      "name": "Dr. JAYARAMAN",
+      "designation": "University Assistant Librarian",
+      "img": "jayaram.webp"
+    },
+    {
+      "name": "Dr. P. BASKARAN",
+      "designation": "Assistant Librarian",
+      "img": "baskaran.webp"
+    }
+  ]
+}

@@ -1,0 +1,84 @@
+{
+  "vc_message": {
+    "title": "Message from the Vice-Chancellor",
+    "content": "The major vision of Anna University will be towards developing a sustainable higher education system through: a) delivery of state-of-the-art teaching and learning, b) research and innovation, c) creation of an entrepreneurial ecosystem, and d) outreach activities addressing social, economic, and environmental targets. The core objective of the University is to work for the upliftment of humanity at large. We are receiving increasing recognition and accolades nationally and internationally; we have been scaling greater heights in university rankings and are committed to attaining even better positions in the coming days. We have ambitious plans to demonstrate exponential growth in the coming years. Our academic departments and research centres span the fields of engineering, technology, science, management, and architecture, working in collaboration with regional and national partners to find pragmatic solutions to a wide range of societal and business challenges. Untiring efforts will always be invested in revamping the curriculum with contemporary methods of blended learning, and the focus will be on attaining academic excellence. Effective strategies will be implemented towards: creating a multidisciplinary research ecosystem, translating research into innovation, product development, technology transfer, business incubation, and creating job givers instead of job seekers. In addition to the above, we are consistently striving towards establishing an efficient and continuous Internal Quality Assurance System, best practices, benchmarking, and green initiatives. The university is situated in a serene environment. The serenity, along with a multifaceted structure of curricular, co-curricular, and extra-curricular activities, will shape holistic physical, mental, and intellectual growth for students. The present governance of Anna University assures a transparent management system with a participative organizational structure, motivating the star performers through awards and incentives. The University puts in sustained efforts to create brand equity in all its intellectual pursuits. On behalf of the University family, I wish the students an enjoyable learning experience while pursuing their objectives, making the University proud of their attainments. I assure the students that your talent will be honed, and you will be exposed to a cutting-edge and competitive environment through your zealous participation in the corporate life of this great alma mater. Anna University, the exemplary temple of learning, has created several eminent personalities in the past, and we hope to see more in the near future.",
+    "signature": "Dr. R. Velraj",
+    "photo_url": "velraj.webp",
+    "profile_link": "link_to_vc_profile.json"
+  },
+  "profile": {
+    "name": "Dr. R. Velraj",
+    "photo_url": "velraj.webp",
+    "position": "Professor, Institute for Energy Studies",
+    "specialization": "Thermal Energy Storage, Solar Energy, Desalination, Energy Efficient Buildings, Energy Auditing and Management, and fundamental studies of Heat Transfer & Computational Fluid Dynamics",
+    "education": [
+      {
+        "degree": "Bachelor of Engineering (Mechanical)",
+        "institution": "Annamalai University",
+        "year": ""
+      },
+      {
+        "degree": "Masters in Energy Engineering",
+        "institution": "Anna University",
+        "year": ""
+      },
+      {
+        "degree": "Ph.D.",
+        "institution": "Anna University and Solar Institute, Juelich, Germany",
+        "year": "1995-1997"
+      }
+    ],
+    "administrative_experience": [
+      {
+        "position": "Deputy Director, Centre for Engineering Partnership (renamed as Centre for Affiliation of Institutions)",
+        "duration": "6 years from 2004 to 2010"
+      },
+      {
+        "position": "Director, AU - FRG Institute for CAD/CAM",
+        "duration": "3 years from 2010 to 2013"
+      },
+      {
+        "position": "Director, Institute for Energy Studies",
+        "duration": "5 years from 2013 to 2018"
+      },
+      {
+        "position": "LEAP training in IIT-BHU",
+        "duration": "2 weeks from 8.12.2019 to 21.12.2019"
+      },
+      {
+        "position": "LEAP training in Cambridge University, U.K",
+        "duration": "10 days from 19.12.2020 to 26.01.2020"
+      }
+    ],
+    "research_credentials": [
+      "Executed 15 sponsored research projects (13 as PI and 2 as Co PI) which includes collaborative projects with Technical University, Munich, Germany, University of Birmingham, UK and Concordia University, Canada.",
+      "Published more than 250 research articles in journals of high repute, and completed supervision of 37 Ph.D and substantially contributed for 15 more scholars.",
+      "Scientific citation - 15600 with H-index of 64. (As per Google scholar citation)"
+    ],
+    "consultancy": [
+      "Granted with 6 patents in the field of cool thermal storage and compressed air energy storage for solar and other energy applications.",
+      "Executed 38 consultancy projects - (28 As Principal Consultant & 10 as team member) for several industries in the area of energy technologies, Thermal Storage, CFD analysis and Biomass resource assessment studies.",
+      "Made Technology transfer with 'ETA SMART PVT LTD', a Chennai based company in the field of Cool Thermal Storage System through Anna University and two more technology transfer through Research project collaborations."
+    ],
+    "green_initiatives": [
+      "Implemented several green initiatives inside Anna University campus",
+      "Biogas plant for cooking using 1 ton food waste per day.",
+      "Centralized solar PV street lighting system (25 kW with 235 street lights).",
+      "Solar operated (35 kW) air-conditioning (30 TR) for 5000 sq. feet space with cool thermal storage (20 Ton hour) which will be in operation from September 2021.",
+      "Solar power generation (10 kW)",
+      "Solar water pumping system (4 kW)"
+    ],
+    "achievements": [
+      "DAAD Fellowship by Germany as a part of doctoral work.",
+      "Recipient of 'Tamil Nadu Scientist Award (TANSA) 2014 (Environmental Science)' by Government of TamilNadu - Received from Hon'ble Minister for Higher Education, in the year 2017.",
+      "Recipient of 'Active Consultant Award - 2011' by Anna University.",
+      "Recipient of 'Best Innovation Award - 2013' by Anna University.",
+      "Recipient of 'Achievement Award' by Appadurai Chair for Power Systems, Anna University in recognizing the contribution towards technological developments to be adopted by TANGEDCO in the year 2017.",
+      "Recipient of Research Excellence Award in 2019 by CTDT Anna University.",
+      "Recipient of 'Distinguished Researcher Award' in the year 2019 by Anna University.",
+      "Recipient of 'Certificate of Appreciation' for high impact research publication by CEG, Anna University.",
+      "Committee Member of the Institution of Engineers (India) as Eminent Engineer, TamilNadu State Centre. (Period 2018 - 2021).",
+      "Recognised as the top 2% Scientists (International Level) in the field of Energy vide the recently released list by Stanford University, USA Dt: 08.10.2020."
+    ]
+  }
+}

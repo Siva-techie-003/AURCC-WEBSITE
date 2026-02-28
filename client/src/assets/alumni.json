@@ -1,0 +1,180 @@
+{
+  "notable alumni": "These are some of the notable alumni from various departments:",
+  "ALUMNI": {
+    "DEPARTMENT OF CIVIL": [
+      {
+        "Name": "Mr. S. Mohamed Fazil",
+        "Position": "Civil & Structural Design Engineer",
+        "Company": "Gulf Spic General Trading & Contracting Company W.L.L, Kuwait",
+        "Email": "mohamedfazils@gmail.com",
+        "Academic Year": "2007-2010"
+      },
+      {
+        "Name": "Mr. N. Thambiprabhakaran",
+        "Position": "Project Engineer",
+        "Company": "Brigade Group, Bangalore",
+        "Email": "prabhu.ce39@gmail.com",
+        "Academic Year": "2007-2010"
+      }
+    ],
+    "DEPARTMENT OF MECHANICAL": [
+      {
+        "Name": "Mr. E. Mohan Kumar",
+        "Position": "Senior Architecture",
+        "Company": "Robert Bosch Coimbatore",
+        "Email": "mohanekumar@gmail.com",
+        "Academic Year": "2010-2013"
+      },
+      {
+        "Name": "Mr. M. Ranjith Kumar",
+        "Position": "CAE Analyst",
+        "Company": "Tenneco Automotive Limited",
+        "Email": "ranmech04@gmail.com",
+        "Academic Year": "2008-2010"
+      }
+    ],
+    "DEPARTMENT OF ECE": [
+      {
+        "Name": "Mr. R. Aneesh",
+        "Position": "Senior Software Engineer",
+        "Company": "Intel Technology India Private Limited",
+        "Email": "aneeshradhakrishnan85@gmail.com",
+        "Academic Year": "2008-2010"
+      },
+      {
+        "Name": "Mr. S. Elango",
+        "Position": "Assistant Professor",
+        "Company": "Bannari Amman Institute Of Technology",
+        "Email": "eceelango@gmail.com",
+        "Academic Year": "2010-2012"
+      }
+    ],
+    "DEPARTMENT OF EEE": [
+      {
+        "Name": "Dr. Manikandan R",
+        "Position": "Post doctoral Researcher",
+        "Company": "Technion - Israel Institute of Technology",
+        "Email": "manikandan@campus.technion.ac.il",
+        "Academic Year": "2010"
+      },
+      {
+        "Name": "Mr. M. Karthikeyan",
+        "Position": "Senior Software Architect",
+        "Company": "Profinch Solutions, Bengaluru",
+        "Email": "karthik.infinity@gmail.com",
+        "Academic Year": "2008-2011"
+      }
+    ],
+    "DEPARTMENT OF CSE": [
+      {
+        "Name": "Mr. B. Sethupathi",
+        "Position": "Senior Testing Analyst",
+        "Company": "CTS, Coimbatore",
+        "Email": "ersethu@gmail.com",
+        "Academic Year": "2009-2011"
+      },
+      {
+        "Name": "Mr. L. Mohanraj",
+        "Position": "Data Analyst",
+        "Company": "Honeywell Technology Solutions LTD, Uberlingen, Germany",
+        "Email": "mohandraft@gmail.com",
+        "Academic Year": "2007-2010"
+      }
+    ],
+    "DEPARTMENT OF IT": [
+      {
+        "Name": "Mr. S. Elango",
+        "Position": "Teaching Fellow",
+        "Company": "University Department Ramanathapuram",
+        "Email": "selango21@yahoo.com",
+        "Academic Year": "2013-2015"
+      },
+      {
+        "Name": "Mr. C. Ilankumaran",
+        "Position": "3D Modular & Animator",
+        "Company": "KYE (Kreative Media studyo), Coimbatore",
+        "Email": "csilankumaran1990@gmail.com",
+        "Academic Year": "2013-2015"
+      }
+    ],
+    "DEPARTMENT OF BIO-TECHNOLOGY": [
+      {
+        "Name": "Mr. M. Chinna",
+        "Position": "Research Associate",
+        "Company": "Dr. Reddys Lab, Hyderabad",
+        "Email": "biochinna5@gmail.com",
+        "Academic Year": "2010-2012"
+      },
+      {
+        "Name": "Mr. S. Karthi",
+        "Position": "Assistant Professor",
+        "Company": "Arunai College of Engineering, Tiruvannamalai",
+        "Email": "karthi.lak.15@gmail.com",
+        "Academic Year": "2011-2013"
+      }
+    ],
+    "DEPARTMENT OF NANO TECHNOLOGY": [
+      {
+        "Name": "Mr. A. Murugan",
+        "Position": "Scientist",
+        "Company": "Central manufacturing Tools Institute (CMTI), Bangalore",
+        "Email": "murugamuthi@gmail.com",
+        "Academic Year": "2008-2009"
+      },
+      {
+        "Name": "Mr. V. Tamilselvan",
+        "Position": "Research Scholar",
+        "Company": "Nanotechnology and Integrated Bio Engineering Centre (NIBEC), University of Ulster, U.K",
+        "Email": "tamilant@gmail.com",
+        "Academic Year": "2008-2009"
+      }
+    ],
+    "DEPARTMENT OF MBA": [
+      {
+        "Name": "Ms. D. Devi Sree",
+        "Position": "Associate Consultant",
+        "Company": "Careernet Technologies PVT LTD",
+        "Email": "devisreedhm17@gmail.com",
+        "Academic Year": "2013-2015"
+      },
+      {
+        "Name": "Ms. N. Karen Nirupa",
+        "Position": "Associate Consultant",
+        "Company": "Careernet Technologies PVT LTD",
+        "Email": "nkarenece@gmail.com",
+        "Academic Year": "2013-2015"
+      }
+    ],
+    "DEPARTMENT OF MCA": [
+      {
+        "Name": "Ms. V. Jayanthi",
+        "Position": "Assistant Professor",
+        "Company": "Selvam Arts & Science College, Namakkal",
+        "Email": "Jayanthimca05@gmail.com",
+        "Academic Year": "2011-2013"
+      },
+      {
+        "Name": "Mr. B. Ramachandran",
+        "Position": "Trainee",
+        "Company": "WIPRO, Kochi",
+        "Email": "ramagac22@rediffmail.com",
+        "Academic Year": "2012-2015"
+      }
+    ],
+    "DEPARTMENT OF SCIENCE AND HUMANITIES": [
+      {
+        "Name": "Dr. G. Gayathiri Devi",
+        "Position": "Assistant Professor",
+        "Department": "Dept. of Science and Humanities (English)",
+        "Company": "R.M.D. Engineering College",
+        "Academic Year": "2009-2014"
+      },
+      {
+        "Name": "Dr. K. Mathiyalagan",
+        "Position": "UGC –Kothari Post-Doctoral Fellow",
+        "Company": "Bharathiar University",
+        "Academic Year": "since June 2015"
+      }
+    ]
+  }
+}

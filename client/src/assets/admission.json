@@ -1,0 +1,147 @@
+[
+    {
+      "name": "Admission",
+      "description": {
+        "Overview": "With outstanding research-led and application-oriented education, we consistently compete with top universities and institutions. By learning through exposure to research and industrial needs, our students gain firsthand work experience with valuable skills. This unique combination of knowledge and experience enables our students to become successful members of the workplace immediately upon completing their course.",
+        "Admissions at our Regional Campus": "At Anna University Regional Campus, Coimbatore, we have an active Admission Office which makes the admission procedure effortless and speedy. Sophisticated software is used for the admission procedure, ensuring one-time data entry as well as immediate issuance of identity cards, Bonafide Certificates, and Fee Structures to the students. We offer individual attention to students and their parents. We have a team of professionals available year-round to answer your questions and provide further guidance regarding admissions. Our office hours are Monday-Friday, 9:00 a.m.-5:00 p.m."
+      },
+      "courses_offered": {
+        "UG programmes": [
+          {
+            "S.No": 1,
+            "Courses Offered": "B.E. (COMPUTER SCIENCE AND ENGINEERING)",
+            "Intake": 60,
+            "Seats": {
+              "OC": 16,
+              "BC": 14,
+              "BCM": 2,
+              "MBC": 11,
+              "SC": 9,
+              "SCA": 2,
+              "ST": 1
+            }
+          },
+          {
+            "S.No": 2,
+            "Courses Offered": "B.E. (ELECTRONICS AND COMMUNICATION ENGINEERING)",
+            "Intake": 60,
+            "Seats": {
+              "OC": 15,
+              "BC": 13,
+              "BCM": 2,
+              "MBC": 10,
+              "SC": 8,
+              "SCA": 1,
+              "ST": 1
+            }
+          },
+          {
+            "S.No": 3,
+            "Courses Offered": "B.E. (ELECTRICAL AND ELECTRONICS ENGINEERING)",
+            "Intake": 60,
+            "Seats": {
+              "OC": 14,
+              "BC": 12,
+              "BCM": 2,
+              "MBC": 11,
+              "SC": 9,
+              "SCA": 1,
+              "ST": 1
+            }
+          },
+          {
+            "S.No": 4,
+            "Courses Offered": "B.E. (MECHANICAL ENGINEERING)",
+            "Intake": 60,
+            "Seats": {
+              "OC": 16,
+              "BC": 14,
+              "BCM": 2,
+              "MBC": 11,
+              "SC": 9,
+              "SCA": 2,
+              "ST": 1
+            }
+          },
+          {
+            "S.No": 5,
+            "Courses Offered": "B.Tech. (ARTIFICIAL INTELLIGENCE AND DATA SCIENCE)",
+            "Intake": 60,
+            "Seats": {
+              "OC": 17,
+              "BC": 14,
+              "BCM": 2,
+              "MBC": 11,
+              "SC": 8,
+              "SCA": 1,
+              "ST": 1
+            }
+          },
+          {
+            "S.No": 6,
+            "Courses Offered": "B.E. ELECTRONICS ENGINEERING (VLSI DESIGN AND TECHNOLOGY)",
+            "Intake": 60,
+            "Seats": {
+              "OC": 16,
+              "BC": 14,
+              "BCM": 2,
+              "MBC": 11,
+              "SC": 9,
+              "SCA": 2,
+              "ST": 1
+            }
+          }
+        ],
+        "PG programmes": [
+          {
+            "S.No": 1,
+            "Department": "MBA",
+            "Courses Offered": "MASTER OF BUSINESS ADMINISTRATION",
+            "Intake": 60,
+            "Seats": {
+              "OC": 16,
+              "BC": 14,
+              "BCM": 2,
+              "MBC": 11,
+              "SC": 9,
+              "SCA": 2,
+              "ST": 1
+            }
+          },
+          {
+            "S.No": 2,
+            "Department": "MBA",
+            "Courses Offered": "MASTER OF BUSINESS ADMINISTRATION(BUSINESS ANALYTICS)",
+            "Intake": 60,
+            "Seats": {
+              "OC": 16,
+              "BC": 14,
+              "BCM": 2,
+              "MBC": 11,
+              "SC": 9,
+              "SCA": 2,
+              "ST": 1
+            }
+          }
+        ]
+      },
+      "eligibility_criteria": {
+        "Under Graduate Programmes": "Admissions to all U.G. courses (B.E./B.Tech.) are made by the Government of Tamil Nadu through TNEA (Tamil Nadu Engineering Admissions) administered by Anna University, Chennai. For further details, visit www.annauniv.edu.",
+        "Post Graduate Programmes": "Admissions to all P.G. courses (M.E., M.Tech., MBA, etc.) are made by the Government of Tamil Nadu through TANCET (Tamil Nadu Common Entrance Test) administered by Anna University, Chennai. Further details are available at www.annauniv.edu.",
+        "Research Programmes": "Admissions to Ph.D. programmes are made by the Centre for Research, Anna University, Chennai, twice a year. Interested research scholars are expected to get in touch with the recognized supervisors and obtain their consent for being a supervisor to the applicant. The details regarding the entrance tests for Ph.D. admission and other rules and regulations are available at www.annauniv.edu/research."
+      },
+      "staff": [
+        {
+          "name": "Dr. T. Suganthalakshmi",
+          "position": "TFC-62 Coordinator",
+          "image": "suganthalakshmi.webp"
+        }
+      ],
+      "contact_us": {
+        "address": "Anna University Regional Campus, Maruthamalai Main Road, Coimbatore (Dt). Pin-641 046.",
+        "phone": "0422 2984009, 0422 2984011",
+        "email": "aurccadmissions@gmail.com"
+      }
+    }
+  ]
+  

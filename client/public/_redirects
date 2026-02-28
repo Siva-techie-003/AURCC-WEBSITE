@@ -1,0 +1,14 @@
+# Netlify redirects for SPA routing
+# This file should be placed in the public folder
+
+# Handle client-side routing - redirect all routes to index.html
+/*    /index.html   200
+
+# Specific redirects for common paths (optional)
+/programs    /index.html   200
+/departments    /index.html   200
+/about    /index.html   200
+/contact    /index.html   200
+
+# Handle trailing slashes
+/*/    /index.html   200

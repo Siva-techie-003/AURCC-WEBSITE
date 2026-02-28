@@ -1,0 +1,36 @@
+/* Research.css - Custom styles for the Research Cell view */
+
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+.no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.table-auto th {
+    white-space: nowrap;
+}
+
+.animate-glow-bar {
+    box-shadow: 0 0 16px 4px #60a5fa, 0 0 32px 8px #3b82f6;
+    animation: glowBar 2.5s ease-in-out infinite alternate;
+}
+
+@keyframes glowBar {
+    0% {
+        box-shadow: 0 0 16px 4px #60a5fa, 0 0 32px 8px #3b82f6;
+    }
+
+    100% {
+        box-shadow: 0 0 32px 8px #3b82f6, 0 0 48px 12px #60a5fa;
+    }
+}
+
+.apply-contact-btn {
+    display: inline-block;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 24px 0 rgba(59, 130, 246, 0.12);
+}
