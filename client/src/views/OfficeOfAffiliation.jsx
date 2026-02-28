@@ -30,7 +30,6 @@ const OfficeOfAffiliation = () => {
                 <OfficeContentSection
                     sectionId="description"
                     title="About the Office"
-                    icon="ℹ️"
                 >
                     <div className="max-w-4xl mx-auto">
                         <p className="text-base lg:text-lg xl:text-xl font-medium text-gray-800 text-left leading-relaxed">{data.description['About Office of Affiliation and its activities']}</p>
@@ -41,7 +40,6 @@ const OfficeOfAffiliation = () => {
                 <OfficeContentSection
                     sectionId="staff"
                     title="Staff"
-                    icon="👥"
                 >
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                         {(Array.isArray(data?.staff) ? data.staff : []).map((staff, index) => (

@@ -135,7 +135,7 @@ const StudentAffairs = () => {
                         <span className="text-2xl opacity-50">↩️</span>
                     </div>
                     <div className="p-8">
-                        <div className="bg-[rgb(220,140,140)]/50 rounded-2xl p-6 border border-[rgb(200,120,120)] text-[rgb(100,25,25)] font-bold text-base lg:text-lg leading-relaxed italic whitespace-pre-line">
+                        <div className="bg-[rgb(220,140,140)]/50 rounded-2xl p-6 border border-[rgb(200,120,120)] text-[rgb(100,25,25)] font-bold text-base lg:text-lg leading-relaxed  whitespace-pre-line">
                             {content?.['Re-Admission'] || 'Re-admission information will be updated soon.'}
                         </div>
                     </div>
@@ -148,7 +148,7 @@ const StudentAffairs = () => {
                         <span className="text-2xl opacity-50">💰</span>
                     </div>
                     <div className="p-8">
-                        <div className="mb-6 p-4 bg-[rgb(220,140,140)] rounded-xl border-l-4 border-[rgb(115,40,40)]">
+                        <div className="mb-6 p-4 bg-[rgb(220,140,140)]/50 rounded-xl border-l-4 border-[rgb(115,40,40)]">
                             <p className="text-lg lg:text-xl font-bold text-[rgb(100,25,25)]">{content?.Scholarship?.description || 'Scholarship information will be updated soon.'}</p>
                         </div>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">

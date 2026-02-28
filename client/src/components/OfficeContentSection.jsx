@@ -1,7 +1,7 @@
 ﻿import React from 'react';
 import './OfficeContentSection.css';
 
-const OfficeContentSection = ({ sectionId, title, icon = 'ℹ️', children }) => {
+const OfficeContentSection = ({ sectionId, title, icon = '', children }) => {
     return (
         <div id={sectionId} className="bg-white/70 backdrop-blur-md rounded-xl sm:rounded-2xl shadow-lg animate-fadeIn border border-gray-100 scroll-mt-20 sm:scroll-mt-28">
             <div className="bg-gradient-to-r from-[rgb(115,63,63)] to-[rgb(115,25,25)] py-4 sm:py-5 flex items-center justify-center gap-2 sm:gap-3 rounded-t-xl sm:rounded-t-2xl">
