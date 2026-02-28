@@ -33,7 +33,6 @@ const DistanceEdu = () => {
                 <OfficeContentSection
                     sectionId="overview"
                     title="Overview"
-                    icon="ℹ️"
                 >
                     <p className="text-base lg:text-lg xl:text-xl font-medium text-gray-800 text-left leading-relaxed">{data.description}</p>
                 </OfficeContentSection>
@@ -42,7 +41,6 @@ const DistanceEdu = () => {
                 <OfficeContentSection
                     sectionId="why_choose"
                     title="Why Choose Distance Education?"
-                    icon="🌟"
                 >
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                         <div className="flex flex-col items-center text-center p-4 bg-white rounded-xl shadow-sm border border-[rgb(220,140,140)] transition-transform hover:-translate-y-1">
@@ -72,7 +70,6 @@ const DistanceEdu = () => {
                 <OfficeContentSection
                     sectionId="programs"
                     title="Programs Offered"
-                    icon="📚"
                 >
                     <div className="mb-6 text-base lg:text-lg text-gray-700 text-left">Our flexible MBA and MCA programs are designed for working professionals and recent graduates seeking to advance their careers.</div>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -91,7 +88,6 @@ const DistanceEdu = () => {
                 <OfficeContentSection
                     sectionId="specialization"
                     title="Specializations"
-                    icon="🎯"
                 >
                     <div className="mb-6 text-base lg:text-lg text-gray-700 text-left">Choose from a range of MBA specializations to tailor your learning to your career goals.</div>
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -108,7 +104,6 @@ const DistanceEdu = () => {
                 <OfficeContentSection
                     sectionId="staff"
                     title="Staff"
-                    icon="👥"
                 >
                     <div className="mb-8 text-base lg:text-lg text-gray-700 text-center">Meet our dedicated faculty, committed to supporting your distance learning journey.</div>
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
