@@ -29,14 +29,14 @@ const AdmissionView = () => {
             contactEmail="admissions@aurcc.ac.in"
             onSectionChange={handleSectionChange}
         >
-            <div className="content">
+            <div className="content space-y-10">
                 {/* Overview */}
                 <OfficeContentSection
                     sectionId="overview"
                     title="Overview"
                     icon="ℹ️"
                 >
-                    <p className="text-base lg:text-lg xl:text-xl font-medium text-gray-800 mb-4 sm:mb-6">{data.description.Overview}</p>
+                    <p className="text-base text-justify lg:text-lg xl:text-xl font-medium text-gray-800 mb-4 sm:mb-6">{data.description.Overview}</p>
                     <p className="text-base lg:text-lg xl:text-xl font-medium text-gray-800 mb-6 sm:mb-8">{data.description['Admissions at our Regional Campus']}</p>
                     <div className="flex justify-center">
                         <img src={flowchartImage} alt="Admission Flowchart" className="w-full md:w-3/4 lg:w-1/2 rounded shadow-lg" />

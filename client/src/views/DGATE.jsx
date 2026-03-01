@@ -72,7 +72,7 @@ const DGATE = () => {
             contactEmail="dgatecell@aurcc.ac.in"
             onSectionChange={handleSectionChange}
         >
-            <div className="content">
+            <div className="content space-y-10">
                 {/* Overview */}
                 <OfficeContentSection
                     sectionId="overview"
@@ -81,14 +81,14 @@ const DGATE = () => {
                 >
                     <p className="text-base lg:text-lg xl:text-xl leading-relaxed text-gray-800 text-left">{data.description.DGATE}</p>
                 </OfficeContentSection>
-
+                <br></br>
                 {/* Activities */}
                 <OfficeContentSection
                     sectionId="activities"
                     title="Activities"
                     icon="🎯"
                 >
-                    <div className="relative h-24 overflow-hidden mb-2 rounded-xl bg-gray-50 shadow-inner border border-gray-100 group">
+                    <div className="relative h-32 overflow-hidden mb-2 rounded-xl bg-gray-50 shadow-inner border border-gray-100 group">
                         <ul className="notice-ticker absolute w-full animate-vertical-scroll hover:animation-paused">
                             {activityHighlights.concat(activityHighlights).map((item, idx) => (
                                 <li key={idx} className="flex items-center gap-3 px-6 py-4 text-[rgb(100,25,25)] font-semibold text-sm lg:text-base h-24">
@@ -99,7 +99,7 @@ const DGATE = () => {
                         </ul>
                     </div>
                 </OfficeContentSection>
-
+                
                 {/* Projects */}
                 <OfficeContentSection
                     sectionId="projects"
@@ -134,10 +134,10 @@ const DGATE = () => {
                         {data.description.participation_in_hackathon.map((participation, i) => (
                             <div
                                 key={i}
-                                className="bg-[rgb(220,140,140)] p-6 rounded-xl shadow-sm border border-[rgb(200,120,120)] transition-all hover:bg-white hover:shadow-md text-left"
+                                className="bg-[rgb(220,140,140)]/50 p-6 rounded-xl shadow-sm border border-[rgb(200,120,120)] transition-all hover:bg-white hover:shadow-md text-left"
                             >
                                 <h4 className="text-base lg:text-lg font-bold text-[rgb(100,25,25)] mb-2">{participation.project}</h4>
-                                <p className="text-sm lg:text-base text-gray-700 leading-relaxed">{participation.achievement}</p>
+                                <p className="text-sm lg:text-base text-gray-800 leading-relaxed">{participation.achievement}</p>
                             </div>
                         ))}
                     </div>

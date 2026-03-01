@@ -20,7 +20,7 @@ const Pace = () => {
             contactEmail={paceData.contact?.email || 'pacecell@aurcc.ac.in'}
             onSectionChange={setCurrentSection}
         >
-            <div className="text-left">
+            <div className="text-left space-y-10">
                 {/* Description Section */}
                 <OfficeContentSection
                     sectionId="description"
@@ -61,8 +61,8 @@ const Pace = () => {
                                 ))}
                             </ul>
                         </div>
-                        <p className="text-base text-gray-700 font-medium italic text-center pt-4">
-                            "Whether you're aiming for a government job or seeking to improve your competitive exam performance, the PACE Cell is here to guide you every step of the way."
+                        <p className="text-base text-gray-700 font-bold italic text-center pt-4">
+                            "Whether you're aiming for a government job or seeking to improve your competitive exam performance,<br></br> the PACE Cell is here to guide you every step of the way."
                         </p>
                     </div>
                 </OfficeContentSection>

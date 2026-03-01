@@ -27,7 +27,7 @@ const Zonal = () => {
             contactEmail={data.contact_us || 'zonaloffice@aurcc.ac.in'}
             onSectionChange={handleSectionChange}
         >
-            <div className="content">
+            <div className="content space-y-10">
                 {/* Description */}
                 <OfficeContentSection
                     sectionId="description"

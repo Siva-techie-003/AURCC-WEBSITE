@@ -1,6 +1,5 @@
 ﻿import React, { useState, useEffect, useRef, useMemo } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import departmentData from '../assets/departments.json';
 import './DepartmentsView.css';
 
 const DepartmentsView = () => {
@@ -26,22 +25,31 @@ const DepartmentsView = () => {
         'Administrative and Technical Staff',
         'Research and Publications',
     ];
-
+    
     useEffect(() => {
-        const loadDepartment = () => {
-            const dept = departmentData.find(d => d.address === departmentName);
-            if (!dept) {
-                console.error('Department not found:', departmentName);
-                navigate('/programs_offered');
-                return;
-            }
-            setDepartment(dept);
-            setCurrentIndex(0);
-            setCurrentSection('About Department');
-        };
+  const fetchDepartment = async () => {
+    try {
+      const res = await fetch(
+        `http://localhost:5000/api/departments/${departmentName}`
+      );
+      const data = await res.json();
 
-        loadDepartment();
-    }, [departmentName, navigate]);
+      if (!data) {
+        navigate("/programs_offered");
+        return;
+      }
+
+      setDepartment(data);
+    } catch (error) {
+      console.error("Error fetching department:", error);
+    }
+  };
+
+  fetchDepartment();
+}, [departmentName, navigate]);
+
+
+const BACKEND_URL = "http://localhost:5000";
 
     const updateSectionOffsets = () => {
         const newOffsets = sections.map(section => {
@@ -102,6 +110,19 @@ const DepartmentsView = () => {
 
     const currentEvent = events[currentIndex];
 
+    useEffect(() => {
+    if (!events || events.length === 0) return;
+
+    const interval = setInterval(() => {
+        setCurrentIndex((prevIndex) =>
+            prevIndex === events.length - 1 ? 0 : prevIndex + 1
+        );
+    }, 3000); // ⏱ auto-scroll every 4 seconds
+
+    return () => clearInterval(interval); // cleanup
+    }, [events]);
+
+
     const showPreviousEvent = () => setCurrentIndex(prev => Math.max(0, prev - 1));
     const showNextEvent = () => setCurrentIndex(prev => Math.min(events.length - 1, prev + 1));
 
@@ -113,13 +134,13 @@ const DepartmentsView = () => {
                 {/* Hero section */}
                 <section
                     className="bg-cover bg-center relative h-64 sm:h-72 md:h-80 lg:h-96"
-                    style={{ backgroundImage: `url(/${department.image})` }}
+                    style={{ backgroundImage: `url(${BACKEND_URL}/${department.image})` }}
                 >
-                    <div className="absolute inset-0 bg-gradient-to-r from-[rgb(115,63,63)]/70 to-[rgb(115,25,25)]/60"></div>
+                    <div className="absolute inset-0 bg-gradient-to-r from-[rgb(115,63,63)]/70 to-[rgb(115,25,25)]/30"></div>
                     <div className="container mx-auto h-full flex items-center relative z-10 px-3 sm:px-4 md:px-6 lg:px-9">
                         <div className="max-w-2xl">
                             <h1 className="text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-bold mb-3 sm:mb-4 text-white">
-                                <span className="bg-gradient-to-r from-[rgb(115,63,63)] to-[rgb(115,25,25)] bg-clip-text text-transparent">
+                                <span className="text-white bg-clip-text text-transparent">
                                     {department.name}
                                 </span>
                             </h1>
@@ -166,13 +187,15 @@ const DepartmentsView = () => {
                                                 <h2 className="text-lg sm:text-xl lg:text-2xl xl:text-3xl text-white font-bold text-center">About Department</h2>
                                             </div>
                                             <div className="p-8 md:p-10">
-                                                <p className="text-base lg:text-lg text-gray-700 leading-relaxed">{department.description}</p>
+                                                <ul className="text-base text-justify lg:text-lg text-gray-700 leading-relaxed">{(department?.description || []).map((description, i) => (
+                                                        <li key={i} className="pl-4 mb-6">{description}</li>
+                                                    ))}</ul>
                                             </div>
                                         </div>
                                     </div>
                                     <div className="grid grid-cols-1 md:grid-cols-1 gap-6 sm:gap-8 h-full">
                                         <div className="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden transition-all duration-300 hover:shadow-xl">
-                                            <div className="bg-gradient-to-r from-[rgb(115,63,63)] to-cyan-400 py-4 sm:py-5 md:py-6">
+                                            <div className="bg-gradient-to-r from-[rgb(115,63,63)] to-[rgb(115,25,25)] py-4 sm:py-5 md:py-6">
                                                 <h3 className="text-lg sm:text-xl lg:text-2xl xl:text-3xl text-white font-bold text-center">Vision</h3>
                                             </div>
                                             <div className="p-8 md:p-10">
@@ -180,7 +203,7 @@ const DepartmentsView = () => {
                                             </div>
                                         </div>
                                         <div className="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden transition-all duration-300 hover:shadow-xl">
-                                            <div className="bg-gradient-to-r from-cyan-400 to-teal-400 py-4 sm:py-5 md:py-6">
+                                            <div className="bg-gradient-to-r from-[rgb(115,63,63)] to-[rgb(115,25,25)] py-4 sm:py-5 md:py-6">
                                                 <h3 className="text-lg sm:text-xl lg:text-2xl xl:text-3xl text-white font-bold text-center">Mission</h3>
                                             </div>
                                             <div className="p-8 md:p-10">
@@ -207,20 +230,20 @@ const DepartmentsView = () => {
                                         <h3 className="text-lg sm:text-xl lg:text-2xl xl:text-3xl text-white font-bold text-center">Programs Available</h3>
                                     </div>
                                     <div className="p-8 md:p-10">
-                                        <div className={`grid gap-4 sm:gap-6 ${(department?.courses_offered?.length || 0) > 1 ? 'grid-cols-1 md:grid-cols-2' : 'justify-center'}`}>
+                                        <div className={`flex gap-6 sm:gap-6 ${(department?.courses_offered?.length || 0) > 1 ? 'grid-cols-1 md:grid-cols-2' : 'justify-center'}`}>
                                             {(department?.courses_offered || []).map((course, index) => (
                                                 <div key={index} className="bg-gradient-to-r from-[rgb(115,63,63)] to-[rgb(115,25,25)] p-4 sm:p-5 md:p-6 rounded-xl border border-[rgb(180,100,100)] hover:border-[rgb(160,80,80)] transition-all duration-300 hover:shadow-md">
                                                     <div className="flex items-start space-x-2 sm:space-x-3">
-                                                        <div className="flex-shrink-0 w-6 h-6 sm:w-8 sm:h-8 bg-gradient-to-r from-[rgb(115,63,63)] to-[rgb(115,25,25)] rounded-full flex items-center justify-center">
+                                                        <div className="flex-shrink-0 w-6 h-6 sm:w-8 sm:h-8 bg-yellow-400 rounded-full flex items-center justify-center">
                                                             <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 sm:h-5 sm:w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                                                             </svg>
                                                         </div>
                                                         <div className="flex-1">
-                                                            <h4 className="text-base lg:text-lg font-semibold text-gray-800 mb-2">
+                                                            <h4 className="text-base lg:text-lg font-semibold text-white mb-2">
                                                                 {typeof course === 'object' ? course.name : course}
                                                             </h4>
-                                                            <p className="text-xs lg:text-sm text-gray-600">
+                                                            <p className="text-xs lg:text-sm text-white">
                                                                 {typeof course === 'object' && course.type ? course.type : 'Full-time program with comprehensive curriculum'}
                                                             </p>
                                                         </div>
@@ -286,11 +309,11 @@ const DepartmentsView = () => {
                         {/* Achievements */}
                         <div id="achievements" className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto py-12 bg-white">
                             <h2 className="text-3xl md:text-4xl font-bold text-center mb-10 text-gray-800">
-                                <span className="bg-gradient-to-r from-purple-600 to-[rgb(115,25,25)] bg-clip-text text-transparent">Department Achievements</span>
+                                <span className="bg-gradient-to-r from-[rgb(115,63,63)] to-[rgb(115,25,25)] bg-clip-text text-transparent">Department Achievements</span>
                             </h2>
                             <div className="max-w-6xl mx-auto">
                                 <div className="relative">
-                                    <div className="absolute top-0 bottom-0 left-0 right-0 -m-2 sm:-m-4 bg-gradient-to-r from-purple-50 to-[rgb(115,25,25)] rounded-3xl transform -rotate-1"></div>
+                                    <div className="absolute top-0 bottom-0 left-1 right-1 -m-2 sm:-m-4 bg-gradient-to-r from-[rgb(139,63,63)] to-[rgb(130,25,25)] rounded-3xl transform -rotate-1"></div>
                                     <div className="relative bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden transition-all duration-300 hover:shadow-xl">
                                         <div className="h-80 sm:h-96 overflow-auto px-4 sm:px-6 py-4 sm:py-6 scrollbar-thin">
                                             <div className="space-y-3 sm:space-y-4">
@@ -327,15 +350,15 @@ const DepartmentsView = () => {
                         {/* Facility */}
                         <div id="facility" className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto py-12 bg-white">
                             <h2 className="text-3xl md:text-4xl font-bold text-center mb-10 text-gray-800">
-                                <span className="bg-gradient-to-r from-emerald-600 to-teal-500 bg-clip-text text-transparent">World-Class Facilities</span>
+                                <span className="bg-gradient-to-r from-[rgb(115,63,63)] to-[rgb(115,25,25)] bg-clip-text text-transparent">World-Class Facilities</span>
                             </h2>
                             <div className="max-w-6xl mx-auto space-y-12 sm:space-y-16">
                                 {(Array.isArray(department?.facility) ? department.facility : []).map((facility, index) => (
                                     <div key={index} className={`flex flex-col lg:flex-row items-center gap-6 sm:gap-8 md:gap-12 ${index % 2 === 0 ? '' : 'lg:flex-row-reverse'}`}>
                                         <div className="lg:w-1/2">
                                             <div className="relative">
-                                                <div className="absolute inset-0 bg-gradient-to-r from-emerald-200 to-teal-100 transform rotate-3 rounded-2xl"></div>
-                                                <img src={`/${facility.image}`} alt={facility.name} className="relative z-10 w-full h-auto object-cover rounded-2xl shadow-lg" onError={handleImageError} />
+                                                <div className="absolute inset-0 bg-gradient-to-r from-[rgb(115,63,63)] to-[rgb(115,25,25)] transform rotate-3 rounded-2xl"></div>
+                                                <img src={`${BACKEND_URL}/${facility.image}`} alt={facility.name} className="relative z-10 w-full h-auto object-cover rounded-2xl shadow-lg" onError={handleImageError} />
                                             </div>
                                         </div>
                                         <div className="lg:w-1/2 text-left">
@@ -355,14 +378,14 @@ const DepartmentsView = () => {
                         </div>
 
                         {/* Faculty Section */}
-                        <div id="faculty" className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto py-12 bg-gray-50">
+                        <div id="faculty" className="px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto py-6 bg-gray-200 rounded-2xl">
                             <div className="text-center mb-8 sm:mb-10 lg:mb-12">
                                 <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-800 relative inline-block group">
                                     OUR FACULTY
-                                    <span className="absolute -bottom-2 sm:-bottom-3 left-0 h-1 w-full bg-gradient-to-r from-[rgb(115,63,63)] to-[rgb(115,25,25)] transform origin-left transition-transform duration-300 group-hover:scale-x-110"></span>
+                                    <span className="absolute -bottom-2 sm:-bottom-3 left-0 h-1 w-full bg-gradient-to-r from-[rgb(115,63,63)] to-[rgb(115,25,25)]"></span>
                                 </h2>
                             </div>
-                            {/* HOD Desk */}
+                           {/* HOD Desk */}
                             <div className="mb-12 sm:mb-14 lg:mb-16">
                                 <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-center mb-6 sm:mb-8 text-transparent bg-clip-text bg-gradient-to-r from-[rgb(115,63,63)] to-[rgb(115,25,25)]">Head of Department</h3>
                                 <div className="flex justify-center">
@@ -371,7 +394,7 @@ const DepartmentsView = () => {
                                             <div className="relative pt-2 flex justify-center">
                                                 <div className="absolute inset-0 h-1/2 bg-gradient-to-r from-[rgb(115,63,63)] to-[rgb(115,25,25)]"></div>
                                                 <div className="relative">
-                                                    <img src={`/${staff.image}`} alt={staff.name} className="w-28 h-36 sm:w-32 sm:h-40 lg:w-36 lg:h-44 object-cover rounded-full border-4 border-white shadow-lg" onError={handleImageError} />
+                                                    <img src={`${BACKEND_URL}/${staff.image}`} alt={staff.name} className="w-28 h-36 sm:w-32 sm:h-40 lg:w-36 lg:h-44 object-cover rounded-full border-4 border-white shadow-lg" onError={handleImageError} />
                                                 </div>
                                             </div>
                                             <div className="p-6 text-center">
@@ -393,7 +416,7 @@ const DepartmentsView = () => {
                                             <div className="relative pt-2 flex justify-center">
                                                 <div className="absolute inset-0 h-1/2 bg-gradient-to-r from-[rgb(115,63,63)] to-[rgb(115,25,25)]"></div>
                                                 <div className="relative">
-                                                    <img src={`/${staff.image}`} alt={staff.name} className="w-36 h-44 object-cover rounded-full border-4 border-white shadow-lg" onError={handleImageError} />
+                                                    <img src={`${BACKEND_URL}/${staff.image}`} alt={staff.name} className="w-36 h-44 object-cover rounded-full border-4 border-white shadow-lg" onError={handleImageError} />
                                                 </div>
                                             </div>
                                             <div className="p-6 text-center">
@@ -420,7 +443,7 @@ const DepartmentsView = () => {
                                             <div className="relative pt-2 flex justify-center">
                                                 <div className="absolute inset-0 h-1/2 bg-gradient-to-r from-[rgb(115,63,63)] to-[rgb(115,25,25)]"></div>
                                                 <div className="relative">
-                                                    <img src={`/${staff.image}`} alt={staff.name} className="w-28 h-36 object-cover rounded-full border-4 border-white shadow-lg" />
+                                                    <img src={`${BACKEND_URL}/${staff.image}`} alt={staff.name} className="w-28 h-36 object-cover rounded-full border-4 border-white shadow-lg" />
                                                 </div>
                                             </div>
                                             <div className="p-4 text-center">
@@ -436,18 +459,18 @@ const DepartmentsView = () => {
                         {/* Research and Publications */}
                         <div id="research-and-publications" className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto py-12 bg-white">
                             <h2 className="text-3xl md:text-4xl font-bold text-center mb-10 text-gray-800">
-                                <span className="bg-gradient-to-r from-purple-600 to-violet-600 bg-clip-text text-transparent">Research & Publications</span>
+                                <span className="bg-gradient-to-r from-[rgb(115,63,63)] to-[rgb(115,25,25)] bg-clip-text text-transparent">Research & Publications</span>
                             </h2>
                             <div className="max-w-6xl mx-auto">
                                 <div className="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden transition-all duration-300 hover:shadow-xl">
                                     <div className="h-96 overflow-auto p-6 scrollbar-thin">
                                         <div className="space-y-6">
                                             {(Array.isArray(department?.research_and_publications) ? department.research_and_publications : []).map((publication, i) => (
-                                                <div key={i} className="p-4 border-b border-gray-100 hover:bg-purple-50 transition-colors duration-200 rounded-lg text-left">
+                                                <div key={i} className="p-4 border-b border-gray-100 hover:bg-gradient-to-r from-[rgb(115,63,63)]/70 to-[rgb(115,25,25)]/30 transition-colors duration-200 rounded-lg text-left">
                                                     <h3 className="text-lg md:text-xl font-semibold text-gray-800 mb-2">{publication.title}</h3>
                                                     <div className="flex flex-wrap items-center gap-2 mb-3">
                                                         <div className="bg-purple-50 text-purple-700 px-3 py-1 rounded-full text-sm font-medium">{publication.year}</div>
-                                                        <div className="text-gray-500 text-sm flex items-center">
+                                                        <div className="text-black text-sm flex items-center">
                                                             <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" /></svg>
                                                             {publication.authors}
                                                         </div>
@@ -472,34 +495,140 @@ const DepartmentsView = () => {
                                 <h1 className="text-2xl md:text-3xl font-bold mb-8 text-center text-gray-800">Faculty Profile</h1>
                                 <div className="flex flex-col md:flex-row gap-8">
                                     <div className="md:w-1/3 flex flex-col items-center">
-                                        <img src={`/${selectedStaff.image}`} alt={selectedStaff.name} className="w-48 h-60 rounded-xl object-cover border-4 border-[rgb(200,120,120)] shadow-md mb-4" />
+                                        <img src={`${BACKEND_URL}/${selectedStaff.image}`} alt={selectedStaff.name} className="w-48 h-60 rounded-xl object-cover border-4 border-[rgb(200,120,120)] shadow-md mb-4" />
                                         <h2 className="text-xl font-bold text-gray-800">{selectedStaff.name}</h2>
                                         <p className="text-[rgb(115,40,40)] font-medium">{selectedStaff.position}</p>
                                         <p className="text-gray-500 text-sm mt-1">{selectedStaff.email}</p>
                                     </div>
                                     <div className="md:w-2/3 max-h-[60vh] overflow-y-auto pr-4 scrollbar-thin text-left space-y-6">
-                                        {/* Education */}
-                                        {selectedStaff.education?.length > 0 && (
-                                            <div>
-                                                <h3 className="text-lg font-semibold flex items-center mb-2"><svg className="w-5 h-5 text-[rgb(120,45,45)] mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 14l9-5-9-5-9 5 9 5z" /><path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998a12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222" /></svg>Education</h3>
-                                                <ul className="space-y-2">{selectedStaff.education.map((edu, i) => <li key={i} className="bg-gray-50 p-3 rounded-lg"><div className="font-medium">{edu.degree}</div><div>{edu.institution}</div><div className="text-xs text-gray-500">{edu.year}</div></li>)}</ul>
-                                            </div>
-                                        )}
-                                        {/* Professional Experience */}
-                                        {selectedStaff.professional_experience?.length > 0 && (
-                                            <div>
-                                                <h3 className="text-lg font-semibold flex items-center mb-2"><svg className="w-5 h-5 text-[rgb(120,45,45)] mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>Professional Experience</h3>
-                                                <ul className="space-y-2">{selectedStaff.professional_experience.map((exp, i) => <li key={i} className="bg-gray-50 p-3 rounded-lg"><div className="font-medium">{exp.position}</div><div>{exp.institution}</div><div className="text-xs text-[rgb(120,45,45)]">{exp.duration}</div></li>)}</ul>
-                                            </div>
-                                        )}
-                                        {/* Achievements */}
-                                        {selectedStaff.achievements?.length > 0 && (
-                                            <div>
-                                                <h3 className="text-lg font-semibold flex items-center mb-2"><svg className="w-5 h-5 text-[rgb(120,45,45)] mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" /></svg>Achievements</h3>
-                                                <ul className="space-y-2">{selectedStaff.achievements.map((ach, i) => <li key={i} className="flex items-start"><svg className="w-5 h-5 text-amber-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg><span>{ach}</span></li>)}</ul>
-                                            </div>
-                                        )}
-                                    </div>
+
+  {/* Description */}
+  {selectedStaff.description && (
+    <section title="About">
+      <p className="text-gray-700">{selectedStaff.description}</p>
+    </section>
+  )}
+
+  {/* Education */}
+  {Array.isArray(selectedStaff.education) && (
+    <section title="Education">
+      <ul className="space-y-2">
+        {selectedStaff.education.map((edu, i) => (
+          <li key={i} className="bg-gray-50 p-3 rounded-lg">
+            <div className="font-medium">{edu.degree}</div>
+            {edu.field && <div>{edu.field}</div>}
+            <div>{edu.institution}</div>
+            {edu.year && (
+              <div className="text-xs text-gray-500">{edu.year}</div>
+            )}
+            {edu.honors && (
+              <div className="text-xs text-emerald-600">
+                {edu.honors.join(', ')}
+              </div>
+            )}
+          </li>
+        ))}
+      </ul>
+    </section>
+  )}
+
+  {/* Research Interests */}
+  {Array.isArray(selectedStaff.research_interests) && (
+    <section title="Research Interests">
+      <ul className="list-disc pl-5 space-y-1">
+        {selectedStaff.research_interests.map((item, i) => (
+          <li key={i}>{item}</li>
+        ))}
+      </ul>
+    </section>
+  )}
+
+  {/* Professional Experience */}
+  {Array.isArray(selectedStaff.professional_experience) && (
+    <section title="Professional Experience">
+      <ul className="space-y-2">
+        {selectedStaff.professional_experience.map((exp, i) => (
+          <li key={i} className="bg-gray-50 p-3 rounded-lg">
+            <div className="font-medium">{exp.position}</div>
+            <div>{exp.institution}</div>
+            <div className="text-xs text-gray-500">{exp.duration}</div>
+          </li>
+        ))}
+      </ul>
+    </section>
+  )}
+
+  {/* Roles */}
+  {Array.isArray(selectedStaff.roles) && (
+    <section title="Roles & Responsibilities">
+      <ul className="list-disc pl-5 space-y-1">
+        {selectedStaff.roles.map((role, i) => (
+          <li key={i}>{role}</li>
+        ))}
+      </ul>
+    </section>
+  )}
+
+  {/* Achievements */}
+  {Array.isArray(selectedStaff.achievements) && (
+    <section title="Achievements">
+      <ul className="list-disc pl-5 space-y-1">
+        {selectedStaff.achievements.map((ach, i) => (
+          <li key={i}>{ach}</li>
+        ))}
+      </ul>
+    </section>
+  )}
+
+  {/* Publications (counts) */}
+  {selectedStaff.publications && (
+    <section title="Publications">
+      <ul className="space-y-1">
+        {Object.entries(selectedStaff.publications).map(([key, val], i) => (
+          <li key={i}>
+            <strong>{key}:</strong> {val}
+          </li>
+        ))}
+      </ul>
+    </section>
+  )}
+
+  {/* Abroad Visit */}
+  {selectedStaff.abroad_visit && (
+    <section title="International Exposure">
+      <p>{selectedStaff.abroad_visit}</p>
+    </section>
+  )}
+
+  {/* Links */}
+  {(selectedStaff.links || selectedStaff.research_profiles || selectedStaff.additional_links || selectedStaff.academic_achievements) && (
+    <section title="Profiles & Links">
+      <ul className="space-y-1">
+        {Object.entries({
+          ...selectedStaff.links,
+          ...selectedStaff.research_profiles,
+          ...selectedStaff.additional_links,
+          ...selectedStaff.academic_achievements,
+        }).map(([key, val], i) => (
+          typeof val === 'string' && (
+            <li key={i}>
+              <a
+                href={val}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-600 hover:underline"
+              >
+                {key}
+              </a>
+            </li>
+          )
+        ))}
+      </ul>
+    </section>
+  )}
+
+</div>
+
                                 </div>
                             </div>
                         </div>
