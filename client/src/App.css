@@ -72,22 +72,19 @@
   animation: slideLeft 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 /* ===== Smooth Infinite Marquee Animation ===== */
-@keyframes marquee {
+@keyframes marqueeVertical {
   0% {
-    transform: translateX(0);
+    transform: translateY(0);
   }
   100% {
-    transform: translateX(-50%);
+    transform: translateY(-50%);
   }
 }
 
 .animate-marquee {
-  animation: marquee 40s linear infinite;
-  display: flex;
-  width: max-content;
+  animation: marqueeVertical 20s linear infinite;
 }
 
-/* Pause animation on hover (optional but recommended) */
-.animate-marquee:hover {
+.pause-on-hover:hover {
   animation-play-state: paused;
 }
