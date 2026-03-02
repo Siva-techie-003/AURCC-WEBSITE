@@ -43,7 +43,7 @@ const HOD = () => {
                                     <div className="px-4 py-1.5 bg-[rgb(245,240,240)] rounded-full border border-[rgb(220,200,200)] flex items-center justify-center">
                                         <span className="text-xs font-bold text-[rgb(110,35,35)] uppercase tracking-wide text-center">{hod.department}</span>
                                     </div>
-                                    <p className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mt-1">Head of the Department</p>
+                                    {/* <p className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mt-1">Head of the Department</p> */}
                                 </div>
                             </div>
                         </div>

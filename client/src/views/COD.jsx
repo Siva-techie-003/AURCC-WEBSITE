@@ -2,29 +2,14 @@
 import directorsData from '../assets/COD.json';
 import './COD.css';
 
-const centreIcons = {
-    'Zonal Office': '🗺️',
-    'Academics': '📚',
-    'DGATE': '🔑',
-    'PACE Cell': '🧭',
-    'AICTE': '🏛️',
-    'Alumni': '🎓',
-    'Fine Arts Club': '🎭',
-    'Research': '🔬',
-    'Tamil Mandram': '📜',
-    'Admission cell': '📝',
-    'Naan Mudhalvan': '🌟',
-    'Office of Affiliation': '🔗',
-    'Distant Education': '🖥️',
-    'NSS': '🌱',
-    'Placement Cell': '💼',
-    'Exam Cell': '🗂️',
-};
-
 const COD = () => {
-    const directors = directorsData.centres;
+    const all = directorsData.centres;
 
-    const getCentreIcon = (centre) => centreIcons[centre] || '🎓';
+    // Dual-member cards first, single-member cards at the bottom
+    const sorted = [
+        ...all.filter(e => e.members.length > 1),
+        ...all.filter(e => e.members.length === 1),
+    ];
 
     return (
         <div className="p-4 sm:p-6 md:p-9 bg-white min-h-screen">
@@ -34,19 +19,47 @@ const COD = () => {
                     <span className="block w-24 sm:w-32 h-2 rounded-full bg-gradient-to-r from-[rgb(115,63,63)] via-[rgb(115,45,45)] to-[rgb(115,25,25)]"></span>
                 </div>
             </div>
+
             <div className="container mx-auto grid gap-6 sm:gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 font-sans">
-                {directors.map((director, index) => (
+                {sorted.map((entry, index) => (
                     <div
                         key={index}
-                        className="cod-card bg-white/60 backdrop-blur-md rounded-2xl shadow-xl flex flex-col items-center border border-[rgb(180,100,100)] transition-all duration-300 py-6 sm:py-8 px-4 text-center"
+                        className="cod-card bg-white rounded-xl shadow-lg border border-gray-200 overflow-hidden flex flex-col w-full mx-auto"
                     >
-                        <div className="mb-4 text-3xl">
-                            {getCentreIcon(director.centre)}
+                        {/* Maroon header with centre name */}
+                        <div className="w-full bg-[rgb(110,35,35)] flex items-center justify-center px-4 py-3 min-h-[52px]">
+                            <h3 className="text-white font-bold text-sm uppercase tracking-wide text-center leading-tight">
+                                {entry.centre}
+                            </h3>
                         </div>
-                        <h2 className="text-sm lg:text-base xl:text-xl font-bold text-[rgb(100,25,25)] font-sans mb-2 uppercase">{director.name}</h2>
-                        <p className="text-xs lg:text-sm xl:text-base text-[rgb(110,35,35)] font-semibold font-sans">
-                            {director.centre}
-                        </p>
+
+                        {/* Member rows — fixed height keeps all cards the same size */}
+                        <div className="flex flex-col px-4 py-2 h-[180px] justify-center gap-1">
+                            {entry.members.map((member, mIdx) => {
+                                // Zigzag: even index → photo left, name right
+                                //         odd index  → name left, photo right
+                                const isReversed = mIdx % 2 !== 0;
+                                return (
+                                    <div
+                                        key={mIdx}
+                                        className={`flex items-center gap-4 ${isReversed ? 'flex-row-reverse' : 'flex-row'}`}
+                                    >
+                                        {/* Circular photo */}
+                                        <div className="flex-shrink-0 w-16 h-16 rounded-full overflow-hidden border-2 border-[rgb(110,35,35)] shadow-sm bg-gray-100">
+                                            <img
+                                                src={`/${member.photo}`}
+                                                alt={member.name}
+                                                className="w-full h-full object-cover"
+                                            />
+                                        </div>
+                                        {/* Name */}
+                                        <span className={`text-base font-bold text-[rgb(100,25,25)] uppercase leading-tight ${isReversed ? 'text-right' : 'text-left'}`}>
+                                            {member.name}
+                                        </span>
+                                    </div>
+                                );
+                            })}
+                        </div>
                     </div>
                 ))}
             </div>
