@@ -1,69 +1,180 @@
 {
-    "centres": [
-      {
-        "name": "Dr. S. Chandrakumarmangalam & Dr. S. V. Manisekaran",
-        "centre": "Zonal Office"
-      },
-      {
-        "name": "Dr. S. Chandrakumarmangalam & Dr. P. Marikkannu",
-        "centre": "Academics"
-      },
-      {
-        "name": "Dr. J. Preethi & Dr. M. Newlin Rajkumar",
-        "centre": "DGATE"
-      },
-      {
-        "name": "Dr. I. Jayaraman & Dr. L. Babitha",
-        "centre": "PACE Cell"
-      },
-      {
-        "name": "Mr. R. Balamurugan",
-        "centre": "AICTE"
-      },
-      {
-        "name": "Dr. K. Raja",
-        "centre": "Alumni"
-      },
-      {
-        "name": "Dr. S. N. Mahalakshmi",
-        "centre": "Fine Arts Club"
-      },
-      {
-        "name": "Dr. K. Rajasekar",
-        "centre": "Research"
-      },
-      {
-        "name": "Dr. S. V. Manisekaran",
-        "centre": "Tamil Mandram"
-      },
-      {
-        "name": "Dr. T. Suganthalakshmi & Dr. T. Bhagavathi Pushpa",
-        "centre": "Admission cell"
-      },
-      {
-        "name": "Dr. M. Newlin Rajkumar & Dr. N. Fareena",
-        "centre": "Naan Mudhalvan"
-      },
-      {
-        "name": "Dr. S. Marshal Anthoni",
-        "centre": "Office of Affiliation"
-      },
-      {
-        "name": "Dr. M. V. Subha",
-        "centre": "Distant Education"
-      },
-      {
-        "name": "Dr. M. Yuvaraju & Dr. Lakshmi J",
-        "centre": "NSS"
-      },
-      {
-        "name": "Dr. J. Preethi & Dr. T. Suganthalakshmi",
-        "centre": "Placement Cell"
-      },
-      {
-        "name": "Dr. S. J. Sardhar Basha",
-        "centre": "Exam Cell"
-      }
-    ]
-  }
-  
+  "centres": [
+    {
+      "members": [
+        {
+          "name": "Dr. S. Chandrakumarmangalam",
+          "photo": "chandra.webp"
+        },
+        {
+          "name": "Dr. S. V. Manisekaran",
+          "photo": "mani.webp"
+        }
+      ],
+      "centre": "Zonal Office"
+    },
+    {
+      "members": [
+        {
+          "name": "Dr. S. Chandrakumarmangalam",
+          "photo": "chandra.webp"
+        },
+        {
+          "name": "Dr. P. Marikkannu",
+          "photo": "baskaran.webp"
+        }
+      ],
+      "centre": "Academics"
+    },
+    {
+      "members": [
+        {
+          "name": "Dr. J. Preethi",
+          "photo": "preethi.webp"
+        },
+        {
+          "name": "Dr. M. Newlin Rajkumar",
+          "photo": "newlin.webp"
+        }
+      ],
+      "centre": "DGATE"
+    },
+    {
+      "members": [
+        {
+          "name": "Dr. I. Jayaraman",
+          "photo": "jayaram.webp"
+        },
+        {
+          "name": "Dr. L. Babitha",
+          "photo": "bapitha.webp"
+        }
+      ],
+      "centre": "PACE Cell"
+    },
+    {
+      "members": [
+        {
+          "name": "Mr. R. Balamurugan",
+          "photo": "Balamurugan.webp"
+        }
+      ],
+      "centre": "AICTE"
+    },
+    {
+      "members": [
+        {
+          "name": "Dr. K. Raja",
+          "photo": "raja.webp"
+        }
+      ],
+      "centre": "Alumni"
+    },
+    {
+      "members": [
+        {
+          "name": "Dr. S. N. Mahalakshmi",
+          "photo": "Dr.S.N.M - mahalakshmi subramanian.webp"
+        }
+      ],
+      "centre": "Fine Arts Club"
+    },
+    {
+      "members": [
+        {
+          "name": "Dr. K. Rajasekar",
+          "photo": "rajasekar.webp"
+        }
+      ],
+      "centre": "Research"
+    },
+    {
+      "members": [
+        {
+          "name": "Dr. S. V. Manisekaran",
+          "photo": "mani.webp"
+        }
+      ],
+      "centre": "Tamil Mandram"
+    },
+    {
+      "members": [
+        {
+          "name": "Dr. T. Suganthalakshmi",
+          "photo": "suganthalakshmi.webp"
+        },
+        {
+          "name": "Dr. T. Bhagavathi Pushpa",
+          "photo": "bhagavathi.webp"
+        }
+      ],
+      "centre": "Admission cell"
+    },
+    {
+      "members": [
+        {
+          "name": "Dr. M. Newlin Rajkumar",
+          "photo": "newlin.webp"
+        },
+        {
+          "name": "Dr. N. Fareena",
+          "photo": "fareena2.webp"
+        }
+      ],
+      "centre": "Naan Mudhalvan"
+    },
+    {
+      "members": [
+        {
+          "name": "Dr. S. Marshal Anthoni",
+          "photo": "Marshal.webp"
+        }
+      ],
+      "centre": "Office of Affiliation"
+    },
+    {
+      "members": [
+        {
+          "name": "Dr. M. V. Subha",
+          "photo": "subha.webp"
+        }
+      ],
+      "centre": "Distant Education"
+    },
+    {
+      "members": [
+        {
+          "name": "Dr. M. Yuvaraju",
+          "photo": "Yuvaraju.webp"
+        },
+        {
+          "name": "Dr. Lakshmi J",
+          "photo": "lakshmi.webp"
+        }
+      ],
+      "centre": "NSS"
+    },
+    {
+      "members": [
+        {
+          "name": "Dr. J. Preethi",
+          "photo": "preethi.webp"
+        },
+        {
+          "name": "Dr. T. Suganthalakshmi",
+          "photo": "suganthalakshmi.webp"
+        }
+      ],
+      "centre": "Placement Cell"
+    },
+    {
+      "members": [
+        {
+          "name": "Dr. S. J. Sardhar Basha",
+          "photo": "baasha.webp"
+        }
+      ],
+      "centre": "Exam Cell"
+    }
+  ]
+}
