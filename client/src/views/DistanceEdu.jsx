@@ -28,7 +28,7 @@ const DistanceEdu = () => {
             contactEmail="distanceedu@aurcc.ac.in"
             onSectionChange={handleSectionChange}
         >
-            <div className="content">
+            <div className="content space-y-16">
                 {/* Overview */}
                 <OfficeContentSection
                     sectionId="overview"

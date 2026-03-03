@@ -25,7 +25,7 @@ const OfficeOfAffiliation = () => {
             contactEmail={data.contact_details?.email || 'affiliation@aurcc.ac.in'}
             onSectionChange={handleSectionChange}
         >
-            <div className="content">
+            <div className="content space-y-16">
                 {/* Description */}
                 <OfficeContentSection
                     sectionId="description"
