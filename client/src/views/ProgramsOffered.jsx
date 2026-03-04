@@ -16,7 +16,7 @@ const ProgramsOffered = () => {
     const iconMap = {
         'COMPUTER SCIENCE': cseIcon,
         'ELECTRONICS': eceIcon,
-        'ELECTRICAL': '⚡',
+        'ELECTRICAL': eeeIcon,
         'MECHANICAL': mechIcon,
         'ARTIFICIAL INTELLIGENCE': aiIcon,
         'VLSI': vlsiIcon,

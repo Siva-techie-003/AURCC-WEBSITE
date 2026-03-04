@@ -36,7 +36,7 @@ const DistanceEdu = () => {
             sections={sections}
             contactEmail="distanceedu@aurcc.ac.in"
         >
-            <div className="content">
+            <div className="content space-y-16">
                 {/* Overview */}
                 <OfficeContentSection
                     sectionId="overview"

@@ -39,12 +39,7 @@ const Regulation = () => {
                                 <h2 className="text-2xl lg:text-4xl font-black text-[rgb(90,20,20)] uppercase tracking-tight">Academic Integrity</h2>
                                 <p className="text-lg text-gray-500 font-bold mt-2 italic">Essential guidelines for students under Anna University regulations.</p>
                             </div>
-                            <div className="flex gap-4">
-                                <div className="px-6 py-3 bg-[rgb(220,140,140)] border border-[rgb(200,120,120)] rounded-2xl flex items-center gap-3">
-                                    <span className="text-xl">📜</span>
-                                    <span className="text-xs font-black text-[rgb(90,20,20)] uppercase tracking-widest">Official Policy</span>
-                                </div>
-                            </div>
+
                         </header>
 
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-10">

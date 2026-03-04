@@ -30,7 +30,7 @@ const OfficeOfAffiliation = () => {
             sections={sections}
             contactEmail="affiliation@aurcc.ac.in"
         >
-            <div className="content">
+            <div className="content space-y-16">
                 {/* Description */}
                 <OfficeContentSection
                     sectionId="description"
