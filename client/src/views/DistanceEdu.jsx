@@ -1,12 +1,11 @@
-﻿import React, { useState } from 'react';
-import data from '../assets/distance education.json';
+﻿import React, { useState,useEffect } from 'react';
 import OfficePageTemplate from '../components/OfficePageTemplate';
 import OfficeContentSection from '../components/OfficeContentSection';
 import StaffCard from '../components/StaffCard';
 import './DistanceEdu.css';
 
 const DistanceEdu = () => {
-    const [activeSection, setActiveSection] = useState('overview');
+    const [data, setData] = useState(null);
 
     const sections = [
         { key: 'overview', label: 'Overview' },
@@ -16,9 +15,19 @@ const DistanceEdu = () => {
         { key: 'staff', label: 'Staff' }
     ];
 
-    const handleSectionChange = (sectionKey) => {
-        setActiveSection(sectionKey);
-    };
+    useEffect(() => {
+  fetch("http://localhost:5000/api/distance-education")
+    .then(res => res.json())
+    .then(res => {
+      // if backend returns array, take first item
+      setData(Array.isArray(res) ? res[0] : res);
+    })
+    .catch(err => console.error("Distance Education fetch error:", err));
+}, []);
+
+       if (!data) {
+    return <p className="text-center mt-20">Loading...</p>;
+  }
 
     return (
         <OfficePageTemplate
@@ -26,7 +35,6 @@ const DistanceEdu = () => {
             heroSubtitle="Flexible learning for working professionals and lifelong learners"
             sections={sections}
             contactEmail="distanceedu@aurcc.ac.in"
-            onSectionChange={handleSectionChange}
         >
             <div className="content">
                 {/* Overview */}
@@ -108,7 +116,7 @@ const DistanceEdu = () => {
                     <div className="mb-8 text-base lg:text-lg text-gray-700 text-center">Meet our dedicated faculty, committed to supporting your distance learning journey.</div>
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                         {(Array.isArray(data?.staff) ? data.staff : []).map((staff, index) => (
-                            <StaffCard key={index} staff={staff} />
+                            <StaffCard key={index} staff={{...staff,image: staff.image}} />
                         ))}
                     </div>
                 </OfficeContentSection>

@@ -1,24 +1,39 @@
-﻿import React, { useState } from 'react';
-import paceData from '../assets/pace.json';
+﻿import React, { useState,useEffect } from 'react';
 import OfficePageTemplate from '../components/OfficePageTemplate';
 import OfficeContentSection from '../components/OfficeContentSection';
 import StaffCard from '../components/StaffCard';
 import './Pace.css';
 
 const Pace = () => {
-    const [currentSection, setCurrentSection] = useState('description');
+    const [data, setData] = useState(null);
     const sections = [
         { key: 'description', label: 'Description' },
         { key: 'staff', label: 'Staff' }
     ];
 
+     useEffect(() => {
+  fetch('http://localhost:5000/api/pace')
+    .then(res => res.json())
+    .then(res => {
+      if (Array.isArray(res)) {
+        setData(res[0]);
+      } else {
+        setData(res);
+      }
+    })
+    .catch(err => console.error('PACE fetch error:', err));
+}, []);
+
+      if (!data) {
+    return <p className="text-center mt-20">Loading...</p>;
+  }
+ 
     return (
         <OfficePageTemplate
             officeName="PACE CELL"
             heroSubtitle="Empowering students for competitive excellence"
             sections={sections}
-            contactEmail={paceData.contact?.email || 'pacecell@aurcc.ac.in'}
-            onSectionChange={setCurrentSection}
+            contactEmail={data.contact?.email || 'pacecell@aurcc.ac.in'}
         >
             <div className="text-left space-y-10">
                 {/* Description Section */}
@@ -74,8 +89,8 @@ const Pace = () => {
                     icon="👥"
                 >
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                        {(Array.isArray(paceData?.staff) ? paceData.staff : []).map((staff, i) => (
-                            <StaffCard key={i} staff={staff} />
+                        {(Array.isArray(data?.staff) ? data.staff : []).map((staff, i) => (
+                            <StaffCard key={i} staff={{...staff,image: staff.image}} />
                         ))}
                     </div>
                 </OfficeContentSection>

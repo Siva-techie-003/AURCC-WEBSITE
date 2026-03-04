@@ -1,12 +1,11 @@
-﻿import React, { useState } from 'react';
-import data from '../assets/placement-cell.json';
+﻿import React, { useState,useEffect } from 'react';
 import OfficePageTemplate from '../components/OfficePageTemplate';
 import OfficeContentSection from '../components/OfficeContentSection';
 import StaffCard from '../components/StaffCard';
 import './PlacementCell.css';
 
 const PlacementCell = () => {
-    const [activeSection, setActiveSection] = useState('description');
+            const [data, setData] = useState(null);
 
     const sections = [
         { key: 'description', label: 'Description' },
@@ -17,17 +16,23 @@ const PlacementCell = () => {
         { key: 'staff', label: 'Staff' }
     ];
 
-    const handleSectionChange = (sectionKey) => {
-        setActiveSection(sectionKey);
-    };
+useEffect(() => {
+  fetch("http://localhost:5000/api/placement-cell")
+    .then(res => res.json())
+    .then(data => setData(data))
+    .catch(err => console.error(err));
+}, []);
+
+if (!data) {
+  return <p className="text-center mt-20">Loading...</p>;
+}    
 
     return (
         <OfficePageTemplate
             officeName="PLACEMENT CELL"
             heroSubtitle="Empowering students for career success and industry connections"
             sections={sections}
-            contactEmail={data.contact_us || 'placementcell@aurcc.ac.in'}
-            onSectionChange={handleSectionChange}
+            contactEmail="placementcell@aurcc.ac.in"
         >
             <div className="content">
                 {/* Description */}
@@ -73,7 +78,7 @@ const PlacementCell = () => {
                         <div className="text-base lg:text-lg text-gray-700 mb-8 text-center max-w-2xl font-medium">
                             <span className="font-bold text-[rgb(100,25,25)]">Our Results Speak for Themselves:</span> Each year, our students receive numerous placement offers from leading companies.
                         </div>
-                        <img src="/placement statistics.webp" alt="Placement Statistics" className="w-full max-w-4xl mx-auto h-auto rounded-2xl shadow-xl border border-gray-100" />
+                        <img src="http://localhost:5000/public/placement statistics.webp" alt="Placement Statistics" className="w-full max-w-4xl mx-auto h-auto rounded-2xl shadow-xl border border-gray-100" />
                     </div>
                 </OfficeContentSection>
 
@@ -114,7 +119,7 @@ const PlacementCell = () => {
                     icon="🏢"
                 >
                     <div className="flex justify-center">
-                        <img src="/recruiters.jpg" alt="Our Recruiters" className="w-full max-w-4xl mx-auto h-auto rounded-2xl shadow-xl border border-gray-100" />
+                        <img src="http://localhost:5000/public/recruiters.jpg" alt="Our Recruiters" className="w-full max-w-4xl mx-auto h-auto rounded-2xl shadow-xl border border-gray-100" />
                     </div>
                 </OfficeContentSection>
 
@@ -125,7 +130,7 @@ const PlacementCell = () => {
                     icon="🎓"
                 >
                     <div className="flex justify-center">
-                        <img src="/Placedstudents.webp" alt="Placed Students" className="w-full max-w-4xl mx-auto h-auto rounded-2xl shadow-xl border border-gray-100" />
+                        <img src="http://localhost:5000/public/Placedstudents.webp" alt="Placed Students" className="w-full max-w-4xl mx-auto h-auto rounded-2xl shadow-xl border border-gray-100" />
                     </div>
                 </OfficeContentSection>
 
@@ -137,7 +142,7 @@ const PlacementCell = () => {
                 >
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                         {(Array.isArray(data?.staff_members) ? data.staff_members : []).map((staff, index) => (
-                            <StaffCard key={index} staff={staff} />
+                            <StaffCard key={index} staff={{...staff,image: staff.image}} />
                         ))}
                     </div>
                 </OfficeContentSection>

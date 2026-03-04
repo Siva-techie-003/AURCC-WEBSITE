@@ -1,14 +1,14 @@
-﻿import React, { useState } from 'react';
-import admissionData from '../assets/admission.json';
+﻿import React, { useState,useEffect } from 'react';
 import OfficePageTemplate from '../components/OfficePageTemplate';
 import OfficeContentSection from '../components/OfficeContentSection';
 import StaffCard from '../components/StaffCard';
 import './AdmissionView.css';
 
 const AdmissionView = () => {
-    const data = admissionData[0];
-    const flowchartImage = '/admission-flowchart.webp';
-    const [currentSection, setCurrentSection] = useState('overview');
+  const [data, setData] = useState(null);
+  const [currentSection, setCurrentSection] = useState('overview');
+
+  const flowchartImage = "http://localhost:5000/admission-flowchart.webp";
 
     const sections = [
         { key: 'overview', label: 'Overview' },
@@ -17,9 +17,20 @@ const AdmissionView = () => {
         { key: 'staff', label: 'Staff' }
     ];
 
-    const handleSectionChange = (sectionKey) => {
-        setCurrentSection(sectionKey);
-    };
+    useEffect(() => {
+    fetch("http://localhost:5000/api/admission")
+      .then(res => res.json())
+      .then(res => {
+  if (Array.isArray(res)) {
+    setData(res[0]);
+  } else {
+    setData(res);
+  }
+})
+      .catch(console.error);
+  }, []);
+
+  if (!data) return <p className="text-center mt-20">Loading...</p>;
 
     return (
         <OfficePageTemplate
@@ -27,7 +38,7 @@ const AdmissionView = () => {
             heroSubtitle="Join our vibrant campus and shape your future with us!"
             sections={sections}
             contactEmail="admissions@aurcc.ac.in"
-            onSectionChange={handleSectionChange}
+            onSectionChange={setCurrentSection}
         >
             <div className="content space-y-10">
                 {/* Overview */}
@@ -98,7 +109,13 @@ const AdmissionView = () => {
                 >
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                         {(Array.isArray(data?.staff) ? data.staff : []).map((staff, index) => (
-                            <StaffCard key={index} staff={staff} />
+                            <StaffCard
+                            key={index}
+                            staff={{
+                                ...staff,
+                                image: staff.image 
+                            }}
+                            />
                         ))}
                     </div>
                 </OfficeContentSection>
