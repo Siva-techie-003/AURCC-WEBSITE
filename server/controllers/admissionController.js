@@ -9,6 +9,11 @@ import PlacementCell from "../models/placementcellModel.js";
 import CRCC from "../models/crccModel.js";
 import ExamCell from "../models/ExaminationCell.js";
 import EstateOffice from "../models/EstateOfficeStaff.js";
+import Administrator from "../models/administratorModel.js";
+import DeanOffice from "../models/DeanOffice.js";
+import HOD from "../models/HOD.js";
+import CellCoordinator from "../models/CellCoordinator.js";
+import Administration from "../models/Administration.js";
 
 export const getAdmission = async (req, res, next) => {
   try {
@@ -137,5 +142,71 @@ export const getEstateOffice = async (req, res) => {
     res.json(data || { staff: [] });
   } catch (err) {
     res.status(500).json({ message: err.message });
+  }
+};
+
+export const getAdministrators = async (req, res) => {
+  try {
+    const doc = await Administrator.findOne(); // single document
+
+    if (!doc || !doc.administrator) {
+      return res.status(404).json([]);
+    }
+
+    // ✅ send ONLY array
+    res.json(doc.administrator);
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+};
+
+export const getDeanOffice = async (req, res) => {
+  try {
+    const doc = await DeanOffice.findOne();
+
+    res.json({
+      staff: doc?.staff || []
+    });
+  } catch (err) {
+    res.status(500).json({ message: "Server error" });
+  }
+};
+
+export const getHODs = async (req, res) => {
+  try {
+    const doc = await HOD.findOne();
+
+    res.json({
+      departments: doc?.departments || []
+    });
+  } catch (error) {
+    res.status(500).json({ message: "Server error" });
+  }
+};
+
+export const getCellCoordinators = async (req, res) => {
+  try {
+    const doc = await CellCoordinator.findOne();
+
+    res.json({
+      centres: doc ? doc.centres : []
+    });
+  } catch (err) {
+    res.status(500).json({ error: "Server error" });
+  }
+};
+
+export const getAdministration = async (req, res) => {
+  try {
+    const data = await Administration.findOne();
+
+    if (!data) {
+      return res.status(404).json({ message: "No administration data found" });
+    }
+
+    res.json(data);
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: err.message });
   }
 };
