@@ -34,7 +34,7 @@ const COD = () => {
                         </div>
 
                         {/* Member rows — fixed height keeps all cards the same size */}
-                        <div className="flex flex-col px-4 py-2 h-[180px] justify-center gap-1">
+                        <div className="flex flex-col px-6 py-2 h-[180px] justify-center gap-1">
                             {entry.members.map((member, mIdx) => {
                                 // Zigzag: even index → photo left, name right
                                 //         odd index  → name left, photo right
@@ -45,7 +45,7 @@ const COD = () => {
                                         className={`flex items-center gap-4 ${isReversed ? 'flex-row-reverse' : 'flex-row'}`}
                                     >
                                         {/* Circular photo */}
-                                        <div className="flex-shrink-0 w-16 h-16 rounded-full overflow-hidden border-2 border-[rgb(110,35,35)] shadow-sm bg-gray-100">
+                                        <div className="flex-shrink-0 w-20 h-20 rounded-lg overflow-hidden border-2 border-[rgb(110,35,35)] shadow-sm bg-gray-100">
                                             <img
                                                 src={`/${member.photo}`}
                                                 alt={member.name}

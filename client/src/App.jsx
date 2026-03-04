@@ -27,6 +27,9 @@ const OfficeOfAffiliation = lazy(() => import('./views/OfficeOfAffiliation'));
 const Zonal = lazy(() => import('./views/Zonal'));
 const Pace = lazy(() => import('./views/Pace'));
 const Admin = lazy(() => import('./views/Admin'));
+const AdminEstablishment = lazy(() => import('./views/AdminEstablishment'));
+const AdminPurchaseFinance = lazy(() => import('./views/AdminPurchaseFinance'));
+const AdminStudent = lazy(() => import('./views/AdminStudent'));
 const AicteAndMoe = lazy(() => import('./views/AicteAndMoe'));
 const Antiragging = lazy(() => import('./views/Antiragging'));
 const VC = lazy(() => import('./views/VC'));
@@ -79,6 +82,9 @@ function App() {
                         <Route path="/zonal" element={<Zonal />} />
                         <Route path="/pace-cell" element={<Pace />} />
                         <Route path="/administration" element={<Admin />} />
+                        <Route path="/admin/establishment" element={<AdminEstablishment />} />
+                        <Route path="/admin/purchase-finance" element={<AdminPurchaseFinance />} />
+                        <Route path="/admin/student" element={<AdminStudent />} />
                         <Route path="/aicte&moe" element={<AicteAndMoe />} />
                         <Route path="/antiragging" element={<Antiragging />} />
                         <Route path="/VC" element={<VC />} />

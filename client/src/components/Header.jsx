@@ -1,4 +1,4 @@
-﻿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 
 const Header = () => {
@@ -23,7 +23,14 @@ const Header = () => {
             links: [
                 // { name: "Organogram", route: "/organogram" },
                 { name: "University Administration", route: "/Registrar" },
-                { name: "Administrative Staff", route: "/administration" },
+                {
+                    name: "Administrative Staff",
+                    subLinks: [
+                        { name: "GENERAL ADMINISTRATION-I", route: "/admin/establishment" },
+                        { name: "GENERAL ADMINISTRATION-II", route: "/admin/purchase-finance" },
+                        { name: "GENERAL ADMINISTRATION-III", route: "/admin/student" },
+                    ]
+                },
                 { name: "Head of the Departments", route: "/HOD" },
                 { name: "Cell Coordinators", route: "/COD" },
                 { name: "Dean Office Staff", route: "/dean_office" },
@@ -125,12 +132,34 @@ const Header = () => {
                                         {section.name}
                                         <svg className="w-4 h-4 transform group-hover:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7" /></svg>
                                     </button>
-<div className="absolute top-full right-0 pt-2 py-3 bg-white rounded-2xl shadow-2xl border border-gray-100 opacity-0 invisible translate-y-2 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 transition-all w-64 z-50">                                        {section.links.map((link, lIdx) => (
-                                            <Link key={lIdx} to={link.route} className="block px-6 py-2.5 text-sm font-bold text-gray-600 hover:text-[rgb(115,40,40)] hover:bg-[rgb(220,140,140)]/50 transition-colors">
-                                                {link.name}
-                                            </Link>
-                                        ))}
+                                    <div className="absolute top-full right-0 pt-2 py-3 bg-white rounded-2xl shadow-2xl border border-gray-100 opacity-0 invisible translate-y-2 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 transition-all w-64 z-50">
+                                        {section.links.map((link, lIdx) =>
+                                            link.subLinks ? (
+                                                /* ── Item with flyout sub-menu ── */
+                                                <div key={lIdx} className="relative group/sub">
+                                                    <div className="flex items-center justify-between px-6 py-2.5 text-sm font-bold text-gray-600 hover:text-[rgb(115,40,40)] hover:bg-[rgb(220,140,140)]/50 transition-colors cursor-default">
+                                                        <span>{link.name}</span>
+                                                        <svg className="w-3.5 h-3.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                            <path d="M9 18l6-6-6-6" />
+                                                        </svg>
+                                                    </div>
+                                                    {/* Right-side flyout */}
+                                                    <div className="absolute top-0 left-full ml-1 py-3 bg-white rounded-2xl shadow-2xl border border-gray-100 opacity-0 invisible translate-x-2 group-hover/sub:opacity-100 group-hover/sub:visible group-hover/sub:translate-x-0 transition-all w-60 z-50">
+                                                        {link.subLinks.map((sub, sIdx) => (
+                                                            <Link key={sIdx} to={sub.route} className="block px-6 py-2.5 text-sm font-bold text-gray-600 hover:text-[rgb(115,40,40)] hover:bg-[rgb(220,140,140)]/50 transition-colors">
+                                                                {sub.name}
+                                                            </Link>
+                                                        ))}
+                                                    </div>
+                                                </div>
+                                            ) : (
+                                                <Link key={lIdx} to={link.route} className="block px-6 py-2.5 text-sm font-bold text-gray-600 hover:text-[rgb(115,40,40)] hover:bg-[rgb(220,140,140)]/50 transition-colors">
+                                                    {link.name}
+                                                </Link>
+                                            )
+                                        )}
                                     </div>
+
                                 </div>
                             ))}
                         </div>
@@ -163,11 +192,22 @@ const Header = () => {
                                     </button>
                                     {section.isOpen && (
                                         <div className="pl-4 pb-4 space-y-1">
-                                            {section.links.map((link, lIdx) => (
-                                                <Link key={lIdx} to={link.route} onClick={() => setIsMobileMenuOpen(false)} className="block py-2.5 px-4 text-xs font-bold text-gray-500 hover:text-[rgb(115,40,40)] hover:bg-[rgb(220,140,140)] rounded-xl transition-all">
-                                                    {link.name}
-                                                </Link>
-                                            ))}
+                                            {section.links.map((link, lIdx) =>
+                                                link.subLinks ? (
+                                                    <div key={lIdx}>
+                                                        <p className="py-2 px-4 text-xs font-black text-[rgb(90,20,20)] uppercase tracking-widest">{link.name}</p>
+                                                        {link.subLinks.map((sub, sIdx) => (
+                                                            <Link key={sIdx} to={sub.route} onClick={() => setIsMobileMenuOpen(false)} className="block py-2 px-8 text-xs font-bold text-gray-500 hover:text-[rgb(115,40,40)] hover:bg-[rgb(220,140,140)] rounded-xl transition-all">
+                                                                › {sub.name}
+                                                            </Link>
+                                                        ))}
+                                                    </div>
+                                                ) : (
+                                                    <Link key={lIdx} to={link.route} onClick={() => setIsMobileMenuOpen(false)} className="block py-2.5 px-4 text-xs font-bold text-gray-500 hover:text-[rgb(115,40,40)] hover:bg-[rgb(220,140,140)] rounded-xl transition-all">
+                                                        {link.name}
+                                                    </Link>
+                                                )
+                                            )}
                                         </div>
                                     )}
                                 </div>

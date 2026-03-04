@@ -43,13 +43,12 @@ const Downloads = () => {
         }
     };
 
-    const DownloadCard = ({ title, links, icon }) => (
-        <div className="bg-white/70 backdrop-blur-md rounded-3xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-lg transition-all animate-fadeIn">
+    const DownloadCard = ({ title, links }) => (
+        <div className="bg-white/70 backdrop-blur-md rounded-3xl shadow-xl border border-gray-100 overflow-hidden hover:shadow-2xl transition-all animate-fadeIn h-full flex flex-col">
             <div className="bg-gradient-to-r from-[rgb(115,63,63)] to-[rgb(115,25,25)] py-6 px-8 flex justify-between items-center text-white">
                 <h2 className="text-xl lg:text-2xl font-bold">{title}</h2>
-                <span className="text-2xl opacity-50">{icon}</span>
             </div>
-            <div className="p-8">
+            <div className="p-8 flex-grow flex flex-col justify-start">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     {links.map((link, i) => (
                         <a
@@ -72,7 +71,7 @@ const Downloads = () => {
     );
 
     return (
-        <main className="bg-gradient-to-br from-[rgb(115,63,63)] via-[rgb(115,45,45)] to-white min-h-screen font-sans text-gray-800 text-left">
+        <main className="bg-white min-h-screen font-sans text-gray-800 text-left">
             {/* Hero Section */}
             <section className="relative w-full h-48 sm:h-60 md:h-80 lg:h-[45vh] overflow-hidden flex items-center justify-center">
                 <img src="/offices.webp" alt="Downloads" className="absolute inset-0 w-full h-full object-cover object-center" />
@@ -92,8 +91,8 @@ const Downloads = () => {
                                 key={section.key}
                                 onClick={() => scrollToSection(section.key)}
                                 className={`font-bold px-5 py-3 rounded-full text-xs sm:text-sm lg:text-base transition-all duration-300 whitespace-nowrap ${currentSection === section.key
-                                        ? 'bg-[rgb(115,40,40)] text-white shadow-md'
-                                        : 'text-gray-700 hover:bg-[rgb(220,140,140)] hover:text-[rgb(115,40,40)]'
+                                    ? 'bg-[rgb(115,40,40)] text-white shadow-md'
+                                    : 'text-gray-700 hover:bg-[rgb(220,140,140)] hover:text-[rgb(115,40,40)]'
                                     }`}
                             >
                                 {section.label}
@@ -104,53 +103,51 @@ const Downloads = () => {
             </div>
 
             {/* Content Sections */}
-            <div className="max-w-7xl mx-auto py-12 px-4 space-y-16">
-                <div id="various_forms" ref={sectionRefs.various_forms}>
-                    <DownloadCard
-                        title="Various Forms Download"
-                        icon="📄"
-                        links={[
-                            { label: 'Email Id Creation Form', href: 'http://www.aurcc.ac.in/downloads/Mail/Email%20Id%20Creation%20form.pdf' },
-                            { label: 'New Email Id Registration Form', href: 'http://www.aurcc.ac.in/downloads/Mail/Email%20Id%20Creation%20form.pdf' }
-                        ]}
-                    />
-                </div>
+            <div className="max-w-7xl mx-auto py-12 px-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div id="various_forms" ref={sectionRefs.various_forms} className="h-full">
+                        <DownloadCard
+                            title="Various Forms Download"
+                            links={[
+                                { label: 'Email Id Creation Form', href: 'http://www.aurcc.ac.in/downloads/Mail/Email%20Id%20Creation%20form.pdf' },
+                                { label: 'New Email Id Registration Form', href: 'http://www.aurcc.ac.in/downloads/Mail/Email%20Id%20Creation%20form.pdf' }
+                            ]}
+                        />
+                    </div>
 
-                <div id="wifi_forms" ref={sectionRefs.wifi_forms}>
-                    <DownloadCard
-                        title="Wifi Registration Forms"
-                        icon="📶"
-                        links={[
-                            { label: 'Staff Wifi Registration form', href: 'http://www.aurcc.ac.in/downloads/wifi/StaffWifiRegistrationform.pdf' },
-                            { label: 'Student Wifi Registration form', href: 'http://www.aurcc.ac.in/downloads/wifi/StudentWIFIRegistrationform.pdf' }
-                        ]}
-                    />
-                </div>
+                    <div id="wifi_forms" ref={sectionRefs.wifi_forms} className="h-full">
+                        <DownloadCard
+                            title="Wifi Registration Forms"
+                            links={[
+                                { label: 'Staff Wifi Registration form', href: 'http://www.aurcc.ac.in/downloads/wifi/StaffWifiRegistrationform.pdf' },
+                                { label: 'Student Wifi Registration form', href: 'http://www.aurcc.ac.in/downloads/wifi/StudentWIFIRegistrationform.pdf' }
+                            ]}
+                        />
+                    </div>
 
-                <div id="scholarship_forms" ref={sectionRefs.scholarship_forms}>
-                    <DownloadCard
-                        title="Scholarship Forms"
-                        icon="🎓"
-                        links={[
-                            { label: 'BC - MBC Fresh Scholarship form - 2024-2025', href: 'http://www.aurcc.ac.in/downloads/Scholarships%20Forms/BC-MBC%20FRESH%202023-24.pdf' },
-                            { label: 'BC - MBC Renewal Scholarship form - 2024-2025', href: 'http://www.aurcc.ac.in/downloads/Scholarships%20Forms/BC-MBC%20RENEWAL%202023-24.pdf' },
-                            { label: 'SC - ST Fresh Scholarship form - 2024 - 2025', href: 'http://www.aurcc.ac.in/downloads/Scholarships%20Forms/SC&ST%20Application.pdf' },
-                            { label: 'SC - ST Renewal Scholarship form - 2024-2025', href: 'http://www.aurcc.ac.in/downloads/Scholarships%20Forms/RENEWAL%20SC&ST.pdf' }
-                        ]}
-                    />
-                </div>
+                    <div id="scholarship_forms" ref={sectionRefs.scholarship_forms} className="h-full">
+                        <DownloadCard
+                            title="Scholarship Forms"
+                            links={[
+                                { label: 'BC - MBC Fresh Scholarship form', href: 'http://www.aurcc.ac.in/downloads/Scholarships%20Forms/BC-MBC%20FRESH%202023-24.pdf' },
+                                { label: 'BC - MBC Renewal Scholarship form', href: 'http://www.aurcc.ac.in/downloads/Scholarships%20Forms/BC-MBC%20RENEWAL%202023-24.pdf' },
+                                { label: 'SC - ST Fresh Scholarship form', href: 'http://www.aurcc.ac.in/downloads/Scholarships%20Forms/SC&ST%20Application.pdf' },
+                                { label: 'SC - ST Renewal Scholarship form', href: 'http://www.aurcc.ac.in/downloads/Scholarships%20Forms/RENEWAL%20SC&ST.pdf' }
+                            ]}
+                        />
+                    </div>
 
-                <div id="application_forms" ref={sectionRefs.application_forms}>
-                    <DownloadCard
-                        title="Application Forms"
-                        icon="📝"
-                        links={[
-                            { label: 'Bonafide Form', href: 'http://www.aurcc.ac.in/downloads/Application%20Forms/bonafide%20format.pdf' },
-                            { label: 'Discontinue Form', href: 'http://www.aurcc.ac.in/downloads/Application%20Forms/DISCONT%20FORMAT.pdf' },
-                            { label: 'Students On duty Application Form', href: 'http://www.aurcc.ac.in/downloads/Application%20Forms/On%20duty.pdf' },
-                            { label: 'Student Internship Application Form', href: 'http://www.aurcc.ac.in/downloads/Application%20Forms/INTERNSHIP.pdf' }
-                        ]}
-                    />
+                    <div id="application_forms" ref={sectionRefs.application_forms} className="h-full">
+                        <DownloadCard
+                            title="Application Forms"
+                            links={[
+                                { label: 'Bonafide Form', href: 'http://www.aurcc.ac.in/downloads/Application%20Forms/bonafide%20format.pdf' },
+                                { label: 'Discontinue Form', href: 'http://www.aurcc.ac.in/downloads/Application%20Forms/DISCONT%20FORMAT.pdf' },
+                                { label: 'Students On duty Application Form', href: 'http://www.aurcc.ac.in/downloads/Application%20Forms/On%20duty.pdf' },
+                                { label: 'Student Internship Application Form', href: 'http://www.aurcc.ac.in/downloads/Application%20Forms/INTERNSHIP.pdf' }
+                            ]}
+                        />
+                    </div>
                 </div>
             </div>
         </main>
