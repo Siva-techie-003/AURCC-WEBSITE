@@ -1,18 +1,23 @@
-﻿import React, { useState } from 'react';
-import regulationsData from '../assets/regulation.json';
+﻿import React, { useState,useEffect } from 'react';
 import RegulationCard from '../components/RegulationCard';
 import './Regulation.css';
 
 const Regulation = () => {
-    const pdfMap = {
-        'UG Programmes': '/ug_regulations.pdf',
-        'PG Programmes': '/pg_regulations.pdf'
-    };
+    const [regulations, setRegulations] = useState(null);
 
-    const regulations = (Array.isArray(regulationsData?.regulations) ? regulationsData.regulations : []).map(reg => ({
-        ...reg,
-        pdfUrl: pdfMap[reg['Regulation']] || reg['PDF Link']
-    }));
+  useEffect(() => {
+    fetch("http://localhost:5000/api/regulations")
+      .then(res => res.json())
+      .then(data => {
+        console.log("REGULATION API 👉", data);
+        setRegulations(data.regulations);
+      })
+      .catch(err => console.error(err));
+  }, []);
+
+  if (!regulations) {
+    return <p className="text-center mt-20">Loading regulations...</p>;
+  }
 
     return (
         <div className="flex-grow bg-white min-h-screen text-left pt-[120px] sm:pt-[140px] lg:pt-[120px]">
@@ -39,12 +44,7 @@ const Regulation = () => {
                                 <h2 className="text-2xl lg:text-4xl font-black text-[rgb(90,20,20)] uppercase tracking-tight">Academic Integrity</h2>
                                 <p className="text-lg text-gray-500 font-bold mt-2 italic">Essential guidelines for students under Anna University regulations.</p>
                             </div>
-                            <div className="flex gap-4">
-                                <div className="px-6 py-3 bg-[rgb(220,140,140)] border border-[rgb(200,120,120)] rounded-2xl flex items-center gap-3">
-                                    <span className="text-xl">📜</span>
-                                    <span className="text-xs font-black text-[rgb(90,20,20)] uppercase tracking-widest">Official Policy</span>
-                                </div>
-                            </div>
+
                         </header>
 
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-10">
@@ -52,7 +52,7 @@ const Regulation = () => {
                                 <div key={i} className="group">
                                     <RegulationCard
                                         title={reg['Regulation']}
-                                        pdf={reg.pdfUrl}
+                                        pdf={`http://localhost:5000${reg["PDF Link"]}`}
                                     />
                                 </div>
                             ))}

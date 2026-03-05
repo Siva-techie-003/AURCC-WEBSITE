@@ -145,9 +145,6 @@ const BACKEND_URL = "http://localhost:5000";
                                 </span>
                             </h1>
                             <p className="text-sm sm:text-base lg:text-lg xl:text-xl mb-6 sm:mb-8 text-gray-100 leading-relaxed">Explore our cutting-edge programs and stay ahead in the field.</p>
-                            <button className="bg-[rgb(115,40,40)] hover:bg-[rgb(110,35,35)] text-white py-2 px-4 sm:px-6 rounded-full transition duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
-                                Learn More
-                            </button>
                         </div>
                     </div>
                 </section>
@@ -378,9 +375,36 @@ const BACKEND_URL = "http://localhost:5000";
                         </div>
 
                         {/* Faculty Section */}
-                        <div id="faculty" className="px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto py-6 bg-gray-200 rounded-2xl">
-                            <div className="text-center mb-8 sm:mb-10 lg:mb-12">
-                                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-800 relative inline-block group">
+                        <div id="faculty" className="relative px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto py-6 bg-gray-50 rounded-2xl overflow-hidden">
+                                                  {/* Background Pattern */}
+  <div className="absolute inset-0 opacity-30 text-[rgb(115,40,40)] pointer-events-none">
+    <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+      <pattern
+        id="hexagon-pattern"
+        width="100"
+        height="100"
+        patternUnits="userSpaceOnUse"
+      >
+        <path
+          d="M50 0 L87.5 25 L87.5 75 L50 100 L12.5 75 L12.5 25 Z"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="1"
+        />
+      </pattern>
+      <rect width="100%" height="100%" fill="url(#hexagon-pattern)" />
+    </svg>
+  </div>
+                                <div className="relative z-10 text-center mb-8 sm:mb-10 lg:mb-12 bg-white/90 backdrop-blur
+    shadow-lg hover:shadow-xl
+    rounded-xl
+    px-6 py-4 sm:px-8 sm:py-6
+    transition-all duration-300
+    border border-gray-100
+    text-center
+    max-w-fit 
+    mx-auto">
+                                <h2 className="text-2xl text-center sm:text-3xl lg:text-4xl font-bold text-gray-700 relative inline-block group">
                                     OUR FACULTY
                                     <span className="absolute -bottom-2 sm:-bottom-3 left-0 h-1 w-full bg-gradient-to-r from-[rgb(115,63,63)] to-[rgb(115,25,25)]"></span>
                                 </h2>
@@ -430,6 +454,63 @@ const BACKEND_URL = "http://localhost:5000";
                                 </div>
                             </div>
                         </div>
+
+                       {/* Networking Staff (ONLY for CSE Department) */}
+{department?.name?.toLowerCase().includes("computer science") &&
+ Array.isArray(department?.networking_staff) &&
+ department.networking_staff.length > 0 && (
+
+  <div
+    id="networking-staff"
+    className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto py-12 bg-white"
+  >
+    <h2 className="text-3xl md:text-4xl font-bold text-center mb-10 text-gray-800">
+      <span className="bg-gradient-to-r from-[rgb(115,63,63)] to-[rgb(115,25,25)] bg-clip-text text-transparent">
+        Networking Staff
+      </span>
+    </h2>
+
+    <div className="flex justify-center flex-wrap gap-8">
+      {department.networking_staff.map((staff, i) => (
+        <div
+          key={i}
+          className="bg-white rounded-xl shadow-lg overflow-hidden border border-[rgb(200,120,120)]
+                     transform transition-all duration-300 cursor-pointer
+                     min-h-[380px] max-w-[320px] w-80
+                     hover:-translate-y-3 hover:scale-[1.03]
+                     hover:shadow-2xl hover:border-[rgb(115,40,40)]"
+          onClick={() => showDetails(staff)}
+        >
+          <div className="relative pt-2 flex justify-center">
+            <div className="absolute inset-0 h-1/2 bg-gradient-to-r from-[rgb(115,63,63)] to-[rgb(115,25,25)]"></div>
+            <div className="relative">
+              <img
+                src={`${BACKEND_URL}/${staff.image}`}
+                alt={staff.name}
+                className="w-28 h-36 object-cover rounded-full border-4 border-white shadow-lg"
+                onError={handleImageError}
+              />
+            </div>
+          </div>
+
+          <div className="p-6 text-center">
+            <h4 className="text-lg font-bold text-transparent bg-clip-text bg-gradient-to-r from-[rgb(115,63,63)] to-[rgb(115,25,25)] mb-2">
+              {staff.name}
+            </h4>
+            <p className="text-gray-700 font-medium">{staff.position}</p>
+            {staff.email && (
+              <p className="text-gray-500 text-sm">{staff.email}</p>
+            )}
+            <button className="mt-4 px-4 py-2 bg-gradient-to-r from-[rgb(115,63,63)] to-[rgb(115,25,25)]
+                               text-white text-sm rounded-lg transition-all font-semibold">
+              View Profile
+            </button>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+)}
 
                         {/* Administrative Staff */}
                         <div id="administrative-and-technical-staff" className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto py-12 bg-white">

@@ -26,7 +26,7 @@ const Admin = () => {
 
                                     {subsection.DEPUTY_MANAGER && (
                                         <div className="mb-8 sm:mb-12">
-                                            <h4 className="text-base lg:text-lg xl:text-2xl font-semibold mb-6 text-center font-serif tracking-wide">Deputy Manager (Finance)</h4>
+                                            {/* <h4 className="text-base lg:text-lg xl:text-2xl font-semibold mb-6 text-center font-serif tracking-wide">Deputy Manager (Finance)</h4> */}
                                             <div className="flex flex-wrap justify-center gap-8 sm:gap-12 md:gap-16">
                                                 {subsection.DEPUTY_MANAGER.map((member) => (
                                                     <AdminStaffCard key={member.name} member={member} />

@@ -106,10 +106,11 @@ const Contact = () => {
                             <span className="text-[rgb(140,60,60)]">Google Maps</span>
                         </div>
                         <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3916.1488106969894!2d76.897368674512!3d11.026707354512415!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba85ed06825c00f%3A0xe23f5b08ec06f79e!2sAnna%20University%20Regional%20Campus%20Coimbatore!5e0!3m2!1sen!2sin!4v1709192451368!5m2!1sen!2sin"
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15663.793975145732!2d76.8803026145726!3d11.042488637620748!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba85910327ab1e3%3A0x9f7a2b4ef20fe07!2sAnna%20University%20RC%20Coimbatore!5e0!3m2!1sen!2sin!4v1772527998548!5m2!1sen!2sin"
                             className="w-full flex-grow border-0 grayscale hover:grayscale-0 transition-all duration-700"
                             allowFullScreen=""
                             loading="lazy"
+                            referrerPolicy="no-referrer-when-downgrade"
                             title="Campus Location"
                         ></iframe>
                     </div>

@@ -1,5 +1,4 @@
-﻿import React from 'react';
-import data from '../assets/curriculum_syllabus.json';
+﻿import React,{useEffect,useState} from 'react';
 import SyllabusCard from '../components/SyllabusCard';
 import './CurriculumSyllabus.css';
 
@@ -12,7 +11,21 @@ const CurriculumSyllabus = () => {
             </div>
         </header>
     );
+const [data, setData] = useState(null);
 
+  useEffect(() => {
+    fetch("http://localhost:5000/api/curriculum-syllabus")
+      .then(res => res.json())
+      .then(result => {
+        console.log("CURRICULUM DATA 👉", result);
+        setData(result);
+      })
+      .catch(err => console.error(err));
+  }, []);
+
+  if (!data) {
+    return <p className="text-center mt-20">Loading syllabus...</p>;
+  }
     return (
         <div className="flex-grow bg-gray-50 min-h-screen text-left pt-[120px] sm:pt-[140px] lg:pt-[120px]">
                         {/* Hero Section */}

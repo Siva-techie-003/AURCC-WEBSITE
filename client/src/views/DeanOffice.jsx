@@ -1,11 +1,29 @@
-﻿import React from 'react';
-import deanOfficeData from '../assets/deanoff.json';
+﻿import React, { useEffect, useState } from 'react';
 import './DeanOffice.css';
 
 const DeanOffice = () => {
-    const staffMember = (Array.isArray(deanOfficeData?.['DEAN OFFICE STAFF']) && deanOfficeData['DEAN OFFICE STAFF'].length > 0)
-        ? deanOfficeData['DEAN OFFICE STAFF'][0]
-        : { name: 'Staff Information Not Available', position: 'N/A', image: 'placeholder.png' };
+  const [staffMember, setStaffMember] = useState(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    fetch("http://localhost:5000/api/dean-office")
+      .then(res => res.json())
+      .then(data => {
+        console.log("DEAN OFFICE API:", data);
+        setStaffMember(data.staff?.[0] || null);
+        setLoading(false);
+      })
+      .catch(err => {
+        console.error(err);
+        setLoading(false);
+      });
+  }, []);
+
+  if (loading) {
+    return <p className="text-center mt-20">Loading...</p>;
+  }
+
+  const BACKEND_URL = "http://localhost:5000";
 
     return (
         <div className="bg-white min-h-screen py-8 sm:py-12 lg:py-14 px-4">
@@ -25,7 +43,7 @@ const DeanOffice = () => {
                         <div className="relative -mt-16 flex justify-center">
                             <div className="w-40 h-40 rounded-full overflow-hidden border-4 border-white shadow-md bg-white flex items-center justify-center">
                                 <img
-                                    src={`/${staffMember.image}`}
+                                    src={`${BACKEND_URL}/${staffMember.image}`}
                                     alt={staffMember.name}
                                     className="w-full h-full object-cover"
                                 />

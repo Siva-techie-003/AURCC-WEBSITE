@@ -5,12 +5,9 @@ const StaffCard = ({ staff }) => {
     const [showDefaultImage, setShowDefaultImage] = useState(false);
 
     const getImageUrl = (imagePath) => {
-        if (!imagePath) return '';
-        if (imagePath.startsWith('/')) {
-            return imagePath;
-        }
-        return `/${imagePath}`;
-    };
+    if (!imagePath) return '';
+    return `http://localhost:5000/${imagePath}`;
+};
 
     const handleImageError = () => {
         setShowDefaultImage(true);

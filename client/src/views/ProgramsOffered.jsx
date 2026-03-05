@@ -1,6 +1,5 @@
-﻿import React from 'react';
+﻿import React,{useEffect,useState} from 'react';
 import ProgramCard from '../components/ProgramCard';
-import data from '../assets/programs_offered.json';
 import './ProgramsOffered.css';
 import cseIcon from '../assets/icons/cse.png';
 import mechIcon from '../assets/icons/mech.png';
@@ -16,7 +15,7 @@ const ProgramsOffered = () => {
     const iconMap = {
         'COMPUTER SCIENCE': cseIcon,
         'ELECTRONICS': eceIcon,
-        'ELECTRICAL': '⚡',
+        'ELECTRICAL': eeeIcon,
         'MECHANICAL': mechIcon,
         'ARTIFICIAL INTELLIGENCE': aiIcon,
         'VLSI': vlsiIcon,
@@ -53,13 +52,21 @@ const ProgramsOffered = () => {
 
     const getLearnMoreLink = (course) => {
         course = course.toUpperCase();
+
+    // ✅ MBA FIRST
+    if (
+        course.includes('BUSINESS ADMINISTRATION') ||
+        course.includes('BUSINESS ANALYTICS') ||
+        course.includes('MBA')
+    ) {
+        return '/departments/mba';
+    }
         if (course.includes('VLSI')) return '/departments/ece';
         if (course.includes('COMPUTER')) return '/departments/cse';
         if (course.includes('ELECTRONICS')) return '/departments/ece';
         if (course.includes('ELECTRICAL')) return '/departments/eee';
         if (course.includes('MECHANICAL')) return '/departments/mech';
         if (course.includes('ARTIFICIAL INTELLIGENCE')) return '/departments/cse';
-        if (course.includes('MBA')) return '/departments/mba';
         return '/departments';
     };
 
@@ -73,6 +80,19 @@ const ProgramsOffered = () => {
             </div>
         </header>
     );
+
+  const [data, setData] = useState(null);
+
+  useEffect(() => {
+    fetch("http://localhost:5000/api/programs")
+      .then(res => res.json())
+      .then(result => setData(result))
+      .catch(err => console.error(err));
+  }, []);
+
+  if (!data) {
+  return <p className="text-center mt-20">Loading programs...</p>;
+}
 
     return (
         <div className="flex-grow bg-white min-h-screen text-left pt-[120px] sm:pt-[140px] lg:pt-[120px]">

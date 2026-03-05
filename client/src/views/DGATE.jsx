@@ -1,68 +1,86 @@
-﻿import React, { useState, useMemo } from 'react';
-import data from '../assets/DGATE-cell.json';
+﻿import React, { useState, useMemo, useEffect } from 'react';
 import OfficePageTemplate from '../components/OfficePageTemplate';
 import OfficeContentSection from '../components/OfficeContentSection';
 import StaffCard from '../components/StaffCard';
 import './DGATE.css';
 
 const projectIcons = {
-    'DLAPP': '📱',
-    'KIOSK': '🖥️',
-    'Cloud Based IoT Device for Virtually Opening the Gym': '☁️',
-    'AU-SMART': '📊',
-    'Hostel Leave App': '🏠',
-    'Virtual Campus Experience': '🌐',
-    'Hostr': '🛏️',
+  DLAPP: '📱',
+  KIOSK: '🖥️',
+  'Cloud Based IoT Device for Virtually Opening the Gym': '☁️',
+  'AU-SMART': '📊',
+  'Hostel Leave App': '🏠',
+  'Virtual Campus Experience': '🌐',
 };
 
 const DGATE = () => {
-    const [activeSection, setActiveSection] = useState('overview');
+  const [data, setData] = useState(null);
 
-    const sections = [
-        { key: 'overview', label: 'Overview' },
-        { key: 'activities', label: 'Activities' },
-        { key: 'projects', label: 'Projects' },
-        { key: 'hackathon', label: 'Hackathon' },
-        { key: 'staff', label: 'Staff' },
-    ];
+  useEffect(() => {
+    fetch('http://localhost:5000/api/dgate')
+      .then(res => res.json())
+      .then(setData)
+      .catch(console.error);
+  }, []);
 
-    const handleSectionChange = (sectionKey) => {
-        setActiveSection(sectionKey);
-    };
+  const sections = [
+    { key: 'overview', label: 'Overview' },
+    { key: 'activities', label: 'Activities' },
+    { key: 'projects', label: 'Projects' },
+    { key: 'hackathon', label: 'Hackathon' },
+    { key: 'staff', label: 'Staff' },
+  ];
 
-    const activityHighlights = useMemo(() => {
-        const highlights = [];
-        const act = data.description.activities;
-        if (act.curricular_activities) {
-            act.curricular_activities.forEach(a => highlights.push(`${a.date}: ${a.name}`));
-        }
-        if (act.social_responsibilities) {
-            act.social_responsibilities.forEach(a => highlights.push(`${a.date}: ${a.event}`));
-        }
-        if (act.internal_activities) {
-            act.internal_activities.forEach(a => highlights.push(`Internal: ${a}`));
-        }
-        if (act.external_activities) {
-            act.external_activities.forEach(a => highlights.push(`External: ${a}`));
-        }
-        return highlights;
-    }, []);
+  /* ✅ SAFE activity highlights */
+  const activityHighlights = useMemo(() => {
+    if (!data?.description?.activities) return [];
 
-    const projectCards = useMemo(() => {
-        const completed = (data.description.projects_completed || []).map(p => ({
-            name: p.name,
-            description: p.description,
-            icon: projectIcons[p.name] || '✅',
-            status: 'Completed',
-        }));
-        const ongoing = (data.description.ongoing_projects || []).map(name => ({
-            name,
-            description: '',
-            icon: projectIcons[name] || '🚧',
-            status: 'Ongoing',
-        }));
-        return [...completed, ...ongoing];
-    }, []);
+    const act = data.description.activities;
+    const highlights = [];
+
+    act.curricular_activities?.forEach(a =>
+      highlights.push(`${a.date}: ${a.name}`)
+    );
+    act.social_responsibilities?.forEach(a =>
+      highlights.push(`${a.date}: ${a.event}`)
+    );
+    act.internal_activities?.forEach(a =>
+      highlights.push(`Internal: ${a}`)
+    );
+    act.external_activities?.forEach(a =>
+      highlights.push(`External: ${a}`)
+    );
+
+    return highlights;
+  }, [data]);
+
+  /* ✅ SAFE projects */
+  const projectCards = useMemo(() => {
+    if (!data?.description) return [];
+
+    const completed =
+      data.description.projects_completed?.map(p => ({
+        name: p.name,
+        description: p.description,
+        icon: projectIcons[p.name] || '✅',
+        status: 'Completed',
+      })) || [];
+
+    const ongoing =
+      data.description.ongoing_projects?.map(name => ({
+        name,
+        description: '',
+        icon: projectIcons[name] || '🚧',
+        status: 'Ongoing',
+      })) || [];
+
+    return [...completed, ...ongoing];
+  }, [data]);
+
+  /* ✅ LOADING STATE */
+  if (!data) {
+    return <p className="text-center mt-20">Loading...</p>;
+  }
 
     return (
         <OfficePageTemplate
@@ -70,7 +88,6 @@ const DGATE = () => {
             heroSubtitle="Join our vibrant campus and shape your future with us!"
             sections={sections}
             contactEmail="dgatecell@aurcc.ac.in"
-            onSectionChange={handleSectionChange}
         >
             <div className="content space-y-10">
                 {/* Overview */}
@@ -81,7 +98,7 @@ const DGATE = () => {
                 >
                     <p className="text-base lg:text-lg xl:text-xl leading-relaxed text-gray-800 text-left">{data.description.DGATE}</p>
                 </OfficeContentSection>
-                <br></br>
+
                 {/* Activities */}
                 <OfficeContentSection
                     sectionId="activities"
@@ -155,7 +172,8 @@ const DGATE = () => {
                                 key={index}
                                 staff={{
                                     ...staff,
-                                    email: staff.email_id // Normalize field names to match StaffCard expectations
+                                     email: staff.email_id,
+                                     image: staff.image 
                                 }}
                             />
                         ))}

@@ -1,12 +1,11 @@
-﻿import React, { useState } from 'react';
-import data from '../assets/exam-cell.json';
+﻿import React, { useState,useEffect } from 'react';
 import OfficePageTemplate from '../components/OfficePageTemplate';
 import OfficeContentSection from '../components/OfficeContentSection';
 import StaffCard from '../components/StaffCard';
 import './ExamCell.css';
 
 const ExamCell = () => {
-    const [activeSection, setActiveSection] = useState('about');
+    const [data, setData] = useState(null);
 
     const sections = [
         { key: 'about', label: 'About' },
@@ -14,17 +13,26 @@ const ExamCell = () => {
         { key: 'staff', label: 'Staff' }
     ];
 
-    const handleSectionChange = (sectionKey) => {
-        setActiveSection(sectionKey);
-    };
+    useEffect(() => {
+  fetch("http://localhost:5000/api/exam-cell")
+    .then(res => res.json())
+    .then(json => {
+      console.log("API DATA:", json);
+      setData(json);
+    })
+    .catch(err => console.error("API ERROR:", err));
+}, []);
+    
+    if (!data) {
+      return <p className="text-center mt-20">Loading...</p>;
+    } 
 
     return (
         <OfficePageTemplate
             officeName="EXAM CELL"
             heroSubtitle="Ensuring smooth conduct and transparency in university examinations"
             sections={sections}
-            contactEmail={data.contact_us || 'examcell@aurcc.ac.in'}
-            onSectionChange={handleSectionChange}
+            contactEmail="examcell@aurcc.ac.in"
         >
             <div className="content">
                 {/* About */}
@@ -48,7 +56,8 @@ const ExamCell = () => {
                 >
                     <div className="mb-8 text-base lg:text-lg text-gray-700 text-left">We provide comprehensive support for all examination-related processes, ensuring a smooth experience for students and staff.</div>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                        {data.services.map((service, index) => (
+                        {Array.isArray(data?.services) &&
+  data.services.map((service, index)=> (
                             <div key={index} className="flex items-start gap-4 p-5 bg-white rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-all group">
                                 <span className="text-2xl text-green-500 group-hover:scale-125 transition-transform shrink-0">✔️</span>
                                 <span className="font-bold text-sm lg:text-base text-gray-800 text-left leading-snug">{service}</span>
@@ -64,12 +73,14 @@ const ExamCell = () => {
                     icon="👥"
                 >
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                        {data.office_bearers.map((bearer, index) => (
+                        {Array.isArray(data?.office_bearers) &&
+  data.office_bearers.map((bearer, index) => (
                             <StaffCard
                                 key={index}
                                 staff={{
                                     ...bearer,
-                                    email: bearer.email_id || bearer.email // Support different field names
+                                    email: bearer.email_id || bearer.email,
+                                    image: bearer.image // Support different field names
                                 }}
                             />
                         ))}
