@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 
 const Header = () => {
@@ -147,66 +147,100 @@ const Header = () => {
                             </div> */}
                         </div>
 
-                        {/* Desktop Nav */}
-                        <div className="hidden lg:flex items-center space-x-1">
-                            {sections.map((section, idx) => (
-                                <div key={idx} className="relative group">
-                                    <button
-                                        onClick={() => {
-                                            if (section.sections) {
-                                                navigate(section.route, { state: { scrollTo: section.sections } });
-                                            } else {
-                                                navigate(section.route);
-                                            }
-                                        }}
-                                        className="px-4 py-2 text-lg font-black text-gray-700 hover:text-[rgb(115,40,40)] hover:bg-[rgb(220,140,140)] rounded-xl transition-all flex items-center gap-1.5 uppercase tracking-tighter"
-                                    >                                        {section.name}
-                                        <svg className="w-4 h-4 transform group-hover:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7" /></svg>
-                                    </button>
-<<<<<<< HEAD
-                                    <div className="absolute top-full right-0 pt-2 py-3 bg-white rounded-2xl shadow-2xl border border-gray-100 opacity-0 invisible translate-y-2 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 transition-all w-72 z-50">                                        {section.links.map((link, lIdx) => (
-                                        <Link
-                                            key={lIdx}
-                                            to={link.section ? "/" : link.route}
-                                            state={link.section ? { scrollTo: link.section } : null}
-                                            className="block px-6 py-2.5 text-base font-bold text-gray-600 hover:text-[rgb(115,40,40)] hover:bg-[rgb(220,140,140)]/50 transition-colors"
-                                        >
-                                            {link.name}
-                                        </Link>
-                                    ))}
-=======
-                                    <div className="absolute top-full right-0 pt-2 py-3 bg-white rounded-2xl shadow-2xl border border-gray-100 opacity-0 invisible translate-y-2 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 transition-all w-64 z-50">
-                                        {section.links.map((link, lIdx) =>
-                                            link.subLinks ? (
-                                                /* ── Item with flyout sub-menu ── */
-                                                <div key={lIdx} className="relative group/sub">
-                                                    <div className="flex items-center justify-between px-6 py-2.5 text-sm font-bold text-gray-600 hover:text-[rgb(115,40,40)] hover:bg-[rgb(220,140,140)]/50 transition-colors cursor-default">
-                                                        <span>{link.name}</span>
-                                                        <svg className="w-3.5 h-3.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                            <path d="M9 18l6-6-6-6" />
-                                                        </svg>
-                                                    </div>
-                                                    {/* Right-side flyout */}
-                                                    <div className="absolute top-0 left-full ml-1 py-3 bg-white rounded-2xl shadow-2xl border border-gray-100 opacity-0 invisible translate-x-2 group-hover/sub:opacity-100 group-hover/sub:visible group-hover/sub:translate-x-0 transition-all w-60 z-50">
-                                                        {link.subLinks.map((sub, sIdx) => (
-                                                            <Link key={sIdx} to={sub.route} className="block px-6 py-2.5 text-sm font-bold text-gray-600 hover:text-[rgb(115,40,40)] hover:bg-[rgb(220,140,140)]/50 transition-colors">
-                                                                {sub.name}
-                                                            </Link>
-                                                        ))}
-                                                    </div>
-                                                </div>
-                                            ) : (
-                                                <Link key={lIdx} to={link.route} className="block px-6 py-2.5 text-sm font-bold text-gray-600 hover:text-[rgb(115,40,40)] hover:bg-[rgb(220,140,140)]/50 transition-colors">
-                                                    {link.name}
-                                                </Link>
-                                            )
-                                        )}
->>>>>>> 4c358d553edc1448a72c2dfae024418a954d5c02
-                                    </div>
+{/* Desktop Nav */}
+<div className="hidden lg:flex items-center space-x-1">
+  {sections.map((section, idx) => (
+    <div key={idx} className="relative group">
 
-                                </div>
-                            ))}
-                        </div>
+      {/* Main Menu Button */}
+      <button
+        onClick={() => {
+          if (section.sections) {
+            navigate(section.route, { state: { scrollTo: section.sections } });
+          } else if (section.route) {
+            navigate(section.route);
+          }
+        }}
+        className="px-4 py-2 text-lg font-black text-gray-700 hover:text-[rgb(115,40,40)] hover:bg-[rgb(220,140,140)] rounded-xl transition-all flex items-center gap-1.5 uppercase tracking-tighter"
+      >
+        {section.name}
+
+        {/* Arrow Icon */}
+        {section.links && (
+          <svg
+            className="w-4 h-4 transform group-hover:rotate-180 transition-transform"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path d="M19 9l-7 7-7-7" />
+          </svg>
+        )}
+      </button>
+
+      {/* Dropdown Menu */}
+      {section.links && (
+        <div className="absolute top-full right-0 pt-2 py-3 bg-white rounded-2xl shadow-2xl border border-gray-100 opacity-0 invisible translate-y-2 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 transition-all w-72 z-50">
+
+          {section.links.map((link, lIdx) => (
+
+            link.subLinks ? (
+
+              /* Dropdown with Flyout */
+              <div key={lIdx} className="relative group/sub">
+
+                <div className="flex items-center justify-between px-6 py-2.5 text-base font-bold text-gray-600 hover:text-[rgb(115,40,40)] hover:bg-[rgb(220,140,140)]/50 transition-colors cursor-pointer">
+                  <span>{link.name}</span>
+
+                  <svg
+                    className="w-3.5 h-3.5"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path d="M9 18l6-6-6-6" />
+                  </svg>
+                </div>
+
+                {/* Flyout Menu */}
+                <div className="absolute top-0 left-full ml-1 py-3 bg-white rounded-2xl shadow-2xl border border-gray-100 opacity-0 invisible translate-x-2 group-hover/sub:opacity-100 group-hover/sub:visible group-hover/sub:translate-x-0 transition-all w-60 z-50">
+
+                  {link.subLinks.map((sub, sIdx) => (
+                    <Link
+                      key={sIdx}
+                      to={sub.route}
+                      className="block px-6 py-2.5 text-base font-bold text-gray-600 hover:text-[rgb(115,40,40)] hover:bg-[rgb(220,140,140)]/50 transition-colors"
+                    >
+                      {sub.name}
+                    </Link>
+                  ))}
+
+                </div>
+
+              </div>
+
+            ) : (
+
+              /* Normal Dropdown Link */
+              <Link
+                key={lIdx}
+                to={link.section ? "/" : link.route}
+                state={link.section ? { scrollTo: link.section } : null}
+                className="block px-6 py-2.5 text-base font-bold text-gray-600 hover:text-[rgb(115,40,40)] hover:bg-[rgb(220,140,140)]/50 transition-colors"
+              >
+                {link.name}
+              </Link>
+
+            )
+
+          ))}
+
+        </div>
+      )}
+
+    </div>
+  ))}
+</div>
 
                         {/* Mobile Toggle */}
                         <button onClick={() => setIsMobileMenuOpen(true)} className="lg:hidden p-3 rounded-2xl bg-[rgb(220,140,140)] text-[rgb(110,35,35)] hover:bg-[rgb(200,120,120)] transition-all active:scale-95">
@@ -236,7 +270,6 @@ const Header = () => {
                                     </button>
                                     {section.isOpen && (
                                         <div className="pl-4 pb-4 space-y-1">
-<<<<<<< HEAD
                                             {section.links.map((link, lIdx) => (
                                                 <Link
                                                     key={lIdx}
@@ -248,7 +281,6 @@ const Header = () => {
                                                     {link.name}
                                                 </Link>
                                             ))}
-=======
                                             {section.links.map((link, lIdx) =>
                                                 link.subLinks ? (
                                                     <div key={lIdx}>
@@ -265,7 +297,7 @@ const Header = () => {
                                                     </Link>
                                                 )
                                             )}
->>>>>>> 4c358d553edc1448a72c2dfae024418a954d5c02
+
                                         </div>
                                     )}
                                 </div>
