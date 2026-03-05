@@ -50,7 +50,7 @@ const StudentAffairs = () => {
     };
 
     return (
-        <div className="min-h-screen flex flex-col bg-gray-50 text-left">
+        <div className="min-h-screen flex flex-col bg-gray-50 text-left pt-[120px] sm:pt-[140px] lg:pt-[120px]">
 {/* Hero Section */}
 <section className="relative w-full h-56 sm:h-72 md:h-96 lg:h-[50vh] flex items-center justify-center overflow-hidden">
 

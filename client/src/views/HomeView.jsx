@@ -1,5 +1,5 @@
 ﻿import React, { useState, useEffect, useRef, useMemo } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import QuickLinksSidebar from '../components/QuickLinksSidebar';
 import './HomeView.css';
 
@@ -28,6 +28,17 @@ const HomeView = () => {
         years: 0,
         placement: 0
     });
+// Scroll to section if navigated with state
+const location = useLocation();
+
+useEffect(() => {
+  if (location.state?.scrollTo) {
+    const el = document.getElementById(location.state.scrollTo);
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth" });
+    }
+  }
+}, [location]);
 
     // Static Data
     const galleryImages = [
@@ -127,6 +138,18 @@ const HomeView = () => {
             prevImage();
         }
     };
+    //Logic for  company logo animation
+    const totalDots = 12;
+    const duration = 2500; // must match animation time
+    const [activeDot, setActiveDot] = useState(0);
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setActiveDot((prev) => (prev + 1) % totalDots);
+        }, duration);
+
+        return () => clearInterval(interval);
+    }, []);
 
     // Chatbot Logic
     const generateSessionId = () => {
@@ -236,12 +259,15 @@ const HomeView = () => {
 
     return (
         <div className="">
+            <div className="pt-20 sm:pt-24 lg:pt-32">
+   {/* All page content here */}
+
             <main className="">
                 {/* Hero Section */}
-                <section className="relative h-screen flex items-center justify-center overflow-hidden">
+                <section id='home_page' className="relative h-[300px] md:h-[400px] lg:h-[700px] flex items-center justify-center overflow-hidden ">
                     <div className="absolute inset-0 ">
                         <video
-                            src="/Droneshot1.mp4"   // place your mp4 file in public folder
+                            src="/aurcc_front_view.mp4"   // place your mp4 file in public folder
                             autoPlay
                             loop
                             muted
@@ -285,7 +311,7 @@ const HomeView = () => {
                 </section>
 
                 {/* Floating Stats Cards */}
-                <section ref={statsRef} className="container mx-auto px-4 sm:px-6 lg:px-8 relative mt-16 sm:mt-20 md:mt-24 lg:mt-32 z-30 mb-12 sm:mb-16 lg:mb-20">
+                <section ref={statsRef} className="container mx-auto px-4 sm:px-6 lg:px-8 relative mt-16 sm:mt-20 md:mt-24 lg:mt-12 z-30 mb-12 sm:mb-16 lg:mb-20">
                     <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
                         {[
                             { label: 'Global Alumni', value: '5,000+', animatedValue: counts.alumni, suffix: '+', icon: <path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" /> },
@@ -293,7 +319,7 @@ const HomeView = () => {
                             { label: 'Of Excellence', value: '20+ Years', animatedValue: counts.years, suffix: '+ Years', icon: <path d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" /> },
                             { label: 'Placement Record', value: '100%', animatedValue: counts.placement, suffix: '%', icon: <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /> }
                         ].map((stat, idx) => (
-                            <div key={idx} className="bg-white/90 backdrop-blur-sm rounded-2xl shadow-xl border border-white/20 p-6 sm:p-8 text-center transform transition-all duration-300 hover:scale-105 hover:shadow-2xl min-h-[200px] flex flex-col justify-center items-center">
+                            <div key={idx} className="bg-white/90 backdrop-blur-sm rounded-xl shadow-2xl border-t-[8px] border-l-[10px] border-[rgb(115,40,40)]/40 p-6 sm:p-8 text-center transform transition-all duration-300 hover:scale-105 hover:shadow-2xl min-h-[200px] flex flex-col justify-center items-center">
                                 <div className="text-[rgb(115,40,40)] mb-4 sm:mb-6">
                                     <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 sm:h-10 sm:w-10 lg:h-12 lg:w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                         {stat.icon}
@@ -309,7 +335,7 @@ const HomeView = () => {
                 </section>
 
                 {/* About Section */}
-                <section id="about" className="container mx-auto px-4 sm:px-8 lg:px-14 relative py-12 sm:py-16 lg:py-10 overflow-hidden">
+                <section id="about" className="container mx-auto px-4 sm:px-8 lg:px-14 relative py-12 sm:py-16 lg:py-10 overflow-hidden scroll-mt-24 lg:scroll-mt-32">
                     <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-20">
                         <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
                             <pattern id="dots-pattern" width="40" height="40" patternUnits="userSpaceOnUse">
@@ -582,7 +608,7 @@ const HomeView = () => {
 
 
                 {/* Dean's Message */}
-                <section id="deans-message" className="py-12 sm:py-16 lg:py-24 bg-[rgb(171,110,110)] text-white relative overflow-hidden">
+                <section id="deans-message" className="py-12 sm:py-16 lg:py-24 bg-[rgb(171,110,110)] text-white relative overflow-hidden scroll-mt-24 lg:scroll-mt-32">
                     <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-20 z-0">
                         <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
                             <pattern id="wave-pattern" width="100" height="20" patternUnits="userSpaceOnUse">
@@ -609,7 +635,7 @@ const HomeView = () => {
                 </section>
 
                 {/* Gallery Section */}
-                <section id="gallery" className="py-12 sm:py-16 lg:py-20 bg-white overflow-hidden w-full relative">
+                <section id="gallery" className="py-12 sm:py-16 lg:py-20 bg-white overflow-hidden w-full relative scroll-mt-24 lg:scroll-mt-32">
                     <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-20 z-0">
                         <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
                             <pattern id="circle-pattern" width="60" height="60" patternUnits="userSpaceOnUse">
@@ -653,12 +679,12 @@ const HomeView = () => {
                         </div>
                     </div>
                 </section>
-                <section className="py-16 lg:py-24 bg-[rgb(171,110,110)] overflow-hidden relative">
+                <section id="our_recruiters" className="py-16 lg:py-24 bg-[rgb(171,110,110)] overflow-hidden relative scroll-mt-24 lg:scroll-mt-32">
                     <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
 
                         {/* Heading */}
                         <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-12 text-white relative inline-block">
-                            OUR HIRING PARTNERS
+                            OUR RECRUITERS
                             <span className="absolute -bottom-3 left-1/2 -translate-x-1/2 h-1 w-20 bg-yellow-500"></span>
                         </h2>
 
@@ -715,11 +741,20 @@ const HomeView = () => {
 
                         {/* Dots (Moved Up) */}
                         <div className="flex justify-center gap-3 mt-6">
-                            {Array.from({ length: 12 }).map((_, index) => (
-                                <span
+                            {Array.from({ length: totalDots }).map((_, index) => (
+                                <div
                                     key={index}
-                                    className="h-3 w-3 rounded-full bg-white"
-                                ></span>
+                                    className="relative w-10 h-2 bg-gray-300 rounded-full overflow-hidden"
+                                >
+                                    {activeDot === index && (
+                                        <div
+                                            className="absolute left-0 top-0 h-full bg-[rgb(120,45,45)]"
+                                            style={{
+                                                animation: `fillBar ${duration}ms linear forwards`
+                                            }}
+                                        />
+                                    )}
+                                </div>
                             ))}
                         </div>
                     </div>
@@ -727,11 +762,16 @@ const HomeView = () => {
                     {/* Keyframes Inside Same Section */}
                     <style>
                         {`
-      @keyframes logoscroll {
-        from { transform: translateX(0); }
-        to { transform: translateX(-50%); }
-      }
-    `}
+    @keyframes logoscroll {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+
+    @keyframes fillBar {
+      from { width: 0%; }
+      to { width: 100%; }
+    }
+  `}
                     </style>
                 </section>
 
@@ -801,6 +841,7 @@ const HomeView = () => {
                     </div>
                 </dialog>
             </main>
+            </div>
         </div>
     );
 };

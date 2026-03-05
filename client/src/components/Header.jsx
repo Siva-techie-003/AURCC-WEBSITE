@@ -6,17 +6,20 @@ const Header = () => {
     const navigate = useNavigate();
 
     const mobileSections = [
+
         {
-            name: "Life@aurcc",
-            isOpen: false,
+            name: "Home",
+            route: "/",
+            sections: "home_page",
+            isOpen: true,
             links: [
-                { name: "Sports", route: "/sports" },
-                { name: "NSS", route: "/nss" },
-                { name: "Kani Tamil Peravai", route: "/tamilmandram" },
-                { name: "Fine Arts Club", route: "/fine-arts" },
-                { name: "Alumni", route: "/alumni" }
+                { name: "About Campus", route: "/", section: "about" },
+                { name: "Dean's Details", route: "/", section: "deans-message" },
+                { name: "Gallery of Memories", route: "/", section: "gallery" },
+                { name: "Our Recruiters", route: "/", section: "our_recruiters" },
             ],
         },
+
         {
             name: "Administration",
             isOpen: false,
@@ -43,12 +46,13 @@ const Header = () => {
             name: "Departments",
             isOpen: false,
             links: [
-                { name: "Computer Science Engineering", route: "/departments/cse" },
+
+                { name: "Mechanical Engineering", route: "/departments/mech" },
                 { name: "Electrical & Electronics Engineering", route: "/departments/eee" },
                 { name: "Electronics & communication Engineering", route: "/departments/ece" },
-                { name: "Mechanical Engineering", route: "/departments/mech" },
-                { name: "MBA", route: "/departments/mba" },
+                { name: "Computer Science & Engineering", route: "/departments/cse" },
                 { name: "Science & Humanities Department", route: "/s&h" },
+                { name: "MBA", route: "/departments/mba" },
             ],
         },
         {
@@ -68,6 +72,17 @@ const Header = () => {
                 { name: "Estate Office", route: "/EstateOff" },
             ],
         },
+        {
+            name: "Life@aurcc",
+            isOpen: false,
+            links: [
+                // { name: "Physical Education", route: "/sports" },
+                { name: "NSS", route: "/nss" },
+                { name: "Kani Tamil Peravai", route: "/tamilmandram" },
+                { name: "Fine Arts Club", route: "/fine-arts" },
+                { name: "Alumni", route: "/alumni" }
+            ],
+        },
     ];
 
     const [sections, setSections] = useState(mobileSections);
@@ -79,7 +94,7 @@ const Header = () => {
     };
 
     return (
-        <div className="z-50">
+        <div className="fixed top-0 left-0 w-full z-50">
             {/* Top Bar */}
             <div className="bg-gradient-to-r from-[rgb(115,63,63)] to-[rgb(115,25,25)] text-white">
 
@@ -90,6 +105,10 @@ const Header = () => {
                             <Link to="/library" className="hover:text-yellow-300 transition-colors flex items-center gap-1.5 group">
                                 <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"></path></svg>
                                 <span className="hidden sm:inline font-medium">Library</span>
+                            </Link>
+                            <Link to="/sports" className="hover:text-yellow-300 transition-colors flex items-center gap-1.5 group">
+                                <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+                                <span className="hidden sm:inline font-medium">Physical Education</span>
                             </Link>
                             <Link to="/hostel" className="hover:text-yellow-300 transition-colors flex items-center gap-1.5 group">
                                 <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
@@ -105,31 +124,48 @@ const Header = () => {
             </div>
 
             {/* Main Header */}
-            <header className="sticky top-0 bg-white shadow-xl border-b border-gray-100 h-20 sm:h-24 flex items-center">
+            <header className="fixed top-8 left-0 w-full z-[999] bg-white shadow-xl border-b border-gray-100 h-20 sm:h-24 lg:h-32 flex items-center">
                 <div className="container mx-auto px-4 sm:px-6">
                     <nav className="flex items-center justify-between">
                         {/* Logo */}
                         <div className="flex items-center space-x-3 sm:space-x-5 cursor-pointer transform hover:scale-[1.02] transition-all" onClick={() => navigate('/')}>
-                            <img src="/logo_new5.png" alt="AURCC Logo" className="h-12 w-auto sm:h-16 md:h-18 lg:h-20" />
+                            <img src="/aurcc_tamil.jpg" alt="AURCC Logo" className="h-12 w-auto sm:h-16 md:h-18 lg:h-[90px]" />
                             {/* <div className="flex flex-col min-w-0">
-                                <span className="text-xl sm:text-2xl md:text-3xl font-black bg-clip-text text-transparent bg-gradient-to-r from-[rgb(115,63,63)] to-[rgb(115,25,25)] leading-none">AURCC</span>
-                                <span className="text-[10px] sm:text-xs md:text-sm text-gray-500 font-bold tracking-tighter mt-1">Anna University Regional Campus Coimbatore</span>
+                                <span className="text-xl sm:text-2xl md:text-3xl font-[1000] tracking-wide bg-clip-text text-transparent bg-gradient-to-r from-[rgb(154,87,87)] to-[rgb(154,30,30)] leading-none drop-shadow-sm" style={{ fontFamily: "'Baloo Thambi 2', sans-serif" }}>
+                                    அண்ணா பல்கலைக்கழகம்
+                                </span>
+                                <span className="flex justify-center text-[10px] sm:text-xs md:text-xl text-[rgb(154,65,65)] to-[rgb(154,30,30)] font-bold tracking-wide mt-1" style={{ fontFamily: 'serif' }}>
+                                    மண்டல வளாகம், கோயம்புத்தூர்
+                                </span>
                             </div> */}
                         </div>
 
                         {/* Desktop Nav */}
-                        <div className="hidden lg:flex items-center space-x-2">
+                        <div className="hidden lg:flex items-center space-x-1">
                             {sections.map((section, idx) => (
                                 <div key={idx} className="relative group">
-                                    <button className="px-4 py-2 text-sm font-black text-gray-700 hover:text-[rgb(115,40,40)] hover:bg-[rgb(220,140,140)] rounded-xl transition-all flex items-center gap-1.5 uppercase tracking-tighter">
-                                        {section.name}
+                                    <button
+                                        onClick={() => {
+                                            if (section.sections) {
+                                                navigate(section.route, { state: { scrollTo: section.sections } });
+                                            } else {
+                                                navigate(section.route);
+                                            }
+                                        }}
+                                        className="px-4 py-2 text-lg font-black text-gray-700 hover:text-[rgb(115,40,40)] hover:bg-[rgb(220,140,140)] rounded-xl transition-all flex items-center gap-1.5 uppercase tracking-tighter"
+                                    >                                        {section.name}
                                         <svg className="w-4 h-4 transform group-hover:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7" /></svg>
                                     </button>
-<div className="absolute top-full right-0 pt-2 py-3 bg-white rounded-2xl shadow-2xl border border-gray-100 opacity-0 invisible translate-y-2 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 transition-all w-64 z-50">                                        {section.links.map((link, lIdx) => (
-                                            <Link key={lIdx} to={link.route} className="block px-6 py-2.5 text-sm font-bold text-gray-600 hover:text-[rgb(115,40,40)] hover:bg-[rgb(220,140,140)]/50 transition-colors">
-                                                {link.name}
-                                            </Link>
-                                        ))}
+                                    <div className="absolute top-full right-0 pt-2 py-3 bg-white rounded-2xl shadow-2xl border border-gray-100 opacity-0 invisible translate-y-2 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 transition-all w-72 z-50">                                        {section.links.map((link, lIdx) => (
+                                        <Link
+                                            key={lIdx}
+                                            to={link.section ? "/" : link.route}
+                                            state={link.section ? { scrollTo: link.section } : null}
+                                            className="block px-6 py-2.5 text-base font-bold text-gray-600 hover:text-[rgb(115,40,40)] hover:bg-[rgb(220,140,140)]/50 transition-colors"
+                                        >
+                                            {link.name}
+                                        </Link>
+                                    ))}
                                     </div>
                                 </div>
                             ))}
@@ -164,7 +200,13 @@ const Header = () => {
                                     {section.isOpen && (
                                         <div className="pl-4 pb-4 space-y-1">
                                             {section.links.map((link, lIdx) => (
-                                                <Link key={lIdx} to={link.route} onClick={() => setIsMobileMenuOpen(false)} className="block py-2.5 px-4 text-xs font-bold text-gray-500 hover:text-[rgb(115,40,40)] hover:bg-[rgb(220,140,140)] rounded-xl transition-all">
+                                                <Link
+                                                    key={lIdx}
+                                                    to={link.section ? "/" : link.route}
+                                                    state={link.section ? { scrollTo: link.section } : null}
+                                                    onClick={() => setIsMobileMenuOpen(false)}
+                                                    className="block py-2.5 px-4 text-xs font-bold text-gray-500 hover:text-[rgb(115,40,40)] hover:bg-[rgb(220,140,140)] rounded-xl transition-all"
+                                                >
                                                     {link.name}
                                                 </Link>
                                             ))}

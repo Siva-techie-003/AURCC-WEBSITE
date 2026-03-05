@@ -72,7 +72,7 @@ const Downloads = () => {
     );
 
     return (
-        <main className="bg-gradient-to-br from-[rgb(115,63,63)] via-[rgb(115,45,45)] to-white min-h-screen font-sans text-gray-800 text-left">
+        <main className="bg-white min-h-screen font-sans text-gray-800 text-left">
             {/* Hero Section */}
             <section className="relative w-full h-48 sm:h-60 md:h-80 lg:h-[45vh] overflow-hidden flex items-center justify-center">
                 <img src="/offices.webp" alt="Downloads" className="absolute inset-0 w-full h-full object-cover object-center" />
@@ -104,7 +104,7 @@ const Downloads = () => {
             </div>
 
             {/* Content Sections */}
-            <div className="max-w-7xl mx-auto py-12 px-4 space-y-16">
+            <div className="max-w-5xl mx-auto py-12 px-4 space-y-16">
                 <div id="various_forms" ref={sectionRefs.various_forms}>
                     <DownloadCard
                         title="Various Forms Download"

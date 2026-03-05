@@ -14,7 +14,7 @@ const CurriculumSyllabus = () => {
     );
 
     return (
-        <div className="flex-grow bg-gray-50 min-h-screen text-left">
+        <div className="flex-grow bg-gray-50 min-h-screen text-left pt-[120px] sm:pt-[140px] lg:pt-[120px]">
                         {/* Hero Section */}
 <section className="relative w-full h-56 sm:h-72 md:h-96 lg:h-[50vh] flex items-center justify-center overflow-hidden">
 
