@@ -1,18 +1,23 @@
-﻿import React, { useState } from 'react';
-import regulationsData from '../assets/regulation.json';
+﻿import React, { useState,useEffect } from 'react';
 import RegulationCard from '../components/RegulationCard';
 import './Regulation.css';
 
 const Regulation = () => {
-    const pdfMap = {
-        'UG Programmes': '/ug_regulations.pdf',
-        'PG Programmes': '/pg_regulations.pdf'
-    };
+    const [regulations, setRegulations] = useState(null);
 
-    const regulations = (Array.isArray(regulationsData?.regulations) ? regulationsData.regulations : []).map(reg => ({
-        ...reg,
-        pdfUrl: pdfMap[reg['Regulation']] || reg['PDF Link']
-    }));
+  useEffect(() => {
+    fetch("http://localhost:5000/api/regulations")
+      .then(res => res.json())
+      .then(data => {
+        console.log("REGULATION API 👉", data);
+        setRegulations(data.regulations);
+      })
+      .catch(err => console.error(err));
+  }, []);
+
+  if (!regulations) {
+    return <p className="text-center mt-20">Loading regulations...</p>;
+  }
 
     return (
         <div className="flex-grow bg-white min-h-screen text-left">
@@ -47,7 +52,7 @@ const Regulation = () => {
                                 <div key={i} className="group">
                                     <RegulationCard
                                         title={reg['Regulation']}
-                                        pdf={reg.pdfUrl}
+                                        pdf={`http://localhost:5000${reg["PDF Link"]}`}
                                     />
                                 </div>
                             ))}

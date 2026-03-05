@@ -14,6 +14,9 @@ import DeanOffice from "../models/DeanOffice.js";
 import HOD from "../models/HOD.js";
 import CellCoordinator from "../models/CellCoordinator.js";
 import Administration from "../models/Administration.js";
+import ProgramsOffered from "../models/Programsoffered.js";
+import CurriculumSyllabus from "../models/CurriculumSyllabus.js";
+import Regulation from "../models/Regulation.js";
 
 export const getAdmission = async (req, res, next) => {
   try {
@@ -208,5 +211,50 @@ export const getAdministration = async (req, res) => {
   } catch (err) {
     console.error(err);
     res.status(500).json({ error: err.message });
+  }
+};
+
+export const getProgramsOffered = async (req, res) => {
+  try {
+    const data = await ProgramsOffered.findOne();
+
+    if (!data) {
+      return res.status(404).json({ message: "Programs data not found" });
+    }
+
+    res.json(data);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: "Server error" });
+  }
+};
+
+export const getCurriculumSyllabus = async (req, res) => {
+  try {
+    const data = await CurriculumSyllabus.findOne();
+
+    if (!data) {
+      return res.status(404).json({ message: "Curriculum data not found" });
+    }
+
+    res.status(200).json(data);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: "Server error" });
+  }
+};
+
+export const getRegulations = async (req, res) => {
+  try {
+    const data = await Regulation.findOne();
+
+    if (!data) {
+      return res.status(404).json({ message: "Regulation data not found" });
+    }
+
+    res.status(200).json(data);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: "Server error" });
   }
 };
