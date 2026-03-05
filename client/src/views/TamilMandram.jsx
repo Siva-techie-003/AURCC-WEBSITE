@@ -1,5 +1,4 @@
 ﻿import React, { useState, useEffect, useRef, useMemo } from 'react';
-import data from '../assets/tamil mandram.json';
 import './TamilMandram.css';
 
 const TamilMandram = () => {
@@ -7,14 +6,32 @@ const TamilMandram = () => {
             const [currentImageIndex, setCurrentImageIndex] = useState(0);
             const [touchStartX, setTouchStartX] = useState(0);
             const [touchEndX, setTouchEndX] = useState(0);
+            const [data, setData] = useState(null);
+
+useEffect(() => {
+    const fetchData = async () => {
+        try {
+            const res = await fetch("http://localhost:5000/api/tamilmandram");
+            const result = await res.json();
+
+            console.log("Tamil Mandram:", result);
+            setData(result);
+
+        } catch (error) {
+            console.error("Error fetching Tamil Mandram:", error);
+        }
+    };
+
+    fetchData();
+}, []);
     
            // Static Data
         const galleryImages = [
-            { src: '/1.webp', alt: 'College Event', description: 'Annual cultural festival celebrating diverse talents' },
-            { src: '/cse-girls-closeup.webp', alt: 'Students in Lab', description: 'Students collaborating on innovative projects' },
-            { src: '/4.webp', alt: 'Campus View', description: 'Our beautiful campus surrounded by greenery' },
-            { src: '/computer-lab.webp', alt: 'Computer Lab', description: 'State-of-the-art computer lab with latest equipment' },
-            { src: '/Drone_shot.jpg', alt: 'Aerial View', description: 'Aerial view of our sprawling campus facilities' },
+            { src: 'http://localhost:5000/public/1.webp', alt: 'College Event', description: 'Annual cultural festival celebrating diverse talents' },
+            { src: 'http://localhost:5000/public/cse-girls-closeup.webp', alt: 'Students in Lab', description: 'Students collaborating on innovative projects' },
+            { src: 'http://localhost:5000/public/4.webp', alt: 'Campus View', description: 'Our beautiful campus surrounded by greenery' },
+            { src: 'http://localhost:5000/public/computer-lab.webp', alt: 'Computer Lab', description: 'State-of-the-art computer lab with latest equipment' },
+            { src: 'http://localhost:5000/public/Drone_shot.jpg', alt: 'Aerial View', description: 'Aerial view of our sprawling campus facilities' },
         ];
     
         // Logic for Image Gallery
@@ -41,14 +58,20 @@ const TamilMandram = () => {
             }
         };
     
-
+if (!data) {
+    return (
+        <p className="text-center mt-20 text-lg font-bold">
+            Loading Tamil Mandram...
+        </p>
+    );
+}
 
 
     return (
         <main className="flex-grow min-h-screen">
             {/* Hero section */}
             <section className="relative w-full min-h-[35vh] sm:min-h-[40vh] md:min-h-[50vh] lg:min-h-[60vh] overflow-hidden flex items-center justify-center">
-                <img src="/temple5.webp" alt="Tamil Mandram" className="absolute inset-0 w-full h-full object-cover blur-[1.5px]
+                <img src={`http://localhost:5000/public/${data.image1}`} alt="Tamil Mandram" className="absolute inset-0 w-full h-full object-cover blur-[1.5px]
 " />
                 <div className="absolute top-0 left-0 w-full h-full bg-black/40"></div>
                 <div className="absolute inset-0 flex items-center justify-center z-10 px-2">
@@ -126,7 +149,7 @@ const TamilMandram = () => {
                         </div>
                         <div className="p-8 sm:p-12 flex justify-center">
                             <div className="bg-amber-50 rounded-2xl p-8 shadow-inner border border-amber-100 max-w-lg w-full text-center hover:bg-white transition-colors group">
-                                <img src="/mani.webp" alt="manisekaran" className="w-24 h-28 text-[#fdb827]flex items-center justify-center mx-auto mb-6 shadow-lg " />
+                                <img src={`http://localhost:5000/public/mani.webp`} alt="manisekaran" className="w-24 h-28 text-[#fdb827]flex items-center justify-center mx-auto mb-6 shadow-lg " />
                                 <h3 className="text-xl lg:text-2xl font-bold text-[#23120b] mb-4 border-b-2 border-amber-200 pb-2">அவைத்தலைவர்</h3>
                                 <div className="space-y-3">
                                     <p className="text-lg text-gray-800"><span className="font-bold text-[#3c2f25]">பெயர்:</span> <span className="font-medium text-emerald-900">{data.பொறுப்பாளர்.அவைத்தலைவர்.பெயர்}</span></p>
