@@ -1,33 +1,47 @@
 ﻿import React, { useState, useEffect } from 'react';
-import data from '../assets/NSS.json';
 import './NSS.css';
 
 const NSS = () => {
     const [currentActivityIndex, setCurrentActivityIndex] = useState(0);
+    const [data, setData] = useState(null);
+     // State for Image Gallery
+        const [currentImageIndex, setCurrentImageIndex] = useState(0);
+        const [touchStartX, setTouchStartX] = useState(0);
+        const [touchEndX, setTouchEndX] = useState(0);
 
     useEffect(() => {
-        const interval = setInterval(() => {
-            setCurrentActivityIndex((prev) => (prev + 1) % data.activities.length);
-        }, 3500);
-        return () => clearInterval(interval);
-    }, []);
+  fetch("http://localhost:5000/api/nss")
+    .then(res => res.json())
+    .then(result => {
+      console.log("NSS API:", result);
+      setData(result);
+    })
+    .catch(err => console.error(err));
+}, []);
+
+    useEffect(() => {
+    if (!data?.activities) return;
+
+    const interval = setInterval(() => {
+        setCurrentActivityIndex((prev) => 
+            (prev + 1) % data.activities.length
+        );
+    }, 3500);
+
+    return () => clearInterval(interval);
+}, [data]);
 
     const setActivity = (idx) => {
         setCurrentActivityIndex(idx);
     };
 
- // State for Image Gallery
-        const [currentImageIndex, setCurrentImageIndex] = useState(0);
-        const [touchStartX, setTouchStartX] = useState(0);
-        const [touchEndX, setTouchEndX] = useState(0);
-
        // Static Data
     const galleryImages = [
-        { src: '/1.webp', alt: 'College Event', description: 'Annual cultural festival celebrating diverse talents' },
-        { src: '/cse-girls-closeup.webp', alt: 'Students in Lab', description: 'Students collaborating on innovative projects' },
-        { src: '/4.webp', alt: 'Campus View', description: 'Our beautiful campus surrounded by greenery' },
-        { src: '/computer-lab.webp', alt: 'Computer Lab', description: 'State-of-the-art computer lab with latest equipment' },
-        { src: '/Drone_shot.jpg', alt: 'Aerial View', description: 'Aerial view of our sprawling campus facilities' },
+        { src: 'http://localhost:5000/public/1.webp', alt: 'College Event', description: 'Annual cultural festival celebrating diverse talents' },
+        { src: 'http://localhost:5000/public/cse-girls-closeup.webp', alt: 'Students in Lab', description: 'Students collaborating on innovative projects' },
+        { src: 'http://localhost:5000/public/4.webp', alt: 'Campus View', description: 'Our beautiful campus surrounded by greenery' },
+        { src: 'http://localhost:5000/public/computer-lab.webp', alt: 'Computer Lab', description: 'State-of-the-art computer lab with latest equipment' },
+        { src: 'http://localhost:5000/public/Drone_shot.jpg', alt: 'Aerial View', description: 'Aerial view of our sprawling campus facilities' },
     ];
 
     // Logic for Image Gallery
@@ -54,6 +68,9 @@ const NSS = () => {
         }
     };
 
+    if (!data) {
+  return <p className="text-center mt-20">Loading NSS data...</p>;
+}
 
     return (
         <main className="flex-grow font-sans bg-gray-50">
@@ -130,7 +147,7 @@ const NSS = () => {
                                     >
                                          <div className="w-24 h-40 sm:w-28 sm:h-32 mb-4">
                                         <img
-                                          src={coordinator.Photo}
+                                          src={`http://localhost:5000/public${coordinator.Photo}`}
                                           alt={coordinator.Name}
                                         className="w-full h-full object-cover rounded-full border-4 border-[rgb(115,25,25)] shadow-md transition-transform duration-300 hover:scale-105"
                                         />

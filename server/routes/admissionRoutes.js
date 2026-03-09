@@ -1,7 +1,7 @@
 import express from "express";
 import { getAdmission,getDGATE,getPace,getZonal,getoffice,getDistanceEducation,getEdCell,getPlacementCell,getCRCC,getExamCell
     ,getEstateOffice,getAdministrators,getDeanOffice,getHODs,getCellCoordinators,getAdministration,getProgramsOffered,getCurriculumSyllabus,
-    getRegulations
+    getRegulations,getNSS,getTamilMandram,getFineArtsClub,getAlumni
  } from "../controllers/admissionController.js";
 
 const router = express.Router();
@@ -25,5 +25,9 @@ router.get("/administration",getAdministration)
 router.get("/programs",getProgramsOffered)
 router.get("/curriculum-syllabus",getCurriculumSyllabus)
 router.get("/regulations",getRegulations)
+router.get("/nss",getNSS)
+router.get("/tamilmandram",getTamilMandram)
+router.get("/finearts",getFineArtsClub)
+router.get("/alumni",getAlumni)
 
 export default router;

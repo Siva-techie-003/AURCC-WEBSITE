@@ -141,124 +141,78 @@ const Header = () => {
             </div>
 
             {/* Main Header */}
-            <header className="fixed top-8 left-0 w-full z-[999] bg-white shadow-xl border-b border-gray-100 h-20 sm:h-24 lg:h-32 flex items-center">
-                <div className="container mx-auto px-4 sm:px-6">
-                    <nav className="flex items-center justify-between">
-                        {/* Logo */}
-                        <div className="flex items-center space-x-3 sm:space-x-5 cursor-pointer transform hover:scale-[1.02] transition-all" onClick={() => navigate('/')}>
-                            <img src="/aurcc_tamil.jpg" alt="AURCC Logo" className="h-12 w-auto sm:h-16 md:h-18 lg:h-[90px]" />
-                            {/* <div className="flex flex-col min-w-0">
-                                <span className="text-xl sm:text-2xl md:text-3xl font-[1000] tracking-wide bg-clip-text text-transparent bg-gradient-to-r from-[rgb(154,87,87)] to-[rgb(154,30,30)] leading-none drop-shadow-sm" style={{ fontFamily: "'Baloo Thambi 2', sans-serif" }}>
-                                    அண்ணா பல்கலைக்கழகம்
-                                </span>
-                                <span className="flex justify-center text-[10px] sm:text-xs md:text-xl text-[rgb(154,65,65)] to-[rgb(154,30,30)] font-bold tracking-wide mt-1" style={{ fontFamily: 'serif' }}>
-                                    மண்டல வளாகம், கோயம்புத்தூர்
-                                </span>
-                            </div> */}
+            <header className="fixed top-9 left-0 w-full z-[999] bg-white shadow-xl border-b border-gray-100 flex items-center" style={{ minHeight: '80px' }}>
+                <div className="w-full px-3 sm:px-5 lg:px-8">
+                    <nav className="flex items-center justify-between gap-2">
+
+                        {/* ── LEFT: Logo ── */}
+                        <div className="flex items-center flex-shrink-0 cursor-pointer" onClick={() => navigate('/')}>
+                            <img src="/aurcc_tamil.jpg" alt="AURCC Logo" className="h-14 sm:h-16 md:h-20 lg:h-[90px] w-auto" />
                         </div>
 
-{/* Desktop Nav */}
-<div className="hidden lg:flex items-center space-x-1">
-  {sections.map((section, idx) => (
-    <div key={idx} className="relative group">
+                        {/* ── RIGHT: Nav Headings ── */}
+                        <div className="flex items-center flex-wrap justify-end gap-x-0.5 gap-y-0.5">
+                            {sections.map((section, idx) => (
+                                <div key={idx} className="relative group">
+                                    {/* Nav Button */}
+                                    <button
+                                        onClick={() => {
+                                            if (section.sections) {
+                                                navigate(section.route, { state: { scrollTo: section.sections } });
+                                            } else if (section.route) {
+                                                navigate(section.route);
+                                            }
+                                        }}
+                                        className="flex items-center gap-1 px-2 sm:px-3 lg:px-4 py-2 text-xs sm:text-sm lg:text-base font-black text-gray-700 hover:text-[rgb(115,40,40)] hover:bg-[rgb(220,140,140)]/30 rounded-xl transition-all uppercase tracking-tight whitespace-nowrap"
+                                    >
+                                        {section.name}
+                                        {section.links && (
+                                            <svg className="w-2.5 h-2.5 sm:w-3 sm:h-3 transform group-hover:rotate-180 transition-transform flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path d="M19 9l-7 7-7-7" />
+                                            </svg>
+                                        )}
+                                    </button>
 
-      {/* Main Menu Button */}
-      <button
-        onClick={() => {
-          if (section.sections) {
-            navigate(section.route, { state: { scrollTo: section.sections } });
-          } else if (section.route) {
-            navigate(section.route);
-          }
-        }}
-        className="px-4 py-2 text-lg font-black text-gray-700 hover:text-[rgb(115,40,40)] hover:bg-[rgb(220,140,140)] rounded-xl transition-all flex items-center gap-1.5 uppercase tracking-tighter"
-      >
-        {section.name}
+                                    {/* Dropdown */}
+                                    {section.links && (
+                                        <div className="absolute top-full right-0 pt-1 z-50 opacity-0 invisible translate-y-2 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 transition-all duration-200">
+                                            <div className="bg-white rounded-2xl shadow-2xl border border-gray-100 py-2 w-64">
+                                                {section.links.map((link, lIdx) => (
+                                                    link.subLinks ? (
+                                                        <div key={lIdx} className="relative group/sub">
+                                                            <div className="flex items-center justify-between px-5 py-2 text-sm font-bold text-gray-600 hover:text-[rgb(115,40,40)] hover:bg-[rgb(220,140,140)]/40 cursor-pointer transition-colors whitespace-nowrap">
+                                                                <span>{link.name}</span>
+                                                                <svg className="w-3 h-3 rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6" /></svg>
+                                                            </div>
+                                                            {/* Flyout - Opens to the LEFT to prevent off-screen on the right */}
+                                                            <div className="absolute top-0 left-full ml-1 py-2 bg-white gap-4 rounded-2xl shadow-2xl border border-gray-100 opacity-0 invisible translate-x-2 group-hover/sub:opacity-100 group-hover/sub:visible group-hover/sub:translate-x-0 transition-all min-w-[3oopx] z-50">
+                                                                {link.subLinks.map((sub, sIdx) => (
+                                                                    <Link key={sIdx} to={sub.route} className="block px-5 py-2 text-sm font-bold text-gray-600 hover:text-[rgb(115,40,40)] hover:bg-[rgb(220,140,140)]/40 transition-colors whitespace-nowrap">{sub.name}</Link>
+                                                                ))}
+                                                            </div>
+                                                        </div>
+                                                    ) : (
+                                                        <Link
+                                                            key={lIdx}
+                                                            to={link.section ? "/" : link.route}
+                                                            state={link.section ? { scrollTo: link.section } : null}
+                                                            className="block px-5 py-2 text-sm font-bold text-gray-600 hover:text-[rgb(115,40,40)] hover:bg-[rgb(220,140,140)]/40 transition-colors whitespace-nowrap"
+                                                        >
+                                                            {link.name}
+                                                        </Link>
+                                                    )
+                                                ))}
+                                            </div>
+                                        </div>
+                                    )}
+                                </div>
+                            ))}
+                        </div>
 
-        {/* Arrow Icon */}
-        {section.links && (
-          <svg
-            className="w-4 h-4 transform group-hover:rotate-180 transition-transform"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path d="M19 9l-7 7-7-7" />
-          </svg>
-        )}
-      </button>
-
-      {/* Dropdown Menu */}
-      {section.links && (
-        <div className="absolute top-full right-0 pt-2 py-3 bg-white rounded-2xl shadow-2xl border border-gray-100 opacity-0 invisible translate-y-2 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 transition-all w-72 z-50">
-
-          {section.links.map((link, lIdx) => (
-
-            link.subLinks ? (
-
-              /* Dropdown with Flyout */
-              <div key={lIdx} className="relative group/sub">
-
-                <div className="flex items-center justify-between px-6 py-2.5 text-base font-bold text-gray-600 hover:text-[rgb(115,40,40)] hover:bg-[rgb(220,140,140)]/50 transition-colors cursor-pointer">
-                  <span>{link.name}</span>
-
-                  <svg
-                    className="w-3.5 h-3.5"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M9 18l6-6-6-6" />
-                  </svg>
-                </div>
-
-                {/* Flyout Menu */}
-                <div className="absolute top-0 left-full ml-1 py-3 bg-white rounded-2xl shadow-2xl border border-gray-100 opacity-0 invisible translate-x-2 group-hover/sub:opacity-100 group-hover/sub:visible group-hover/sub:translate-x-0 transition-all w-60 z-50">
-
-                  {link.subLinks.map((sub, sIdx) => (
-                    <Link
-                      key={sIdx}
-                      to={sub.route}
-                      className="block px-6 py-2.5 text-base font-bold text-gray-600 hover:text-[rgb(115,40,40)] hover:bg-[rgb(220,140,140)]/50 transition-colors"
-                    >
-                      {sub.name}
-                    </Link>
-                  ))}
-
-                </div>
-
-              </div>
-
-            ) : (
-
-              /* Normal Dropdown Link */
-              <Link
-                key={lIdx}
-                to={link.section ? "/" : link.route}
-                state={link.section ? { scrollTo: link.section } : null}
-                className="block px-6 py-2.5 text-base font-bold text-gray-600 hover:text-[rgb(115,40,40)] hover:bg-[rgb(220,140,140)]/50 transition-colors"
-              >
-                {link.name}
-              </Link>
-
-            )
-
-          ))}
-
-        </div>
-      )}
-
-    </div>
-  ))}
-</div>
-
-                        {/* Mobile Toggle */}
-                        <button onClick={() => setIsMobileMenuOpen(true)} className="lg:hidden p-3 rounded-2xl bg-[rgb(220,140,140)] text-[rgb(110,35,35)] hover:bg-[rgb(200,120,120)] transition-all active:scale-95">
-                            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16" /></svg>
-                        </button>
                     </nav>
                 </div>
             </header>
+
 
             {/* Mobile Menu Backdrop */}
             {isMobileMenuOpen && (

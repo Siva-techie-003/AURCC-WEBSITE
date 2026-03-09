@@ -74,20 +74,20 @@
     display: none;
 }
 
-@keyframes scroll {
+/* Seamless infinite scroll for News & Events */
+@keyframes scrollUp {
     0% {
         transform: translateY(0);
     }
 
     100% {
-        transform: translateY(calc(-100% + 300px));
+        transform: translateY(-50%);
     }
 }
 
 .news-scroll,
 .events-scroll {
-    animation: scroll 20s linear infinite;
-    padding-bottom: 300px;
+    animation: scrollUp 20s linear infinite;
 }
 
 .news-scroll:hover,

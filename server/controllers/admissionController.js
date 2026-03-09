@@ -17,6 +17,10 @@ import Administration from "../models/Administration.js";
 import ProgramsOffered from "../models/Programsoffered.js";
 import CurriculumSyllabus from "../models/CurriculumSyllabus.js";
 import Regulation from "../models/Regulation.js";
+import NSS from "../models/nssModel.js";
+import TamilMandram from "../models/tamilMandramModel.js";
+import FineArtsClub from "../models/fineArtsModel.js";
+import Alumni from "../models/alumniModel.js";
 
 export const getAdmission = async (req, res, next) => {
   try {
@@ -256,5 +260,74 @@ export const getRegulations = async (req, res) => {
   } catch (error) {
     console.error(error);
     res.status(500).json({ message: "Server error" });
+  }
+};
+
+export const getNSS = async (req, res) => {
+  try {
+    const nssData = await NSS.findOne();
+
+    if (!nssData) {
+      return res.status(404).json({ message: "NSS data not found" });
+    }
+
+    res.status(200).json(nssData);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: "Server error" });
+  }
+};
+
+export const getTamilMandram = async (req, res) => {
+  try {
+
+    const data = await TamilMandram.findOne();
+
+    if (!data) {
+      return res.status(404).json({ message: "No Tamil Mandram data found" });
+    }
+
+    res.json(data);
+
+  } catch (error) {
+    console.error("Error fetching Tamil Mandram:", error);
+    res.status(500).json({ message: "Server Error" });
+  }
+};
+
+export const getFineArtsClub = async (req, res) => {
+  try {
+
+    const data = await FineArtsClub.findOne();
+
+    if (!data) {
+      return res.status(404).json({ message: "Fine Arts data not found" });
+    }
+
+    res.json(data);
+
+  } catch (error) {
+    console.error("FineArts Error:", error);
+    res.status(500).json({ message: "Server error" });
+  }
+};
+
+export const getAlumni = async (req, res) => {
+  try {
+
+    const data = await Alumni.findOne();
+
+    if (!data) {
+      return res.json({ notableAlumni: "", departments: {} });
+    }
+
+    res.json({
+      notableAlumni: data.notableAlumni,
+      departments: data.departments
+    });
+
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({ message: "Server Error" });
   }
 };
