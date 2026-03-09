@@ -50,7 +50,10 @@ const Events = lazy(() => import('./views/Events'));
 const Downloads = lazy(() => import('./views/Downloads'));
 const POSH = lazy(() => import('./views/POSH'));
 const NotFound = lazy(() => import('./views/NotFound'));
-
+const GraduationPage = lazy(() => import('./views/GraduationPage'));
+const GraduationGallery = lazy(() => import('./views/GraduationGallery'));
+const AnnualDayPage = lazy(() => import('./views/AnnualDayPage'));
+const AnnualDayGallery = lazy(() => import('./views/AnnualDayGallery'));
 function App() {
     return (
         <div className="App min-h-screen flex flex-col">
@@ -64,6 +67,10 @@ function App() {
                         <Route path="/departments/:departmentName" element={<DepartmentsView />} />
                         <Route path="/admissions" element={<AdmissionView />} />
                         <Route path="/admission" element={<AdmissionView />} />
+                        <Route path="/graduation" element={<GraduationPage />} />
+                        <Route path="/graduation/:year" element={<GraduationGallery />} />
+                        <Route path="/annualday" element={<AnnualDayPage />} />
+                        <Route path="/annualday/:year" element={<AnnualDayGallery />} />
                         <Route path="/ed-cell" element={<EDCell />} />
                         <Route path="/dgate" element={<DGATE />} />
                         <Route path="/placement-cell" element={<PlacementCell />} />

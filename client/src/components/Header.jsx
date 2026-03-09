@@ -113,10 +113,20 @@ const Header = () => {
                                 <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"></path></svg>
                                 <span className="hidden sm:inline font-medium">Library</span>
                             </Link>
-                            <Link to="/sports" className="hover:text-yellow-300 transition-colors flex items-center gap-1.5 group">
-                                <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
-                                <span className="hidden sm:inline font-medium">Physical Education</span>
-                            </Link>
+<Link to="/sports" className="hover:text-yellow-300 transition-colors flex items-center gap-1.5 group">
+    
+    {/* Volleyball Icon */}
+    <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+        <circle cx="12" cy="12" r="10"></circle>
+        <path d="M12 2a10 10 0 0 1 10 10"></path>
+        <path d="M2 12a10 10 0 0 0 10 10"></path>
+        <path d="M7 7c3 3 7 3 10 0"></path>
+        <path d="M7 17c3-3 7-3 10 0"></path>
+    </svg>
+
+    <span className="hidden sm:inline font-medium">Physical Education</span>
+
+</Link>
                             <Link to="/hostel" className="hover:text-yellow-300 transition-colors flex items-center gap-1.5 group">
                                 <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
                                 <span className="hidden sm:inline font-medium">Hostel</span>
