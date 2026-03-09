@@ -130,6 +130,7 @@ const Header = () => {
                 </div>
             </div>
 
+
             {/* Main Header */}
             <header className="fixed top-9 left-0 w-full z-[999] bg-white shadow-xl border-b border-gray-100 flex items-center" style={{ minHeight: '80px' }}>
                 <div className="w-full px-3 sm:px-5 lg:px-8">
