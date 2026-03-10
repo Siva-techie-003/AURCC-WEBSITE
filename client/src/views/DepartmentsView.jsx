@@ -249,7 +249,7 @@ const BACKEND_URL = "http://localhost:5000";
       {/* Projects */}
       <div className="flex flex-col items-center">
         <h2 className="text-4xl md:text-5xl font-bold text-white">
-          {department?.projects}
+          {department?.project}
         </h2>
         <p className="mt-2 text-white text-lg">Funded Projects</p>
       </div>
