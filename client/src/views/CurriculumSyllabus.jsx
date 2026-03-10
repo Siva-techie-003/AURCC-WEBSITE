@@ -1,4 +1,5 @@
-﻿import React,{useEffect,useState} from 'react';
+﻿import React from 'react';
+import data from '../assets/curriculum_syllabus.json';
 import SyllabusCard from '../components/SyllabusCard';
 import './CurriculumSyllabus.css';
 
@@ -11,6 +12,7 @@ const SectionHeader = ({ title }) => (
 <h2 className="text-2xl lg:text-4xl font-black text-[rgb(90,20,20)] uppercase tracking-tight">
 {title}
 </h2>
+
 
 </div>
 </header>
