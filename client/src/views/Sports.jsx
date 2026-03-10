@@ -45,7 +45,7 @@ const Sports = () => {
 
 
     return (
-        <main className="flex-grow font-sans bg-gray-50 text-left">
+        <main className="flex-grow font-sans bg-gray-50 text-left pt-[120px] sm:pt-[140px] lg:pt-[120px]">
             {/* Hero section */}
             <section className="relative w-full h-48 sm:h-56 md:h-72 lg:h-[50vh] overflow-hidden flex flex-col justify-end ">
                 <img src="/sports.webp" alt="Sports facilities" className=" absolute inset-0 w-full h-full object-cover  object-center" />

@@ -3,7 +3,7 @@ import './POSH.css';
 
 const POSH = () => {
     return (
-        <main className="bg-gradient-to-br from-[rgb(115,63,63)] via-[rgb(115,45,45)] to-white min-h-screen font-sans text-gray-800">
+        <main className="bg-white min-h-screen font-sans text-gray-800">
             {/* Hero Section */}
             <section className="relative w-full min-h-[35vh] sm:min-h-[40vh] md:min-h-[50vh] lg:min-h-[60vh] overflow-hidden flex items-center justify-center">
                 <img src="/offices.webp" alt="POSH Cell" className="absolute inset-0 w-full h-full object-cover object-center" />

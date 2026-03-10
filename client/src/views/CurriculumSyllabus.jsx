@@ -1,5 +1,4 @@
-﻿import React from 'react';
-import data from '../assets/curriculum_syllabus.json';
+﻿import React,{useEffect,useState} from 'react';
 import SyllabusCard from '../components/SyllabusCard';
 import './CurriculumSyllabus.css';
 

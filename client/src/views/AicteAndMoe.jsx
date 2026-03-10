@@ -52,7 +52,7 @@ const AicteAndMoe = () => {
     };
 
     return (
-        <main className="bg-gradient-to-br from-[rgb(115,63,63)] via-[rgb(115,45,45)] to-white min-h-screen font-sans text-gray-800">
+        <main className="bg-white min-h-screen font-sans text-gray-800">
             {/* Hero Section */}
             <section className="relative w-full min-h-[35vh] sm:min-h-[40vh] md:min-h-[50vh] lg:min-h-[60vh] overflow-hidden flex items-center justify-center">
                 <img src="/offices.webp" alt="AICTE & MOE Cell" className="absolute inset-0 w-full h-full object-cover object-center" />
@@ -90,7 +90,7 @@ const AicteAndMoe = () => {
                 {/* Objectives */}
                 <div id="objectives" ref={sectionRefs.objectives} className="bg-white/70 backdrop-blur-md rounded-2xl shadow-lg border border-gray-100 overflow-hidden">
                     <div className="bg-gradient-to-r from-[rgb(115,63,63)] to-[rgb(115,25,25)] py-4 sm:py-5 flex items-center justify-center gap-2 sm:gap-3">
-                        <span className="text-lg lg:text-xl text-white">🎯</span>
+                        <span className="text-lg lg:text-xl text-white"></span>
                         <h2 className="text-lg sm:text-xl lg:text-2xl xl:text-3xl font-bold text-white text-center">Objectives</h2>
                     </div>
                     <div className="p-4 sm:p-6 md:p-8 lg:p-10 text-left">
@@ -113,8 +113,8 @@ const AicteAndMoe = () => {
                     <div className="p-4 sm:p-6 md:p-8 lg:p-10 text-left">
                         <ul className="list-disc pl-5 space-y-2">
                             {Object.entries(data.home['Important Links']).map(([key, link]) => (
-                                <li key={key} className="text-base lg:text-lg xl:text-xl">
-                                    <a href={link} target="_blank" rel="noopener noreferrer" className="text-[rgb(115,40,40)] underline hover:text-[rgb(110,35,35)] transition">{key}</a>
+                                <li key={key} className="text-base lg:text-lg xl:text-xl font-base">
+                                    <a href={link} target="_blank" rel="noopener noreferrer" className="text-black underline hover:text-[rgb(110,35,35)] hover:font-semibold transition">{key}</a>
                                 </li>
                             ))}
                         </ul>
@@ -130,8 +130,8 @@ const AicteAndMoe = () => {
                     <div className="p-4 sm:p-6 md:p-8 lg:p-10 text-left">
                         <ul className="list-disc pl-5 space-y-2">
                             {Object.entries(data.Circulars_Notifications).map(([title, link]) => (
-                                <li key={title} className="text-base lg:text-lg xl:text-xl">
-                                    <a href={link} target="_blank" rel="noopener noreferrer" className="text-[rgb(115,40,40)] underline hover:text-[rgb(110,35,35)] transition">{title}</a>
+                                <li key={title} className="text-base lg:text-lg xl:text-xl font-base">
+                                    <a href={link} target="_blank" rel="noopener noreferrer" className="text-black underline hover:text-[rgb(110,35,35)] hover:font-semibold transition">{title}</a>
                                 </li>
                             ))}
                         </ul>
@@ -141,14 +141,14 @@ const AicteAndMoe = () => {
                 {/* Approval Letters */}
                 <div id="approval_letters" ref={sectionRefs.approval_letters} className="bg-white/70 backdrop-blur-md rounded-2xl shadow-lg border border-gray-100 overflow-hidden">
                     <div className="bg-gradient-to-r from-[rgb(115,63,63)] to-[rgb(115,25,25)] py-4 sm:py-5 flex items-center justify-center gap-2 sm:gap-3">
-                        <span className="text-lg lg:text-xl text-white">📄</span>
+                        <span className="text-lg lg:text-xl text-white"></span>
                         <h2 className="text-lg sm:text-xl lg:text-2xl xl:text-3xl font-bold text-white text-center">Approval Letters</h2>
                     </div>
                     <div className="p-4 sm:p-6 md:p-8 lg:p-10 text-left">
                         <ul className="list-disc pl-5 space-y-2">
                             {Object.entries(approvalLetters).map(([title, link]) => (
                                 <li key={title} className="text-base lg:text-lg xl:text-xl">
-                                    <a href={link} target="_blank" rel="noopener noreferrer" className="text-[rgb(115,40,40)] underline hover:text-[rgb(110,35,35)] transition">{title}</a>
+                                    <a href={link} target="_blank" rel="noopener noreferrer" className="text-black underline hover:text-[rgb(110,35,35)] hover:font-semibold transition">{title}</a>
                                 </li>
                             ))}
                         </ul>

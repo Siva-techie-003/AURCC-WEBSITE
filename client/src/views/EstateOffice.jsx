@@ -1,4 +1,4 @@
-﻿import React, { useState } from 'react';
+﻿import React, { useState,useEffect } from 'react';
 import OfficePageTemplate from '../components/OfficePageTemplate';
 import OfficeContentSection from '../components/OfficeContentSection';
 import StaffCard from '../components/StaffCard';
@@ -28,29 +28,9 @@ const serviceCards = [
   { icon: security, title: 'Security', desc: 'Ensuring safety and security across the campus.' },
 ];
 
-
-// ✅ Static Staff Data
-const staffMembers = [
-  {
-    name: "Er. Ramesh Kumar",
-    designation: "Estate Officer",
-    email: "estate@college.edu"
-  },
-  {
-    name: "S. Priya",
-    designation: "Assistant Engineer",
-    email: "priya@college.edu"
-  },
-  {
-    name: "K. Arun",
-    designation: "Maintenance Supervisor",
-    email: "arun@college.edu"
-  }
-];
-
-
 const EstateOffice = () => {
-  const [activeSection, setActiveSection] = useState('about');
+  const [staffData, setStaffData] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   const sections = [
     { key: 'about', label: 'About' },
@@ -58,9 +38,22 @@ const EstateOffice = () => {
     { key: 'staff', label: 'Staff' }
   ];
 
-  const handleSectionChange = (sectionKey) => {
-    setActiveSection(sectionKey);
-  };
+  useEffect(() => {
+  fetch("http://localhost:5000/api/estate-office")
+    .then(res => res.json())
+    .then(data => {
+      setStaffData(data.staff || []);
+      setLoading(false);
+    })
+    .catch(err => {
+      console.error(err);
+      setLoading(false);
+    });
+}, []);
+
+  if (loading) {
+    return <p className="text-center mt-20">Loading...</p>;
+  }
 
   return (
     <OfficePageTemplate
@@ -68,7 +61,6 @@ const EstateOffice = () => {
       heroSubtitle="Managing campus infrastructure, maintenance, and facilities"
       sections={sections}
       contactEmail="estateoffice@college.edu"
-      onSectionChange={handleSectionChange}
     >
       <div className="content space-y-16">
 
@@ -129,9 +121,15 @@ const EstateOffice = () => {
           icon="👥"
         >
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {staffMembers.map((staff, index) => (
-              <StaffCard key={index} staff={staff} />
-            ))}
+            {staffData.map((staff, index) => (
+                <StaffCard
+                  key={index}
+                  staff={{
+                    ...staff,
+                    image: staff.image
+                  }}
+                />
+              ))}
           </div>
         </OfficeContentSection>
 

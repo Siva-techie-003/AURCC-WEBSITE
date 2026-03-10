@@ -27,6 +27,9 @@ const OfficeOfAffiliation = lazy(() => import('./views/OfficeOfAffiliation'));
 const Zonal = lazy(() => import('./views/Zonal'));
 const Pace = lazy(() => import('./views/Pace'));
 const Admin = lazy(() => import('./views/Admin'));
+const AdminEstablishment = lazy(() => import('./views/AdminEstablishment'));
+const AdminPurchaseFinance = lazy(() => import('./views/AdminPurchaseFinance'));
+const AdminStudent = lazy(() => import('./views/AdminStudent'));
 const AicteAndMoe = lazy(() => import('./views/AicteAndMoe'));
 const Antiragging = lazy(() => import('./views/Antiragging'));
 const VC = lazy(() => import('./views/VC'));
@@ -47,7 +50,10 @@ const Events = lazy(() => import('./views/Events'));
 const Downloads = lazy(() => import('./views/Downloads'));
 const POSH = lazy(() => import('./views/POSH'));
 const NotFound = lazy(() => import('./views/NotFound'));
-
+const GraduationPage = lazy(() => import('./views/GraduationPage'));
+const GraduationGallery = lazy(() => import('./views/GraduationGallery'));
+const AnnualDayPage = lazy(() => import('./views/AnnualDayPage'));
+const AnnualDayGallery = lazy(() => import('./views/AnnualDayGallery'));
 function App() {
     return (
         <div className="App min-h-screen flex flex-col">
@@ -61,6 +67,10 @@ function App() {
                         <Route path="/departments/:departmentName" element={<DepartmentsView />} />
                         <Route path="/admissions" element={<AdmissionView />} />
                         <Route path="/admission" element={<AdmissionView />} />
+                        <Route path="/graduation" element={<GraduationPage />} />
+                        <Route path="/graduation/:year" element={<GraduationGallery />} />
+                        <Route path="/annualday" element={<AnnualDayPage />} />
+                        <Route path="/annualday/:year" element={<AnnualDayGallery />} />
                         <Route path="/ed-cell" element={<EDCell />} />
                         <Route path="/dgate" element={<DGATE />} />
                         <Route path="/placement-cell" element={<PlacementCell />} />
@@ -79,6 +89,9 @@ function App() {
                         <Route path="/zonal" element={<Zonal />} />
                         <Route path="/pace-cell" element={<Pace />} />
                         <Route path="/administration" element={<Admin />} />
+                        <Route path="/admin/establishment" element={<AdminEstablishment />} />
+                        <Route path="/admin/purchase-finance" element={<AdminPurchaseFinance />} />
+                        <Route path="/admin/student" element={<AdminStudent />} />
                         <Route path="/aicte&moe" element={<AicteAndMoe />} />
                         <Route path="/antiragging" element={<Antiragging />} />
                         <Route path="/VC" element={<VC />} />

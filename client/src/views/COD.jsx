@@ -1,15 +1,39 @@
-﻿import React from 'react';
-import directorsData from '../assets/COD.json';
+﻿import React,{useEffect,useState} from 'react';
 import './COD.css';
 
 const COD = () => {
-    const all = directorsData.centres;
+    const [centres, setCentres] = useState([]);
+  const [loading, setLoading] = useState(true);
 
-    // Dual-member cards first, single-member cards at the bottom
-    const sorted = [
-        ...all.filter(e => e.members.length > 1),
-        ...all.filter(e => e.members.length === 1),
-    ];
+  const BACKEND_URL = "http://localhost:5000";
+
+  useEffect(() => {
+    fetch("http://localhost:5000/api/cell-coordinators")
+      .then(res => res.json())
+      .then(data => {
+        console.log("COD API:", data);
+        setCentres(data.centres || []);
+        setLoading(false);
+      })
+      .catch(err => {
+        console.error(err);
+        setLoading(false);
+      });
+  }, []);
+
+  if (loading) {
+    return <p className="text-center mt-20">Loading...</p>;
+  }
+
+  if (centres.length === 0) {
+    return <p className="text-center mt-20">No coordinator details available</p>;
+  }
+
+  // dual-member cards first
+  const sorted = [
+    ...centres.filter(e => e.members.length > 1),
+    ...centres.filter(e => e.members.length === 1)
+  ];
 
     return (
         <div className="p-4 sm:p-6 md:p-9 bg-white min-h-screen">
@@ -34,26 +58,26 @@ const COD = () => {
                         </div>
 
                         {/* Member rows — fixed height keeps all cards the same size */}
-                        <div className="flex flex-col px-4 py-2 h-[180px] justify-center gap-1">
+                        <div className="flex flex-col px-6 py-2 h-[180px] justify-center gap-1">
                             {entry.members.map((member, mIdx) => {
                                 // Zigzag: even index → photo left, name right
                                 //         odd index  → name left, photo right
-                                const isReversed = mIdx % 2 !== 0;
+                                const reversed = mIdx % 2 !== 0;
                                 return (
                                     <div
                                         key={mIdx}
-                                        className={`flex items-center gap-4 ${isReversed ? 'flex-row-reverse' : 'flex-row'}`}
+                                        className={`flex items-center gap-4 ${reversed ? 'flex-row-reverse' : 'flex-row'}`}
                                     >
                                         {/* Circular photo */}
-                                        <div className="flex-shrink-0 w-16 h-16 rounded-full overflow-hidden border-2 border-[rgb(110,35,35)] shadow-sm bg-gray-100">
+                                        <div className="flex-shrink-0 w-20 h-20 rounded-lg overflow-hidden border-2 border-[rgb(110,35,35)] shadow-sm bg-gray-100">
                                             <img
-                                                src={`/${member.photo}`}
+                                                src={`${BACKEND_URL}/${member.photo}`}
                                                 alt={member.name}
                                                 className="w-full h-full object-cover"
                                             />
                                         </div>
                                         {/* Name */}
-                                        <span className={`text-base font-bold text-[rgb(100,25,25)] uppercase leading-tight ${isReversed ? 'text-right' : 'text-left'}`}>
+                                        <span className={`text-base font-bold text-[rgb(100,25,25)] uppercase leading-tight ${reversed ? 'text-right' : 'text-left'}`}>
                                             {member.name}
                                         </span>
                                     </div>

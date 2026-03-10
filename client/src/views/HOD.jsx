@@ -1,9 +1,33 @@
-﻿import React from 'react';
-import hodsData from '../assets/HOD.json';
+﻿import React,{useEffect,useState} from 'react';
 import './HOD.css';
 
 const HOD = () => {
-    const hods = hodsData.departments;
+      const [hods, setHods] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  const BACKEND_URL = "http://localhost:5000";
+
+  useEffect(() => {
+    fetch("http://localhost:5000/api/hods")
+      .then(res => res.json())
+      .then(data => {
+        console.log("HOD API:", data);
+        setHods(data.departments || []);
+        setLoading(false);
+      })
+      .catch(err => {
+        console.error(err);
+        setLoading(false);
+      });
+  }, []);
+
+  if (loading) {
+    return <p className="text-center mt-20">Loading...</p>;
+  }
+
+  if (hods.length === 0) {
+    return <p className="text-center mt-20">No HOD details available</p>;
+  }
 
     return (
         <div className="min-h-screen bg-white py-12 px-4 text-left">
@@ -29,7 +53,7 @@ const HOD = () => {
                             <div className="relative -mt-16 flex justify-center">
                                 <div className="w-40 h-40 rounded-full overflow-hidden border-4 border-white shadow-md bg-white flex items-center justify-center">
                                     <img
-                                        src={`/${hod.photo}`}
+                                        src={`${BACKEND_URL}/${hod.photo}`}
                                         alt={hod.name}
                                         className="w-full h-full object-cover"
                                     />

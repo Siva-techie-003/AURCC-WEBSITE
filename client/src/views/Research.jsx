@@ -1,28 +1,32 @@
-﻿import React, { useState } from 'react';
-import researchData from '../assets/research-cell.json';
+﻿import React, { useState,useEffect } from 'react';
 import OfficePageTemplate from '../components/OfficePageTemplate';
 import OfficeContentSection from '../components/OfficeContentSection';
 import './Research.css';
 
 const Research = () => {
-    const [currentSection, setCurrentSection] = useState('description');
+    const [data, setData] = useState(null);
 
     const sections = [
         { key: 'description', label: 'Description' },
         { key: 'supervisors', label: 'Supervisors' }
     ];
 
-    const handleSectionChange = (sectionKey) => {
-        setCurrentSection(sectionKey);
-    };
-
+    useEffect(() => {
+  fetch("http://localhost:5000/api/research-cell")
+    .then(res => res.json())
+    .then(setData)
+    .catch(err => console.error(err));
+}, []);
+    
+if (!data) {
+  return <p className="text-center mt-20">Loading...</p>;
+}
     return (
         <OfficePageTemplate
             officeName="RESEARCH CELL"
             heroSubtitle="Fostering research and innovation across disciplines"
             sections={sections}
             contactEmail="researchcell@aurcc.ac.in"
-            onSectionChange={handleSectionChange}
         >
             <div className="content">
                 {/* Description */}
@@ -33,7 +37,7 @@ const Research = () => {
                 >
                     <div className="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm text-left">
                         <ul className="list-disc pl-5 space-y-4 text-base lg:text-lg xl:text-lg text-gray-800 leading-relaxed ">
-                            {(Array.isArray(researchData?.description) ? researchData.description : []).map((desc, index) => (
+                            {(Array.isArray(data?.description) ? data.description : []).map((desc, index) => (
                                 <li key={index} className="whitespace-pre-wrap break-words">
                                     {desc}
                                 </li>
@@ -63,7 +67,7 @@ const Research = () => {
                                 </tr>
                             </thead>
                             <tbody className="bg-white divide-y divide-gray-200">
-                                {(Array.isArray(researchData?.supervisors) ? researchData.supervisors : []).map((dept, index) => (
+                                {(Array.isArray(data?.supervisors) ? data.supervisors : []).map((dept, index) => (
                                     <tr key={index} className="hover:bg-[rgb(220,140,140)]/30 transition-colors">
                                         <td className="px-4 py-4 font-bold text-[rgb(100,25,25)] border-r border-gray-100">{dept.department}</td>
                                         <td className="px-3 py-4 text-center border-r border-gray-100 font-medium">{dept.phdCompletedFullTime}</td>
@@ -79,13 +83,13 @@ const Research = () => {
                             <tfoot className="bg-gray-100 font-bold">
                                 <tr>
                                     <td className="px-4 py-4 border-t-2 border-gray-300">TOTAL</td>
-                                    <td className="px-3 py-4 text-center border-t-2 border-gray-300">{researchData.supervisors.reduce((acc, d) => acc + d.phdCompletedFullTime, 0)}</td>
-                                    <td className="px-3 py-4 text-center border-t-2 border-gray-300">{researchData.supervisors.reduce((acc, d) => acc + d.phdCompletedPartTime, 0)}</td>
-                                    <td className="px-3 py-4 text-center border-t-2 border-gray-300">{researchData.supervisors.reduce((acc, d) => acc + d.phdRegisteredFullTime, 0)}</td>
-                                    <td className="px-3 py-4 text-center border-t-2 border-gray-300">{researchData.supervisors.reduce((acc, d) => acc + d.phdRegisteredPartTime, 0)}</td>
-                                    <td className="px-3 py-4 text-center border-t-2 border-gray-300 text-green-800">{researchData.supervisors.reduce((acc, d) => acc + d.completedFTPT, 0)}</td>
-                                    <td className="px-3 py-4 text-center border-t-2 border-gray-300 text-[rgb(105,30,30)]">{researchData.supervisors.reduce((acc, d) => acc + d.registeredFTPT, 0)}</td>
-                                    <td className="px-3 py-4 text-center border-t-2 border-gray-300 bg-[rgb(200,120,120)] text-[rgb(100,25,25)]">{researchData.supervisors.reduce((acc, d) => acc + (d.completedFTPT + d.registeredFTPT), 0)}</td>
+                                    <td className="px-3 py-4 text-center border-t-2 border-gray-300">{data.supervisors.reduce((acc, d) => acc + d.phdCompletedFullTime, 0)}</td>
+                                    <td className="px-3 py-4 text-center border-t-2 border-gray-300">{data.supervisors.reduce((acc, d) => acc + d.phdCompletedPartTime, 0)}</td>
+                                    <td className="px-3 py-4 text-center border-t-2 border-gray-300">{data.supervisors.reduce((acc, d) => acc + d.phdRegisteredFullTime, 0)}</td>
+                                    <td className="px-3 py-4 text-center border-t-2 border-gray-300">{data.supervisors.reduce((acc, d) => acc + d.phdRegisteredPartTime, 0)}</td>
+                                    <td className="px-3 py-4 text-center border-t-2 border-gray-300 text-green-800">{data.supervisors.reduce((acc, d) => acc + d.completedFTPT, 0)}</td>
+                                    <td className="px-3 py-4 text-center border-t-2 border-gray-300 text-[rgb(105,30,30)]">{data.supervisors.reduce((acc, d) => acc + d.registeredFTPT, 0)}</td>
+                                    <td className="px-3 py-4 text-center border-t-2 border-gray-300 bg-[rgb(200,120,120)] text-[rgb(100,25,25)]">{data.supervisors.reduce((acc, d) => acc + (d.completedFTPT + d.registeredFTPT), 0)}</td>
                                 </tr>
                             </tfoot>
                         </table>

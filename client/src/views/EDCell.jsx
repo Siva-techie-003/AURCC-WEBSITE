@@ -1,12 +1,11 @@
-﻿import React, { useState } from 'react';
-import data from '../assets/ED-cell.json';
+﻿import React, { useState,useEffect } from 'react';
 import OfficePageTemplate from '../components/OfficePageTemplate';
 import OfficeContentSection from '../components/OfficeContentSection';
 import StaffCard from '../components/StaffCard';
 import './EDCell.css';
 
 const EDCell = () => {
-    const [activeSection, setActiveSection] = useState('description');
+        const [data, setData] = useState(null);
 
     const sections = [
         { key: 'description', label: 'Description' },
@@ -17,17 +16,22 @@ const EDCell = () => {
         { key: 'office_bearers', label: 'Staff' },
     ];
 
-    const handleSectionChange = (sectionKey) => {
-        setActiveSection(sectionKey);
-    };
+  useEffect(() => {
+  fetch("http://localhost:5000/api/ed-cell")
+    .then(res => res.json())
+    .then(data => setData(data))
+    .catch(err => console.error(err));
+}, []);
 
+if (!data) {
+  return <p className="text-center mt-20">Loading...</p>;
+}
     return (
         <OfficePageTemplate
             officeName="Entrepreneurship Development Cell"
             heroSubtitle="Empowering innovation, startups, and entrepreneurial spirit"
             sections={sections}
             contactEmail="edcell@aurcc.ac.in"
-            onSectionChange={handleSectionChange}
         >
             <div className="content space-y-16">
 
@@ -119,7 +123,7 @@ const EDCell = () => {
                 >
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                         {data.office_bearers.map((member, i) => (
-                            <StaffCard key={i} staff={member} />
+                            <StaffCard key={i} staff={{...member,image: member.image}} />
                         ))}
                     </div>
                 </OfficeContentSection>

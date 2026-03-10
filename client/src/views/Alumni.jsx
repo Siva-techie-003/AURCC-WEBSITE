@@ -1,13 +1,27 @@
-﻿import React from 'react';
-import jsonData from '../assets/alumni.json';
+﻿import React,{useState,useEffect} from 'react';
 import './Alumni.css';
 
 const Alumni = () => {
+    const [jsonData, setJsonData] = useState(null);
+    useEffect(() => {
+  fetch("http://localhost:5000/api/alumni")
+    .then(res => res.json())
+    .then(data => {
+      console.log("Alumni Data:", data);
+      setJsonData(data);
+    })
+    .catch(err => console.error(err));
+}, []);
+
+if (!jsonData) {
+  return <p className="text-center mt-20 text-lg">Loading Alumni...</p>;
+}
+
     return (
         <main className="flex-grow font-sans bg-white">
             {/* Hero section */}
             <section className="relative w-full min-h-[35vh] sm:min-h-[40vh] md:min-h-[50vh] lg:min-h-[60vh] overflow-hidden flex items-center justify-center">
-                <img src="/graduavation2.png" alt="Alumni" className="absolute inset-0 w-full h-full object-cover object-center" />
+                <img src="http://localhost:5000/public/graduavation2.png" alt="Alumni" className="absolute inset-0 w-full h-full object-cover object-center" />
                 <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-black/60 via-black/30 to-transparent"></div>
 
                 {/* Stars overlay */}
@@ -45,10 +59,11 @@ const Alumni = () => {
                         </div>
 
                         <div className="p-4 sm:p-6 md:p-8 lg:p-10 text-center">
-                            <p className="text-base lg:text-lg xl:text-xl font-medium text-gray-800 mb-8 sm:mb-12 max-w-4xl mx-auto">{jsonData['notable alumni']}</p>
+                            <p className="text-base lg:text-lg xl:text-xl font-medium text-gray-800 mb-8 sm:mb-12 max-w-4xl mx-auto">{jsonData.notableAlumni}</p>
 
-                            {Object.entries(jsonData.ALUMNI).map(([deptName, department]) => (
-                            <div key={deptName} className="mb-8 sm:mb-12 lg:mb-16">
+{jsonData?.departments &&
+ Object.entries(jsonData.departments).map(([deptName, department]) => (
+                                <div key={deptName} className="mb-8 sm:mb-12 lg:mb-16">
 
                                 {/* Department Container */}
                                 <div className="bg-white rounded-2xl shadow-md 
@@ -72,8 +87,7 @@ const Alumni = () => {
                                     justify-items-center
                                 ">
 
-                                    {department.map((alumnus, index) => (
-                                    <div
+{Array.isArray(department) && department.map((alumnus, index) => (                                    <div
                                         key={index}
                                         className="bg-white rounded-xl shadow-sm 
                                                 p-5 border border-gray-50 
@@ -108,7 +122,7 @@ const Alumni = () => {
                                         <div className="text-xs lg:text-sm text-gray-600 mt-2 bg-[rgb(220,140,140)] px-2 py-1 rounded w-fit">
                                         Academic Year: 
                                         <span className="font-bold">
-                                            {alumnus['Academic Year']}
+                                            {alumnus.AcademicYear}
                                         </span>
                                         </div>
 
