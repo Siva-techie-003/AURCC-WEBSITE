@@ -1,4 +1,4 @@
-import React, { useState,useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Admin.css';
 
 const AdminStaffCard = ({ member }) => {
@@ -26,20 +26,20 @@ const AdminStaffCard = ({ member }) => {
 const AdminPurchaseFinance = () => {
     const [section, setSection] = useState(null);
 
-  useEffect(() => {
-    fetch("http://localhost:5000/api/administration")
-      .then(res => res.json())
-      .then(data => {
-        setSection(
-          data.general_administration_ii.Purchase_and_Finance_Section
-        );
-      })
-      .catch(err => console.error(err));
-  }, []);
+    useEffect(() => {
+        fetch("http://localhost:5000/api/administration")
+            .then(res => res.json())
+            .then(data => {
+                setSection(
+                    data.general_administration_ii.Purchase_and_Finance_Section
+                );
+            })
+            .catch(err => console.error(err));
+    }, []);
 
-  if (!section) {
-    return <p className="text-center mt-20">Loading...</p>;
-  }
+    if (!section) {
+        return <p className="text-center mt-20">Loading...</p>;
+    }
 
     return (
         <div className="bg-white min-h-screen">
@@ -48,8 +48,8 @@ const AdminPurchaseFinance = () => {
                     Administrative Staff
                 </h1>
             </div>
-            <div className="mx-auto py-8 sm:py-12 lg:py-14 px-2 md:px-9 font-serif">
-                <div className="max-w-7xl mx-auto flex flex-col gap-12 sm:gap-16">
+            <div className="mx-auto py-4 sm:py-6 lg:py-8 px-2 md:px-4 font-serif">
+                <div className="max-w-7xl mx-auto flex flex-col gap-6 sm:gap-8">
                     {/* Section heading */}
                     <div className="text-center">
                         <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-800 font-serif uppercase mb-2">General Administration-II</h2>
@@ -59,8 +59,8 @@ const AdminPurchaseFinance = () => {
                         <h3 className="text-base sm:text-lg lg:text-xl font-semibold text-gray-600 font-serif uppercase tracking-wide">Purchase and Finance Section</h3>
                     </div>
                     {section.DEPUTY_MANAGER && (
-                        <div className="mb-8 sm:mb-12">
-                            <div className="flex flex-wrap justify-center gap-8 sm:gap-12 md:gap-16">
+                        <div className="mb-4 sm:mb-6">
+                            <div className="flex flex-wrap justify-center gap-4 sm:gap-6 md:gap-8">
                                 {section.DEPUTY_MANAGER.map((member) => (
                                     <AdminStaffCard key={member.name} member={member} />
                                 ))}
@@ -68,9 +68,9 @@ const AdminPurchaseFinance = () => {
                         </div>
                     )}
                     {section.STAFFS && (
-                        <div className="mb-8 sm:mb-12">
-                            <h4 className="text-base lg:text-lg xl:text-2xl font-semibold mb-6 text-center font-serif tracking-wide">Staff Members</h4>
-                            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-12 md:gap-16 justify-items-center">
+                        <div className="mb-4 sm:mb-6">
+                            <h4 className="text-base lg:text-lg xl:text-2xl font-semibold mb-4 text-center font-serif tracking-wide">Staff Members</h4>
+                            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8 justify-items-center">
                                 {section.STAFFS.map((member) => (
                                     <AdminStaffCard key={member.name} member={member} />
                                 ))}

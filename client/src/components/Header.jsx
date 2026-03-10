@@ -113,10 +113,20 @@ const Header = () => {
                                 <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"></path></svg>
                                 <span className="hidden sm:inline font-medium">Library</span>
                             </Link>
-                            <Link to="/sports" className="hover:text-yellow-300 transition-colors flex items-center gap-1.5 group">
-                                <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
-                                <span className="hidden sm:inline font-medium">Physical Education</span>
-                            </Link>
+<Link to="/sports" className="hover:text-yellow-300 transition-colors flex items-center gap-1.5 group">
+    
+    {/* Volleyball Icon */}
+    <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+        <circle cx="12" cy="12" r="10"></circle>
+        <path d="M12 2a10 10 0 0 1 10 10"></path>
+        <path d="M2 12a10 10 0 0 0 10 10"></path>
+        <path d="M7 7c3 3 7 3 10 0"></path>
+        <path d="M7 17c3-3 7-3 10 0"></path>
+    </svg>
+
+    <span className="hidden sm:inline font-medium">Physical Education</span>
+
+</Link>
                             <Link to="/hostel" className="hover:text-yellow-300 transition-colors flex items-center gap-1.5 group">
                                 <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
                                 <span className="hidden sm:inline font-medium">Hostel</span>
@@ -129,6 +139,7 @@ const Header = () => {
                     </div>
                 </div>
             </div>
+
 
             {/* Main Header */}
             <header className="fixed top-9 left-0 w-full z-[999] bg-white shadow-xl border-b border-gray-100 flex items-center" style={{ minHeight: '80px' }}>
@@ -170,13 +181,14 @@ const Header = () => {
                                                 {section.links.map((link, lIdx) => (
                                                     link.subLinks ? (
                                                         <div key={lIdx} className="relative group/sub">
-                                                            <div className="flex items-center justify-between px-5 py-2 text-sm font-bold text-gray-600 hover:text-[rgb(115,40,40)] hover:bg-[rgb(220,140,140)]/40 cursor-pointer transition-colors">
+                                                            <div className="flex items-center justify-between px-5 py-2 text-sm font-bold text-gray-600 hover:text-[rgb(115,40,40)] hover:bg-[rgb(220,140,140)]/40 cursor-pointer transition-colors whitespace-nowrap">
                                                                 <span>{link.name}</span>
-                                                                <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6" /></svg>
+                                                                <svg className="w-3 h-3 rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6" /></svg>
                                                             </div>
-                                                            <div className="absolute top-0 left-full ml-1 py-2 bg-white rounded-2xl shadow-2xl border border-gray-100 opacity-0 invisible translate-x-2 group-hover/sub:opacity-100 group-hover/sub:visible group-hover/sub:translate-x-0 transition-all w-60 z-50">
+                                                            {/* Flyout - Opens to the LEFT to prevent off-screen on the right */}
+                                                            <div className="absolute top-0 left-full ml-1 py-2 bg-white gap-4 rounded-2xl shadow-2xl border border-gray-100 opacity-0 invisible translate-x-2 group-hover/sub:opacity-100 group-hover/sub:visible group-hover/sub:translate-x-0 transition-all min-w-[3oopx] z-50">
                                                                 {link.subLinks.map((sub, sIdx) => (
-                                                                    <Link key={sIdx} to={sub.route} className="block px-5 py-2 text-sm font-bold text-gray-600 hover:text-[rgb(115,40,40)] hover:bg-[rgb(220,140,140)]/40 transition-colors">{sub.name}</Link>
+                                                                    <Link key={sIdx} to={sub.route} className="block px-5 py-2 text-sm font-bold text-gray-600 hover:text-[rgb(115,40,40)] hover:bg-[rgb(220,140,140)]/40 transition-colors whitespace-nowrap">{sub.name}</Link>
                                                                 ))}
                                                             </div>
                                                         </div>
@@ -185,7 +197,7 @@ const Header = () => {
                                                             key={lIdx}
                                                             to={link.section ? "/" : link.route}
                                                             state={link.section ? { scrollTo: link.section } : null}
-                                                            className="block px-5 py-2 text-sm font-bold text-gray-600 hover:text-[rgb(115,40,40)] hover:bg-[rgb(220,140,140)]/40 transition-colors"
+                                                            className="block px-5 py-2 text-sm font-bold text-gray-600 hover:text-[rgb(115,40,40)] hover:bg-[rgb(220,140,140)]/40 transition-colors whitespace-nowrap"
                                                         >
                                                             {link.name}
                                                         </Link>

@@ -1,4 +1,4 @@
-import React, { useState,useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import OfficePageTemplate from '../components/OfficePageTemplate';
 import OfficeContentSection from '../components/OfficeContentSection';
 import StaffCard from '../components/StaffCard';
@@ -8,11 +8,11 @@ const OfficeOfAffiliation = () => {
     const [data, setData] = useState(null);
 
     useEffect(() => {
-    fetch("http://localhost:5000/api/office-affiliation")
-      .then(res => res.json())
-      .then(setData)
-      .catch(err => console.error("Zonal fetch error:", err));
-  }, []);
+        fetch("http://localhost:5000/api/office-affiliation")
+            .then(res => res.json())
+            .then(setData)
+            .catch(err => console.error("Zonal fetch error:", err));
+    }, []);
 
     const sections = [
         { key: 'description', label: 'Description' },
@@ -20,8 +20,8 @@ const OfficeOfAffiliation = () => {
     ];
 
     if (!data) {
-    return <p className="text-center mt-20">Loading...</p>;
-  }
+        return <p className="text-center mt-20">Loading...</p>;
+    }
 
     return (
         <OfficePageTemplate
@@ -32,26 +32,34 @@ const OfficeOfAffiliation = () => {
         >
             <div className="content space-y-16">
                 {/* Description */}
-                <OfficeContentSection
-                    sectionId="description"
-                    title="About the Office"
-                >
-                    <div className="max-w-4xl mx-auto">
+                <div id="description" className="scroll-mt-32">
+                    <div className="text-center mb-8">
+                        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-800 font-serif uppercase mb-2">About the Office</h2>
+                        <div className="flex justify-center">
+                            <span className="block w-24 h-1.5 rounded-full bg-[#f5c842]"></span>
+                        </div>
+                    </div>
+                    <div className="max-w-4xl mx-auto p-6 rounded-2xl border border-[rgb(200,120,120)]">
                         <p className="text-base lg:text-lg xl:text-xl font-medium text-gray-800 text-left leading-relaxed">{data.description['About Office of Affiliation and its activities']}</p>
                     </div>
-                </OfficeContentSection>
+                </div>
 
                 {/* Staff */}
-                <OfficeContentSection
-                    sectionId="staff"
-                    title="Staff"
-                >
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                        {(Array.isArray(data?.staff) ? data.staff : []).map((staff, index) => (
-                            <StaffCard key={index} staff={{...staff,image: staff.image}} />
-                        ))}
+                <div id="staff" className="scroll-mt-32">
+                    <div className="text-center mb-8">
+                        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-800 font-serif uppercase mb-2">Staff</h2>
+                        <div className="flex justify-center">
+                            <span className="block w-24 h-1.5 rounded-full bg-[#f5c842]"></span>
+                        </div>
                     </div>
-                </OfficeContentSection>
+                    <div className="max-w-6xl mx-auto">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 justify-items-center">
+                            {(Array.isArray(data?.staff) ? data.staff : []).map((staff, index) => (
+                                <StaffCard key={index} staff={{ ...staff, image: staff.image }} />
+                            ))}
+                        </div>
+                    </div>
+                </div>
             </div>
         </OfficePageTemplate>
     );

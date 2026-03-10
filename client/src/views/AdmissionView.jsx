@@ -1,14 +1,14 @@
-﻿import React, { useState,useEffect } from 'react';
+﻿import React, { useState, useEffect } from 'react';
 import OfficePageTemplate from '../components/OfficePageTemplate';
 import OfficeContentSection from '../components/OfficeContentSection';
 import StaffCard from '../components/StaffCard';
 import './AdmissionView.css';
 
 const AdmissionView = () => {
-  const [data, setData] = useState(null);
-  const [currentSection, setCurrentSection] = useState('overview');
+    const [data, setData] = useState(null);
+    const [currentSection, setCurrentSection] = useState('overview');
 
-  const flowchartImage = "http://localhost:5000/admission-flowchart.webp";
+    const flowchartImage = "http://localhost:5000/admission-flowchart.webp";
 
     const sections = [
         { key: 'overview', label: 'Overview' },
@@ -18,19 +18,19 @@ const AdmissionView = () => {
     ];
 
     useEffect(() => {
-    fetch("http://localhost:5000/api/admission")
-      .then(res => res.json())
-      .then(res => {
-  if (Array.isArray(res)) {
-    setData(res[0]);
-  } else {
-    setData(res);
-  }
-})
-      .catch(console.error);
-  }, []);
+        fetch("http://localhost:5000/api/admission")
+            .then(res => res.json())
+            .then(res => {
+                if (Array.isArray(res)) {
+                    setData(res[0]);
+                } else {
+                    setData(res);
+                }
+            })
+            .catch(console.error);
+    }, []);
 
-  if (!data) return <p className="text-center mt-20">Loading...</p>;
+    if (!data) return <p className="text-center mt-20">Loading...</p>;
 
     return (
         <OfficePageTemplate
@@ -40,85 +40,115 @@ const AdmissionView = () => {
             contactEmail="admissions@aurcc.ac.in"
             onSectionChange={setCurrentSection}
         >
-            <div className="content space-y-10">
+            <div className="content space-y-16">
                 {/* Overview */}
-                <OfficeContentSection
-                    sectionId="overview"
-                    title="Overview"
-                    icon="ℹ️"
-                >
-                    <p className="text-base text-justify lg:text-lg xl:text-xl font-medium text-gray-800 mb-4 sm:mb-6">{data.description.Overview}</p>
-                    <p className="text-base lg:text-lg xl:text-xl font-medium text-gray-800 mb-6 sm:mb-8">{data.description['Admissions at our Regional Campus']}</p>
-                    <div className="flex justify-center">
-                        <img src={flowchartImage} alt="Admission Flowchart" className="w-full md:w-3/4 lg:w-1/2 rounded shadow-lg" />
+                <div id="overview" className="scroll-mt-32 ">
+                    <div className="text-center mb-8 ">
+                        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-800 font-serif uppercase mb-2">Over view</h2>
+                        <div className="flex justify-center ">
+                            <span className="block w-24 h-1.5 rounded-full bg-[#f5c842]"></span>
+                        </div>
                     </div>
-                </OfficeContentSection>
-
-                {/* Courses Offered */}
-                <OfficeContentSection
-                    sectionId="courses_offered"
-                    title="Courses Offered"
-                    icon="📚"
-                >
-                    {Object.entries(data.courses_offered).map(([category, programs]) => (
-                        <div key={category} className="mb-6 sm:mb-8 text-left">
-                            <h3 className="text-lg lg:text-xl xl:text-2xl font-semibold text-[rgb(110,35,35)] mb-3">{category}</h3>
-                            <div className="overflow-x-auto">
-                                <table className="table-auto w-full border border-gray-300 text-left mb-4 rounded-xl overflow-hidden shadow-sm">
-                                    <thead className="bg-gray-200">
-                                        <tr>
-                                            <th className="border px-3 sm:px-4 py-3 text-xs lg:text-sm uppercase tracking-wider font-bold text-gray-700">S.No</th>
-                                            <th className="border px-3 sm:px-4 py-3 text-xs lg:text-sm uppercase tracking-wider font-bold text-gray-700">Courses Offered</th>
-                                            <th className="border px-3 sm:px-4 py-3 text-xs lg:text-sm uppercase tracking-wider font-bold text-gray-700">Intake</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody className="bg-white">
-                                        {(Array.isArray(programs) ? programs : []).map((course) => (
-                                            <tr key={course['S.No']} className="hover:bg-gray-50 transition-colors">
-                                                <td className="border px-3 sm:px-4 py-3 text-center text-sm lg:text-base text-gray-600">{course['S.No']}</td>
-                                                <td className="border px-3 sm:px-4 py-3 text-sm lg:text-base text-gray-800">{course['Courses Offered']}</td>
-                                                <td className="border px-3 sm:px-4 py-3 text-center text-sm lg:text-base text-gray-600 font-semibold">{course.Intake}</td>
-                                            </tr>
-                                        ))}
-                                    </tbody>
-                                </table>
+                    <div className="max-w-7xl mx-auto px-4 p-8 rounded-2xl border border-[rgb(200,120,120)]">
+                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                            <div className="space-y-6 text-left">
+                                <p className="text-base text-justify lg:text-lg xl:text-xl font-medium text-gray-800 leading-relaxed">
+                                    {data.description.Overview}
+                                </p>
+                                <p className="text-base text-justify lg:text-lg xl:text-xl font-medium text-gray-800 leading-relaxed">
+                                    {data.description['Admissions at our Regional Campus']}
+                                </p>
+                            </div>
+                            <div className="flex justify-center lg:justify-end">
+                                <img
+                                    src={flowchartImage}
+                                    alt="Admission Flowchart"
+                                    className="w-full max-w-xl rounded-xl shadow-2xl border border-gray-100 transition-transform hover:scale-[1.02] duration-300"
+                                />
                             </div>
                         </div>
-                    ))}
-                </OfficeContentSection>
+                    </div>
+                </div>
 
-                {/* Eligibility Criteria */}
-                <OfficeContentSection
-                    sectionId="eligibility"
-                    title="Eligibility Criteria"
-                    icon="✅"
-                >
-                    {Object.entries(data.eligibility_criteria).map(([program, text]) => (
-                        <div key={program} className="mb-4 sm:mb-6 text-left">
-                            <h3 className="text-base lg:text-lg xl:text-xl font-semibold text-[rgb(110,35,35)] mb-2">{program}</h3>
-                            <p className="text-sm lg:text-base text-gray-800 leading-relaxed bg-[rgb(220,140,140)]/50 p-4 rounded-lg border border-[rgb(200,120,120)]">{text}</p>
+                {/* Courses Offered */}
+                <div id="courses_offered" className="scroll-mt-32">
+                    <div className="text-center mb-8">
+                        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-800 font-serif uppercase mb-2">Courses Offered</h2>
+                        <div className="flex justify-center">
+                            <span className="block w-24 h-1.5 rounded-full bg-[#f5c842]"></span>
                         </div>
-                    ))}
-                </OfficeContentSection>
-
-                {/* Staff */}
-                <OfficeContentSection
-                    sectionId="staff"
-                    title="Staff"
-                    icon="👥"
-                >
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                        {(Array.isArray(data?.staff) ? data.staff : []).map((staff, index) => (
-                            <StaffCard
-                            key={index}
-                            staff={{
-                                ...staff,
-                                image: staff.image 
-                            }}
-                            />
+                    </div>
+                    <div className="max-w-6xl mx-auto">
+                        {Object.entries(data.courses_offered).map(([category, programs]) => (
+                            <div key={category} className="mb-6 sm:mb-8 text-left">
+                                <h3 className="text-lg lg:text-xl xl:text-2xl font-semibold text-[rgb(110,35,35)] mb-3">{category}</h3>
+                                <div className="overflow-x-auto rounded-2xl border border-[rgba(0, 0, 0, 1)]">
+                                    <table className="table-auto w-full border border-gray-300 text-left mb-4 rounded-xl overflow-hidden shadow-sm">
+                                        <thead className="bg-gray-200">
+                                            <tr>
+                                                <th className="border px-3 sm:px-4 py-3 text-xs lg:text-sm uppercase tracking-wider font-bold text-gray-700">S.No</th>
+                                                <th className="border px-3 sm:px-4 py-3 text-xs lg:text-sm uppercase tracking-wider font-bold text-gray-700">Courses Offered</th>
+                                                <th className="border px-3 sm:px-4 py-3 text-xs lg:text-sm uppercase tracking-wider font-bold text-gray-700">Intake</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody className="bg-white">
+                                            {(Array.isArray(programs) ? programs : []).map((course) => (
+                                                <tr key={course['S.No']} className="hover:bg-gray-50 transition-colors">
+                                                    <td className="border px-3 sm:px-4 py-3 text-center text-sm lg:text-base text-gray-600">{course['S.No']}</td>
+                                                    <td className="border px-3 sm:px-4 py-3 text-sm lg:text-base text-gray-800">{course['Courses Offered']}</td>
+                                                    <td className="border px-3 sm:px-4 py-3 text-center text-sm lg:text-base text-gray-600 font-semibold">{course.Intake}</td>
+                                                </tr>
+                                            ))}
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
                         ))}
                     </div>
-                </OfficeContentSection>
+                </div>
+
+                {/* Eligibility Criteria */}
+                <div id="eligibility" className="scroll-mt-32">
+                    <div className="text-center mb-8">
+                        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-800 font-serif uppercase mb-2">Eligibility Criteria</h2>
+                        <div className="flex justify-center">
+                            <span className="block w-24 h-1.5 rounded-full bg-[#f5c842]"></span>
+                        </div>
+                    </div>
+                    <div className="max-w-6xl mx-auto">
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                            {Object.entries(data.eligibility_criteria).map(([program, text]) => (
+                                <div key={program} className="flex flex-col text-left">
+                                    <h3 className="text-base lg:text-lg xl:text-xl font-semibold text-[rgb(110,35,35)] mb-2 min-h-[3rem]">{program}</h3>
+                                    <p className="text-base lg:text-lg text-gray-800 leading-relaxed bg-[rgba(255, 255, 255, 1)]/50 p-4 rounded-lg border border-[rgb(200,120,120)] flex-grow text-justify">{text}</p>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+
+                {/* Staff */}
+                <div id="staff" className="scroll-mt-32">
+                    <div className="text-center mb-8">
+                        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-800 font-serif uppercase mb-2">Staff</h2>
+                        <div className="flex justify-center">
+                            <span className="block w-24 h-1.5 rounded-full bg-[#f5c842]"></span>
+                        </div>
+                    </div>
+                    <div className="max-w-6xl mx-auto">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 justify-items-center">
+                            {(Array.isArray(data?.staff) ? data.staff : []).map((staff, index) => (
+                                <StaffCard
+                                    key={index}
+                                    staff={{
+                                        ...staff,
+                                        image: staff.image
+                                    }}
+                                />
+                            ))}
+                        </div>
+                    </div>
+                </div>
             </div>
         </OfficePageTemplate>
     );
