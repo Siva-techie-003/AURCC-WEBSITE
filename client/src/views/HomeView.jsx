@@ -165,13 +165,13 @@ const HomeView = () => {
 
   const testimonials = [
     {
-      name: "Adithya M",
+      name: "SARA M",
       branch: "EEE",
       batch: "2015 Batch",
       company: "SIEMENS",
       message:
         "I am truly proud to have graduated from Anna University. The exceptional opportunities provided here enabled me to excel in every aspect, leading to my employment at Siemens, Bangalore.",
-      image: "/pic1.webp",
+      image: "/1.webp",
     },
     {
       name: "Pathi R",
@@ -191,22 +191,80 @@ const HomeView = () => {
         "The hands-on experience and industry exposure at Anna University were invaluable. It gave me the confidence to pursue my dreams and land a job at Tesla.",
       image: "/4.webp",
     },
+    {
+      name: "SARA M",
+      branch: "EEE",
+      batch: "2015 Batch",
+      company: "SIEMENS",
+      message:
+        "I am truly proud to have graduated from Anna University. The exceptional opportunities provided here enabled me to excel in every aspect, leading to my employment at Siemens, Bangalore.",
+      image: "/1.webp",
+    },
+    {
+      name: "SANGEETHA R",
+      branch: "CSE",
+      batch: "2016 Batch",
+      company: "Google",
+      message:
+        "My journey at Anna University was transformative. The rigorous curriculum and supportive faculty prepared me well for the challenges in the tech industry.",
+      image: "/1.webp",
+    },
+    {
+      name: "CANALY S",
+      branch: "Mechanical",
+      batch: "2017 Batch",
+      company: "Tesla",
+      message:
+        "The hands-on experience and industry exposure at Anna University were invaluable. It gave me the confidence to pursue my dreams and land a job at Tesla.",
+      image: "/4.webp",
+    },
   ];
+
+  const [prevIndex, setPrevIndex] = useState(testimonials.length - 1);
 
   // Logic for Testimonials
   const nextSlide = () => {
-    setCurrentIndex((prev) =>
-      prev === testimonials.length - 1 ? 0 : prev + 1,
-    );
+    setCurrentIndex((prev) => {
+      setPrevIndex(prev);
+      return prev === testimonials.length - 1 ? 0 : prev + 1;
+    });
   };
   const prevSlide = () => {
-    setCurrentIndex((prev) =>
-      prev === 0 ? testimonials.length - 1 : prev - 1,
-    );
+    setCurrentIndex((prev) => {
+      setPrevIndex(prev);
+      return prev === 0 ? testimonials.length - 1 : prev - 1;
+    });
   };
   const goToSlide = (index) => {
+    setPrevIndex(currentIndex);
     setCurrentIndex(index);
   };
+
+  // Auto-rotate testimonials with seamless slide
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentIndex((prev) => {
+        setPrevIndex(prev);
+        return prev === testimonials.length - 1 ? 0 : prev + 1;
+      });
+    }, 5000);
+    return () => clearInterval(timer);
+  }, [testimonials.length]);
+
+  // // Logic for Testimonials
+  // const nextSlide = () => {
+  //   setCurrentIndex((prev) =>
+  //     prev === testimonials.length - 1 ? 0 : prev + 1,
+  //   );
+  // };
+  // const prevSlide = () => {
+  //   setCurrentIndex((prev) =>
+  //     prev === 0 ? testimonials.length - 1 : prev - 1,
+  //   );
+  // };
+  // const goToSlide = (index) => {
+  //   setCurrentIndex(index);
+  // };
 
   // Logic for Image Gallery
   const nextImage = () => {
@@ -980,9 +1038,10 @@ const HomeView = () => {
           {/* Gallery Section */}
 
           <section id="gallery" className="py-16 bg-white scroll-mt-32">
-            <div className="container mx-auto px-6">
-              <h2 className="text-3xl lg:text-4xl font-bold text-center mb-14 text-[rgb(100,25,25)]">
-                Gallery of Memories
+            <div className="container mx-auto px-6 text-center">
+              <h2 className="text-3xl lg:text-4xl font-bold text-center mb-14 text-[rgb(100,25,25)] relative inline-block">
+                GALLEY OF MEMORIES
+                <span className="absolute -bottom-2 sm:-bottom-3 left-1/2 transform -translate-x-1/2 h-1 w-16 sm:w-20 lg:w-24 bg-yellow-500"></span>
               </h2>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -1041,22 +1100,25 @@ const HomeView = () => {
             </div>
           </section>
 
-
           {/* Our Recruiters */}
 
           <section
             id="our_recruiters"
-            className=" bg-[url('/anna_unv_fnt.jpg')]  bg-cover bg-center bg-no-repeat py-16 lg:py-24 overflow-hidden relative scroll-mt-24 lg:scroll-mt-32">
-              <div className="absolute inset-0 bg-black/30"></div>
+            className=" bg-[url('/anna_unv_fnt.jpg')]  bg-cover bg-center bg-no-repeat py-16 lg:py-16 overflow-hidden relative scroll-mt-24 lg:scroll-mt-32"
+          >
+            <div className="absolute inset-0 bg-black/30"></div>
             <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
               {/* Heading */}
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-12 text-white relative inline-block">
-                OUR RECRUITERS
-                <span className="absolute -bottom-3 left-1/2 -translate-x-1/2 h-1 w-20 bg-yellow-500"></span>
-              </h2>
+
+              <div className="text-center mt-4">
+                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white relative inline-block">
+                  OUR RECRUITERS
+                  <span className="absolute -bottom-3 left-1/2 -translate-x-1/2 h-1 w-20 bg-yellow-500"></span>
+                </h2>
+              </div>
 
               {/* Slider Wrapper */}
-              <div className="relative w-full overflow-hidden">
+              <div className="relative w-full mt-20 overflow-hidden">
                 {/* Sliding Track */}
                 <div
                   id="logoTrack"
@@ -1144,7 +1206,7 @@ const HomeView = () => {
           {/* Alumni Testimonials */}
           <section
             id="alumni"
-            className="py-12 sm:py-16 lg:py-24 bg-gray-50 relative overflow-hidden"
+            className="pt-12 pb-16 sm:pb-20 lg:pb-24 bg-gray-50 relative overflow-hidden"
           >
             <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-20 z-0">
               <svg
@@ -1174,40 +1236,53 @@ const HomeView = () => {
                 <rect width="100%" height="100%" fill="url(#zigzag-pattern)" />
               </svg>
             </div>
+
             <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-center mb-12 sm:mb-16 text-[rgb(100,25,25)] relative inline-block mx-auto">
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-center mb-12 sm:mb-16 text-[rgb(100,25,25)] relative inline-block mx-4">
                 ALUMNI SPEAK
                 <span className="absolute -bottom-2 sm:-bottom-3 left-1/2 transform -translate-x-1/2 h-1 w-16 sm:w-20 lg:w-24 bg-yellow-500"></span>
               </h2>
-              <div className="relative">
-                <div className="overflow-hidden">
-                  <div
-                    className="flex transition-transform duration-700 ease-in-out"
-                    style={{ transform: `translateX(-${currentIndex * 100}%)` }}
-                  >
-                    {testimonials.map((testimonial, idx) => (
-                      <div key={idx} className="flex-shrink-0 w-full">
-                        <div className="bg-white rounded-xl shadow-xl overflow-hidden max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-3 text-left">
-                          <div className="md:col-span-1 bg-gradient-to-br from-[rgb(115,63,63)] to-[rgb(115,25,25)] p-8 flex flex-col items-center justify-center">
+              <div className="relative max-w-[1800px] mx-auto px-4 xl:px-0">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-28">
+                  {/* Left Card Area */}
+                  <div className="relative overflow-hidden rounded-xl shadow-xl min-h-[300px] bg-white">
+                    {testimonials.map((testimonial, idx) => {
+                      // Next cards wait on the left, prev cards exit to the left
+                      let positionClass =
+                        "opacity-0 -translate-x-full z-0 pointer-events-none";
+                      if (idx === currentIndex) {
+                        positionClass =
+                          "opacity-100 translate-x-0 z-10 transition-all duration-1000 ease-in-out";
+                      } else if (idx === prevIndex) {
+                        positionClass =
+                          "opacity-0 -translate-x-full z-0 pointer-events-none transition-all duration-1000 ease-in-out";
+                      }
+
+                      return (
+                        <div
+                          key={`left-${idx}`}
+                          className={`absolute inset-0 w-full h-full flex-shrink-0 grid grid-cols-1 xl:grid-cols-3 text-left bg-white ${positionClass}`}
+                        >
+                          <div className="xl:col-span-1 bg-gradient-to-br from-[rgb(115,63,63)] to-[rgb(115,25,25)] p-8 flex flex-col items-center justify-center">
                             <img
                               src={testimonial.image}
                               alt={testimonial.name}
-                              className="w-32 h-32 rounded-full border-4 border-white mb-4 object-cover"
+                              className="splash-shape w-36 h-36 border-4 border-white mb-4 object-cover"
                             />
-                            <h3 className="text-lg font-bold text-white">
+                            <h3 className="text-lg font-bold text-white text-center w-full">
                               {testimonial.name}
                             </h3>
-                            <p className="text-white">
+                            <p className="text-white text-center w-full">
                               {testimonial.branch} | {testimonial.batch}
                             </p>
-                            <p className="text-white font-semibold mt-2 text-center text-sm">
+                            <p className="text-white font-semibold mt-2 text-center text-sm w-full">
                               Placed in{" "}
                               <span className="text-yellow-300">
                                 {testimonial.company}
                               </span>
                             </p>
                           </div>
-                          <div className="md:col-span-2 p-8 flex flex-col justify-center">
+                          <div className="xl:col-span-2 p-8 flex flex-col justify-center">
                             <svg
                               className="w-12 h-12 text-[rgb(200,120,120)] mb-4"
                               fill="currentColor"
@@ -1215,51 +1290,73 @@ const HomeView = () => {
                             >
                               <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
                             </svg>
-                            <p className="text-gray-700 leading-relaxed mb-6">
+                            <p className="text-gray-700 leading-relaxed mb-6 text-lg">
                               {testimonial.message}
                             </p>
                           </div>
                         </div>
-                      </div>
-                    ))}
+                      );
+                    })}
+                  </div>
+
+                  {/* Right Card Area */}
+                  <div className="relative overflow-hidden rounded-xl shadow-xl min-h-[300px] bg-white">
+                    {testimonials.map((_, idx) => {
+                      const rightIdx = (idx + 1) % testimonials.length;
+                      const testimonial = testimonials[rightIdx];
+
+                      // Next cards wait on the right, prev cards exit to the right
+                      let positionClass =
+                        "opacity-0 translate-x-full z-0 pointer-events-none";
+                      if (idx === currentIndex) {
+                        positionClass =
+                          "opacity-100 translate-x-0 z-10 transition-all duration-1000 ease-in-out";
+                      } else if (idx === prevIndex) {
+                        positionClass =
+                          "opacity-0 translate-x-full z-0 pointer-events-none transition-all duration-1000 ease-in-out";
+                      }
+
+                      return (
+                        <div
+                          key={`right-${idx}`}
+                          className={`absolute inset-0 w-full h-full flex-shrink-0 grid grid-cols-1 xl:grid-cols-3 text-left bg-white ${positionClass}`}
+                        >
+                          <div className="xl:col-span-1 bg-gradient-to-br from-[rgb(115,63,63)] to-[rgb(115,25,25)] p-8 flex flex-col items-center justify-center">
+                            <img
+                              src={testimonial.image}
+                              alt={testimonial.name}
+                              className="splash-shape w-36 h-36 border-4 border-white mb-4 object-cover"
+                            />
+                            <h3 className="text-lg font-bold text-white text-center w-full">
+                              {testimonial.name}
+                            </h3>
+                            <p className="text-white text-center w-full">
+                              {testimonial.branch} | {testimonial.batch}
+                            </p>
+                            <p className="text-white font-semibold mt-2 text-center text-sm w-full">
+                              Placed in{" "}
+                              <span className="text-yellow-300">
+                                {testimonial.company}
+                              </span>
+                            </p>
+                          </div>
+                          <div className="xl:col-span-2 p-8 flex flex-col justify-center">
+                            <svg
+                              className="w-12 h-12 text-[rgb(200,120,120)] mb-4"
+                              fill="currentColor"
+                              viewBox="0 0 24 24"
+                            >
+                              <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+                            </svg>
+                            <p className="text-gray-700 leading-relaxed mb-6 text-lg">
+                              {testimonial.message}
+                            </p>
+                          </div>
+                        </div>
+                      );
+                    })}
                   </div>
                 </div>
-                <button
-                  onClick={prevSlide}
-                  className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 bg-[rgb(115,25,25)] text-white p-3 rounded-full shadow-lg group z-20"
-                >
-                  <svg
-                    className="h-6 w-6 group-hover:-translate-x-1 transition-transform"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M15 19l-7-7 7-7"
-                    />
-                  </svg>
-                </button>
-                <button
-                  onClick={nextSlide}
-                  className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 bg-[rgb(115,25,25)] text-white p-3 rounded-full shadow-lg group z-20"
-                >
-                  <svg
-                    className="h-6 w-6 group-hover:translate-x-1 transition-transform"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M9 5l7 7-7 7"
-                    />
-                  </svg>
-                </button>
               </div>
             </div>
           </section>
