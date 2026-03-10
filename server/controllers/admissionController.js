@@ -21,6 +21,10 @@ import NSS from "../models/nssModel.js";
 import TamilMandram from "../models/tamilMandramModel.js";
 import FineArtsClub from "../models/fineArtsModel.js";
 import Alumni from "../models/alumniModel.js";
+import Library from "../models/libraryModel.js";
+import Sports from "../models/sportsModel.js";
+import Hostel from "../models/hostelModel.js";
+import AicteMoe from "../models/AicteMoe.js";
 
 export const getAdmission = async (req, res, next) => {
   try {
@@ -329,5 +333,62 @@ export const getAlumni = async (req, res) => {
   } catch (error) {
     console.log(error);
     res.status(500).json({ message: "Server Error" });
+  }
+};
+
+export const getLibrary = async (req, res) => {
+  try {
+
+    const library = await Library.findOne();
+
+    if (!library) {
+      return res.status(404).json({ message: "Library data not found" });
+    }
+
+    res.json(library);
+
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+};
+
+export const getSports = async (req, res) => {
+  try {
+
+    const sports = await Sports.findOne();
+
+    if (!sports) {
+      return res.status(404).json({ message: "Sports data not found" });
+    }
+
+    res.json(sports);
+
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+};
+
+export const getHostel = async (req, res) => {
+  try {
+
+    const hostel = await Hostel.findOne();
+
+    if (!hostel) {
+      return res.status(404).json({ message: "Hostel data not found" });
+    }
+
+    res.json(hostel);
+
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+};
+
+export const getAicteData = async (req, res) => {
+  try {
+    const data = await AicteMoe.findOne();
+    res.json(data);
+  } catch (error) {
+    res.status(500).json({ message: error.message });
   }
 };
