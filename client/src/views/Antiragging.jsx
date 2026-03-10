@@ -1,8 +1,29 @@
 ﻿import React from 'react';
-import jsonData from '../assets/antiragging.json';
 import './Antiragging.css';
 
 const Antiragging = () => {
+    const resources = [
+  {
+    title: "Online Anti Ragging Affidavit Form",
+    link: "https://www.antiragging.in/"
+  },
+  {
+    title: "Step by Step Guide",
+    link: "http://www.aurcc.ac.in/downloads/Online%20Anti%20Ragging%20Affidavit-converted.pdf"
+  },
+  {
+    title: "Committee Members",
+    link: "http://www.aurcc.ac.in/downloads/anti.jpg"
+  },
+  {
+    title: "Squad Committee Members",
+    link: "http://www.aurcc.ac.in/downloads/Anti%20ragging%20squad.pdf"
+  },
+  {
+    title: "Online Complaint Form",
+    link: "https://docs.google.com/forms/d/e/1FAIpQLSemmLSS9iLVpcMIV5PWNUCuGKWy7LgbaqjIWsJhWitkwBKG5w/viewform"
+  }
+];
     return (
         <main className="bg-white min-h-screen font-sans text-gray-800">
             {/* Hero Section */}
@@ -31,17 +52,11 @@ const Antiragging = () => {
                         </div>
 
                         <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                            {[
-                                { title: 'Online Anti Ragging Affidavit Form', key: 'Online Anti Ragging Affidavit Form' },
-                                { title: 'Step by Step Guide', key: 'Step by Step Guide on How to Fill An Online Anti Ragging Affidavit' },
-                                { title: 'Committee Members', key: 'Anti Ragging Committe Members' },
-                                { title: 'Squad Committee Members', key: 'Anti Ragging Squad Committe Members' },
-                                { title: 'Online Complaint Form', key: 'Online Complaint Form' }
-                            ].map((item, i) => (
+                            {resources.map((item, i) => (
                                 <li key={i}>
                                     <a
                                         className="flex items-center p-4 bg-white border border-gray-200 rounded-xl hover:bg-red-50 hover:border-red-300 transition-all duration-300 shadow-sm group"
-                                        href={jsonData[item.key]}
+                                        href={item.link}
                                         target="_blank"
                                         rel="noopener noreferrer"
                                     >

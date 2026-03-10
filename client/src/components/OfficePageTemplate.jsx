@@ -4,7 +4,7 @@ import './OfficePageTemplate.css';
 const OfficePageTemplate = ({
     officeName,
     heroSubtitle,
-    heroImage = '/offices.webp',
+    heroImage = 'http://localhost:5000/public/offices.webp',
     sections = [],
     contactEmail,
     contactButtonText = 'Apply Now / Contact Us',

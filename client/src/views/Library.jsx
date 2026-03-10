@@ -1,5 +1,4 @@
 ﻿import React, { useState, useEffect } from 'react';
-import libraryData from '../assets/library.json';
 import './Library.css';
 
 const Library = () => {
@@ -13,6 +12,18 @@ const Library = () => {
         'Library Sections',
         'Faculty'
     ];
+    const [libraryData, setLibraryData] = useState(null);
+
+useEffect(() => {
+
+fetch("http://localhost:5000/api/library")
+.then(res => res.json())
+.then(data => {
+  console.log(data);
+  setLibraryData(data);
+});
+
+}, []);
 
     const scrollToSection = (section) => {
         const element = document.getElementById(section.replace(/ /g, ''));
@@ -29,6 +40,10 @@ const Library = () => {
             .map(word => word.charAt(0).toUpperCase() + word.slice(1))
             .join(' ');
     };
+
+    if (!libraryData) {
+  return <p className="text-center mt-20 text-lg">Loading Library...</p>;
+}
 
     return (
         <main className="flex-grow min-h-screen bg-gray-50 text-left">
@@ -235,7 +250,7 @@ const Library = () => {
                     {/* Profile Image */}
                     <div className="absolute top-12 left-1/2 -translate-x-1/2">
                     <img
-                        src={`/${faculty.img}`}
+                        src={`http://localhost:5000/public/${faculty.img}`}
                         alt={faculty.name}
                         className="w-32 h-[152px] object-cover 
                                 rounded-full border-4 

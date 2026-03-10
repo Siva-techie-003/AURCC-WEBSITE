@@ -1,9 +1,16 @@
 ﻿import React, { useState, useEffect, useRef } from 'react';
-import data from '../assets/aicte&moe.json';
 import './AicteAndMoe.css';
 
 const AicteAndMoe = () => {
     const [currentSection, setCurrentSection] = useState('objectives');
+    const [data, setData] = useState(null);
+
+useEffect(() => {
+  fetch("http://localhost:5000/api/aicte-moe")
+    .then(res => res.json())
+    .then(data => setData(data));
+}, []);
+
     const sectionRefs = {
         objectives: useRef(null),
         important_links: useRef(null),
@@ -17,14 +24,6 @@ const AicteAndMoe = () => {
         { key: 'circulars_notifications', label: 'Circulars & Notifications' },
         { key: 'approval_letters', label: 'Approval Letters' }
     ];
-
-    const approvalLetters = {
-        'LOA(2019-20)': data['LOA(2019-20)'],
-        'EOA(2020-21)': data['EOA(2020-21)'],
-        'EOA(2021-22)': data['EOA(2021-22)'],
-        'EOA(2022-23)': data['EOA(2022-23)'],
-        'EOA(2023-24)': data['EOA(2023-24)']
-    };
 
     useEffect(() => {
         const onScroll = () => {
@@ -50,6 +49,10 @@ const AicteAndMoe = () => {
             section.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
     };
+
+   if (!data || !data.home) {
+  return <div className="text-center mt-10 text-lg">Loading...</div>;
+}
 
     return (
         <main className="bg-white min-h-screen font-sans text-gray-800">
@@ -95,7 +98,7 @@ const AicteAndMoe = () => {
                     </div>
                     <div className="p-4 sm:p-6 md:p-8 lg:p-10 text-left">
                         <ul className="list-disc pl-5 space-y-2">
-                            {data.home['Objectives of AICTE & MOE Cell'].map((objective, i) => (
+                            {data.home["Objectives of AICTE & MOE Cell"].map((objective, i)=> (
                                 <li key={i} className="text-base lg:text-lg xl:text-xl text-gray-800">
                                     {objective}
                                 </li>
@@ -112,7 +115,7 @@ const AicteAndMoe = () => {
                     </div>
                     <div className="p-4 sm:p-6 md:p-8 lg:p-10 text-left">
                         <ul className="list-disc pl-5 space-y-2">
-                            {Object.entries(data.home['Important Links']).map(([key, link]) => (
+                            {Object.entries(data.home["Important Links"]).map(([key, link]) => (
                                 <li key={key} className="text-base lg:text-lg xl:text-xl font-base">
                                     <a href={link} target="_blank" rel="noopener noreferrer" className="text-black underline hover:text-[rgb(110,35,35)] hover:font-semibold transition">{key}</a>
                                 </li>
@@ -129,7 +132,7 @@ const AicteAndMoe = () => {
                     </div>
                     <div className="p-4 sm:p-6 md:p-8 lg:p-10 text-left">
                         <ul className="list-disc pl-5 space-y-2">
-                            {Object.entries(data.Circulars_Notifications).map(([title, link]) => (
+                            {Object.entries(data["Circulars_Notifications"]).map(([title, link]) => (
                                 <li key={title} className="text-base lg:text-lg xl:text-xl font-base">
                                     <a href={link} target="_blank" rel="noopener noreferrer" className="text-black underline hover:text-[rgb(110,35,35)] hover:font-semibold transition">{title}</a>
                                 </li>
@@ -146,7 +149,13 @@ const AicteAndMoe = () => {
                     </div>
                     <div className="p-4 sm:p-6 md:p-8 lg:p-10 text-left">
                         <ul className="list-disc pl-5 space-y-2">
-                            {Object.entries(approvalLetters).map(([title, link]) => (
+                            {Object.entries({
+  "LOA(2019-20)": data["LOA(2019-20)"],
+  "EOA(2020-21)": data["EOA(2020-21)"],
+  "EOA(2021-22)": data["EOA(2021-22)"],
+  "EOA(2022-23)": data["EOA(2022-23)"],
+  "EOA(2023-24)": data["EOA(2023-24)"]
+}).map(([title, link]) => (
                                 <li key={title} className="text-base lg:text-lg xl:text-xl">
                                     <a href={link} target="_blank" rel="noopener noreferrer" className="text-black underline hover:text-[rgb(110,35,35)] hover:font-semibold transition">{title}</a>
                                 </li>
