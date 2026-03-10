@@ -470,8 +470,7 @@ const BACKEND_URL = "http://localhost:5000";
                         </div>
 
                        {/* Networking Staff (ONLY for CSE Department) */}
-{department?.name?.toLowerCase().includes("computer science") &&
- Array.isArray(department?.networking_staff) &&
+{Array.isArray(department?.networking_staff) &&
  department.networking_staff.length > 0 && (
 
   <div
