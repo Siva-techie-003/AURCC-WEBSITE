@@ -147,12 +147,12 @@ const Header = () => {
                     <nav className="flex items-center justify-between gap-2">
 
                         {/* ── LEFT: Logo ── */}
-                        <div className="flex items-center flex-shrink-0 cursor-pointer" onClick={() => navigate('/')}>
+                        <div className="flex items-center flex-shrink-0 cursor-pointer ml-8" onClick={() => navigate('/')}>
                             <img src="/aurcc_tamil.jpg" alt="AURCC Logo" className="h-14 sm:h-16 md:h-20 lg:h-[90px] w-auto" />
                         </div>
 
                         {/* ── RIGHT: Nav Headings ── */}
-                        <div className="flex items-center flex-wrap justify-end gap-x-0.5 gap-y-0.5">
+                        <div className="flex items-center flex-wrap justify-end gap-x-0.5 gap-y-0.5 mr-8">
                             {sections.map((section, idx) => (
                                 <div key={idx} className="relative group">
                                     {/* Nav Button */}
@@ -177,7 +177,7 @@ const Header = () => {
                                     {/* Dropdown */}
                                     {section.links && (
                                         <div className="absolute top-full right-0 pt-1 z-50 opacity-0 invisible translate-y-2 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 transition-all duration-200">
-                                            <div className="bg-white rounded-2xl shadow-2xl border border-gray-100 py-2 w-64">
+                                            <div className="bg-white rounded-2xl shadow-2xl border border-gray-100 py-2 w-80">
                                                 {section.links.map((link, lIdx) => (
                                                     link.subLinks ? (
                                                         <div key={lIdx} className="relative group/sub">

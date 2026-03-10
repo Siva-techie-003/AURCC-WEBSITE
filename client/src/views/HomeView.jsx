@@ -371,7 +371,7 @@ const HomeView = () => {
           {/* Hero Section */}
           <section
             id="home_page"
-            className="relative h-[300px] md:h-[400px] lg:h-[700px] flex items-center justify-center overflow-hidden "
+            className="relative h-[300px] md:h-[400px] lg:h-[670px] flex items-center justify-center overflow-hidden "
           >
             <div className="absolute inset-0 ">
               <video
@@ -482,7 +482,7 @@ const HomeView = () => {
               ].map((stat, idx) => (
                 <div
                   key={idx}
-                  className="bg-white/90 backdrop-blur-sm rounded-xl shadow-2xl border-t-[8px] border-l-[10px] border-[rgb(115,40,40)]/40 p-6 sm:p-8 text-center transform transition-all duration-300 hover:scale-105 hover:shadow-2xl min-h-[200px] flex flex-col justify-center items-center"
+                  className="bg-white/90 backdrop-blur-sm rounded-xl shadow-2xl border-t-[8px] border-l-[10px] border-[rgb(115,25,25)]/80 p-6 sm:p-8 text-center transform transition-all duration-300 hover:scale-105 hover:shadow-2xl min-h-[200px] flex flex-col justify-center items-center"
                 >
                   <div className="text-[rgb(115,40,40)] mb-4 sm:mb-6">
                     <svg
@@ -542,7 +542,7 @@ const HomeView = () => {
                     <span className="absolute -bottom-2 sm:-bottom-3 left-0 h-1 w-32 sm:w-40 lg:w-52 bg-yellow-500"></span>
                   </h2>
                   <div className="bg-white/80 backdrop-blur-sm shadow-xl border border-[rgb(180,100,100)] p-6 sm:p-8 rounded-xl">
-                    <p className="text-base text-gray-700 leading-relaxed">
+                    <p className="text-xl text-gray-700 leading-relaxed">
                       The Regional Campus Coimbatore of Anna University,
                       established in 2012, offers world-class education in
                       Engineering and Technology. Nestled in a serene
@@ -551,7 +551,7 @@ const HomeView = () => {
                       qualified faculty members dedicated to academic
                       excellence.
                     </p>
-                    <p className="text-base text-gray-700 leading-relaxed mt-4">
+                    <p className="text-xl text-gray-700 leading-relaxed mt-4">
                       Our university is committed to holistic education with a
                       focus on innovation, research, and industry collaboration.
                       We provide an engaging learning environment where students
@@ -561,10 +561,10 @@ const HomeView = () => {
                     </p>
                   </div>
                 </div>
-                <div className="lg:col-span-5">
+                <div className="lg:col-span-5 mt-10">
                   <div className="relative group overflow-hidden rounded-2xl shadow-2xl border-4 border-white/50 transform hover:scale-[1.02] transition-all duration-500 hover:shadow-[0_0_30px_rgba(115,25,25,0.3)]">
                     <img
-                      src="/Drone_shot.jpg"
+                      src="/ANN UNIV_WIDE.jpg"
                       alt="Campus Aerial View"
                       className="w-full h-[300px] sm:h-[400px] object-cover"
                     />
@@ -765,33 +765,60 @@ const HomeView = () => {
                         </div>
                     </div>
                 </section> */}
+
+          {/* Programs Offered */}
+
           <div className="mt-22 pb-12 relative">
             <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-20 z-0 mt-2">
-              <svg
+              {/* <svg
                 width="100%"
                 height="100%"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <pattern
-                  id="hexagon-pattern"
-                  width="100"
-                  height="100"
+                  id="edu-pattern"
+                  width="90"
+                  height="90"
                   patternUnits="userSpaceOnUse"
                 >
-                  <path
-                    d="M50 0 L87.5 25 L87.5 75 L50 100 L12.5 75 L12.5 25 Z"
+                  <polygon
+                    points="45,15 75,30 45,45 15,30"
                     fill="none"
                     stroke="currentColor"
-                    strokeWidth="1"
+                    strokeWidth="1.5"
                   />
+
+                  <rect
+                    x="32"
+                    y="45"
+                    width="26"
+                    height="6"
+                    rx="2"
+                    fill="currentColor"
+                    opacity="0.7"
+                  />
+
+                  <line
+                    x1="45"
+                    y1="30"
+                    x2="45"
+                    y2="60"
+                    stroke="currentColor"
+                    strokeWidth="1.5"
+                  />
+
+                  <circle cx="45" cy="95" r="3" fill="currentColor" />
                 </pattern>
-                <rect width="100%" height="100%" fill="url(#hexagon-pattern)" />
-              </svg>
+
+                <rect width="100%" height="100%" fill="url(#edu-pattern)" />
+              </svg> */}
             </div>
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-center mt-16 sm:mb-16 text-[rgb(100,25,25)] relative inline-block mx-20">
-              PROGRAMS OFFERED
-              <span className="absolute -bottom-2 sm:-bottom-3 left-1/2 transform -translate-x-1/2 h-1 w-16 sm:w-20 lg:w-24 bg-yellow-500"></span>
-            </h2>
+            <div className="">
+              <h2 className=" text-2xl sm:text-3xl lg:text-4xl font-bold mt-16 sm:mb-16 text-[rgb(100,25,25)] relative inline-block mx-24">
+                PROGRAMS OFFERED
+                <span className="absolute -bottom-2 sm:-bottom-3 left-1/2 transform -translate-x-1/2 h-1 w-16 sm:w-20 lg:w-24 bg-yellow-500"></span>
+              </h2>
+            </div>
             <div className="overflow-x-auto scrollbar-hide">
               <div className="flex space-x-8 py-4 w-max">
                 {[
@@ -850,7 +877,7 @@ const HomeView = () => {
                     key={idx}
                     className="ml-7 group bg-white rounded-2xl shadow-lg overflow-hidden w-96 
                      transform transition-all duration-500 
-                     hover:-translate-y-4 hover:shadow-2xl"
+                     hover:-translate-y-4 hover:shadow-2xl "
                   >
                     {/* Image Section */}
                     <div className="h-48 w-full overflow-hidden">
@@ -899,7 +926,7 @@ const HomeView = () => {
             className="py-12 sm:py-16 lg:py-24 bg-[rgb(171,110,110)] text-white relative overflow-hidden scroll-mt-24 lg:scroll-mt-32"
           >
             <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-20 z-0">
-              <svg
+              {/* <svg
                 width="100%"
                 height="100%"
                 xmlns="http://www.w3.org/2000/svg"
@@ -918,7 +945,7 @@ const HomeView = () => {
                   />
                 </pattern>
                 <rect width="100%" height="100%" fill="url(#wave-pattern)" />
-              </svg>
+              </svg> */}
             </div>
             <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-center mb-8 sm:mb-12">
@@ -989,7 +1016,7 @@ const HomeView = () => {
                 <Link to="/gallery/arua2025">
                   <div className="group cursor-pointer overflow-hidden rounded-xl shadow-xl">
                     <img
-                      src="/gallery/arua/cover.jpg"
+                      src="/fresher.jpg"
                       className="w-full h-60 object-cover group-hover:scale-110 transition duration-500"
                     />
                     <div className="bg-[rgb(115,25,25)] text-white text-center py-3 font-semibold">
@@ -1002,7 +1029,7 @@ const HomeView = () => {
                 <Link to="/gallery/pongal">
                   <div className="group cursor-pointer overflow-hidden rounded-xl shadow-xl">
                     <img
-                      src="/gallery/pongal/cover.jpg"
+                      src="/Pongal.jpg"
                       className="w-full h-60 object-cover group-hover:scale-110 transition duration-500"
                     />
                     <div className="bg-[rgb(115,25,25)] text-white text-center py-3 font-semibold">
@@ -1014,10 +1041,13 @@ const HomeView = () => {
             </div>
           </section>
 
+
+          {/* Our Recruiters */}
+
           <section
             id="our_recruiters"
-            className="py-16 lg:py-24 bg-[rgb(171,110,110)] overflow-hidden relative scroll-mt-24 lg:scroll-mt-32"
-          >
+            className=" bg-[url('/anna_unv_fnt.jpg')]  bg-cover bg-center bg-no-repeat py-16 lg:py-24 overflow-hidden relative scroll-mt-24 lg:scroll-mt-32">
+              <div className="absolute inset-0 bg-black/30"></div>
             <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
               {/* Heading */}
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-12 text-white relative inline-block">
@@ -1026,7 +1056,7 @@ const HomeView = () => {
               </h2>
 
               {/* Slider Wrapper */}
-              <div className="relative w-full bg-[rgb(171,110,110)] overflow-hidden">
+              <div className="relative w-full overflow-hidden">
                 {/* Sliding Track */}
                 <div
                   id="logoTrack"
@@ -1076,7 +1106,7 @@ const HomeView = () => {
               </div>
 
               {/* Dots (Moved Up) */}
-              <div className="flex justify-center gap-3 mt-6">
+              {/* <div className="flex justify-center gap-3 mt-16">
                 {Array.from({ length: totalDots }).map((_, index) => (
                   <div
                     key={index}
@@ -1092,7 +1122,7 @@ const HomeView = () => {
                     )}
                   </div>
                 ))}
-              </div>
+              </div> */}
             </div>
 
             {/* Keyframes Inside Same Section */}
