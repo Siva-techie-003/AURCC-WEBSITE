@@ -6,7 +6,7 @@ const POSH = () => {
         <main className="bg-white min-h-screen font-sans text-gray-800">
             {/* Hero Section */}
             <section className="relative w-full min-h-[35vh] sm:min-h-[40vh] md:min-h-[50vh] lg:min-h-[60vh] overflow-hidden flex items-center justify-center">
-                <img src="/offices.webp" alt="POSH Cell" className="absolute inset-0 w-full h-full object-cover object-center" />
+                <img src="http://localhost:5000/public/offices.webp" alt="POSH Cell" className="absolute inset-0 w-full h-full object-cover object-center" />
                 <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-black/60 via-black/30 to-transparent"></div>
                 <div className="absolute inset-0 flex flex-col items-center justify-center z-10 px-2">
                     <div className="backdrop-blur-md bg-white/30 rounded-2xl shadow-lg px-3 sm:px-4 md:px-6 lg:px-8 xl:px-12 py-3 sm:py-4 md:py-6 lg:py-8 xl:py-10 flex flex-col items-center w-full max-w-2xl border border-white/30 animate-fadeIn">

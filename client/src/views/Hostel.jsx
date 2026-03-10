@@ -1,11 +1,10 @@
 ﻿import React, { useState, useEffect } from 'react';
-import hostelData from '../assets/hostel.json';
-import pdf from '../assets/Rules_of_hostel.pdf';
 import './Hostel.css';
 
 const Hostel = () => {
     const [activeSection, setActiveSection] = useState('Description');
     const [currentTestimonial, setCurrentTestimonial] = useState(0);
+    const [hostelData, setHostelData] = useState(null);
 
     const sections = [
         'Description',
@@ -19,6 +18,18 @@ const Hostel = () => {
         { quote: 'Great food, great friends, and a great environment!', author: 'Priya, III CSE' },
         { quote: 'The staff are very supportive and the facilities are excellent.', author: 'Rahul, II MECH' }
     ];
+
+    useEffect(() => {
+
+fetch("http://localhost:5000/api/hostel")
+.then(res => res.json())
+.then(data => {
+    console.log(data);
+    setHostelData(data);
+})
+.catch(err => console.error(err));
+
+}, []);
 
     useEffect(() => {
         const interval = setInterval(() => {
@@ -54,6 +65,10 @@ const Hostel = () => {
             setActiveSection(section);
         }
     };
+
+    if (!hostelData) {
+  return <p className="text-center mt-20 text-lg">Loading Hostel Data...</p>;
+}
 
     return (
         <div className="min-h-screen flex flex-col bg-gray-50 text-left relative">
@@ -215,7 +230,7 @@ const Hostel = () => {
                                             {/* RIGHT SIDE - Photo */}
                                             <div className="ml-4 w-28 h-30 rounded-lg overflow-hidden border-4 border-[rgb(120,45,45)] shadow-md">
                                                 <img
-                                                src={warden.photo || "/default-profile.jpg"}
+                                                src={`http://localhost:5000/public/${warden.photo}`}
                                                 alt={warden.Name}
                                                 className="w-full h-full object-cover"
                                                 />
@@ -274,7 +289,7 @@ const Hostel = () => {
                                             {/* RIGHT SIDE - Photo */}
                                             <div className="ml-6 w-28 h-30 rounded-lg overflow-hidden border-4 border-[rgb(120,45,45)] shadow-md">
                                                 <img
-                                                src={dw.photo || "/default-profile.jpg"}
+                                                src={`http://localhost:5000/public/${dw.photo}`}
                                                 alt={dw.Name}
                                                 className="w-full h-full object-cover"
                                                 />
@@ -328,7 +343,7 @@ const Hostel = () => {
                     <div className="p-8">
                         <div className="rounded-2xl overflow-hidden shadow-2xl border border-gray-200 mx-auto max-w-4xl">                            
                             <iframe
-                            src={`${pdf}#toolbar=0&navpanes=0&scrollbar=0`}
+                            src={`http://localhost:5000${hostelData["Rules and Regulations"]}#toolbar=0&navpanes=0&scrollbar=0`}
                             className="w-[900px] h-[400px] rounded-xl"
                             title="Hostel Rules"
                             />
@@ -336,7 +351,7 @@ const Hostel = () => {
                     </div>
                     <div className="text-center mb-6">
                         <a
-                            href={pdf}
+                            href={`http://localhost:5000${hostelData["Rules and Regulations"]}`}
                             download="Hostel_Rules.pdf"
                             className="inline-flex items-center gap-3 px-6 py-3 bg-[rgb(115,40,40)] text-white font-bold rounded-2xl shadow-lg hover:shadow-xl hover:scale-105 transition-all"
                         >
