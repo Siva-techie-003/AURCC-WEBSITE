@@ -1,9 +1,19 @@
-﻿import React from 'react';
-import data from '../assets/curriculum_syllabus.json';
+﻿import React,{useEffect,useState} from 'react';
 import SyllabusCard from '../components/SyllabusCard';
 import './CurriculumSyllabus.css';
 
 const CurriculumSyllabus = () => {
+
+    const [data, setData] = useState(null);
+
+useEffect(() => {
+fetch("http://localhost:5000/api/curriculum-syllabus")
+.then(res => res.json())
+.then(resData => {
+setData(resData);
+})
+.catch(err => console.error(err));
+}, []);
 
 const SectionHeader = ({ title }) => (
 <header className="flex flex-col md:flex-row md:items-end justify-between border-b-4 border-[rgb(100,25,25)] pb-8 mb-12 gap-6 animate-fadeInUp">
@@ -20,13 +30,13 @@ const SectionHeader = ({ title }) => (
 
 return (
 
-<div className="flex-grow bg-gray-50 min-h-screen text-left">
+<div className="flex-grow bg-gray-50 min-h-screen text-left pt-[120px] sm:pt-[140px] lg:pt-[120px]">
 
 {/* HERO */}
 <section className="relative w-full h-56 sm:h-72 md:h-96 lg:h-[50vh] flex items-center justify-center overflow-hidden">
 
 <img
-src="/syllabus.webp"
+src="http://localhost:5000/syllabus.webp"
 alt="Curriculum & Syllabus"
 className="absolute inset-0 w-full h-full object-cover object-center"
 />

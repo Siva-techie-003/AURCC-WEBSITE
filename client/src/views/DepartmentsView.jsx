@@ -18,12 +18,12 @@ const DepartmentsView = () => {
 
     const sections = [
         'About Department',
-        'Events',
-        'Achievements',
-        'Facility',
+        'HOD Desk',
         'Faculty',
         'Administrative and Technical Staff',
-        'Research and Publications',
+        'Events',
+        'Publications and Achievement',
+        'Facility',
     ];
     
     useEffect(() => {
@@ -81,19 +81,23 @@ const BACKEND_URL = "http://localhost:5000";
         }
     };
 
-    const scrollToSection = (section) => {
-        const sectionId = section.toLowerCase().replace(/\s+/g, '-');
-        const element = document.getElementById(sectionId);
-        const tabHeight = document.querySelector('.sticky')?.offsetHeight || 0;
-        if (element) {
-            const offset = element.offsetTop - tabHeight - 20;
-            window.scrollTo({
-                top: offset,
-                behavior: 'smooth'
-            });
-            setCurrentSection(section);
-        }
-    };
+ const scrollToSection = (section) => {
+
+  const sectionId = section.toLowerCase().replace(/\s+/g, "-");
+  const element = document.getElementById(sectionId);
+
+  if (element) {
+
+    const navbarHeight = 140;
+
+    window.scrollTo({
+      top: element.offsetTop - navbarHeight,
+      behavior: "smooth"
+    });
+
+  }
+
+};
 
     const showDetails = (staff) => {
         setSelectedStaff(staff);
@@ -129,11 +133,11 @@ const BACKEND_URL = "http://localhost:5000";
     if (!department) return null;
 
     return (
-        <div className="min-h-screen flex flex-col bg-white">
+        <div className="pt-[120px] sm:pt-[140px] lg:pt-[120px] min-h-screen flex flex-col bg-white ">
             <main>
                 {/* Hero section */}
                 <section
-                    className="bg-cover bg-center relative h-64 sm:h-72 md:h-80 lg:h-96"
+                    className="scroll-mt-24 lg:scroll-mt-32 bg-cover bg-center relative h-64 sm:h-72 md:h-80 lg:h-96"
                     style={{ backgroundImage: `url(${BACKEND_URL}/${department.image})` }}
                 >
                     <div className="absolute inset-0 bg-gradient-to-r from-[rgb(115,63,63)]/70 to-[rgb(115,25,25)]/30"></div>
@@ -150,20 +154,21 @@ const BACKEND_URL = "http://localhost:5000";
                 </section>
 
                 {/* Navigation Tabs */}
-                <div className="sticky top-0 z-20">
+                <div className="sticky top-[125px] z-40">
                     <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
                         <div className="bg-white/95 backdrop-blur-sm shadow-lg rounded-full -mt-4 sm:-mt-6 py-1 px-2 flex justify-center overflow-x-auto no-scrollbar">
-                            <nav role="tablist" className="tabs flex space-x-1 md:space-x-2">
+                             <nav className="flex justify-center overflow-x-auto no-scrollbar py-2 space-x-2">
                                 {sections.map((section, index) => (
                                     <button
                                         key={index}
                                         onClick={() => scrollToSection(section)}
-                                        className={`font-medium px-3 sm:px-4 md:px-5 py-2 md:py-3 rounded-full text-xs sm:text-sm lg:text-base transition duration-300 whitespace-nowrap ${currentSection === section
-                                            ? 'bg-[rgb(115,40,40)] text-white shadow-md'
-                                            : 'text-gray-700 hover:bg-gray-100'
-                                            }`}
-                                    >
-                                        {section}
+                                        className={`font-medium px-4 py-2 rounded-full text-sm lg:text-base transition duration-300 whitespace-nowrap ${
+            currentSection === section
+              ? "bg-[rgb(115,40,40)] text-white shadow-md"
+              : "text-gray-700 hover:bg-gray-100"
+          }`}
+        >
+          {section}
                                     </button>
                                 ))}
                             </nav>
@@ -173,212 +178,212 @@ const BACKEND_URL = "http://localhost:5000";
 
                 {/* Content sections */}
                 <section className="mx-auto">
-                    <div id="content-sections" className="w-full">
+                    <div id="content-sections" className="w-full scroll-mt-40">
                         {/* About Department */}
-<div id="about-department" className="py-16">
-  <div className="max-w-7xl mx-auto px-6 lg:px-8 ">
+                                <div id="about-department" className="py-16">
+                                  <div className="max-w-7xl mx-auto px-6 lg:px-8 ">
 
-    {/* Title */}
-    <div className="text-center mb-10">
-      <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
-        About The Department
-      </h2>
-      <div className="w-24 h-1 bg-yellow-500 mx-auto mt-3 rounded"></div>
-    </div>
+                                    {/* Title */}
+                                    <div className="text-center mb-10">
+                                      <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
+                                        About The Department
+                                      </h2>
+                                      <div className="w-24 h-1 bg-yellow-500 mx-auto mt-3 rounded"></div>
+                                    </div>
 
-    {/* Content Grid */}
-    <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 items-start ">
+                                    {/* Content Grid */}
+                                    <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 items-start ">
 
-      {/* Left Content */}
-      <div className="lg:col-span-2 bg-gray-100 p-8 rounded-xl shadow-md">
+                                      {/* Left Content */}
+                                      <div className="lg:col-span-2 bg-gray-100 p-8 rounded-xl shadow-md">
 
-        <ul className="text-gray-700 text-justify leading-relaxed space-y-4 text-lg">
-          {(department?.description || []).map((description, i) => (
-            <li key={i}>{description}</li>
-          ))}
-        </ul>
+                                        <ul className="text-gray-700 text-justify leading-relaxed space-y-4 text-lg">
+                                          {(department?.description || []).map((description, i) => (
+                                            <li key={i}>{description}</li>
+                                          ))}
+                                        </ul>
 
-      </div>
+                                      </div>
 
-      {/* Right Image */}
-      <div className="bg-white p-4 rounded-xl shadow-md">
+                                      {/* Right Image */}
+                                      <div className="bg-white p-4 rounded-xl shadow-md">
 
-        <img
-          src="http://localhost:5000/Drone_shot.jpg"   // change to your image path
-          alt="Department"
-          className="w-full h-[450px] object-cover rounded-lg"
-        />
+                                        <img
+                                          src="http://localhost:5000/Drone_shot.jpg"   // change to your image path
+                                          alt="Department"
+                                          className="w-full h-[450px] object-cover rounded-lg"
+                                        />
 
-      </div>
+                                      </div>
 
-    </div>
+                                    </div>
 
-  </div>
-</div>
+                                  </div>
+                                </div>
 
-{/* Department Statistics */}
-<div className="bg-[rgb(115,55,55)] py-14">
-  <div className="max-w-7xl mx-auto px-6 lg:px-8">
+                      {/* Department Statistics */}
+                      <div className="bg-[rgb(115,55,55)] py-14">
+                        <div className="max-w-7xl mx-auto px-6 lg:px-8">
 
-    <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
 
-      {/* Established */}
-      <div className="flex flex-col items-center">
-        <h2 className="text-4xl md:text-5xl font-bold text-white">
-          {department?.established}
-        </h2>
-        <p className="mt-2 text-white text-lg">Established</p>
-      </div>
+                            {/* Established */}
+                            <div className="flex flex-col items-center">
+                              <h2 className="text-4xl md:text-5xl font-bold text-white">
+                                {department?.established}
+                              </h2>
+                              <p className="mt-2 text-white text-lg">Established</p>
+                            </div>
 
-      {/* Students */}
-      <div className="flex flex-col items-center">
-        <h2 className="text-4xl md:text-5xl font-bold text-white">
-          {department?.students}
-        </h2>
-        <p className="mt-2 text-white text-lg">Students</p>
-      </div>
+                            {/* Students */}
+                            <div className="flex flex-col items-center">
+                              <h2 className="text-4xl md:text-5xl font-bold text-white">
+                                {department?.students}
+                              </h2>
+                              <p className="mt-2 text-white text-lg">Students</p>
+                            </div>
 
-      {/* Publications */}
-      <div className="flex flex-col items-center">
-        <h2 className="text-4xl md:text-5xl font-bold text-white">
-          {department?.publications}
-        </h2>
-        <p className="mt-2 text-white text-lg">Publications</p>
-      </div>
+                            {/* Publications */}
+                            <div className="flex flex-col items-center">
+                              <h2 className="text-4xl md:text-5xl font-bold text-white">
+                                {department?.publications}
+                              </h2>
+                              <p className="mt-2 text-white text-lg">Publications</p>
+                            </div>
 
-      {/* Projects */}
-      <div className="flex flex-col items-center">
-        <h2 className="text-4xl md:text-5xl font-bold text-white">
-          {department?.project}
-        </h2>
-        <p className="mt-2 text-white text-lg">Funded Projects</p>
-      </div>
+                            {/* Projects */}
+                            <div className="flex flex-col items-center">
+                              <h2 className="text-4xl md:text-5xl font-bold text-white">
+                                {department?.project}
+                              </h2>
+                              <p className="mt-2 text-white text-lg">Funded Projects</p>
+                            </div>
 
-    </div>
+                          </div>
 
-  </div>
-</div>
-{/* Vision & Mission Section */}
-<div className="bg-white py-20 px-6">
-  <div className="max-w-[1400px] mx-auto grid md:grid-cols-2 gap-12">
+                        </div>
+                      </div>
+                  {/* Vision & Mission Section */}
+                  <div className="bg-white py-20 px-6">
+                    <div className="max-w-[1400px] mx-auto grid md:grid-cols-2 gap-12">
 
-    {/* Vision */}
-    <div className="bg-[#e6e6e6] p-16 rounded-xl shadow-lg min-h-[320px] flex flex-col justify-center">
+                      {/* Vision */}
+                      <div className="bg-[#e6e6e6] p-16 rounded-xl shadow-lg min-h-[320px] flex flex-col">
 
-      <h2 className="text-3xl font-semibold text-center mb-10">
-        Vision
-      </h2>
+                        <h2 className="text-3xl font-semibold text-center mb-10">
+                          Vision
+                        </h2>
 
-      <div className="flex items-start gap-6">
+                        <div className="flex items-center gap-6">
 
-        {/* Icon */}
-        <img
-          src="http://localhost:5000/public/icons/eye-5-svgrepo-com.svg"
-          alt="vision"
-          className="w-16 h-16 flex-shrink-0"
-        />
+                          {/* Icon */}
+                          <img
+                            src="http://localhost:5000/public/icons/eye-5-svgrepo-com.svg"
+                            alt="vision"
+                            className="w-16 h-16 flex-shrink-0"
+                          />
 
-        {/* Vision Text */}
-        <p className="text-lg text-gray-800 leading-relaxed">
-          {department?.vision}
-        </p>
+                          {/* Vision Text */}
+                          <p className="text-lg text-gray-800 leading-relaxed">
+                            {department?.vision}
+                          </p>
 
-      </div>
+                        </div>
 
-    </div>
+                      </div>
 
 
-    {/* Mission */}
-    <div className="bg-[#e6e6e6] p-16 rounded-xl shadow-lg min-h-[320px] flex flex-col justify-center">
+                      {/* Mission */}
+                      <div className="bg-[#e6e6e6] p-16 rounded-xl shadow-lg min-h-[320px] flex flex-col">
 
-      <h2 className="text-3xl font-semibold text-center mb-10">
-        Mission
-      </h2>
+                        <h2 className="text-3xl font-semibold text-center mb-10">
+                          Mission
+                        </h2>
 
-      <div className="flex items-start gap-6">
+                        <div className="flex items-center gap-6">
 
-        {/* Icon */}
-        <img
-          src="http://localhost:5000/public/icons/target-svgrepo-com.svg"
-          alt="mission"
-          className="w-16 h-16 flex-shrink-0"
-        />
+                          {/* Icon */}
+                          <img
+                            src="http://localhost:5000/public/icons/target-svgrepo-com.svg"
+                            alt="mission"
+                            className="w-16 h-16 flex-shrink-0"
+                          />
 
-        {/* Mission List */}
-        <ul className="text-lg text-gray-800 space-y-2 leading-relaxed">
-          {(department?.mission || []).map((item, index) => (
-            <li key={index}>• {item}</li>
-          ))}
-        </ul>
+                          {/* Mission List */}
+                          <ul className="text-lg text-gray-800 space-y-2 leading-relaxed">
+                            {(department?.mission || []).map((item, index) => (
+                              <li key={index}>• {item}</li>
+                            ))}
+                          </ul>
 
-      </div>
+                        </div>
 
-    </div>
+                      </div>
 
-  </div>
-</div>
+                      </div>
+                    </div>
 
-{/* HOD Desk */}
-<div className="w-full bg-[rgb(115,55,55)] py-16 px-6 lg:px-20 text-white">
-    
-    <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+                          {/* HOD Desk */}
+                          <div id='hod-desk' className="w-full bg-[rgb(115,55,55)] py-16 px-6 lg:px-20 text-white">
+                              
+                              <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
 
-        {/* Left Side - HOD Profile */}
-        {(Array.isArray(department?.faculty?.hod_desk) ? department.faculty.hod_desk : []).map((staff, i) => (
-            <div key={i} className="flex flex-col items-center text-center">
+                                  {/* Left Side - HOD Profile */}
+                                  {(Array.isArray(department?.faculty?.hod_desk) ? department.faculty.hod_desk : []).map((staff, i) => (
+                                      <div key={i} className="flex flex-col items-center text-center">
 
-                <img
-                    src={`${BACKEND_URL}/${staff.image}`}
-                    alt={staff.name}
-                    onError={handleImageError}
-                    className="w-48 h-48 object-fit rounded-full border-4 border-white shadow-lg mb-6"
-                />
+                                          <img
+                                              src={`${BACKEND_URL}/${staff.image}`}
+                                              alt={staff.name}
+                                              onError={handleImageError}
+                                              className="w-48 h-48 object-fit rounded-full border-4 border-white shadow-lg mb-6"
+                                          />
 
-                <h4 className="text-2xl font-bold">{staff.name}</h4>
-                <p className="text-lg opacity-90">{staff.position}</p>
-                <p className="text-lg opacity-90">{staff.subpos}</p>
-                <p className="text-sm opacity-80">{staff.email}</p>
+                                          <h4 className="text-2xl font-bold">{staff.name}</h4>
+                                          <p className="text-lg opacity-90">{staff.position}</p>
+                                          <p className="text-lg opacity-90">{staff.subpos}</p>
+                                          <p className="text-sm opacity-80">{staff.email}</p>
 
-            </div>
-        ))}
+                                      </div>
+                                  ))}
 
-        {/* Right Side - Message */}
-        <div>
+                                  {/* Right Side - Message */}
+                                  <div>
 
-            <h2 className="text-4xl font-bold mb-3">Welcome Message</h2>
+                                      <h2 className="text-4xl font-bold mb-3">HOD Desk</h2>
 
-            <p className="italic mb-5">
-                          {department?.p1}
-            </p>
+                                      <p className="italic mb-5">
+                                                    {department?.p1}
+                                      </p>
 
-            <p className="mb-2 leading-relaxed">
-                {department?.p2}
-            </p>
+                                      <p className="mb-2 leading-relaxed">
+                                          {department?.p2}
+                                      </p>
 
-            <p className="mb-2 leading-relaxed">
-                {department?.p3}
-            </p>
+                                      <p className="mb-2 leading-relaxed">
+                                          {department?.p3}
+                                      </p>
 
-            <p className="leading-relaxed">
-                {department?.p4}
-            </p>
+                                      <p className="leading-relaxed">
+                                          {department?.p4}
+                                      </p>
 
-        </div>
+                                  </div>
 
-    </div>
+                              </div>
 
-</div>
+                          </div>
 
 
                         {/* Courses Offered */}
-                        <div id="courses-offered" className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto py-12 bg-white">
+                        <div id="courses-offered" className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto py-12 bg-white scroll-mt-40">
                             <h2 className="text-3xl md:text-4xl font-bold text-center mb-10 text-gray-800">
                                 <span className="bg-gradient-to-r from-[rgb(115,63,63)] to-[rgb(115,25,25)] bg-clip-text text-transparent">Courses Offered</span>
                             </h2>
                             <div className="max-w-6xl mx-auto">
                                 <div className="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden transition-all duration-300 hover:shadow-xl">
                                     <div className="bg-gradient-to-r from-[rgb(115,63,63)] to-[rgb(115,25,25)] py-6 sm:py-7 md:py-8">
-                                        <h3 className="text-lg sm:text-xl lg:text-2xl xl:text-3xl text-white font-bold text-center">Programs Available</h3>
+                                        <h3 className="text-lg sm:text-xl lg:text-2xl xl:text-3xl text-white font-bold text-center">Programmes Available</h3>
                                     </div>
                                     <div className="p-8 md:p-10">
                                         <div className={`flex gap-6 sm:gap-6 ${(department?.courses_offered?.length || 0) > 1 ? 'grid-cols-1 md:grid-cols-2' : 'justify-center'}`}>
@@ -411,35 +416,35 @@ const BACKEND_URL = "http://localhost:5000";
                         </div>
 
                         {/* Faculty Section */}
-                        <div id="faculty" className="relative px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto py-6 bg-gray-50 rounded-2xl overflow-hidden">
+                        <div id="faculty" className="relative px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto py-6 bg-gray-50 rounded-2xl overflow-hidden scroll-mt-40">
                                                   {/* Background Pattern */}
-  <div className="absolute inset-0 opacity-30 text-[rgb(115,40,40)] pointer-events-none">
-    <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
-      <pattern
-        id="hexagon-pattern"
-        width="100"
-        height="100"
-        patternUnits="userSpaceOnUse"
-      >
-        <path
-          d="M50 0 L87.5 25 L87.5 75 L50 100 L12.5 75 L12.5 25 Z"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="1"
-        />
-      </pattern>
-      <rect width="100%" height="100%" fill="url(#hexagon-pattern)" />
-    </svg>
-  </div>
-                                <div className="relative z-10 text-center mb-8 sm:mb-10 lg:mb-12 bg-white/90 backdrop-blur
-    shadow-lg hover:shadow-xl
-    rounded-xl
-    px-6 py-4 sm:px-8 sm:py-6
-    transition-all duration-300
-    border border-gray-100
-    text-center
-    max-w-fit 
-    mx-auto">
+                          <div className="absolute inset-0 opacity-30 text-[rgb(115,40,40)] pointer-events-none">
+                            <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                              <pattern
+                                id="hexagon-pattern"
+                                width="100"
+                                height="100"
+                                patternUnits="userSpaceOnUse"
+                              >
+                                <path
+                                  d="M50 0 L87.5 25 L87.5 75 L50 100 L12.5 75 L12.5 25 Z"
+                                  fill="none"
+                                  stroke="currentColor"
+                                  strokeWidth="1"
+                                />
+                              </pattern>
+                              <rect width="100%" height="100%" fill="url(#hexagon-pattern)" />
+                            </svg>
+                          </div>
+                                                        <div className="relative z-10 text-center mb-8 sm:mb-10 lg:mb-12 bg-white/90 backdrop-blur
+                            shadow-lg hover:shadow-xl
+                            rounded-xl
+                            px-6 py-4 sm:px-8 sm:py-6
+                            transition-all duration-300
+                            border border-gray-100
+                            text-center
+                            max-w-fit 
+                            mx-auto">
                                 <h2 className="text-2xl text-center sm:text-3xl lg:text-4xl font-bold text-gray-700 relative inline-block group">
                                     OUR FACULTY
                                     <span className="absolute -bottom-2 sm:-bottom-3 left-0 h-1 w-full bg-gradient-to-r from-[rgb(115,63,63)] to-[rgb(115,25,25)]"></span>
@@ -459,8 +464,8 @@ const BACKEND_URL = "http://localhost:5000";
                                             </div>
                                             <div className="p-6 text-center">
                                                 <h4 className="text-lg font-bold text-transparent bg-clip-text bg-gradient-to-r from-[rgb(115,63,63)] to-[rgb(115,25,25)] mb-2">{staff.name}</h4>
-                                                <p className="text-gray-700 font-medium">{staff.position}</p>
-                                                <p className="text-gray-500 text-sm">{staff.email}</p>
+                                                <p className="text-gray-700 font-semibold">{staff.position}</p>
+                                                <p className="text-gray-500 text-base">{staff.email}</p>
                                                 <button className="mt-4 px-4 py-2 bg-gradient-to-r from-[rgb(115,63,63)] to-[rgb(115,25,25)] text-white text-sm rounded-lg hover:from-[rgb(115,63,63)] hover:to-[rgb(115,25,25)] transition-all font-semibold">View Profile</button>
                                             </div>
                                         </div>
@@ -470,63 +475,63 @@ const BACKEND_URL = "http://localhost:5000";
                         </div>
 
                        {/* Networking Staff (ONLY for CSE Department) */}
-{Array.isArray(department?.networking_staff) &&
- department.networking_staff.length > 0 && (
+                        {Array.isArray(department?.networking_staff) &&
+                        department.networking_staff.length > 0 && (
 
-  <div
-    id="networking-staff"
-    className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto py-12 bg-white"
-  >
-    <h2 className="text-3xl md:text-4xl font-bold text-center mb-10 text-gray-800">
-      <span className="bg-gradient-to-r from-[rgb(115,63,63)] to-[rgb(115,25,25)] bg-clip-text text-transparent">
-        Networking Staff
-      </span>
-    </h2>
+                          <div
+                            id="networking-staff"
+                            className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto py-12 bg-white"
+                          >
+                            <h2 className="text-3xl md:text-4xl font-bold text-center mb-10 text-gray-800">
+                              <span className="bg-gradient-to-r from-[rgb(115,63,63)] to-[rgb(115,25,25)] bg-clip-text text-transparent">
+                                System Administator
+                              </span>
+                            </h2>
 
-    <div className="flex justify-center flex-wrap gap-8">
-      {department.networking_staff.map((staff, i) => (
-        <div
-          key={i}
-          className="bg-white rounded-xl shadow-lg overflow-hidden border border-[rgb(200,120,120)]
-                     transform transition-all duration-300 cursor-pointer
-                     min-h-[300px] max-w-[320px] w-80
-                     hover:-translate-y-3 hover:scale-[1.03]
-                     hover:shadow-2xl hover:border-[rgb(115,40,40)]"
-          onClick={() => showDetails(staff)}
-        >
-          <div className="relative pt-2 flex justify-center">
-            <div className="absolute inset-0 h-1/2 bg-gradient-to-r from-[rgb(115,63,63)] to-[rgb(115,25,25)]"></div>
-            <div className="relative">
-              <img
-                src={`${BACKEND_URL}/${staff.image}`}
-                alt={staff.name}
-                className="w-28 h-36 object-cover rounded-full border-4 border-white shadow-lg"
-                onError={handleImageError}
-              />
-            </div>
-          </div>
+                            <div className="flex justify-center flex-wrap gap-8">
+                              {department.networking_staff.map((staff, i) => (
+                                <div
+                                  key={i}
+                                  className="bg-white rounded-xl shadow-lg overflow-hidden border border-[rgb(200,120,120)]
+                                            transform transition-all duration-300 cursor-pointer
+                                            min-h-[300px] max-w-[320px] w-80
+                                            hover:-translate-y-3 hover:scale-[1.03]
+                                            hover:shadow-2xl hover:border-[rgb(115,40,40)]"
+                                  onClick={() => showDetails(staff)}
+                                >
+                                  <div className="relative pt-2 flex justify-center">
+                                    <div className="absolute inset-0 h-1/2 bg-gradient-to-r from-[rgb(115,63,63)] to-[rgb(115,25,25)]"></div>
+                                    <div className="relative">
+                                      <img
+                                        src={`${BACKEND_URL}/${staff.image}`}
+                                        alt={staff.name}
+                                        className="w-28 h-36 object-cover rounded-full border-4 border-white shadow-lg"
+                                        onError={handleImageError}
+                                      />
+                                    </div>
+                                  </div>
 
-          <div className="p-6 text-center">
-            <h4 className="text-lg font-bold text-transparent bg-clip-text bg-gradient-to-r from-[rgb(115,63,63)] to-[rgb(115,25,25)] mb-2">
-              {staff.name}
-            </h4>
-            <p className="text-gray-700 font-medium">{staff.position}</p>
-            {staff.email && (
-              <p className="text-gray-500 text-sm">{staff.email}</p>
-            )}
-            <button className="mt-4 px-4 py-2 bg-gradient-to-r from-[rgb(115,63,63)] to-[rgb(115,25,25)]
-                               text-white text-sm rounded-lg transition-all font-semibold">
-              View Profile
-            </button>
-          </div>
-        </div>
-      ))}
-    </div>
-  </div>
-)}
+                                  <div className="p-6 text-center">
+                                    <h4 className="text-lg font-bold text-transparent bg-clip-text bg-gradient-to-r from-[rgb(115,63,63)] to-[rgb(115,25,25)] mb-2">
+                                      {staff.name}
+                                    </h4>
+                                    <p className="text-gray-700 font-medium">{staff.position}</p>
+                                    {staff.email && (
+                                      <p className="text-gray-500 text-sm">{staff.email}</p>
+                                    )}
+                                    <button className="mt-4 px-4 py-2 bg-gradient-to-r from-[rgb(115,63,63)] to-[rgb(115,25,25)]
+                                                      text-white text-sm rounded-lg transition-all font-semibold">
+                                      View Profile
+                                    </button>
+                                  </div>
+                                </div>
+                              ))}
+                            </div>
+                          </div>
+                        )}
 
-{/* Administrative Staff */}
-                        <div id="administrative-and-technical-staff" className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto py-12 bg-white">
+                        {/* Administrative Staff */}
+                        <div id="administrative-and-technical-staff" className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto py-12 bg-white scroll-mt-40">
                             <h2 className="text-3xl md:text-4xl font-bold text-center mb-10 text-gray-800">
                                 <span className="bg-gradient-to-r from-[rgb(115,63,63)] to-[rgb(115,25,25)] bg-clip-text text-transparent">Administrative and Technical Staff</span>
                             </h2>
@@ -552,7 +557,7 @@ const BACKEND_URL = "http://localhost:5000";
 
 
                         {/* Events Slider */}
-                        <div id="events" className="px-4 sm:px-6 border-4 lg:px-8 max-w-7xl mx-auto py-12 bg-white">
+                        <div id='events' className="px-4 sm:px-6 border-4 lg:px-8 max-w-7xl mx-auto py-12 bg-white scroll-mt-40">
                             <h2 className="text-3xl md:text-4xl font-bold text-center mb-10 text-gray-800">
                                 <span className="bg-gradient-to-r from-[rgb(115,63,63)] to-[rgb(115,25,25)] bg-clip-text text-transparent">Upcoming Events</span>
                             </h2>
@@ -598,12 +603,12 @@ const BACKEND_URL = "http://localhost:5000";
                             )}
                         </div>
 
-<div className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto py-12">
+            <div className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto py-12">
 
-    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
 
-        {/* Research & Publications */}
-        <div className="bg-white rounded-xl shadow-md border border-gray-200 overflow-hidden">
+                    {/* Research & Publications */}
+                    <div id='research-and-publications' className="bg-white rounded-xl shadow-md border border-gray-200 overflow-hidden scroll-mt-40">
 
             {/* Header */}
             <div className="flex items-center justify-between bg-gradient-to-r from-[rgb(115,63,63)] to-[rgb(115,25,25)] text-white px-6 py-4">
@@ -640,7 +645,7 @@ const BACKEND_URL = "http://localhost:5000";
 
 
         {/* Achievements */}
-        <div className="bg-white rounded-xl shadow-md border border-gray-200 overflow-hidden">
+        <div id="achievements" className="bg-white rounded-xl shadow-md border border-gray-200 overflow-hidden scroll-mt-40">
 
             {/* Header */}
             <div className="flex items-center justify-between bg-gradient-to-r from-[rgb(115,63,63)] to-[rgb(115,25,25)] text-white px-6 py-4">
@@ -682,7 +687,7 @@ const BACKEND_URL = "http://localhost:5000";
 
 
                         {/* Facility */}
-                        <div id="facility" className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto py-12 bg-white">
+                        <div id="facility" className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto py-12 bg-white v">
                             <h2 className="text-3xl md:text-4xl font-bold text-center mb-10 text-gray-800">
                                 <span className="bg-gradient-to-r from-[rgb(115,63,63)] to-[rgb(115,25,25)] bg-clip-text text-transparent">World-Class Facilities</span>
                             </h2>
@@ -731,132 +736,132 @@ const BACKEND_URL = "http://localhost:5000";
                                     </div>
                                     <div className="md:w-2/3 max-h-[60vh] overflow-y-auto pr-4 scrollbar-thin text-left space-y-6">
 
-  {/* Description */}
-  {selectedStaff.description && (
-    <section title="About">
-      <p className="text-gray-700">{selectedStaff.description}</p>
-    </section>
-  )}
+                                    {/* Description */}
+                                    {selectedStaff.description && (
+                                      <section title="About">
+                                        <p className="text-gray-700">{selectedStaff.description}</p>
+                                      </section>
+                                    )}
 
-  {/* Education */}
-  {Array.isArray(selectedStaff.education) && (
-    <section title="Education">
-      <ul className="space-y-2">
-        {selectedStaff.education.map((edu, i) => (
-          <li key={i} className="bg-gray-50 p-3 rounded-lg">
-            <div className="font-medium">{edu.degree}</div>
-            {edu.field && <div>{edu.field}</div>}
-            <div>{edu.institution}</div>
-            {edu.year && (
-              <div className="text-xs text-gray-500">{edu.year}</div>
-            )}
-            {edu.honors && (
-              <div className="text-xs text-emerald-600">
-                {edu.honors.join(', ')}
-              </div>
-            )}
-          </li>
-        ))}
-      </ul>
-    </section>
-  )}
+                                    {/* Education */}
+                                    {Array.isArray(selectedStaff.education) && (
+                                      <section title="Education">
+                                        <ul className="space-y-2">
+                                          {selectedStaff.education.map((edu, i) => (
+                                            <li key={i} className="bg-gray-50 p-3 rounded-lg">
+                                              <div className="font-medium">{edu.degree}</div>
+                                              {edu.field && <div>{edu.field}</div>}
+                                              <div>{edu.institution}</div>
+                                              {edu.year && (
+                                                <div className="text-xs text-gray-500">{edu.year}</div>
+                                              )}
+                                              {edu.honors && (
+                                                <div className="text-xs text-emerald-600">
+                                                  {edu.honors.join(', ')}
+                                                </div>
+                                              )}
+                                            </li>
+                                          ))}
+                                        </ul>
+                                      </section>
+                                    )}
 
-  {/* Research Interests */}
-  {Array.isArray(selectedStaff.research_interests) && (
-    <section title="Research Interests">
-      <ul className="list-disc pl-5 space-y-1">
-        {selectedStaff.research_interests.map((item, i) => (
-          <li key={i}>{item}</li>
-        ))}
-      </ul>
-    </section>
-  )}
+                                    {/* Research Interests */}
+                                    {Array.isArray(selectedStaff.research_interests) && (
+                                      <section title="Research Interests">
+                                        <ul className="list-disc pl-5 space-y-1">
+                                          {selectedStaff.research_interests.map((item, i) => (
+                                            <li key={i}>{item}</li>
+                                          ))}
+                                        </ul>
+                                      </section>
+                                    )}
 
-  {/* Professional Experience */}
-  {Array.isArray(selectedStaff.professional_experience) && (
-    <section title="Professional Experience">
-      <ul className="space-y-2">
-        {selectedStaff.professional_experience.map((exp, i) => (
-          <li key={i} className="bg-gray-50 p-3 rounded-lg">
-            <div className="font-medium">{exp.position}</div>
-            <div>{exp.institution}</div>
-            <div className="text-xs text-gray-500">{exp.duration}</div>
-          </li>
-        ))}
-      </ul>
-    </section>
-  )}
+                                    {/* Professional Experience */}
+                                    {Array.isArray(selectedStaff.professional_experience) && (
+                                      <section title="Professional Experience">
+                                        <ul className="space-y-2">
+                                          {selectedStaff.professional_experience.map((exp, i) => (
+                                            <li key={i} className="bg-gray-50 p-3 rounded-lg">
+                                              <div className="font-medium">{exp.position}</div>
+                                              <div>{exp.institution}</div>
+                                              <div className="text-xs text-gray-500">{exp.duration}</div>
+                                            </li>
+                                          ))}
+                                        </ul>
+                                      </section>
+                                    )}
 
-  {/* Roles */}
-  {Array.isArray(selectedStaff.roles) && (
-    <section title="Roles & Responsibilities">
-      <ul className="list-disc pl-5 space-y-1">
-        {selectedStaff.roles.map((role, i) => (
-          <li key={i}>{role}</li>
-        ))}
-      </ul>
-    </section>
-  )}
+                                    {/* Roles */}
+                                    {Array.isArray(selectedStaff.roles) && (
+                                      <section title="Roles & Responsibilities">
+                                        <ul className="list-disc pl-5 space-y-1">
+                                          {selectedStaff.roles.map((role, i) => (
+                                            <li key={i}>{role}</li>
+                                          ))}
+                                        </ul>
+                                      </section>
+                                    )}
 
-  {/* Achievements */}
-  {Array.isArray(selectedStaff.achievements) && (
-    <section title="Achievements">
-      <ul className="list-disc pl-5 space-y-1">
-        {selectedStaff.achievements.map((ach, i) => (
-          <li key={i}>{ach}</li>
-        ))}
-      </ul>
-    </section>
-  )}
+                                    {/* Achievements */}
+                                    {Array.isArray(selectedStaff.achievements) && (
+                                      <section title="Achievements">
+                                        <ul className="list-disc pl-5 space-y-1">
+                                          {selectedStaff.achievements.map((ach, i) => (
+                                            <li key={i}>{ach}</li>
+                                          ))}
+                                        </ul>
+                                      </section>
+                                    )}
 
-  {/* Publications (counts) */}
-  {selectedStaff.publications && (
-    <section title="Publications">
-      <ul className="space-y-1">
-        {Object.entries(selectedStaff.publications).map(([key, val], i) => (
-          <li key={i}>
-            <strong>{key}:</strong> {val}
-          </li>
-        ))}
-      </ul>
-    </section>
-  )}
+                                    {/* Publications (counts) */}
+                                    {selectedStaff.publications && (
+                                      <section title="Publications">
+                                        <ul className="space-y-1">
+                                          {Object.entries(selectedStaff.publications).map(([key, val], i) => (
+                                            <li key={i}>
+                                              <strong>{key}:</strong> {val}
+                                            </li>
+                                          ))}
+                                        </ul>
+                                      </section>
+                                    )}
 
-  {/* Abroad Visit */}
-  {selectedStaff.abroad_visit && (
-    <section title="International Exposure">
-      <p>{selectedStaff.abroad_visit}</p>
-    </section>
-  )}
+                                    {/* Abroad Visit */}
+                                    {selectedStaff.abroad_visit && (
+                                      <section title="International Exposure">
+                                        <p>{selectedStaff.abroad_visit}</p>
+                                      </section>
+                                    )}
 
-  {/* Links */}
-  {(selectedStaff.links || selectedStaff.research_profiles || selectedStaff.additional_links || selectedStaff.academic_achievements) && (
-    <section title="Profiles & Links">
-      <ul className="space-y-1">
-        {Object.entries({
-          ...selectedStaff.links,
-          ...selectedStaff.research_profiles,
-          ...selectedStaff.additional_links,
-          ...selectedStaff.academic_achievements,
-        }).map(([key, val], i) => (
-          typeof val === 'string' && (
-            <li key={i}>
-              <a
-                href={val}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-blue-600 hover:underline"
-              >
-                {key}
-              </a>
-            </li>
-          )
-        ))}
-      </ul>
-    </section>
-  )}
+                                    {/* Links */}
+                                    {(selectedStaff.links || selectedStaff.research_profiles || selectedStaff.additional_links || selectedStaff.academic_achievements) && (
+                                      <section title="Profiles & Links">
+                                        <ul className="space-y-1">
+                                          {Object.entries({
+                                            ...selectedStaff.links,
+                                            ...selectedStaff.research_profiles,
+                                            ...selectedStaff.additional_links,
+                                            ...selectedStaff.academic_achievements,
+                                          }).map(([key, val], i) => (
+                                            typeof val === 'string' && (
+                                              <li key={i}>
+                                                <a
+                                                  href={val}
+                                                  target="_blank"
+                                                  rel="noopener noreferrer"
+                                                  className="text-blue-600 hover:underline"
+                                                >
+                                                  {key}
+                                                </a>
+                                              </li>
+                                            )
+                                          ))}
+                                        </ul>
+                                      </section>
+                                    )}
 
-</div>
+                                  </div>
 
                                 </div>
                             </div>
