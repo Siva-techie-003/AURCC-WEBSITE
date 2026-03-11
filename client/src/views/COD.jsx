@@ -5,10 +5,10 @@ const COD = () => {
     const [centres, setCentres] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  const BACKEND_URL = "http://localhost:5000";
+  const BACKEND_URL = "";
 
   useEffect(() => {
-    fetch("http://localhost:5000/api/cell-coordinators")
+    fetch("/api/cell-coordinators")
       .then(res => res.json())
       .then(data => {
         console.log("COD API:", data);

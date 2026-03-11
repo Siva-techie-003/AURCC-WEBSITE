@@ -783,93 +783,10 @@ const HomeView = () => {
 
           <QuickLinksSidebar />
 
-          {/* Programs Offered Showcase
-                <section id="programs" className="py-12 sm:py-16 lg:py-20 bg-white relative overflow-hidden">
-                    <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-20 z-0">
-                        <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
-                            <pattern id="hexagon-pattern" width="100" height="100" patternUnits="userSpaceOnUse">
-                                <path d="M50 0 L87.5 25 L87.5 75 L50 100 L12.5 75 L12.5 25 Z" fill="none" stroke="currentColor" strokeWidth="1" />
-                            </pattern>
-                            <rect width="100%" height="100%" fill="url(#hexagon-pattern)" />
-                        </svg>
-                    </div>
-                    <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-                        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-center mb-12 sm:mb-16 text-[rgb(100,25,25)] relative inline-block mx-auto">
-                            PROGRAMS OFFERED
-                            <span className="absolute -bottom-2 sm:-bottom-3 left-1/2 transform -translate-x-1/2 h-1 w-16 sm:w-20 lg:w-24 bg-yellow-500"></span>
-                        </h2>
-                        <div className="mt-16 relative">
-                            <div className="overflow-x-auto scrollbar-hide">
-                                <div className="flex space-x-6 py-4 w-max">
-                                    {[
-                                        { title: 'Bachelor of Degree (COMPUTER SCIENCE AND ENGINEERING)', icon: '💻', color: 'bg-[rgb(220,140,140)]0', url: '/departments/cse' },
-                                        { title: 'B.E. (ELECTRONICS AND COMMUNICATION ENGINEERING)', icon: '📡', color: 'bg-green-500', url: '/departments/ece' },
-                                        { title: 'B.E. (ELECTRICAL AND ELECTRONICS ENGINEERING)', icon: '⚡', color: 'bg-yellow-500', url: '/departments/eee' },
-                                        { title: 'B.E. (MECHANICAL ENGINEERING)', icon: '🛠️', color: 'bg-red-500', url: '/departments/mech' },
-                                        { title: 'B.Tech. (ARTIFICIAL INTELLIGENCE AND DATA SCIENCE)', icon: '🤖', color: 'bg-purple-500', url: '/departments/cse' },
-                                        { title: 'B.E. ELECTRONICS ENGINEERING (VLSI DESIGN AND TECHNOLOGY)', icon: '🔲', color: 'bg-pink-500', url: '/departments/ece' },
-                                        { title: 'MASTER OF BUSINESS ADMINISTRATION', icon: '📈', color: 'bg-[rgb(220,140,140)]0', url: '/departments/mba' },
-                                        { title: 'MASTER OF BUSINESS ADMINISTRATION (BUSINESS ANALYTICS)', icon: '📊', color: 'bg-[rgb(140,60,60)]', url: '/departments/mba' },
-                                    ].map((prog, idx) => (
-                                        <div key={idx} className="bg-white rounded-xl p-8 shadow-lg transform hover:-translate-y-2 transition-all duration-300 w-72">
-                                            <div className={`p-4 rounded-full text-white inline-block mb-6 h-14 w-14 flex items-center justify-center text-2xl ${prog.color}`}>{prog.icon}</div>
-                                            <h3 className="text-lg font-bold text-gray-900 mb-4">{prog.title}</h3>
-                                            <p className="text-gray-600 mb-6 h-20">Explore opportunities in {prog.title.toLowerCase()}.</p>
-                                            <Link to={prog.url} className="text-[rgb(120,45,45)] font-semibold hover:text-[rgb(110,35,35)] transition-colors">Learn More →</Link>
-                                        </div>
-                                    ))}
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section> */}
-
           {/* Programs Offered */}
 
           <div className="mt-22 pb-12 relative">
             <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-20 z-0 mt-2">
-              {/* <svg
-                width="100%"
-                height="100%"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <pattern
-                  id="edu-pattern"
-                  width="90"
-                  height="90"
-                  patternUnits="userSpaceOnUse"
-                >
-                  <polygon
-                    points="45,15 75,30 45,45 15,30"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="1.5"
-                  />
-
-                  <rect
-                    x="32"
-                    y="45"
-                    width="26"
-                    height="6"
-                    rx="2"
-                    fill="currentColor"
-                    opacity="0.7"
-                  />
-
-                  <line
-                    x1="45"
-                    y1="30"
-                    x2="45"
-                    y2="60"
-                    stroke="currentColor"
-                    strokeWidth="1.5"
-                  />
-
-                  <circle cx="45" cy="95" r="3" fill="currentColor" />
-                </pattern>
-
-                <rect width="100%" height="100%" fill="url(#edu-pattern)" />
-              </svg> */}
             </div>
             <div className="">
               <h2 className=" text-2xl sm:text-3xl lg:text-4xl font-bold mt-16 sm:mb-16 text-[rgb(100,25,25)] relative inline-block mx-24">
@@ -1019,9 +936,9 @@ const HomeView = () => {
                 </div>
                 <div className="md:w-2/3 p-4 sm:p-6 md:p-8">
                   <h3 className="text-xl lg:text-2xl font-semibold mb-3 sm:mb-4">
-                    Dr. Saravanan Kumar
+                    Dr. M. Saravanan Kumar
                   </h3>
-                  <p className="text-base text-[rgb(180,100,100)] mb-4 sm:mb-6 italic">
+                  <p className="text-base text-white mb-4 sm:mb-6 italic">
                     "Empowering the next generation of innovators and leaders."
                   </p>
                   <p className="text-base mb-3 sm:mb-4">

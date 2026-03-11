@@ -4,7 +4,7 @@ import './Alumni.css';
 const Alumni = () => {
     const [jsonData, setJsonData] = useState(null);
     useEffect(() => {
-  fetch("http://localhost:5000/api/alumni")
+  fetch("/api/alumni")
     .then(res => res.json())
     .then(data => {
       console.log("Alumni Data:", data);
@@ -21,7 +21,7 @@ if (!jsonData) {
         <main className="flex-grow font-sans bg-white">
             {/* Hero section */}
             <section className="relative w-full min-h-[35vh] sm:min-h-[40vh] md:min-h-[50vh] lg:min-h-[60vh] overflow-hidden flex items-center justify-center">
-                <img src="http://localhost:5000/public/graduavation2.png" alt="Alumni" className="absolute inset-0 w-full h-full object-cover object-center" />
+                <img src="/public/graduavation2.png" alt="Alumni" className="absolute inset-0 w-full h-full object-cover object-center" />
                 <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-black/60 via-black/30 to-transparent"></div>
 
                 {/* Stars overlay */}

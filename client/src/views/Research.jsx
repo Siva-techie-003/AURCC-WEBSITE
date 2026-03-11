@@ -12,7 +12,7 @@ const Research = () => {
     ];
 
     useEffect(() => {
-  fetch("http://localhost:5000/api/research-cell")
+  fetch("/api/research-cell")
     .then(res => res.json())
     .then(setData)
     .catch(err => console.error(err));

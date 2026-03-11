@@ -16,7 +16,7 @@ const Library = () => {
 
 useEffect(() => {
 
-fetch("http://localhost:5000/api/library")
+fetch("/api/library")
 .then(res => res.json())
 .then(data => {
   console.log(data);
@@ -250,7 +250,7 @@ fetch("http://localhost:5000/api/library")
                     {/* Profile Image */}
                     <div className="absolute top-12 left-1/2 -translate-x-1/2">
                     <img
-                        src={`http://localhost:5000/public/${faculty.img}`}
+                        src={`/public/${faculty.img}`}
                         alt={faculty.name}
                         className="w-32 h-[152px] object-cover 
                                 rounded-full border-4 

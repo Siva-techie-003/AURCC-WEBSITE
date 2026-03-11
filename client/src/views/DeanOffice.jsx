@@ -6,7 +6,7 @@ const DeanOffice = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("http://localhost:5000/api/dean-office")
+    fetch("/api/dean-office")
       .then(res => res.json())
       .then(data => {
         console.log("DEAN OFFICE API:", data);
@@ -23,7 +23,7 @@ const DeanOffice = () => {
     return <p className="text-center mt-20">Loading...</p>;
   }
 
-  const BACKEND_URL = "http://localhost:5000";
+  const BACKEND_URL = "";
 
     return (
         <div className="bg-white min-h-screen py-8 sm:py-12 lg:py-14 px-4">

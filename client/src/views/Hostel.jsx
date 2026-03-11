@@ -21,7 +21,7 @@ const Hostel = () => {
 
     useEffect(() => {
 
-fetch("http://localhost:5000/api/hostel")
+fetch("/api/hostel")
 .then(res => res.json())
 .then(data => {
     console.log(data);
@@ -230,7 +230,7 @@ fetch("http://localhost:5000/api/hostel")
                                             {/* RIGHT SIDE - Photo */}
                                             <div className="ml-4 w-28 h-30 rounded-lg overflow-hidden border-4 border-[rgb(120,45,45)] shadow-md">
                                                 <img
-                                                src={`http://localhost:5000/public/${warden.photo}`}
+                                                src={`/public/${warden.photo}`}
                                                 alt={warden.Name}
                                                 className="w-full h-full object-cover"
                                                 />
@@ -289,7 +289,7 @@ fetch("http://localhost:5000/api/hostel")
                                             {/* RIGHT SIDE - Photo */}
                                             <div className="ml-6 w-28 h-30 rounded-lg overflow-hidden border-4 border-[rgb(120,45,45)] shadow-md">
                                                 <img
-                                                src={`http://localhost:5000/public/${dw.photo}`}
+                                                src={`/public/${dw.photo}`}
                                                 alt={dw.Name}
                                                 className="w-full h-full object-cover"
                                                 />
@@ -343,7 +343,7 @@ fetch("http://localhost:5000/api/hostel")
                     <div className="p-8">
                         <div className="rounded-2xl overflow-hidden shadow-2xl border border-gray-200 mx-auto max-w-4xl">                            
                             <iframe
-                            src={`http://localhost:5000${hostelData["Rules and Regulations"]}#toolbar=0&navpanes=0&scrollbar=0`}
+                            src={`${hostelData["Rules and Regulations"]}#toolbar=0&navpanes=0&scrollbar=0`}
                             className="w-[900px] h-[400px] rounded-xl"
                             title="Hostel Rules"
                             />
@@ -351,7 +351,7 @@ fetch("http://localhost:5000/api/hostel")
                     </div>
                     <div className="text-center mb-6">
                         <a
-                            href={`http://localhost:5000${hostelData["Rules and Regulations"]}`}
+                            href={`${hostelData["Rules and Regulations"]}`}
                             download="Hostel_Rules.pdf"
                             className="inline-flex items-center gap-3 px-6 py-3 bg-[rgb(115,40,40)] text-white font-bold rounded-2xl shadow-lg hover:shadow-xl hover:scale-105 transition-all"
                         >

@@ -6,7 +6,7 @@ const AicteAndMoe = () => {
     const [data, setData] = useState(null);
 
 useEffect(() => {
-  fetch("http://localhost:5000/api/aicte-moe")
+  fetch("/api/aicte-moe")
     .then(res => res.json())
     .then(data => setData(data));
 }, []);

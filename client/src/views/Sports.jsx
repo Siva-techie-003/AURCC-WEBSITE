@@ -10,7 +10,7 @@ const Sports = () => {
 
         useEffect(() => {
 
-fetch("http://localhost:5000/api/sports")
+fetch("/api/sports")
 .then(res => res.json())
 .then(result => {
   console.log(result);
@@ -22,11 +22,11 @@ fetch("http://localhost:5000/api/sports")
 
        // Static Data
     const galleryImages = [
-        { src: 'http://localhost:5000/public/1.webp', alt: 'College Event', description: 'Annual cultural festival celebrating diverse talents' },
-        { src: 'http://localhost:5000/public/cse-girls-closeup.webp', alt: 'Students in Lab', description: 'Students collaborating on innovative projects' },
-        { src: 'http://localhost:5000/public/4.webp', alt: 'Campus View', description: 'Our beautiful campus surrounded by greenery' },
-        { src: 'http://localhost:5000/public/computer-lab.webp', alt: 'Computer Lab', description: 'State-of-the-art computer lab with latest equipment' },
-        { src: 'http://localhost:5000/public/Drone_shot.jpg', alt: 'Aerial View', description: 'Aerial view of our sprawling campus facilities' },
+        { src: '/public/1.webp', alt: 'College Event', description: 'Annual cultural festival celebrating diverse talents' },
+        { src: '/public/cse-girls-closeup.webp', alt: 'Students in Lab', description: 'Students collaborating on innovative projects' },
+        { src: '/public/4.webp', alt: 'Campus View', description: 'Our beautiful campus surrounded by greenery' },
+        { src: '/public/computer-lab.webp', alt: 'Computer Lab', description: 'State-of-the-art computer lab with latest equipment' },
+        { src: '/public/Drone_shot.jpg', alt: 'Aerial View', description: 'Aerial view of our sprawling campus facilities' },
     ];
 
     // Logic for Image Gallery
@@ -61,7 +61,7 @@ if (!data) {
         <main className="flex-grow font-sans bg-gray-50 text-left pt-[120px] sm:pt-[140px] lg:pt-[120px]">
             {/* Hero section */}
             <section className="relative w-full h-48 sm:h-56 md:h-72 lg:h-[50vh] overflow-hidden flex flex-col justify-end ">
-                <img src={`http://localhost:5000/public/${data.image}`}alt="Sports facilities" className=" absolute inset-0 w-full h-full object-cover  object-center" />
+                <img src={`/public/${data.image}`}alt="Sports facilities" className=" absolute inset-0 w-full h-full object-cover  object-center" />
                 <div className="absolute top-0 left-0 w-full h-full  bg-gradient-to-b from-black/60 via-black/30 to-transparent"></div>
                 <div className="absolute inset-0 flex flex-col items-center justify-center z-10 px-4 ">
                     <div className="backdrop-blur-md bg-brown/30 rounded-2xl shadow-lg px-6 py-6 md:py-10 flex flex-col items-center max-w-2xl mx-auto border border-white/30 animate-popIn">

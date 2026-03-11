@@ -84,7 +84,7 @@ const ProgramsOffered = () => {
   const [data, setData] = useState(null);
 
   useEffect(() => {
-    fetch("http://localhost:5000/api/programs")
+    fetch("/api/programs")
       .then(res => res.json())
       .then(result => setData(result))
       .catch(err => console.error(err));

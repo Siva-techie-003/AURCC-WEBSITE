@@ -17,7 +17,7 @@ const DGATE = () => {
     const [data, setData] = useState(null);
 
     useEffect(() => {
-        fetch('http://localhost:5000/api/dgate')
+        fetch('/api/dgate')
             .then(res => res.json())
             .then(setData)
             .catch(console.error);

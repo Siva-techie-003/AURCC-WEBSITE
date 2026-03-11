@@ -16,7 +16,7 @@ const DistanceEdu = () => {
     ];
 
     useEffect(() => {
-  fetch("http://localhost:5000/api/distance-education")
+  fetch("/api/distance-education")
     .then(res => res.json())
     .then(res => {
       // if backend returns array, take first item

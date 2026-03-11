@@ -6,7 +6,7 @@ const Registrar = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-  fetch("http://localhost:5000/api/administrators")
+  fetch("/api/administrators")
     .then(res => res.json())
     .then(data => {
       console.log("ADMIN API:", data); // should be ARRAY
@@ -22,7 +22,7 @@ const Registrar = () => {
   if (loading) {
     return <p className="text-center mt-20">Loading...</p>;
   }
-  const BACKEND_URL = "http://localhost:5000";
+  const BACKEND_URL = "";
 
   const getPhotoPath = (photo) => {
   return photo ? `${BACKEND_URL}/${photo}` : `${BACKEND_URL}/default.jpg`;

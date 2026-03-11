@@ -7,7 +7,7 @@ const CurriculumSyllabus = () => {
     const [data, setData] = useState(null);
 
 useEffect(() => {
-fetch("http://localhost:5000/api/curriculum-syllabus")
+fetch("/api/curriculum-syllabus")
 .then(res => res.json())
 .then(resData => {
 setData(resData);
@@ -36,7 +36,7 @@ return (
 <section className="relative w-full h-56 sm:h-72 md:h-96 lg:h-[50vh] flex items-center justify-center overflow-hidden">
 
 <img
-src="http://localhost:5000/syllabus.webp"
+src="/syllabus.webp"
 alt="Curriculum & Syllabus"
 className="absolute inset-0 w-full h-full object-cover object-center"
 />

@@ -9,7 +9,7 @@ const FineArtsClub = () => {
             const [data, setData] = useState(null);
 
             useEffect(() => {
-  fetch("http://localhost:5000/api/finearts")
+  fetch("/api/finearts")
     .then(res => res.json())
     .then(result => {
       console.log("Fine Arts Data:", result);
@@ -20,11 +20,11 @@ const FineArtsClub = () => {
     
            // Static Data
         const galleryImages = [
-            { src: 'http://localhost:5000/public/1.webp', alt: 'College Event', description: 'Annual cultural festival celebrating diverse talents' },
-            { src: 'http://localhost:5000/public/cse-girls-closeup.webp', alt: 'Students in Lab', description: 'Students collaborating on innovative projects' },
-            { src: 'http://localhost:5000/public/4.webp', alt: 'Campus View', description: 'Our beautiful campus surrounded by greenery' },
-            { src: 'http://localhost:5000/public/computer-lab.webp', alt: 'Computer Lab', description: 'State-of-the-art computer lab with latest equipment' },
-            { src: 'http://localhost:5000/public/Drone_shot.jpg', alt: 'Aerial View', description: 'Aerial view of our sprawling campus facilities' },
+            { src: '/public/1.webp', alt: 'College Event', description: 'Annual cultural festival celebrating diverse talents' },
+            { src: '/public/cse-girls-closeup.webp', alt: 'Students in Lab', description: 'Students collaborating on innovative projects' },
+            { src: '/public/4.webp', alt: 'Campus View', description: 'Our beautiful campus surrounded by greenery' },
+            { src: '/public/computer-lab.webp', alt: 'Computer Lab', description: 'State-of-the-art computer lab with latest equipment' },
+            { src: '/public/Drone_shot.jpg', alt: 'Aerial View', description: 'Aerial view of our sprawling campus facilities' },
         ];
     
         // Logic for Image Gallery
@@ -89,7 +89,7 @@ const FineArtsClub = () => {
                         </div>
                         <div className="p-4 sm:p-6 md:p-8 lg:p-10 flex justify-center">
                             <div className="bg-white/80 rounded-xl shadow-md p-6 border border-gray-100 flex flex-col gap-2 max-w-md w-full text-center animate-fadeInUp">
-                                <img src={`http://localhost:5000/public/${data.Coordinator.Image}`} alt={data.Coordinator.Name} className="w-28 h-32  object-cover mx-auto " />
+                                <img src={`/public/${data.Coordinator.Image}`} alt={data.Coordinator.Name} className="w-28 h-32  object-cover mx-auto " />
                                 <div className="font-bold text-lg lg:text-xl text-[rgb(110,35,35)]">{data.Coordinator.Name}</div>
                                 <div className="text-sm lg:text-base text-gray-700 font-semibold">{data.Coordinator.Designation}</div>
                                 <div className="text-sm lg:text-base text-gray-700 font-semibold">{data.Coordinator.Email}</div>

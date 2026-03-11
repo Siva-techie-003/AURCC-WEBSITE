@@ -5,14 +5,14 @@ const HOD = () => {
       const [hods, setHods] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  const BACKEND_URL = "http://localhost:5000";
+  const BACKEND_URL = "";
 
   useEffect(() => {
-    fetch("http://localhost:5000/api/hods")
+    fetch("/api/hods")
       .then(res => res.json())
       .then(data => {
         console.log("HOD API:", data);
-        setHods(data.departments || []);
+        setHods(data[0]?.departments || []);
         setLoading(false);
       })
       .catch(err => {

@@ -14,7 +14,7 @@ const Zonal = () => {
     ];
 
     useEffect(() => {
-        fetch("http://localhost:5000/api/zonal")
+        fetch("/api/zonal")
             .then(res => res.json())
             .then(setData)
             .catch(err => console.error("Zonal fetch error:", err));
@@ -59,7 +59,7 @@ const Zonal = () => {
                     </div>
                     <div className="max-w-6xl mx-auto h-[450px] rounded-2xl overflow-hidden shadow-2xl border border-gray-200">
                         <iframe
-                            src={`http://localhost:5000/public/${data.zoneListPDF}`}
+                            src={`/public/${data.zoneListPDF}`}
                             className="w-full h-[500px] sm:h-[500px] md:h-[600px] lg:h-[700px]"
                             frameBorder="0"
                             title="Zonal List of Colleges"

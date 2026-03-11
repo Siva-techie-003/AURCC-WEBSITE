@@ -8,7 +8,7 @@ const AdmissionView = () => {
     const [data, setData] = useState(null);
     const [currentSection, setCurrentSection] = useState('overview');
 
-    const flowchartImage = "http://localhost:5000/admission-flowchart.webp";
+    const flowchartImage = "/admission-flowchart.webp";
 
     const sections = [
         { key: 'overview', label: 'Overview' },
@@ -18,7 +18,7 @@ const AdmissionView = () => {
     ];
 
     useEffect(() => {
-        fetch("http://localhost:5000/api/admission")
+        fetch("/api/admissions/admission") // Adjust the endpoint as needed
             .then(res => res.json())
             .then(res => {
                 if (Array.isArray(res)) {

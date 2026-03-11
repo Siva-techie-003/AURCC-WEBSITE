@@ -8,7 +8,7 @@ const OfficeOfAffiliation = () => {
     const [data, setData] = useState(null);
 
     useEffect(() => {
-        fetch("http://localhost:5000/api/office-affiliation")
+        fetch("/api/office-affiliation")
             .then(res => res.json())
             .then(setData)
             .catch(err => console.error("Zonal fetch error:", err));

@@ -39,7 +39,7 @@ const EstateOffice = () => {
   ];
 
   useEffect(() => {
-  fetch("http://localhost:5000/api/estate-office")
+  fetch("/api/estate-office")
     .then(res => res.json())
     .then(data => {
       setStaffData(data.staff || []);

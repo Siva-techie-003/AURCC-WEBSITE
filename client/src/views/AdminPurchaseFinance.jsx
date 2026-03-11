@@ -9,7 +9,7 @@ const AdminStaffCard = ({ member }) => {
             <div className="relative -mt-12 flex justify-center">
                 <div className="w-32 h-32 rounded-full overflow-hidden border-4 border-white shadow-md bg-white flex items-center justify-center">
                     {member.image && !error ? (
-                        <img src={`http://localhost:5000/${member.image}`} alt={member.name} className="w-full h-full object-cover" onError={() => setError(true)} />
+                        <img src={`/${member.image}`} alt={member.name} className="w-full h-full object-cover" onError={() => setError(true)} />
                     ) : (
                         <span className="text-4xl text-[rgb(110,35,35)]">👤</span>
                     )}
@@ -27,7 +27,7 @@ const AdminPurchaseFinance = () => {
     const [section, setSection] = useState(null);
 
     useEffect(() => {
-        fetch("http://localhost:5000/api/administration")
+        fetch("/api/administration")
             .then(res => res.json())
             .then(data => {
                 setSection(

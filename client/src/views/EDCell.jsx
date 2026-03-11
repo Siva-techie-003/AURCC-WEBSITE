@@ -17,7 +17,7 @@ const EDCell = () => {
     ];
 
   useEffect(() => {
-  fetch("http://localhost:5000/api/ed-cell")
+  fetch("/api/ed-cell")
     .then(res => res.json())
     .then(data => setData(data))
     .catch(err => console.error(err));

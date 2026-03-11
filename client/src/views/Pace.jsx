@@ -12,7 +12,7 @@ const Pace = () => {
     ];
 
     useEffect(() => {
-        fetch('http://localhost:5000/api/pace')
+        fetch('/api/pace')
             .then(res => res.json())
             .then(res => {
                 if (Array.isArray(res)) {

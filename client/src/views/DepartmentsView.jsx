@@ -30,7 +30,7 @@ const DepartmentsView = () => {
   const fetchDepartment = async () => {
     try {
       const res = await fetch(
-        `http://localhost:5000/api/departments/${departmentName}`
+        `/api/departments/${departmentName}`
       );
       const data = await res.json();
 
@@ -49,7 +49,7 @@ const DepartmentsView = () => {
 }, [departmentName, navigate]);
 
 
-const BACKEND_URL = "http://localhost:5000";
+const BACKEND_URL = "";
 
     const updateSectionOffsets = () => {
         const newOffsets = sections.map(section => {
@@ -209,7 +209,7 @@ const BACKEND_URL = "http://localhost:5000";
                                       <div className="bg-white p-4 rounded-xl shadow-md">
 
                                         <img
-                                          src="http://localhost:5000/Drone_shot.jpg"   // change to your image path
+                                          src="/Drone_shot.jpg"   // change to your image path
                                           alt="Department"
                                           className="w-full h-[450px] object-cover rounded-lg"
                                         />
@@ -278,7 +278,7 @@ const BACKEND_URL = "http://localhost:5000";
 
                           {/* Icon */}
                           <img
-                            src="http://localhost:5000/public/icons/eye-5-svgrepo-com.svg"
+                            src="/public/icons/eye-5-svgrepo-com.svg"
                             alt="vision"
                             className="w-16 h-16 flex-shrink-0"
                           />
@@ -304,7 +304,7 @@ const BACKEND_URL = "http://localhost:5000";
 
                           {/* Icon */}
                           <img
-                            src="http://localhost:5000/public/icons/target-svgrepo-com.svg"
+                            src="/public/icons/target-svgrepo-com.svg"
                             alt="mission"
                             className="w-16 h-16 flex-shrink-0"
                           />

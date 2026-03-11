@@ -6,7 +6,7 @@ const Regulation = () => {
     const [regulations, setRegulations] = useState(null);
 
   useEffect(() => {
-    fetch("http://localhost:5000/api/regulations")
+    fetch("/api/regulations")
       .then(res => res.json())
       .then(data => {
         console.log("REGULATION API 👉", data);
@@ -52,7 +52,7 @@ const Regulation = () => {
                                 <div key={i} className="group">
                                     <RegulationCard
                                         title={reg['Regulation']}
-                                        pdf={`http://localhost:5000${reg["PDF Link"]}`}
+                                        pdf={`${reg["PDF Link"]}`}
                                     />
                                 </div>
                             ))}

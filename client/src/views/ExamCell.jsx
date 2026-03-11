@@ -14,7 +14,7 @@ const ExamCell = () => {
     ];
 
     useEffect(() => {
-  fetch("http://localhost:5000/api/exam-cell")
+  fetch("/api/exam-cell")
     .then(res => res.json())
     .then(json => {
       console.log("API DATA:", json);

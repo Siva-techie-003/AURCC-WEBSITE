@@ -6,7 +6,7 @@ const StaffCard = ({ staff }) => {
 
     const getImageUrl = (imagePath) => {
     if (!imagePath) return '';
-    return `http://localhost:5000/${imagePath}`;
+    return `/${imagePath}`;
 };
 
     const handleImageError = () => {
