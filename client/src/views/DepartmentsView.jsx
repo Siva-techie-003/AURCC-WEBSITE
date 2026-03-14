@@ -121,7 +121,7 @@ const BACKEND_URL = "";
         setCurrentIndex((prevIndex) =>
             prevIndex === events.length - 1 ? 0 : prevIndex + 1
         );
-    }, 3000); // ⏱ auto-scroll every 4 seconds
+    }, 3000); // auto-scroll every 4 seconds
 
     return () => clearInterval(interval); // cleanup
     }, [events]);
@@ -383,7 +383,7 @@ const BACKEND_URL = "";
                             <div className="max-w-6xl mx-auto">
                                 <div className="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden transition-all duration-300 hover:shadow-xl">
                                     <div className="bg-gradient-to-r from-[rgb(115,63,63)] to-[rgb(115,25,25)] py-6 sm:py-7 md:py-8">
-                                        <h3 className="text-lg sm:text-xl lg:text-2xl xl:text-3xl text-white font-bold text-center">Programmes Available</h3>
+                                        <h3 className="text-lg sm:text-xl lg:text-2xl xl:text-3xl text-white font-bold text-center">Programme Available</h3>
                                     </div>
                                     <div className="p-8 md:p-10">
                                         <div className={`flex gap-6 sm:gap-6 ${(department?.courses_offered?.length || 0) > 1 ? 'grid-cols-1 md:grid-cols-2' : 'justify-center'}`}>

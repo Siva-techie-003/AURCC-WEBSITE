@@ -1,4 +1,4 @@
-﻿import React, { useState, useEffect, useRef, useMemo } from "react";
+import React, { useState, useEffect, useRef, useMemo } from "react";
 import { Link, useLocation } from "react-router-dom";
 import QuickLinksSidebar from "../components/QuickLinksSidebar";
 import "./HomeView.css";
@@ -644,7 +644,7 @@ const HomeView = () => {
                 <div className="lg:col-span-7 space-y-8">
                   <h2 className="text-2xl sm:text-3xl font-bold text-[rgb(100,25,25)] relative inline-block group">
                     ABOUT OUR CAMPUS
-  <span className="absolute -bottom-2 sm:-bottom-3 left-1/2 transform -translate-x-1/2 h-1 w-32 sm:w-40 lg:w-32 bg-yellow-500"></span>
+                    <span className="absolute -bottom-2 sm:-bottom-3 left-1/2 transform -translate-x-1/2 h-1 w-32 sm:w-40 lg:w-32 bg-yellow-500"></span>
                   </h2>
                   <div className="bg-white/80 backdrop-blur-sm shadow-xl border border-[rgb(180,100,100)] p-6 sm:p-8 rounded-xl">
                     <p className="text-xl text-gray-700 leading-relaxed">
@@ -837,8 +837,8 @@ const HomeView = () => {
           <div className="mt-22 pb-12 relative">
             <div className="text-center">
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mt-16 sm:mb-16 text-[rgb(100,25,25)] relative inline-block">
-                PROGRAMS OFFERED
-                <span className="absolute -bottom-2 sm:-bottom-3 left-1/2 transform -translate-x-1/2 h-1 w-16 sm:w-20 lg:w-24 bg-yellow-500"></span>
+                PROGRAMMES OFFERED
+                <span className="absolute -bottom-2 sm:-bottom-3 left-1/2 transform -translate-x-1/2 h-1 w-16 sm:w-36 lg:w-44 bg-yellow-500"></span>
               </h2>
             </div>
 
@@ -860,10 +860,10 @@ const HomeView = () => {
                 ].map((prog, idx) => (
                   <div
                     key={idx}
-                    onClick={() => scrollToIndex(idx)} // ✅ Use unified function
-                    className="group bg-white rounded-2xl shadow-lg overflow-hidden w-[300px] sm:w-[320px] 
-           transform transition-all duration-500 
-           hover:-translate-y-4 hover:shadow-2xl cursor-pointer"
+                    onClick={() => scrollToIndex(idx)} //  Use unified function
+                    className="group bg-white rounded-2xl shadow-lg overflow-hidden w-[450px] sm:w-[380px] 
+            transform transition-all duration-500 
+            hover:-translate-y-4 hover:shadow-2xl cursor-pointer"
                   >
                     {/* Image Section */}
                     <div className="h-48 w-full overflow-hidden">
@@ -970,6 +970,7 @@ const HomeView = () => {
                 </pattern>
                 <rect width="100%" height="100%" fill="url(#wave-pattern)" />
               </svg> */}
+
             </div>
             <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
               <div className="text-center mb-12 sm:mb-12 -mt-10">
@@ -981,7 +982,7 @@ const HomeView = () => {
               <div className="flex flex-col md:flex-row items-center bg-white bg-opacity-10 rounded-lg shadow-xl overflow-hidden backdrop-filter border border-[rgb(180,100,100)] backdrop-blur-lg max-w-6xl mx-auto">
                 <div className="md:w-1/3 p-4 sm:p-6 md:p-8">
                   <img
-                    src="public/Dean.webp"
+                    src="/Dean.webp"
                     alt="Dean's Photo"
                     className="w-full h-auto object-cover rounded-lg"
                   />
@@ -1116,7 +1117,6 @@ const HomeView = () => {
           </section>
 
           {/* ATTRIBUTES OF AURCC */}
-
           <section className="py-20 bg-gray-100 overflow-hidden relative">
             <div className=" mt-4 ">
               <div className="text-center  mb-6 -mt-8">
@@ -1248,7 +1248,6 @@ const HomeView = () => {
           </section>
 
           {/* Gallery Section */}
-
           <section id="gallery" className="py-16 bg-white scroll-mt-32">
             <div className="container mx-auto px-6 text-center">
               <h2 className="text-3xl lg:text-4xl font-bold text-center mb-14  text-[rgb(100,25,25)] relative inline-block">
