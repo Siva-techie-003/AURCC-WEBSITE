@@ -1,10 +1,15 @@
 import Admission from "../models/Admission.js";
 
-export const getAdmission = async (req, res, next) => {
+export const getAdmission = async (req, res) => {
   try {
-    const admission = await Admission.find();
+
+    const admission = await Admission.findOne();
+
     res.json(admission);
+
   } catch (error) {
-    next(error);
+
+    res.status(500).json({ message: error.message });
+
   }
 };

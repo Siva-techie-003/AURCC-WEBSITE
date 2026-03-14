@@ -786,8 +786,7 @@ const HomeView = () => {
           {/* Programs Offered */}
 
           <div className="mt-22 pb-12 relative">
-            <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-20 z-0 mt-2">
-            </div>
+            <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-20 z-0 mt-2"></div>
             <div className="">
               <h2 className=" text-2xl sm:text-3xl lg:text-4xl font-bold mt-16 sm:mb-16 text-[rgb(100,25,25)] relative inline-block mx-24">
                 PROGRAMS OFFERED
@@ -898,7 +897,7 @@ const HomeView = () => {
           {/* Dean's Message */}
           <section
             id="deans-message"
-            className="py-12 sm:py-16 lg:py-24 bg-[rgb(171,110,110)] text-white relative overflow-hidden scroll-mt-24 lg:scroll-mt-32"
+            className="py-12 sm:py-16 lg:py-24 bg-gray-100 text-white relative overflow-hidden scroll-mt-24 lg:scroll-mt-32"
           >
             <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-20 z-0">
               {/* <svg
@@ -923,10 +922,13 @@ const HomeView = () => {
               </svg> */}
             </div>
             <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-center mb-8 sm:mb-12">
-                From the Dean's Desk
-              </h2>
-              <div className="flex flex-col md:flex-row items-center bg-white bg-opacity-10 rounded-lg shadow-xl overflow-hidden backdrop-filter backdrop-blur-lg max-w-6xl mx-auto">
+              <div className="text-center mb-12 sm:mb-12 -mt-10">
+                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[rgb(100,25,25)] relative inline-block">
+                  From the Dean's Desk
+                  <span className="absolute -bottom-2 sm:-bottom-3 left-1/2 transform -translate-x-1/2 h-1 w-16 sm:w-20 lg:w-24 bg-yellow-500"></span>
+                </h2>
+              </div>
+              <div className="flex flex-col md:flex-row items-center bg-white bg-opacity-10 rounded-lg shadow-xl overflow-hidden backdrop-filter border border-[rgb(180,100,100)] backdrop-blur-lg max-w-6xl mx-auto">
                 <div className="md:w-1/3 p-4 sm:p-6 md:p-8">
                   <img
                     src="public/Dean.webp"
@@ -934,85 +936,28 @@ const HomeView = () => {
                     className="w-full h-auto object-cover rounded-lg"
                   />
                 </div>
-                <div className="md:w-2/3 p-4 sm:p-6 md:p-8">
-                  <h3 className="text-xl lg:text-2xl font-semibold mb-3 sm:mb-4">
-                    Dr. M. Saravanan Kumar
-                  </h3>
-                  <p className="text-base text-white mb-4 sm:mb-6 italic">
+                <div className="md:w-2/3 p-4 text-gray-900 sm:p-6 md:p-8">
+                  <div>
+                    <div className="flex items-center gap-2">
+                      <h3 className="text-xl lg:text-2xl font-bold">
+                        Dr. M. Saravanakumar
+                      </h3>
+                    </div>
+
+                    <p className="text-base text-gray-800 mt-1">
+                      Dean, Anna University Regional Campus Coimbatore
+                    </p>
+                  </div>
+                  <p className="text-base text-[rgb(100,25,25)] mt-8 mb-4 sm:mb-6 italic">
                     "Empowering the next generation of innovators and leaders."
                   </p>
-                  <p className="text-base mb-3 sm:mb-4">
+                  <p className="text-lg mb-3 text-gray-950 sm:mb-4">
                     Welcome to Anna University! Our institution stands at the
                     forefront of technological education and research. We are
                     dedicated to academic excellence and nurturing visionary
                     leaders.
                   </p>
                 </div>
-              </div>
-            </div>
-          </section>
-
-          {/* Gallery Section */}
-
-          <section id="gallery" className="py-16 bg-white scroll-mt-32">
-            <div className="container mx-auto px-6 text-center">
-              <h2 className="text-3xl lg:text-4xl font-bold text-center mb-14 text-[rgb(100,25,25)] relative inline-block">
-                GALLEY OF MEMORIES
-                <span className="absolute -bottom-2 sm:-bottom-3 left-1/2 transform -translate-x-1/2 h-1 w-16 sm:w-20 lg:w-24 bg-yellow-500"></span>
-              </h2>
-
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-                {/* Graduation */}
-                <Link to="/graduation">
-                  <div className="group cursor-pointer overflow-hidden rounded-xl shadow-xl">
-                    <img
-                      src="/Gallery/Graduation/graduationmain.png"
-                      className="w-full h-60 object-cover group-hover:scale-110 transition duration-500"
-                    />
-                    <div className="bg-[rgb(115,25,25)] text-white text-center py-3 font-semibold">
-                      Graduation
-                    </div>
-                  </div>
-                </Link>
-
-                {/* Annual Day */}
-                <Link to="/annualday">
-                  <div className="group cursor-pointer overflow-hidden rounded-xl shadow-xl">
-                    <img
-                      src="Gallery\Annualday\2023\img01.JPG"
-                      className="w-full h-60 object-cover group-hover:scale-110 transition duration-500"
-                    />
-                    <div className="bg-[rgb(115,25,25)] text-white text-center py-3 font-semibold">
-                      Annual Day
-                    </div>
-                  </div>
-                </Link>
-
-                {/* ARUA */}
-                <Link to="/gallery/arua2025">
-                  <div className="group cursor-pointer overflow-hidden rounded-xl shadow-xl">
-                    <img
-                      src="/fresher.jpg"
-                      className="w-full h-60 object-cover group-hover:scale-110 transition duration-500"
-                    />
-                    <div className="bg-[rgb(115,25,25)] text-white text-center py-3 font-semibold">
-                      Fresher's Day
-                    </div>
-                  </div>
-                </Link>
-
-                {/* Pongal */}
-                <Link to="/gallery/pongal">
-                  <div className="group cursor-pointer overflow-hidden rounded-xl shadow-xl">
-                    <img
-                      src="/Pongal.jpg"
-                      className="w-full h-60 object-cover group-hover:scale-110 transition duration-500"
-                    />
-                    <div className="bg-[rgb(115,25,25)] text-white text-center py-3 font-semibold">
-                      Pongal Celebration
-                    </div>
-                  </div>
-                </Link>
               </div>
             </div>
           </section>
@@ -1120,10 +1065,216 @@ const HomeView = () => {
             </style>
           </section>
 
+          {/* ATTRIBUTES OF AURCC */}
+
+          <section className="py-20 bg-gray-100 overflow-hidden relative">
+            <div className=" mt-4 ">
+              <div className="text-center  mb-6 -mt-8">
+                <h2 className="text-4xl font-bold text-pink-900 relative inline-block mb-4">
+                  ATTRIBUTES OF AURCC
+                  <span className="absolute -bottom-3 left-1/2 -translate-x-1/2 h-1 w-20 bg-yellow-500"></span>
+                </h2>
+              </div>
+              <div className="container mx-auto px-6 lg:px-16 grid lg:grid-cols-2 gap-24 items-center">
+                {/* LEFT IMAGE COLLAGE */}
+                <div className="relative w-full h-[450px] flex items-center justify-center -ml-10 lg:-ml-10 -mt-24">
+                  <div className="absolute inset-0 opacity-30 text-[rgb(115,40,40)] pointer-events-none">
+                    <svg
+                      width="100%"
+                      height="100%"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <pattern
+                        id="hexagon-pattern"
+                        width="100"
+                        height="100"
+                        patternUnits="userSpaceOnUse"
+                      >
+                        <path
+                          d="M50 0 L87.5 25 L87.5 75 L50 100 L12.5 75 L12.5 25 Z"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="1"
+                        />
+                      </pattern>
+                      <rect
+                        width="100%"
+                        height="100%"
+                        fill="url(#hexagon-pattern)"
+                      />
+                    </svg>
+                  </div>
+
+                  {/* Big Image */}
+                  <div className="absolute left-[20px] top-10 bg-[rgb(115,25,25)] w-[520px] h-[380px] rounded-[25px] overflow-hidden border-[8px] border-white shadow-xl group">
+                    <img
+                      src="/student_1.jpg"
+                      alt="students"
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 animate-float"
+                    />
+                  </div>
+
+                  {/* Small Image Overlapping */}
+                  <div className="absolute left-[300px] top-[200px] bg-[rgb(115,25,25)] w-[400px] h-[300px] rounded-[25px] overflow-hidden border-[8px] border-white shadow-xl z-20 group">
+                    <img
+                      src="/student_2.jpg"
+                      alt="students"
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 animate-float2"
+                    />
+                  </div>
+                </div>
+                {/* RIGHT CONTENT */}
+                <div>
+                  {/* <p className="text-gray-800 tracking-widest text-sm text-center font-semibold mb-6">
+                  THE BRIDGE BETWEEN ONSET AND ACHIEVEMENT
+                </p> */}
+                  <div className="flex flex-col gap-8">
+                    {/* Card 3 */}
+                    <div
+                      className="ml-32 bg-white p-6 rounded-xl shadow-md 
+  hover:bg-gradient-to-r hover:from-[rgb(115,63,63)] hover:to-[rgb(115,25,25)]
+  hover:text-white hover:-translate-y-2 transition-all duration-300"
+                    >
+                      <div className="flex gap-4">
+                        <span className="text-blue-600 text-xl">✔</span>
+
+                        <div>
+                          <h3 className="font-bold text-lg mb-2">
+                            Career Development
+                          </h3>
+
+                          <p className="text-base">
+                            The Career Development Cell trains students with
+                            communication, leadership, and professional
+                            knowledge required to build a strong and successful
+                            career.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Card 2 */}
+                    <div
+                      className="ml-16 bg-white p-6 rounded-xl shadow-md
+  hover:bg-gradient-to-r hover:from-[rgb(115,63,63)] hover:to-[rgb(115,25,25)]
+  hover:text-white hover:-translate-y-2 transition-all duration-300"
+                    >
+                      <div className="flex gap-4">
+                        <span className="text-blue-600 text-xl">✔</span>
+
+                        <div>
+                          <h3 className="font-bold text-lg mb-2">
+                            Placement Development
+                          </h3>
+
+                          <p className="text-base">
+                            The Placement Development Division prepares students
+                            with industry training, aptitude coaching, and
+                            interview practice to achieve excellent placement
+                            opportunities.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Card 1 */}
+                    <div
+                      className="bg-white p-6 rounded-xl shadow-md
+  hover:bg-gradient-to-r hover:from-[rgb(115,63,63)] hover:to-[rgb(115,25,25)]
+  hover:text-white hover:-translate-y-2 transition-all duration-300"
+                    >
+                      <div className="flex gap-4">
+                        <span className="text-blue-600 text-xl">✔</span>
+
+                        <div>
+                          <h3 className="font-bold text-lg mb-2">
+                            Skill Development
+                          </h3>
+
+                          <p className="text-base">
+                            The Skill Development Division trains students with
+                            technical knowledge, practical workshops, and
+                            real-world projects to build strong professional
+                            abilities.{" "}
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* Gallery Section */}
+
+          <section id="gallery" className="py-16 bg-white scroll-mt-32">
+            <div className="container mx-auto px-6 text-center">
+              <h2 className="text-3xl lg:text-4xl font-bold text-center mb-14  text-[rgb(100,25,25)] relative inline-block">
+                GALLEY OF MEMORIES
+                <span className="absolute -bottom-2 sm:-bottom-3 left-1/2 transform -translate-x-1/2 h-1 w-16 sm:w-20 lg:w-24 bg-yellow-500"></span>
+              </h2>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                {/* Graduation */}
+                <Link to="/graduation">
+                  <div className="group cursor-pointer overflow-hidden rounded-xl shadow-xl">
+                    <img
+                      src="/Gallery/Graduation/graduationmain.png"
+                      className="w-full h-60 object-cover group-hover:scale-110 transition duration-500"
+                    />
+                    <div className="bg-[rgb(115,25,25)] text-white text-center py-3 font-semibold">
+                      Graduation
+                    </div>
+                  </div>
+                </Link>
+
+                {/* Annual Day */}
+                <Link to="/annualday">
+                  <div className="group cursor-pointer overflow-hidden rounded-xl shadow-xl">
+                    <img
+                      src="Gallery\Annualday\2023\img01.JPG"
+                      className="w-full h-60 object-cover group-hover:scale-110 transition duration-500"
+                    />
+                    <div className="bg-[rgb(115,25,25)] text-white text-center py-3 font-semibold">
+                      Annual Day
+                    </div>
+                  </div>
+                </Link>
+
+                {/* ARUA */}
+                <Link to="/gallery/arua2025">
+                  <div className="group cursor-pointer overflow-hidden rounded-xl shadow-xl">
+                    <img
+                      src="/fresher.jpg"
+                      className="w-full h-60 object-cover group-hover:scale-110 transition duration-500"
+                    />
+                    <div className="bg-[rgb(115,25,25)] text-white text-center py-3 font-semibold">
+                      Fresher's Day
+                    </div>
+                  </div>
+                </Link>
+
+                {/* Pongal */}
+                <Link to="/gallery/pongal">
+                  <div className="group cursor-pointer overflow-hidden rounded-xl shadow-xl">
+                    <img
+                      src="/Pongal.jpg"
+                      className="w-full h-60 object-cover group-hover:scale-110 transition duration-500"
+                    />
+                    <div className="bg-[rgb(115,25,25)] text-white text-center py-3 font-semibold">
+                      Pongal Celebration
+                    </div>
+                  </div>
+                </Link>
+              </div>
+            </div>
+          </section>
+
           {/* Alumni Testimonials */}
           <section
             id="alumni"
-            className="pt-12 pb-16 sm:pb-20 lg:pb-24 bg-gray-50 relative overflow-hidden"
+            className="pt-12 pb-16 sm:pb-20 lg:pb-24 bg-gray-50 relative overflow-hidden scroll-mt-24 lg:scroll-mt-32"
           >
             <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-20 z-0">
               <svg

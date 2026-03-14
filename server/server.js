@@ -51,6 +51,9 @@ const __dirname = path.dirname(__filename);
 app.use(cors());
 app.use(express.json());
 
+/* Serve Public Folder */
+app.use("/public", express.static(path.join(__dirname, "public")));
+
 /* API Routes */
 app.use("/api/departments", departmentRoutes);
 app.use("/api/admissions", admissionRoutes);
