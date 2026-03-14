@@ -39,7 +39,7 @@ const AdminStudent = () => {
     if (!section) return <p className="text-center">Loading...</p>;
 
     return (
-        <div className="bg-white min-h-screen">
+        <div className="bg-white min-h-screen pt-[90px] sm:pt-[110px] lg:pt-[130px]">
             <div className="text-center md:py-6 py-3 bg-[rgb(110,35,35)]">
                 <h1 className="text-lg sm:text-xl lg:text-2xl xl:text-3xl font-semibold font-serif text-white tracking-wide uppercase">
                     Administrative Staff
@@ -51,7 +51,7 @@ const AdminStudent = () => {
                     <div className="text-center">
                         <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-800 font-serif uppercase mb-2">General Administration-III</h2>
                         <div className="flex justify-center mb-4">
-                            <span className="block w-24 h-1.5 rounded-full bg-[rgb(110,35,35)]"></span>
+                            <span className="block w-24 h-1.5 rounded-full bg-yellow-500"></span>
                         </div>
                         <h3 className="text-base sm:text-lg lg:text-xl font-semibold text-gray-600 font-serif uppercase tracking-wide">Student Section</h3>
                     </div>

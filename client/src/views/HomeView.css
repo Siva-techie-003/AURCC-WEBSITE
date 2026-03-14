@@ -115,7 +115,7 @@
     transform: translateY(-50%);
     width: 3px;
     height: 0;
-    background-color: #3B82F6;
+    background-color: #710404;
     transition: height 0.3s ease;
 }
 
@@ -240,25 +240,13 @@ details>summary {
     }
 }
 
-
-/* ATTRIBUTES OF AURCC ANIMATION */
-
-/* @keyframes float {
-  0% { transform: translateY(0px); }
-  50% { transform: translateY(-12px); }
-  100% { transform: translateY(0px); }
+.scroll-nav-enter {
+    opacity: 0;
+    transform: translateY(20px);
 }
 
-@keyframes float2 {
-  0% { transform: translateY(0px); }
-  50% { transform: translateY(10px); }
-  100% { transform: translateY(0px); }
+.scroll-nav-enter-active {
+    opacity: 1;
+    transform: translateY(0);
+    transition: all 500ms ease-out;
 }
-
-.animate-float {
-  animation: float 6s ease-in-out infinite;
-}
-
-.animate-float2 {
-  animation: float2 7s ease-in-out infinite;
-} */

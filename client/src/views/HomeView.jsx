@@ -12,12 +12,47 @@ const HomeView = () => {
   // State for Testimonials
   const [currentIndex, setCurrentIndex] = useState(0);
 
+
+  // State for Programs Slider
+  // State for Programs Slider
+  const [progIndex, setProgIndex] = useState(0);
+  const progScrollRef = useRef(null);
+
+  // Single reusable scroll function
+  const scrollToIndex = (index) => {
+    if (progScrollRef.current) {
+      const container = progScrollRef.current;
+      const card = container.querySelector(".group");
+      const cardWidth = card ? card.offsetWidth + 24 : 344; // 320px card + 24px gap
+      container.scrollTo({
+        left: index * (cardWidth * 4), // Scroll by 4 cards
+        behavior: "smooth",
+      });
+      setProgIndex(index);
+    }
+  };
+
+  const handleProgScroll = () => {
+    if (progScrollRef.current) {
+      const container = progScrollRef.current;
+      const card = container.querySelector(".group");
+      const cardWidth = card ? card.offsetWidth + 24 : 344;
+      const scrollPos = container.scrollLeft;
+      const newIndex = Math.round(scrollPos / (cardWidth * 4)); // Page-based index
+      if (newIndex !== progIndex && newIndex >= 0 && newIndex <= 1) {
+        setProgIndex(newIndex);
+      }
+    }
+  };
+
   // State for Chatbot
   const [chatLog, setChatLog] = useState([]);
   const [userMessage, setUserMessage] = useState("");
   const [sessionId, setSessionId] = useState(null);
   const [loading, setLoading] = useState(false);
   const chatContainerRef = useRef(null);
+  const [showScrollButtons, setShowScrollButtons] = useState(false);
+
 
   // State for Count Animation
   const [hasAnimated, setHasAnimated] = useState(false);
@@ -311,8 +346,20 @@ const HomeView = () => {
 
   useEffect(() => {
     setSessionId(generateSessionId());
+
+    const handleScroll = () => {
+      if (window.scrollY > 300) {
+        setShowScrollButtons(true);
+      } else {
+        setShowScrollButtons(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Scroll to bottom of chat
   const scrollToBottom = () => {
     if (chatContainerRef.current) {
       chatContainerRef.current.scrollTop =
@@ -597,7 +644,7 @@ const HomeView = () => {
                 <div className="lg:col-span-7 space-y-8">
                   <h2 className="text-2xl sm:text-3xl font-bold text-[rgb(100,25,25)] relative inline-block group">
                     ABOUT OUR CAMPUS
-                    <span className="absolute -bottom-2 sm:-bottom-3 left-0 h-1 w-32 sm:w-40 lg:w-52 bg-yellow-500"></span>
+  <span className="absolute -bottom-2 sm:-bottom-3 left-1/2 transform -translate-x-1/2 h-1 w-32 sm:w-40 lg:w-32 bg-yellow-500"></span>
                   </h2>
                   <div className="bg-white/80 backdrop-blur-sm shadow-xl border border-[rgb(180,100,100)] p-6 sm:p-8 rounded-xl">
                     <p className="text-xl text-gray-700 leading-relaxed">
@@ -664,6 +711,7 @@ const HomeView = () => {
                       />
                     </svg>
                   </div>
+
                   {/* News Card */}
                   <div className="rounded-lg bg-white/80 backdrop-blur-sm shadow-lg overflow-hidden border border-[rgb(180,100,100)]">
                     <div className="bg-gradient-to-r from-[rgb(115,63,63)] to-[rgb(115,25,25)] py-3 sm:py-4 px-4 sm:px-6 flex items-center justify-between">
@@ -720,6 +768,7 @@ const HomeView = () => {
                       </ul>
                     </div>
                   </div>
+
                   {/* Events Card */}
                   <div className="rounded-lg bg-white/80 backdrop-blur-sm shadow-lg overflow-hidden border border-[rgb(180,100,100)]">
                     <div className="bg-gradient-to-r from-[rgb(115,63,63)] to-[rgb(115,25,25)] py-3 sm:py-4 px-4 sm:px-6 flex items-center justify-between">
@@ -783,84 +832,45 @@ const HomeView = () => {
 
           <QuickLinksSidebar />
 
-          {/* Programs Offered */}
 
+          {/* Programs Offered */}
           <div className="mt-22 pb-12 relative">
-            <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-20 z-0 mt-2"></div>
-            <div className="">
-              <h2 className=" text-2xl sm:text-3xl lg:text-4xl font-bold mt-16 sm:mb-16 text-[rgb(100,25,25)] relative inline-block mx-24">
+            <div className="text-center">
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mt-16 sm:mb-16 text-[rgb(100,25,25)] relative inline-block">
                 PROGRAMS OFFERED
                 <span className="absolute -bottom-2 sm:-bottom-3 left-1/2 transform -translate-x-1/2 h-1 w-16 sm:w-20 lg:w-24 bg-yellow-500"></span>
               </h2>
             </div>
-            <div className="overflow-x-auto scrollbar-hide">
-              <div className="flex space-x-8 py-4 w-max">
+
+            <div
+              className="overflow-x-auto scrollbar-hide px-4 sm:px-8 lg:px-12"
+              ref={progScrollRef}
+              onScroll={handleProgScroll}
+            >
+              <div className="flex space-x-6 py-4 w-max">
                 {[
-                  {
-                    heading: "BACHELOR OF DEGREE",
-                    course: "Computer Science and Engineering",
-                    image: "/cse.jpg",
-                    url: "/departments/cse",
-                  },
-                  {
-                    heading: "BACHELOR OF DEGREE",
-                    course: "Electronics and Communication Engineering",
-                    image: "/ece.jpg",
-                    url: "/departments/ece",
-                  },
-                  {
-                    heading: "BACHELOR OF DEGREE",
-                    course: "Electrical and Electronics Engineering",
-                    image: "/eee.jpg",
-                    url: "/departments/eee",
-                  },
-                  {
-                    heading: "BACHELOR OF DEGREE",
-                    course: "Mechanical Engineering",
-                    image: "/mech.jpg",
-                    url: "/departments/mech",
-                  },
-                  {
-                    heading: "BACHELOR OF TECHNOLOGY",
-                    course: "Artifical Intelligence and Data Science",
-                    image: "/ai.jpg",
-                    url: "/departments/ai",
-                  },
-                  {
-                    heading: "BACHELOR OF DEGREE",
-                    course:
-                      "Electronics Engineering (VLSI Design & Technology)",
-                    image: "/vlsi.jpg",
-                    url: "/departments/vlsi",
-                  },
-                  {
-                    heading: "MASTER OF DEGREE",
-                    course: "Master of Business Administration",
-                    image: "/mba.jpg",
-                    url: "/departments/mba",
-                  },
-                  {
-                    heading: "MASTER OF DEGREE",
-                    course:
-                      "Master of Business Administration (BUSINESS ANALYTICS)",
-                    image: "/mba_ba.jpg",
-                    url: "/departments/mba",
-                  },
+                  { heading: "BACHELOR OF DEGREE", course: "Computer Science and Engineering", image: "/cse.jpg", url: "/departments/cse" },
+                  { heading: "BACHELOR OF DEGREE", course: "Electronics and Communication Engineering", image: "/ece.jpg", url: "/departments/ece" },
+                  { heading: "BACHELOR OF DEGREE", course: "Electrical and Electronics Engineering", image: "/eee.jpg", url: "/departments/eee" },
+                  { heading: "BACHELOR OF DEGREE", course: "Mechanical Engineering", image: "/mech.jpg", url: "/departments/mech" },
+                  { heading: "BACHELOR OF TECHNOLOGY", course: "Artifical Intelligence and Data Science", image: "/ai.jpg", url: "/departments/ai" },
+                  { heading: "BACHELOR OF DEGREE", course: "Electronics Engineering (VLSI Design & Technology)", image: "/vlsi.jpg", url: "/departments/vlsi" },
+                  { heading: "MASTER OF BUSINESS ADMINISTRATION", course: "MBA", image: "/mba.jpg", url: "/departments/mba" },
+                  { heading: "MASTER OF BUSINESS ADMINISTRATION", course: "MBA Business Analytics", image: "/mba_ba.jpg", url: "/departments/mba" },
                 ].map((prog, idx) => (
                   <div
                     key={idx}
-                    className="ml-7 group bg-white rounded-2xl shadow-lg overflow-hidden w-96 
-                     transform transition-all duration-500 
-                     hover:-translate-y-4 hover:shadow-2xl "
+                    onClick={() => scrollToIndex(idx)} // ✅ Use unified function
+                    className="group bg-white rounded-2xl shadow-lg overflow-hidden w-[300px] sm:w-[320px] 
+           transform transition-all duration-500 
+           hover:-translate-y-4 hover:shadow-2xl cursor-pointer"
                   >
                     {/* Image Section */}
                     <div className="h-48 w-full overflow-hidden">
                       <img
                         src={prog.image}
                         alt={prog.course}
-                        className="w-full h-full object-cover 
-                         transition-transform duration-700 
-                         group-hover:scale-110"
+                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                       />
                     </div>
 
@@ -869,21 +879,18 @@ const HomeView = () => {
                       <h3 className="text-xl font-bold text-gray-500 tracking-wide">
                         {prog.heading}
                       </h3>
-
                       <h2 className="text-base font-bold text-gray-900 mt-2 leading-snug">
                         {prog.course}
                       </h2>
-
                       <p className="text-gray-600 mt-3 text-sm">
                         Explore opportunities in {prog.course.toLowerCase()}.
                       </p>
-
                       <Link
                         to={prog.url}
                         className="inline-block mt-5 text-[rgb(120,45,45)] font-semibold 
-                         relative after:block after:h-[2px] after:w-0 
-                         after:bg-[rgb(120,45,45)] after:transition-all 
-                         after:duration-300 group-hover:after:w-full"
+               relative after:block after:h-[2px] after:w-0 
+               after:bg-[rgb(120,45,45)] after:transition-all 
+               after:duration-300 group-hover:after:w-full"
                       >
                         Learn More →
                       </Link>
@@ -891,6 +898,49 @@ const HomeView = () => {
                   </div>
                 ))}
               </div>
+            </div>
+
+            {/* Slider Navigation */}
+            <div className="flex items-center justify-center space-x-6 mt-10">
+              {/* Left Arrow */}
+              <button
+                onClick={() => scrollToIndex(Math.max(0, progIndex - 1))} // ✅ Use unified function
+                className={`p-3 rounded-full border-2 border-[rgb(120,45,45)] text-[rgb(120,45,45)] 
+        hover:bg-[rgb(120,45,45)] hover:text-white transition-all duration-300 shadow-md 
+        ${progIndex === 0 ? "opacity-30 cursor-not-allowed" : "cursor-pointer"}`}
+                disabled={progIndex === 0}
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                </svg>
+              </button>
+
+              {/* Dots */}
+              <div className="flex space-x-3">
+                {[0, 1].map((i) => (
+                  <button
+                    key={i}
+                    onClick={() => scrollToIndex(i)} // ✅ Use unified function
+                    className={`transition-all duration-500 rounded-full ${progIndex === i
+                      ? "w-8 h-3 bg-[rgb(120,45,45)]"
+                      : "w-3 h-3 bg-gray-300 hover:bg-gray-400"
+                      }`}
+                  />
+                ))}
+              </div>
+
+              {/* Right Arrow */}
+              <button
+                onClick={() => scrollToIndex(Math.min(1, progIndex + 1))} // ✅ Use unified function
+                className={`p-3 rounded-full border-2 border-[rgb(120,45,45)] text-[rgb(120,45,45)] 
+        hover:bg-[rgb(120,45,45)] hover:text-white transition-all duration-300 shadow-md 
+        ${progIndex === 1 ? "opacity-30 cursor-not-allowed" : "cursor-pointer"}`}
+                disabled={progIndex === 1}
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </button>
             </div>
           </div>
 
@@ -1144,10 +1194,7 @@ const HomeView = () => {
                           </h3>
 
                           <p className="text-base">
-                            The Career Development Cell trains students with
-                            communication, leadership, and professional
-                            knowledge required to build a strong and successful
-                            career.
+                            The Career Development supports students with mentorship, leadership training, and career guidance to shape confident professionals for future success.
                           </p>
                         </div>
                       </div>
@@ -1168,10 +1215,7 @@ const HomeView = () => {
                           </h3>
 
                           <p className="text-base">
-                            The Placement Development Division prepares students
-                            with industry training, aptitude coaching, and
-                            interview practice to achieve excellent placement
-                            opportunities.
+                            The Placement Development team prepares students through aptitude training, mock interviews, and industry guidance to achieve excellent placement opportunities.
                           </p>
                         </div>
                       </div>
@@ -1192,10 +1236,7 @@ const HomeView = () => {
                           </h3>
 
                           <p className="text-base">
-                            The Skill Development Division trains students with
-                            technical knowledge, practical workshops, and
-                            real-world projects to build strong professional
-                            abilities.{" "}
+                            The Skill Development enhances students through technical training, innovative workshops, and real-world projects to strengthen professional abilities.
                           </p>
                         </div>
                       </div>
@@ -1432,55 +1473,110 @@ const HomeView = () => {
           {/* Support Chatbot */}
           <button
             onClick={() => document.getElementById("my_modal_5").showModal()}
-            className="fixed bottom-4 right-4 bg-gradient-to-r from-[rgb(115,63,63)] to-[rgb(115,25,25)] text-white p-4 rounded-full shadow-lg z-50"
+            className="fixed bottom-6 right-6 bg-gradient-to-r from-[rgb(115,63,63)] to-[rgb(115,25,25)] text-white p-5 rounded-full shadow-2xl z-50 transform hover:scale-110 active:scale-95 transition-all duration-300 group"
           >
-            💬 Help Desk
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+            </svg>
           </button>
           <dialog
             id="my_modal_5"
             className="modal modal-bottom sm:modal-middle"
           >
-            <div className="modal-box p-0 w-80 shadow-lg rounded-lg fixed bottom-20 right-4 md:right-10">
-              <div className="flex justify-between items-center bg-[rgb(115,40,40)] p-4 text-white rounded-t-lg">
-                <h2 className="text-lg font-semibold">Support Chatbot</h2>
+            <div className="modal-box p-0 w-[350px] sm:w-[400px] shadow-2xl rounded-2xl fixed bottom-24 right-4 md:right-10 overflow-hidden border border-white/20 backdrop-blur-lg">
+              <div className="flex justify-between items-center bg-gradient-to-r from-[rgb(90,30,30)] to-[rgb(140,40,40)] p-5 text-white">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h2 className="text-lg font-bold leading-none">AURCC Assistant</h2>
+                    <span className="text-[10px] uppercase tracking-widest opacity-70">Always online</span>
+                  </div>
+                </div>
                 <form method="dialog">
-                  <button className="btn btn-sm btn-circle btn-ghost">✕</button>
+                  <button className="hover:rotate-90 transition-transform duration-300 p-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                  </button>
                 </form>
               </div>
+
               <div
-                className="p-4 h-64 overflow-y-auto bg-gray-50 flex flex-col"
+                className="p-6 h-[400px] overflow-y-auto bg-gray-50 flex flex-col gap-4"
                 ref={chatContainerRef}
               >
+                {chatLog.length === 0 && (
+                  <div className="text-center py-10">
+                    <div className="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                      <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                      </svg>
+                    </div>
+                    <p className="text-gray-500 font-medium">How can I help you today?</p>
+                    <p className="text-xs text-gray-400 mt-1">Ask about courses, admissions, or campus life.</p>
+                  </div>
+                )}
+
                 {chatLog.map((chat, idx) => (
                   <div
                     key={idx}
-                    className={`mb-4 max-w-[80%] p-3 rounded-xl shadow-sm text-sm ${chat.sender === "user" ? "self-end bg-[rgb(200,120,120)] text-[rgb(100,25,25)] rounded-br-none" : "self-start bg-white text-gray-800 rounded-bl-none border border-gray-100"}`}
+                    className={`max-w-[85%] p-4 rounded-2xl shadow-sm text-sm leading-relaxed ${chat.sender === "user"
+                      ? "self-end bg-[rgb(115,25,25)] text-white rounded-tr-none"
+                      : "self-start bg-white text-gray-800 rounded-tl-none border border-gray-100"
+                      }`}
                   >
                     {chat.message}
                   </div>
                 ))}
                 {loading && (
-                  <div className="loading loading-dots loading-sm self-start ml-2"></div>
+                  <div className="self-start bg-white p-3 rounded-2xl border border-gray-100 flex gap-1">
+                    <span className="w-1.5 h-1.5 bg-gray-300 rounded-full animate-bounce"></span>
+                    <span className="w-1.5 h-1.5 bg-gray-300 rounded-full animate-bounce [animation-delay:0.2s]"></span>
+                    <span className="w-1.5 h-1.5 bg-gray-300 rounded-full animate-bounce [animation-delay:0.4s]"></span>
+                  </div>
                 )}
               </div>
-              <div className="p-4 bg-gray-100 rounded-b-lg border-t">
-                <input
-                  value={userMessage}
-                  onChange={(e) => setUserMessage(e.target.value)}
-                  onKeyUp={(e) => e.key === "Enter" && sendMessage()}
-                  type="text"
-                  className="input input-bordered w-full h-10 text-sm"
-                  placeholder="Type your message..."
-                />
-                <button
-                  onClick={sendMessage}
-                  className="btn btn-primary btn-sm w-full mt-2 h-10"
-                >
-                  Send
-                </button>
+
+              <div className="p-4 bg-white border-t border-gray-100">
+                <div className="flex gap-2">
+                  <input
+                    value={userMessage}
+                    onChange={(e) => setUserMessage(e.target.value)}
+                    onKeyUp={(e) => e.key === "Enter" && sendMessage()}
+                    type="text"
+                    className="flex-grow px-4 py-3 bg-gray-50 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-[rgb(115,25,25)]/20 transition-all border-none"
+                    placeholder="Type a message..."
+                  />
+                  <button
+                    onClick={sendMessage}
+                    className="flex items-center justify-center w-12 h-12 bg-[rgb(115,25,25)] text-white rounded-xl hover:bg-[rgb(90,20,20)] transition-all duration-300 shadow-lg shadow-[rgb(115,25,25)]/20 active:scale-90"
+                  >
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 rotate-90" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
+                    </svg>
+                  </button>
+                </div>
               </div>
             </div>
           </dialog>
+
+          {/* Page Navigation Arrow */}
+          <div className={`fixed left-6 bottom-6 z-50 transition-all duration-500 transform ${showScrollButtons ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10 pointer-events-none"}`}>
+            <button
+              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+              className="w-12 h-12 bg-white/90 backdrop-blur-md text-[rgb(115,25,25)] rounded-full shadow-2xl flex items-center justify-center hover:bg-[rgb(115,25,25)] hover:text-white transition-all duration-300 border border-[rgb(115,25,25)]/20 active:scale-95 group"
+              title="Scroll to Top"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 15l7-7 7 7" />
+              </svg>
+            </button>
+          </div>
+
         </main>
       </div>
     </div>
