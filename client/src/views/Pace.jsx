@@ -29,6 +29,8 @@ const Pace = () => {
     }
 
     return (
+                  <section className="pt-[100px] sm:pt-[100px] lg:pt-[50px]">
+
         <OfficePageTemplate
             officeName="PACE CELL"
             heroSubtitle="Empowering students for competitive excellence"
@@ -101,6 +103,7 @@ const Pace = () => {
                 </div>
             </div>
         </OfficePageTemplate>
+        </section>
     );
 };
 

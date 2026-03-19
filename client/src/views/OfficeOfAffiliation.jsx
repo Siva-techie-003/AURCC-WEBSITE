@@ -1,29 +1,51 @@
 import React, { useState, useEffect } from 'react';
 import OfficePageTemplate from '../components/OfficePageTemplate';
-import OfficeContentSection from '../components/OfficeContentSection';
 import StaffCard from '../components/StaffCard';
 import './OfficeOfAffiliation.css';
 
 const OfficeOfAffiliation = () => {
     const [data, setData] = useState(null);
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        fetch("/api/office-affiliation")
+        fetch("/api/affiliation")
             .then(res => res.json())
-            .then(setData)
-            .catch(err => console.error("Zonal fetch error:", err));
+            .then((result) => {
+                setData(result);
+                setLoading(false);
+            })
+            .catch(err => {
+                console.error("Affiliation fetch error:", err);
+                setLoading(false);
+            });
     }, []);
+
 
     const sections = [
         { key: 'description', label: 'Description' },
         { key: 'staff', label: 'Staff' }
     ];
 
+       /* Show loading until data arrives */
+    if (loading) {
+        return (
+            <div className="flex justify-center items-center h-screen">
+                <p className="text-xl font-semibold">Loading...</p>
+            </div>
+        );
+    }
+
     if (!data) {
-        return <p className="text-center mt-20">Loading...</p>;
+        return (
+            <div className="flex justify-center items-center h-screen">
+                <p className="text-xl font-semibold">No data available</p>
+            </div>
+        );
     }
 
     return (
+                  <section className="pt-[100px] sm:pt-[100px] lg:pt-[50px]">
+
         <OfficePageTemplate
             officeName="OFFICE OF AFFILIATION"
             heroSubtitle="Facilitating Affiliation & University Liaison"
@@ -62,6 +84,7 @@ const OfficeOfAffiliation = () => {
                 </div>
             </div>
         </OfficePageTemplate>
+        </section>
     );
 };
 

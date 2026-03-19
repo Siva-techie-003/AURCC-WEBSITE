@@ -18,7 +18,7 @@ const AdmissionView = () => {
     ];
 
     useEffect(() => {
-        fetch("/api/admissions/admission") // Adjust the endpoint as needed
+        fetch("/api/admissions") // Adjust the endpoint as needed
             .then(res => res.json())
             .then(res => {
                 if (Array.isArray(res)) {
@@ -33,6 +33,8 @@ const AdmissionView = () => {
     if (!data) return <p className="text-center mt-20">Loading...</p>;
 
     return (
+                  <section className="pt-[100px] sm:pt-[100px] lg:pt-[50px]">
+
         <OfficePageTemplate
             officeName="Admission"
             heroSubtitle="Join our vibrant campus and shape your future with us!"
@@ -151,6 +153,7 @@ const AdmissionView = () => {
                 </div>
             </div>
         </OfficePageTemplate>
+        </section>
     );
 };
 

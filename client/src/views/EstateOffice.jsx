@@ -56,6 +56,8 @@ const EstateOffice = () => {
   }
 
   return (
+              <section className="pt-[100px] sm:pt-[100px] lg:pt-[50px]">
+
     <OfficePageTemplate
       officeName="ESTATE OFFICE"
       heroSubtitle="Managing campus infrastructure, maintenance, and facilities"
@@ -65,27 +67,31 @@ const EstateOffice = () => {
       <div className="content space-y-16">
 
         {/* About Section */}
-        <OfficeContentSection
-          sectionId="about"
-          title="About the Estate Office"
-          icon="ℹ️"
-        >
-          <div className="max-w-4xl mx-auto">
-            <p className="text-base lg:text-lg xl:text-lg text-gray-800 text-left leading-relaxed">
+<section id="about">
+                    <div className="text-center mb-8 ">
+                        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[rgb(100,25,25)] uppercase mb-2">About the Estate Office</h2>
+                        <div className="flex justify-center ">
+                            <span className="block w-24 h-1.5 rounded-full bg-[#f5c842]"></span>
+                        </div>
+                    </div>
+
+<div className="bg-white rounded-2xl shadow-sm border border-[rgb(220,140,140)] p-6 lg:p-8">
+
+<p className="text-base lg:text-lg xl:text-xl font-medium text-gray-800 text-left leading-relaxed">
               The Estate Office is responsible for managing campus infrastructure,
               construction projects, building maintenance, water supply systems,
               electrical systems, roads, gardens, security, and overall facility monitoring
-              to ensure smooth and safe operation of the institution.
-            </p>
-          </div>
-        </OfficeContentSection>
+              to ensure smooth and safe operation of the institution.</p>
+
+</div>
+
+</section>
 
 
         {/* Services Section */}
         <OfficeContentSection
           sectionId="services"
           title="Services"
-          icon="🛠️"
         >
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 px-2">
             {serviceCards.map((service, index) => (
@@ -118,7 +124,6 @@ const EstateOffice = () => {
         <OfficeContentSection
           sectionId="staff"
           title="Staff"
-          icon="👥"
         >
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {staffData.map((staff, index) => (
@@ -135,6 +140,7 @@ const EstateOffice = () => {
 
       </div>
     </OfficePageTemplate>
+    </section>
   );
 };
 

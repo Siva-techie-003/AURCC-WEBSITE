@@ -27,6 +27,8 @@ if (!data) {
   return <p className="text-center mt-20">Loading...</p>;
 }
     return (
+                  <section className="pt-[100px] sm:pt-[100px] lg:pt-[50px]">
+
         <OfficePageTemplate
             officeName="Entrepreneurship Development Cell"
             heroSubtitle="Empowering innovation, startups, and entrepreneurial spirit"
@@ -36,16 +38,23 @@ if (!data) {
             <div className="content space-y-16">
 
                 {/* Description */}
-                <OfficeContentSection
-                    sectionId="description"
-                    title="Description"
-                >
-                    <div className="bg-[rgb(220,140,140)] p-6 rounded-2xl border border-[rgb(200,120,120)] shadow-sm text-left">
-                        <p className="text-base lg:text-lg xl:text-xl font-medium text-gray-800 leading-relaxed italic">
-                            The Entrepreneurship Development Cell (ED Cell) promotes innovation, creativity, and entrepreneurial thinking among students. It provides a platform for aspiring entrepreneurs to develop ideas, gain mentorship, and understand the process of building successful ventures. Through workshops, seminars, industry interactions, and startup support activities, the ED Cell encourages students to transform their innovative concepts into viable business opportunities while fostering leadership, problem-solving skills, and a strong entrepreneurial mindset.
-                        </p>
+<section id="description">
+                    <div className="text-center mb-8 ">
+                        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[rgb(100,25,25)] uppercase mb-2">Description</h2>
+                        <div className="flex justify-center ">
+                            <span className="block w-24 h-1.5 rounded-full bg-[#f5c842]"></span>
+                        </div>
                     </div>
-                </OfficeContentSection>
+
+<div className="bg-white rounded-2xl shadow-sm border border-[rgb(220,140,140)] p-6 lg:p-8">
+
+<p className="text-base lg:text-lg xl:text-xl font-medium text-gray-800 text-left leading-relaxed">
+The Entrepreneurship Development Cell (ED Cell) promotes innovation, creativity, and entrepreneurial thinking among students. It provides a platform for aspiring entrepreneurs to develop ideas, gain mentorship, and understand the process of building successful ventures. Through workshops, seminars, industry interactions, and startup support activities, the ED Cell encourages students to transform their innovative concepts into viable business opportunities while fostering leadership, problem-solving skills, and a strong entrepreneurial mindset.
+</p>
+
+</div>
+
+</section>
 
 
                 {/* Objectives + MOUs + Key Activities */}
@@ -130,6 +139,7 @@ if (!data) {
 
             </div>
         </OfficePageTemplate>
+        </section>
     );
 };
 

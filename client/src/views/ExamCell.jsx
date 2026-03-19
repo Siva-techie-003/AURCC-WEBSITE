@@ -28,31 +28,38 @@ const ExamCell = () => {
     } 
 
     return (
+                  <section className="pt-[100px] sm:pt-[100px] lg:pt-[50px]">
+
         <OfficePageTemplate
             officeName="EXAM CELL"
             heroSubtitle="Ensuring smooth conduct and transparency in university examinations"
             sections={sections}
             contactEmail="examcell@aurcc.ac.in"
         >
-            <div className="content">
+            <div className="content space-y-16">
                 {/* About */}
-                <OfficeContentSection
-                    sectionId="about"
-                    title="About the Exam Cell"
-                    icon="ℹ️"
-                >
-                   
-                        <div className="text-lg sm:text-xl lg:text-2xl font-bold text-[rgb(100,25,25)] mb-4">Our Mission: Ensuring fairness, transparency, and efficiency in all university examinations.</div>
-                        {/* <div className="w-20 h-1.5 bg-gradient-to-r from-[rgb(115,63,63)] to-[rgb(115,25,25)] rounded-full mb-6"></div> */}
-                        <p className="lg:text-lg xl:text-lg font-md text-gray-800 leading-relaxed italic">{data.description}</p>
-                  
-                </OfficeContentSection>
+<section id="about">
+                    <div className="text-center mb-8 ">
+                        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[rgb(100,25,25)] uppercase mb-2">About the Exam Cell</h2>
+                        <div className="flex justify-center ">
+                            <span className="block w-24 h-1.5 rounded-full bg-[#f5c842]"></span>
+                        </div>
+                    </div>
+
+<div className="bg-white rounded-2xl shadow-sm border border-[rgb(220,140,140)] p-6 lg:p-8">
+
+<p className="text-base lg:text-lg xl:text-xl font-medium text-gray-800 text-left leading-relaxed">
+{data.description}
+</p>
+
+</div>
+
+</section>
 
                 {/* Services */}
                 <OfficeContentSection
                     sectionId="services"
                     title="Services"
-                    icon="🛠️"
                 >
                     <div className="mb-8 text-base lg:text-lg text-gray-700 text-left">We provide comprehensive support for all examination-related processes, ensuring a smooth experience for students and staff.</div>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -70,7 +77,6 @@ const ExamCell = () => {
                 <OfficeContentSection
                     sectionId="staff"
                     title="Staff"
-                    icon="👥"
                 >
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                         {Array.isArray(data?.office_bearers) &&
@@ -88,6 +94,7 @@ const ExamCell = () => {
                 </OfficeContentSection>
             </div>
         </OfficePageTemplate>
+        </section>
     );
 };
 

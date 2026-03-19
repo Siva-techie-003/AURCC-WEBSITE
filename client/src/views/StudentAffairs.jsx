@@ -50,6 +50,8 @@ const StudentAffairs = () => {
     };
 
     return (
+                          <section className="pt-[100px] sm:pt-[100px] lg:pt-[90px]">
+
         <div className="min-h-screen flex flex-col bg-gray-50 text-left">
 {/* Hero Section */}
 <section className="relative w-full h-56 sm:h-72 md:h-96 lg:h-[50vh] flex items-center justify-center overflow-hidden">
@@ -117,7 +119,6 @@ const StudentAffairs = () => {
                 <div id="description" ref={sectionRefs.description} className="bg-white rounded-3xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-lg transition-all">
                     <div className="bg-gradient-to-r from-[rgb(115,63,63)] to-[rgb(115,25,25)] py-6 px-8 flex justify-between items-center text-white">
                         <h2 className="text-xl lg:text-2xl font-bold">Description</h2>
-                        <span className="text-2xl opacity-50">ℹ️</span>
                     </div>
                     <div className="p-8 space-y-4">
                         {(Array.isArray(content?.description) ? content.description : []).map((item, index) => (
@@ -132,7 +133,6 @@ const StudentAffairs = () => {
                 <div id="reAdmission" ref={sectionRefs.reAdmission} className="bg-white rounded-3xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-lg transition-all">
                     <div className="bg-gradient-to-r from-[rgb(115,63,63)] to-[rgb(115,25,25)] py-6 px-8 flex justify-between items-center text-white">
                         <h2 className="text-xl lg:text-2xl font-bold">Re-Admission</h2>
-                        <span className="text-2xl opacity-50">↩️</span>
                     </div>
                     <div className="p-8">
                         <div className="bg-[rgb(220,140,140)]/50 rounded-2xl p-6 border border-[rgb(200,120,120)] text-[rgb(100,25,25)] font-bold text-base lg:text-lg leading-relaxed  whitespace-pre-line">
@@ -145,7 +145,6 @@ const StudentAffairs = () => {
                 <div id="scholarships" ref={sectionRefs.scholarships} className="bg-white rounded-3xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-lg transition-all">
                     <div className="bg-gradient-to-r from-[rgb(115,63,63)] to-[rgb(115,25,25)] py-6 px-8 flex justify-between items-center text-white">
                         <h2 className="text-xl lg:text-2xl font-bold">Scholarships</h2>
-                        <span className="text-2xl opacity-50">💰</span>
                     </div>
                     <div className="p-8">
                         <div className="mb-6 p-4 bg-[rgb(220,140,140)]/50 rounded-xl border-l-4 border-[rgb(115,40,40)]">
@@ -173,7 +172,6 @@ const StudentAffairs = () => {
                 <div id="fees" ref={sectionRefs.fees} className="bg-white rounded-3xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-lg transition-all">
                     <div className="bg-gradient-to-r from-[rgb(115,63,63)] to-[rgb(115,25,25)] py-6 px-8 flex justify-between items-center text-white">
                         <h2 className="text-xl lg:text-2xl font-bold">Fees Details</h2>
-                        <span className="text-2xl opacity-50">🧾</span>
                     </div>
                     <div className="p-8">
                         <a
@@ -193,7 +191,6 @@ const StudentAffairs = () => {
                 <div id="staff" ref={sectionRefs.staff} className="bg-white rounded-3xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-lg transition-all">
                     <div className="bg-gradient-to-r from-[rgb(115,63,63)] to-[rgb(115,25,25)] py-6 px-8 flex justify-between items-center text-white">
                         <h2 className="text-xl lg:text-2xl font-bold">Administration Staff</h2>
-                        <span className="text-2xl opacity-50">👥</span>
                     </div>
                     <div className="p-8">
                         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -222,6 +219,7 @@ const StudentAffairs = () => {
                 
             </main>
         </div>
+        </section>
     );
 };
 

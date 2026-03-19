@@ -122,7 +122,7 @@ const ProgramsOffered = () => {
         <h1 className="text-3xl sm:text-5xl lg:text-6xl 
                        font-black text-white 
                        tracking-tight mb-4">
-            Academic Programs
+            Programs Offered
         </h1>
 
         <div className="w-20 h-1 bg-yellow-400 mx-auto mb-5 rounded-full"></div>

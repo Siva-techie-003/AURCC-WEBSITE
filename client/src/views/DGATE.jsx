@@ -83,6 +83,8 @@ const DGATE = () => {
     }
 
     return (
+                  <section className="pt-[100px] sm:pt-[100px] lg:pt-[50px]">
+
         <OfficePageTemplate
             officeName="DGATE CELL"
             heroSubtitle="Join our vibrant campus and shape your future with us!"
@@ -212,6 +214,7 @@ const DGATE = () => {
                 </div>
             </div>
         </OfficePageTemplate>
+        </section>
     );
 };
 

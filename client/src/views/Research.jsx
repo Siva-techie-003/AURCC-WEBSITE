@@ -22,38 +22,45 @@ if (!data) {
   return <p className="text-center mt-20">Loading...</p>;
 }
     return (
+        <section className="pt-[100px] sm:pt-[100px] lg:pt-[50px]">
+
         <OfficePageTemplate
             officeName="RESEARCH CELL"
             heroSubtitle="Fostering research and innovation across disciplines"
             sections={sections}
             contactEmail="researchcell@aurcc.ac.in"
         >
-            <div className="content">
+            <div className="content space-y-16">
                 {/* Description */}
-                <OfficeContentSection
-                    sectionId="description"
-                    title="About the Research Cell"
-                    icon="ℹ️"
-                >
-                    <div className="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm text-left">
-                        <ul className="list-disc pl-5 space-y-4 text-base lg:text-lg xl:text-lg text-gray-800 leading-relaxed ">
-                            {(Array.isArray(data?.description) ? data.description : []).map((desc, index) => (
-                                <li key={index} className="whitespace-pre-wrap break-words">
-                                    {desc}
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
-                </OfficeContentSection>
+  <section id="description">
+    <div className="text-center mb-8">
+        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[rgb(100,25,25)] uppercase mb-2">
+            About the Research Cell
+        </h2>
+
+        <div className="flex justify-center">
+            <span className="block w-24 h-1.5 rounded-full bg-[#f5c842]"></span>
+        </div>
+    </div>
+
+    <div className="bg-white rounded-2xl shadow-sm border border-[rgb(220,140,140)] p-6 lg:p-8">
+        <ul className="list-disc pl-5 space-y-4 text-base lg:text-lg xl:text-lg text-gray-800 leading-relaxed">
+            {(Array.isArray(data?.description) ? data.description : []).map((desc, index) => (
+                <li key={index} className="whitespace-pre-wrap break-words">
+                    {desc}
+                </li>
+            ))}
+        </ul>
+    </div>
+</section>
 
                 {/* Supervisors Section */}
                 <OfficeContentSection
                     sectionId="supervisors"
                     title="Scholars Details by Department"
-                    icon="🎓"
                 >
-                    <div className="overflow-x-auto no-scrollbar shadow-lg rounded-xl border border-gray-200">
-                        <table className="table-auto w-full text-left text-sm lg:text-base">
+                    <div className="no-scrollbar shadow-lg rounded-xl border-r border-gray-200">
+                        <table className="w-full text-left text-sm lg:text-base">
                             <thead className="bg-[rgb(100,25,25)] text-white uppercase tracking-wider sticky top-0">
                                 <tr>
                                     <th className="px-4 py-4 font-bold border-r border-[rgb(105,30,30)]">Department</th>
@@ -97,6 +104,7 @@ if (!data) {
                 </OfficeContentSection>
             </div>
         </OfficePageTemplate>
+        </section>
     );
 };
 

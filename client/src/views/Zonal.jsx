@@ -25,6 +25,8 @@ const Zonal = () => {
     }
 
     return (
+                  <section className="pt-[100px] sm:pt-[100px] lg:pt-[50px]">
+
         <OfficePageTemplate
             officeName="ZONAL OFFICE"
             heroSubtitle="Liaison for Examinations & College Coordination"
@@ -88,6 +90,7 @@ const Zonal = () => {
                 </div>
             </div>
         </OfficePageTemplate>
+        </section>
     );
 };
 

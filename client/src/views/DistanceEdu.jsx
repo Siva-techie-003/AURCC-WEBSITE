@@ -30,6 +30,8 @@ const DistanceEdu = () => {
   }
 
     return (
+                  <section className="pt-[100px] sm:pt-[100px] lg:pt-[50px]">
+
         <OfficePageTemplate
             officeName="DISTANCE EDUCATION"
             heroSubtitle="Flexible learning for working professionals and lifelong learners"
@@ -40,15 +42,17 @@ const DistanceEdu = () => {
 
 {/* Overview */}
 <section id="overview">
-
-<h2 className="text-2xl lg:text-3xl font-bold text-[rgb(90,20,20)] mb-6 text-left">
-Overview
-</h2>
+                    <div className="text-center mb-8 ">
+                        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[rgb(100,25,25)] uppercase mb-2">Overview</h2>
+                        <div className="flex justify-center ">
+                            <span className="block w-24 h-1.5 rounded-full bg-[#f5c842]"></span>
+                        </div>
+                    </div>
 
 <div className="bg-white rounded-2xl shadow-sm border border-[rgb(220,140,140)] p-6 lg:p-8">
 
 <p className="text-base lg:text-lg xl:text-xl font-medium text-gray-800 text-left leading-relaxed">
-{data.description}
+Programme: MBA, MCA
 </p>
 
 </div>
@@ -160,6 +164,7 @@ Overview
 
             </div>
         </OfficePageTemplate>
+        </section>
     );
 };
 
