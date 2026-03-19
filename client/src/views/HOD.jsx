@@ -30,7 +30,7 @@ const HOD = () => {
   }
 
     return (
-        <div className="min-h-screen bg-white py-12 px-4 text-left">
+        <div className="min-h-screen bg-white py-12 px-4 text-left pt-[120px] sm:pt-[140px] lg:pt-[180px]">
             <div className="max-w-7xl mx-auto">
                 <header className="text-center mb-16 animate-fadeIn">
                     <h1 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-black text-[rgb(90,20,20)] uppercase tracking-tighter font-serif mb-4">Head of the Departments</h1>

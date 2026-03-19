@@ -115,7 +115,7 @@
     transform: translateY(-50%);
     width: 3px;
     height: 0;
-    background-color: #3B82F6;
+    background-color: #710404;
     transition: height 0.3s ease;
 }
 
@@ -238,4 +238,15 @@ details>summary {
         padding-left: 1rem !important;
         padding-right: 1rem !important;
     }
+}
+
+.scroll-nav-enter {
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.scroll-nav-enter-active {
+    opacity: 1;
+    transform: translateY(0);
+    transition: all 500ms ease-out;
 }

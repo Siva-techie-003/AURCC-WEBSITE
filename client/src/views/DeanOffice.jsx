@@ -26,7 +26,7 @@ const DeanOffice = () => {
   const BACKEND_URL = "";
 
     return (
-        <div className="bg-white min-h-screen py-8 sm:py-12 lg:py-14 px-4">
+        <div className="bg-white min-h-screen py-8 sm:py-12 lg:py-14 px-4 pt-[120px] sm:pt-[140px] lg:pt-[180px]">
             <div className="max-w-7xl mx-auto">
                 <h1 className="text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-extrabold text-[rgb(100,25,25)] tracking-wide text-center uppercase mb-4">Dean Office Staff</h1>
                 <div className="flex justify-center mb-10">

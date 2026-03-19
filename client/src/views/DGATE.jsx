@@ -31,7 +31,7 @@ const DGATE = () => {
         { key: 'staff', label: 'Staff' },
     ];
 
-    /* ✅ SAFE activity highlights */
+    /*  SAFE activity highlights */
     const activityHighlights = useMemo(() => {
         if (!data?.description?.activities) return [];
 
@@ -54,7 +54,7 @@ const DGATE = () => {
         return highlights;
     }, [data]);
 
-    /* ✅ SAFE projects */
+    /*  SAFE projects */
     const projectCards = useMemo(() => {
         if (!data?.description) return [];
 
@@ -77,7 +77,7 @@ const DGATE = () => {
         return [...completed, ...ongoing];
     }, [data]);
 
-    /* ✅ LOADING STATE */
+    /*  LOADING STATE */
     if (!data) {
         return <p className="text-center mt-20">Loading...</p>;
     }

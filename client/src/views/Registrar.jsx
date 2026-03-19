@@ -29,7 +29,7 @@ const Registrar = () => {
 };
 
     return (
-        <div className="bg-white min-h-screen py-12 sm:py-20 px-4 text-left">
+        <div className="bg-white min-h-screen py-12 sm:py-20 px-4 text-left pt-[120px] sm:pt-[140px] lg:pt-[180px]">
             <div className="max-w-7xl mx-auto flex flex-col items-center">
                 <header className="mb-16 text-center animate-fadeIn">
                     <h1 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-black text-[rgb(90,20,20)] uppercase tracking-tighter font-serif mb-4">University Leadership</h1>

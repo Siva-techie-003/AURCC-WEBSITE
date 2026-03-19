@@ -36,7 +36,7 @@ const COD = () => {
   ];
 
     return (
-        <div className="p-4 sm:p-6 md:p-9 bg-white min-h-screen">
+        <div className="p-4 sm:p-6 md:p-9 bg-white min-h-screen pt-[120px] sm:pt-[140px] lg:pt-[180px]">
             <div className="text-center py-4 sm:py-5">
                 <h1 className="text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-bold text-[rgb(100,25,25)] tracking-wide font-serif">CELL COORDINATORS</h1>
                 <div className="flex justify-center mt-2 mb-3 sm:mb-4">

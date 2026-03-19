@@ -75,7 +75,7 @@ const FineArtsClub = () => {
                     {/* Description Section */}
                     <div className="bg-white/70 backdrop-blur-md rounded-2xl shadow-lg border border-gray-100 overflow-hidden animate-fadeIn">
                         <div className="bg-gradient-to-r from-[rgb(115,63,63)] to-[rgb(115,25,25)] py-4 sm:py-5 flex items-center justify-center gap-2 sm:gap-3">
-                            <h2 className="text-lg sm:text-xl lg:text-2xl xl:text-3xl font-bold text-white text-center">LAYAM AAM RHYTHM OF ARTS MUSIC & DANCE</h2>
+                            <h2 className="text-lg sm:text-xl lg:text-2xl xl:text-3xl font-bold text-white text-center">LAYAM RHYTHM OF ARTS MUSIC & DANCE</h2>
                         </div>
                         <div className="p-4 sm:p-6 md:p-8 lg:p-10 text-left">
                             <p className="text-base lg:text-lg xl:text-xl  text-base text-gray-700 leading-relaxed">{data.description}</p>
