@@ -179,7 +179,7 @@ const DepartmentsView = () => {
           <div id="content-sections" className="w-full scroll-mt-40">
             {/* About Department */}
             <div id="about-department" className="py-16">
-              <div className="max-w-7xl mx-auto px-6 lg:px-8 ">
+              <div className="w-full px-6 lg:px-12">
                 {/* Title */}
                 <div className="text-center mb-10">
                   <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
@@ -189,20 +189,31 @@ const DepartmentsView = () => {
                 </div>
 
                 {/* Content Grid */}
-                <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 items-start ">
+                <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-start">
                   {/* Left Content */}
-                  <div className="lg:col-span-2 bg-gray-100 p-8 rounded-xl shadow-md">
-                    <ul className="text-gray-700 text-justify leading-relaxed space-y-4 text-lg">
-                      {(department?.description || []).map((description, i) => (
-                        <li key={i}>{description}</li>
-                      ))}
-                    </ul>
+                  <div className="lg:col-span-2 bg-gray-100 p-8 rounded-xl shadow-md h-full">
+                    {(department?.description || []).map((desc, i) => (
+                      <p
+                        key={i}
+                        className={`text-gray-700 leading-relaxed text-justify ${
+                          i === 0
+                            ? "text-xl font-bold mb-3"
+                            : i === 1
+                              ? "text-lg font-normal mb-3"
+                              : i === 2
+                                ? "text-lg font-normal mb-3"
+                                : "text-lg"
+                        }`}
+                      >
+                        {desc}
+                      </p>
+                    ))}
                   </div>
 
                   {/* Right Image */}
-                  <div className="bg-white p-4 rounded-xl shadow-md">
+                  <div className="bg-white p-4 rounded-xl shadow-md h-full flex items-center">
                     <img
-                      src="/Drone_shot.jpg" // change to your image path
+                      src="/Drone_shot.jpg"
                       alt="Department"
                       className="w-full h-[450px] object-cover rounded-lg"
                     />
@@ -301,44 +312,93 @@ const DepartmentsView = () => {
             {/* HOD Desk */}
             <div
               id="hod-desk"
-              className="w-full bg-[rgb(115,55,55)] py-16 px-6 lg:px-20 text-white"
+              className="relative w-full bg-gray-100 py-16 overflow-hidden"
             >
-              <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
-                {/* Left Side - HOD Profile */}
+              {/* 🔹 BACKGROUND PATTERN */}
+              <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-40 text-[rgb(115,40,40)]">
+                <svg
+                  width="100%"
+                  height="100%"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <pattern
+                    id="dots-pattern"
+                    width="40"
+                    height="40"
+                    patternUnits="userSpaceOnUse"
+                  >
+                    <circle cx="2" cy="2" r="1" fill="currentColor" />
+                    <circle cx="20" cy="20" r="1" fill="currentColor" />
+                    <circle cx="38" cy="38" r="1" fill="currentColor" />
+                    <circle cx="2" cy="38" r="1" fill="currentColor" />
+                    <circle cx="38" cy="2" r="1" fill="currentColor" />
+                  </pattern>
+                  <rect width="100%" height="100%" fill="url(#dots-pattern)" />
+                </svg>
+              </div>
+
+              {/* 🔹 CONTENT (ABOVE PATTERN) */}
+              <div className="relative z-10 w-full -mt-8 px-6 lg:px-16">
+                {/* HEADING */}
+                <div className="text-center mb-12">
+                  <h2 className="text-4xl font-bold text-[rgb(115,40,40)] inline-block">
+                    From the Desk of HOD
+                    <span className="block w-24 h-1 bg-yellow-500 mx-auto mt-3 rounded"></span>
+                  </h2>
+                </div>
+
                 {(Array.isArray(department?.faculty?.hod_desk)
                   ? department.faculty.hod_desk
                   : []
                 ).map((staff, i) => (
                   <div
                     key={i}
-                    className="flex flex-col items-center text-center"
+                    className="w-full bg-white rounded-xl shadow-md border border-red-200 p-10 grid md:grid-cols-2 gap-12 items-stretch"
                   >
-                    <img
-                      src={`${BACKEND_URL}/${staff.image}`}
-                      alt={staff.name}
-                      onError={handleImageError}
-                      className="w-48 h-48 object-fit rounded-full border-4 border-white shadow-lg mb-6"
-                    />
+                    {/* LEFT IMAGE */}
+                    <div className="flex justify-center">
+                      <div className="w-full h-[250px] md:h-full rounded-xl overflow-hidden">
+                        <img
+                          src={`${BACKEND_URL}/public/${staff.photo}`}
+                          alt={staff.name}
+                          onError={handleImageError}
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+                    </div>
 
-                    <h4 className="text-2xl font-bold">{staff.name}</h4>
-                    <p className="text-lg opacity-90">{staff.position}</p>
-                    <p className="text-lg opacity-90">{staff.subpos}</p>
-                    <p className="text-sm opacity-80">{staff.email}</p>
+                    {/* RIGHT CONTENT */}
+                    <div className="flex flex-col h-full">
+                      <div>
+                        <h3 className="text-4xl font-bold text-[rgb(115,40,40)] mb-2">
+                          {staff.name}
+                        </h3>
+
+                        <p className="text-lg font-bold mt-2 text-gray-800">
+                          {staff.position}
+                        </p>
+
+                        <p className="text-lg font-semibold mt-1 text-gray-800">
+                          {staff.college}
+                        </p>
+                      </div>
+
+                      {/* SCROLL CARD */}
+                      <div className="bg-gray-50 rounded-lg p-5 mt-8 h-[320px] border border-gray-300 overflow-y-auto shadow-inner">
+                        {department?.p1 && (
+                          <p className="mb-3">{department.p1}</p>
+                        )}
+                        {department?.p2 && (
+                          <p className="mb-3">{department.p2}</p>
+                        )}
+                        {department?.p3 && (
+                          <p className="mb-3">{department.p3}</p>
+                        )}
+                        {department?.p4 && <p>{department.p4}</p>}
+                      </div>
+                    </div>
                   </div>
                 ))}
-
-                {/* Right Side - Message */}
-                <div>
-                  <h2 className="text-4xl font-bold mb-3">HOD Desk</h2>
-
-                  <p className="italic mb-5">{department?.p1}</p>
-
-                  <p className="mb-2 leading-relaxed">{department?.p2}</p>
-
-                  <p className="mb-2 leading-relaxed">{department?.p3}</p>
-
-                  <p className="leading-relaxed">{department?.p4}</p>
-                </div>
               </div>
             </div>
 
@@ -416,7 +476,7 @@ const DepartmentsView = () => {
             {/* Faculty Section */}
             <div
               id="faculty"
-              className="relative px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto py-6 bg-gray-50 rounded-2xl overflow-hidden scroll-mt-40"
+              className="relative w-full px-6 lg:px-12 py-6 bg-gray-50 rounded-2xl"
             >
               {/* Background Pattern */}
               <div className="absolute inset-0 opacity-30 text-[rgb(115,40,40)] pointer-events-none">
@@ -473,14 +533,14 @@ const DepartmentsView = () => {
                   ).map((staff, i) => (
                     <div
                       key={i}
-                      className="bg-white rounded-xl shadow-lg overflow-hidden border border-[rgb(200,120,120)] transform transition-all duration-300 cursor-pointer min-h-[300px] max-w-[320px] w-80 flex-shrink-0 flex-grow-0 hover:-translate-y-2 hover:scale-[1.02] hover:shadow-2xl hover:border-[rgb(115,40,40)]"
+                      className="bg-white rounded-xl shadow-lg overflow-hidden border border-[rgb(200,120,120)] transform transition-all duration-300 cursor-pointer min-h-[300px] max-w-[420px] w-80 flex-shrink-0 flex-grow-0 hover:-translate-y-2 hover:scale-[1.02] hover:shadow-2xl hover:border-[rgb(115,40,40)]"
                       onClick={() => showDetails(staff)}
                     >
                       <div className="relative pt-2 flex justify-center">
                         <div className="absolute inset-0 h-1/2 bg-gradient-to-r from-[rgb(115,63,63)] to-[rgb(115,25,25)]"></div>
                         <div className="relative">
                           <img
-                            src={`${BACKEND_URL}/${staff.image}`}
+                            src={`${BACKEND_URL}/public/${staff.photo}`}
                             alt={staff.name}
                             className="w-36 h-44 object-cover rounded-full border-4 border-white shadow-lg"
                             onError={handleImageError}
@@ -885,217 +945,323 @@ const DepartmentsView = () => {
         </section>
 
         {/* Faculty Modal */}
-{showPopover && selectedStaff && (
-  <div
-    className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50 p-4"
-    onClick={() => setShowPopover(false)}
-  >
-    <div
-      className="bg-white rounded-2xl shadow-xl max-w-5xl w-full max-h-[90vh] overflow-hidden"
-      onClick={(e) => e.stopPropagation()}
-    >
-      <div className="p-6 relative overflow-y-auto max-h-[90vh]">
-        {/* Close Button */}
-        <button
-          onClick={() => setShowPopover(false)}
-          className="absolute top-4 right-4 text-gray-500 hover:text-gray-800"
-        >
-          ✖
-        </button>
+        {/* Faculty Modal */}
+        {showPopover && selectedStaff && (
+          <div
+            className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50 p-4"
+            onClick={() => setShowPopover(false)}
+          >
+            <div
+              className="bg-white rounded-2xl shadow-xl max-w-5xl w-full h-[90vh] overflow-hidden flex"
+              onClick={(e) => e.stopPropagation()}
+            >
+              {/* LEFT SIDE */}
+              <div className="w-1/3 bg-[rgb(245,180,180)] text-center p-6 flex flex-col items-center">
+                <img
+                  src={`${BACKEND_URL}/public/${selectedStaff.photo}`}
+                  alt={selectedStaff.name}
+                  className="w-48 h-60 rounded-xl border shadow"
+                />
 
-        <h1 className="text-3xl font-bold text-center mb-6">
-          Faculty Profile
-        </h1>
+                <h2 className="text-xl text-[rgb(100,25,25)] font-bold mt-4">
+                  {selectedStaff.title} {selectedStaff.name}
+                </h2>
 
-        <div className="flex flex-col md:flex-row gap-6">
-          {/* LEFT SIDE */}
-          <div className="md:w-1/3 text-center">
-            <img
-              src={`${BACKEND_URL}/${selectedStaff.photo}`}
-              alt={selectedStaff.name}
-              className="w-48 h-60 mx-auto rounded-xl border shadow"
-            />
+                <p className="text-[rgb(100,25,25)] font-medium mt-2">
+                  {selectedStaff.position}
+                </p>
 
-            <h2 className="text-xl font-bold mt-3">
-              {selectedStaff.title} {selectedStaff.name}
-            </h2>
+                <p className="text-[rgb(100,25,25)] font-medium">
+                  {selectedStaff.department}
+                </p>
 
-            <p className="text-red-700">{selectedStaff.designation}</p>
+                <p className="text-base mt-2 text-blue-600 font-medium">
+                  {selectedStaff.contact?.email}
+                </p>
+              </div>
 
-            <p className="text-gray-500">{selectedStaff.department}</p>
+              {/* RIGHT SIDE */}
+              <div className="w-2/3 flex flex-col">
+                {/* 🔹 FIXED HEADER */}
+                <div className="sticky top-0 bg-white z-10  p-4 flex items-center justify-center relative">
+                  <h1 className="text-2xl font-bold text-[rgb(100,25,25)] relative inline-block">
+                    Faculty Profile
+                    <span className="absolute -bottom-4 sm:-bottom-3 left-1/2 transform -translate-x-1/2 h-1 w-32 sm:w-40 lg:w-32 bg-yellow-500"></span>
+                  </h1>
 
-            <p className="text-sm mt-2">{selectedStaff.contact?.email}</p>
-            <p className="text-sm">{selectedStaff.contact?.mobile}</p>
+                  <button
+                    onClick={() => setShowPopover(false)}
+                    className="absolute right-4 text-gray-500 hover:text-gray-800 text-xl"
+                  >
+                    ✖
+                  </button>
+                </div>
+
+                {/* 🔹 SCROLLABLE CONTENT */}
+                <div className="p-6 overflow-y-auto space-y-6 scrollbar-thin scrollbar-thumb-gray-400">
+                  {/* ABOUT */}
+                  {selectedStaff.about && (
+                    <section>
+                      <h3 className="font-bold text-lg">About</h3>
+                      <p>{selectedStaff.about}</p>
+                    </section>
+                  )}
+
+                  {/* PRESENT ROLES */}
+                  {selectedStaff.present_roles?.length > 0 && (
+                    <section>
+                      <h3 className="font-bold text-lg">Present Roles</h3>
+                      <ul className="list-disc pl-5">
+                        {selectedStaff.present_roles.map((r, i) => (
+                          <li key={i}>{r}</li>
+                        ))}
+                      </ul>
+                    </section>
+                  )}
+
+                  {/* EDUCATION */}
+                  {(selectedStaff.education?.ug ||
+                    selectedStaff.education?.pg ||
+                    selectedStaff.education?.phd ||
+                    selectedStaff.education?.post_doctorate) && (
+                    <section>
+                      <h3 className="font-bold text-lg">Education</h3>
+                      <ul className="list-disc pl-5">
+                        {selectedStaff.education.ug && (
+                          <li>{selectedStaff.education.ug}</li>
+                        )}
+                        {selectedStaff.education.pg && (
+                          <li>{selectedStaff.education.pg}</li>
+                        )}
+                        {selectedStaff.education.phd && (
+                          <li>{selectedStaff.education.phd}</li>
+                        )}
+                        {selectedStaff.education.post_doctorate && (
+                          <li>{selectedStaff.education.post_doctorate}</li>
+                        )}
+                      </ul>
+                    </section>
+                  )}
+
+                  {/* EXPERIENCE */}
+                  {selectedStaff.experience?.length > 0 && (
+                    <section>
+                      <h3 className="font-bold text-lg">Experience</h3>
+                      <ul className="list-disc pl-5">
+                        {selectedStaff.experience.map((exp, i) => (
+                          <li key={i}>{exp}</li>
+                        ))}
+                      </ul>
+                    </section>
+                  )}
+
+                  {/* EXPERTISE */}
+                  {selectedStaff.expertise?.length > 0 && (
+                    <section>
+                      <h3 className="font-bold text-lg">Area of Expertise</h3>
+                      <ul className="list-disc pl-5">
+                        {selectedStaff.expertise.map((e, i) => (
+                          <li key={i}>{e}</li>
+                        ))}
+                      </ul>
+                    </section>
+                  )}
+
+                  {/* PHD GUIDED */}
+                  {selectedStaff.phd_guided_completed?.length > 0 && (
+                    <section>
+                      <h3 className="font-bold text-lg">Ph.D Guided</h3>
+                      <ul className="list-disc pl-5">
+                        {selectedStaff.phd_guided_completed.map((p, i) => (
+                          <li key={i}>{p}</li>
+                        ))}
+                      </ul>
+                    </section>
+                  )}
+
+                  {/* ONGOING */}
+                  {selectedStaff.phd_ongoing?.length > 0 && (
+                    <section>
+                      <h3 className="font-bold text-lg">Ongoing Research</h3>
+                      <ul className="list-disc pl-5">
+                        {selectedStaff.phd_ongoing.map((p, i) => (
+                          <li key={i}>{p}</li>
+                        ))}
+                      </ul>
+                    </section>
+                  )}
+
+                  {/* BOOKS (OLD) */}
+                  {selectedStaff.books_published?.length > 0 && (
+                    <section>
+                      <h3 className="font-bold text-lg">Books Published</h3>
+                      <ul className="list-disc pl-5">
+                        {selectedStaff.books_published.map((b, i) => (
+                          <li key={i}>{b}</li>
+                        ))}
+                      </ul>
+                    </section>
+                  )}
+
+                  {/* INTERNATIONAL VISITS */}
+                  {selectedStaff.international_visits?.length > 0 && (
+                    <section>
+                      <h3 className="font-bold text-lg">
+                        International Visits
+                      </h3>
+                      <ul className="list-disc pl-5">
+                        {selectedStaff.international_visits.map((v, i) => (
+                          <li key={i}>{v}</li>
+                        ))}
+                      </ul>
+                    </section>
+                  )}
+
+                  {/* PROJECTS */}
+                  {selectedStaff.projects?.length > 0 && (
+                    <section>
+                      <h3 className="font-bold text-lg">Projects</h3>
+                      <ul className="list-disc pl-5">
+                        {selectedStaff.projects.map((p, i) => (
+                          <li key={i}>{p}</li>
+                        ))}
+                      </ul>
+                    </section>
+                  )}
+
+                  {/* ACHIEVEMENTS */}
+                  {selectedStaff.achievements?.length > 0 && (
+                    <section>
+                      <h3 className="font-bold text-lg">Achievements</h3>
+                      <ul className="list-disc pl-5">
+                        {selectedStaff.achievements.map((a, i) => (
+                          <li key={i}>{a}</li>
+                        ))}
+                      </ul>
+                    </section>
+                  )}
+
+                  {/* PROFILES */}
+                  {(selectedStaff.research_ids?.google_scholar ||
+                    selectedStaff.research_ids?.scopus_id ||
+                    selectedStaff.research_ids?.orcid_id) && (
+                    <section>
+                      <h3 className="font-bold text-lg">Profiles</h3>
+                      <ul className="list-disc pl-5">
+                        {selectedStaff.research_ids?.google_scholar && (
+                          <li>
+                            <a
+                              href={selectedStaff.research_ids.google_scholar}
+                              target="_blank"
+                            >
+                              Google Scholar
+                            </a>
+                          </li>
+                        )}
+                        {selectedStaff.research_ids?.scopus_id && (
+                          <li>
+                            Scopus ID: {selectedStaff.research_ids.scopus_id}
+                          </li>
+                        )}
+                        {selectedStaff.research_ids?.orcid_id && (
+                          <li>Orcid: {selectedStaff.research_ids.orcid_id}</li>
+                        )}
+                      </ul>
+                    </section>
+                  )}
+
+                  {/* PUBLICATIONS - BOOKS */}
+                  {selectedStaff.publications?.books?.length > 0 && (
+                    <section>
+                      <h3 className="font-bold text-lg">Books Published</h3>
+                      <ul className="list-disc pl-5">
+                        {selectedStaff.publications.books.map((b, i) => (
+                          <li key={i}>{b}</li>
+                        ))}
+                      </ul>
+                    </section>
+                  )}
+
+                  {/* PUBLICATIONS - CONFERENCES */}
+                  {selectedStaff.publications?.conferences?.length > 0 && (
+                    <section>
+                      <h3 className="font-bold text-lg">
+                        Conference Publications
+                      </h3>
+                      <ul className="list-disc pl-5">
+                        {selectedStaff.publications.conferences.map((c, i) => (
+                          <li key={i}>{c}</li>
+                        ))}
+                      </ul>
+                    </section>
+                  )}
+
+                  {/* PATENTS */}
+                  {selectedStaff.patents?.length > 0 && (
+                    <section>
+                      <h3 className="font-bold text-lg">Patents</h3>
+                      <ul className="list-disc pl-5">
+                        {selectedStaff.patents.map((p, i) => (
+                          <li key={i}>{p}</li>
+                        ))}
+                      </ul>
+                    </section>
+                  )}
+
+                  {/* CONSULTANCY */}
+                  {selectedStaff.consultancy?.length > 0 && (
+                    <section>
+                      <h3 className="font-bold text-lg">Consultancy</h3>
+                      <ul className="list-disc pl-5">
+                        {selectedStaff.consultancy.map((c, i) => (
+                          <li key={i}>{c}</li>
+                        ))}
+                      </ul>
+                    </section>
+                  )}
+
+                  {/* MEMBERSHIPS */}
+                  {selectedStaff.memberships?.length > 0 && (
+                    <section>
+                      <h3 className="font-bold text-lg">
+                        Professional Memberships
+                      </h3>
+                      <ul className="list-disc pl-5">
+                        {selectedStaff.memberships.map((m, i) => (
+                          <li key={i}>{m}</li>
+                        ))}
+                      </ul>
+                    </section>
+                  )}
+
+                  {/* AWARDS */}
+                  {selectedStaff.awards?.length > 0 && (
+                    <section>
+                      <h3 className="font-bold text-lg">Awards</h3>
+                      <ul className="list-disc pl-5">
+                        {selectedStaff.awards.map((a, i) => (
+                          <li key={i}>{a}</li>
+                        ))}
+                      </ul>
+                    </section>
+                  )}
+
+                  {/* ADDITIONAL ROLES */}
+                  {selectedStaff.additional_roles?.length > 0 && (
+                    <section>
+                      <h3 className="font-bold text-lg">Additional Roles</h3>
+                      <ul className="list-disc pl-5">
+                        {selectedStaff.additional_roles.map((r, i) => (
+                          <li key={i}>{r}</li>
+                        ))}
+                      </ul>
+                    </section>
+                  )}
+                </div>
+              </div>
+            </div>
           </div>
-
-          {/* RIGHT SIDE */}
-          <div className="md:w-2/3 space-y-6 text-left">
-            {/* ABOUT */}
-            {selectedStaff.about && (
-              <section>
-                <h3 className="font-bold text-lg">About</h3>
-                <p>{selectedStaff.about}</p>
-              </section>
-            )}
-
-            {/* PRESENT ROLES */}
-            {selectedStaff.present_roles?.length > 0 && (
-              <section>
-                <h3 className="font-bold text-lg">Present Roles</h3>
-                <ul className="list-disc pl-5">
-                  {selectedStaff.present_roles.map((r, i) => (
-                    <li key={i}>{r}</li>
-                  ))}
-                </ul>
-              </section>
-            )}
-
-            {/* EDUCATION */}
-            {(selectedStaff.education?.ug ||
-              selectedStaff.education?.pg ||
-              selectedStaff.education?.phd ||
-              selectedStaff.education?.post_doctorate) && (
-              <section>
-                <h3 className="font-bold text-lg">Education</h3>
-                <ul className="list-disc pl-5">
-                  {selectedStaff.education.ug && <li>{selectedStaff.education.ug}</li>}
-                  {selectedStaff.education.pg && <li>{selectedStaff.education.pg}</li>}
-                  {selectedStaff.education.phd && <li>{selectedStaff.education.phd}</li>}
-                  {selectedStaff.education.post_doctorate && (
-                    <li>{selectedStaff.education.post_doctorate}</li>
-                  )}
-                </ul>
-              </section>
-            )}
-
-            {/* EXPERIENCE */}
-            {selectedStaff.experience?.length > 0 && (
-              <section>
-                <h3 className="font-bold text-lg">Experience</h3>
-                <ul className="list-disc pl-5">
-                  {selectedStaff.experience.map((exp, i) => (
-                    <li key={i}>{exp}</li>
-                  ))}
-                </ul>
-              </section>
-            )}
-
-            {/* EXPERTISE */}
-            {selectedStaff.expertise?.length > 0 && (
-              <section>
-                <h3 className="font-bold text-lg">Area of Expertise</h3>
-                <ul className="list-disc pl-5">
-                  {selectedStaff.expertise.map((e, i) => (
-                    <li key={i}>{e}</li>
-                  ))}
-                </ul>
-              </section>
-            )}
-
-            {/* PHD GUIDED */}
-            {selectedStaff.phd_guided_completed?.length > 0 && (
-              <section>
-                <h3 className="font-bold text-lg">Ph.D Guided</h3>
-                <ul className="list-disc pl-5">
-                  {selectedStaff.phd_guided_completed.map((p, i) => (
-                    <li key={i}>{p}</li>
-                  ))}
-                </ul>
-              </section>
-            )}
-
-            {/* ONGOING */}
-            {selectedStaff.phd_ongoing?.length > 0 && (
-              <section>
-                <h3 className="font-bold text-lg">Ongoing Research</h3>
-                <ul className="list-disc pl-5">
-                  {selectedStaff.phd_ongoing.map((p, i) => (
-                    <li key={i}>{p}</li>
-                  ))}
-                </ul>
-              </section>
-            )}
-
-            {/* BOOKS */}
-            {selectedStaff.books_published?.length > 0 && (
-              <section>
-                <h3 className="font-bold text-lg">Books Published</h3>
-                <ul className="list-disc pl-5">
-                  {selectedStaff.books_published.map((b, i) => (
-                    <li key={i}>{b}</li>
-                  ))}
-                </ul>
-              </section>
-            )}
-
-            {/* INTERNATIONAL VISITS */}
-            {selectedStaff.international_visits?.length > 0 && (
-              <section>
-                <h3 className="font-bold text-lg">International Visits</h3>
-                <ul className="list-disc pl-5">
-                  {selectedStaff.international_visits.map((v, i) => (
-                    <li key={i}>{v}</li>
-                  ))}
-                </ul>
-              </section>
-            )}
-
-            {/* PROJECTS */}
-            {selectedStaff.projects?.length > 0 && (
-              <section>
-                <h3 className="font-bold text-lg">Projects</h3>
-                <ul className="list-disc pl-5">
-                  {selectedStaff.projects.map((p, i) => (
-                    <li key={i}>{p}</li>
-                  ))}
-                </ul>
-              </section>
-            )}
-
-            {/* ACHIEVEMENTS */}
-            {selectedStaff.achievements?.length > 0 && (
-              <section>
-                <h3 className="font-bold text-lg">Achievements</h3>
-                <ul className="list-disc pl-5">
-                  {selectedStaff.achievements.map((a, i) => (
-                    <li key={i}>{a}</li>
-                  ))}
-                </ul>
-              </section>
-            )}
-
-            {/* LINKS / RESEARCH IDS */}
-            {(selectedStaff.research_ids?.google_scholar ||
-              selectedStaff.research_ids?.scopus_id ||
-              selectedStaff.research_ids?.orcid_id) && (
-              <section>
-                <h3 className="font-bold text-lg">Profiles</h3>
-                <ul className="list-disc pl-5">
-                  {selectedStaff.research_ids?.google_scholar && (
-                    <li>
-                      <a
-                        href={selectedStaff.research_ids.google_scholar}
-                        target="_blank"
-                      >
-                        Google Scholar
-                      </a>
-                    </li>
-                  )}
-                  {selectedStaff.research_ids?.scopus_id && (
-                    <li>Scopus ID: {selectedStaff.research_ids.scopus_id}</li>
-                  )}
-                  {selectedStaff.research_ids?.orcid_id && (
-                    <li>Orcid: {selectedStaff.research_ids.orcid_id}</li>
-                  )}
-                </ul>
-              </section>
-            )}
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-)}
+        )}
       </main>
     </div>
   );

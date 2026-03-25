@@ -71,7 +71,7 @@ fetch("/api/hostel")
 }
 
     return (
-        <div className="min-h-screen flex flex-col bg-gray-50 text-left relative">
+        <div className="min-h-screen flex flex-col bg-gray-50 text-left relative pt-[120px] sm:pt-[140px] lg:pt-[120px]">
             <div className="absolute inset-0 pointer-events-none opacity-20 z-0 overflow-hidden">
                 <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
                     <pattern id="square-pattern" width="40" height="40" patternUnits="userSpaceOnUse">
@@ -83,13 +83,39 @@ fetch("/api/hostel")
                 </svg>
             </div>
             {/* Hero section */}
-            <section className="relative w-full h-48 sm:h-60 md:h-80 lg:h-[50vh] overflow-hidden">
+            <section className="relative w-full h-48 sm:h-60 md:h-80 lg:h-[50vh] overflow-hidden ">
                 <img src="/hostel.webp" alt="Hostel" className="absolute inset-0 w-full h-full object-cover object-center" />
-                <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-black/60 via-black/30 to-transparent"></div>
-                <div className="backdrop-blur-md rounded-2xl shadow-lg px-6 py-6 md:py-10 flex flex-col items-center max-w-2xl mx-auto border border-white/30 animate-popIn mt-20">
+                <div className="absolute top-0 left-0 w-full h-[200px] bg-gradient-to-b from-black/60 via-black/30 to-transparent"></div>
+                <div className="backdrop-blur-md rounded-2xl shadow-lg px-6 py-6 md:py-10 flex flex-col items-center max-w-2xl mx-auto border border-white/30 animate-popIn mt-10">
                     <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold mb-4 text-white drop-shadow-lg tracking-tight text-center">Hostel Life</h1>
                     <p className="text-base lg:text-xl text-white drop-shadow text-center font-medium opacity-90">Your Home Away From Our Home</p>
                 </div>
+                {/* Testimonial Carousel */}
+            <div className="w-full bg-white/50 border-b border-gray-100 py-6">
+                <div className="max-w-3xl mx-auto px-4 text-center">
+                    <div className="relative h-24 sm:h-20 mb-4">
+                        {testimonials.map((t, idx) => (
+                            <div
+                                key={idx}
+                                className={`absolute inset-0 transition-all duration-1000 transform ${currentTestimonial === idx ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4 pointer-events-none'
+                                    }`}
+                            >
+                                <p className="text-sm sm:text-base lg:text-lg italic text-white font-medium leading-relaxed">"{t.quote}"</p>
+                                <p className="text-xs sm:text-sm font-bold text-yellow-500 mt-2">— {t.author}</p>
+                            </div>
+                        ))}
+                    </div>
+                    <div className="flex justify-center gap-2">
+                        {testimonials.map((_, idx) => (
+                            <button
+                                key={idx}
+                                onClick={() => setCurrentTestimonial(idx)}
+                                className={`h-2 w-2 rounded-full transition-all duration-500 ${currentTestimonial === idx ? 'bg-[rgb(115,40,40)] w-6' : 'bg-gray-300'}`}
+                            />
+                        ))}
+                    </div>
+                </div>
+            </div>
             </section>
 
             {/* Sticky Horizontal Tab Bar */}
@@ -115,39 +141,19 @@ fetch("/api/hostel")
                 </div>
             </div>
 
-            {/* Testimonial Carousel */}
-            <div className="w-full bg-white/50 border-b border-gray-100 py-6">
-                <div className="max-w-3xl mx-auto px-4 text-center">
-                    <div className="relative h-24 sm:h-20 mb-4">
-                        {testimonials.map((t, idx) => (
-                            <div
-                                key={idx}
-                                className={`absolute inset-0 transition-all duration-1000 transform ${currentTestimonial === idx ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4 pointer-events-none'
-                                    }`}
-                            >
-                                <p className="text-sm sm:text-base lg:text-lg italic text-gray-700 font-medium leading-relaxed">"{t.quote}"</p>
-                                <p className="text-xs sm:text-sm font-bold text-[rgb(110,35,35)] mt-2">— {t.author}</p>
-                            </div>
-                        ))}
-                    </div>
-                    <div className="flex justify-center gap-2">
-                        {testimonials.map((_, idx) => (
-                            <button
-                                key={idx}
-                                onClick={() => setCurrentTestimonial(idx)}
-                                className={`h-2 w-2 rounded-full transition-all duration-300 ${currentTestimonial === idx ? 'bg-[rgb(115,40,40)] w-6' : 'bg-gray-300'}`}
-                            />
-                        ))}
-                    </div>
-                </div>
-            </div>
+            
 
             {/* Content sections */}
-            <main className="max-w-7xl mx-auto py-12 px-4 space-y-16">
+            <main className="max-w-7xl mx-auto py-12 space-y-16">
                 {/* Description Section */}
                 <section id="Description" className="bg-white rounded-3xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-lg transition-all animate-fadeIn">
                     <div className="bg-gradient-to-r from-[rgb(115,63,63)] to-[rgb(115,25,25)] py-6 px-8 text-center text-white">
-                        <h2 className="text-2xl lg:text-3xl font-bold flex items-center justify-center gap-3"><span>🏠</span> Description</h2>
+                        <h2 className="text-2xl sm:text-3xl lg:text-3xl font-bold text-white font-serif mb-2">
+            Overview
+          </h2>
+          <div className="flex justify-center ">
+            <span className="block w-24 h-1.5 rounded-full bg-[#f5c842]"></span>
+          </div>
                     </div>
                     <div className="p-8 space-y-6">
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
@@ -156,7 +162,7 @@ fetch("/api/hostel")
                                 <p>Each hostel features well-ventilated rooms, modern amenities, and dedicated staff for cleaning, security, and maintenance. The mess provides nutritious meals in a hygienic environment.</p>
                                 <p>Experienced wardens and deputy wardens ensure a safe and supportive atmosphere. CCTV surveillance and strict entry protocols further enhance safety for all residents.</p>
                             </div>
-                            <div className="bg-[rgb(248,195,195)] p-6 rounded-2xl border border-[rgb(200,120,120)] space-y-4">
+                            <div className="bg-gray-100 p-6 rounded-2xl border border-[rgb(200,120,120)] space-y-4 hover:bg-[rgb(248,195,195)]">
                                 <h4 className="font-bold text-[rgb(100,25,25)] border-b border-[rgb(180,100,100)] pb-2">Facility Highlights</h4>
                                 <ul className="space-y-3">
                                     {['24/7 RO Purified Water', 'Nutritious & Hygienic Mess', 'Wi-Fi Connectivity', 'Common Room with TV', 'Safe & Secure with CCTV', 'Recreational Sports Area'].map((item, i) => (
@@ -176,9 +182,12 @@ fetch("/api/hostel")
                         <section id="Administration" className="bg-white rounded-3xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-lg transition-all animate-fadeIn">
                             
                             <div className="bg-gradient-to-r from-[rgb(115,63,63)] to-[rgb(115,25,25)] py-6 px-8 text-center text-white">
-                                <h2 className="text-2xl lg:text-3xl font-bold flex items-center justify-center gap-3">
-                                    <span>🧑‍💼</span> Administration
+                                <h2 className="text-2xl lg:text-3xl font-bold flex items-center justify-center gap-3 mb-2">
+                                     Administration
                                 </h2>
+                                <div className="flex justify-center ">
+            <span className="block w-24 h-1.5 rounded-full bg-[#f5c842]"></span>
+          </div>
                             </div>
 
                             <div className="p-8 space-y-10">
@@ -193,11 +202,11 @@ fetch("/api/hostel")
                                     {hostelData.Administration.Wardens.map((warden, index) => (
                                         <div
                                             key={index}
-                                            className="bg-[rgb(233,169,169)] border border-[rgb(200,120,120)] 
+                                            className="bg-white border border-[rgb(200,120,120)] 
                                             p-6 rounded-2xl shadow-md hover:shadow-xl 
                                             transition-all duration-300 
                                             flex items-center justify-between 
-                                            max-w-md mx-auto"
+                                            max-w-md mx-auto hover:bg-[rgb(233,169,169)]"
                                             >
 
                                             {/* LEFT SIDE - Content */}
@@ -310,15 +319,15 @@ fetch("/api/hostel")
                     </div>
                     <div className="p-8 text-center space-y-10">
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-4xl mx-auto">
-                            <a href={hostelData['Fees Structure']['New Admission']} className="p-8 bg-[rgb(220,140,140)] border border-[rgb(200,120,120)] rounded-3xl hover:bg-white hover:shadow-xl transition-all group">
+                            <a href={hostelData['Fees Structure']['New Admission']} className="p-8 bg-white border border-[rgb(200,120,120)] rounded-3xl hover:shadow-xl transition-all group hover:bg-[rgb(220,140,140)]">
                                 <div className="w-16 h-16 bg-[rgb(115,40,40)] text-white rounded-2xl flex items-center justify-center text-3xl mx-auto mb-4 group-hover: transition-transform">📄</div>
                                 <h4 className="text-xl font-bold text-[rgb(100,25,25)] mb-2">New Admission</h4>
-                                <p className="text-sm font-medium text-gray-500 uppercase tracking-widest">Download Fee Details</p>
+                                <p className="text-sm font-medium text-gray-700 uppercase tracking-widest">Download Fee Details</p>
                             </a>
-                            <a href={hostelData['Fees Structure']['Existing Students']} className="p-8 bg-[rgb(220,140,140)] border border-[rgb(200,120,120)] rounded-3xl hover:bg-white hover:shadow-xl transition-all group">
+                            <a href={hostelData['Fees Structure']['Existing Students']} className="p-8 bg-white border border-[rgb(200,120,120)] rounded-3xl hover:shadow-xl transition-all group hover:bg-[rgb(220,140,140)]">
                                 <div className="w-16 h-16 bg-[rgb(115,40,40)] text-white rounded-2xl flex items-center justify-center text-3xl mx-auto mb-4 group-hover: transition-transform">📄</div>
                                 <h4 className="text-xl font-bold text-[rgb(100,25,25)] mb-2">Existing Students</h4>
-                                <p className="text-sm font-medium text-gray-500 uppercase tracking-widest">Download Fee Details</p>
+                                <p className="text-sm font-medium text-gray-700 uppercase tracking-widest">Download Fee Details</p>
                             </a>
                         </div>
                         <div className="pt-4">

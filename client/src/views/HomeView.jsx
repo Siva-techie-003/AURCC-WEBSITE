@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef, useMemo } from "react";
+﻿import React, { useState, useEffect, useRef, useMemo } from "react";
 import { Link, useLocation } from "react-router-dom";
 import QuickLinksSidebar from "../components/QuickLinksSidebar";
 import "./HomeView.css";
@@ -520,7 +520,7 @@ const HomeView = () => {
               <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-4 sm:mb-6 tracking-tight">
                 <span className="block">Welcome to</span>
                 <span className="block text-transparent bg-clip-text text-white mt-2">
-                  Anna University
+                  AURCC
                 </span>
               </h1>
               {/* <p className="text-lg sm:text-xl md:text-2xl text-[rgb(115,40,40)] px-2">
@@ -1567,7 +1567,7 @@ const HomeView = () => {
           <div className={`fixed left-6 bottom-6 z-50 transition-all duration-500 transform ${showScrollButtons ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10 pointer-events-none"}`}>
             <button
               onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-              className="w-12 h-12 bg-white/90 backdrop-blur-md text-[rgb(115,25,25)] rounded-full shadow-2xl flex items-center justify-center hover:bg-[rgb(115,25,25)] hover:text-white transition-all duration-300 border border-[rgb(115,25,25)]/20 active:scale-95 group"
+              className="w-12 h-12 bg-[rgb(115,25,25)] backdrop-blur-md text-white rounded-full shadow-2xl flex items-center justify-center hover:bg-white hover:text-[rgb(115,25,25)] transition-all duration-300 border border-[rgb(115,25,25)]/20 active:scale-95 group"
               title="Scroll to Top"
             >
               <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">

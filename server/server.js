@@ -54,6 +54,9 @@ app.use(express.json());
 /* Serve Public Folder */
 app.use("/public", express.static(path.join(__dirname, "public")));
 
+
+app.use("/public", express.static("public"));
+
 /* API Routes */
 app.use("/api/departments", departmentRoutes);
 app.use("/api/admissions", admissionRoutes);
