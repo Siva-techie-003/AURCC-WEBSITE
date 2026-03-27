@@ -221,7 +221,7 @@ const Footer = ({
       { name: "Smart India Hackathon", url: "https://www.sih.gov.in/" },
       { name: "MSME Portal", url: "https://my.msme.gov.in/inc/" },
       { name: "Naan Mudhalvan", url: "https://www.naanmudhalvan.tn.gov.in/" },
-      { name: "SIH Official", url: "https://www.sih.gov.in/" },
+      { name: "Swayam Portal", url: "https://swayam.gov.in/" },
     ].map((link, i) => (
       <a
         key={i}
