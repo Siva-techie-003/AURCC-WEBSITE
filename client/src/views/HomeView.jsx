@@ -248,15 +248,6 @@ const HomeView = () => {
       image: "/LakhshithaMK.jpg",
     },
     {
-      name: "Thangaraj P",
-      branch: "Mech",
-      batch: "2019-2023",
-      company: "Deloitte",
-      role:"Oracle Analyst",
-      message:"Anna University Regional Campus, Coimbatore offers a strong academic foundation with supportive faculty and a positive learning environment. The college helped me develop technical and personal skills while preparing me well for my professional career.",      
-      image: "/ThangarajP.jpeg",
-    },
-    {
       name: "Rajalakshmi R",
       branch: "CSE",
       batch: "2021-2025",
@@ -264,22 +255,6 @@ const HomeView = () => {
       role:"Analyst",
       message:"AURCC gave me knowledge, confidence, and valuable opportunities through supportive faculty and skill-building programs. Fee support made my education possible, and I’m proud to be its alumnus.",      
       image: "/RajalakshmiR.jpeg",
-    },{
-      name: "Thangaraj P",
-      branch: "Mech",
-      batch: "2019-2023",
-      company: "Deloitte",
-      role:"Oracle Analyst",
-      message:"Anna University Regional Campus, Coimbatore offers a strong academic foundation with supportive faculty and a positive learning environment. The college helped me develop technical and personal skills while preparing me well for my professional career.",      
-      image: "/ThangarajP.jpeg",
-    },{
-      name: "Thangaraj P",
-      branch: "Mech",
-      batch: "2019-2023",
-      company: "Deloitte",
-      role:"Oracle Analyst",
-      message:"Anna University Regional Campus, Coimbatore offers a strong academic foundation with supportive faculty and a positive learning environment. The college helped me develop technical and personal skills while preparing me well for my professional career.",      
-      image: "/ThangarajP.jpeg",
     },{
       name: "Thangaraj P",
       branch: "Mech",
@@ -1247,11 +1222,11 @@ const HomeView = () => {
 
                         <div>
                           <h3 className="font-bold text-lg mb-2">
-                            Placement Development
+                            Placement Assistance
                           </h3>
 
                           <p className="text-base">
-                            The Placement Development team prepares students through aptitude training, mock interviews, and industry guidance to achieve excellent placement opportunities.
+                            The Placement Assistance team prepares students through aptitude training, mock interviews, and industry guidance to achieve excellent placement opportunities.
                           </p>
                         </div>
                       </div>
@@ -1411,7 +1386,7 @@ const HomeView = () => {
                             <img
                               src={testimonial.image}
                               alt={testimonial.name}
-                              className="splash-shape w-36 h-36 border-4 border-white mb-4 object-cover"
+                              className="rounded-md w-36 h-36 border-4 border-white mb-4 object-cover shadow-lg"
                             />
                             <h3 className="text-lg font-bold text-white text-center w-full">
                               {testimonial.name}
@@ -1472,7 +1447,7 @@ const HomeView = () => {
                             <img
                               src={testimonial.image}
                               alt={testimonial.name}
-                              className="splash-shape w-36 h-36 border-4 border-white mb-4 object-cover"
+                              className="rounded-md w-36 h-36 border-4 border-white mb-4 object-cover shadow-lg"
                             />
                             <h3 className="text-lg font-bold text-white text-center w-full">
                               {testimonial.name}
