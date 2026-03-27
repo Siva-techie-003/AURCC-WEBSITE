@@ -10,6 +10,7 @@ const Pace = () => {
         { key: 'description', label: 'Description' },
         { key: 'staff', label: 'Staff' }
     ];
+    const [hostelData, setHostelData] = useState(null);
 
     useEffect(() => {
         fetch('/api/pace')
@@ -23,6 +24,18 @@ const Pace = () => {
             })
             .catch(err => console.error('PACE fetch error:', err));
     }, []);
+    useEffect(() => {
+
+        fetch("/api/hostel")
+        .then(res => res.json())
+        .then(data => {
+            console.log(data);
+            setHostelData(data);
+        })
+        .catch(err => console.error(err));
+
+    }, [])
+
 
     if (!data) {
         return <p className="text-center mt-20">Loading...</p>;
@@ -84,6 +97,21 @@ const Pace = () => {
 
                     </div>
                 </div>
+                {/* Rules Section */}
+                 <section id="RulesandRegulations" className="bg-white rounded-3xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-lg transition-all animate-fadeIn">
+                    <div className="bg-gradient-to-r from-[rgb(115,63,63)] to-[rgb(115,25,25)] py-6 px-8 text-center text-white">
+                        <h2 className="text-2xl lg:text-3xl font-bold flex items-center justify-center gap-3"><span>📜</span> Rules and Regulations</h2>
+                    </div>
+                    <div className="p-8">
+                        <div className="rounded-2xl overflow-hidden shadow-2xl border border-gray-200 mx-auto max-w-4xl">                            
+                            <iframe
+                            src={`${hostelData["Rules and Regulations"]}#toolbar=0&navpanes=0&scrollbar=0`}
+                            className="w-[900px] h-[400px] rounded-xl"
+                            title="Hostel Rules"
+                            />
+                        </div>
+                    </div>
+                </section>
 
                 {/* Staff Section */}
                 <div id="staff" className="scroll-mt-32">

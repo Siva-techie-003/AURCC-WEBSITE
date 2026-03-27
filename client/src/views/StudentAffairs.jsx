@@ -1,9 +1,9 @@
 ﻿import React, { useState, useEffect, useRef } from 'react';
-import content from '../assets/student_affairs.json';
 import './StudentAffairs.css';
 
 const StudentAffairs = () => {
-    const backgroundImage = '/studentaffairs.webp';
+    const backgroundImage = 'http://localhost:5000/public/studentaffairs.webp';
+    const [content, setContent] = useState(null);
     const [currentSection, setCurrentSection] = useState('description');
     const sectionRefs = {
         description: useRef(null),
@@ -22,6 +22,15 @@ const StudentAffairs = () => {
         { key: 'staff', name: 'Administration Staff' },
         { key: 'contact', name: 'Contact Us' }
     ];
+    useEffect(() => {
+    fetch("/api/student-affairs")
+        .then(res => res.json())
+        .then(data => {
+            console.log(data);
+            setContent(data);
+        })
+        .catch(err => console.error(err));
+}, []);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -48,6 +57,9 @@ const StudentAffairs = () => {
             window.scrollTo({ top: offset, behavior: 'smooth' });
         }
     };
+    if (!content) {
+    return <p className="text-center mt-20 text-lg">Loading Student Affairs...</p>;
+}
 
     return (
                           <section className="pt-[100px] sm:pt-[100px] lg:pt-[90px]">

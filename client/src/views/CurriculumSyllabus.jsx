@@ -36,7 +36,7 @@ return (
 <section className="relative w-full h-56 sm:h-72 md:h-96 lg:h-[50vh] flex items-center justify-center overflow-hidden">
 
 <img
-src="/syllabus.webp"
+src="http://localhost:5000/public/syllabus.webp"
 alt="Curriculum & Syllabus"
 className="absolute inset-0 w-full h-full object-cover object-center"
 />

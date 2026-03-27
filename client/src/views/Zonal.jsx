@@ -29,7 +29,7 @@ const Zonal = () => {
 
         <OfficePageTemplate
             officeName="ZONAL OFFICE"
-            heroSubtitle="Liaison for Examinations & College Coordination"
+            heroSubtitle="ZONE IX, Anna University"
             sections={sections}
             contactEmail="zonaloffice@aurcc.ac.in"
         >

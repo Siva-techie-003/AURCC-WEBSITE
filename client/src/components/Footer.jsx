@@ -58,8 +58,8 @@ const Footer = ({
       icon: "M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5 5.754 5 4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18c1.746 0 3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253",
     },
     {
-      to: "/hostel",
-      label: "Hostel Portal",
+      to: "/grievance-cell",
+      label: "Grievance Cell",
       icon: "M3 21h18M5 21V7a2 2 0 012-2h10a2 2 0 012 2v14M9 21v-4h6v4M9 10h.01M15 10h.01M9 14h.01M15 14h.01",
     },
     {
@@ -207,44 +207,49 @@ const Footer = ({
               </div>
 
               {/* Connect With Us */}
-              <div
-                className="rounded-xl p-5 mt-auto"
-                style={{ background: "#9b3535", border: "2px solid rgba(245,200,66,0.5)" }}
-              >
-                <h3 className="text-xl font-black uppercase tracking-wide text-center mb-4">
-                  Connect <span style={{ color: "#f5c842" }}>With Us</span>
-                </h3>
-                <div className="flex justify-center items-center gap-4 flex-wrap">
-                  {socials.map((soc, idx) => (
-                    <a
-                      key={idx}
-                      href="#"
-                      aria-label={soc.label}
-                      className="flex items-center justify-center rounded-xl transition-all duration-200"
-                      style={{
-                        width: "46px",
-                        height: "46px",
-                        background: "rgba(255,255,255,0.1)",
-                        border: "1px solid rgba(255,255,255,0.18)",
-                      }}
-                      onMouseEnter={e => {
-                        e.currentTarget.style.background = "#f5c842";
-                        e.currentTarget.style.color = "#6b1a1a";
-                        e.currentTarget.style.transform = "translateY(-3px)";
-                      }}
-                      onMouseLeave={e => {
-                        e.currentTarget.style.background = "rgba(255,255,255,0.1)";
-                        e.currentTarget.style.color = "white";
-                        e.currentTarget.style.transform = "translateY(0)";
-                      }}
-                    >
-                      <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                        <path d={soc.icon} />
-                      </svg>
-                    </a>
-                  ))}
-                </div>
-              </div>
+<div
+  className="rounded-xl p-5 mt-auto"
+  style={{ background: "#9b3535", border: "2px solid rgba(245,200,66,0.5)" }}
+>
+  <h3 className="text-xl font-black uppercase tracking-wide text-center mb-4 text-white">
+    Important <span style={{ color: "#f5c842" }}>Links</span>
+  </h3>
+
+  {/* ✅ 2 per row grid */}
+  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+    {[
+      { name: "Smart India Hackathon", url: "https://www.sih.gov.in/" },
+      { name: "MSME Portal", url: "https://my.msme.gov.in/inc/" },
+      { name: "Naan Mudhalvan", url: "https://www.naanmudhalvan.tn.gov.in/" },
+      { name: "SIH Official", url: "https://www.sih.gov.in/" },
+    ].map((link, i) => (
+      <a
+        key={i}
+        href={link.url}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="flex items-center justify-center text-center px-4 py-3 rounded-lg font-bold text-sm transition-all duration-300"
+        style={{
+          background: "rgba(255,255,255,0.1)",
+          color: "#fff",
+          border: "1px solid rgba(255,255,255,0.2)",
+        }}
+        onMouseEnter={(e) => {
+          e.currentTarget.style.background = "#f5c842";
+          e.currentTarget.style.color = "#6b1a1a";
+          e.currentTarget.style.transform = "translateY(-2px)";
+        }}
+        onMouseLeave={(e) => {
+          e.currentTarget.style.background = "rgba(255,255,255,0.1)";
+          e.currentTarget.style.color = "#fff";
+          e.currentTarget.style.transform = "translateY(0)";
+        }}
+      >
+        {link.name}
+      </a>
+    ))}
+  </div>
+</div>
             </div>
 
             {/* ── COL 4 : ABOUT + USEFUL LINKS ── */}
@@ -306,25 +311,65 @@ const Footer = ({
 
       {/* ── BOTTOM BAR ── */}
       <div style={{ background: "rgba(0,0,0,0.25)", borderTop: "1px solid rgba(255,255,255,0.1)" }}>
-        <div className="container mx-auto px-6 py-5">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-white/60 text-xs font-semibold uppercase tracking-widest">
-              © 2026 Anna University Regional Campus Coimbatore. All rights reserved.
-            </p>
-            <div className="flex items-center gap-6">
-              {["Team", "Privacy", "Safety"].map((item) => (
-                <a
-                  key={item}
-                  href="#"
-                  className="text-white/60 hover:text-yellow-400 text-xs font-black uppercase tracking-widest transition-colors"
-                >
-                  {item}
-                </a>
-              ))}
-            </div>
-          </div>
-        </div>
+  
+  <div className="w-full px-6 py-3"> {/* ⬅ changed from container to w-full */}
+    
+    <div className="flex flex-col md:flex-row items-center gap-4">
+
+      {/* LEFT */}
+      <p className="text-white/60 text-xs font-semibold uppercase tracking-widest">
+        © 2026 Anna University Regional Campus Coimbatore. All rights reserved.
+      </p>
+
+      {/* CENTER */}
+      <div className="flex justify-center items-center gap-4 flex-wrap md:mx-auto">
+        {socials.map((soc, idx) => (
+          <a
+            key={idx}
+            href="#"
+            aria-label={soc.label}
+            className="flex items-center justify-center rounded-xl transition-all duration-200"
+            style={{
+              width: "46px",
+              height: "46px",
+              background: "rgba(255,255,255,0.1)",
+              border: "1px solid rgba(255,255,255,0.18)",
+            }}
+            onMouseEnter={e => {
+              e.currentTarget.style.background = "#f5c842";
+              e.currentTarget.style.color = "#6b1a1a";
+              e.currentTarget.style.transform = "translateY(-3px)";
+            }}
+            onMouseLeave={e => {
+              e.currentTarget.style.background = "rgba(255,255,255,0.1)";
+              e.currentTarget.style.color = "white";
+              e.currentTarget.style.transform = "translateY(0)";
+            }}
+          >
+            <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+              <path d={soc.icon} />
+            </svg>
+          </a>
+        ))}
       </div>
+
+      {/* RIGHT (FORCED CORNER) */}
+      <div className="flex gap-6 items-center md:ml-auto">
+        {["Team", "Privacy", "Safety"].map((item) => (
+          <a
+            key={item}
+            href="#"
+            className="text-white/60 hover:text-yellow-400 text-xs font-black uppercase tracking-widest transition-colors"
+          >
+            {item}
+          </a>
+        ))}
+      </div>
+
+    </div>
+
+  </div>
+</div>
     </footer>
   );
 };

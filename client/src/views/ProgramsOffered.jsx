@@ -102,7 +102,7 @@ const ProgramsOffered = () => {
 
     {/* Background Image */}
     <img
-        src="/programsoffered.webp"
+        src="http://localhost:5000/public/programsoffered.webp"
         alt="Programs Offered"
         className="absolute inset-0 w-full h-full object-cover"
     />
@@ -122,7 +122,7 @@ const ProgramsOffered = () => {
         <h1 className="text-3xl sm:text-5xl lg:text-6xl 
                        font-black text-white 
                        tracking-tight mb-4">
-            Programs Offered
+            Programmes Offered
         </h1>
 
         <div className="w-20 h-1 bg-yellow-400 mx-auto mb-5 rounded-full"></div>
@@ -141,7 +141,7 @@ const ProgramsOffered = () => {
 
                 {/* UG Section */}
                 <section>
-                    <SectionHeader title="Undergraduate Excellence" />
+                    <SectionHeader title="Undergraduate Programs" />
 
                     <div
                         className="grid gap-10 justify-center
@@ -163,7 +163,7 @@ const ProgramsOffered = () => {
 
                 {/* PG Section */}
                 <section>
-                    <SectionHeader title="Postgraduate Mastery" />
+                    <SectionHeader title="Postgraduate Programs" />
 
                     <div
                         className="grid gap-10 justify-center
