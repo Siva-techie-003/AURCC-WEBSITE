@@ -1,4 +1,4 @@
-﻿import React, { useState, useEffect, useRef, useMemo } from "react";
+import React, { useState, useEffect, useRef, useMemo } from "react";
 import { Link, useLocation } from "react-router-dom";
 import QuickLinksSidebar from "../components/QuickLinksSidebar";
 import "./HomeView.css";
@@ -200,58 +200,94 @@ const HomeView = () => {
 
   const testimonials = [
     {
-      name: "SARA M",
+      name: "Arjun R",
       branch: "EEE",
-      batch: "2015 Batch",
-      company: "SIEMENS",
+      batch: "2019-2023",
+      company: "Deloitte",
+      role: "Assistant Manager",
       message:
-        "I am truly proud to have graduated from Anna University. The exceptional opportunities provided here enabled me to excel in every aspect, leading to my employment at Siemens, Bangalore.",
-      image: "/1.webp",
+        "My journey at the college was transformative, where supportive faculty and enriching experiences shaped my skills, confidence, and professional outlook for future success.",
+      image: "/ArjunR.jpeg",
     },
     {
-      name: "Pathi R",
+      name: "SUBASH S",
       branch: "CSE",
-      batch: "2016 Batch",
-      company: "Google",
-      message:
-        "My journey at Anna University was transformative. The rigorous curriculum and supportive faculty prepared me well for the challenges in the tech industry.",
-      image: "/1.webp",
+      batch: "2021-2025",
+      company: "ZOHO",
+      role:"Android developer",
+      message:"Anna University Regional Campus, Coimbatore is a good place to study with decent infrastructure and well-equipped labs. Though the campus is smaller, it offers supportive faculty, good exposure, and valuable academic opportunities.",
+      image: "/SUBASHS.png",
     },
     {
-      name: "Priya S",
-      branch: "Mechanical",
-      batch: "2017 Batch",
-      company: "Tesla",
-      message:
-        "The hands-on experience and industry exposure at Anna University were invaluable. It gave me the confidence to pursue my dreams and land a job at Tesla.",
-      image: "/4.webp",
-    },
-    {
-      name: "SARA M",
-      branch: "EEE",
-      batch: "2015 Batch",
-      company: "SIEMENS",
-      message:
-        "I am truly proud to have graduated from Anna University. The exceptional opportunities provided here enabled me to excel in every aspect, leading to my employment at Siemens, Bangalore.",
-      image: "/1.webp",
-    },
-    {
-      name: "SANGEETHA R",
+      name: "Ragul R",
       branch: "CSE",
-      batch: "2016 Batch",
-      company: "Google",
+      batch: "2020 - 2024",
+      company: "HCL GUVI",
+      role:"Software Engineer",
       message:
-        "My journey at Anna University was transformative. The rigorous curriculum and supportive faculty prepared me well for the challenges in the tech industry.",
-      image: "/1.webp",
+        "The college management and department staff are extremely supportive. I learned many valuable lessons from them during my time at the institution.",
+      image: "/ragul.jpeg",
     },
     {
-      name: "CANALY S",
-      branch: "Mechanical",
-      batch: "2017 Batch",
-      company: "Tesla",
+      name: "Yogananth R",
+      branch: "CSE",
+      batch: "2019-2023",
+      company: "Deloitte",
+      role:"Cloud Engineer",
       message:
-        "The hands-on experience and industry exposure at Anna University were invaluable. It gave me the confidence to pursue my dreams and land a job at Tesla.",
-      image: "/4.webp",
+        "What began as a phase of education became a meaningful journey that shaped my growth beyond academics. Anna University Coimbatore helped me discover my potential, and I remain grateful for the experiences and lessons it provided.",
+      image: "/YogananthR.jpeg",
+    },
+    {
+      name: "Lakhshitha M K",
+      branch: "Mech",
+      batch: "2021-2025",
+      // company: "Google",
+      message:
+        "My journey at Anna University, Coimbatore was truly memorable, shaping me both personally and professionally. I’m grateful for the guidance and experiences that helped me achieve my dream of becoming an engineer.",
+      image: "/LakhshithaMK.jpg",
+    },
+    {
+      name: "Thangaraj P",
+      branch: "Mech",
+      batch: "2019-2023",
+      company: "Deloitte",
+      role:"Oracle Analyst",
+      message:"Anna University Regional Campus, Coimbatore offers a strong academic foundation with supportive faculty and a positive learning environment. The college helped me develop technical and personal skills while preparing me well for my professional career.",      
+      image: "/ThangarajP.jpeg",
+    },
+    {
+      name: "Rajalakshmi R",
+      branch: "CSE",
+      batch: "2021-2025",
+      company: "Deloitte",
+      role:"Analyst",
+      message:"AURCC gave me knowledge, confidence, and valuable opportunities through supportive faculty and skill-building programs. Fee support made my education possible, and I’m proud to be its alumnus.",      
+      image: "/RajalakshmiR.jpeg",
+    },{
+      name: "Thangaraj P",
+      branch: "Mech",
+      batch: "2019-2023",
+      company: "Deloitte",
+      role:"Oracle Analyst",
+      message:"Anna University Regional Campus, Coimbatore offers a strong academic foundation with supportive faculty and a positive learning environment. The college helped me develop technical and personal skills while preparing me well for my professional career.",      
+      image: "/ThangarajP.jpeg",
+    },{
+      name: "Thangaraj P",
+      branch: "Mech",
+      batch: "2019-2023",
+      company: "Deloitte",
+      role:"Oracle Analyst",
+      message:"Anna University Regional Campus, Coimbatore offers a strong academic foundation with supportive faculty and a positive learning environment. The college helped me develop technical and personal skills while preparing me well for my professional career.",      
+      image: "/ThangarajP.jpeg",
+    },{
+      name: "Thangaraj P",
+      branch: "Mech",
+      batch: "2019-2023",
+      company: "Deloitte",
+      role:"Oracle Analyst",
+      message:"Anna University Regional Campus, Coimbatore offers a strong academic foundation with supportive faculty and a positive learning environment. The college helped me develop technical and personal skills while preparing me well for my professional career.",      
+      image: "/ThangarajP.jpeg",
     },
   ];
 
@@ -1251,7 +1287,7 @@ const HomeView = () => {
           <section id="gallery" className="py-16 bg-white scroll-mt-32">
             <div className="container mx-auto px-6 text-center">
               <h2 className="text-3xl lg:text-4xl font-bold text-center mb-14  text-[rgb(100,25,25)] relative inline-block">
-                GALLEY OF MEMORIES
+                GALLERY OF MEMORIES
                 <span className="absolute -bottom-2 sm:-bottom-3 left-1/2 transform -translate-x-1/2 h-1 w-16 sm:w-20 lg:w-24 bg-yellow-500"></span>
               </h2>
 
@@ -1383,7 +1419,10 @@ const HomeView = () => {
                             <p className="text-white text-center w-full">
                               {testimonial.branch} | {testimonial.batch}
                             </p>
-                            <p className="text-white font-semibold mt-2 text-center text-sm w-full">
+                            <p className="text-white text-center w-full">
+                              {testimonial.role}
+                            </p>
+                            <p className="text-white font-semibold text-center text-sm w-full">
                               Placed in{" "}
                               <span className="text-yellow-300">
                                 {testimonial.company}
@@ -1441,7 +1480,10 @@ const HomeView = () => {
                             <p className="text-white text-center w-full">
                               {testimonial.branch} | {testimonial.batch}
                             </p>
-                            <p className="text-white font-semibold mt-2 text-center text-sm w-full">
+                            <p className="text-white text-center w-full">
+                              {testimonial.role}
+                            </p>
+                            <p className="text-white font-semibold text-center text-sm w-full">
                               Placed in{" "}
                               <span className="text-yellow-300">
                                 {testimonial.company}

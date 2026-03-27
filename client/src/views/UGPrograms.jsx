@@ -1,4 +1,4 @@
-﻿import React, { useEffect, useState } from 'react';
+import React,{useEffect,useState} from 'react';
 import ProgramCard from '../components/ProgramCard';
 import './ProgramsOffered.css';
 import cseIcon from '../assets/icons/cse.png';
@@ -10,7 +10,7 @@ import mbaIcon from '../assets/icons/mba.png';
 import business_analyticsIcon from '../assets/icons/business_analytics.png';
 import eeeIcon from '../assets/icons/eee.png';
 
-const ProgramsOffered = () => {
+const UGPrograms = () => {
 
     const iconMap = {
         'COMPUTER SCIENCE': cseIcon,
@@ -53,14 +53,14 @@ const ProgramsOffered = () => {
     const getLearnMoreLink = (course) => {
         course = course.toUpperCase();
 
-        // ✅ MBA FIRST
-        if (
-            course.includes('BUSINESS ADMINISTRATION') ||
-            course.includes('BUSINESS ANALYTICS') ||
-            course.includes('MBA')
-        ) {
-            return '/departments/mba';
-        }
+    // ✅ MBA FIRST
+    if (
+        course.includes('BUSINESS ADMINISTRATION') ||
+        course.includes('BUSINESS ANALYTICS') ||
+        course.includes('MBA')
+    ) {
+        return '/departments/mba';
+    }
         if (course.includes('VLSI')) return '/departments/ece';
         if (course.includes('COMPUTER')) return '/departments/cse';
         if (course.includes('ELECTRONICS')) return '/departments/ece';
@@ -81,45 +81,37 @@ const ProgramsOffered = () => {
         </header>
     );
 
-    const [data, setData] = useState(null);
+  const [data, setData] = useState(null);
 
-    useEffect(() => {
-        fetch("/api/programs")
-            .then(res => res.json())
-            .then(result => setData(result))
-            .catch(err => console.error(err));
-    }, []);
+  useEffect(() => {
+    fetch("/api/programs")
+      .then(res => res.json())
+      .then(result => setData(result))
+      .catch(err => console.error(err));
+  }, []);
 
-    if (!data) {
-        return <p className="text-center mt-20">Loading programs...</p>;
-    }
+  if (!data) {
+  return <p className="text-center mt-20">Loading programs...</p>;
+}
 
     return (
         <div className="flex-grow bg-white min-h-screen text-left pt-[120px] sm:pt-[140px] lg:pt-[120px]">
 
             {/* Hero Section */}
-            <section className="relative w-full h-56 sm:h-72 md:h-96 lg:h-[50vh] flex items-center justify-center overflow-hidden">
-
+<section className="relative w-full h-56 sm:h-72 md:h-96 lg:h-[50vh] flex items-center justify-center overflow-hidden">
 
     {/* Background Image */}
-                <img
-        src="http://localhost:5000/public/programsoffered.webp"
-        alt="Programs Offered"
+    <img
+        src="/programsoffered.webp"
+        alt="Undergraduate Programs"
         className="absolute inset-0 w-full h-full object-cover"
     />
 
-                {/* Background Image */}
-                <img
-                    src="/programsoffered.webp"
-                    alt="Programs Offered"
-                    className="absolute inset-0 w-full h-full object-cover"
-                />
+    {/* Soft Gradient Overlay */}
+    <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-black/60"></div>
 
-                {/* Soft Gradient Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-black/60"></div>
-
-                {/* Glass Card */}
-                <div className="relative z-10 mx-4 px-8 sm:px-12 py-8 sm:py-10 
+    {/* Glass Card */}
+    <div className="relative z-10 mx-4 px-8 sm:px-12 py-8 sm:py-10 
                     max-w-4xl w-full text-center
                     bg-[rgb(200,20,20)]/30 backdrop-blur-xl
                     border border-white/30
@@ -127,30 +119,29 @@ const ProgramsOffered = () => {
                     shadow-[0_20px_60px_rgba(0,0,0,0.4)]
                     transition-all duration-500">
 
-                    <h1 className="text-3xl sm:text-5xl lg:text-6xl 
+        <h1 className="text-3xl sm:text-5xl lg:text-6xl 
                        font-black text-white 
                        tracking-tight mb-4">
-            Programmes Offered
+            Undergraduate Programs
         </h1>
-                      <h1>  Programs Offered
-                    </h1>
-                    <div className="w-20 h-1 bg-yellow-400 mx-auto mb-5 rounded-full"></div>
 
-                    <p className="text-sm sm:text-lg lg:text-xl 
+        <div className="w-20 h-1 bg-yellow-400 mx-auto mb-5 rounded-full"></div>
+
+        <p className="text-sm sm:text-lg lg:text-xl 
                       text-gray-100 font-medium 
                       leading-relaxed max-w-2xl mx-auto">
-                        Empowering the next generation of engineers and management professionals.
-                    </p>
+            Build your foundation in engineering and technology with our world-class UG programs.
+        </p>
 
-                </div>
+    </div>
 
-            </section>
+</section>
 
             <main className="max-w-7xl mx-auto py-16 px-4 space-y-24">
 
                 {/* UG Section */}
                 <section>
-                    <SectionHeader title="Undergraduate Programs" />
+                    <SectionHeader title="Undergraduate Excellence" />
 
                     <div
                         className="grid gap-10 justify-center
@@ -170,32 +161,9 @@ const ProgramsOffered = () => {
                     </div>
                 </section>
 
-                {/* PG Section */}
-                <section>
-                    <SectionHeader title="Postgraduate Programs" />
-
-                    <div
-                        className="grid gap-10 justify-center
-                                   [grid-template-columns:repeat(auto-fit,minmax(320px,320px))]
-                                   max-w-[1100px] mx-auto"
-                    >
-                        {(Array.isArray(data?.['PG programmes']) ? data['PG programmes'] : []).map((programme, idx) => (
-                            <ProgramCard
-                                key={`pg-${idx}`}
-                                title={programme['Courses Offered']}
-                                intake={programme['Intake']}
-                                icon={getIcon(programme['Courses Offered'])}
-                                description={getDescription(programme['Courses Offered'])}
-                                learnMoreLink={getLearnMoreLink(programme['Courses Offered'])}
-                                department={programme['Department']}
-                            />
-                        ))}
-                    </div>
-                </section>
-
             </main>
         </div>
     );
 };
 
-export default ProgramsOffered;
+export default UGPrograms;
