@@ -1,4 +1,4 @@
-﻿import React, { Suspense, lazy } from 'react';
+import React, { Suspense, lazy } from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
@@ -38,7 +38,11 @@ const HOD = lazy(() => import('./views/HOD'));
 // const Organogram = lazy(() => import('./views/Organogram'));
 const Contact = lazy(() => import('./views/Contact'));
 const Regulation = lazy(() => import('./views/Regulation'));
+const Regulation2021 = lazy(() => import('./views/Regulation2021'));
+const Regulation2025 = lazy(() => import('./views/Regulation2025'));
 const ProgramsOffered = lazy(() => import('./views/ProgramsOffered'));
+const UGPrograms = lazy(() => import('./views/UGPrograms'));
+const PGPrograms = lazy(() => import('./views/PGPrograms'));
 const CurriculumSyllabus = lazy(() => import('./views/CurriculumSyllabus'));
 const StudentAffairs = lazy(() => import('./views/StudentAffairs'));
 const COD = lazy(() => import('./views/COD'));
@@ -100,7 +104,11 @@ function App() {
                         {/* <Route path="/organogram" element={< />} /> */}
                         <Route path="/contact" element={<Contact />} />
                         <Route path="/regulation" element={<Regulation />} />
+                        <Route path="/regulation/2021" element={<Regulation2021 />} />
+                        <Route path="/regulation/2025" element={<Regulation2025 />} />
                         <Route path="/programs_offered" element={<ProgramsOffered />} />
+                        <Route path="/programs/ug" element={<UGPrograms />} />
+                        <Route path="/programs/pg" element={<PGPrograms />} />
                         <Route path="/curriculum_syllabus" element={<CurriculumSyllabus />} />
                         <Route path="/student_affairs" element={<StudentAffairs />} />
                         <Route path="/COD" element={<COD />} />

@@ -1,4 +1,4 @@
-﻿import React, { useState } from "react";
+import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
 const Header = () => {
@@ -46,9 +46,21 @@ const Header = () => {
       name: "Academics",
       isOpen: false,
       links: [
-        { name: "Programmes Offered", route: "/programs_offered" },
+        {
+          name: "Programmes Offered",
+          subLinks: [
+            { name: "Under Graduate", route: "/programs/ug" },
+            { name: "Post Graduate", route: "/programs/pg" },
+          ],
+        },
         { name: "Curriculam & Syllabus", route: "/curriculum_syllabus" },
-        { name: "Regulations", route: "/regulation" },
+        {
+          name: "Regulations",
+          subLinks: [
+            { name: "2021", route: "/regulation/2021" },
+            { name: "2025", route: "/regulation/2025" },
+          ],
+        },
         { name: "AICTE Approval", route: "/aicte&moe" },
         {
           name: "Committees",
@@ -222,7 +234,7 @@ const Header = () => {
                 </svg>
                 <span className="hidden sm:inline font-medium">Contact</span>
               </Link>
-              <Link
+              {/* <Link
                 to="/library"
                 className="hover:text-yellow-300 transition-colors flex items-center gap-1.5 group"
               >
@@ -236,7 +248,7 @@ const Header = () => {
                   <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"></path>
                 </svg>
                 <span className="hidden sm:inline font-medium">Feedback</span>
-              </Link>
+              </Link> */}
             </div>
           </div>
         </div>
@@ -396,19 +408,7 @@ const Header = () => {
                   </button>
                   {section.isOpen && (
                     <div className="pl-4 pb-4 space-y-1">
-                      {section.links.map((link, lIdx) => (
-                        <Link
-                          key={lIdx}
-                          to={link.section ? "/" : link.route}
-                          state={
-                            link.section ? { scrollTo: link.section } : null
-                          }
-                          onClick={() => setIsMobileMenuOpen(false)}
-                          className="block py-2.5 px-4 text-xs font-bold text-gray-500 hover:text-[rgb(115,40,40)] hover:bg-[rgb(220,140,140)] rounded-xl transition-all"
-                        >
-                          {link.name}
-                        </Link>
-                      ))}
+
                       {section.links.map((link, lIdx) =>
                         link.subLinks ? (
                           <div key={lIdx}>

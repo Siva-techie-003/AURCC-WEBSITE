@@ -407,16 +407,16 @@ const DepartmentsView = () => {
               id="courses-offered"
               className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto py-12 bg-white scroll-mt-40"
             >
-              <h2 className="text-3xl md:text-4xl font-bold text-center mb-10 text-gray-800">
+              {/* <h2 className="text-3xl md:text-4xl font-bold text-center mb-10 text-gray-800">
                 <span className="bg-gradient-to-r from-[rgb(115,63,63)] to-[rgb(115,25,25)] bg-clip-text text-transparent">
                   Courses Offered
                 </span>
-              </h2>
+              </h2> */}
               <div className="max-w-6xl mx-auto">
                 <div className="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden transition-all duration-300 hover:shadow-xl">
                   <div className="bg-gradient-to-r from-[rgb(115,63,63)] to-[rgb(115,25,25)] py-6 sm:py-7 md:py-8">
                     <h3 className="text-lg sm:text-xl lg:text-2xl xl:text-3xl text-white font-bold text-center">
-                      Programmes Available
+                      Programmes Offered
                     </h3>
                   </div>
                   <div className="p-8 md:p-10">

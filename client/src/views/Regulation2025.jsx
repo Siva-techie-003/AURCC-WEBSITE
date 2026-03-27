@@ -1,23 +1,25 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState,useEffect } from 'react';
 import RegulationCard from '../components/RegulationCard';
 import './Regulation.css';
 
-const Regulation = () => {
+const Regulation2025 = () => {
     const [regulations, setRegulations] = useState(null);
 
-    useEffect(() => {
-        fetch("/api/regulations")
-            .then(res => res.json())
-            .then(data => {
-                console.log("REGULATION API 👉", data);
-                setRegulations(data.regulations);
-            })
-            .catch(err => console.error(err));
-    }, []);
+  useEffect(() => {
+    fetch("/api/regulations")
+      .then(res => res.json())
+      .then(data => {
+        const filtered = (data.regulations || []).filter(reg => 
+            reg['Regulation'] && reg['Regulation'].includes('2025')
+        );
+        setRegulations(filtered);
+      })
+      .catch(err => console.error(err));
+  }, []);
 
-    if (!regulations) {
-        return <p className="text-center mt-20">Loading regulations...</p>;
-    }
+  if (!regulations) {
+    return <p className="text-center mt-20">Loading regulations...</p>;
+  }
 
     return (
         <div className="flex-grow bg-white min-h-screen text-left pt-[120px] sm:pt-[140px] lg:pt-[120px]">
@@ -27,13 +29,13 @@ const Regulation = () => {
                 <section className="relative w-full h-48 sm:h-60 md:h-80 lg:h-[40vh] overflow-hidden flex items-center justify-center">
                     <img
                         src="/regulation.webp"
-                        alt="Regulations"
+                        alt="Regulation 2025"
                         className="absolute inset-0 w-full h-full object-cover object-top"
                     />
                     <div className="absolute inset-0 bg-[rgb(90,20,20)]/50"></div>
                     <div className="relative z-10 text-center animate-fadeIn px-4">
-                        <h1 className="text-3xl sm:text-4xl lg:text-6xl font-black text-white uppercase tracking-tighter mb-4">Regulations</h1>
-                        <div className="h-2 w-24 bg-[rgb(220,140,140)]0 mx-auto rounded-full"></div>
+                        <h1 className="text-3xl sm:text-4xl lg:text-6xl font-black text-white uppercase tracking-tighter mb-4">Regulation 2025</h1>
+                        <div className="h-2 w-24 bg-[rgb(220,140,140)] mx-auto rounded-full"></div>
                     </div>
                 </section>
 
@@ -41,10 +43,9 @@ const Regulation = () => {
                     <section className="animate-fadeInUp">
                         <header className="flex flex-col md:flex-row md:items-end justify-between border-b-4 border-[rgb(100,25,25)] pb-8 mb-12 gap-6">
                             <div className="max-w-xl">
-                                <h2 className="text-2xl lg:text-4xl font-black text-[rgb(90,20,20)] uppercase tracking-tight">Academic Integrity</h2>
-                                <p className="text-lg text-gray-500 font-bold mt-2 italic">Essential guidelines for students under Anna University regulations.</p>
+                                <h2 className="text-2xl lg:text-4xl font-black text-[rgb(90,20,20)] uppercase tracking-tight">Academic Integrity (2025)</h2>
+                                <p className="text-lg text-gray-500 font-bold mt-2 italic">Essential guidelines for students under Anna University Regulations 2025.</p>
                             </div>
-
                         </header>
 
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-10">
@@ -57,6 +58,9 @@ const Regulation = () => {
                                 </div>
                             ))}
                         </div>
+                        {regulations.length === 0 && (
+                            <p className="text-center text-gray-500 py-10">No regulations found for the year 2025.</p>
+                        )}
                     </section>
 
                     {/* Warning/Note Section */}
@@ -73,4 +77,4 @@ const Regulation = () => {
     );
 };
 
-export default Regulation;
+export default Regulation2025;
