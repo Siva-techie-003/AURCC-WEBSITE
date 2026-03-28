@@ -1364,7 +1364,7 @@ const HomeView = () => {
               <div className="relative max-w-[1800px] mx-auto px-4 xl:px-0">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-28">
                   {/* Left Card Area */}
-                  <div className="relative overflow-hidden rounded-xl shadow-xl min-h-[380px] bg-white">
+                  <div className="relative overflow-hidden rounded-xl shadow-xl min-h-[300px] bg-white">
                     {testimonials.map((testimonial, idx) => {
                       // Next cards wait on the left, prev cards exit to the left
                       let positionClass =
@@ -1382,13 +1382,13 @@ const HomeView = () => {
                           key={`left-${idx}`}
                           className={`absolute inset-0 w-full h-full flex-shrink-0 grid grid-cols-1 xl:grid-cols-3 text-left bg-white ${positionClass}`}
                         >
-                          <div className="xl:col-span-1 bg-gradient-to-br from-[rgb(115,63,63)] to-[rgb(115,25,25)] p-8 pt-12 flex flex-col items-center justify-start">
+                          <div className="xl:col-span-1 bg-gradient-to-br from-[rgb(115,63,63)] to-[rgb(115,25,25)] p-6 flex flex-col items-center justify-center">
                             <img
                               src={testimonial.image}
                               alt={testimonial.name}
-                              className="rounded-md w-36 h-36 border-4 border-white mb-4 mt-4 object-cover shadow-lg"
+                              className="rounded-md w-28 h-28 border-[3px] border-white mb-2 mt-2 object-cover shadow-lg"
                             />
-                            <h3 className="text-lg font-bold text-white text-center w-full">
+                            <h3 className="text-lg font-bold text-white text-center w-full mt-2">
                               {testimonial.name}
                             </h3>
                             <p className="text-white text-center w-full">
@@ -1404,7 +1404,7 @@ const HomeView = () => {
                               </span>
                             </p>
                           </div>
-                          <div className="xl:col-span-2 p-8 flex flex-col justify-center">
+                          <div className="xl:col-span-2 p-6 flex flex-col justify-center">
                             <svg
                               className="w-12 h-12 text-[rgb(200,120,120)] mb-4"
                               fill="currentColor"
@@ -1422,7 +1422,7 @@ const HomeView = () => {
                   </div>
 
                   {/* Right Card Area */}
-                  <div className="relative overflow-hidden rounded-xl shadow-xl min-h-[380px] bg-white">
+                  <div className="relative overflow-hidden rounded-xl shadow-xl min-h-[300px] bg-white">
                     {testimonials.map((_, idx) => {
                       const rightIdx = (idx + 1) % testimonials.length;
                       const testimonial = testimonials[rightIdx];
@@ -1443,13 +1443,13 @@ const HomeView = () => {
                           key={`right-${idx}`}
                           className={`absolute inset-0 w-full h-full flex-shrink-0 grid grid-cols-1 xl:grid-cols-3 text-left bg-white ${positionClass}`}
                         >
-                          <div className="xl:col-span-1 bg-gradient-to-br from-[rgb(115,63,63)] to-[rgb(115,25,25)] p-8 pt-12 flex flex-col items-center justify-start">
+                          <div className="xl:col-span-1 bg-gradient-to-br from-[rgb(115,63,63)] to-[rgb(115,25,25)] p-6 flex flex-col items-center justify-center">
                             <img
                               src={testimonial.image}
                               alt={testimonial.name}
-                              className="rounded-md w-36 h-36 border-4 border-white mb-4 mt-4 object-cover shadow-lg"
+                              className="rounded-md w-28 h-28 border-[3px] border-white mb-2 mt-2 object-cover shadow-lg"
                             />
-                            <h3 className="text-lg font-bold text-white text-center w-full">
+                            <h3 className="text-lg font-bold text-white text-center w-full mt-2">
                               {testimonial.name}
                             </h3>
                             <p className="text-white text-center w-full">
@@ -1465,7 +1465,7 @@ const HomeView = () => {
                               </span>
                             </p>
                           </div>
-                          <div className="xl:col-span-2 p-8 flex flex-col justify-center">
+                          <div className="xl:col-span-2 p-6 flex flex-col justify-center">
                             <svg
                               className="w-12 h-12 text-[rgb(200,120,120)] mb-4"
                               fill="currentColor"
