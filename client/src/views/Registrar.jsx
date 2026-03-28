@@ -22,7 +22,7 @@ const Registrar = () => {
   if (loading) {
     return <p className="text-center mt-20">Loading...</p>;
   }
-  const BACKEND_URL = "";
+  const BACKEND_URL = "http://localhost:5000/public/";
 
   const getPhotoPath = (photo) => {
   return photo ? `${BACKEND_URL}/${photo}` : `${BACKEND_URL}/default.jpg`;
