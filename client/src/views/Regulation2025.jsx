@@ -3,23 +3,10 @@ import RegulationCard from '../components/RegulationCard';
 import './Regulation.css';
 
 const Regulation2025 = () => {
-    const [regulations, setRegulations] = useState(null);
-
-  useEffect(() => {
-    fetch("/api/regulations")
-      .then(res => res.json())
-      .then(data => {
-        const filtered = (data.regulations || []).filter(reg => 
-            reg['Regulation'] && reg['Regulation'].includes('2025')
-        );
-        setRegulations(filtered);
-      })
-      .catch(err => console.error(err));
-  }, []);
-
-  if (!regulations) {
-    return <p className="text-center mt-20">Loading regulations...</p>;
-  }
+    const regulations = [
+        { Regulation: "UG PROGRAMMES", "PDF Link": "#" },
+        { Regulation: "PG PROGRAMMES", "PDF Link": "#" }
+    ];
 
     return (
         <div className="flex-grow bg-white min-h-screen text-left pt-[120px] sm:pt-[140px] lg:pt-[120px]">
@@ -52,15 +39,12 @@ const Regulation2025 = () => {
                             {regulations.map((reg, i) => (
                                 <div key={i} className="group">
                                     <RegulationCard
-                                        title={reg['Regulation']}
-                                        pdf={`${reg["PDF Link"]}`}
+                                        title={reg.Regulation}
+                                        pdf={reg["PDF Link"]}
                                     />
                                 </div>
                             ))}
                         </div>
-                        {regulations.length === 0 && (
-                            <p className="text-center text-gray-500 py-10">No regulations found for the year 2025.</p>
-                        )}
                     </section>
 
                     {/* Warning/Note Section */}
