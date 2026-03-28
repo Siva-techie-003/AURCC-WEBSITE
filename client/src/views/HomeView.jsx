@@ -248,15 +248,6 @@ const HomeView = () => {
       image: "/LakhshithaMK.jpg",
     },
     {
-      name: "Thangaraj P",
-      branch: "Mech",
-      batch: "2019-2023",
-      company: "Deloitte",
-      role:"Oracle Analyst",
-      message:"Anna University Regional Campus, Coimbatore offers a strong academic foundation with supportive faculty and a positive learning environment. The college helped me develop technical and personal skills while preparing me well for my professional career.",      
-      image: "/ThangarajP.jpeg",
-    },
-    {
       name: "Rajalakshmi R",
       branch: "CSE",
       batch: "2021-2025",
@@ -264,22 +255,6 @@ const HomeView = () => {
       role:"Analyst",
       message:"AURCC gave me knowledge, confidence, and valuable opportunities through supportive faculty and skill-building programs. Fee support made my education possible, and I’m proud to be its alumnus.",      
       image: "/RajalakshmiR.jpeg",
-    },{
-      name: "Thangaraj P",
-      branch: "Mech",
-      batch: "2019-2023",
-      company: "Deloitte",
-      role:"Oracle Analyst",
-      message:"Anna University Regional Campus, Coimbatore offers a strong academic foundation with supportive faculty and a positive learning environment. The college helped me develop technical and personal skills while preparing me well for my professional career.",      
-      image: "/ThangarajP.jpeg",
-    },{
-      name: "Thangaraj P",
-      branch: "Mech",
-      batch: "2019-2023",
-      company: "Deloitte",
-      role:"Oracle Analyst",
-      message:"Anna University Regional Campus, Coimbatore offers a strong academic foundation with supportive faculty and a positive learning environment. The college helped me develop technical and personal skills while preparing me well for my professional career.",      
-      image: "/ThangarajP.jpeg",
     },{
       name: "Thangaraj P",
       branch: "Mech",
@@ -956,7 +931,7 @@ const HomeView = () => {
                 {[0, 1].map((i) => (
                   <button
                     key={i}
-                    onClick={() => scrollToIndex(i)} // ✅ Use unified function
+                    onClick={() => scrollToIndex(i)} //  Use unified function
                     className={`transition-all duration-500 rounded-full ${progIndex === i
                       ? "w-8 h-3 bg-[rgb(120,45,45)]"
                       : "w-3 h-3 bg-gray-300 hover:bg-gray-400"
@@ -967,7 +942,7 @@ const HomeView = () => {
 
               {/* Right Arrow */}
               <button
-                onClick={() => scrollToIndex(Math.min(1, progIndex + 1))} // ✅ Use unified function
+                onClick={() => scrollToIndex(Math.min(1, progIndex + 1))} //  Use unified function
                 className={`p-3 rounded-full border-2 border-[rgb(120,45,45)] text-[rgb(120,45,45)] 
         hover:bg-[rgb(120,45,45)] hover:text-white transition-all duration-300 shadow-md 
         ${progIndex === 1 ? "opacity-30 cursor-not-allowed" : "cursor-pointer"}`}
@@ -1247,11 +1222,11 @@ const HomeView = () => {
 
                         <div>
                           <h3 className="font-bold text-lg mb-2">
-                            Placement Development
+                            Placement Support
                           </h3>
 
                           <p className="text-base">
-                            The Placement Development team prepares students through aptitude training, mock interviews, and industry guidance to achieve excellent placement opportunities.
+                            The Placement Assistance team prepares students through aptitude training, mock interviews, and industry guidance to achieve excellent placement opportunities.
                           </p>
                         </div>
                       </div>
@@ -1407,13 +1382,13 @@ const HomeView = () => {
                           key={`left-${idx}`}
                           className={`absolute inset-0 w-full h-full flex-shrink-0 grid grid-cols-1 xl:grid-cols-3 text-left bg-white ${positionClass}`}
                         >
-                          <div className="xl:col-span-1 bg-gradient-to-br from-[rgb(115,63,63)] to-[rgb(115,25,25)] p-8 flex flex-col items-center justify-center">
+                          <div className="xl:col-span-1 bg-gradient-to-br from-[rgb(115,63,63)] to-[rgb(115,25,25)] p-6 flex flex-col items-center justify-center">
                             <img
                               src={testimonial.image}
                               alt={testimonial.name}
-                              className="splash-shape w-36 h-36 border-4 border-white mb-4 object-cover"
+                              className="rounded-md w-28 h-28 border-[3px] border-white mb-2 mt-2 object-cover shadow-lg"
                             />
-                            <h3 className="text-lg font-bold text-white text-center w-full">
+                            <h3 className="text-lg font-bold text-white text-center w-full mt-2">
                               {testimonial.name}
                             </h3>
                             <p className="text-white text-center w-full">
@@ -1429,7 +1404,7 @@ const HomeView = () => {
                               </span>
                             </p>
                           </div>
-                          <div className="xl:col-span-2 p-8 flex flex-col justify-center">
+                          <div className="xl:col-span-2 p-6 flex flex-col justify-center">
                             <svg
                               className="w-12 h-12 text-[rgb(200,120,120)] mb-4"
                               fill="currentColor"
@@ -1468,13 +1443,13 @@ const HomeView = () => {
                           key={`right-${idx}`}
                           className={`absolute inset-0 w-full h-full flex-shrink-0 grid grid-cols-1 xl:grid-cols-3 text-left bg-white ${positionClass}`}
                         >
-                          <div className="xl:col-span-1 bg-gradient-to-br from-[rgb(115,63,63)] to-[rgb(115,25,25)] p-8 flex flex-col items-center justify-center">
+                          <div className="xl:col-span-1 bg-gradient-to-br from-[rgb(115,63,63)] to-[rgb(115,25,25)] p-6 flex flex-col items-center justify-center">
                             <img
                               src={testimonial.image}
                               alt={testimonial.name}
-                              className="splash-shape w-36 h-36 border-4 border-white mb-4 object-cover"
+                              className="rounded-md w-28 h-28 border-[3px] border-white mb-2 mt-2 object-cover shadow-lg"
                             />
-                            <h3 className="text-lg font-bold text-white text-center w-full">
+                            <h3 className="text-lg font-bold text-white text-center w-full mt-2">
                               {testimonial.name}
                             </h3>
                             <p className="text-white text-center w-full">
@@ -1490,7 +1465,7 @@ const HomeView = () => {
                               </span>
                             </p>
                           </div>
-                          <div className="xl:col-span-2 p-8 flex flex-col justify-center">
+                          <div className="xl:col-span-2 p-6 flex flex-col justify-center">
                             <svg
                               className="w-12 h-12 text-[rgb(200,120,120)] mb-4"
                               fill="currentColor"

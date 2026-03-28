@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { href, Link, useNavigate } from "react-router-dom";
+
 
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -65,13 +66,13 @@ const Header = () => {
         {
           name: "Committees",
           subLinks: [
-            { name: "Anti-ragging committee", route: "/admin/establishment" },
-            { name: "Anti-drug committee", route: "/admin/establishment" },
-            { name: "Internal Complaint Committee", route: "/admin/purchase-finance" },
-            { name: "Institute Academic Affairs committee", route: "/admin/student" },
-            { name: "committee for SC/ST", route: "/admin/establishment" },
-            { name: "Disciplinary committee", route: "/admin/establishment" },
-            { name: "Student Councellor committee", route: "/admin/purchase-finance" },
+            { name: "Anti-ragging committee", route: "/AntiRagging" },
+            { name: "Anti-drug committee", href: "/forms/Anti Drug Committee.pdf" },
+            { name: "Internal Complaint Committee", href: "/forms/ICC.pdf" },
+            { name: "Institute Academic Affairs committee", href: "/forms/IAA-Committee.pdf" },
+            { name: "committee for SC/ST", href: "#" },
+            { name: "Disciplinary committee", href: "#" },
+            { name: "Student Councellor committee", href: "/forms/Students Cousellor.pdf" },
           ],
         },
         { name: "Student Affairs", route: "/student_affairs" },
@@ -304,52 +305,79 @@ const Header = () => {
                   </button>
 
                   {/* Dropdown */}
-                  {section.links && (
-                    <div className="absolute top-full right-0 pt-1 z-50 opacity-0 invisible translate-y-2 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 transition-all duration-200">
-                      <div className="bg-white rounded-2xl shadow-2xl border border-gray-100 py-2 w-80">
-                        {section.links.map((link, lIdx) =>
-                          link.subLinks ? (
-                            <div key={lIdx} className="relative group/sub">
-                              <div className="flex items-center justify-between px-5 py-2 text-sm font-bold text-gray-600 hover:text-[rgb(115,40,40)] hover:bg-[rgb(220,140,140)]/40 cursor-pointer transition-colors whitespace-nowrap">
-                                <span>{link.name}</span>
-                                <svg
-                                  className="w-3 h-3 rotate-180"
-                                  fill="none"
-                                  stroke="currentColor"
-                                  viewBox="0 0 24 24"
-                                >
-                                  <path d="M9 18l6-6-6-6" />
-                                </svg>
-                              </div>
-                              {/* Flyout - Opens to the LEFT to prevent off-screen on the right */}
-                              <div className="absolute top-0 left-full ml-1 py-2 bg-white gap-4 rounded-2xl shadow-2xl border border-gray-100 opacity-0 invisible translate-x-2 group-hover/sub:opacity-100 group-hover/sub:visible group-hover/sub:translate-x-0 transition-all min-w-[3oopx] z-50">
-                                {link.subLinks.map((sub, sIdx) => (
-                                  <Link
-                                    key={sIdx}
-                                    to={sub.route}
-                                    className="block px-5 py-2 text-sm font-bold text-gray-600 hover:text-[rgb(115,40,40)] hover:bg-[rgb(220,140,140)]/40 transition-colors whitespace-nowrap"
-                                  >
-                                    {sub.name}
-                                  </Link>
-                                ))}
-                              </div>
-                            </div>
-                          ) : (
-                            <Link
-                              key={lIdx}
-                              to={link.section ? "/" : link.route}
-                              state={
-                                link.section ? { scrollTo: link.section } : null
-                              }
-                              className="block px-5 py-2 text-sm font-bold text-gray-600 hover:text-[rgb(115,40,40)] hover:bg-[rgb(220,140,140)]/40 transition-colors whitespace-nowrap"
-                            >
-                              {link.name}
-                            </Link>
-                          ),
-                        )}
-                      </div>
-                    </div>
-                  )}
+{section.links && (
+  <div className="absolute top-full right-0 pt-1 z-50 opacity-0 invisible translate-y-2 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 transition-all duration-200">
+    <div className="bg-white rounded-2xl shadow-2xl border border-gray-100 py-2 w-80">
+
+      {section.links.map((link, lIdx) =>
+        link.subLinks ? (
+          <div key={lIdx} className="relative group/sub">
+            
+            {/* Parent Item */}
+            <div className="flex items-center justify-between px-5 py-2 text-sm font-bold text-gray-600 hover:text-[rgb(115,40,40)] hover:bg-[rgb(220,140,140)]/40 cursor-pointer transition-colors whitespace-nowrap">
+              <span>{link.name}</span>
+              <svg
+                className="w-3 h-3 rotate-180"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path d="M9 18l6-6-6-6" />
+              </svg>
+            </div>
+
+            {/* SubLinks */}
+            <div className="absolute top-0 left-full ml-1 py-2 bg-white rounded-2xl shadow-2xl border border-gray-100 opacity-0 invisible translate-x-2 group-hover/sub:opacity-100 group-hover/sub:visible group-hover/sub:translate-x-0 transition-all min-w-[220px] z-50">
+
+              {link.subLinks.map((sub, sIdx) =>
+                sub.href ? (
+                  <a
+                    key={sIdx}
+                    href={sub.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block px-5 py-2 text-sm font-bold text-gray-600 hover:text-[rgb(115,40,40)] hover:bg-[rgb(220,140,140)]/40 transition-colors whitespace-nowrap"
+                  >
+                    {sub.name}
+                  </a>
+                ) : (
+                  <Link
+                    key={sIdx}
+                    to={sub.route}
+                    className="block px-5 py-2 text-sm font-bold text-gray-600 hover:text-[rgb(115,40,40)] hover:bg-[rgb(220,140,140)]/40 transition-colors whitespace-nowrap"
+                  >
+                    {sub.name}
+                  </Link>
+                )
+              )}
+
+            </div>
+          </div>
+        ) : link.href ? (
+          <a
+            key={lIdx}
+            href={link.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block px-5 py-2 text-sm font-bold text-gray-600 hover:text-[rgb(115,40,40)] hover:bg-[rgb(220,140,140)]/40 transition-colors whitespace-nowrap"
+          >
+            {link.name}
+          </a>
+        ) : (
+          <Link
+            key={lIdx}
+            to={link.section ? "/" : link.route}
+            state={link.section ? { scrollTo: link.section } : null}
+            className="block px-5 py-2 text-sm font-bold text-gray-600 hover:text-[rgb(115,40,40)] hover:bg-[rgb(220,140,140)]/40 transition-colors whitespace-nowrap"
+          >
+            {link.name}
+          </Link>
+        )
+      )}
+
+    </div>
+  </div>
+)}
                 </div>
               ))}
             </div>

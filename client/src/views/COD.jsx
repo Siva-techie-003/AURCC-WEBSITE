@@ -1,4 +1,4 @@
-﻿import React,{useEffect,useState} from 'react';
+import React,{useEffect,useState} from 'react';
 import './COD.css';
 
 const COD = () => {
@@ -40,7 +40,7 @@ const COD = () => {
             <div className="text-center py-4 sm:py-5">
                 <h1 className="text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-bold text-[rgb(100,25,25)] tracking-wide font-serif">CELL COORDINATORS</h1>
                 <div className="flex justify-center mt-2 mb-3 sm:mb-4">
-                    <span className="block w-24 sm:w-32 h-2 rounded-full bg-gradient-to-r from-[rgb(115,63,63)] via-[rgb(115,45,45)] to-[rgb(115,25,25)]"></span>
+                    <span className="block w-24 sm:w-32 h-2 rounded-full bg-[#f5c842]"></span>
                 </div>
             </div>
 

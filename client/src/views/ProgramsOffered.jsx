@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+﻿import React, { useEffect, useState } from 'react';
 import ProgramCard from '../components/ProgramCard';
 import './ProgramsOffered.css';
 import cseIcon from '../assets/icons/cse.png';
@@ -100,6 +100,14 @@ const ProgramsOffered = () => {
             {/* Hero Section */}
             <section className="relative w-full h-56 sm:h-72 md:h-96 lg:h-[50vh] flex items-center justify-center overflow-hidden">
 
+
+    {/* Background Image */}
+                <img
+        src="http://localhost:5000/public/programsoffered.webp"
+        alt="Programs Offered"
+        className="absolute inset-0 w-full h-full object-cover"
+    />
+
                 {/* Background Image */}
                 <img
                     src="/programsoffered.webp"
@@ -122,9 +130,10 @@ const ProgramsOffered = () => {
                     <h1 className="text-3xl sm:text-5xl lg:text-6xl 
                        font-black text-white 
                        tracking-tight mb-4">
-                        Programs Offered
+            Programmes Offered
+        </h1>
+                      <h1>  Programs Offered
                     </h1>
-
                     <div className="w-20 h-1 bg-yellow-400 mx-auto mb-5 rounded-full"></div>
 
                     <p className="text-sm sm:text-lg lg:text-xl 
@@ -141,7 +150,7 @@ const ProgramsOffered = () => {
 
                 {/* UG Section */}
                 <section>
-                    <SectionHeader title="Undergraduate Excellence" />
+                    <SectionHeader title="Undergraduate Programs" />
 
                     <div
                         className="grid gap-10 justify-center
@@ -163,7 +172,7 @@ const ProgramsOffered = () => {
 
                 {/* PG Section */}
                 <section>
-                    <SectionHeader title="Postgraduate Mastery" />
+                    <SectionHeader title="Postgraduate Programs" />
 
                     <div
                         className="grid gap-10 justify-center

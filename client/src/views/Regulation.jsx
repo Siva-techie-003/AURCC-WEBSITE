@@ -60,11 +60,11 @@ const Regulation = () => {
                     </section>
 
                     {/* Warning/Note Section */}
-                    <section className="bg-amber-50 border-2 border-amber-200 p-8 sm:p-12 rounded-3xl flex flex-col md:flex-row items-center gap-8 animate-fadeIn">
-                        <div className="w-20 h-20 bg-amber-200 rounded-2xl flex items-center justify-center text-4xl shrink-0 animate-pulse">⚠</div>
-                        <div>
-                            <h3 className="text-xl font-bold text-amber-900 uppercase tracking-tight mb-2">Important Notice</h3>
-                            <p className="text-amber-800 font-medium leading-relaxed">Students are required to download and carefully read the regulations relevant to their year of admission. These documents govern your academic progress, internal assessments, and end-semester examinations.</p>
+                    <section className="bg-[#fffcf0] border border-[#fce39e] p-5 sm:p-6 rounded-2xl flex flex-col md:flex-row items-center md:items-start gap-5 animate-fadeIn shadow-sm max-w-5xl mx-auto">
+                        <div className="w-12 h-12 bg-[#ffe9a6] rounded-xl flex items-center justify-center text-2xl shrink-0 shadow-sm mt-0.5">⚠️</div>
+                        <div className="text-center md:text-left">
+                            <h3 className="text-base font-extrabold text-[#875b22] uppercase tracking-wide mb-1.5">Important Notice</h3>
+                            <p className="text-sm text-[#946931] font-medium leading-relaxed">Students are required to download and carefully read the regulations relevant to their year of admission. These documents govern your academic progress, internal assessments, and end-semester examinations.</p>
                         </div>
                     </section>
                 </main>

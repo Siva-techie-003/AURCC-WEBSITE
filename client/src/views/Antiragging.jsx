@@ -13,11 +13,11 @@ const Antiragging = () => {
     },
     {
       title: "Committee Members",
-      link: "/forms/anti ragging committee.pdf",
+      link: "/forms/Anti Ragging Committee-2026.pdf",
     },
     {
       title: "Squad Committee Members",
-      link: "/forms/anti ragging squad.pdf",
+      link: "/forms/Anti Ragging Squad Committee.pdf",
     },
     {
       title: "Online Complaint Form",

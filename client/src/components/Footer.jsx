@@ -1,25 +1,25 @@
-﻿import React from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 
 const Footer = ({
   data = {
     links: [
-      "www.dgsnd.gov.in",
-      "www.nic.in",
-      "www.nsic.co.in",
-      "www.kvic.org.in",
-      "www.coirboard.gov.in",
-      "www.nceuis.nic.in",
-      "www.nisiet.gov.in",
-      "www.sidbi.in",
-      "www.iie.nic.in",
-      "www.nmcc.nic.in",
-      "www.cecri-india.com",
-      "www.csir.res.in",
-      "www.nissat.org",
-      "www.cmeri.res.in",
-      "www.entrepreneur.com",
-      "www.howtoexportimport.com",
+      { name: "www.dsndharyana.gov.in", url: "https://dsndharyana.gov.in" },
+      { name: "www.nic.in", url: "https://www.nic.in" },
+      { name: "www.nsic.co.in", url: "https://www.nsic.co.in" },
+      { name: "www.kviconline.gov.in", url: "https://kviconline.gov.in" },
+      { name: "www.coirboard.gov.in", url: "http://www.coirboard.gov.in" },
+      { name: "www.nceuis.gov.in", url: "https://msme.gov.in/national-commission-enterprises-un-organised-sectornceus" },
+      { name: "www.nimsme.gov.in", url: "https://www.nimsme.gov.in" },
+      { name: "www.sidbi.in", url: "https://www.sidbi.in" },
+      { name: "www.iie.gov.in", url: "https://iie.gov.in" },
+      { name: "www.nmcc.ac.in", url: "https://nmcc.ac.in" },
+      { name: "www.cecri.res.in/cecri/Default.aspx", url: "https://www.cecri.res.in/cecri/Default.aspx" },
+      { name: "www.csir.res.in", url: "https://www.csir.res.in" },
+      { name: "www.dsir.gov.in/international-cooperation-division", url: "https://www.dsir.gov.in/international-cooperation-division" },
+      { name: "www.cmeri.res.in", url: "https://www.cmeri.res.in" },
+      { name: "www.entrepreneur.com", url: "https://www.entrepreneur.com" },
+      { name: "www.howtoexportimport.com", url: "https://www.howtoexportimport.com" },
     ],
   },
 }) => {
@@ -58,8 +58,8 @@ const Footer = ({
       icon: "M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5 5.754 5 4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18c1.746 0 3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253",
     },
     {
-      to: "/hostel",
-      label: "Hostel Portal",
+      to: "/Grievance redressal.pdf",
+      label: "Grievance Cell",
       icon: "M3 21h18M5 21V7a2 2 0 012-2h10a2 2 0 012 2v14M9 21v-4h6v4M9 10h.01M15 10h.01M9 14h.01M15 14h.01",
     },
     {
@@ -83,22 +83,27 @@ const Footer = ({
     {
       label: "X",
       icon: "M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z",
+      url: "https://x.com/AnnaRegional",
     },
     {
       label: "Facebook",
       icon: "M22.5 12.063c0-5.799-4.702-10.5-10.5-10.5s-10.5 4.701-10.5 10.5c0 5.244 3.839 9.598 8.958 10.378v-7.342h-2.696v-3.036h2.696v-2.31c0-2.663 1.587-4.13 4.013-4.13 1.16 0 2.37.215 2.37.215v2.609h-1.335c-1.318 0-1.728.815-1.728 1.653v1.962h2.944l-.471 3.036h-2.473v7.343c5.119-.781 8.957-5.134 8.957-10.379",
+      url: "https://www.facebook.com/aurccbe",
     },
     {
       label: "Instagram",
-      icon: "M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069z",
+      icon: "M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 6.836A5.164 5.164 0 1017.164 12 5.164 5.164 0 0012 6.836zm0 8.164A3 3 0 1115 12a3 3 0 01-3 3zm5.836-8.836a1.08 1.08 0 11-2.16 0 1.08 1.08 0 012.16 0z",
+      url: "https://www.instagram.com/annaunivcbe",
     },
     {
       label: "YouTube",
       icon: "M21.582 6.186a2.818 2.818 0 00-1.982-1.996C17.88 3.75 12 3.75 12 3.75s-5.88 0-7.6.44a2.818 2.818 0 00-1.982 1.996C2 7.908 2 12 2 12s0 4.092.418 5.814a2.818 2.818 0 001.982 1.996C6.12 20.25 12 20.25 12 20.25s5.88 0 7.6-.44a2.818 2.818 0 001.982-1.996C22 16.092 22 12 22 12s0-4.092-.418-5.814zM9.75 15.02V8.98L15.5 12l-5.75 3.02z",
+      url: "https://www.youtube.com/@annauniversitycbe",
     },
     {
       label: "LinkedIn",
       icon: "M4.983 3.5C4.983 4.604 4.104 5.5 3 5.5S1.017 4.604 1.017 3.5 1.896 1.5 3 1.5s1.983.896 1.983 2zM.5 8h5V23h-5V8zm7.5 0h4.785v2.052h.068c.667-1.264 2.296-2.596 4.727-2.596 5.057 0 5.995 3.328 5.995 7.656V23h-5v-6.965c0-1.661-.03-3.797-2.312-3.797-2.313 0-2.668 1.806-2.668 3.676V23h-5V8z",
+      url: "https://www.linkedin.com/in/anna-university-regional-campus-coimbatore-030870192",
     },
   ];
 
@@ -107,8 +112,8 @@ const Footer = ({
       className="text-white"
       style={{ background: "linear-gradient(135deg, #6b1a1a 0%, #8b2a2a 40%, #6b1a1a 100%)" }}
     >
-      {/* ── MAIN CONTENT ── limit visible area to ~70vh so user sees it partially */}
-      <div style={{ maxHeight: "70vh", overflowY: "auto" }}>
+      {/*  MAIN CONTENT - limit visible area to ~70vh so user sees it partially */}
+      <div style={{ maxHeight: "70vh" }}>
         <div className="container mx-auto px-6 py-12">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
 
@@ -180,28 +185,36 @@ const Footer = ({
                     Student <span style={{ color: "#f5c842" }}>Portal</span>
                   </h3>
                   <div className="flex flex-col gap-1">
-                    {portalLinks.map((link, idx) => (
-                      <Link
-                        key={idx}
-                        to={link.to}
-                        className="group flex items-center gap-3 py-2 px-3 rounded-lg transition-all"
-                        style={{ background: "transparent" }}
-                        onMouseEnter={e => e.currentTarget.style.background = "rgba(255,255,255,0.07)"}
-                        onMouseLeave={e => e.currentTarget.style.background = "transparent"}
-                      >
-                        <div
-                          className="w-7 h-7 rounded-lg flex items-center justify-center flex-shrink-0 transition-all"
-                          style={{ background: "rgba(255,255,255,0.08)" }}
+                    {portalLinks.map((link, idx) => {
+                      const isPdf = link.to.endsWith(".pdf");
+                      const LinkWrapper = isPdf ? 'a' : Link;
+                      const linkProps = isPdf 
+                        ? { href: link.to, target: "_blank", rel: "noopener noreferrer" } 
+                        : { to: link.to };
+
+                      return (
+                        <LinkWrapper
+                          key={idx}
+                          {...linkProps}
+                          className="group flex items-center gap-3 py-2 px-3 rounded-lg transition-all"
+                          style={{ background: "transparent" }}
+                          onMouseEnter={e => e.currentTarget.style.background = "rgba(255,255,255,0.07)"}
+                          onMouseLeave={e => e.currentTarget.style.background = "transparent"}
                         >
-                          <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                            <path d={link.icon} />
-                          </svg>
-                        </div>
-                        <span className="text-white/85 text-sm font-semibold group-hover:text-white transition-colors">
-                          {link.label}
-                        </span>
-                      </Link>
-                    ))}
+                          <div
+                            className="w-7 h-7 rounded-lg flex items-center justify-center flex-shrink-0 transition-all"
+                            style={{ background: "rgba(255,255,255,0.08)" }}
+                          >
+                            <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                              <path d={link.icon} />
+                            </svg>
+                          </div>
+                          <span className="text-white/85 text-sm font-semibold group-hover:text-white transition-colors">
+                            {link.label}
+                          </span>
+                        </LinkWrapper>
+                      );
+                    })}
                   </div>
                 </div>
               </div>
@@ -211,36 +224,41 @@ const Footer = ({
                 className="rounded-xl p-5 mt-auto"
                 style={{ background: "#9b3535", border: "2px solid rgba(245,200,66,0.5)" }}
               >
-                <h3 className="text-xl font-black uppercase tracking-wide text-center mb-4">
-                  Connect <span style={{ color: "#f5c842" }}>With Us</span>
+                <h3 className="text-xl font-black uppercase tracking-wide text-center mb-4 text-white">
+                  Important <span style={{ color: "#f5c842" }}>Links</span>
                 </h3>
-                <div className="flex justify-center items-center gap-4 flex-wrap">
-                  {socials.map((soc, idx) => (
+
+                {/* ✅ 2 per row grid */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  {[
+                    { name: "Smart India Hackathon", url: "https://www.sih.gov.in/" },
+                    { name: "MSME Portal", url: "https://my.msme.gov.in/inc/" },
+                    { name: "Naan Mudhalvan", url: "https://www.naanmudhalvan.tn.gov.in/" },
+                    { name: "Swayam Portal", url: "https://swayam.gov.in/" },
+                  ].map((link, i) => (
                     <a
-                      key={idx}
-                      href="#"
-                      aria-label={soc.label}
-                      className="flex items-center justify-center rounded-xl transition-all duration-200"
+                      key={i}
+                      href={link.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center justify-center text-center px-4 py-3 rounded-lg font-bold text-sm transition-all duration-300"
                       style={{
-                        width: "46px",
-                        height: "46px",
                         background: "rgba(255,255,255,0.1)",
-                        border: "1px solid rgba(255,255,255,0.18)",
+                        color: "#fff",
+                        border: "1px solid rgba(255,255,255,0.2)",
                       }}
-                      onMouseEnter={e => {
+                      onMouseEnter={(e) => {
                         e.currentTarget.style.background = "#f5c842";
                         e.currentTarget.style.color = "#6b1a1a";
-                        e.currentTarget.style.transform = "translateY(-3px)";
+                        e.currentTarget.style.transform = "translateY(-2px)";
                       }}
-                      onMouseLeave={e => {
+                      onMouseLeave={(e) => {
                         e.currentTarget.style.background = "rgba(255,255,255,0.1)";
-                        e.currentTarget.style.color = "white";
+                        e.currentTarget.style.color = "#fff";
                         e.currentTarget.style.transform = "translateY(0)";
                       }}
                     >
-                      <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                        <path d={soc.icon} />
-                      </svg>
+                      {link.name}
                     </a>
                   ))}
                 </div>
@@ -267,12 +285,12 @@ const Footer = ({
                   </h3>
                 </div>
 
-                <div className="relative overflow-hidden" style={{ height: "320px" }}>
-                  <div className="absolute inset-x-0 animate-marquee flex flex-col gap-2 px-4 py-3">
-                    {[...data.links, ...data.links].map((link, i) => (
+                <div className="relative overflow-hidden group" style={{ height: "320px" }}>
+                  <div className="absolute inset-x-0 animate-marquee flex flex-col gap-2 px-4 py-3 group-hover:[animation-play-state:paused]">
+                    {[...data.links, ...data.links].map((item, i) => (
                       <a
                         key={i}
-                        href={`https://${link}`}
+                        href={item.url}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="text-center py-4 px-4 rounded-full text-sm font-bold transition-all duration-200"
@@ -292,7 +310,7 @@ const Footer = ({
                           e.currentTarget.style.borderColor = "rgba(255,255,255,0.1)";
                         }}
                       >
-                        {link}
+                        {item.name}
                       </a>
                     ))}
                   </div>
@@ -306,12 +324,52 @@ const Footer = ({
 
       {/* ── BOTTOM BAR ── */}
       <div style={{ background: "rgba(0,0,0,0.25)", borderTop: "1px solid rgba(255,255,255,0.1)" }}>
-        <div className="container mx-auto px-6 py-5">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+
+        <div className="w-full px-6 py-3"> {/* ⬅ changed from container to w-full */}
+
+          <div className="flex flex-col md:flex-row items-center gap-4">
+
+            {/* LEFT */}
             <p className="text-white/60 text-xs font-semibold uppercase tracking-widest">
               © 2026 Anna University Regional Campus Coimbatore. All rights reserved.
             </p>
-            <div className="flex items-center gap-6">
+
+            {/* CENTER */}
+            <div className="flex justify-center items-center gap-4 flex-wrap md:mx-auto">
+              {socials.map((soc, idx) => (
+                <a
+                  key={idx}
+                  href={soc.url || "#"}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={soc.label}
+                  className="flex items-center justify-center rounded-xl transition-all duration-200"
+                  style={{
+                    width: "46px",
+                    height: "46px",
+                    background: "rgba(255,255,255,0.1)",
+                    border: "1px solid rgba(255,255,255,0.18)",
+                  }}
+                  onMouseEnter={e => {
+                    e.currentTarget.style.background = "#f5c842";
+                    e.currentTarget.style.color = "#6b1a1a";
+                    e.currentTarget.style.transform = "translateY(-3px)";
+                  }}
+                  onMouseLeave={e => {
+                    e.currentTarget.style.background = "rgba(255,255,255,0.1)";
+                    e.currentTarget.style.color = "white";
+                    e.currentTarget.style.transform = "translateY(0)";
+                  }}
+                >
+                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                    <path d={soc.icon} />
+                  </svg>
+                </a>
+              ))}
+            </div>
+
+            {/* RIGHT (FORCED CORNER) */}
+            <div className="flex gap-6 items-center md:ml-auto">
               {["Team", "Privacy", "Safety"].map((item) => (
                 <a
                   key={item}
@@ -322,7 +380,9 @@ const Footer = ({
                 </a>
               ))}
             </div>
+
           </div>
+
         </div>
       </div>
     </footer>

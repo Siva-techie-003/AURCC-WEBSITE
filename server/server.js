@@ -35,6 +35,7 @@ import libraryRoutes from "./routes/libraryRoutes.js";
 import sportsRoutes from "./routes/sportsRoutes.js";
 import hostelRoutes from "./routes/hostelRoutes.js";
 import aicteRoutes from "./routes/aicteRoutes.js";
+import studentAffairsRoutes from "./routes/studentAffairsRoutes.js";
 
 import errorHandler from "./middleware/errorHandler.js";
 
@@ -53,9 +54,6 @@ app.use(express.json());
 
 /* Serve Public Folder */
 app.use("/public", express.static(path.join(__dirname, "public")));
-
-
-app.use("/public", express.static("public"));
 
 /* API Routes */
 app.use("/api/departments", departmentRoutes);
@@ -86,6 +84,7 @@ app.use("/api/library", libraryRoutes);
 app.use("/api/sports", sportsRoutes);
 app.use("/api/hostel", hostelRoutes);
 app.use("/api/aicte-moe", aicteRoutes);
+app.use("/api/student-affairs", studentAffairsRoutes);
 
 /* Test API */
 app.get("/api/test", (req, res) => {
