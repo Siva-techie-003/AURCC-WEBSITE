@@ -1,4 +1,4 @@
-﻿import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './DeanOffice.css';
 
 const DeanOffice = () => {
@@ -30,7 +30,7 @@ const DeanOffice = () => {
             <div className="max-w-7xl mx-auto">
                 <h1 className="text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-extrabold text-[rgb(100,25,25)] tracking-wide text-center uppercase mb-4">Dean Office Staff</h1>
                 <div className="flex justify-center mb-10">
-                    <span className="block w-24 sm:w-32 h-2 rounded-full bg-gradient-to-r from-[rgb(115,63,63)] via-[rgb(115,45,45)] to-[rgb(115,25,25)]"></span>
+                    <span className="block w-24 sm:w-32 h-2 rounded-full bg-[#f5c842]"></span>
                 </div>
 
                 <div className="flex justify-center">
