@@ -1,4 +1,4 @@
-import React from "react";
+﻿import React from "react";
 import { Link } from "react-router-dom";
 
 const Footer = ({
@@ -14,9 +14,9 @@ const Footer = ({
       { name: "www.sidbi.in", url: "https://www.sidbi.in" },
       { name: "www.iie.gov.in", url: "https://iie.gov.in" },
       { name: "www.nmcc.ac.in", url: "https://nmcc.ac.in" },
-      { name: "www.cecri.res.in/cecri/Default.aspx", url: "https://www.cecri.res.in/cecri/Default.aspx" },
+      { name: "www.cecri.res.in", url: "https://www.cecri.res.in/cecri/Default.aspx" },
       { name: "www.csir.res.in", url: "https://www.csir.res.in" },
-      { name: "www.dsir.gov.in/international-cooperation-division", url: "https://www.dsir.gov.in/international-cooperation-division" },
+      { name: "www.dsir.gov.in", url: "https://www.dsir.gov.in/international-cooperation-division" },
       { name: "www.cmeri.res.in", url: "https://www.cmeri.res.in" },
       { name: "www.entrepreneur.com", url: "https://www.entrepreneur.com" },
       { name: "www.howtoexportimport.com", url: "https://www.howtoexportimport.com" },

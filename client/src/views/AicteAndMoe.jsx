@@ -110,7 +110,6 @@ useEffect(() => {
                 {/* Important Links */}
                 <div id="important_links" ref={sectionRefs.important_links} className="bg-white/70 backdrop-blur-md rounded-2xl shadow-lg border border-gray-100 overflow-hidden">
                     <div className="bg-gradient-to-r from-[rgb(115,63,63)] to-[rgb(115,25,25)] py-4 sm:py-5 flex items-center justify-center gap-2 sm:gap-3">
-                        <span className="text-lg lg:text-xl text-white">🔗</span>
                         <h2 className="text-lg sm:text-xl lg:text-2xl xl:text-3xl font-bold text-white text-center">Important Links</h2>
                     </div>
                     <div className="p-4 sm:p-6 md:p-8 lg:p-10 text-left">
@@ -127,7 +126,6 @@ useEffect(() => {
                 {/* Circulars & Notifications */}
                 <div id="circulars_notifications" ref={sectionRefs.circulars_notifications} className="bg-white/70 backdrop-blur-md rounded-2xl shadow-lg border border-gray-100 overflow-hidden">
                     <div className="bg-gradient-to-r from-[rgb(115,63,63)] to-[rgb(115,25,25)] py-4 sm:py-5 flex items-center justify-center gap-2 sm:gap-3">
-                        <span className="text-lg lg:text-xl text-white">📢</span>
                         <h2 className="text-lg sm:text-xl lg:text-2xl xl:text-3xl font-bold text-white text-center">Circulars & Notifications</h2>
                     </div>
                     <div className="p-4 sm:p-6 md:p-8 lg:p-10 text-left">
