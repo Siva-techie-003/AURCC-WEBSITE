@@ -134,9 +134,9 @@ const Header = () => {
       links: [
         // { name: "Physical Education", route: "/sports" },
         { name: "NSS", route: "/nss" },
-        { name: "Kani Tamil Peravai", route: "/tamilmandram" },
+        { name: "Kani Tamil Peravai", route: "/" },
         { name: "Fine Arts Club", route: "/fine-arts" },
-        { name: "Alumni", route: "/alumni" },
+        { name: "Alumni", route: "/" },
       ],
     },
   ];
@@ -235,8 +235,8 @@ const Header = () => {
                 </svg>
                 <span className="hidden sm:inline font-medium">Contact</span>
               </Link>
-              {/* <Link
-                to="/library"
+              <Link
+                to="/feedback"
                 className="hover:text-yellow-300 transition-colors flex items-center gap-1.5 group"
               >
                 <svg
@@ -249,7 +249,7 @@ const Header = () => {
                   <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"></path>
                 </svg>
                 <span className="hidden sm:inline font-medium">Feedback</span>
-              </Link> */}
+              </Link>
             </div>
           </div>
         </div>

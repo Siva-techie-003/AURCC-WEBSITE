@@ -3,23 +3,10 @@ import RegulationCard from '../components/RegulationCard';
 import './Regulation.css';
 
 const Regulation2025 = () => {
-    const [regulations, setRegulations] = useState(null);
-
-  useEffect(() => {
-    fetch("/api/regulations")
-      .then(res => res.json())
-      .then(data => {
-        const filtered = (data.regulations || []).filter(reg => 
-            reg['Regulation'] && reg['Regulation'].includes('2025')
-        );
-        setRegulations(filtered);
-      })
-      .catch(err => console.error(err));
-  }, []);
-
-  if (!regulations) {
-    return <p className="text-center mt-20">Loading regulations...</p>;
-  }
+    const regulations = [
+        { Regulation: "UG PROGRAMMES", "PDF Link": "https://cac.annauniv.edu/aidetails/ai_ug_cands_2021ft.html" },
+        { Regulation: "PG PROGRAMMES", "PDF Link": "https://cac.annauniv.edu/aidetails/ai_ug_cands_2021ft.html" }
+    ];
 
     return (
         <div className="flex-grow bg-white min-h-screen text-left pt-[120px] sm:pt-[140px] lg:pt-[120px]">
@@ -52,23 +39,19 @@ const Regulation2025 = () => {
                             {regulations.map((reg, i) => (
                                 <div key={i} className="group">
                                     <RegulationCard
-                                        title={reg['Regulation']}
-                                        pdf={`${reg["PDF Link"]}`}
+                                        title={reg.Regulation}
+                                        pdf={reg["PDF Link"]}
                                     />
                                 </div>
                             ))}
                         </div>
-                        {regulations.length === 0 && (
-                            <p className="text-center text-gray-500 py-10">No regulations found for the year 2025.</p>
-                        )}
                     </section>
 
                     {/* Warning/Note Section */}
-                    <section className="bg-amber-50 border-2 border-amber-200 p-8 sm:p-12 rounded-3xl flex flex-col md:flex-row items-center gap-8 animate-fadeIn">
-                        <div className="w-20 h-20 bg-amber-200 rounded-2xl flex items-center justify-center text-4xl shrink-0 animate-pulse">⚠</div>
-                        <div>
-                            <h3 className="text-xl font-bold text-amber-900 uppercase tracking-tight mb-2">Important Notice</h3>
-                            <p className="text-amber-800 font-medium leading-relaxed">Students are required to download and carefully read the regulations relevant to their year of admission. These documents govern your academic progress, internal assessments, and end-semester examinations.</p>
+                    <section className="bg-[#fffcf0] border border-[#fce39e] p-5 sm:p-6 rounded-2xl flex flex-col md:flex-row items-center md:items-start gap-5 animate-fadeIn shadow-sm max-w-5xl mx-auto">
+                        <div className="text-center md:text-left">
+                            <h3 className="text-base font-extrabold text-[#875b22] uppercase tracking-wide mb-1.5">⚠️Important Notice</h3>
+                            <p className="text-sm text-[#946931] font-medium leading-relaxed">Students are required to download and carefully read the regulations relevant to their year of admission. These documents govern your academic progress, internal assessments, and end-semester examinations.</p>
                         </div>
                     </section>
                 </main>

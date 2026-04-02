@@ -58,6 +58,7 @@ const GraduationPage = lazy(() => import('./views/GraduationPage'));
 const GraduationGallery = lazy(() => import('./views/GraduationGallery'));
 const AnnualDayPage = lazy(() => import('./views/AnnualDayPage'));
 const AnnualDayGallery = lazy(() => import('./views/AnnualDayGallery'));
+const FeedbackView = lazy(() => import('./views/FeedbackView'));
 function App() {
     return (
         <div className="App min-h-screen flex flex-col">
@@ -120,6 +121,7 @@ function App() {
                         <Route path="/events" element={<Events />} />
                         <Route path="/downloads" element={<Downloads />} />
                         <Route path="/posh" element={<POSH />} />
+                        <Route path="/feedback" element={<FeedbackView />} />
                         <Route path="*" element={<NotFound />} />
                     </Routes>
                 </Suspense>

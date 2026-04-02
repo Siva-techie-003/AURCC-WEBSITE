@@ -4,22 +4,22 @@ import { Link } from "react-router-dom";
 const Footer = ({
   data = {
     links: [
-      { name: "DGSND", url: "https://dsndharyana.gov.in" },
-      { name: "NIC", url: "https://www.nic.in" },
-      { name: "NSIC", url: "https://www.nsic.co.in" },
-      { name: "KVIC", url: "https://kviconline.gov.in" },
-      { name: "Coir Board", url: "http://www.coirboard.gov.in" },
-      { name: "NCEUIS", url: "https://msme.gov.in/national-commission-enterprises-un-organised-sectornceus" },
-      { name: "NISIET", url: "https://www.nimsme.gov.in" },
-      { name: "SIDBI", url: "https://www.sidbi.in" },
-      { name: "IIE", url: "https://iie.gov.in" },
-      { name: "NMCC", url: "https://nmcc.ac.in" },
-      { name: "CECRI", url: "https://www.cecri.res.in/cecri/Default.aspx" },
-      { name: "CSIR", url: "https://www.csir.res.in" },
-      { name: "NISSAT", url: "https://www.dsir.gov.in/international-cooperation-division" },
-      { name: "CMERI", url: "https://www.cmeri.res.in" },
-      { name: "Entrepreneur", url: "https://www.entrepreneur.com" },
-      { name: "How To Export Import", url: "https://www.howtoexportimport.com" },
+      { name: "www.dsndharyana.gov.in", url: "https://dsndharyana.gov.in" },
+      { name: "www.nic.in", url: "https://www.nic.in" },
+      { name: "www.nsic.co.in", url: "https://www.nsic.co.in" },
+      { name: "www.kviconline.gov.in", url: "https://kviconline.gov.in" },
+      { name: "www.coirboard.gov.in", url: "http://www.coirboard.gov.in" },
+      { name: "www.nceuis.gov.in", url: "https://msme.gov.in/national-commission-enterprises-un-organised-sectornceus" },
+      { name: "www.nimsme.gov.in", url: "https://www.nimsme.gov.in" },
+      { name: "www.sidbi.in", url: "https://www.sidbi.in" },
+      { name: "www.iie.gov.in", url: "https://iie.gov.in" },
+      { name: "www.nmcc.ac.in", url: "https://nmcc.ac.in" },
+      { name: "www.cecri.res.in", url: "https://www.cecri.res.in/cecri/Default.aspx" },
+      { name: "www.csir.res.in", url: "https://www.csir.res.in" },
+      { name: "www.dsir.gov.in", url: "https://www.dsir.gov.in/international-cooperation-division" },
+      { name: "www.cmeri.res.in", url: "https://www.cmeri.res.in" },
+      { name: "www.entrepreneur.com", url: "https://www.entrepreneur.com" },
+      { name: "www.howtoexportimport.com", url: "https://www.howtoexportimport.com" },
     ],
   },
 }) => {
@@ -58,7 +58,7 @@ const Footer = ({
       icon: "M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5 5.754 5 4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18c1.746 0 3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253",
     },
     {
-      to: "/grievance-cell",
+      to: "/Grievance redressal.pdf",
       label: "Grievance Cell",
       icon: "M3 21h18M5 21V7a2 2 0 012-2h10a2 2 0 012 2v14M9 21v-4h6v4M9 10h.01M15 10h.01M9 14h.01M15 14h.01",
     },
@@ -112,7 +112,7 @@ const Footer = ({
       className="text-white"
       style={{ background: "linear-gradient(135deg, #6b1a1a 0%, #8b2a2a 40%, #6b1a1a 100%)" }}
     >
-      {/* ── MAIN CONTENT ── limit visible area to ~70vh so user sees it partially */}
+      {/*  MAIN CONTENT - limit visible area to ~70vh so user sees it partially */}
       <div style={{ maxHeight: "70vh" }}>
         <div className="container mx-auto px-6 py-12">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -185,28 +185,36 @@ const Footer = ({
                     Student <span style={{ color: "#f5c842" }}>Portal</span>
                   </h3>
                   <div className="flex flex-col gap-1">
-                    {portalLinks.map((link, idx) => (
-                      <Link
-                        key={idx}
-                        to={link.to}
-                        className="group flex items-center gap-3 py-2 px-3 rounded-lg transition-all"
-                        style={{ background: "transparent" }}
-                        onMouseEnter={e => e.currentTarget.style.background = "rgba(255,255,255,0.07)"}
-                        onMouseLeave={e => e.currentTarget.style.background = "transparent"}
-                      >
-                        <div
-                          className="w-7 h-7 rounded-lg flex items-center justify-center flex-shrink-0 transition-all"
-                          style={{ background: "rgba(255,255,255,0.08)" }}
+                    {portalLinks.map((link, idx) => {
+                      const isPdf = link.to.endsWith(".pdf");
+                      const LinkWrapper = isPdf ? 'a' : Link;
+                      const linkProps = isPdf 
+                        ? { href: link.to, target: "_blank", rel: "noopener noreferrer" } 
+                        : { to: link.to };
+
+                      return (
+                        <LinkWrapper
+                          key={idx}
+                          {...linkProps}
+                          className="group flex items-center gap-3 py-2 px-3 rounded-lg transition-all"
+                          style={{ background: "transparent" }}
+                          onMouseEnter={e => e.currentTarget.style.background = "rgba(255,255,255,0.07)"}
+                          onMouseLeave={e => e.currentTarget.style.background = "transparent"}
                         >
-                          <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                            <path d={link.icon} />
-                          </svg>
-                        </div>
-                        <span className="text-white/85 text-sm font-semibold group-hover:text-white transition-colors">
-                          {link.label}
-                        </span>
-                      </Link>
-                    ))}
+                          <div
+                            className="w-7 h-7 rounded-lg flex items-center justify-center flex-shrink-0 transition-all"
+                            style={{ background: "rgba(255,255,255,0.08)" }}
+                          >
+                            <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                              <path d={link.icon} />
+                            </svg>
+                          </div>
+                          <span className="text-white/85 text-sm font-semibold group-hover:text-white transition-colors">
+                            {link.label}
+                          </span>
+                        </LinkWrapper>
+                      );
+                    })}
                   </div>
                 </div>
               </div>

@@ -1,4 +1,4 @@
-﻿import React,{useEffect,useState} from 'react';
+import React,{useEffect,useState} from 'react';
 import './Registrar.css';
 
 const Registrar = () => {
@@ -22,7 +22,7 @@ const Registrar = () => {
   if (loading) {
     return <p className="text-center mt-20">Loading...</p>;
   }
-  const BACKEND_URL = "";
+  const BACKEND_URL = "http://localhost:5000/public/";
 
   const getPhotoPath = (photo) => {
   return photo ? `${BACKEND_URL}/${photo}` : `${BACKEND_URL}/default.jpg`;
@@ -34,7 +34,7 @@ const Registrar = () => {
                 <header className="mb-16 text-center animate-fadeIn">
                     <h1 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-black text-[rgb(90,20,20)] uppercase tracking-tighter font-serif mb-4">University Leadership</h1>
                     <div className="flex justify-center">
-                        <span className="block w-24 sm:w-32 h-2 rounded-full bg-gradient-to-r from-[rgb(115,63,63)] via-[rgb(115,45,45)] to-[rgb(115,25,25)]"></span>
+                        <span className="block w-24 sm:w-32 h-2 rounded-full bg-[#f5c842]"></span>
                     </div>
                 </header>
 

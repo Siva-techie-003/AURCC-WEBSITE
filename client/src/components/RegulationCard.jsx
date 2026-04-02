@@ -1,4 +1,4 @@
-﻿import React from 'react';
+import React from 'react';
 import './RegulationCard.css';
 import stampIcon from '../assets/icons/stamp.png';
 
@@ -17,7 +17,7 @@ const RegulationCard = ({ title, pdf }) => {
                 onClick={openPdf}
                 className="inline-block w-full px-8 py-3 rounded-2xl bg-[rgb(115,40,40)] text-white font-black shadow-lg hover:bg-yellow-400 hover:text-[rgb(100,25,25)] transition-all active:scale-95 mt-6 uppercase tracking-widest text-xs"
             >
-                View Regulations PDF
+                VIEW REGULATIONS
             </button>
         </div>
     );

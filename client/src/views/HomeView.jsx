@@ -931,7 +931,7 @@ const HomeView = () => {
                 {[0, 1].map((i) => (
                   <button
                     key={i}
-                    onClick={() => scrollToIndex(i)} // ✅ Use unified function
+                    onClick={() => scrollToIndex(i)} //  Use unified function
                     className={`transition-all duration-500 rounded-full ${progIndex === i
                       ? "w-8 h-3 bg-[rgb(120,45,45)]"
                       : "w-3 h-3 bg-gray-300 hover:bg-gray-400"
@@ -942,7 +942,7 @@ const HomeView = () => {
 
               {/* Right Arrow */}
               <button
-                onClick={() => scrollToIndex(Math.min(1, progIndex + 1))} // ✅ Use unified function
+                onClick={() => scrollToIndex(Math.min(1, progIndex + 1))} //  Use unified function
                 className={`p-3 rounded-full border-2 border-[rgb(120,45,45)] text-[rgb(120,45,45)] 
         hover:bg-[rgb(120,45,45)] hover:text-white transition-all duration-300 shadow-md 
         ${progIndex === 1 ? "opacity-30 cursor-not-allowed" : "cursor-pointer"}`}
@@ -1222,7 +1222,7 @@ const HomeView = () => {
 
                         <div>
                           <h3 className="font-bold text-lg mb-2">
-                            Placement Assistance
+                            Placement Support
                           </h3>
 
                           <p className="text-base">
@@ -1382,13 +1382,13 @@ const HomeView = () => {
                           key={`left-${idx}`}
                           className={`absolute inset-0 w-full h-full flex-shrink-0 grid grid-cols-1 xl:grid-cols-3 text-left bg-white ${positionClass}`}
                         >
-                          <div className="xl:col-span-1 bg-gradient-to-br from-[rgb(115,63,63)] to-[rgb(115,25,25)] p-8 flex flex-col items-center justify-center">
+                          <div className="xl:col-span-1 bg-gradient-to-br from-[rgb(115,63,63)] to-[rgb(115,25,25)] p-6 flex flex-col items-center justify-center">
                             <img
                               src={testimonial.image}
                               alt={testimonial.name}
-                              className="rounded-md w-36 h-36 border-4 border-white mb-4 object-cover shadow-lg"
+                              className="rounded-md w-28 h-28 border-[3px] border-white mb-2 mt-2 object-cover shadow-lg"
                             />
-                            <h3 className="text-lg font-bold text-white text-center w-full">
+                            <h3 className="text-lg font-bold text-white text-center w-full mt-2">
                               {testimonial.name}
                             </h3>
                             <p className="text-white text-center w-full">
@@ -1404,7 +1404,7 @@ const HomeView = () => {
                               </span>
                             </p>
                           </div>
-                          <div className="xl:col-span-2 p-8 flex flex-col justify-center">
+                          <div className="xl:col-span-2 p-6 flex flex-col justify-center">
                             <svg
                               className="w-12 h-12 text-[rgb(200,120,120)] mb-4"
                               fill="currentColor"
@@ -1443,13 +1443,13 @@ const HomeView = () => {
                           key={`right-${idx}`}
                           className={`absolute inset-0 w-full h-full flex-shrink-0 grid grid-cols-1 xl:grid-cols-3 text-left bg-white ${positionClass}`}
                         >
-                          <div className="xl:col-span-1 bg-gradient-to-br from-[rgb(115,63,63)] to-[rgb(115,25,25)] p-8 flex flex-col items-center justify-center">
+                          <div className="xl:col-span-1 bg-gradient-to-br from-[rgb(115,63,63)] to-[rgb(115,25,25)] p-6 flex flex-col items-center justify-center">
                             <img
                               src={testimonial.image}
                               alt={testimonial.name}
-                              className="rounded-md w-36 h-36 border-4 border-white mb-4 object-cover shadow-lg"
+                              className="rounded-md w-28 h-28 border-[3px] border-white mb-2 mt-2 object-cover shadow-lg"
                             />
-                            <h3 className="text-lg font-bold text-white text-center w-full">
+                            <h3 className="text-lg font-bold text-white text-center w-full mt-2">
                               {testimonial.name}
                             </h3>
                             <p className="text-white text-center w-full">
@@ -1465,7 +1465,7 @@ const HomeView = () => {
                               </span>
                             </p>
                           </div>
-                          <div className="xl:col-span-2 p-8 flex flex-col justify-center">
+                          <div className="xl:col-span-2 p-6 flex flex-col justify-center">
                             <svg
                               className="w-12 h-12 text-[rgb(200,120,120)] mb-4"
                               fill="currentColor"
