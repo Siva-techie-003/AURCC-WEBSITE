@@ -2,6 +2,7 @@ import React, { Suspense, lazy } from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import ScrollToTop from './components/ScrollToTop';
 
 // Lazy load components for performance
 const HomeView = lazy(() => import('./views/HomeView'));
@@ -64,6 +65,7 @@ function App() {
         <div className="App min-h-screen flex flex-col">
             <Header />
             <main className="flex-grow">
+                <ScrollToTop />
                 <Suspense fallback={<div className="flex items-center justify-center p-20 text-[rgb(115,40,40)] font-bold animate-pulse">Loading Institutional Assets...</div>}>
                     <Routes>
                         <Route path="/" element={<HomeView />} />

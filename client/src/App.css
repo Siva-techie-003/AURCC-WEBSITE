@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+  zoom: 0.9;
+}
+
 /* Modern Mobile Menu Animations */
 @keyframes mobile-menu-open {
   from {
