@@ -91,7 +91,7 @@ const PGPrograms = () => {
   }, []);
 
   if (!data) {
-  return <p className="text-center mt-20">Loading programs...</p>;
+  return <p className="text-center mt-20">Loading programme...</p>;
 }
 
     return (
@@ -122,7 +122,7 @@ const PGPrograms = () => {
         <h1 className="text-3xl sm:text-5xl lg:text-6xl 
                        font-black text-white 
                        tracking-tight mb-4">
-            Postgraduate Programs
+            Postgraduate Programme
         </h1>
 
         <div className="w-20 h-1 bg-yellow-400 mx-auto mb-5 rounded-full"></div>
@@ -130,7 +130,7 @@ const PGPrograms = () => {
         <p className="text-sm sm:text-lg lg:text-xl 
                       text-gray-100 font-medium 
                       leading-relaxed max-w-2xl mx-auto">
-            Advance your expertise and lead innovation with our specialized PG and management programs.
+            Advance your expertise and lead innovation with our specialized PG and management programme.
         </p>
 
     </div>

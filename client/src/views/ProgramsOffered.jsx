@@ -47,7 +47,7 @@ const ProgramsOffered = () => {
         if (course.includes('ARTIFICIAL INTELLIGENCE')) return 'Machine learning, data analytics, and AI.';
         if (course.includes('BUSINESS ANALYTICS')) return 'Business intelligence, analytics, and data-driven management.';
         if (course.includes('MBA')) return 'Master business administration and leadership.';
-        return 'A comprehensive program for future leaders.';
+        return 'A comprehensive programme for future leaders.';
     };
 
     const getLearnMoreLink = (course) => {
@@ -91,7 +91,7 @@ const ProgramsOffered = () => {
     }, []);
 
     if (!data) {
-        return <p className="text-center mt-20">Loading programs...</p>;
+        return <p className="text-center mt-20">Loading programme...</p>;
     }
 
     return (
@@ -130,9 +130,9 @@ const ProgramsOffered = () => {
                     <h1 className="text-3xl sm:text-5xl lg:text-6xl 
                        font-black text-white 
                        tracking-tight mb-4">
-            Programmes Offered
+            Programme Offered
         </h1>
-                      <h1>  Programs Offered
+                      <h1>  Programme Offered
                     </h1>
                     <div className="w-20 h-1 bg-yellow-400 mx-auto mb-5 rounded-full"></div>
 
@@ -150,7 +150,7 @@ const ProgramsOffered = () => {
 
                 {/* UG Section */}
                 <section>
-                    <SectionHeader title="Undergraduate Programs" />
+                    <SectionHeader title="Undergraduate Programme" />
 
                     <div
                         className="grid gap-10 justify-center
@@ -172,7 +172,7 @@ const ProgramsOffered = () => {
 
                 {/* PG Section */}
                 <section>
-                    <SectionHeader title="Postgraduate Programs" />
+                    <SectionHeader title="Postgraduate Programme" />
 
                     <div
                         className="grid gap-10 justify-center
