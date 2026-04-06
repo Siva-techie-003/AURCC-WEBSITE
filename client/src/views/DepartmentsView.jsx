@@ -138,7 +138,7 @@ const DepartmentsView = () => {
         >
           <div className="absolute inset-0 bg-gradient-to-r from-[rgb(115,63,63)]/70 to-[rgb(115,25,25)]/30"></div>
           <div className="container mx-auto h-full flex items-center relative z-10 px-3 sm:px-4 md:px-6 lg:px-9">
-            <div className="max-w-2xl">
+            <div className="max-w-full">
               <h1 className="text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-bold mb-3 sm:mb-4 text-white">
                 <span className="text-white bg-clip-text text-transparent">
                   {department.name}
@@ -224,7 +224,7 @@ const DepartmentsView = () => {
 
             {/* Department Statistics */}
             <div className="bg-[rgb(115,55,55)] py-14">
-              <div className="max-w-7xl mx-auto px-6 lg:px-8">
+              <div className="max-w-full mx-auto px-6 lg:px-8">
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
                   {/* Established */}
                   <div className="flex flex-col items-center">
@@ -386,15 +386,15 @@ const DepartmentsView = () => {
                       {/* SCROLL CARD */}
                       <div className="bg-gray-50 rounded-lg p-5 mt-8 h-[320px] border border-gray-300 overflow-y-auto shadow-inner">
                         {department?.p1 && (
-                          <p className="mb-3">{department.p1}</p>
+                          <p className="mb-3 text-lg leading-relaxed">{department.p1}</p>
                         )}
                         {department?.p2 && (
-                          <p className="mb-3">{department.p2}</p>
+                          <p className="mb-3 text-lg leading-relaxed">{department.p2}</p>
                         )}
                         {department?.p3 && (
-                          <p className="mb-3">{department.p3}</p>
+                          <p className="mb-3 text-lg leading-relaxed">{department.p3}</p>
                         )}
-                        {department?.p4 && <p>{department.p4}</p>}
+  
                       </div>
                     </div>
                   </div>
@@ -788,7 +788,7 @@ const DepartmentsView = () => {
               )}
             </div>
 
-            <div className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto py-12">
+            <div className="px-4 sm:px-6 lg:px-8 max-w-full mx-auto py-12">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                 {/* Research & Publications */}
                 <div
@@ -803,7 +803,7 @@ const DepartmentsView = () => {
                   </div>
 
                   {/* Content */}
-                  <div className="p-5 space-y-4 max-h-80 overflow-auto">
+                  <div className="p-5 space-y-4 max-h-[450px] overflow-auto">
                     {(Array.isArray(department?.research_and_publications)
                       ? department.research_and_publications
                       : []
@@ -845,7 +845,7 @@ const DepartmentsView = () => {
                   </div>
 
                   {/* Content */}
-                  <div className="p-5 space-y-4 max-h-80 overflow-auto">
+                  <div className="p-5 space-y-4 max-h-[450px] overflow-auto">
                     {(Array.isArray(department?.achievements)
                       ? department.achievements
                       : []
@@ -879,14 +879,14 @@ const DepartmentsView = () => {
             {/* Facility */}
             <div
               id="facility"
-              className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto py-12 bg-white v"
+              className="px-4 sm:px-6 lg:px-8 max-w-full mx-auto py-12 bg-white v"
             >
               <h2 className="text-3xl md:text-4xl font-bold text-center mb-10 text-gray-800">
                 <span className="bg-gradient-to-r from-[rgb(115,63,63)] to-[rgb(115,25,25)] bg-clip-text text-transparent">
                   World-Class Facilities
                 </span>
               </h2>
-              <div className="max-w-6xl mx-auto space-y-12 sm:space-y-16">
+              <div className="max-w-full mx-auto space-y-12 sm:space-y-16">
                 {(Array.isArray(department?.facility)
                   ? department.facility
                   : []
