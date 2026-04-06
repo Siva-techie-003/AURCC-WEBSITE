@@ -71,7 +71,7 @@ const Header = () => {
             { name: "Anti-drug committee", href: "/forms/Anti Drug Committee.pdf" },
             { name: "Internal Complaint Committee", href: "/forms/ICC.pdf" },
             { name: "Institute Academic Affairs committee", href: "/forms/IAA-Committee.pdf" },
-            { name: "committee for SC/ST", href: "/forms/PCBD-Committee.pdf" },
+            { name: "Committee for SC/ST", href: "/forms/PCBD-Committee.pdf" },
             { name: "Student Councellor committee", href: "/forms/Students Cousellor.pdf" },
           ],
         },
