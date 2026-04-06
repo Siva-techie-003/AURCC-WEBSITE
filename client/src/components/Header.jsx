@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+﻿import React, { useState } from "react";
 import { href, Link, useNavigate } from "react-router-dom";
 
 
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isQuickLinksOpen, setIsQuickLinksOpen] = useState(false);
   const navigate = useNavigate();
 
   const mobileSections = [
@@ -25,7 +26,6 @@ const Header = () => {
       name: "Administration",
       isOpen: false,
       links: [
-        // { name: "Organogram", route: "/organogram" },
         { name: "University Administration", route: "/Registrar" },
         { name: "Head of the Departments", route: "/HOD" },
         {
@@ -70,7 +70,7 @@ const Header = () => {
             { name: "Anti-drug committee", href: "/forms/Anti Drug Committee.pdf" },
             { name: "Internal Complaint Committee", href: "/forms/ICC.pdf" },
             { name: "Institute Academic Affairs committee", href: "/forms/IAA-Committee.pdf" },
-            { name: "committee for SC/ST", href: "#" },
+            { name: "committee for SC/ST", href: "/forms/PCBD-Committee.pdf" },
             { name: "Disciplinary committee", href: "#" },
             { name: "Student Councellor committee", href: "/forms/Students Cousellor.pdf" },
           ],
@@ -150,28 +150,31 @@ const Header = () => {
   };
 
   return (
-    <div className="fixed top-0 left-0 w-full z-50">
+    <div className="fixed top-0 left-0 w-full z-[1000]">
       {/* Top Bar */}
       <div className="bg-gradient-to-r from-[rgb(115,63,63)] to-[rgb(115,25,25)] text-white">
         <div className="container mx-auto px-4 sm:px-6">
           <div className="flex items-center justify-between py-2 text-xs sm:text-sm">
-            <div className="flex item-center gap-10">
-              <span className="font-medium truncate">
-                AICTE PID:{" "}
-                <span className="text-yellow-300 font-bold">1- 4500612781</span>
+            <div className="flex items-center gap-2 sm:gap-6 lg:gap-10">
+              <span className="font-medium flex items-center gap-1 text-[9px] sm:text-xs">
+                <span className="hidden lg:inline">AICTE PID:</span>
+                <span className="lg:hidden">PID:</span>
+                <span className="text-yellow-300 font-bold whitespace-nowrap">1- 4500612781</span>
               </span>
-              <span className="font-medium truncate">
-                Counselling Code:{" "}
-                <span className="text-yellow-300 font-bold">2025</span>
+              <span className="font-medium flex items-center gap-1 text-[9px] sm:text-xs">
+                <span className="hidden lg:inline">Counselling Code:</span>
+                <span className="lg:hidden">Code:</span>
+                <span className="text-yellow-300 font-bold whitespace-nowrap">2025</span>
               </span>
             </div>
-            <div className="flex items-center space-x-4 sm:space-x-8">
+            {/* Desktop & Tablet Links */}
+            <div className="hidden sm:flex items-center space-x-2 sm:space-x-4 lg:space-x-8">
               <Link
                 to="/library"
-                className="hover:text-yellow-300 transition-colors flex items-center gap-1.5 group"
+                className="hover:text-yellow-300 transition-colors flex items-center gap-1 group"
               >
                 <svg
-                  className="w-4 h-4"
+                  className="w-3.5 h-3.5"
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="currentColor"
@@ -179,15 +182,14 @@ const Header = () => {
                 >
                   <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"></path>
                 </svg>
-                <span className="hidden sm:inline font-medium">Library</span>
+                <span className="hidden sm:inline font-medium text-[10px] lg:text-xs">Library</span>
               </Link>
               <Link
                 to="/sports"
-                className="hover:text-yellow-300 transition-colors flex items-center gap-1.5 group"
+                className="hover:text-yellow-300 transition-colors flex items-center gap-1 group"
               >
-                {/* Volleyball Icon */}
                 <svg
-                  className="w-4 h-4"
+                  className="w-3.5 h-3.5"
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="currentColor"
@@ -199,17 +201,14 @@ const Header = () => {
                   <path d="M7 7c3 3 7 3 10 0"></path>
                   <path d="M7 17c3-3 7-3 10 0"></path>
                 </svg>
-
-                <span className="hidden sm:inline font-medium">
-                  Physical Education
-                </span>
+                <span className="hidden sm:inline font-medium text-[10px] lg:text-xs">Physical Education</span>
               </Link>
               <Link
                 to="/hostel"
-                className="hover:text-yellow-300 transition-colors flex items-center gap-1.5 group"
+                className="hover:text-yellow-300 transition-colors flex items-center gap-1 group"
               >
                 <svg
-                  className="w-4 h-4"
+                  className="w-3.5 h-3.5"
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="currentColor"
@@ -218,14 +217,14 @@ const Header = () => {
                   <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
                   <polyline points="9 22 9 12 15 12 15 22"></polyline>
                 </svg>
-                <span className="hidden sm:inline font-medium">Hostel</span>
+                <span className="hidden sm:inline font-medium text-[10px] lg:text-xs">Hostel</span>
               </Link>
               <Link
                 to="/contact"
-                className="hover:text-yellow-300 transition-colors flex items-center gap-1.5 group"
+                className="hover:text-yellow-300 transition-colors flex items-center gap-1 group"
               >
                 <svg
-                  className="w-4 h-4"
+                  className="w-3.5 h-3.5"
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="currentColor"
@@ -233,14 +232,14 @@ const Header = () => {
                 >
                   <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
                 </svg>
-                <span className="hidden sm:inline font-medium">Contact</span>
+                <span className="hidden sm:inline font-medium text-[10px] lg:text-xs">Contact</span>
               </Link>
               <Link
                 to="/feedback"
-                className="hover:text-yellow-300 transition-colors flex items-center gap-1.5 group"
+                className="hover:text-yellow-300 transition-colors flex items-center gap-1 group"
               >
                 <svg
-                  className="w-4 h-4"
+                  className="w-3.5 h-3.5"
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="currentColor"
@@ -248,8 +247,42 @@ const Header = () => {
                 >
                   <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"></path>
                 </svg>
-                <span className="hidden sm:inline font-medium">Feedback</span>
+                <span className="hidden sm:inline font-medium text-[10px] lg:text-xs">Feedback</span>
               </Link>
+            </div>
+
+            {/* Mobile Dropdown (Only for phones) */}
+            <div className="sm:hidden relative">
+              <button
+                onClick={() => setIsQuickLinksOpen(!isQuickLinksOpen)}
+                className="flex items-center gap-2 hover:text-yellow-300 transition-colors py-1 px-2 rounded-lg bg-white/10"
+              >
+                {/* <span className="font-bold uppercase tracking-wider text-[10px]">Links</span> */}
+                <svg className={`w-3 h-3 transition-transform ${isQuickLinksOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+
+              {isQuickLinksOpen && (
+                <div className="absolute right-0 mt-2 w-48 bg-white rounded-xl shadow-2xl py-2 z-[1001] border border-gray-100 animate-slideDown">
+                  {[
+                    { name: 'Library', to: '/library', icon: 'M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20' },
+                    { name: 'Hostel', to: '/hostel', icon: 'M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z' },
+                    { name: 'Contact', to: '/contact', icon: 'M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z' },
+                    { name: 'Feedback', to: '/feedback', icon: 'M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20' }
+                  ].map((link, i) => (
+                    <Link
+                      key={i}
+                      to={link.to}
+                      onClick={() => setIsQuickLinksOpen(false)}
+                      className="flex items-center gap-3 px-4 py-2.5 text-sm font-bold text-gray-700 hover:bg-[rgb(115,40,40)] hover:text-white transition-all"
+                    >
+                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d={link.icon} /></svg>
+                      {link.name}
+                    </Link>
+                  ))}
+                </div>
+              )}
             </div>
           </div>
         </div>
@@ -257,25 +290,25 @@ const Header = () => {
 
       {/* Main Header */}
       <header
-        className="fixed top-9 left-0 w-full z-[999] bg-white shadow-xl border-b border-gray-100 flex items-center"
+        className="w-full bg-white shadow-xl border-b border-gray-100 flex items-center"
         style={{ minHeight: "80px" }}
       >
         <div className="w-full px-3 sm:px-5 lg:px-8">
           <nav className="flex items-center justify-between gap-2">
             {/* ── LEFT: Logo ── */}
             <div
-              className="flex items-center flex-shrink-0 cursor-pointer ml-8"
+              className="flex items-center flex-shrink-0 cursor-pointer ml-2 sm:ml-4 lg:ml-8"
               onClick={() => navigate("/")}
             >
               <img
                 src="/aurcc_tamil.jpg"
                 alt="AURCC Logo"
-                className="h-14 sm:h-16 md:h-20 lg:h-[90px] w-auto"
+                className="h-10 sm:h-12 md:h-14 lg:h-16 xl:h-[80px] w-auto"
               />
             </div>
 
-            {/* ── RIGHT: Nav Headings ── */}
-            <div className="flex items-center flex-wrap justify-end gap-x-0.5 gap-y-0.5 mr-8">
+            {/* ── RIGHT: Nav Headings (Desktop) ── */}
+            <div className="hidden xl:flex items-center justify-end gap-x-0.5 mr-4">
               {sections.map((section, idx) => (
                 <div key={idx} className="relative group">
                   {/* Nav Button */}
@@ -289,7 +322,7 @@ const Header = () => {
                         navigate(section.route);
                       }
                     }}
-                    className="flex items-center gap-1 px-2 sm:px-3 lg:px-4 py-2 text-xs sm:text-sm lg:text-base font-black text-gray-700 hover:text-[rgb(115,40,40)] hover:bg-[rgb(220,140,140)]/30 rounded-xl transition-all uppercase tracking-tight whitespace-nowrap"
+                    className="flex items-center gap-1 px-1.5 xl:px-4 py-2 text-[10px] xl:text-sm font-black text-gray-700 hover:text-[rgb(115,40,40)] hover:bg-[rgb(220,140,140)]/30 rounded-xl transition-all uppercase tracking-tight whitespace-nowrap"
                   >
                     {section.name}
                     {section.links && (
@@ -380,6 +413,29 @@ const Header = () => {
 )}
                 </div>
               ))}
+            </div>
+
+            {/* Mobile Menu Button */}
+            <div className="xl:hidden flex items-center mr-4">
+              <button
+                onClick={() => setIsMobileMenuOpen(true)}
+                className="p-2 rounded-xl text-gray-600 hover:bg-gray-100 transition-colors"
+                aria-label="Menu"
+              >
+                <svg
+                  className="w-8 h-8"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M4 6h16M4 12h16M4 18h16"
+                  />
+                </svg>
+              </button>
             </div>
           </nav>
         </div>

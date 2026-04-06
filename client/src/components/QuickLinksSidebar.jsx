@@ -66,11 +66,11 @@ const QuickLinksSidebar = () => {
       {/* Vertical Tab – Always Visible */}
       <div
         onClick={() => setIsOpen(prev => !prev)}
-        className="fixed right-0 top-1/2 -translate-y-1/2 z-[201] cursor-pointer bg-gradient-to-b from-[rgb(115,63,63)] to-[rgb(115,25,25)] text-white px-3 py-7 rounded-l-2xl shadow-lg border-y-2 border-l-2 border-yellow-400"
+        className="fixed right-0 top-1/2 -translate-y-1/2 z-[201] cursor-pointer bg-gradient-to-b from-[rgb(115,63,63)] to-[rgb(115,25,25)] text-white px-2 py-4 sm:px-3 sm:py-7 rounded-l-2xl shadow-lg border-y-2 border-l-2 border-yellow-400 transition-all duration-300"
       >
-        <div className="flex flex-col items-center gap-2">
+        <div className="flex flex-col items-center gap-1 sm:gap-2">
           <svg
-            className="w-5 h-5"
+            className="w-4 h-4 sm:w-5 sm:h-5"
             fill="none"
             stroke="currentColor"
             strokeWidth="2.5"
@@ -79,7 +79,7 @@ const QuickLinksSidebar = () => {
             <path strokeLinecap="round" strokeLinejoin="round" d="M13.19 8.688a4.5 4.5 0 011.242 7.244l-4.5 4.5a4.5 4.5 0 01-6.364-6.364l1.757-1.757m13.35-.622l1.757-1.757a4.5 4.5 0 00-6.364-6.364l-4.5 4.5a4.5 4.5 0 001.242 7.244" />
           </svg>
 
-          <span className="font-bold text-[11px] uppercase tracking-[0.2em] [writing-mode:vertical-lr] rotate-180 whitespace-nowrap">
+          <span className="font-bold text-[8px] sm:text-[11px] uppercase tracking-[0.2em] [writing-mode:vertical-lr] rotate-180 whitespace-nowrap">
             Quick Links
           </span>
         </div>

@@ -113,9 +113,9 @@ const Footer = ({
       style={{ background: "linear-gradient(135deg, #6b1a1a 0%, #8b2a2a 40%, #6b1a1a 100%)" }}
     >
       {/*  MAIN CONTENT - limit visible area to ~70vh so user sees it partially */}
-      <div style={{ maxHeight: "70vh" }}>
-        <div className="container mx-auto px-6 py-12">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div style={{ maxHeight: "clamp(50vh, 70vh, 80vh)" }} className="overflow-y-auto">
+        <div className="container mx-auto px-4 sm:px-6 py-8 sm:py-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
 
             {/* ── COL 1 : CAMPUS LOCATION ── */}
             <div className="flex flex-col">
@@ -325,17 +325,17 @@ const Footer = ({
       {/* ── BOTTOM BAR ── */}
       <div style={{ background: "rgba(0,0,0,0.25)", borderTop: "1px solid rgba(255,255,255,0.1)" }}>
 
-        <div className="w-full px-6 py-3"> {/* ⬅ changed from container to w-full */}
+        <div className="w-full px-4 sm:px-6 py-3">
 
-          <div className="flex flex-col md:flex-row items-center gap-4">
+          <div className="flex flex-col gap-3 md:gap-4 md:flex-row md:items-center">
 
             {/* LEFT */}
-            <p className="text-white/60 text-xs font-semibold uppercase tracking-widest">
+            <p className="text-white/60 text-xxs sm:text-xs font-semibold uppercase tracking-widest text-center md:text-left">
               © 2026 Anna University Regional Campus Coimbatore. All rights reserved.
             </p>
 
             {/* CENTER */}
-            <div className="flex justify-center items-center gap-4 flex-wrap md:mx-auto">
+            <div className="flex justify-center items-center gap-2 sm:gap-4 flex-wrap md:mx-auto">
               {socials.map((soc, idx) => (
                 <a
                   key={idx}
@@ -345,8 +345,9 @@ const Footer = ({
                   aria-label={soc.label}
                   className="flex items-center justify-center rounded-xl transition-all duration-200"
                   style={{
-                    width: "46px",
-                    height: "46px",
+                    width: "40px",
+                    height: "40px",
+                    minWidth: "40px",
                     background: "rgba(255,255,255,0.1)",
                     border: "1px solid rgba(255,255,255,0.18)",
                   }}
@@ -354,14 +355,16 @@ const Footer = ({
                     e.currentTarget.style.background = "#f5c842";
                     e.currentTarget.style.color = "#6b1a1a";
                     e.currentTarget.style.transform = "translateY(-3px)";
+                    e.currentTarget.style.boxShadow = "0 4px 12px rgba(0,0,0,0.2)";
                   }}
                   onMouseLeave={e => {
                     e.currentTarget.style.background = "rgba(255,255,255,0.1)";
                     e.currentTarget.style.color = "white";
                     e.currentTarget.style.transform = "translateY(0)";
+                    e.currentTarget.style.boxShadow = "none";
                   }}
                 >
-                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-4 sm:w-5 h-4 sm:h-5" fill="currentColor" viewBox="0 0 24 24">
                     <path d={soc.icon} />
                   </svg>
                 </a>
@@ -369,12 +372,12 @@ const Footer = ({
             </div>
 
             {/* RIGHT (FORCED CORNER) */}
-            <div className="flex gap-6 items-center md:ml-auto">
+            <div className="flex gap-3 sm:gap-6 items-center md:ml-auto justify-center md:justify-end w-full md:w-auto">
               {["Team", "Privacy", "Safety"].map((item) => (
                 <a
                   key={item}
                   href="#"
-                  className="text-white/60 hover:text-yellow-400 text-xs font-black uppercase tracking-widest transition-colors"
+                  className="text-white/60 hover:text-yellow-400 text-xxs sm:text-xs font-black uppercase tracking-widest transition-colors"
                 >
                   {item}
                 </a>
