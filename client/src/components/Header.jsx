@@ -136,7 +136,7 @@ const Header = () => {
         { name: "NSS", route: "/nss" },
         { name: "Kani Tamil Peravai", route: "/" },
         { name: "Fine Arts Club", route: "/fine-arts" },
-        { name: "Alumni", route: "/" },
+        { name: "Alumni", route: "/alumni" },
       ],
     },
   ];

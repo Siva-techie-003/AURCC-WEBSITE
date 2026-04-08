@@ -113,7 +113,7 @@ const NSS = () => {
           </div>
         </div>
       </section>
-
+<hr className="bg-[rgb(115,25,25)] h-1.5"></hr>
       {/* Content sections */}
       <section className="container mx-auto py-8 sm:py-12 lg:py-14 px-4">
         <div className="max-w-7xl mx-auto flex flex-col gap-8 sm:gap-10 lg:gap-12">
