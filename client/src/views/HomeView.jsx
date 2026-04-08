@@ -480,7 +480,7 @@ const HomeView = () => {
 
   return (
     <div className="">
-      <div className="pt-20 sm:pt-24 lg:pt-32">
+      <div className="pt-[90px] sm:pt-[105px] lg:pt-[116px]">
         {/* All page content here */}
 
         <main className="">

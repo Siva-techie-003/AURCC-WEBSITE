@@ -1,4 +1,4 @@
-﻿import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import './StudentAffairs.css';
 
 const StudentAffairs = () => {
@@ -62,53 +62,50 @@ const StudentAffairs = () => {
 }
 
     return (
-                          <section className="pt-[100px] sm:pt-[100px] lg:pt-[90px]">
+        <div className="min-h-screen flex flex-col bg-gray-50 text-left pt-[116px] sm:pt-[126px] lg:pt-[136px]">
+            {/* Hero Section - No Gap with Header */}
+            <section className="relative w-full h-64 sm:h-80 md:h-96 lg:h-[55vh] flex items-center justify-center overflow-hidden -mt-[116px] sm:-mt-[126px] lg:-mt-[136px]">
+                {/* Background Image */}
+                <img
+                    src={backgroundImage}
+                    alt="Student Affairs"
+                    className="absolute inset-0 w-full h-full object-cover object-center"
+                />
+                
+                {/* Soft Gradient Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-black/60"></div>
 
-        <div className="min-h-screen flex flex-col bg-gray-50 text-left">
-{/* Hero Section */}
-<section className="relative w-full h-56 sm:h-72 md:h-96 lg:h-[50vh] flex items-center justify-center overflow-hidden">
+                {/* Glass Card */}
+                <div className="relative z-10 mx-4 px-5 sm:px-8 py-4 sm:py-6 
+                                max-w-3xl w-full text-center
+                                bg-[rgb(200,20,20)]/30 backdrop-blur-xl
+                                border border-white/30
+                                rounded-2xl
+                                shadow-[0_20px_60px_rgba(0,0,0,0.4)]
+                                transition-all duration-500
+                                mt-[116px] sm:mt-[126px] lg:mt-[136px]">
 
-    {/* Background Image */}
-    <img
-        src={backgroundImage}
-        alt="Student Affairs"
-        className="absolute inset-0 w-full h-full object-cover object-center"
-    />
+                    <h1 className="text-xl sm:text-2xl lg:text-3xl 
+                                   font-black text-white 
+                                   tracking-tight mb-2 uppercase">
+                        Student Affairs
+                    </h1>
+                    <div className="w-16 h-1 bg-yellow-400 mx-auto mb-3 rounded-full"></div>
 
-    {/* Soft Gradient Overlay */}
-    <div className="absolute inset-0 bg-gradient-to-r from-black/20 via-black/20 to-black/20"></div>
+                    <p className="text-xs sm:text-sm lg:text-base 
+                                  text-gray-100 font-medium 
+                                  leading-relaxed max-w-2xl mx-auto">
+                        The Office of Student Affairs is dedicated to students' academic and personal success.
+                    </p>
 
-    {/* Glass Card */}
-    <div className="relative z-10 mx-4 px-8 sm:px-12 py-8 sm:py-10 
-                    max-w-4xl w-full text-center
-                    bg-[rgb(200,20,20)]/45 backdrop-blur-2xl
-                    border border-white/30
-                    rounded-3xl
-                    shadow-[0_20px_60px_rgba(0,0,0,0.4)]
-                    transition-all duration-500">
+                </div>
 
-        <h1 className="text-3xl sm:text-5xl lg:text-6xl 
-                       font-black text-white 
-                       tracking-tight mb-4">
-            Student Affairs
-        </h1>
-        <div className="w-20 h-1 bg-yellow-400 mx-auto mb-5 rounded-full"></div>
+            </section>
 
-        <p className="text-sm sm:text-lg lg:text-xl 
-                      text-gray-100 
-                      font-medium 
-                      leading-relaxed max-w-2xl mx-auto">
-            The Office of Student Affairs is dedicated to students' academic and personal success.
-        </p>
-
-    </div>
-
-</section>
-
-            {/* Navigation Tabs - Modern floating design */}
-            <div className="sticky top-6 z-20">
+            {/* Navigation Tabs - Overlapping design */}
+            <div className="sticky top-[116px] sm:top-[126px] lg:top-[136px] z-50 -mt-12 mb-4">
                 <div className="max-w-7xl mx-auto px-4">
-                    <div className="bg-white/95 backdrop-blur-md shadow-lg rounded-full -mt-6 py-2 px-3 flex justify-center overflow-x-auto no-scrollbar gap-2 border border-[rgb(220,140,140)]">
+                    <div className="max-w-5xl mx-auto bg-white/95 backdrop-blur-md shadow-xl rounded-full py-2 px-3 flex justify-center overflow-x-auto no-scrollbar gap-2 border border-[rgb(220,140,140)]">
                         {sections.map((section) => (
                             <button
                                 key={section.key}
@@ -147,7 +144,7 @@ const StudentAffairs = () => {
                         <h2 className="text-xl lg:text-2xl font-bold">Re-Admission</h2>
                     </div>
                     <div className="p-8">
-                        <div className="bg-[rgb(220,140,140)]/50 rounded-2xl p-6 border border-[rgb(200,120,120)] text-[rgb(100,25,25)] font-bold text-base lg:text-lg leading-relaxed  whitespace-pre-line">
+                        <div className="text-gray-700 font-medium text-base lg:text-lg leading-relaxed whitespace-pre-line">
                             {content?.['Re-Admission'] || 'Re-admission information will be updated soon.'}
                         </div>
                     </div>
@@ -159,7 +156,7 @@ const StudentAffairs = () => {
                         <h2 className="text-xl lg:text-2xl font-bold">Scholarships</h2>
                     </div>
                     <div className="p-8">
-                        <div className="mb-6 p-4 bg-[rgb(220,140,140)]/50 rounded-xl border-l-4 border-[rgb(115,40,40)]">
+                        <div className="mb-6 py-2 border-l-4 border-[rgb(115,40,40)] pl-6">
                             <p className="text-lg lg:text-xl font-bold text-[rgb(100,25,25)]">{content?.Scholarship?.description || 'Scholarship information will be updated soon.'}</p>
                         </div>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -181,20 +178,20 @@ const StudentAffairs = () => {
                 </div>
 
                 {/* Fees Section */}
-                <div id="fees" ref={sectionRefs.fees} className="bg-white rounded-3xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-lg transition-all">
+                <div id="fees" ref={sectionRefs.fees} className="bg-white rounded-3xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-lg transition-all max-w-2xl mx-auto">
                     <div className="bg-gradient-to-r from-[rgb(115,63,63)] to-[rgb(115,25,25)] py-6 px-8 flex justify-between items-center text-white">
                         <h2 className="text-xl lg:text-2xl font-bold">Fees Details</h2>
                     </div>
-                    <div className="p-8">
+                    <div className="p-8 flex justify-center">
                         <a
                             href={content?.['fees details'] || '#'}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="inline-flex items-center gap-2 px-8 py-4 bg-[rgb(115,40,40)] text-white font-bold rounded-2xl hover:bg-[rgb(110,35,35)] transition-all shadow-md group"
+                            className="inline-flex items-center gap-2 px-5 py-2.5 bg-[rgb(115,40,40)] text-white font-bold rounded-xl hover:bg-[rgb(110,35,35)] transition-all shadow-md group text-sm"
                         >
-                            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>
+                            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>
                             View Detailed Fee Structure
-                            <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M14 5l7 7-7 7" /></svg>
+                            <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M14 5l7 7-7 7" /></svg>
                         </a>
                     </div>
                 </div>
@@ -231,7 +228,6 @@ const StudentAffairs = () => {
                 
             </main>
         </div>
-        </section>
     );
 };
 

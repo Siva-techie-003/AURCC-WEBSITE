@@ -1,4 +1,4 @@
-﻿import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import academicsData from '../assets/academics.json';
 import './Academics.css';
@@ -161,54 +161,75 @@ const Academics = () => {
     };
 
     return (
-        <main className="flex-grow">
-            {/* Hero section */}
-            <section
-                className="bg-cover bg-center relative min-h-[40vh] flex items-center"
-                style={{ backgroundImage: 'url(/academics-hero.jpg)' }}
-            >
-                <div className="absolute top-0 left-0 w-full h-full bg-black opacity-50"></div>
-                <div className="container mx-auto py-12 sm:py-16 text-white p-4 sm:p-6 md:p-9 relative z-10 text-center">
-                    <h1 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold mb-3 sm:mb-4">Academics</h1>
-                    <p className="text-base lg:text-lg xl:text-xl mb-6 sm:mb-8 max-w-2xl mx-auto">Explore our comprehensive academic programs and support services.</p>
-                    <button className="bg-[rgb(220,140,140)]0 hover:bg-[rgb(115,40,40)] text-white font-bold py-2 px-6 rounded-full transition-all transform hover:scale-105 shadow-lg">
-                        Learn More
-                    </button>
+        <main className="flex-grow pt-[116px] sm:pt-[126px] lg:pt-[136px]">
+            {/* Hero Section - No Gap with Header */}
+            <section className="relative w-full h-64 sm:h-80 md:h-96 lg:h-[55vh] flex items-center justify-center overflow-hidden -mt-[116px] sm:-mt-[126px] lg:-mt-[136px]">
+                {/* Background Image */}
+                <img
+                    src="/academics-hero.jpg"
+                    alt="Academics"
+                    className="absolute inset-0 w-full h-full object-cover"
+                />
+
+                {/* Soft Gradient Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-black/60"></div>
+
+                {/* Glass Card */}
+                <div className="relative z-10 mx-4 px-5 sm:px-8 py-4 sm:py-6 
+                                max-w-3xl w-full text-center
+                                bg-[rgb(200,20,20)]/30 backdrop-blur-xl
+                                border border-white/30
+                                rounded-2xl
+                                shadow-[0_20px_60px_rgba(0,0,0,0.4)]
+                                transition-all duration-500
+                                mt-[116px] sm:mt-[126px] lg:mt-[136px]">
+
+                    <h1 className="text-xl sm:text-2xl lg:text-3xl 
+                                   font-black text-white 
+                                   tracking-tight mb-2 uppercase">
+                        Academics
+                    </h1>
+
+                    <div className="w-16 h-1 bg-yellow-400 mx-auto mb-3 rounded-full"></div>
+
+                    <p className="text-xs sm:text-sm lg:text-base 
+                                  text-gray-100 font-medium 
+                                  leading-relaxed max-w-2xl mx-auto">
+                        Explore our comprehensive academic programs and support services.
+                    </p>
+
                 </div>
             </section>
 
-            {/* Content sections */}
-            <section className="container mx-auto py-6 sm:py-8 p-4 sm:p-6 md:p-9">
-                <div className="grid grid-cols-1 md:grid-cols-4 gap-6 sm:gap-8">
-                    {/* Sidebar Navigation */}
-                    <div className="md:col-span-1">
-                        <h2 className="text-lg sm:text-xl lg:text-2xl font-bold mb-3 sm:mb-4 flex items-center justify-center md:justify-start">
-                            <svg className="w-5 h-5 sm:w-6 sm:h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"></path>
-                            </svg>
-                            Sections
-                        </h2>
-                        <div className="flex flex-col space-y-2">
-                            {sections.map((section, index) => (
-                                <button
-                                    key={index}
-                                    onClick={() => setCurrentSection(section)}
-                                    className={`font-semibold py-2 px-3 sm:px-4 border rounded shadow-sm flex items-center transition-all duration-200 ${currentSection === section
-                                        ? 'bg-[rgb(220,140,140)]0 text-white border-[rgb(115,40,40)]'
-                                        : 'bg-white hover:bg-gray-100 text-gray-800 border-gray-300'
-                                        }`}
-                                >
-                                    <svg className="w-3 h-3 sm:w-4 sm:h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path>
-                                    </svg>
-                                    {section.replace(/-/g, ' ')}
-                                </button>
-                            ))}
-                        </div>
+            {/* Sticky Navigation Pill Bar - Overlapping design */}
+            <div className="sticky top-[116px] sm:top-[126px] lg:top-[136px] z-50 -mt-12 mb-4">
+                <div className="max-w-7xl mx-auto px-4">
+                    <div className="max-w-5xl mx-auto bg-white/95 backdrop-blur-md shadow-xl rounded-full py-2 px-3 flex justify-center overflow-x-auto no-scrollbar gap-2 border border-[rgb(220,140,140)]">
+                        {sections.map((section, index) => (
+                            <button
+                                key={index}
+                                onClick={() => setCurrentSection(section)}
+                                className={`font-bold px-5 py-3 rounded-full text-xs sm:text-sm lg:text-base transition-all duration-300 whitespace-nowrap ${currentSection === section
+                                    ? 'bg-[rgb(115,40,40)] text-white shadow-md'
+                                    : 'text-gray-700 hover:bg-[rgb(220,140,140)] hover:text-[rgb(115,40,40)]'
+                                    }`}
+                            >
+                                {section.replace(/-/g, ' ').toUpperCase()}
+                            </button>
+                        ))}
                     </div>
+                </div>
+            </div>
 
-                    {/* Main Content Area */}
-                    <div className="md:col-span-3 bg-white p-4 sm:p-6 md:p-8 rounded-xl border border-gray-100 shadow-sm text-center">
+            {/* Main Content Area */}
+            <section className="container mx-auto py-8 px-4">
+                <div className="max-w-5xl mx-auto bg-white p-6 sm:p-10 rounded-3xl border border-gray-100 shadow-xl text-left animate-fadeIn">
+                    <div className="mb-8 border-b-2 border-[rgb(220,140,140)] pb-4">
+                        <h2 className="text-2xl sm:text-3xl font-black text-[rgb(115,40,40)] uppercase tracking-tight">
+                            {currentSection.replace(/-/g, ' ')}
+                        </h2>
+                    </div>
+                    <div className="prose prose-lg max-w-none text-gray-700 font-medium leading-relaxed">
                         {renderSectionContent()}
                     </div>
                 </div>

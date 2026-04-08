@@ -1,10 +1,12 @@
-﻿import React,{useEffect,useState} from 'react';
+import React,{useEffect,useState, useRef} from 'react';
 import SyllabusCard from '../components/SyllabusCard';
 import './CurriculumSyllabus.css';
 
 const CurriculumSyllabus = () => {
 
     const [data, setData] = useState(null);
+    const ugRef = useRef(null);
+    const pgRef = useRef(null);
 
 useEffect(() => {
 fetch("/api/curriculum-syllabus")
@@ -14,6 +16,22 @@ setData(resData);
 })
 .catch(err => console.error(err));
 }, []);
+
+const scrollToSection = (ref) => {
+    const offset = 220; // Header + Sticky Nav height
+    const elementPosition = ref.current.getBoundingClientRect().top;
+    const offsetPosition = elementPosition + window.pageYOffset - offset;
+
+    window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+    });
+};
+
+const navSections = [
+    { name: 'UG Curriculum', ref: ugRef },
+    { name: 'PG Curriculum', ref: pgRef }
+];
 
 const SectionHeader = ({ title }) => (
 <header className="flex flex-col md:flex-row md:items-end justify-between border-b-4 border-[rgb(100,25,25)] pb-8 mb-12 gap-6 animate-fadeInUp">
@@ -30,10 +48,10 @@ const SectionHeader = ({ title }) => (
 
 return (
 
-<div className="flex-grow bg-gray-50 min-h-screen text-left pt-[120px] sm:pt-[140px] lg:pt-[120px]">
+<div className="flex-grow bg-gray-50 min-h-screen text-left pt-[116px] sm:pt-[126px] lg:pt-[136px]">
 
-{/* HERO */}
-<section className="relative w-full h-56 sm:h-72 md:h-96 lg:h-[50vh] flex items-center justify-center overflow-hidden">
+{/* HERO - No Gap with Header */}
+<section className="relative w-full h-64 sm:h-80 md:h-96 lg:h-[55vh] flex items-center justify-center overflow-hidden -mt-[116px] sm:-mt-[126px] lg:-mt-[136px]">
 
 <img
 src="http://localhost:5000/public/syllabus.webp"
@@ -41,28 +59,57 @@ alt="Curriculum & Syllabus"
 className="absolute inset-0 w-full h-full object-cover object-center"
 />
 
+{/* Soft Gradient Overlay */}
 <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-black/60"></div>
 
-<div className="relative z-10 mx-4 px-8 sm:px-12 py-8 sm:py-10 max-w-4xl w-full text-center bg-white/30 backdrop-blur-sm border border-white/30 rounded-3xl shadow-[0_20px_60px_rgba(0,0,0,0.4)]">
+{/* Glass Card */}
+<div className="relative z-10 mx-4 px-5 sm:px-8 py-4 sm:py-6 
+                max-w-3xl w-full text-center
+                bg-[rgb(200,20,20)]/30 backdrop-blur-xl
+                border border-white/30
+                rounded-2xl
+                shadow-[0_20px_60px_rgba(0,0,0,0.4)]
+                transition-all duration-500
+                mt-[116px] sm:mt-[126px] lg:mt-[136px]">
 
-<h1 className="text-3xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight mb-4">
-Syllabus
+<h1 className="text-xl sm:text-2xl lg:text-3xl 
+               font-black text-white 
+               tracking-tight mb-2 uppercase text-center">
+    Curriculum & Syllabus
 </h1>
 
-<div className="w-20 h-1 bg-yellow-400 mx-auto mb-5 rounded-full"></div>
+<div className="w-16 h-1 bg-yellow-400 mx-auto mb-3 rounded-full"></div>
 
-<p className="text-sm sm:text-lg lg:text-xl text-[rgb(90,20,20)] font-bold leading-relaxed max-w-2xl mx-auto">
+<p className="text-xs sm:text-sm lg:text-base 
+              text-gray-100 font-medium 
+              leading-relaxed max-w-2xl mx-auto">
 Explore the detailed academic structure for all our programs.
 </p>
 
 </div>
 </section>
 
+{/* Sticky Navigation Pill Bar - Overlapping design */}
+<div className="sticky top-[116px] sm:top-[126px] lg:top-[136px] z-50 -mt-12 mb-4">
+    <div className="max-w-7xl mx-auto px-4 text-center">
+        <div className="max-w-5xl mx-auto bg-white/95 backdrop-blur-md shadow-xl rounded-full py-2 px-3 flex justify-center overflow-x-auto no-scrollbar gap-2 border border-[rgb(220,140,140)]">
+            {navSections.map((section, index) => (
+                <button
+                    key={index}
+                    onClick={() => scrollToSection(section.ref)}
+                    className="font-bold px-6 py-3 rounded-full text-xs sm:text-sm lg:text-base transition-all duration-300 whitespace-nowrap text-gray-700 hover:bg-[rgb(220,140,140)] hover:text-[rgb(115,40,40)]"
+                >
+                    {section.name.toUpperCase()}
+                </button>
+            ))}
+        </div>
+    </div>
+</div>
 
-<main className="max-w-6xl mx-auto py-16 px-4 space-y-24">
+<main className="max-w-6xl mx-auto py-8 sm:py-12 px-4 space-y-24">
 
 {/* UG SECTION */}
-<section>
+<section ref={ugRef}>
 
 <SectionHeader title="UG Curriculum" />
 
@@ -85,7 +132,7 @@ index={programme['S.No']}
 
 
 {/* PG SECTION */}
-<section>
+<section ref={pgRef}>
 
 <SectionHeader title="PG Curriculum" />
 

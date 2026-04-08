@@ -1,4 +1,4 @@
-﻿import React, { useState } from "react";
+import React, { useState } from "react";
 import { href, Link, useNavigate } from "react-router-dom";
 
 
@@ -153,15 +153,15 @@ const Header = () => {
     <div className="fixed top-0 left-0 w-full z-[1000]">
       {/* Top Bar */}
       <div className="bg-gradient-to-r from-[rgb(115,63,63)] to-[rgb(115,25,25)] text-white">
-        <div className="container mx-auto px-4 sm:px-6">
-          <div className="flex items-center justify-between py-2 text-xs sm:text-sm">
+        <div className="w-full px-4 sm:px-6 lg:px-12">
+          <div className="flex items-center justify-between py-2 text-sm sm:text-base">
             <div className="flex items-center gap-2 sm:gap-6 lg:gap-10">
-              <span className="font-medium flex items-center gap-1 text-[9px] sm:text-xs">
+              <span className="font-medium flex items-center gap-1 text-sm sm:text-base">
                 <span className="hidden lg:inline">AICTE PID:</span>
                 <span className="lg:hidden">PID:</span>
                 <span className="text-yellow-300 font-bold whitespace-nowrap">1- 4500612781</span>
               </span>
-              <span className="font-medium flex items-center gap-1 text-[9px] sm:text-xs">
+              <span className="font-medium flex items-center gap-1 text-sm sm:text-base">
                 <span className="hidden lg:inline">Counselling Code:</span>
                 <span className="lg:hidden">Code:</span>
                 <span className="text-yellow-300 font-bold whitespace-nowrap">2025</span>
@@ -182,7 +182,7 @@ const Header = () => {
                 >
                   <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"></path>
                 </svg>
-                <span className="hidden sm:inline font-medium text-[10px] lg:text-xs">Library</span>
+                <span className="hidden sm:inline font-medium text-sm lg:text-base">Library</span>
               </Link>
               <Link
                 to="/sports"
@@ -201,7 +201,7 @@ const Header = () => {
                   <path d="M7 7c3 3 7 3 10 0"></path>
                   <path d="M7 17c3-3 7-3 10 0"></path>
                 </svg>
-                <span className="hidden sm:inline font-medium text-[10px] lg:text-xs">Physical Education</span>
+                <span className="hidden sm:inline font-medium text-sm lg:text-base">Physical Education</span>
               </Link>
               <Link
                 to="/hostel"
@@ -217,7 +217,7 @@ const Header = () => {
                   <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
                   <polyline points="9 22 9 12 15 12 15 22"></polyline>
                 </svg>
-                <span className="hidden sm:inline font-medium text-[10px] lg:text-xs">Hostel</span>
+                <span className="hidden sm:inline font-medium text-sm lg:text-base">Hostel</span>
               </Link>
               <Link
                 to="/contact"
@@ -232,7 +232,7 @@ const Header = () => {
                 >
                   <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
                 </svg>
-                <span className="hidden sm:inline font-medium text-[10px] lg:text-xs">Contact</span>
+                <span className="hidden sm:inline font-medium text-sm lg:text-base">Contact</span>
               </Link>
               <Link
                 to="/feedback"
@@ -247,7 +247,7 @@ const Header = () => {
                 >
                   <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"></path>
                 </svg>
-                <span className="hidden sm:inline font-medium text-[10px] lg:text-xs">Feedback</span>
+                <span className="hidden sm:inline font-medium text-sm lg:text-base">Feedback</span>
               </Link>
             </div>
 
@@ -275,7 +275,7 @@ const Header = () => {
                       key={i}
                       to={link.to}
                       onClick={() => setIsQuickLinksOpen(false)}
-                      className="flex items-center gap-3 px-4 py-2.5 text-sm font-bold text-gray-700 hover:bg-[rgb(115,40,40)] hover:text-white transition-all"
+                      className="flex items-center gap-3 px-4 py-2.5 text-base font-bold text-gray-700 hover:bg-[rgb(115,40,40)] hover:text-white transition-all"
                     >
                       <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d={link.icon} /></svg>
                       {link.name}
@@ -293,7 +293,7 @@ const Header = () => {
         className="w-full bg-white shadow-xl border-b border-gray-100 flex items-center"
         style={{ minHeight: "80px" }}
       >
-        <div className="w-full px-3 sm:px-5 lg:px-8">
+        <div className="w-full px-4 sm:px-6 lg:px-12">
           <nav className="flex items-center justify-between gap-2">
             {/* ── LEFT: Logo ── */}
             <div
@@ -322,7 +322,7 @@ const Header = () => {
                         navigate(section.route);
                       }
                     }}
-                    className="flex items-center gap-1 px-1.5 xl:px-4 py-2 text-[10px] xl:text-sm font-black text-gray-700 hover:text-[rgb(115,40,40)] hover:bg-[rgb(220,140,140)]/30 rounded-xl transition-all uppercase tracking-tight whitespace-nowrap"
+                    className="flex items-center gap-1 px-1.5 xl:px-4 py-2 text-xs xl:text-base font-black text-gray-700 hover:text-[rgb(115,40,40)] hover:bg-[rgb(220,140,140)]/30 rounded-xl transition-all uppercase tracking-tight whitespace-nowrap"
                   >
                     {section.name}
                     {section.links && (
@@ -347,7 +347,7 @@ const Header = () => {
           <div key={lIdx} className="relative group/sub">
             
             {/* Parent Item */}
-            <div className="flex items-center justify-between px-5 py-2 text-sm font-bold text-gray-600 hover:text-[rgb(115,40,40)] hover:bg-[rgb(220,140,140)]/40 cursor-pointer transition-colors whitespace-nowrap">
+            <div className="flex items-center justify-between px-5 py-2 text-base font-bold text-gray-600 hover:text-[rgb(115,40,40)] hover:bg-[rgb(220,140,140)]/40 cursor-pointer transition-colors whitespace-nowrap">
               <span>{link.name}</span>
               <svg
                 className="w-3 h-3 rotate-180"
@@ -369,7 +369,7 @@ const Header = () => {
                     href={sub.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="block px-5 py-2 text-sm font-bold text-gray-600 hover:text-[rgb(115,40,40)] hover:bg-[rgb(220,140,140)]/40 transition-colors whitespace-nowrap"
+                    className="block px-5 py-2 text-base font-bold text-gray-600 hover:text-[rgb(115,40,40)] hover:bg-[rgb(220,140,140)]/40 transition-colors whitespace-nowrap"
                   >
                     {sub.name}
                   </a>
@@ -377,7 +377,7 @@ const Header = () => {
                   <Link
                     key={sIdx}
                     to={sub.route}
-                    className="block px-5 py-2 text-sm font-bold text-gray-600 hover:text-[rgb(115,40,40)] hover:bg-[rgb(220,140,140)]/40 transition-colors whitespace-nowrap"
+                    className="block px-5 py-2 text-base font-bold text-gray-600 hover:text-[rgb(115,40,40)] hover:bg-[rgb(220,140,140)]/40 transition-colors whitespace-nowrap"
                   >
                     {sub.name}
                   </Link>
@@ -392,7 +392,7 @@ const Header = () => {
             href={link.href}
             target="_blank"
             rel="noopener noreferrer"
-            className="block px-5 py-2 text-sm font-bold text-gray-600 hover:text-[rgb(115,40,40)] hover:bg-[rgb(220,140,140)]/40 transition-colors whitespace-nowrap"
+            className="block px-5 py-2 text-base font-bold text-gray-600 hover:text-[rgb(115,40,40)] hover:bg-[rgb(220,140,140)]/40 transition-colors whitespace-nowrap"
           >
             {link.name}
           </a>
@@ -401,7 +401,7 @@ const Header = () => {
             key={lIdx}
             to={link.section ? "/" : link.route}
             state={link.section ? { scrollTo: link.section } : null}
-            className="block px-5 py-2 text-sm font-bold text-gray-600 hover:text-[rgb(115,40,40)] hover:bg-[rgb(220,140,140)]/40 transition-colors whitespace-nowrap"
+            className="block px-5 py-2 text-base font-bold text-gray-600 hover:text-[rgb(115,40,40)] hover:bg-[rgb(220,140,140)]/40 transition-colors whitespace-nowrap"
           >
             {link.name}
           </Link>
@@ -478,7 +478,7 @@ const Header = () => {
                 >
                   <button
                     onClick={() => toggleSection(idx)}
-                    className="w-full flex items-center justify-between py-4 px-2 text-[rgb(90,20,20)] font-black uppercase text-xs tracking-widest hover:text-[rgb(115,40,40)]"
+                    className="w-full flex items-center justify-between py-4 px-2 text-[rgb(90,20,20)] font-black uppercase text-sm tracking-widest hover:text-[rgb(115,40,40)]"
                   >
                     {section.name}
                     <svg
@@ -496,7 +496,7 @@ const Header = () => {
                       {section.links.map((link, lIdx) =>
                         link.subLinks ? (
                           <div key={lIdx}>
-                            <p className="py-2 px-4 text-xs font-black text-[rgb(90,20,20)] uppercase tracking-widest">
+                            <p className="py-2 px-4 text-sm font-black text-[rgb(90,20,20)] uppercase tracking-widest">
                               {link.name}
                             </p>
                             {link.subLinks.map((sub, sIdx) => (
@@ -504,7 +504,7 @@ const Header = () => {
                                 key={sIdx}
                                 to={sub.route}
                                 onClick={() => setIsMobileMenuOpen(false)}
-                                className="block py-2 px-8 text-xs font-bold text-gray-500 hover:text-[rgb(115,40,40)] hover:bg-[rgb(220,140,140)] rounded-xl transition-all"
+                                className="block py-2 px-8 text-base font-bold text-gray-500 hover:text-[rgb(115,40,40)] hover:bg-[rgb(220,140,140)] rounded-xl transition-all"
                               >
                                 › {sub.name}
                               </Link>
@@ -515,7 +515,7 @@ const Header = () => {
                             key={lIdx}
                             to={link.route}
                             onClick={() => setIsMobileMenuOpen(false)}
-                            className="block py-2.5 px-4 text-xs font-bold text-gray-500 hover:text-[rgb(115,40,40)] hover:bg-[rgb(220,140,140)] rounded-xl transition-all"
+                            className="block py-2.5 px-4 text-base font-bold text-gray-500 hover:text-[rgb(115,40,40)] hover:bg-[rgb(220,140,140)] rounded-xl transition-all"
                           >
                             {link.name}
                           </Link>
@@ -530,7 +530,7 @@ const Header = () => {
               <Link
                 to="/contact"
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="block w-full py-4 bg-[rgb(100,25,25)] text-white text-center rounded-2xl font-black uppercase tracking-widest text-[10px] shadow-lg"
+                className="block w-full py-4 bg-[rgb(100,25,25)] text-white text-center rounded-2xl font-black uppercase tracking-widest text-xs shadow-lg"
               >
                 Get in Touch
               </Link>

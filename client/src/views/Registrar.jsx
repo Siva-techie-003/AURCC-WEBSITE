@@ -64,7 +64,7 @@ const Registrar = () => {
                                 <h2 className="text-xl font-bold text-[rgb(110,35,35)] font-serif mb-2 leading-tight uppercase">{member.name}</h2>
                                 <div className="flex flex-col gap-1">
                                     <p className="text-sm font-semibold text-gray-700 font-sans tracking-wide uppercase">{member.position}</p>
-                                    <p className="text-[10px] font-bold text-gray-500 uppercase tracking-widest">{member.university}</p>
+                                    <p className="text-[10px] font-bold text-black uppercase tracking-widest">{member.university}</p>
                                     {member.email && <p className="text-xs text-blue-500 font-sans mt-2">{member.email}</p>}
                                 </div>
                             </div>
