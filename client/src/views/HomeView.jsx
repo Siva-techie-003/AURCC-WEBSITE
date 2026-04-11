@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef, useMemo } from "react";
+﻿import React, { useState, useEffect, useRef, useMemo } from "react";
 import { Link, useLocation } from "react-router-dom";
 import QuickLinksSidebar from "../components/QuickLinksSidebar";
 import "./HomeView.css";
@@ -528,16 +528,16 @@ const HomeView = () => {
               </svg>
             </div>
             <div className="relative text-center px-4 sm:px-6 max-w-5xl mx-auto z-20">
-              <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-4 sm:mb-6 tracking-tight">
+              <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-6xl font-bold text-white mb-4 sm:mb-6 tracking-tight">
                 <span className="block">Welcome to</span>
-                <span className="block text-transparent bg-clip-text text-white mt-2">
-                  AURCC
+                <span className="block text-transparent lg:text-4xl bg-clip-text text-white mt-2">
+                  Anna University Regional Campus Coimbatore
                 </span>
               </h1>
               {/* <p className="text-lg sm:text-xl md:text-2xl text-[rgb(115,40,40)] px-2">
                             Shaping Tomorrow's Leaders Today
                         </p> */}
-              <div className="mt-8 sm:mt-10 flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 px-4">
+              <div className="mt-8 sm:mt-10 flex flex-col sm:flex-row justify-center gap-12 sm:gap-12 px-4">
                 <a
                   href="#programs"
                   className="inline-block px-6 sm:px-8 py-3 sm:py-4 bg-white text-[rgb(100,25,25)] rounded-full font-semibold transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl text-sm sm:text-base"
@@ -847,8 +847,8 @@ const HomeView = () => {
           {/* Programs Offered */}
           <div className="mt-22 pb-12 relative">
             <div className="text-center">
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mt-16 sm:mb-16 text-[rgb(100,25,25)] relative inline-block">
-                PROGRAMMES OFFERED
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mt-16 sm:mb-16 uppercase text-[rgb(100,25,25)] relative inline-block">
+                Academic Programs
                 <span className="absolute -bottom-2 sm:-bottom-3 left-1/2 transform -translate-x-1/2 h-1 w-16 sm:w-36 lg:w-44 bg-yellow-500"></span>
               </h2>
             </div>
@@ -1489,11 +1489,11 @@ const HomeView = () => {
           {/* Support Chatbot */}
           <button
             onClick={() => document.getElementById("my_modal_5").showModal()}
-            className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 bg-gradient-to-r from-[rgb(115,63,63)] to-[rgb(115,25,25)] text-white p-3 sm:p-5 rounded-full shadow-2xl z-50 transform hover:scale-110 active:scale-95 transition-all duration-300 group"
-          >
+            className=" flex gap-2 fixed bottom-4 right-4 sm:bottom-6 sm:right-6 bg-gradient-to-r from-[rgb(115,63,63)] to-[rgb(115,25,25)] text-white p-3 sm:p-5 rounded-full shadow-2xl z-50 transform hover:scale-110 active:scale-95 transition-all duration-300 group">
             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 sm:h-7 sm:w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
             </svg>
+            <p className="text-bold text-xl">Chat</p>
           </button>
           <dialog
             id="my_modal_5"

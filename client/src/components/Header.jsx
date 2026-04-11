@@ -1,6 +1,5 @@
-import React, { useState } from "react";
+﻿import React, { useState } from "react";
 import { href, Link, useNavigate } from "react-router-dom";
-
 
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -67,16 +66,24 @@ const Header = () => {
           name: "Committees",
           subLinks: [
             { name: "Anti-ragging committee", route: "/AntiRagging" },
-            { name: "Anti-drug committee", href: "/forms/Anti Drug Committee.pdf" },
+            {
+              name: "Anti-drug committee",
+              href: "/forms/Anti Drug Committee.pdf",
+            },
             { name: "Internal Complaint Committee", href: "/forms/ICC.pdf" },
-            { name: "Institute Academic Affairs committee", href: "/forms/IAA-Committee.pdf" },
+            {
+              name: "Institute Academic Affairs committee",
+              href: "/forms/IAA-Committee.pdf",
+            },
             { name: "committee for SC/ST", href: "/forms/PCBD-Committee.pdf" },
             { name: "Disciplinary committee", href: "#" },
-            { name: "Student Councellor committee", href: "/forms/Students Cousellor.pdf" },
+            {
+              name: "Student Councellor committee",
+              href: "/forms/Students Cousellor.pdf",
+            },
           ],
         },
         { name: "Student Affairs", route: "/student_affairs" },
-
       ],
     },
     {
@@ -94,7 +101,7 @@ const Header = () => {
         },
         { name: "Computer Science & Engineering", route: "/departments/cse" },
         {
-          name: "Science & Humanities Department",
+          name: "Science & Humanities",
           route: "/departments/science-and-humanities",
         },
         { name: "MBA", route: "/departments/mba" },
@@ -159,12 +166,16 @@ const Header = () => {
               <span className="font-medium flex items-center gap-1 text-sm sm:text-base">
                 <span className="hidden lg:inline">AICTE PID:</span>
                 <span className="lg:hidden">PID:</span>
-                <span className="text-yellow-300 font-bold whitespace-nowrap">1- 4500612781</span>
+                <span className="text-yellow-300 font-bold whitespace-nowrap">
+                  1- 4500612781
+                </span>
               </span>
               <span className="font-medium flex items-center gap-1 text-sm sm:text-base">
                 <span className="hidden lg:inline">Counselling Code:</span>
                 <span className="lg:hidden">Code:</span>
-                <span className="text-yellow-300 font-bold whitespace-nowrap">2025</span>
+                <span className="text-yellow-300 font-bold whitespace-nowrap">
+                  2025
+                </span>
               </span>
             </div>
             {/* Desktop & Tablet Links */}
@@ -182,7 +193,9 @@ const Header = () => {
                 >
                   <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"></path>
                 </svg>
-                <span className="hidden sm:inline font-medium text-sm lg:text-base">Library</span>
+                <span className="hidden sm:inline font-medium text-sm lg:text-base">
+                  Library
+                </span>
               </Link>
               <Link
                 to="/sports"
@@ -201,7 +214,9 @@ const Header = () => {
                   <path d="M7 7c3 3 7 3 10 0"></path>
                   <path d="M7 17c3-3 7-3 10 0"></path>
                 </svg>
-                <span className="hidden sm:inline font-medium text-sm lg:text-base">Physical Education</span>
+                <span className="hidden sm:inline font-medium text-sm lg:text-base">
+                  Physical Education
+                </span>
               </Link>
               <Link
                 to="/hostel"
@@ -217,7 +232,9 @@ const Header = () => {
                   <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
                   <polyline points="9 22 9 12 15 12 15 22"></polyline>
                 </svg>
-                <span className="hidden sm:inline font-medium text-sm lg:text-base">Hostel</span>
+                <span className="hidden sm:inline font-medium text-sm lg:text-base">
+                  Hostel
+                </span>
               </Link>
               <Link
                 to="/contact"
@@ -232,7 +249,9 @@ const Header = () => {
                 >
                   <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
                 </svg>
-                <span className="hidden sm:inline font-medium text-sm lg:text-base">Contact</span>
+                <span className="hidden sm:inline font-medium text-sm lg:text-base">
+                  Contact
+                </span>
               </Link>
               <Link
                 to="/feedback"
@@ -247,7 +266,9 @@ const Header = () => {
                 >
                   <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"></path>
                 </svg>
-                <span className="hidden sm:inline font-medium text-sm lg:text-base">Feedback</span>
+                <span className="hidden sm:inline font-medium text-sm lg:text-base">
+                  Feedback
+                </span>
               </Link>
             </div>
 
@@ -258,18 +279,44 @@ const Header = () => {
                 className="flex items-center gap-2 hover:text-yellow-300 transition-colors py-1 px-2 rounded-lg bg-white/10"
               >
                 {/* <span className="font-bold uppercase tracking-wider text-[10px]">Links</span> */}
-                <svg className={`w-3 h-3 transition-transform ${isQuickLinksOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M19 9l-7 7-7-7" />
+                <svg
+                  className={`w-3 h-3 transition-transform ${isQuickLinksOpen ? "rotate-180" : ""}`}
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="3"
+                    d="M19 9l-7 7-7-7"
+                  />
                 </svg>
               </button>
 
               {isQuickLinksOpen && (
                 <div className="absolute right-0 mt-2 w-48 bg-white rounded-xl shadow-2xl py-2 z-[1001] border border-gray-100 animate-slideDown">
                   {[
-                    { name: 'Library', to: '/library', icon: 'M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20' },
-                    { name: 'Hostel', to: '/hostel', icon: 'M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z' },
-                    { name: 'Contact', to: '/contact', icon: 'M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z' },
-                    { name: 'Feedback', to: '/feedback', icon: 'M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20' }
+                    {
+                      name: "Library",
+                      to: "/library",
+                      icon: "M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20",
+                    },
+                    {
+                      name: "Hostel",
+                      to: "/hostel",
+                      icon: "M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z",
+                    },
+                    {
+                      name: "Contact",
+                      to: "/contact",
+                      icon: "M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z",
+                    },
+                    {
+                      name: "Feedback",
+                      to: "/feedback",
+                      icon: "M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20",
+                    },
                   ].map((link, i) => (
                     <Link
                       key={i}
@@ -277,7 +324,19 @@ const Header = () => {
                       onClick={() => setIsQuickLinksOpen(false)}
                       className="flex items-center gap-3 px-4 py-2.5 text-base font-bold text-gray-700 hover:bg-[rgb(115,40,40)] hover:text-white transition-all"
                     >
-                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d={link.icon} /></svg>
+                      <svg
+                        className="w-4 h-4"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="2"
+                          d={link.icon}
+                        />
+                      </svg>
                       {link.name}
                     </Link>
                   ))}
@@ -291,10 +350,10 @@ const Header = () => {
       {/* Main Header */}
       <header
         className="w-full bg-white shadow-xl border-b border-gray-100 flex items-center"
-        style={{ minHeight: "80px" }}
+        style={{ minHeight: "90px" }}
       >
         <div className="w-full px-4 sm:px-6 lg:px-12">
-          <nav className="flex items-center justify-between gap-2">
+          <nav className="flex items-center justify-between gap-6">
             {/* ── LEFT: Logo ── */}
             <div
               className="flex items-center flex-shrink-0 cursor-pointer ml-2 sm:ml-4 lg:ml-8"
@@ -322,7 +381,7 @@ const Header = () => {
                         navigate(section.route);
                       }
                     }}
-                    className="flex items-center gap-1 px-1.5 xl:px-4 py-2 text-xs xl:text-base font-black text-gray-700 hover:text-[rgb(115,40,40)] hover:bg-[rgb(220,140,140)]/30 rounded-xl transition-all uppercase tracking-tight whitespace-nowrap"
+                    className="flex items-center gap-1 px-1.5 xl:px-4 py-2 text-xs xl:text-sm font-black text-gray-700 hover:text-[rgb(115,40,40)] hover:bg-[rgb(220,140,140)]/30 rounded-xl transition-all uppercase tracking-tight whitespace-nowrap"
                   >
                     {section.name}
                     {section.links && (
@@ -338,79 +397,76 @@ const Header = () => {
                   </button>
 
                   {/* Dropdown */}
-{section.links && (
-  <div className="absolute top-full right-0 pt-1 z-50 opacity-0 invisible translate-y-2 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 transition-all duration-200">
-    <div className="bg-white rounded-2xl shadow-2xl border border-gray-100 py-2 w-80">
+                  {section.links && (
+                    <div className="absolute top-full right-0 pt-1 z-50 opacity-0 invisible translate-y-2 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 transition-all duration-200">
+                      <div className="bg-white rounded-2xl shadow-2xl border border-gray-100 py-2 w-96">
+                        {section.links.map((link, lIdx) =>
+                          link.subLinks ? (
+                            <div key={lIdx} className="relative group/sub">
+                              {/* Parent Item */}
+                              <div className="flex items-center justify-between px-5 py-2 text-base font-bold text-gray-600 hover:text-[rgb(115,40,40)] hover:bg-[rgb(220,140,140)]/40 cursor-pointer transition-colors whitespace-nowrap">
+                                <span>{link.name}</span>
+                                <svg
+                                  className="w-3 h-3 rotate-180"
+                                  fill="none"
+                                  stroke="currentColor"
+                                  viewBox="0 0 24 24"
+                                >
+                                  <path d="M9 18l6-6-6-6" />
+                                </svg>
+                              </div>
 
-      {section.links.map((link, lIdx) =>
-        link.subLinks ? (
-          <div key={lIdx} className="relative group/sub">
-            
-            {/* Parent Item */}
-            <div className="flex items-center justify-between px-5 py-2 text-base font-bold text-gray-600 hover:text-[rgb(115,40,40)] hover:bg-[rgb(220,140,140)]/40 cursor-pointer transition-colors whitespace-nowrap">
-              <span>{link.name}</span>
-              <svg
-                className="w-3 h-3 rotate-180"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path d="M9 18l6-6-6-6" />
-              </svg>
-            </div>
-
-            {/* SubLinks */}
-            <div className="absolute top-0 left-full ml-1 py-2 bg-white rounded-2xl shadow-2xl border border-gray-100 opacity-0 invisible translate-x-2 group-hover/sub:opacity-100 group-hover/sub:visible group-hover/sub:translate-x-0 transition-all min-w-[220px] z-50">
-
-              {link.subLinks.map((sub, sIdx) =>
-                sub.href ? (
-                  <a
-                    key={sIdx}
-                    href={sub.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="block px-5 py-2 text-base font-bold text-gray-600 hover:text-[rgb(115,40,40)] hover:bg-[rgb(220,140,140)]/40 transition-colors whitespace-nowrap"
-                  >
-                    {sub.name}
-                  </a>
-                ) : (
-                  <Link
-                    key={sIdx}
-                    to={sub.route}
-                    className="block px-5 py-2 text-base font-bold text-gray-600 hover:text-[rgb(115,40,40)] hover:bg-[rgb(220,140,140)]/40 transition-colors whitespace-nowrap"
-                  >
-                    {sub.name}
-                  </Link>
-                )
-              )}
-
-            </div>
-          </div>
-        ) : link.href ? (
-          <a
-            key={lIdx}
-            href={link.href}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="block px-5 py-2 text-base font-bold text-gray-600 hover:text-[rgb(115,40,40)] hover:bg-[rgb(220,140,140)]/40 transition-colors whitespace-nowrap"
-          >
-            {link.name}
-          </a>
-        ) : (
-          <Link
-            key={lIdx}
-            to={link.section ? "/" : link.route}
-            state={link.section ? { scrollTo: link.section } : null}
-            className="block px-5 py-2 text-base font-bold text-gray-600 hover:text-[rgb(115,40,40)] hover:bg-[rgb(220,140,140)]/40 transition-colors whitespace-nowrap"
-          >
-            {link.name}
-          </Link>
-        )
-      )}
-
-    </div>
-  </div>
-)}
+                              {/* SubLinks */}
+                              <div className="absolute top-0 left-full ml-1 py-2 bg-white rounded-2xl shadow-2xl border border-gray-100 opacity-0 invisible translate-x-2 group-hover/sub:opacity-100 group-hover/sub:visible group-hover/sub:translate-x-0 transition-all min-w-[220px] z-50">
+                                {link.subLinks.map((sub, sIdx) =>
+                                  sub.href ? (
+                                    <a
+                                      key={sIdx}
+                                      href={sub.href}
+                                      target="_blank"
+                                      rel="noopener noreferrer"
+                                      className="block px-5 py-2 text-base font-bold text-gray-600 hover:text-[rgb(115,40,40)] hover:bg-[rgb(220,140,140)]/40 transition-colors whitespace-nowrap"
+                                    >
+                                      {sub.name}
+                                    </a>
+                                  ) : (
+                                    <Link
+                                      key={sIdx}
+                                      to={sub.route}
+                                      className="block px-5 py-2 text-base font-bold text-gray-600 hover:text-[rgb(115,40,40)] hover:bg-[rgb(220,140,140)]/40 transition-colors whitespace-nowrap"
+                                    >
+                                      {sub.name}
+                                    </Link>
+                                  ),
+                                )}
+                              </div>
+                            </div>
+                          ) : link.href ? (
+                            <a
+                              key={lIdx}
+                              href={link.href}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="block px-5 py-2 text-base font-bold text-gray-600 hover:text-[rgb(115,40,40)] hover:bg-[rgb(220,140,140)]/40 transition-colors whitespace-nowrap"
+                            >
+                              {link.name}
+                            </a>
+                          ) : (
+                            <Link
+                              key={lIdx}
+                              to={link.section ? "/" : link.route}
+                              state={
+                                link.section ? { scrollTo: link.section } : null
+                              }
+                              className="block px-5 py-2 text-base font-bold text-gray-600 hover:text-[rgb(115,40,40)] hover:bg-[rgb(220,140,140)]/40 transition-colors whitespace-nowrap"
+                            >
+                              {link.name}
+                            </Link>
+                          ),
+                        )}
+                      </div>
+                    </div>
+                  )}
                 </div>
               ))}
             </div>
@@ -492,7 +548,6 @@ const Header = () => {
                   </button>
                   {section.isOpen && (
                     <div className="pl-4 pb-4 space-y-1">
-
                       {section.links.map((link, lIdx) =>
                         link.subLinks ? (
                           <div key={lIdx}>

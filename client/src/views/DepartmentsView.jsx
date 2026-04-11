@@ -650,7 +650,7 @@ const DepartmentsView = () => {
                         <div className="absolute inset-0 h-1/2 bg-gradient-to-r from-[rgb(115,63,63)] to-[rgb(115,25,25)]"></div>
                         <div className="relative">
                           <img
-                            src={`${BACKEND_URL}/${staff.image}`}
+                            src={`${BACKEND_URL}/public/${staff.image}`}
                             alt={staff.name}
                             className="w-28 h-36 object-cover rounded-full border-4 border-white shadow-lg"
                           />
@@ -886,7 +886,7 @@ const DepartmentsView = () => {
                   World-Class Facilities
                 </span>
               </h2>
-              <div className="max-w-full mx-auto space-y-12 sm:space-y-16">
+              <div className="max-w-7xl mx-auto space-y-12 sm:space-y-16">
                 {(Array.isArray(department?.facility)
                   ? department.facility
                   : []
@@ -952,11 +952,11 @@ const DepartmentsView = () => {
             onClick={() => setShowPopover(false)}
           >
             <div
-              className="bg-white rounded-2xl shadow-xl max-w-5xl w-full h-[90vh] overflow-hidden flex"
+              className="bg-white rounded-2xl shadow-xl max-w-5xl w-full h-[80vh] overflow-hidden flex mt-[120px]"
               onClick={(e) => e.stopPropagation()}
             >
               {/* LEFT SIDE */}
-              <div className="w-1/3 bg-[rgb(245,180,180)] text-center p-6 flex flex-col items-center">
+              <div className="w-1/3 bg-[rgb(242,198,198)] text-center p-6 flex flex-col items-center">
                 <img
                   src={`${BACKEND_URL}/public/${selectedStaff.photo}`}
                   alt={selectedStaff.name}
