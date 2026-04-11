@@ -1,4 +1,4 @@
-﻿import React, { useState,useEffect } from 'react';
+import React, { useState,useEffect } from 'react';
 import OfficePageTemplate from '../components/OfficePageTemplate';
 import OfficeContentSection from '../components/OfficeContentSection';
 import StaffCard from '../components/StaffCard';
@@ -16,11 +16,57 @@ const PlacementCell = () => {
         { key: 'staff', label: 'Staff' }
     ];
 
+    const logos = [
+        "/placed_students/ANCIT.png",
+        "/placed_students/Affintrix.png",
+        "/placed_students/Amazon.png",
+        "/placed_students/Avasoft-2.png",
+        "/placed_students/Avasoft.png",
+        "/placed_students/Breaks India.png",
+        "/placed_students/DLUX.png",
+        "/placed_students/ERP Roots.png",
+        "/placed_students/Glimmora (2).png",
+        "/placed_students/Glimmora.png",
+        "/placed_students/Hub Stream.png",
+        "/placed_students/Infosys.png",
+        "/placed_students/MBA - Telekonnectors.png",
+        "/placed_students/Motherson EEE - I.png",
+        "/placed_students/Motherson EEE-II.png",
+        "/placed_students/Oerlicon - II.png",
+        "/placed_students/Oerlicon.png",
+        "/placed_students/Office 2000.png",
+        "/placed_students/Office 2020 - II.png",
+        "/placed_students/Ozone.png",
+        "/placed_students/Roots.png",
+        "/placed_students/Senzary (2).png",
+        "/placed_students/Senzary.png",
+        "/placed_students/Skillintrix.png",
+        "/placed_students/SmartDV.png",
+        "/placed_students/Solarwind, Grenada.png",
+        "/placed_students/Stellatis.png",
+        "/placed_students/Super Auto Forge.png",
+        "/placed_students/TAP Academy.png",
+        "/placed_students/TN Model School.png",
+        "/placed_students/Thirdwave.png",
+        "/placed_students/Vista Engineering Solutions.png",
+        "/placed_students/zoho (2).png",
+        "/placed_students/zoho (3).png",
+        "/placed_students/zoho.png"
+    ];
+
+    const [currentLogoIndex, setCurrentLogoIndex] = useState(0);
+
 useEffect(() => {
   fetch("/api/placement-cell")
     .then(res => res.json())
     .then(data => setData(data))
     .catch(err => console.error(err));
+
+  const timer = setInterval(() => {
+    setCurrentLogoIndex((prev) => (prev + 1) % logos.length);
+  }, 2000);
+
+  return () => clearInterval(timer);
 }, []);
 
 if (!data) {
@@ -145,24 +191,8 @@ if (!data) {
                     </div>
                 </OfficeContentSection>
 
-
-                {/* Recruiters */}
-<OfficeContentSection
-    sectionId="our_recruiters"
-    title="Our Recruiters"
->
-    <div className="flex justify-center">
-        <img
-            src="/recruiters.jpg"
-            alt="Our Recruiters"
-            className="w-full max-w-3xl h-auto rounded-2xl shadow-xl border border-gray-100 object-contain"
-        />
-    </div>
-</OfficeContentSection>
-
-
-                <section className="py-16 lg:py-24 bg-[rgb(171,110,110)] overflow-hidden relative">
-                    <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <section className="py-8 bg-[rgb(171,110,110)] relative w-screen left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] overflow-hidden">
+                    <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col items-center">
 
                         {/* Heading */}
                         <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-12 text-white relative inline-block">
@@ -170,80 +200,50 @@ if (!data) {
                             <span className="absolute -bottom-3 left-1/2 -translate-x-1/2 h-1 w-20 bg-yellow-500"></span>
                         </h2>
 
-                        {/* Slider Wrapper */}
-                        <div className="relative w-full bg-[rgb(171,110,110)] overflow-hidden">
-
-                            {/* Sliding Track */}
-                            <div
-                                id="logoTrack"
-                                className="flex gap-8 w-max animate-[logoscroll_30s_linear_infinite]"
-                            >
-                                {[
-                                    "/company01.jpg",
-                                    "/company02.jpg",
-                                    "/company03.jpg",
-                                    "/company04.jpg",
-                                    "/company05.jpg",
-                                    "/company06.jpg",
-                                    "/company07.jpg",
-                                    "/company08.jpg",
-                                    "/company09.jpg",
-                                    "/company10.jpg",
-                                    "/company11.png",
-                                    "/company12.webp",
-                                ]
-                                    .concat([
-                                        "/company01.jpg",
-                                        "/company02.jpg",
-                                        "/company03.jpg",
-                                        "/company04.jpg",
-                                        "/company05.jpg",
-                                        "/company06.jpg",
-                                        "/company07.jpg",
-                                        "/company08.jpg",
-                                        "/company09.jpg",
-                                        "/company10.jpg",
-                                        "/company11.png",
-                                        "/company12.webp",
-                                    ])
-                                    .map((logo, index) => (
-                                        <div
-                                            key={index}
-                                            className="min-w-[220px] h-[130px] bg-white rounded-2xl border-2 border-gray-200 flex items-center justify-center hover:shadow-xl hover:scale-105 transition duration-300"
-                                        >
-                                            <img
-                                                src={logo}
-                                                alt="Company Logo"
-                                                className="max-h-20 object-contain"
-                                            />
-                                        </div>
-                                    ))}
+                        {/* 3-Card Carousel Container */}
+                        <div className="relative flex items-center justify-center gap-8 lg:gap-16 w-full max-w-none h-[450px] sm:h-[550px] lg:h-[650px]">
+                            {/* Card 1 (Left - Lite Fade) */}
+                            <div className="hidden md:flex max-w-[250px] lg:max-w-[400px] w-auto h-auto bg-white/40 backdrop-blur-sm rounded-2xl shadow-lg items-center justify-center p-0 opacity-40 transition-all duration-700 ease-in-out border-[3px] border-white/30 overflow-hidden">
+                                <img
+                                    src={logos[(currentLogoIndex - 1 + logos.length) % logos.length]}
+                                    alt="Partner Logo Left"
+                                    className="w-full h-full max-h-[250px] lg:max-h-[400px] object-cover grayscale opacity-50"
+                                />
                             </div>
-                        </div>
 
-                        {/* Dots (Moved Up) */}
-                        <div className="flex justify-center gap-3 mt-6">
-                            {Array.from({ length: 12 }).map((_, index) => (
-                                <span
-                                    key={index}
-                                    className="h-3 w-3 rounded-full bg-white"
-                                ></span>
-                            ))}
+                            {/* Card 2 (Center - Clear/Active) */}
+                            <div className="relative max-w-[320px] sm:max-w-[450px] lg:max-w-[600px] w-auto h-auto bg-white rounded-3xl shadow-2xl flex items-center justify-center p-0 transition-all duration-700 ease-in-out border-[6px] border-[rgb(100,25,25)] z-10 overflow-hidden">
+                                <img
+                                    key={currentLogoIndex}
+                                    src={logos[currentLogoIndex]}
+                                    alt="Active Partner Logo"
+                                    className="w-full h-full max-h-[300px] sm:max-h-[450px] lg:max-h-[580px] object-cover animate-fadeInOnly"
+                                />
+                            </div>
+
+                            {/* Card 3 (Right - Lite Fade) */}
+                            <div className="hidden md:flex max-w-[250px] lg:max-w-[400px] w-auto h-auto bg-white/40 backdrop-blur-sm rounded-2xl shadow-lg items-center justify-center p-0 opacity-40 transition-all duration-700 ease-in-out border-[3px] border-white/30 overflow-hidden">
+                                <img
+                                    src={logos[(currentLogoIndex + 1) % logos.length]}
+                                    alt="Partner Logo Right"
+                                    className="w-full h-full max-h-[250px] lg:max-h-[400px] object-cover grayscale opacity-50"
+                                />
+                            </div>
                         </div>
                     </div>
 
-                    {/* Keyframes Inside Same Section */}
                     <style>
                         {`
-      @keyframes logoscroll {
-        from { transform: translateX(0); }
-        to { transform: translateX(-50%); }
-      }
-    `}
+                        @keyframes fadeInOnly {
+                            from { opacity: 0; }
+                            to { opacity: 1; }
+                        }
+                        .animate-fadeInOnly {
+                            animation: fadeInOnly 0.5s ease-out forwards;
+                        }
+                        `}
                     </style>
                 </section>
-
-
 
                 {/* Staff */}
                 <OfficeContentSection
