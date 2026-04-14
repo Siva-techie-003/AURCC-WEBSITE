@@ -36,67 +36,67 @@ const NSS = () => {
   // Static Data
   const galleryImages = [
     {
-      src: "/nss_gallery/WhatsApp Image 2026-03-20 at 11.40.13 AM (1).jpeg",
+      src: "/nss_gallery/img1.jpeg",
       alt: "NSS Activity",
       description: "NSS volunteers participating in community service activities",
     },
     {
-      src: "/nss_gallery/WhatsApp Image 2026-03-20 at 11.40.13 AM.jpeg",
+      src: "/nss_gallery/img2.jpeg",
       alt: "NSS Activity",
       description: "NSS unit awareness programs and student engagement",
     },
     {
-      src: "/nss_gallery/WhatsApp Image 2026-03-20 at 11.40.14 AM (1).jpeg",
+      src: "/nss_gallery/img3.jpeg",
       alt: "NSS Activity",
       description: "Engaging in social welfare and community outreach",
     },
     {
-      src: "/nss_gallery/WhatsApp Image 2026-03-20 at 11.40.14 AM (2).jpeg",
+      src: "/nss_gallery/img4.jpeg",
       alt: "NSS Activity",
       description: "Volunteers collaborating on campus improvement projects",
     },
     {
-      src: "/nss_gallery/WhatsApp Image 2026-03-20 at 11.40.14 AM.jpeg",
+      src: "/nss_gallery/img5.jpeg",
       alt: "NSS Activity",
       description: "NSS special camp highlights and team activities",
     },
     {
-      src: "/nss_gallery/WhatsApp Image 2026-03-20 at 11.40.15 AM (1).jpeg",
+      src: "/nss_gallery/img6.jpeg",
       alt: "NSS Activity",
       description: "Development sessions for NSS student volunteers",
     },
     {
-      src: "/nss_gallery/WhatsApp Image 2026-03-20 at 11.40.15 AM (2).jpeg",
+      src: "/nss_gallery/img7.jpeg",
       alt: "NSS Activity",
       description: "Service to humanity through dedicated NSS programs",
     },
     {
-      src: "/nss_gallery/WhatsApp Image 2026-03-20 at 11.40.15 AM (3).jpeg",
+      src: "/nss_gallery/img8.jpeg",
       alt: "NSS Activity",
       description: "NSS volunteers working together for a social cause",
     },
     {
-      src: "/nss_gallery/WhatsApp Image 2026-03-20 at 11.40.15 AM.jpeg",
+      src: "/nss_gallery/img9.jpeg",
       alt: "NSS Activity",
       description: "Promoting social responsibility at AURCC campus",
     },
     {
-      src: "/nss_gallery/WhatsApp Image 2026-03-20 at 11.40.16 AM (1).jpeg",
+      src: "/nss_gallery/img10.jpeg",
       alt: "NSS Activity",
       description: "Sustainable development initiatives by the NSS unit",
     },
     {
-      src: "/nss_gallery/WhatsApp Image 2026-03-20 at 11.40.16 AM (2).jpeg",
+      src: "/nss_gallery/img11.jpeg",
       alt: "NSS Activity",
       description: "Memorable moments from NSS field activities",
     },
     {
-      src: "/nss_gallery/WhatsApp Image 2026-03-20 at 11.40.16 AM.jpeg",
+      src: "/nss_gallery/img12.jpeg",
       alt: "NSS Activity",
       description: "NSS group activities and community engagement",
     },
     {
-      src: "/nss_gallery/WhatsApp Image 2026-03-20 at 11.40.17 AM.jpeg",
+      src: "/nss_gallery/img13.jpeg",
       alt: "NSS Activity",
       description: "The journey of service: NSS AURCC highlights",
     },

@@ -1,4 +1,4 @@
-﻿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import administrationData from '../assets/administration.json';
 import './Admin.css';
 
@@ -66,12 +66,12 @@ const AdminStaffCard = ({ member }) => {
 
             {/* Profile Image Section */}
             <div className="relative -mt-12 flex justify-center">
-                <div className="w-32 h-32 rounded-full overflow-hidden border-4 border-white shadow-md bg-white flex items-center justify-center">
+                <div className="w-32 h-32 rounded-2xl overflow-hidden border-2 border-[rgb(110,35,35)] shadow-md bg-gray-50 flex items-center justify-center">
                     {member.image && !error ? (
                         <img
                             src={`/${member.image}`}
                             alt={member.name}
-                            className="w-full h-full object-cover"
+                            className="w-full h-full object-cover object-top"
                             onError={() => setError(true)}
                         />
                     ) : (

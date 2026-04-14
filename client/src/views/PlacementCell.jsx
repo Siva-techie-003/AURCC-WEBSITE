@@ -91,9 +91,7 @@ const PlacementCell = () => {
                   About the Placement Cell
                 </h2>
 
-                <div className="flex justify-center">
-                  <span className="block w-24 h-1.5 rounded-full bg-[#f5c842]"></span>
-                </div>
+
               </div>
 
               <div className="bg-white rounded-2xl shadow-sm border border-[rgb(220,140,140)] p-6 lg:p-8">
@@ -265,8 +263,9 @@ const PlacementCell = () => {
               {/* Heading */}
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 text-[rgb(100,25,25)] relative inline-block">
                 OUR HIRING PARTNERS
-                <span className="absolute -bottom-3 left-1/2 -translate-x-1/2 h-1 w-20 bg-yellow-500"></span>
+
               </h2>
+         
 
               {/* 3-Card Carousel Container */}
               <div className="relative flex items-center justify-center gap-8 lg:gap-16 w-full max-w-none h-[450px] sm:h-[400px] lg:h-[550px]">
@@ -302,19 +301,10 @@ const PlacementCell = () => {
                   />
                 </div>
               </div>
+              
             </div>
 
-            <style>
-              {`
-                        @keyframes fadeInOnly {
-                            from { opacity: 0; }
-                            to { opacity: 1; }
-                        }
-                        .animate-fadeInOnly {
-                            animation: fadeInOnly 0.5s ease-out forwards;
-                        }
-                        `}
-            </style>
+           
           </section>
 
           {/* Staff */}

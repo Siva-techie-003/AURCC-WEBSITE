@@ -64,7 +64,7 @@ const AnnualDayGallery = lazy(() => import('./views/AnnualDayGallery'));
 const FeedbackView = lazy(() => import('./views/FeedbackView'));
 function App() {
     return (
-        <div className="App min-h-screen flex flex-col">
+        <div className="App min-h-screen flex flex-col overflow-x-hidden">
             <Header />
             <main className="flex-grow">
                 <ScrollToTop />

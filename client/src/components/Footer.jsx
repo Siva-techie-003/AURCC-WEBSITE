@@ -1,4 +1,4 @@
-﻿import React from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 
 const Footer = ({
@@ -112,8 +112,7 @@ const Footer = ({
       className="text-white"
       style={{ background: "linear-gradient(135deg, #6b1a1a 0%, #8b2a2a 40%, #6b1a1a 100%)" }}
     >
-      {/*  MAIN CONTENT - limit visible area to ~70vh so user sees it partially */}
-      <div style={{ maxHeight: "clamp(50vh, 70vh, 80vh)" }} className="overflow-y-auto">
+      <div>
         <div className="container mx-auto px-4 sm:px-6 py-8 sm:py-12">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
 

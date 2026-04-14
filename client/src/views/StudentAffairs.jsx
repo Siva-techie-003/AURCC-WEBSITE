@@ -209,12 +209,13 @@ const StudentAffairs = () => {
                                     className="bg-gray-50/50 rounded-2xl p-6 border border-gray-100 flex flex-col items-center text-center hover:bg-white hover:shadow-md transition-all group"
                                 >
                                     <div className="relative mb-4">
-                                        <img
-                                            src={staff.Image}
-                                            alt={staff['Name of the Staff']}
-                                            className="w-28 h-28 rounded-2xl object-cover border-4 border-white shadow-lg  transition-transform"
-                                        />
-                                        
+                                        <div className="w-32 h-32 rounded-2xl overflow-hidden border-2 border-[rgb(110,35,35)] shadow-md bg-gray-50 flex-shrink-0">
+                                            <img
+                                                src={staff.Image}
+                                                alt={staff['Name of the Staff']}
+                                                className="w-full h-full object-cover object-top"
+                                            />
+                                        </div>
                                     </div>
                                     <h3 className="font-bold text-lg text-[rgb(100,25,25)] uppercase tracking-tight">{staff['Name of the Staff']}</h3>
                                     <div className="h-0.5 w-12 bg-[rgb(180,100,100)] my-2"></div>
