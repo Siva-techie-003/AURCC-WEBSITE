@@ -133,7 +133,7 @@ const DepartmentsView = () => {
       <main>
         {/* Hero section */}
         <section
-          className="scroll-mt-24 lg:scroll-mt-32 bg-cover bg-center relative h-64 sm:h-72 md:h-80 lg:h-96"
+          className="scroll-mt-24 lg:scroll-mt-32 bg-cover bg-center relative h-64 sm:h-72 md:h-80 lg:h-72"
           style={{ backgroundImage: `url(${BACKEND_URL}/${department.image})` }}
         >
           <div className="absolute inset-0 bg-gradient-to-r from-[rgb(115,63,63)]/70 to-[rgb(115,25,25)]/30"></div>

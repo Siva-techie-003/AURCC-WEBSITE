@@ -16,58 +16,58 @@ const PlacementCell = () => {
     { key: "staff", label: "Staff" },
   ];
 
-    const logos = [
-        "/placed_students/ANCIT.png",
-        "/placed_students/Affintrix.png",
-        "/placed_students/Amazon.png",
-        "/placed_students/Avasoft-2.png",
-        "/placed_students/Avasoft.png",
-        "/placed_students/Breaks India.png",
-        "/placed_students/DLUX.png",
-        "/placed_students/ERP Roots.png",
-        "/placed_students/Glimmora (2).png",
-        "/placed_students/Glimmora.png",
-        "/placed_students/Hub Stream.png",
-        "/placed_students/Infosys.png",
-        "/placed_students/MBA - Telekonnectors.png",
-        "/placed_students/Motherson EEE - I.png",
-        "/placed_students/Motherson EEE-II.png",
-        "/placed_students/Oerlicon - II.png",
-        "/placed_students/Oerlicon.png",
-        "/placed_students/Office 2000.png",
-        "/placed_students/Office 2020 - II.png",
-        "/placed_students/Ozone.png",
-        "/placed_students/Roots.png",
-        "/placed_students/Senzary (2).png",
-        "/placed_students/Senzary.png",
-        "/placed_students/Skillintrix.png",
-        "/placed_students/SmartDV.png",
-        "/placed_students/Solarwind, Grenada.png",
-        "/placed_students/Stellatis.png",
-        "/placed_students/Super Auto Forge.png",
-        "/placed_students/TAP Academy.png",
-        "/placed_students/TN Model School.png",
-        "/placed_students/Thirdwave.png",
-        "/placed_students/Vista Engineering Solutions.png",
-        "/placed_students/zoho (2).png",
-        "/placed_students/zoho (3).png",
-        "/placed_students/zoho.png"
-    ];
+  const logos = [
+    "/placed_students/ANCIT.png",
+    "/placed_students/Affintrix.png",
+    "/placed_students/Amazon.png",
+    "/placed_students/Avasoft-2.png",
+    "/placed_students/Avasoft.png",
+    "/placed_students/Breaks India.png",
+    "/placed_students/DLUX.png",
+    "/placed_students/ERP Roots.png",
+    "/placed_students/Glimmora (2).png",
+    "/placed_students/Glimmora.png",
+    "/placed_students/Hub Stream.png",
+    "/placed_students/Infosys.png",
+    "/placed_students/MBA - Telekonnectors.png",
+    "/placed_students/Motherson EEE - I.png",
+    "/placed_students/Motherson EEE-II.png",
+    "/placed_students/Oerlicon - II.png",
+    "/placed_students/Oerlicon.png",
+    "/placed_students/Office 2000.png",
+    "/placed_students/Office 2020 - II.png",
+    "/placed_students/Ozone.png",
+    "/placed_students/Roots.png",
+    "/placed_students/Senzary (2).png",
+    "/placed_students/Senzary.png",
+    "/placed_students/Skillintrix.png",
+    "/placed_students/SmartDV.png",
+    "/placed_students/Solarwind, Grenada.png",
+    "/placed_students/Stellatis.png",
+    "/placed_students/Super Auto Forge.png",
+    "/placed_students/TAP Academy.png",
+    "/placed_students/TN Model School.png",
+    "/placed_students/Thirdwave.png",
+    "/placed_students/Vista Engineering Solutions.png",
+    "/placed_students/zoho (2).png",
+    "/placed_students/zoho (3).png",
+    "/placed_students/zoho.png",
+  ];
 
-    const [currentLogoIndex, setCurrentLogoIndex] = useState(0);
+  const [currentLogoIndex, setCurrentLogoIndex] = useState(0);
 
-useEffect(() => {
-  fetch("/api/placement-cell")
-    .then(res => res.json())
-    .then(data => setData(data))
-    .catch(err => console.error(err));
+  useEffect(() => {
+    fetch("/api/placement-cell")
+      .then((res) => res.json())
+      .then((data) => setData(data))
+      .catch((err) => console.error(err));
 
-  const timer = setInterval(() => {
-    setCurrentLogoIndex((prev) => (prev + 1) % logos.length);
-  }, 2000);
+    const timer = setInterval(() => {
+      setCurrentLogoIndex((prev) => (prev + 1) % logos.length);
+    }, 2000);
 
-  return () => clearInterval(timer);
-}, []);
+    return () => clearInterval(timer);
+  }, []);
 
   if (!data) {
     return <p className="text-center mt-20">Loading...</p>;
@@ -217,63 +217,95 @@ useEffect(() => {
             </OfficeContentSection>
           </div>
 
-                {/* Placement Statistics */}
-                <OfficeContentSection
-                    sectionId="placement_statistics"
-                    title="Placement Statistics"
+          {/* Placement Statistics */}
+          <OfficeContentSection
+            sectionId="placement_statistics"
+            title="Placement Statistics"
+          >
+            <div className="flex flex-col items-center">
+              <div className="text-base lg:text-lg text-gray-700 mb-8 text-center max-w-2xl font-medium">
+                <span className="font-bold text-[rgb(100,25,25)]">
+                  Our Results Speak for Themselves:
+                </span>{" "}
+                Each year, our students receive numerous placement offers from
+                leading companies.
+              </div>
+              <img
+                src="/placement statistics.webp"
+                alt="Placement Statistics"
+                className="w-full max-w-4xl mx-auto rounded-2xl shadow-xl border border-gray-100"
+              />
+            </div>
+          </OfficeContentSection>
+
+          <section className="py-8 bg-white relative w-screen left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] overflow-hidden">
+            {/* 🔹 BACKGROUND PATTERN */}
+            <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-40 text-[rgb(115,40,40)]">
+              <svg
+                width="100%"
+                height="100%"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <pattern
+                  id="dots-pattern"
+                  width="40"
+                  height="40"
+                  patternUnits="userSpaceOnUse"
                 >
-                    <div className="flex flex-col items-center">
-                        <div className="text-base lg:text-lg text-gray-700 mb-8 text-center max-w-2xl font-medium">
-                            <span className="font-bold text-[rgb(100,25,25)]">Our Results Speak for Themselves:</span> Each year, our students receive numerous placement offers from leading companies.
-                        </div>
-                        <img src="/placement statistics.webp" alt="Placement Statistics" className="w-full max-w-4xl mx-auto rounded-2xl shadow-xl border border-gray-100" />
+                  <circle cx="2" cy="2" r="1" fill="currentColor" />
+                  <circle cx="20" cy="20" r="1" fill="currentColor" />
+                  <circle cx="38" cy="38" r="1" fill="currentColor" />
+                  <circle cx="2" cy="38" r="1" fill="currentColor" />
+                  <circle cx="38" cy="2" r="1" fill="currentColor" />
+                </pattern>
+                <rect width="100%" height="100%" fill="url(#dots-pattern)" />
+              </svg>
+            </div>
+            <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col items-center">
+              {/* Heading */}
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 text-[rgb(100,25,25)] relative inline-block">
+                OUR HIRING PARTNERS
+                <span className="absolute -bottom-3 left-1/2 -translate-x-1/2 h-1 w-20 bg-yellow-500"></span>
+              </h2>
 
-                    </div>
-                </OfficeContentSection>
+              {/* 3-Card Carousel Container */}
+              <div className="relative flex items-center justify-center gap-8 lg:gap-16 w-full max-w-none h-[450px] sm:h-[400px] lg:h-[550px]">
+                {/* Card 1 (Left - Lite Fade) */}
+                <div className="hidden md:flex max-w-[250px] lg:max-w-[400px] w-auto h-auto bg-white/40 backdrop-blur-sm rounded-2xl shadow-lg items-center justify-center p-0 opacity-40 transition-all duration-700 ease-in-out border-[3px] border-white/30 overflow-hidden">
+                  <img
+                    src={
+                      logos[
+                        (currentLogoIndex - 1 + logos.length) % logos.length
+                      ]
+                    }
+                    alt="Partner Logo Left"
+                    className="w-full h-full max-h-[250px] lg:max-h-[400px] object-cover grayscale opacity-50"
+                  />
+                </div>
 
-                <section className="py-8 bg-[rgb(171,110,110)] relative w-screen left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] overflow-hidden">
-                    <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col items-center">
+                {/* Card 2 (Center - Clear/Active) */}
+                <div className="relative max-w-[320px] sm:max-w-[450px] lg:max-w-[750px] h-[450px] sm:h-[350px] lg:h-[500px] bg-white rounded-3xl shadow-2xl flex items-center justify-center p-0 transition-all duration-700 ease-in-out border-[6px] border-[rgb(100,25,25)] z-10 overflow-hidden">
+                  <img
+                    key={currentLogoIndex}
+                    src={logos[currentLogoIndex]}
+                    alt="Active Partner Logo"
+                    className="w-full h-full max-h-[300px] sm:max-h-[450px] lg:max-h-[500px] object-cover animate-fadeInOnly"
+                  />
+                </div>
 
-                        {/* Heading */}
-                        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-12 text-white relative inline-block">
-                            OUR HIRING PARTNERS
-                            <span className="absolute -bottom-3 left-1/2 -translate-x-1/2 h-1 w-20 bg-yellow-500"></span>
-                        </h2>
+                {/* Card 3 (Right - Lite Fade) */}
+                <div className="hidden md:flex max-w-[250px] lg:max-w-[400px] w-auto h-auto bg-white/40 backdrop-blur-sm rounded-2xl shadow-lg items-center justify-center p-0 opacity-40 transition-all duration-700 ease-in-out border-[3px] border-white/30 overflow-hidden">
+                  <img
+                    src={logos[(currentLogoIndex + 1) % logos.length]}
+                    alt="Partner Logo Right"
+                    className="w-full h-full max-h-[250px] lg:max-h-[400px] object-cover grayscale opacity-50"
+                  />
+                </div>
+              </div>
+            </div>
 
-                        {/* 3-Card Carousel Container */}
-                        <div className="relative flex items-center justify-center gap-8 lg:gap-16 w-full max-w-none h-[450px] sm:h-[550px] lg:h-[650px]">
-                            {/* Card 1 (Left - Lite Fade) */}
-                            <div className="hidden md:flex max-w-[250px] lg:max-w-[400px] w-auto h-auto bg-white/40 backdrop-blur-sm rounded-2xl shadow-lg items-center justify-center p-0 opacity-40 transition-all duration-700 ease-in-out border-[3px] border-white/30 overflow-hidden">
-                                <img
-                                    src={logos[(currentLogoIndex - 1 + logos.length) % logos.length]}
-                                    alt="Partner Logo Left"
-                                    className="w-full h-full max-h-[250px] lg:max-h-[400px] object-cover grayscale opacity-50"
-                                />
-                            </div>
-
-                            {/* Card 2 (Center - Clear/Active) */}
-                            <div className="relative max-w-[320px] sm:max-w-[450px] lg:max-w-[600px] w-auto h-auto bg-white rounded-3xl shadow-2xl flex items-center justify-center p-0 transition-all duration-700 ease-in-out border-[6px] border-[rgb(100,25,25)] z-10 overflow-hidden">
-                                <img
-                                    key={currentLogoIndex}
-                                    src={logos[currentLogoIndex]}
-                                    alt="Active Partner Logo"
-                                    className="w-full h-full max-h-[300px] sm:max-h-[450px] lg:max-h-[580px] object-cover animate-fadeInOnly"
-                                />
-                            </div>
-
-                            {/* Card 3 (Right - Lite Fade) */}
-                            <div className="hidden md:flex max-w-[250px] lg:max-w-[400px] w-auto h-auto bg-white/40 backdrop-blur-sm rounded-2xl shadow-lg items-center justify-center p-0 opacity-40 transition-all duration-700 ease-in-out border-[3px] border-white/30 overflow-hidden">
-                                <img
-                                    src={logos[(currentLogoIndex + 1) % logos.length]}
-                                    alt="Partner Logo Right"
-                                    className="w-full h-full max-h-[250px] lg:max-h-[400px] object-cover grayscale opacity-50"
-                                />
-                            </div>
-                        </div>
-                    </div>
-
-                    <style>
-                        {`
+            <style>
+              {`
                         @keyframes fadeInOnly {
                             from { opacity: 0; }
                             to { opacity: 1; }
@@ -282,8 +314,8 @@ useEffect(() => {
                             animation: fadeInOnly 0.5s ease-out forwards;
                         }
                         `}
-                    </style>
-                </section>
+            </style>
+          </section>
 
           {/* Staff */}
           <OfficeContentSection sectionId="staff" title="Staff">

@@ -1028,7 +1028,7 @@ const HomeView = () => {
 
           <section
             id="our_recruiters"
-            className=" bg-[url('/anna_unv_fnt.jpg')]  bg-cover bg-center bg-no-repeat py-16 lg:py-16 overflow-hidden relative scroll-mt-24 lg:scroll-mt-32"
+            className=" bg-[url('/collegefront.jpg')]  bg-cover bg-center bg-no-repeat py-16 lg:py-16 overflow-hidden relative scroll-mt-24 lg:scroll-mt-32"
           >
             <div className="absolute inset-0 bg-black/30"></div>
             <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -1169,7 +1169,7 @@ const HomeView = () => {
                   {/* Big Image */}
                   <div className="absolute left-[20px] top-10 bg-[rgb(115,25,25)] w-[520px] h-[380px] rounded-[25px] overflow-hidden border-[8px] border-white shadow-xl group">
                     <img
-                      src="/student_1.jpg"
+                      src="/collegeinterior.jpg"
                       alt="students"
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 animate-float"
                     />
@@ -1178,7 +1178,7 @@ const HomeView = () => {
                   {/* Small Image Overlapping */}
                   <div className="absolute left-[300px] top-[200px] bg-[rgb(115,25,25)] w-[400px] h-[300px] rounded-[25px] overflow-hidden border-[8px] border-white shadow-xl z-20 group">
                     <img
-                      src="/student_2.jpg"
+                      src="/studentsview.jpg"
                       alt="students"
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 animate-float2"
                     />
