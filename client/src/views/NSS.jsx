@@ -1,4 +1,4 @@
-﻿import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import "./NSS.css";
 
 const NSS = () => {
@@ -36,31 +36,72 @@ const NSS = () => {
   // Static Data
   const galleryImages = [
     {
-      src: "/public/1.webp",
-      alt: "College Event",
-      description: "Annual cultural festival celebrating diverse talents",
+      src: "/nss_gallery/WhatsApp Image 2026-03-20 at 11.40.13 AM (1).jpeg",
+      alt: "NSS Activity",
+      description: "NSS volunteers participating in community service activities",
     },
     {
-      src: "/public/cse-girls-closeup.webp",
-      alt: "Students in Lab",
-      description: "Students collaborating on innovative projects",
+      src: "/nss_gallery/WhatsApp Image 2026-03-20 at 11.40.13 AM.jpeg",
+      alt: "NSS Activity",
+      description: "NSS unit awareness programs and student engagement",
     },
     {
-      src: "/public/4.webp",
-      alt: "Campus View",
-      description: "Our beautiful campus surrounded by greenery",
+      src: "/nss_gallery/WhatsApp Image 2026-03-20 at 11.40.14 AM (1).jpeg",
+      alt: "NSS Activity",
+      description: "Engaging in social welfare and community outreach",
     },
     {
-      src: "/public/computer-lab.webp",
-      alt: "Computer Lab",
-      description: "State-of-the-art computer lab with latest equipment",
+      src: "/nss_gallery/WhatsApp Image 2026-03-20 at 11.40.14 AM (2).jpeg",
+      alt: "NSS Activity",
+      description: "Volunteers collaborating on campus improvement projects",
     },
     {
-      src: "/public/Drone_shot.jpg",
-      alt: "Aerial View",
-      description: "Aerial view of our sprawling campus facilities",
+      src: "/nss_gallery/WhatsApp Image 2026-03-20 at 11.40.14 AM.jpeg",
+      alt: "NSS Activity",
+      description: "NSS special camp highlights and team activities",
+    },
+    {
+      src: "/nss_gallery/WhatsApp Image 2026-03-20 at 11.40.15 AM (1).jpeg",
+      alt: "NSS Activity",
+      description: "Development sessions for NSS student volunteers",
+    },
+    {
+      src: "/nss_gallery/WhatsApp Image 2026-03-20 at 11.40.15 AM (2).jpeg",
+      alt: "NSS Activity",
+      description: "Service to humanity through dedicated NSS programs",
+    },
+    {
+      src: "/nss_gallery/WhatsApp Image 2026-03-20 at 11.40.15 AM (3).jpeg",
+      alt: "NSS Activity",
+      description: "NSS volunteers working together for a social cause",
+    },
+    {
+      src: "/nss_gallery/WhatsApp Image 2026-03-20 at 11.40.15 AM.jpeg",
+      alt: "NSS Activity",
+      description: "Promoting social responsibility at AURCC campus",
+    },
+    {
+      src: "/nss_gallery/WhatsApp Image 2026-03-20 at 11.40.16 AM (1).jpeg",
+      alt: "NSS Activity",
+      description: "Sustainable development initiatives by the NSS unit",
+    },
+    {
+      src: "/nss_gallery/WhatsApp Image 2026-03-20 at 11.40.16 AM (2).jpeg",
+      alt: "NSS Activity",
+      description: "Memorable moments from NSS field activities",
+    },
+    {
+      src: "/nss_gallery/WhatsApp Image 2026-03-20 at 11.40.16 AM.jpeg",
+      alt: "NSS Activity",
+      description: "NSS group activities and community engagement",
+    },
+    {
+      src: "/nss_gallery/WhatsApp Image 2026-03-20 at 11.40.17 AM.jpeg",
+      alt: "NSS Activity",
+      description: "The journey of service: NSS AURCC highlights",
     },
   ];
+
 
   // Logic for Image Gallery
   const nextImage = () => {
@@ -113,7 +154,6 @@ const NSS = () => {
           </div>
         </div>
       </section>
-<hr className="bg-[rgb(115,25,25)] h-1.5"></hr>
       {/* Content sections */}
       <section className="container mx-auto py-8 sm:py-12 lg:py-14 px-4">
         <div className="max-w-7xl mx-auto flex flex-col gap-8 sm:gap-10 lg:gap-12">
@@ -262,15 +302,15 @@ const NSS = () => {
                     }}
                   >
                     {galleryImages.map((image, idx) => (
-                      <div key={idx} className="flex-shrink-0 w-full px-4">
-                        <div className="relative group overflow-hidden rounded-xl shadow-2xl">
+                      <div key={idx} className="flex-shrink-0 w-full px-2 sm:px-4">
+                        <div className="relative group overflow-hidden rounded-2xl shadow-xl bg-gray-900 flex items-center justify-center h-[350px] sm:h-[400px] md:h-[450px] lg:h-[500px]">
                           <img
                             src={image.src}
                             alt={image.alt}
-                            className="w-full h-54 md:h-80 object-cover transition-transform duration-700 group-hover:scale-105"
+                            className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105"
                           />
-                          <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-6">
-                            <p className="text-white text-lg md:text-xl">
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-4 sm:p-8">
+                            <p className="text-white text-sm sm:text-lg md:text-xl font-medium leading-tight">
                               {image.description}
                             </p>
                           </div>

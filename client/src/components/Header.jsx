@@ -1,4 +1,4 @@
-﻿import React, { useState } from "react";
+import React, { useState } from "react";
 import { href, Link, useNavigate } from "react-router-dom";
 
 const Header = () => {
@@ -132,6 +132,8 @@ const Header = () => {
         { name: "Distance Education Cell", route: "/distance-education" },
         { name: "ED Cell", route: "/ed-cell" },
         { name: "Exam Cell", route: "/exam-cell" },
+        { name: "BIS Club", route: "/bis-club" },
+        { name: "Uyir Club", route: "/uyir-club" },
       ],
     },
 

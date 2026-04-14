@@ -1,42 +1,36 @@
 import React, { useState, useEffect, useRef, useMemo } from 'react';
-import './FineArtsClub.css';
+import './UyirClub.css';
 
-const FineArtsClub = () => {
+const UyirClub = () => {
     // State for Image Gallery
             const [currentImageIndex, setCurrentImageIndex] = useState(0);
             const [touchStartX, setTouchStartX] = useState(0);
             const [touchEndX, setTouchEndX] = useState(0);
-            const [data, setData] = useState(null);
-
-            useEffect(() => {
-  fetch("/api/finearts")
-    .then(res => res.json())
-    .then(result => {
-      console.log("Fine Arts Data:", result);
-      setData(result);
-    })
-    .catch(err => console.error(err));
-}, []);
+            const data = {
+                name: "UYIR CLUB",
+                description: "The Uyir Club is dedicated to celebrating life, promoting well-being, and creating a positive impact on society through various service-oriented and cultural activities.",
+                Coordinator: {
+                    Name: "TBD",
+                    Designation: "Coordinator",
+                    Email: "coordinator@aurcc.ac.in",
+                    Image: "1.webp"
+                }
+            };
     
            // Static Data
         const galleryImages = [
-            { src: '/fineart_club/1.png', alt: 'Fine Arts Club Memory', description: 'Celebrating our vibrant creativity and passion for the arts' },
-            { src: '/fineart_club/2.png', alt: 'Fine Arts Club Memory', description: 'Celebrating our vibrant creativity and passion for the arts' },
-            { src: '/fineart_club/3.png', alt: 'Fine Arts Club Memory', description: 'Celebrating our vibrant creativity and passion for the arts' },
-            { src: '/fineart_club/4.png', alt: 'Fine Arts Club Memory', description: 'Celebrating our vibrant creativity and passion for the arts' },
-            { src: '/fineart_club/5.png', alt: 'Fine Arts Club Memory', description: 'Celebrating our vibrant creativity and passion for the arts' },
-            { src: '/fineart_club/6.png', alt: 'Fine Arts Club Memory', description: 'Celebrating our vibrant creativity and passion for the arts' },
-            { src: '/fineart_club/7.png', alt: 'Fine Arts Club Memory', description: 'Celebrating our vibrant creativity and passion for the arts' },
-            { src: '/fineart_club/8.png', alt: 'Fine Arts Club Memory', description: 'Celebrating our vibrant creativity and passion for the arts' },
-            { src: '/fineart_club/9.png', alt: 'Fine Arts Club Memory', description: 'Celebrating our vibrant creativity and passion for the arts' },
-            { src: '/fineart_club/10.png', alt: 'Fine Arts Club Memory', description: 'Celebrating our vibrant creativity and passion for the arts' },
-            { src: '/fineart_club/11.png', alt: 'Fine Arts Club Memory', description: 'Celebrating our vibrant creativity and passion for the arts' },
-            { src: '/fineart_club/12.png', alt: 'Fine Arts Club Memory', description: 'Celebrating our vibrant creativity and passion for the arts' },
-            { src: '/fineart_club/13.png', alt: 'Fine Arts Club Memory', description: 'Celebrating our vibrant creativity and passion for the arts' },
-            { src: '/fineart_club/14.png', alt: 'Fine Arts Club Memory', description: 'Celebrating our vibrant creativity and passion for the arts' },
-            { src: '/fineart_club/15.png', alt: 'Fine Arts Club Memory', description: 'Celebrating our vibrant creativity and passion for the arts' },
-            { src: '/fineart_club/16.png', alt: 'Fine Arts Club Memory', description: 'Celebrating our vibrant creativity and passion for the arts' },
-            { src: '/fineart_club/17.png', alt: 'Fine Arts Club Memory', description: 'Celebrating our vibrant creativity and passion for the arts' },
+            { src: '/Uyir_Club/1.png', alt: 'Uyir Club Event', description: 'Uyir Club Moment' },
+            { src: '/Uyir_Club/2.png', alt: 'Uyir Club Event', description: 'Uyir Club Moment' },
+            { src: '/Uyir_Club/3.png', alt: 'Uyir Club Event', description: 'Uyir Club Moment' },
+            { src: '/Uyir_Club/4.png', alt: 'Uyir Club Event', description: 'Uyir Club Moment' },
+            { src: '/Uyir_Club/5.png', alt: 'Uyir Club Event', description: 'Uyir Club Moment' },
+            { src: '/Uyir_Club/6.png', alt: 'Uyir Club Event', description: 'Uyir Club Moment' },
+            { src: '/Uyir_Club/7.png', alt: 'Uyir Club Event', description: 'Uyir Club Moment' },
+            { src: '/Uyir_Club/8.png', alt: 'Uyir Club Event', description: 'Uyir Club Moment' },
+            { src: '/Uyir_Club/9.png', alt: 'Uyir Club Event', description: 'Uyir Club Moment' },
+            { src: '/Uyir_Club/10.png', alt: 'Uyir Club Event', description: 'Uyir Club Moment' },
+            { src: '/Uyir_Club/11.png', alt: 'Uyir Club Event', description: 'Uyir Club Moment' },
+            { src: '/Uyir_Club/12.png', alt: 'Uyir Club Event', description: 'Uyir Club Moment' }
         ];
     
         // Logic for Image Gallery
@@ -63,20 +57,18 @@ const FineArtsClub = () => {
             }
         };
 
-        if (!data) {
-  return <p className="text-center mt-20">Loading Fine Arts Club...</p>;
-}
+
 
     return (
         <main className="flex-grow font-sans bg-white">
             {/* Hero section */}
             <section className="relative w-full min-h-[35vh] sm:min-h-[40vh] md:min-h-[50vh] lg:min-h-[60vh] overflow-hidden flex items-center justify-center">
-                <img src="/sing.jpg" alt="Fine Arts Club" className="absolute inset-0 w-full h-full object-cover  blur-[0.5px]" />
+                <img src="/sing.jpg" alt="Uyir Club" className="absolute inset-0 w-full h-full object-cover  blur-[0.5px]" />
                 <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-black/60 via-black/30 to-transparent"></div>
                 <div className="absolute inset-0 flex flex-col items-center justify-center z-10 px-2">
                     <div className=" backdrop-blur-md bg-brown/30 rounded-2xl shadow-lg px-6 py-6 md:py-10 flex flex-col items-center w-full max-w-2xl mx-auto border border-white/30 animate-popIn">
-                        <h1 className="text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-extrabold text-white drop-shadow-lg tracking-wide text-center mb-2 leading-tight">Fine Arts Club</h1>
-                        <p className="text-sm sm:text-base lg:text-lg xl:text-xl text-white drop-shadow text-center font-medium">Celebrating Creativity and Talent</p>
+                        <h1 className="text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-extrabold text-white drop-shadow-lg tracking-wide text-center mb-2 leading-tight">Uyir Club</h1>
+                        <p className="text-sm sm:text-base lg:text-lg xl:text-xl text-white drop-shadow text-center font-medium">Celebrating Life and Well-being</p>
                     </div>
                 </div>
             </section>
@@ -87,7 +79,7 @@ const FineArtsClub = () => {
                     {/* Description Section */}
                     <div className="bg-white/70 backdrop-blur-md rounded-2xl shadow-lg border border-gray-100 overflow-hidden animate-fadeIn">
                         <div className="bg-gradient-to-r from-[rgb(115,63,63)] to-[rgb(115,25,25)] py-4 sm:py-5 flex items-center justify-center gap-2 sm:gap-3">
-                            <h2 className="text-lg sm:text-xl lg:text-2xl xl:text-3xl font-bold text-white text-center">LAYAM RHYTHM OF ARTS MUSIC & DANCE</h2>
+                            <h2 className="text-lg sm:text-xl lg:text-2xl xl:text-3xl font-bold text-white text-center">{data.name || "UYIR CLUB"}</h2>
                         </div>
                         <div className="p-4 sm:p-6 md:p-8 lg:p-10 text-left">
                             <p className="text-base lg:text-lg xl:text-xl  text-base text-gray-700 leading-relaxed">{data.description}</p>
@@ -111,9 +103,6 @@ const FineArtsClub = () => {
 
                     {/* Gallery Section */}
                 <section id="gallery" className="overflow-hidden w-full relative">
-                   
-                       
-                   
                     <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
                         <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-center mb-12 sm:mb-16 text-[rgb(100,25,25)] relative inline-block mx-auto">
                             Gallery of Memories
@@ -154,4 +143,4 @@ const FineArtsClub = () => {
     );
 };
 
-export default FineArtsClub;
+export default UyirClub;
