@@ -22,6 +22,8 @@ const Sports = lazy(() => import('./views/Sports'));
 const Alumni = lazy(() => import('./views/Alumni'));
 const DeanOffice = lazy(() => import('./views/DeanOffice'));
 const FineArtsClub = lazy(() => import('./views/FineArtsClub'));
+const BISClub = lazy(() => import('./views/BISClub'));
+const UyirClub = lazy(() => import('./views/UyirClub'));
 const Library = lazy(() => import('./views/Library'));
 const DistanceEdu = lazy(() => import('./views/DistanceEdu'));
 const OfficeOfAffiliation = lazy(() => import('./views/OfficeOfAffiliation'));
@@ -90,6 +92,8 @@ function App() {
                         <Route path="/alumni" element={<Alumni />} />
                         <Route path="/dean_office" element={<DeanOffice />} />
                         <Route path="/fine-arts" element={<FineArtsClub />} />
+<Route path="/bis-club" element={<BISClub />} />
+<Route path="/uyir-club" element={<UyirClub />} />
                         <Route path="/library" element={<Library />} />
                         <Route path="/distance-education" element={<DistanceEdu />} />
                         <Route path="/office-affiliation" element={<OfficeOfAffiliation />} />

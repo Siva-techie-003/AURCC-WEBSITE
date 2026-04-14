@@ -44,47 +44,57 @@ const COD = () => {
                 </div>
             </div>
 
-            <div className="container mx-auto grid gap-6 sm:gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 font-sans">
+            <div className="container mx-auto font-sans flex flex-col gap-16 mb-20 px-4">
                 {sorted.map((entry, index) => (
-                    <div
-                        key={index}
-                        className="cod-card bg-white rounded-xl shadow-lg border border-gray-200 overflow-hidden flex flex-col w-full mx-auto"
-                    >
-                        {/* Maroon header with centre name */}
-                        <div className="w-full bg-[rgb(110,35,35)] flex items-center justify-center px-4 py-3 min-h-[52px]">
-                            <h3 className="text-white font-bold text-sm uppercase tracking-wide text-center leading-tight">
+                    <section key={index} className="w-full flex flex-col items-center">
+                        {/* Centered Section Header */}
+                        <div className="flex flex-col items-center mb-10 w-full max-w-xl">
+                            <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-[rgb(110,35,35)] uppercase tracking-[0.2em] text-center">
                                 {entry.centre}
-                            </h3>
+                            </h2>
+                            <div className="w-24 h-1 bg-gradient-to-r from-transparent via-[rgb(110,35,35)] to-transparent mt-4 opacity-40"></div>
                         </div>
 
-                        {/* Member rows — fixed height keeps all cards the same size */}
-                        <div className="flex flex-col px-6 py-2 h-[180px] justify-center gap-1">
-                            {entry.members.map((member, mIdx) => {
-                                // Zigzag: even index → photo left, name right
-                                //         odd index  → name left, photo right
-                                const reversed = mIdx % 2 !== 0;
-                                return (
-                                    <div
-                                        key={mIdx}
-                                        className={`flex items-center gap-4 ${reversed ? 'flex-row-reverse' : 'flex-row'}`}
-                                    >
-                                        {/* Circular photo */}
-                                        <div className="flex-shrink-0 w-20 h-20 rounded-lg overflow-hidden border-2 border-[rgb(110,35,35)] shadow-sm bg-gray-100">
-                                            <img
-                                                src={`${BACKEND_URL}/${member.photo}`}
-                                                alt={member.name}
-                                                className="w-full h-full object-cover"
-                                            />
-                                        </div>
-                                        {/* Name */}
-                                        <span className={`text-base font-bold text-[rgb(100,25,25)] uppercase leading-tight ${reversed ? 'text-right' : 'text-left'}`}>
-                                            {member.name}
-                                        </span>
+                        {/* Members container - Centered using flexbox */}
+                        <div className="flex flex-wrap justify-center gap-10 w-full px-4">
+                            {entry.members.map((member, mIdx) => (
+                                <div
+                                    key={mIdx}
+                                    className="cod-card bg-white rounded-3xl shadow-md border-2 border-[rgb(90,25,25)] overflow-hidden flex items-center p-8 gap-8 hover:shadow-2xl transition-all duration-500 group w-full max-w-2xl"
+                                >
+                                    {/* Larger Square photo frame */}
+                                    <div className="flex-shrink-0 w-32 h-32 rounded-2xl overflow-hidden border-2 border-[rgb(110,35,35)] shadow-md bg-gray-50">
+                                        <img
+                                            src={`${BACKEND_URL}/${member.photo}`}
+                                            alt={member.name}
+                                            className="w-full h-full object-cover object-top"
+                                        />
                                     </div>
-                                );
-                            })}
+                                    
+                                    {/* Member info */}
+                                    <div className="flex flex-col justify-center">
+                                        <h4 className="text-lg font-bold text-[rgb(100,25,25)] uppercase leading-tight tracking-tight">
+                                            {member.name}
+                                        </h4>
+                                    </div>
+
+                                     {/* Member position */}
+                                    <div className="flex flex-col justify-center">
+                                        <h4 className="text-lg font-bold text-[rgb(100,25,25)] uppercase leading-tight tracking-tight">
+                                            {member.position}
+                                        </h4>
+                                    </div>
+
+                                     {/* Member coordinator */}
+                                    <div className="flex flex-col justify-center">
+                                        <h4 className="text-lg font-bold text-[rgb(100,25,25)] uppercase leading-tight tracking-tight">
+                                            {member.coordinator}
+                                        </h4>
+                                    </div>
+                                </div>
+                            ))}
                         </div>
-                    </div>
+                    </section>
                 ))}
             </div>
         </div>
