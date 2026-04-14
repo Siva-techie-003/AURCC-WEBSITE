@@ -6,7 +6,7 @@ const StaffCard = ({ staff }) => {
 
     const getImageUrl = (imagePath) => {
     if (!imagePath) return '';
-    return `/${imagePath}`;
+    return `/public/${imagePath}`;
 };
 
     const handleImageError = () => {
@@ -17,12 +17,12 @@ const StaffCard = ({ staff }) => {
         <div className="staff-card bg-white/60 backdrop-blur-md rounded-xl shadow-xl overflow-hidden flex flex-col items-center border border-[rgb(180,100,100)] transition-all duration-300 text-center hover:shadow-2xl touch-manipulation">
             {/* Image Section */}
             <div className="w-full flex justify-center pt-6 pb-2">
-                <div className="staff-image-container w-24 h-24 rounded-full overflow-hidden border-4 border-[rgb(140,60,60)] shadow-lg bg-white flex items-center justify-center">
+                <div className="staff-image-container w-24 h-24 rounded-[20px] overflow-hidden border-4 border-[rgb(140,60,60)] shadow-lg bg-white flex items-center justify-center">
                     {staff.image && staff.image.trim() !== '' && !showDefaultImage ? (
                         <img
                             src={getImageUrl(staff.image)}
                             alt={staff.name}
-                            className="w-full h-full object-cover"
+                            className="w-full h-full object-cover object-[center_15%]"
                             onError={handleImageError}
                             loading="lazy"
                         />

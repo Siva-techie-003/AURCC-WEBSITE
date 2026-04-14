@@ -1028,7 +1028,7 @@ const HomeView = () => {
 
           <section
             id="our_recruiters"
-            className=" bg-[url('/collegefront.jpg')]  bg-cover bg-center bg-no-repeat py-16 lg:py-16 overflow-hidden relative scroll-mt-24 lg:scroll-mt-32"
+            className=" bg-[url('/anna_unv_fnt.jpg')]  bg-cover bg-center bg-no-repeat py-16 lg:py-16 overflow-hidden relative scroll-mt-24 lg:scroll-mt-32"
           >
             <div className="absolute inset-0 bg-black/30"></div>
             <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
