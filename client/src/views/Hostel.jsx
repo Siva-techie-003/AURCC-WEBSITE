@@ -83,7 +83,7 @@ fetch("/api/hostel")
                 </svg>
             </div>
             {/* Hero section */}
-            <section className="relative w-full h-48 sm:h-60 md:h-80 lg:h-[50vh] overflow-hidden ">
+            <section className="relative w-full h-56 sm:h-60 md:h-80 lg:h-[50vh] overflow-hidden ">
                 <img src="/hostel.webp" alt="Hostel" className="absolute inset-0 w-full h-full object-cover object-center" />
                 <div className="absolute top-0 left-0 w-full h-[200px] bg-gradient-to-b from-black/60 via-black/30 to-transparent"></div>
                 <div className="backdrop-blur-md rounded-2xl shadow-lg px-6 py-6 md:py-10 flex flex-col items-center max-w-2xl mx-auto border border-white/30 animate-popIn mt-10">
@@ -119,35 +119,35 @@ fetch("/api/hostel")
             </section>
 
             {/* Sticky Horizontal Tab Bar */}
-            <div className="sticky top-4 z-30">
-                <div className="max-w-7xl mx-auto px-4">
-                    <div className="bg-white/95 backdrop-blur-md shadow-lg rounded-full -mt-6 py-2 px-3 flex justify-center overflow-x-auto no-scrollbar gap-2 border border-[rgb(220,140,140)]">
-                        {sections.map((section) => (
-                            <button
-                                key={section}
-                                onClick={() => scrollToSection(section)}
-                                className={`font-bold px-5 py-3 rounded-full text-xs sm:text-sm lg:text-base transition-all duration-300 whitespace-nowrap relative ${activeSection === section
-                                    ? 'bg-[rgb(115,40,40)] text-white shadow-md'
-                                    : 'text-gray-700 hover:bg-[rgb(220,140,140)] hover:text-[rgb(115,40,40)]'
-                                    }`}
-                            >
-                                {section}
-                                {activeSection === section && (
-                                    <span className="absolute bottom-1 left-1/2 -translate-x-1/2 h-1 w-6 rounded-full bg-[rgb(160,80,80)]"></span>
-                                )}
-                            </button>
-                        ))}
+            <div className="sticky top-4 z-30 px-4 sm:px-6 lg:px-8">
+                <div className="w-full max-w-7xl mx-auto">
+                    <div className="bg-white/95 backdrop-blur-md shadow-lg rounded-full -mt-6 py-2 px-2 flex gap-2 overflow-x-auto scroll-smooth no-scrollbar border border-[rgb(220,140,140)]">
+                        <div className="flex gap-2 min-w-max">
+                            {sections.map((section) => (
+                                <button
+                                    key={section}
+                                    onClick={() => scrollToSection(section)}
+                                    className={`flex-shrink-0 inline-flex items-center justify-center font-bold px-3 sm:px-4 py-2 rounded-full text-[10px] sm:text-[11px] lg:text-sm transition-all duration-300 whitespace-nowrap relative ${activeSection === section
+                                        ? 'bg-[rgb(115,40,40)] text-white shadow-md'
+                                        : 'text-gray-700 hover:bg-[rgb(220,140,140)] hover:text-[rgb(115,40,40)]'
+                                        }`}
+                                >
+                                    {section}
+                                    {activeSection === section && (
+                                        <span className="absolute bottom-1 left-1/2 -translate-x-1/2 h-1 w-6 rounded-full bg-[rgb(160,80,80)]"></span>
+                                    )}
+                                </button>
+                            ))}
+                        </div>
                     </div>
                 </div>
             </div>
 
-            
-
             {/* Content sections */}
-            <main className="max-w-7xl mx-auto py-12 space-y-16">
+            <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-16">
                 {/* Description Section */}
                 <section id="Description" className="bg-white rounded-3xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-lg transition-all animate-fadeIn">
-                    <div className="bg-gradient-to-r from-[rgb(115,63,63)] to-[rgb(115,25,25)] py-6 px-8 text-center text-white">
+                    <div className="bg-gradient-to-r from-[rgb(115,63,63)] to-[rgb(115,25,25)] py-6 px-6 sm:px-8 text-center text-white">
                         <h2 className="text-2xl sm:text-3xl lg:text-3xl font-bold text-white font-serif mb-2">
             Overview
           </h2>
@@ -155,7 +155,7 @@ fetch("/api/hostel")
             <span className="block w-24 h-1.5 rounded-full bg-[#f5c842]"></span>
           </div>
                     </div>
-                    <div className="p-8 space-y-6">
+                    <div className="p-6 sm:p-8 space-y-6">
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
                             <div className="space-y-4 text-base lg:text-lg text-gray-700 leading-relaxed font-medium text-justify">
                                 <p>Anna University Regional Campus, Coimbatore, offers comfortable and secure hostel accommodation for both boys and girls, with a total capacity of 360 students.</p>
@@ -202,10 +202,10 @@ fetch("/api/hostel")
                                     {hostelData.Administration.Wardens.map((warden, index) => (
                                         <div
                                             key={index}
-                                            className="bg-white border border-[rgb(200,120,120)] 
-                                            p-6 rounded-2xl shadow-md hover:shadow-xl 
-                                            transition-all duration-300 
-                                            flex items-center justify-between 
+                                            className="bg-white border border-[rgb(200,120,120)]
+                                            p-6 rounded-2xl shadow-md hover:shadow-xl
+                                            transition-all duration-300
+                                            flex flex-col sm:flex-row items-center justify-between
                                             max-w-md mx-auto hover:bg-[rgb(233,169,169)]"
                                             >
 
@@ -237,7 +237,7 @@ fetch("/api/hostel")
                                             </div>
 
                                             {/* RIGHT SIDE - Photo */}
-                                            <div className="ml-4 w-28 h-30 rounded-lg overflow-hidden border-4 border-[rgb(120,45,45)] shadow-md">
+                                            <div className="mt-4 sm:mt-0 sm:ml-4 w-28 h-32 rounded-lg overflow-hidden border-4 border-[rgb(120,45,45)] shadow-md">
                                                 <img
                                                 src={`/public/${warden.photo}`}
                                                 alt={warden.Name}
@@ -256,15 +256,16 @@ fetch("/api/hostel")
                                         Deputy Wardens
                                     </h3>
 
-                                            <div className="grid grid-cols-1 sm:grid-cols-2 lg: gap-1 justify-items-center">                                                
+                                            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 justify-items-center">
                                                 {hostelData.Administration.Deputy_Wardens.map((dw, i) => (
                                             <div
                                             key={i}
-                                            className="bg-white border border-gray-200 
-                                                        p-5 rounded-2xl shadow-md 
-                                                        hover:shadow-xl transition-all duration-300 
-                                                        flex items-center justify-center 
-                                                        max-w-md w-full"                                            >
+                                            className="bg-white border border-gray-200
+                                                        p-5 rounded-2xl shadow-md
+                                                        hover:shadow-xl transition-all duration-300
+                                                        flex flex-col sm:flex-row items-center justify-between
+                                                        max-w-md w-full"
+                                            >
 
                                             {/* LEFT SIDE - Content */}
                                             <div className="flex-1 text-left">
@@ -296,7 +297,7 @@ fetch("/api/hostel")
                                             </div>
 
                                             {/* RIGHT SIDE - Photo */}
-                                            <div className="ml-6 w-28 h-30 rounded-lg overflow-hidden border-4 border-[rgb(120,45,45)] shadow-md">
+                                            <div className="mt-4 sm:mt-0 sm:ml-6 w-28 h-32 rounded-lg overflow-hidden border-4 border-[rgb(120,45,45)] shadow-md">
                                                 <img
                                                 src={`/public/${dw.photo}`}
                                                 alt={dw.Name}
@@ -314,10 +315,10 @@ fetch("/api/hostel")
 
                 {/* Fees Structure Section */}
                 <section id="FeesStructure" className="bg-white rounded-3xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-lg transition-all animate-fadeIn">
-                    <div className="bg-gradient-to-r from-[rgb(115,63,63)] to-[rgb(115,25,25)] py-6 px-8 text-center text-white">
+                    <div className="bg-gradient-to-r from-[rgb(115,63,63)] to-[rgb(115,25,25)] py-6 px-6 sm:px-8 text-center text-white">
                         <h2 className="text-2xl lg:text-3xl font-bold flex items-center justify-center gap-3"><span>💸</span> Fees Structure</h2>
                     </div>
-                    <div className="p-8 text-center space-y-10">
+                    <div className="p-6 sm:p-8 text-center space-y-10">
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-4xl mx-auto">
                             <a href={hostelData['Fees Structure']['New Admission']} className="p-8 bg-white border border-[rgb(200,120,120)] rounded-3xl hover:shadow-xl transition-all group hover:bg-[rgb(220,140,140)]">
                                 <div className="w-16 h-16 bg-[rgb(115,40,40)] text-white rounded-2xl flex items-center justify-center text-3xl mx-auto mb-4 group-hover: transition-transform">📄</div>
@@ -346,14 +347,14 @@ fetch("/api/hostel")
 
                 {/* Rules Section */}
                  <section id="RulesandRegulations" className="bg-white rounded-3xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-lg transition-all animate-fadeIn">
-                    <div className="bg-gradient-to-r from-[rgb(115,63,63)] to-[rgb(115,25,25)] py-6 px-8 text-center text-white">
+                    <div className="bg-gradient-to-r from-[rgb(115,63,63)] to-[rgb(115,25,25)] py-6 px-6 sm:px-8 text-center text-white">
                         <h2 className="text-2xl lg:text-3xl font-bold flex items-center justify-center gap-3"><span>📜</span> Rules and Regulations</h2>
                     </div>
                     <div className="p-8">
-                        <div className="rounded-2xl overflow-hidden shadow-2xl border border-gray-200 mx-auto max-w-4xl">                            
+                        <div className="rounded-2xl overflow-hidden shadow-2xl border border-gray-200 mx-auto max-w-full">
                             <iframe
                             src={`${hostelData["Rules and Regulations"]}#toolbar=0&navpanes=0&scrollbar=0`}
-                            className="w-[900px] h-[400px] rounded-xl"
+                            className="w-full min-h-[360px] sm:min-h-[420px] lg:min-h-[520px] rounded-xl"
                             title="Hostel Rules"
                             />
                         </div>
