@@ -134,6 +134,7 @@ const Header = () => {
         { name: "Exam Cell", route: "/exam-cell" },
         { name: "BIS Club", route: "/bis-club" },
         { name: "Uyir Club", route: "/uyir-club" },
+        { name: "BRICS  Cell", href: "https://bric47.netlify.app/" },
       ],
     },
 
@@ -556,26 +557,52 @@ const Header = () => {
                             <p className="py-2 px-4 text-sm font-black text-[rgb(90,20,20)] uppercase tracking-widest">
                               {link.name}
                             </p>
-                            {link.subLinks.map((sub, sIdx) => (
-                              <Link
-                                key={sIdx}
-                                to={sub.route}
-                                onClick={() => setIsMobileMenuOpen(false)}
-                                className="block py-2 px-8 text-base font-bold text-gray-500 hover:text-[rgb(115,40,40)] hover:bg-[rgb(220,140,140)] rounded-xl transition-all"
-                              >
-                                › {sub.name}
-                              </Link>
-                            ))}
+                            {link.subLinks.map((sub, sIdx) =>
+                              sub.href ? (
+                                <a
+                                  key={sIdx}
+                                  href={sub.href}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  onClick={() => setIsMobileMenuOpen(false)}
+                                  className="block py-2 px-8 text-base font-bold text-gray-500 hover:text-[rgb(115,40,40)] hover:bg-[rgb(220,140,140)] rounded-xl transition-all"
+                                >
+                                  › {sub.name}
+                                </a>
+                              ) : (
+                                <Link
+                                  key={sIdx}
+                                  to={sub.route}
+                                  onClick={() => setIsMobileMenuOpen(false)}
+                                  className="block py-2 px-8 text-base font-bold text-gray-500 hover:text-[rgb(115,40,40)] hover:bg-[rgb(220,140,140)] rounded-xl transition-all"
+                                >
+                                  › {sub.name}
+                                </Link>
+                              ),
+                            )}
                           </div>
                         ) : (
-                          <Link
-                            key={lIdx}
-                            to={link.route}
-                            onClick={() => setIsMobileMenuOpen(false)}
-                            className="block py-2.5 px-4 text-base font-bold text-gray-500 hover:text-[rgb(115,40,40)] hover:bg-[rgb(220,140,140)] rounded-xl transition-all"
-                          >
-                            {link.name}
-                          </Link>
+                          link.href ? (
+                            <a
+                              key={lIdx}
+                              href={link.href}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              onClick={() => setIsMobileMenuOpen(false)}
+                              className="block py-2.5 px-4 text-base font-bold text-gray-500 hover:text-[rgb(115,40,40)] hover:bg-[rgb(220,140,140)] rounded-xl transition-all"
+                            >
+                              {link.name}
+                            </a>
+                          ) : (
+                            <Link
+                              key={lIdx}
+                              to={link.route}
+                              onClick={() => setIsMobileMenuOpen(false)}
+                              className="block py-2.5 px-4 text-base font-bold text-gray-500 hover:text-[rgb(115,40,40)] hover:bg-[rgb(220,140,140)] rounded-xl transition-all"
+                            >
+                              {link.name}
+                            </Link>
+                          )
                         ),
                       )}
                     </div>
