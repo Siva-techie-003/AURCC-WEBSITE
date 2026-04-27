@@ -101,7 +101,7 @@ const FineArtsClub = () => {
                         </div>
                         <div className="p-4 sm:p-6 md:p-8 lg:p-10 flex justify-center">
                             <div className="bg-white/80 rounded-xl shadow-md p-6 border border-gray-100 flex flex-col gap-2 max-w-md w-full text-center animate-fadeInUp">
-                                <img src={`/public/${data.Coordinator.Image}`} alt={data.Coordinator.Name} className="w-28 h-32  object-cover mx-auto " />
+                                <img src={`/${data.Coordinator.Image}`} alt={data.Coordinator.Name} className="w-28 h-32 object-cover object-top mx-auto" />
                                 <div className="font-bold text-lg lg:text-xl text-[rgb(110,35,35)]">{data.Coordinator.Name}</div>
                                 <div className="text-sm lg:text-base text-gray-700 font-semibold">{data.Coordinator.Designation}</div>
                                 <div className="text-sm lg:text-base text-gray-700 font-semibold">{data.Coordinator.Department}</div>
@@ -120,16 +120,16 @@ const FineArtsClub = () => {
                             Gallery of Memories
                             <span className="absolute -bottom-2 sm:-bottom-3 left-1/2 transform -translate-x-1/2 h-1 w-16 sm:w-20 lg:w-24 bg-yellow-500"></span>
                         </h2>
-                        <div className="relative flex items-center justify-center">
+                        <div className="relative flex items-center justify-center py-10 overflow-hidden" style={{ "--current-index": currentImageIndex }}>
                             <button onClick={prevImage} className="absolute left-4 md:left-8 top-1/2 transform -translate-y-1/2 bg-[rgb(115,25,25)] text-white p-3 rounded-full z-30 shadow-lg group">
                                 <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 group-hover:-translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 19l-7-7 7-7" /></svg>
                             </button>
-                            <div className="w-full md:w-3/4 lg:w-3/5" onTouchStart={handleTouchStart} onTouchEnd={handleTouchEnd}>
-                                <div className="flex transition-transform duration-700 ease-in-out" style={{ transform: `translateX(-${currentImageIndex * 100}%)` }}>
+                            <div className="w-full" onTouchStart={handleTouchStart} onTouchEnd={handleTouchEnd}>
+                                <div className="gallery-container">
                                     {galleryImages.map((image, idx) => (
-                                        <div key={idx} className="flex-shrink-0 w-full px-4">
-                                            <div className="relative group overflow-hidden rounded-xl shadow-2xl">
-                                                <img src={image.src} alt={image.alt} className="w-full h-54 md:h-80 object-cover transition-transform duration-700 group-hover:scale-105" />
+                                        <div key={idx} className={`gallery-frame ${idx === currentImageIndex ? 'active' : ''}`}>
+                                            <div className="relative group overflow-hidden rounded-xl shadow-2xl h-full w-full">
+                                                <img src={image.src} alt={image.alt} className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105" />
                                                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-6">
                                                     <p className="text-white text-lg md:text-xl">{image.description}</p>
                                                 </div>

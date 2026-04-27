@@ -144,7 +144,7 @@ const Header = () => {
       links: [
         // { name: "Physical Education", route: "/sports" },
         { name: "NSS", route: "/nss" },
-        { name: "Kani Tamil Peravai", route: "/" },
+        { name: "Kani Tamil Peravai", route: "/tamilmandram" },
         { name: "Fine Arts Club", route: "/fine-arts" },
         { name: "Alumni", route: "/alumni" },
       ],

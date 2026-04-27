@@ -34,3 +34,37 @@
 .activity-carousel-item {
     transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
 }
+
+:root {
+    --frame-width: 700px;
+    --frame-height: 400px;
+    --frame-gap: 32px;
+}
+
+@media (max-width: 1024px) {
+    :root {
+        --frame-width: 500px;
+        --frame-height: 350px;
+    }
+}
+
+@media (max-width: 768px) {
+    :root {
+        --frame-width: 400px;
+        --frame-height: 300px;
+        --frame-gap: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    :root {
+        --frame-width: 300px;
+        --frame-height: 250px;
+        --frame-gap: 12px;
+    }
+}
+
+.gallery-container {
+    --translate-x: calc(50% - (var(--frame-width) / 2) - (var(--current-index) * (var(--frame-width) + var(--frame-gap))));
+    transform: translateX(var(--translate-x));
+}

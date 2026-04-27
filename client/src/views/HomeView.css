@@ -250,3 +250,22 @@ details>summary {
     transform: translateY(0);
     transition: all 500ms ease-out;
 }
+
+/* Custom Scrollbar for Dean's Message */
+.scrollbar-custom::-webkit-scrollbar {
+    width: 6px;
+}
+
+.scrollbar-custom::-webkit-scrollbar-track {
+    background: #f3f4f6;
+    border-radius: 10px;
+}
+
+.scrollbar-custom::-webkit-scrollbar-thumb {
+    background: rgb(115, 25, 25);
+    border-radius: 10px;
+}
+
+.scrollbar-custom::-webkit-scrollbar-thumb:hover {
+    background: rgb(90, 20, 20);
+}

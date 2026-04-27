@@ -113,7 +113,7 @@ const Footer = ({
       style={{ background: "linear-gradient(135deg, #6b1a1a 0%, #8b2a2a 40%, #6b1a1a 100%)" }}
     >
       <div>
-        <div className="container mx-auto px-4 sm:px-6 py-8 sm:py-12">
+        <div className="container mx-auto px-4 sm:px-6 py-6 sm:py-12">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
 
             {/* ── COL 1 : CAMPUS LOCATION ── */}
@@ -129,14 +129,14 @@ const Footer = ({
 
               {/* MAP */}
               <div
-                className="mt-5 flex-1 min-h-[220px] rounded-xl overflow-hidden"
+                className="mt-5 flex-1 h-[180px] sm:min-h-[220px] rounded-xl overflow-hidden"
                 style={{ border: "1px solid rgba(255,255,255,0.15)" }}
               >
                 <iframe
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3916.123456789!2d76.8860657!3d11.0424918!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba85910327ab1e3%3A0x9f7a2b4ef20fe07!2sAnna%20University%20RC%20Coimbatore!5e0!3m2!1sen!2sin!4v1234567890123!5m2!1sen!2sin"
                   width="100%"
                   height="100%"
-                  style={{ border: 0, minHeight: "220px" }}
+                  style={{ border: 0 }}
                   loading="lazy"
                   title="Campus Map"
                 />
@@ -284,7 +284,7 @@ const Footer = ({
                   </h3>
                 </div>
 
-                <div className="relative overflow-hidden group" style={{ height: "320px" }}>
+                <div className="relative overflow-hidden group h-[200px] sm:h-[320px]">
                   <div className="absolute inset-x-0 animate-marquee flex flex-col gap-2 px-4 py-3 group-hover:[animation-play-state:paused]">
                     {[...data.links, ...data.links].map((item, i) => (
                       <a

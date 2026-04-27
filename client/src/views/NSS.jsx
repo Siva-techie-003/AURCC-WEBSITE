@@ -36,16 +36,6 @@ const NSS = () => {
   // Static Data
   const galleryImages = [
     {
-      src: "/nss_gallery/img1.jpeg",
-      alt: "NSS Activity",
-      description: "NSS volunteers participating in community service activities",
-    },
-    {
-      src: "/nss_gallery/img2.jpeg",
-      alt: "NSS Activity",
-      description: "NSS unit awareness programs and student engagement",
-    },
-    {
       src: "/nss_gallery/img3.jpeg",
       alt: "NSS Activity",
       description: "Engaging in social welfare and community outreach",
@@ -64,6 +54,16 @@ const NSS = () => {
       src: "/nss_gallery/img6.jpeg",
       alt: "NSS Activity",
       description: "Development sessions for NSS student volunteers",
+    },
+     {
+      src: "/nss_gallery/img1.jpeg",
+      alt: "NSS Activity",
+      description: "NSS volunteers participating in community service activities",
+    },
+    {
+      src: "/nss_gallery/img2.jpeg",
+      alt: "NSS Activity",
+      description: "NSS unit awareness programs and student engagement",
     },
     {
       src: "/nss_gallery/img7.jpeg",
@@ -84,11 +84,6 @@ const NSS = () => {
       src: "/nss_gallery/img10.jpeg",
       alt: "NSS Activity",
       description: "Sustainable development initiatives by the NSS unit",
-    },
-    {
-      src: "/nss_gallery/img11.jpeg",
-      alt: "NSS Activity",
-      description: "Memorable moments from NSS field activities",
     },
     {
       src: "/nss_gallery/img12.jpeg",
@@ -251,7 +246,7 @@ const NSS = () => {
                                         <img
                                           src={`/public${coordinator.Photo}`}
                                           alt={coordinator.Name}
-                                        className="w-full h-full object-cover rounded-full border-4 border-[rgb(115,25,25)] shadow-md transition-transform duration-300 hover:scale-105"
+                                        className="w-full h-full object-cover object-top rounded-full border-4 border-[rgb(115,25,25)] shadow-md transition-transform duration-300 hover:scale-105"
                                         />
                                         </div>
                                         <h3 className="text-sm sm:text-base lg:text-lg xl:text-xl font-bold text-[rgb(110,35,35)] mb-2">{coordinator.Name}</h3>
@@ -291,23 +286,24 @@ const NSS = () => {
                   </svg>
                 </button>
                 <div
-                  className="w-full md:w-3/4 lg:w-3/5"
+                  className="w-full md:w-11/12 lg:w-5/6"
                   onTouchStart={handleTouchStart}
                   onTouchEnd={handleTouchEnd}
                 >
                   <div
-                    className="flex transition-transform duration-700 ease-in-out"
+                    className="flex transition-transform duration-700 ease-in-out gallery-container"
                     style={{
-                      transform: `translateX(-${currentImageIndex * 100}%)`,
+                      "--current-index": currentImageIndex,
+                      gap: "var(--frame-gap)",
                     }}
                   >
                     {galleryImages.map((image, idx) => (
-                      <div key={idx} className="flex-shrink-0 w-full px-2 sm:px-4">
-                        <div className="relative group overflow-hidden rounded-2xl shadow-xl bg-gray-900 flex items-center justify-center h-[350px] sm:h-[400px] md:h-[450px] lg:h-[500px]">
+                      <div key={idx} className="flex-shrink-0" style={{ width: "var(--frame-width)" }}>
+                        <div className="relative group overflow-hidden rounded-2xl shadow-xl bg-gray-900 flex items-center justify-center" style={{ height: "var(--frame-height)" }}>
                           <img
                             src={image.src}
                             alt={image.alt}
-                            className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105"
+                            className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
                           />
                           <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-4 sm:p-8">
                             <p className="text-white text-sm sm:text-lg md:text-xl font-medium leading-tight">

@@ -42,7 +42,6 @@ const Alumni = () => {
                                 <span className="text-lg lg:text-xl">🎓</span>
                                 <h2 className="text-lg lg:text-xl xl:text-2xl font-bold text-white text-center">Notable Alumni</h2>
                             </div>
-                            <span className="w-32 sm:w-40 h-1.5 rounded-full bg-gradient-to-r from-[rgb(115,63,63)] via-[rgb(115,45,45)] to-[rgb(115,25,25)] animate-glow-bar mt-2"></span>
                         </div>
 
                         <div className="p-4 sm:p-6 md:p-8 lg:p-10 text-center">

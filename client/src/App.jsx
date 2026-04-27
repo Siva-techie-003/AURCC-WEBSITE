@@ -92,8 +92,8 @@ function App() {
                         <Route path="/alumni" element={<Alumni />} />
                         <Route path="/dean_office" element={<DeanOffice />} />
                         <Route path="/fine-arts" element={<FineArtsClub />} />
-<Route path="/bis-club" element={<BISClub />} />
-<Route path="/uyir-club" element={<UyirClub />} />
+                        <Route path="/bis-club" element={<BISClub />} />
+                        <Route path="/uyir-club" element={<UyirClub />} />
                         <Route path="/library" element={<Library />} />
                         <Route path="/distance-education" element={<DistanceEdu />} />
                         <Route path="/office-affiliation" element={<OfficeOfAffiliation />} />
@@ -108,7 +108,6 @@ function App() {
                         <Route path="/VC" element={<VC />} />
                         <Route path="/Registrar" element={<Registrar />} />
                         <Route path="/HOD" element={<HOD />} />
-                        {/* <Route path="/organogram" element={< />} /> */}
                         <Route path="/contact" element={<Contact />} />
                         <Route path="/regulation" element={<Regulation />} />
                         <Route path="/regulation/2021" element={<Regulation2021 />} />
