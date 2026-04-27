@@ -529,7 +529,7 @@ const HomeView = () => {
             </div>
             <div className="relative text-center px-4 sm:px-6 max-w-5xl mx-auto z-20">
               <h1 className="text-xl sm:text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-4 sm:mb-6 tracking-tight leading-tight">
-                <span className="block text-lg sm:text-2xl opacity-90">Welcome to</span>
+                <span className="block text-2xl sm:text-4xl lg:text-5xl opacity-90">Welcome to</span>
                 <span className="block text-2xl sm:text-4xl lg:text-5xl mt-2 leading-tight">
                   Anna University Regional Campus Coimbatore
                 </span>

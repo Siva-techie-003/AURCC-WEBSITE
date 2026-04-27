@@ -121,8 +121,8 @@ fetch("/api/hostel")
             {/* Sticky Horizontal Tab Bar */}
             <div className="sticky top-4 z-30 px-4 sm:px-6 lg:px-8">
                 <div className="w-full max-w-7xl mx-auto">
-                    <div className="bg-white/95 backdrop-blur-md shadow-lg rounded-full -mt-6 py-2 px-2 flex gap-2 overflow-x-auto scroll-smooth no-scrollbar border border-[rgb(220,140,140)]">
-                        <div className="flex gap-2 min-w-max">
+                    <div className="bg-white/95 backdrop-blur-md shadow-lg rounded-full -mt-6 py-2 px-2 flex justify-center overflow-x-auto scroll-smooth no-scrollbar border border-[rgb(220,140,140)]">
+                        <div className="flex gap-2 justify-center min-w-max px-4">
                             {sections.map((section) => (
                                 <button
                                     key={section}
