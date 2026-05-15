@@ -113,23 +113,23 @@ const Footer = ({
       style={{ background: "linear-gradient(135deg, #6b1a1a 0%, #8b2a2a 40%, #6b1a1a 100%)" }}
     >
       <div>
-        <div className="container mx-auto px-4 sm:px-6 py-6 sm:py-12">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+        <div className="container mx-auto px-2 sm:px-6 py-4 sm:py-12">
+          <div className="grid grid-cols-4 gap-2 sm:gap-4 lg:gap-8">
 
             {/* ── COL 1 : CAMPUS LOCATION ── */}
-            <div className="flex flex-col">
-              <h3 className="text-xl font-black mb-4 uppercase tracking-wide">
+            <div className="flex flex-col col-span-1">
+              <h3 className="text-[6px] sm:text-sm lg:text-xl font-black mb-[1px] lg:mb-4 uppercase tracking-wide leading-tight">
                 Campus <span style={{ color: "#f5c842" }}>Location</span>
               </h3>
-              <p className="font-bold text-sm">Anna University Regional Campus Coimbatore</p>
-              <p className="text-xs mt-1 text-white/70">
+              <p className="font-bold text-[5px] sm:text-xs lg:text-sm leading-tight">Anna University Regional Campus Coimbatore</p>
+              <p className="text-[5px] sm:text-xs lg:text-xs mt-[1px] text-white/70 leading-tight">
                 Maruthamalai Road, Navavoor, Coimbatore - 641046
               </p>
-              <p className="mt-2 font-bold text-sm">0422-2984007</p>
+              <p className="mt-[1px] lg:mt-2 font-bold text-[5px] sm:text-xs lg:text-sm leading-tight">0422-2984007</p>
 
               {/* MAP */}
               <div
-                className="mt-5 flex-1 h-[180px] sm:min-h-[220px] rounded-xl overflow-hidden"
+                className="mt-[2px] lg:mt-5 w-[80px] h-[100px] sm:w-full sm:min-h-[120px] lg:min-h-[220px] lg:flex-grow rounded sm:rounded-xl overflow-hidden"
                 style={{ border: "1px solid rgba(255,255,255,0.15)" }}
               >
                 <iframe
@@ -144,33 +144,33 @@ const Footer = ({
             </div>
 
             {/* ── COL 2 & 3 : NAV + PORTAL + CONNECT ── */}
-            <div className="lg:col-span-2 flex flex-col gap-4">
-              <div className="grid grid-cols-2 gap-4">
+            <div className="col-span-2 flex flex-col gap-2 lg:gap-4">
+              <div className="grid grid-cols-2 gap-2 lg:gap-4">
 
                 {/* Navigation Hub */}
                 <div>
-                  <h3 className="text-xl font-black uppercase tracking-wide mb-3">
+                  <h3 className="text-[6px] sm:text-sm lg:text-xl font-black uppercase tracking-wide mb-[1px] lg:mb-3 leading-tight">
                     Navigation <span style={{ color: "#f5c842" }}>Hub</span>
                   </h3>
-                  <div className="flex flex-col gap-1">
+                  <div className="flex flex-col gap-0 lg:gap-1">
                     {navLinks.map((link, idx) => (
                       <Link
                         key={idx}
                         to={link.to}
-                        className="group flex items-center gap-3 py-2 px-3 rounded-lg transition-all"
+                        className="group flex items-center gap-[2px] sm:gap-1 lg:gap-3 py-[1px] sm:py-1 lg:py-2 px-[1px] sm:px-1 lg:px-3 rounded-lg transition-all"
                         style={{ background: "transparent" }}
                         onMouseEnter={e => e.currentTarget.style.background = "rgba(255,255,255,0.07)"}
                         onMouseLeave={e => e.currentTarget.style.background = "transparent"}
                       >
                         <div
-                          className="w-7 h-7 rounded-lg flex items-center justify-center flex-shrink-0 transition-all"
+                          className="w-[10px] h-[10px] sm:w-4 sm:h-4 lg:w-7 lg:h-7 rounded-sm sm:rounded-lg flex items-center justify-center flex-shrink-0 transition-all"
                           style={{ background: "rgba(255,255,255,0.08)" }}
                         >
-                          <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                          <svg className="w-[6px] h-[6px] sm:w-2 sm:h-2 lg:w-3.5 lg:h-3.5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                             <path d={link.icon} />
                           </svg>
                         </div>
-                        <span className="text-white/85 text-sm font-semibold group-hover:text-white transition-colors">
+                        <span className="text-white/85 text-[5px] sm:text-xs lg:text-sm font-semibold group-hover:text-white transition-colors leading-tight">
                           {link.label}
                         </span>
                       </Link>
@@ -180,10 +180,10 @@ const Footer = ({
 
                 {/* Student Portal */}
                 <div>
-                  <h3 className="text-xl font-black uppercase tracking-wide mb-4">
+                  <h3 className="text-[6px] sm:text-sm lg:text-xl font-black uppercase tracking-wide mb-[1px] lg:mb-4 leading-tight">
                     Student <span style={{ color: "#f5c842" }}>Portal</span>
                   </h3>
-                  <div className="flex flex-col gap-1">
+                  <div className="flex flex-col gap-0 lg:gap-1">
                     {portalLinks.map((link, idx) => {
                       const isPdf = link.to.endsWith(".pdf");
                       const LinkWrapper = isPdf ? 'a' : Link;
@@ -195,20 +195,20 @@ const Footer = ({
                         <LinkWrapper
                           key={idx}
                           {...linkProps}
-                          className="group flex items-center gap-3 py-2 px-3 rounded-lg transition-all"
+                          className="group flex items-center gap-[2px] sm:gap-1 lg:gap-3 py-[1px] sm:py-1 lg:py-2 px-[1px] sm:px-1 lg:px-3 rounded-lg transition-all"
                           style={{ background: "transparent" }}
                           onMouseEnter={e => e.currentTarget.style.background = "rgba(255,255,255,0.07)"}
                           onMouseLeave={e => e.currentTarget.style.background = "transparent"}
                         >
                           <div
-                            className="w-7 h-7 rounded-lg flex items-center justify-center flex-shrink-0 transition-all"
+                            className="w-[10px] h-[10px] sm:w-4 sm:h-4 lg:w-7 lg:h-7 rounded-sm sm:rounded-lg flex items-center justify-center flex-shrink-0 transition-all"
                             style={{ background: "rgba(255,255,255,0.08)" }}
                           >
-                            <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                            <svg className="w-[6px] h-[6px] sm:w-2 sm:h-2 lg:w-3.5 lg:h-3.5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                               <path d={link.icon} />
                             </svg>
                           </div>
-                          <span className="text-white/85 text-sm font-semibold group-hover:text-white transition-colors">
+                          <span className="text-white/85 text-[5px] sm:text-xs lg:text-sm font-semibold group-hover:text-white transition-colors leading-tight">
                             {link.label}
                           </span>
                         </LinkWrapper>
@@ -220,15 +220,15 @@ const Footer = ({
 
               {/* Connect With Us */}
               <div
-                className="rounded-xl p-5 mt-auto"
+                className="rounded-lg lg:rounded-xl p-1 lg:p-5 mt-auto"
                 style={{ background: "#9b3535", border: "2px solid rgba(245,200,66,0.5)" }}
               >
-                <h3 className="text-xl font-black uppercase tracking-wide text-center mb-4 text-white">
+                <h3 className="text-[6px] sm:text-sm lg:text-xl font-black uppercase tracking-wide text-center mb-1 lg:mb-4 text-white leading-tight">
                   Important <span style={{ color: "#f5c842" }}>Links</span>
                 </h3>
 
-                {/* ✅ 2 per row grid */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                {/* 2 per row grid */}
+                <div className="grid grid-cols-2 gap-1 lg:gap-3">
                   {[
                     { name: "Smart India Hackathon", url: "https://www.sih.gov.in/" },
                     { name: "MSME Portal", url: "https://my.msme.gov.in/inc/" },
@@ -240,7 +240,7 @@ const Footer = ({
                       href={link.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center justify-center text-center px-4 py-3 rounded-lg font-bold text-sm transition-all duration-300"
+                      className="flex items-center justify-center text-center px-1 lg:px-4 py-1 lg:py-3 rounded sm:rounded-lg font-bold text-[6px] sm:text-xs lg:text-sm transition-all duration-300"
                       style={{
                         background: "rgba(255,255,255,0.1)",
                         color: "#fff",
@@ -265,34 +265,34 @@ const Footer = ({
             </div>
 
             {/* ── COL 4 : ABOUT + USEFUL LINKS ── */}
-            <div className="flex flex-col">
-              <h3 className="text-xl font-black mb-3 uppercase tracking-wide">
+            <div className="flex flex-col col-span-1">
+              <h3 className="text-[10px] sm:text-sm lg:text-xl font-black mb-1 lg:mb-3 uppercase tracking-wide">
                 About <span style={{ color: "#f5c842" }}>Campus</span>
               </h3>
-              <p className="text-xs text-white/70 leading-relaxed">
+              <p className="text-[6px] sm:text-xs text-white/70 leading-relaxed">
                 Anna University Coimbatore is committed to delivering quality education and innovation.
               </p>
 
               {/* Useful Links */}
               <div
-                className="mt-5 flex-1 rounded-xl overflow-hidden flex flex-col"
+                className="mt-1 lg:mt-5 rounded-md sm:rounded-xl overflow-hidden flex flex-col flex-shrink-0"
                 style={{ background: "#9b3535", border: "2px solid rgba(245,200,66,0.5)" }}
               >
-                <div className="px-4 py-3" style={{ borderBottom: "1px solid rgba(255,255,255,0.1)" }}>
-                  <h3 className="text-xl font-black uppercase tracking-wide text-center">
+                <div className="px-1 lg:px-4 py-1 lg:py-3" style={{ borderBottom: "1px solid rgba(255,255,255,0.1)" }}>
+                  <h3 className="text-[10px] sm:text-sm lg:text-xl font-black uppercase tracking-wide text-center">
                     Useful <span style={{ color: "#f5c842" }}>Links</span>
                   </h3>
                 </div>
 
-                <div className="relative overflow-hidden group h-[200px] sm:h-[320px]">
-                  <div className="absolute inset-x-0 animate-marquee flex flex-col gap-2 px-4 py-3 group-hover:[animation-play-state:paused]">
+                <div className="relative overflow-hidden group h-[70px] sm:h-[160px] lg:h-[320px]">
+                  <div className="absolute inset-x-0 animate-marquee flex flex-col gap-1 lg:gap-2 px-1 lg:px-4 py-1 lg:py-3 group-hover:[animation-play-state:paused]">
                     {[...data.links, ...data.links].map((item, i) => (
                       <a
                         key={i}
                         href={item.url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-center py-4 px-4 rounded-full text-sm font-bold transition-all duration-200"
+                        className="text-center py-1 lg:py-4 px-1 lg:px-4 rounded-full text-[6px] sm:text-xs lg:text-sm font-bold transition-all duration-200"
                         style={{
                           background: "rgb(140,45,45)",
                           color: "#ffffff",
@@ -324,17 +324,20 @@ const Footer = ({
       {/* ── BOTTOM BAR ── */}
       <div style={{ background: "rgba(0,0,0,0.25)", borderTop: "1px solid rgba(255,255,255,0.1)" }}>
 
-        <div className="w-full px-4 sm:px-6 py-3">
+        <div className="w-full px-2 sm:px-6 py-2 lg:py-3">
 
-          <div className="flex flex-col gap-3 md:gap-4 md:flex-row md:items-center">
+          <div className="flex flex-row items-center justify-between">
 
             {/* LEFT */}
-            <p className="text-white/60 text-xxs sm:text-xs font-semibold uppercase tracking-widest text-center md:text-left">
+            <p className="text-white/60 text-[5px] sm:text-xs font-semibold uppercase tracking-widest text-left hidden sm:block w-1/3">
               © 2026 Anna University Regional Campus Coimbatore. All rights reserved.
+            </p>
+            <p className="text-white/60 text-[5px] sm:hidden font-semibold uppercase tracking-widest text-left w-1/3">
+              © 2026 AURCC.
             </p>
 
             {/* CENTER */}
-            <div className="flex justify-center items-center gap-2 sm:gap-4 flex-wrap md:mx-auto">
+            <div className="flex justify-center items-center gap-1 sm:gap-4 flex-wrap w-1/3">
               {socials.map((soc, idx) => (
                 <a
                   key={idx}
@@ -342,11 +345,11 @@ const Footer = ({
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={soc.label}
-                  className="flex items-center justify-center rounded-xl transition-all duration-200"
+                  className="flex items-center justify-center rounded-md lg:rounded-xl transition-all duration-200"
                   style={{
-                    width: "40px",
-                    height: "40px",
-                    minWidth: "40px",
+                    width: "clamp(16px, 3vw, 40px)",
+                    height: "clamp(16px, 3vw, 40px)",
+                    minWidth: "clamp(16px, 3vw, 40px)",
                     background: "rgba(255,255,255,0.1)",
                     border: "1px solid rgba(255,255,255,0.18)",
                   }}
@@ -363,7 +366,7 @@ const Footer = ({
                     e.currentTarget.style.boxShadow = "none";
                   }}
                 >
-                  <svg className="w-4 sm:w-5 h-4 sm:h-5" fill="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-2 h-2 sm:w-5 sm:h-5" fill="currentColor" viewBox="0 0 24 24">
                     <path d={soc.icon} />
                   </svg>
                 </a>
@@ -371,12 +374,12 @@ const Footer = ({
             </div>
 
             {/* RIGHT (FORCED CORNER) */}
-            <div className="flex gap-3 sm:gap-6 items-center md:ml-auto justify-center md:justify-end w-full md:w-auto">
+            <div className="flex gap-1 sm:gap-6 items-center justify-end w-1/3">
               {["Team", "Privacy", "Safety"].map((item) => (
                 <a
                   key={item}
                   href="#"
-                  className="text-white/60 hover:text-yellow-400 text-xxs sm:text-xs font-black uppercase tracking-widest transition-colors"
+                  className="text-white/60 hover:text-yellow-400 text-[5px] sm:text-xs font-black uppercase tracking-widest transition-colors"
                 >
                   {item}
                 </a>
