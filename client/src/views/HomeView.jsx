@@ -1263,7 +1263,8 @@ const HomeView = () => {
             </div>
           </section>
 
-          {/* Gallery Section */}
+          {/* Gallery Section Commented Out */}
+          {false && (
           <section id="gallery" className="py-16 bg-white scroll-mt-32">
             <div className="container mx-auto px-6 text-center">
               <h2 className="text-3xl lg:text-4xl font-bold text-center mb-14  text-[rgb(100,25,25)] relative inline-block">
@@ -1326,6 +1327,7 @@ const HomeView = () => {
               </div>
             </div>
           </section>
+          )}
 
           {/* Alumni Testimonials */}
           <section
