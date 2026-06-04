@@ -47,52 +47,60 @@ const DepartmentsView = () => {
     fetchDepartment();
   }, [departmentName, navigate]);
 
-  const BACKEND_URL = "";
+const BACKEND_URL = "";
 
-  const updateSectionOffsets = () => {
-    const newOffsets = sections.map((section) => {
+/* ---------------- SECTION HIGHLIGHT ON SCROLL ---------------- */
+useEffect(() => {
+  const handleScroll = () => {
+    const scrollPosition = window.scrollY + 180;
+
+    sections.forEach((section) => {
       const sectionId = section.toLowerCase().replace(/\s+/g, "-");
       const element = document.getElementById(sectionId);
-      return element ? element.offsetTop : 0;
-    });
-    setSectionOffsets(newOffsets);
-  };
 
-  useEffect(() => {
-    if (department) {
-      setTimeout(updateSectionOffsets, 500); // Give time for content to render
-      window.addEventListener("scroll", handleScroll);
-    }
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [department]);
+      if (element) {
+        const top = element.offsetTop;
+        const height = element.offsetHeight;
 
-  const handleScroll = () => {
-    const scrollPosition =
-      window.pageYOffset || document.documentElement.scrollTop;
-    const tabHeight = document.querySelector(".sticky")?.offsetHeight || 0;
-    const threshold = tabHeight + 100;
-
-    for (let i = sectionOffsets.length - 1; i >= 0; i--) {
-      if (scrollPosition >= sectionOffsets[i] - threshold) {
-        setCurrentSection(sections[i]);
-        break;
+        if (
+          scrollPosition >= top &&
+          scrollPosition < top + height
+        ) {
+          setCurrentSection(section);
+        }
       }
-    }
+    });
   };
 
-  const scrollToSection = (section) => {
-    const sectionId = section.toLowerCase().replace(/\s+/g, "-");
-    const element = document.getElementById(sectionId);
+  window.addEventListener("scroll", handleScroll);
+  window.addEventListener("resize", handleScroll);
 
-    if (element) {
-      const navbarHeight = 140;
+  handleScroll();
 
-      window.scrollTo({
-        top: element.offsetTop - navbarHeight,
-        behavior: "smooth",
-      });
-    }
+  return () => {
+    window.removeEventListener("scroll", handleScroll);
+    window.removeEventListener("resize", handleScroll);
   };
+}, [department]);
+
+/* ---------------- SCROLL TO SECTION ---------------- */
+const scrollToSection = (section) => {
+  const sectionId = section.toLowerCase().replace(/\s+/g, "-");
+  const element = document.getElementById(sectionId);
+
+  if (!element) return;
+
+  const headerOffset = 160;
+
+  const elementPosition =
+    element.getBoundingClientRect().top +
+    window.pageYOffset;
+
+  window.scrollTo({
+    top: elementPosition - headerOffset,
+    behavior: "smooth",
+  });
+};
 
   const showDetails = (staff) => {
     setSelectedStaff(staff);
@@ -152,27 +160,28 @@ const DepartmentsView = () => {
         </section>
 
         {/* Navigation Tabs */}
-        <div className="sticky top-[125px] z-40">
-          <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
-            <div className="bg-white/95 backdrop-blur-sm shadow-lg rounded-full -mt-4 sm:-mt-6 py-1 px-2 flex justify-center overflow-x-auto no-scrollbar">
-              <nav className="flex justify-center overflow-x-auto no-scrollbar py-2 space-x-2">
-                {sections.map((section, index) => (
-                  <button
-                    key={index}
-                    onClick={() => scrollToSection(section)}
-                    className={`font-medium px-4 py-2 rounded-full text-sm lg:text-base transition duration-300 whitespace-nowrap ${
-                      currentSection === section
-                        ? "bg-[rgb(115,40,40)] text-white shadow-md"
-                        : "text-gray-700 hover:bg-gray-100"
-                    }`}
-                  >
-                    {section}
-                  </button>
-                ))}
-              </nav>
-            </div>
-          </div>
-        </div>
+        {/* Navigation Tabs */}
+<div className="sticky top-[90px] z-50 bg-white/95 backdrop-blur-md shadow-lg">
+  <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
+    <div className="py-2 flex justify-center overflow-x-auto no-scrollbar">
+      <nav className="flex justify-center gap-2">
+        {sections.map((section, index) => (
+          <button
+            key={index}
+            onClick={() => scrollToSection(section)}
+            className={`font-medium px-4 py-2 rounded-full text-sm lg:text-base whitespace-nowrap transition-all duration-300 ${
+              currentSection === section
+                ? "bg-[rgb(115,40,40)] text-white shadow-lg scale-105"
+                : "text-gray-700 hover:bg-gray-100 hover:scale-105"
+            }`}
+          >
+            {section}
+          </button>
+        ))}
+      </nav>
+    </div>
+  </div>
+</div>
 
         {/* Content sections */}
         <section className="mx-auto">
@@ -670,7 +679,7 @@ const DepartmentsView = () => {
               </div>
             </div>
 
-            {/* Events Slider */}
+            {/* Events Slider
             <div
               id="events"
               className="px-4 sm:px-6 border-4 lg:px-8 max-w-7xl mx-auto py-12 bg-white scroll-mt-40"
@@ -786,7 +795,7 @@ const DepartmentsView = () => {
                   </p>
                 </div>
               )}
-            </div>
+            </div> */}
 
             <div className="px-4 sm:px-6 lg:px-8 max-w-full mx-auto py-12">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
