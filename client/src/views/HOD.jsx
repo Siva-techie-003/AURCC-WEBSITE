@@ -43,15 +43,15 @@ const HOD = () => {
                     {hods.map((hod, index) => (
                         <div
                             key={index}
-                            className="hod-card bg-white rounded-xl shadow-lg border border-gray-200 overflow-hidden flex flex-col items-center transition-all duration-300 w-full max-w-96 h-[380px] mx-auto animate-fadeInUp"
+                            className="hod-card bg-white rounded-xl shadow-lg border border-gray-200 overflow-hidden flex flex-col items-center transition-all duration-300 w-full max-w-96 h-[350px] mx-auto animate-fadeInUp"
                         >
                             {/* Header Section */}
                             <div className="w-full h-24 bg-[rgb(110,35,35)] relative flex justify-center">
                             </div>
 
                             {/* Profile Image Section */}
-                            <div className="relative -mt-16 flex justify-center">
-                                <div className="w-40 h-40 rounded-full overflow-hidden border-4 border-white shadow-md bg-white flex items-center justify-center">
+                            <div className="relative -mt-20 flex justify-center">
+                                <div className="w-32 h-40 rounded-full overflow-hidden border-4 border-white shadow-lg bg-white flex items-center justify-center">
                                     <img
                                         src={`${BACKEND_URL}/${hod.photo}`}
                                         alt={hod.name}
@@ -61,7 +61,7 @@ const HOD = () => {
                             </div>
 
                             {/* Content Section */}
-                            <div className="w-full p-6 flex flex-col items-center flex-grow text-center justify-center">
+                            <div className="w-full p-6 flex flex-col items-center flex-grow text-center justify-start pt-3">
                                 <h2 className="text-xl font-bold text-[rgb(110,35,35)] font-serif mb-2 leading-tight ">{hod.name}</h2>
                                 <div className="flex flex-col gap-2">
                                     <div className="px-4 py-1.5 bg-[rgb(245,240,240)] rounded-full border border-[rgb(220,200,200)] flex items-center justify-center">
