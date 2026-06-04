@@ -3,10 +3,10 @@ import React, { useState, useEffect } from 'react';
 const AdminStaffCard = ({ member }) => {
     const [error, setError] = useState(false);
     return (
-        <div className="admin-card bg-white rounded-xl shadow-lg border border-gray-200 overflow-hidden flex flex-col items-center transition-all duration-300 w-96 h-[320px]">
+        <div className="admin-card bg-white rounded-xl shadow-lg border border-gray-200 overflow-hidden flex flex-col items-center transition-all duration-300 w-96 h-[360px]">
             <div className="w-full h-24 bg-[rgb(110,35,35)] relative flex justify-center"></div>
-            <div className="relative -mt-12 flex justify-center">
-                <div className="w-32 h-32 rounded-2xl overflow-hidden border-2 border-[rgb(110,35,35)] shadow-md bg-gray-50 flex items-center justify-center">
+            <div className="relative -mt-[72px] flex justify-center">
+                <div className="w-36 h-36 rounded-full overflow-hidden border-4 border-white shadow-lg bg-white flex items-center justify-center">
                     {member.image && !error ? (
                         <img src={`/${member.image}`} alt={member.name} className="w-full h-full object-cover object-top" onError={() => setError(true)} />
                     ) : (
