@@ -59,3 +59,38 @@
 .animate-slideIn {
     animation: slideIn 1s ease-out forwards;
 }
+
+/* Custom styles for gallery like NSS */
+.bis-gallery-section {
+    --frame-width: 700px;
+    --frame-height: 400px;
+    --frame-gap: 32px;
+}
+
+@media (max-width: 1024px) {
+    .bis-gallery-section {
+        --frame-width: 500px;
+        --frame-height: 350px;
+    }
+}
+
+@media (max-width: 768px) {
+    .bis-gallery-section {
+        --frame-width: 400px;
+        --frame-height: 300px;
+        --frame-gap: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .bis-gallery-section {
+        --frame-width: 300px;
+        --frame-height: 250px;
+        --frame-gap: 12px;
+    }
+}
+
+.bis-gallery-container {
+    --translate-x: calc(50% - (var(--frame-width) / 2) - (var(--current-index) * (var(--frame-width) + var(--frame-gap))));
+    transform: translateX(var(--translate-x));
+}
