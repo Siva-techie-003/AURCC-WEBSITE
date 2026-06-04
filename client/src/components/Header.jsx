@@ -256,7 +256,7 @@ const Header = () => {
                   Contact
                 </span>
               </Link>
-              <Link
+              {/* <Link
                 to="/feedback"
                 className="hover:text-yellow-300 transition-colors flex items-center gap-1 group"
               >
@@ -272,7 +272,7 @@ const Header = () => {
                 <span className="hidden sm:inline font-medium text-sm lg:text-base">
                   Feedback
                 </span>
-              </Link>
+              </Link> */}
             </div>
 
             {/* Mobile Dropdown (Only for phones) */}
