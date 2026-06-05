@@ -49,17 +49,11 @@ const DepartmentsView = () => {
 
   const BACKEND_URL = "";
 
-<<<<<<< HEAD
-/* ---------------- SECTION HIGHLIGHT ON SCROLL ---------------- */
-useEffect(() => {
-  const handleScroll = () => {
-    const scrollPosition = window.scrollY + (window.innerWidth >= 1024 ? 210 : 190);
-=======
   /* ---------------- SECTION HIGHLIGHT ON SCROLL ---------------- */
   useEffect(() => {
     const handleScroll = () => {
-      const scrollPosition = window.scrollY + 180;
->>>>>>> ce2cf37fe4eb2d802edc673142778fe71c680b05
+      const scrollPosition =
+        window.scrollY + (window.innerWidth >= 1024 ? 210 : 190);
 
       sections.forEach((section) => {
         const sectionId = section.toLowerCase().replace(/\s+/g, "-");
@@ -94,7 +88,7 @@ useEffect(() => {
 
     if (!element) return;
 
-    const headerOffset = 160;
+    const headerOffset = window.innerWidth >= 1024 ? 200 : 180;
 
     const elementPosition =
       element.getBoundingClientRect().top + window.pageYOffset;
@@ -104,40 +98,6 @@ useEffect(() => {
       behavior: "smooth",
     });
   };
-
-<<<<<<< HEAD
-  window.addEventListener("scroll", handleScroll);
-  window.addEventListener("resize", handleScroll);
-
-  handleScroll();
-
-  return () => {
-    window.removeEventListener("scroll", handleScroll);
-    window.removeEventListener("resize", handleScroll);
-  };
-}, [department]);
-
-/* ---------------- SCROLL TO SECTION ---------------- */
-const scrollToSection = (section) => {
-  const sectionId = section.toLowerCase().replace(/\s+/g, "-");
-  const element = document.getElementById(sectionId);
-
-  if (!element) return;
-
-  const headerOffset = window.innerWidth >= 1024 ? 200 : 180;
-
-  const elementPosition =
-    element.getBoundingClientRect().top +
-    window.pageYOffset;
-
-  window.scrollTo({
-    top: elementPosition - headerOffset,
-    behavior: "smooth",
-  });
-};
-
-=======
->>>>>>> ce2cf37fe4eb2d802edc673142778fe71c680b05
   const showDetails = (staff) => {
     setSelectedStaff(staff);
     setShowPopover(true);
@@ -196,34 +156,10 @@ const scrollToSection = (section) => {
         </section>
 
         {/* Navigation Tabs */}
-        {/* Navigation Tabs */}
-<<<<<<< HEAD
-<div className="sticky-nav bg-white/95 backdrop-blur-md shadow-lg">
-  <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
-    <div className="py-2 flex justify-center overflow-x-auto no-scrollbar">
-      <nav className="flex justify-center gap-2">
-        {sections.map((section, index) => (
-          <button
-            key={index}
-            onClick={() => scrollToSection(section)}
-            className={`font-medium px-4 py-2 rounded-full text-sm lg:text-base whitespace-nowrap transition-all duration-300 ${
-              currentSection === section
-                ? "bg-[rgb(115,40,40)] text-white shadow-lg scale-105"
-                : "text-gray-700 hover:bg-gray-100 hover:scale-105"
-            }`}
-          >
-            {section}
-          </button>
-        ))}
-      </nav>
-    </div>
-  </div>
-</div>
-=======
-        <div className="sticky top-[90px] z-50 bg-white/95 backdrop-blur-md shadow-lg">
+        <div className="sticky-nav bg-white/95 backdrop-blur-md shadow-lg">
           <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
-            <div className="py-2 flex justify-center overflow-x-auto no-scrollbar">
-              <nav className="flex justify-center gap-2">
+            <div className="py-2 flex md:justify-center overflow-x-auto no-scrollbar">
+              <nav className="flex gap-2 px-2 md:px-0">
                 {sections.map((section, index) => (
                   <button
                     key={index}
@@ -241,7 +177,6 @@ const scrollToSection = (section) => {
             </div>
           </div>
         </div>
->>>>>>> ce2cf37fe4eb2d802edc673142778fe71c680b05
 
         {/* Content sections */}
         <section className="mx-auto">
@@ -330,45 +265,45 @@ const scrollToSection = (section) => {
               </div>
             </div>
             {/* Vision & Mission Section */}
-            <div className="bg-white py-20 px-6">
-              <div className="max-w-[1400px] mx-auto grid md:grid-cols-2 gap-12">
+            <div className="bg-white py-12 sm:py-20 px-4 sm:px-6">
+              <div className="max-w-[1400px] mx-auto grid md:grid-cols-2 gap-8 md:gap-12">
                 {/* Vision */}
-                <div className="bg-[#e6e6e6] p-16 rounded-xl shadow-lg min-h-[320px] flex flex-col">
-                  <h2 className="text-3xl font-semibold text-center mb-10">
+                <div className="bg-[#e6e6e6] p-6 sm:p-10 lg:p-16 rounded-xl shadow-lg min-h-[250px] sm:min-h-[320px] flex flex-col">
+                  <h2 className="text-2xl sm:text-3xl font-semibold text-center mb-6 sm:mb-10 text-[rgb(30,41,59)]">
                     Vision
                   </h2>
 
-                  <div className="flex items-center gap-6">
+                  <div className="flex items-start gap-4 sm:gap-6">
                     {/* Icon */}
                     <img
                       src="/public/icons/eye-5-svgrepo-com.svg"
                       alt="vision"
-                      className="w-16 h-16 flex-shrink-0"
+                      className="w-12 h-12 sm:w-16 sm:h-16 flex-shrink-0"
                     />
 
                     {/* Vision Text */}
-                    <p className="text-lg text-gray-800 leading-relaxed">
+                    <p className="text-base sm:text-lg text-gray-800 leading-relaxed">
                       {department?.vision}
                     </p>
                   </div>
                 </div>
 
                 {/* Mission */}
-                <div className="bg-[#e6e6e6] p-16 rounded-xl shadow-lg min-h-[320px] flex flex-col">
-                  <h2 className="text-3xl font-semibold text-center mb-10">
+                <div className="bg-[#e6e6e6] p-6 sm:p-10 lg:p-16 rounded-xl shadow-lg min-h-[250px] sm:min-h-[320px] flex flex-col">
+                  <h2 className="text-2xl sm:text-3xl font-semibold text-center mb-6 sm:mb-10 text-[rgb(30,41,59)]">
                     Mission
                   </h2>
 
-                  <div className="flex items-center gap-6">
+                  <div className="flex items-start gap-4 sm:gap-6">
                     {/* Icon */}
                     <img
                       src="/public/icons/target-svgrepo-com.svg"
                       alt="mission"
-                      className="w-16 h-16 flex-shrink-0"
+                      className="w-12 h-12 sm:w-16 sm:h-16 flex-shrink-0"
                     />
 
                     {/* Mission List */}
-                    <ul className="text-lg text-gray-800 space-y-2 leading-relaxed">
+                    <ul className="text-base sm:text-lg text-gray-800 space-y-2 leading-relaxed">
                       {(department?.mission || []).map((item, index) => (
                         <li key={index}>• {item}</li>
                       ))}
@@ -410,7 +345,7 @@ const scrollToSection = (section) => {
               <div className="relative z-10 w-full -mt-8 px-6 lg:px-16">
                 {/* HEADING */}
                 <div className="text-center mb-12">
-                  <h2 className="text-4xl font-bold text-[rgb(115,40,40)] inline-block">
+                  <h2 className="text-2xl sm:text-4xl font-bold text-[rgb(115,40,40)] inline-block">
                     From the Desk of HOD
                     <span className="block w-24 h-1 bg-yellow-500 mx-auto mt-3 rounded"></span>
                   </h2>
@@ -439,7 +374,7 @@ const scrollToSection = (section) => {
                     {/* RIGHT CONTENT */}
                     <div className="flex flex-col h-full">
                       <div>
-                        <h3 className="text-4xl font-bold text-[rgb(115,40,40)] mb-2">
+                        <h3 className="text-2xl sm:text-4xl font-bold text-[rgb(115,40,40)] mb-2">
                           {staff.name}
                         </h3>
 
@@ -453,7 +388,7 @@ const scrollToSection = (section) => {
                       </div>
 
                       {/* SCROLL CARD */}
-                      <div className="bg-gray-50 rounded-lg p-5 mt-8 h-[320px] border border-gray-300 overflow-y-auto shadow-inner">
+                      <div className="bg-gray-50 rounded-lg p-5 mt-8 h-[320px] border border-gray-300 overflow-y-auto shadow-inner text-justify">
                         {department?.p1 && (
                           <p className="mb-3 text-lg leading-relaxed">
                             {department.p1}
@@ -493,9 +428,9 @@ const scrollToSection = (section) => {
                       Programmes Offered
                     </h3>
                   </div>
-                  <div className="p-8 md:p-10">
+                  <div className="p-6 md:p-10">
                     <div
-                      className={`flex gap-6 sm:gap-6 ${(department?.courses_offered?.length || 0) > 1 ? "grid-cols-1 md:grid-cols-2" : "justify-center"}`}
+                      className={`grid gap-6 ${(department?.courses_offered?.length || 0) > 1 ? "grid-cols-1 md:grid-cols-2" : "grid-cols-1 max-w-md mx-auto"}`}
                     >
                       {(department?.courses_offered || []).map(
                         (course, index) => (
@@ -1022,53 +957,56 @@ const scrollToSection = (section) => {
         {/* Faculty Modal */}
         {showPopover && selectedStaff && (
           <div
-            className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50 p-4"
+            className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-[9999] p-4"
             onClick={() => setShowPopover(false)}
           >
             <div
-              className="bg-white rounded-2xl shadow-xl max-w-5xl w-full h-[80vh] overflow-hidden flex mt-[120px]"
+              className="relative bg-white rounded-2xl shadow-xl max-w-5xl w-full h-[85vh] md:h-[80vh] overflow-hidden flex flex-col md:flex-row mt-0 md:mt-[120px]"
               onClick={(e) => e.stopPropagation()}
             >
+              {/* Close Button at top right corner of the entire modal box */}
+              <button
+                onClick={() => setShowPopover(false)}
+                className="absolute top-4 right-4 z-[999] text-gray-700 hover:text-gray-950 bg-white/70 hover:bg-white/95 backdrop-blur-sm rounded-full w-8 h-8 flex items-center justify-center shadow-md border border-gray-200/50 transition-all text-base font-bold"
+                aria-label="Close Profile"
+              >
+                ✕
+              </button>
               {/* LEFT SIDE */}
-              <div className="w-1/3 bg-[rgb(242,198,198)] text-center p-6 flex flex-col items-center">
+              <div className="w-full md:w-1/3 bg-[rgb(242,198,198)] text-left md:text-center p-4 md:p-6 flex flex-row md:flex-col items-center gap-4 md:gap-0 shrink-0">
                 <img
                   src={`${BACKEND_URL}/public/${selectedStaff.photo}`}
                   alt={selectedStaff.name}
-                  className="w-48 h-60 rounded-xl border shadow"
+                  className="w-24 h-32 md:w-48 md:h-60 rounded-xl border shadow object-cover shrink-0"
                 />
 
-                <h2 className="text-xl text-[rgb(100,25,25)] font-bold mt-4">
-                  {selectedStaff.title} {selectedStaff.name}
-                </h2>
+                <div className="flex flex-col justify-center md:items-center min-w-0">
+                  <h2 className="text-lg md:text-xl text-[rgb(100,25,25)] font-bold mt-0 md:mt-4 leading-tight">
+                    {selectedStaff.title} {selectedStaff.name}
+                  </h2>
 
-                <p className="text-[rgb(100,25,25)] font-medium mt-2">
-                  {selectedStaff.position}
-                </p>
+                  <p className="text-sm md:text-[rgb(100,25,25)] font-medium mt-1 md:mt-2 text-[rgb(100,25,25)] leading-tight">
+                    {selectedStaff.position}
+                  </p>
 
-                <p className="text-[rgb(100,25,25)] font-medium">
-                  {selectedStaff.department}
-                </p>
+                  <p className="text-xs md:text-sm text-[rgb(100,25,25)] font-medium leading-tight">
+                    {selectedStaff.department}
+                  </p>
 
-                <p className="text-base mt-2 text-blue-600 font-medium">
-                  {selectedStaff.contact?.email}
-                </p>
+                  <p className="text-xs md:text-base mt-1 md:mt-2 text-blue-600 font-medium break-all leading-tight">
+                    {selectedStaff.contact?.email}
+                  </p>
+                </div>
               </div>
 
               {/* RIGHT SIDE */}
-              <div className="w-2/3 flex flex-col">
+              <div className="w-full md:w-2/3 flex flex-col flex-grow overflow-hidden">
                 {/* 🔹 FIXED HEADER */}
-                <div className="sticky top-0 bg-white z-10  p-4 flex items-center justify-center relative">
-                  <h1 className="text-2xl font-bold text-[rgb(100,25,25)] relative inline-block">
+                <div className="sticky top-0 bg-white z-10 p-4 flex items-center justify-center relative shrink-0">
+                  <h1 className="text-xl md:text-2xl font-bold text-[rgb(100,25,25)] relative inline-block">
                     Faculty Profile
                     <span className="absolute -bottom-4 sm:-bottom-3 left-1/2 transform -translate-x-1/2 h-1 w-32 sm:w-40 lg:w-32 bg-yellow-500"></span>
                   </h1>
-
-                  <button
-                    onClick={() => setShowPopover(false)}
-                    className="absolute right-4 text-gray-500 hover:text-gray-800 text-xl"
-                  >
-                    ✖
-                  </button>
                 </div>
 
                 {/* 🔹 SCROLLABLE CONTENT */}

@@ -34,18 +34,18 @@
 .sticky-nav {
     position: -webkit-sticky;
     position: sticky;
-    top: 116px;
+    top: 126px;
     z-index: 50;
 }
 
 @media (min-width: 640px) {
     .sticky-nav {
-        top: 126px;
+        top: 130px;
     }
 }
 
 @media (min-width: 1024px) {
     .sticky-nav {
-        top: 136px;
+        top: 130px;
     }
 }

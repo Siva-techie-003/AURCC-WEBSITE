@@ -1,4 +1,4 @@
-﻿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import './StaffCard.css';
 
 const StaffCard = ({ staff }) => {
@@ -14,7 +14,7 @@ const StaffCard = ({ staff }) => {
     };
 
     return (
-        <div className="staff-card bg-white/60 backdrop-blur-md rounded-xl shadow-xl overflow-hidden flex flex-col items-center border border-[rgb(180,100,100)] transition-all duration-300 text-center hover:shadow-2xl touch-manipulation">
+        <div className="staff-card mx-auto bg-white/60 backdrop-blur-md rounded-xl shadow-xl overflow-hidden flex flex-col items-center border border-[rgb(180,100,100)] transition-all duration-300 text-center hover:shadow-2xl touch-manipulation">
             {/* Image Section */}
             <div className="w-full flex justify-center pt-6 pb-2">
                 <div className="staff-image-container w-24 h-24 rounded-[20px] overflow-hidden border-4 border-[rgb(140,60,60)] shadow-lg bg-white flex items-center justify-center">
