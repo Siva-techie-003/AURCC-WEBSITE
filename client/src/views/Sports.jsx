@@ -119,54 +119,54 @@ const Sports = () => {
         </div>
 
         {/* Physical Education Staff Section */}
-        <div className="text-center">
-          <h2 className="text-2xl sm:text-3xl lg:text-3xl font-bold text-gray-800 font-serif mb-2">
-            Sports Administration
-          </h2>
-          <div className="flex justify-center mb-6">
-            <span className="block w-24 h-1.5 rounded-full bg-[#f5c842]"></span>
+        <div className="bg-white/70 backdrop-blur-md rounded-2xl shadow-lg animate-fadeIn border border-gray-100 overflow-hidden max-w-5xl mx-auto">
+          <div className="bg-gradient-to-r from-[rgb(115,63,63)] to-[rgb(115,25,25)] py-3 sm:py-4 md:py-5 flex items-center justify-center gap-2 sm:gap-3">
+            <h2 className="text-lg sm:text-xl lg:text-2xl xl:text-3xl font-bold text-white text-center">
+              Physical Education Staffs
+            </h2>
           </div>
-        </div>
+          <div className="p-4 sm:p-6 md:p-8 lg:p-10">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 justify-center max-w-3xl mx-auto">
+              {/* Card 1: Dr Saravanamoorthy D */}
+              <div className="bg-white/80 rounded-xl shadow-sm p-6 border border-gray-100 flex flex-col justify-center items-center text-center hover:shadow-md transition-all hover:-translate-y-1">
+                <div className="w-28 h-28 sm:w-32 sm:h-32 mb-4">
+                  <img
+                    src="/public/Saravanamoorthy.jpeg"
+                    alt="Dr Saravanamoorthy D"
+                    className="w-full h-full object-cover object-top rounded-full border-4 border-[rgb(115,25,25)] shadow-md transition-transform duration-300 hover:scale-105"
+                  />
+                </div>
+                <h3 className="text-sm sm:text-base lg:text-lg xl:text-xl font-bold text-[rgb(110,35,35)] mb-2">
+                  Dr Saravanamoorthy D
+                </h3>
+                <div className="text-xs lg:text-sm text-gray-700 font-semibold mb-3 flex-grow">
+                  Physical Training Instructor (Selection Grade) and Sports Coordinator
+                </div>
+                <p className="text-xs lg:text-sm text-gray-600 font-semibold mt-auto">
+                  E-mail id - <a href="mailto:peaurcc@gmail.com" className="hover:underline text-[rgb(110,35,35)]">peaurcc@gmail.com</a>
+                </p>
+              </div>
 
-        <div className="flex flex-col md:flex-row justify-center items-stretch gap-8 max-w-5xl mx-auto">
-          {/* Card 1: Dr Saravanamoorthy D */}
-          <div className="bg-[#f9f9f9] border-2 border-gray-200 rounded-3xl p-8 flex flex-col items-center w-full max-w-sm mx-auto shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 text-center">
-            <div className="w-48 h-56 rounded-xl overflow-hidden border-2 border-gray-300 shadow-md bg-white mb-6">
-              <img
-                src="/public/Saravanamoorthy.jpeg"
-                alt="Dr Saravanamoorthy D"
-                className="w-full h-full object-cover object-top"
-              />
+              {/* Card 2: Dr Shanmuga Priya R */}
+              <div className="bg-white/80 rounded-xl shadow-sm p-6 border border-gray-100 flex flex-col justify-center items-center text-center hover:shadow-md transition-all hover:-translate-y-1">
+                <div className="w-28 h-28 sm:w-32 sm:h-32 mb-4">
+                  <img
+                    src="/public/Shanmuga.jpg"
+                    alt="Dr Shanmuga Priya R"
+                    className="w-full h-full object-cover object-top rounded-full border-4 border-[rgb(115,25,25)] shadow-md transition-transform duration-300 hover:scale-105"
+                  />
+                </div>
+                <h3 className="text-sm sm:text-base lg:text-lg xl:text-xl font-bold text-[rgb(110,35,35)] mb-2">
+                  Dr Shanmuga Priya R
+                </h3>
+                <div className="text-xs lg:text-sm text-gray-700 font-semibold mb-3 flex-grow">
+                  Assistant Director of Physical Education
+                </div>
+                <p className="text-xs lg:text-sm text-gray-600 font-semibold mt-auto">
+                  E-mail id - <a href="mailto:shanmugapriya@aurcc.ac.in" className="hover:underline text-[rgb(110,35,35)]">shanmugapriya@aurcc.ac.in</a>
+                </p>
+              </div>
             </div>
-            <h3 className="text-xl font-bold text-black mb-3 leading-snug">
-              Dr Saravanamoorthy D
-            </h3>
-            <p className="text-base font-bold text-black mb-4 leading-relaxed flex-grow">
-              Physical Training Instructor (Selection Grade) and Sports Coordinator
-            </p>
-            <p className="text-base font-bold text-black mt-auto">
-              E-mail id - <a href="mailto:peaurcc@gmail.com" className="hover:underline">peaurcc@gmail.com</a>
-            </p>
-          </div>
-
-          {/* Card 2: Dr Shanmuga Priya R */}
-          <div className="bg-[#f9f9f9] border-2 border-gray-200 rounded-3xl p-8 flex flex-col items-center w-full max-w-sm mx-auto shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 text-center">
-            <div className="w-48 h-56 rounded-xl overflow-hidden border-2 border-gray-300 shadow-md bg-white mb-6">
-              <img
-                src="/public/Shanmuga.jpg"
-                alt="Dr Shanmuga Priya R"
-                className="w-full h-full object-cover object-top"
-              />
-            </div>
-            <h3 className="text-xl font-bold text-black mb-3 leading-snug">
-              Dr Shanmuga Priya R
-            </h3>
-            <p className="text-base font-bold text-black mb-4 leading-relaxed flex-grow">
-              Assistant Director of Physical Education
-            </p>
-            <p className="text-base font-bold text-black mt-auto">
-              E-mail id - <a href="mailto:shanmugapriya@aurcc.ac.in" className="hover:underline">shanmugapriya@aurcc.ac.in</a>
-            </p>
           </div>
         </div>
 

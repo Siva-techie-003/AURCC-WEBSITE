@@ -257,8 +257,8 @@ const Footer = ({
         View the developers behind this website.
       </p>
 
-      <a
-        href="/team"
+      <Link
+        to="/team"
         className="inline-block px-3 py-1.5 rounded-lg font-bold text-[8px] sm:text-xs lg:text-sm transition-all duration-300"
         style={{
           background: "#f5c842",
@@ -266,7 +266,7 @@ const Footer = ({
         }}
       >
         View Team →
-      </a>
+      </Link>
     </div>
 
   </div>
@@ -390,15 +390,28 @@ const Footer = ({
 
             {/* RIGHT (FORCED CORNER) */}
             <div className="flex gap-1 sm:gap-6 items-center justify-end w-1/3">
-              {["Team", "Privacy", "Safety"].map((item) => (
-                <a
-                  key={item}
-                  href="#"
-                  className="text-white/60 hover:text-yellow-400 text-[5px] sm:text-xs font-black uppercase tracking-widest transition-colors"
-                >
-                  {item}
-                </a>
-              ))}
+              {["Team", "Privacy", "Safety"].map((item) => {
+                if (item === "Team") {
+                  return (
+                    <Link
+                      key={item}
+                      to="/team"
+                      className="text-white/60 hover:text-yellow-400 text-[5px] sm:text-xs font-black uppercase tracking-widest transition-colors"
+                    >
+                      {item}
+                    </Link>
+                  );
+                }
+                return (
+                  <a
+                    key={item}
+                    href="#"
+                    className="text-white/60 hover:text-yellow-400 text-[5px] sm:text-xs font-black uppercase tracking-widest transition-colors"
+                  >
+                    {item}
+                  </a>
+                );
+              })}
             </div>
 
           </div>
