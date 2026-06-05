@@ -533,6 +533,13 @@ const HomeView = () => {
       setLoading(false);
     }
   };
+
+  const handleScrollDown = () => {
+    if (statsRef.current) {
+      statsRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <div className="min-w-[300px] min-h-[800px] overflow-x-hidden">
       <div className="pt-[126px] sm:pt-[130px]">
@@ -632,6 +639,19 @@ const HomeView = () => {
                 >
                   Campus Tour
                 </button>
+              </div>
+            </div>
+
+            {/* Scroll Indicator */}
+            <div 
+              onClick={handleScrollDown}
+              className="absolute bottom-3 sm:bottom-6 left-1/2 transform -translate-x-1/2 flex flex-col items-center gap-1 sm:gap-2 cursor-pointer z-30 group hover:opacity-100 transition-opacity duration-300 opacity-90"
+            >
+              <span className="text-[7px] sm:text-[11px] font-black text-yellow-400 tracking-[0.2em] sm:tracking-[0.25em] uppercase select-none group-hover:text-white transition-colors duration-300">
+                Scroll Down
+              </span>
+              <div className="w-4 h-7 sm:w-6 sm:h-10 border-2 border-yellow-400/80 group-hover:border-white rounded-full flex justify-center p-1 sm:p-1.5 transition-colors duration-300">
+                <div className="w-0.5 sm:w-1.5 h-1.5 sm:h-3 bg-yellow-400 group-hover:bg-white rounded-full animate-scroll-wheel"></div>
               </div>
             </div>
           </section>

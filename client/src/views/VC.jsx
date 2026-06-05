@@ -1,4 +1,4 @@
-﻿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import vcMessageData from '../assets/vcMessage.json';
 import './VC.css';
 
@@ -91,7 +91,7 @@ const VC = () => {
 
             {/* Profile Modal */}
             {showPopover && (
-                <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+                <div className="fixed inset-0 z-[9999] flex items-center justify-center p-4">
                     <div className="absolute inset-0 bg-[rgb(90,20,20)]/80 backdrop-blur-sm" onClick={() => setShowPopover(false)}></div>
                     <div className="relative bg-white rounded-3xl shadow-2xl max-w-4xl w-full overflow-hidden flex flex-col max-h-[90vh] animate-pop-in">
                         <button

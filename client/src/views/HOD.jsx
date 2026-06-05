@@ -61,13 +61,12 @@ const HOD = () => {
                             </div>
 
                             {/* Content Section */}
-                            <div className="w-full p-6 flex flex-col items-center flex-grow text-center justify-start pt-3">
+                            <div className="w-full px-2 py-4 sm:p-6 flex flex-col items-center flex-grow text-center justify-start pt-3 min-w-0">
                                 <h2 className="text-xl font-bold text-[rgb(110,35,35)] font-serif mb-2 leading-tight ">{hod.name}</h2>
-                                <div className="flex flex-col gap-2">
-                                    <div className="px-4 py-1.5 bg-[rgb(245,240,240)] rounded-full border border-[rgb(220,200,200)] flex items-center justify-center">
-                                        <span className="text-xs font-black text-[rgb(110,35,35)]  tracking-wide text-center">{hod.department}</span>
+                                <div className="flex flex-col gap-2 w-full items-center">
+                                    <div className="px-1.5 py-1 sm:px-4 sm:py-1.5 bg-[rgb(245,240,240)] rounded-full border border-[rgb(220,200,200)] flex items-center justify-center max-w-full">
+                                        <span className="text-[8.5px] min-[360px]:text-[9.5px] sm:text-xs font-black text-[rgb(110,35,35)] tracking-wide text-center whitespace-nowrap">{hod.department}</span>
                                     </div>
-                                    {/* <p className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mt-1">Head of the Department</p> */}
                                 </div>
                             </div>
                         </div>
