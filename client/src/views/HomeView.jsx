@@ -542,7 +542,7 @@ const HomeView = () => {
 
   return (
     <div className="min-w-[300px] min-h-[800px] overflow-x-hidden">
-      <div className="pt-[126px] sm:pt-[130px]">
+      <div id="home_page" className="pt-[126px] sm:pt-[130px]">
         {/* All page content here */}
 
         <main className="">
@@ -575,7 +575,6 @@ const HomeView = () => {
           </div>
           {/* Hero Section */}
           <section
-            id="home_page"
             className="relative h-[300px] md:h-[400px] lg:h-[670px] flex items-center justify-center overflow-hidden "
           >
             <div className="absolute inset-0 ">
