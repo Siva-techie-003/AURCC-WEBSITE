@@ -1,4 +1,4 @@
-﻿import React, { useState, useEffect, useRef, useMemo } from "react";
+import React, { useState, useEffect, useRef, useMemo } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import "./DepartmentsView.css";
 
@@ -52,7 +52,7 @@ const BACKEND_URL = "";
 /* ---------------- SECTION HIGHLIGHT ON SCROLL ---------------- */
 useEffect(() => {
   const handleScroll = () => {
-    const scrollPosition = window.scrollY + 180;
+    const scrollPosition = window.scrollY + (window.innerWidth >= 1024 ? 210 : 190);
 
     sections.forEach((section) => {
       const sectionId = section.toLowerCase().replace(/\s+/g, "-");
@@ -90,7 +90,7 @@ const scrollToSection = (section) => {
 
   if (!element) return;
 
-  const headerOffset = 160;
+  const headerOffset = window.innerWidth >= 1024 ? 200 : 180;
 
   const elementPosition =
     element.getBoundingClientRect().top +
@@ -161,7 +161,7 @@ const scrollToSection = (section) => {
 
         {/* Navigation Tabs */}
         {/* Navigation Tabs */}
-<div className="sticky top-[90px] z-50 bg-white/95 backdrop-blur-md shadow-lg">
+<div className="sticky-nav bg-white/95 backdrop-blur-md shadow-lg">
   <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
     <div className="py-2 flex justify-center overflow-x-auto no-scrollbar">
       <nav className="flex justify-center gap-2">

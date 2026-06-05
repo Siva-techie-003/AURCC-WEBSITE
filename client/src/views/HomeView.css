@@ -269,3 +269,29 @@ details>summary {
 .scrollbar-custom::-webkit-scrollbar-thumb:hover {
     background: rgb(90, 20, 20);
 }
+
+.ticker-container {
+    overflow: hidden;
+    width: 100%;
+}
+
+.ticker-content {
+    display: flex;
+    align-items: center;
+    width: max-content;
+    animation: scrollTicker 15s linear infinite;
+}
+
+.ticker-content:hover {
+    animation-play-state: paused;
+}
+
+@keyframes scrollTicker {
+    from {
+        transform: translateX(100%);
+    }
+
+    to {
+        transform: translateX(-100%);
+    }
+}

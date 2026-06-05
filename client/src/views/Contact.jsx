@@ -1,22 +1,80 @@
-﻿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import './Contact.css';
 
 const Contact = () => {
+    const [form, setForm] = useState({
+        name: '',
+        email: '',
+        subject: '',
+        message: ''
+    });
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [submitStatus, setSubmitStatus] = useState(null); // 'success' | 'error' | null
+    const [errorMessage, setErrorMessage] = useState('');
+    const [recipientEmail, setRecipientEmail] = useState('ucedean-kovai@annauniv.edu');
+
+    const handleChange = (e) => {
+        const { id, value } = e.target;
+        setForm((prev) => ({ ...prev, [id]: value }));
+    };
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        setIsSubmitting(true);
+        setSubmitStatus(null);
+        setErrorMessage('');
+
+        try {
+            const response = await fetch("/api/contact", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(form)
+            });
+            const data = await response.json();
+            if (response.ok && data.success) {
+                setSubmitStatus('success');
+                if (data.contactEmail) {
+                    setRecipientEmail(data.contactEmail);
+                }
+                setForm({
+                    name: '',
+                    email: '',
+                    subject: '',
+                    message: ''
+                });
+            } else {
+                setSubmitStatus('error');
+                setErrorMessage(data.message || 'Something went wrong. Please try again.');
+            }
+        } catch (error) {
+            setSubmitStatus('error');
+            setErrorMessage('Network error. Please try again later.');
+        } finally {
+            setIsSubmitting(false);
+        }
+    };
+
     const contacts = [
-        { office: "Dean's Office", number: "0422-2984007" },
-        { office: "Administrative Office", number: "0422-2691124" },
-        { office: "Department of CSE", number: "0422-2691125" },
-        { office: "Department of ECE", number: "0422-2691126" },
-        { office: "Department of EEE", number: "0422-2691127" },
-        { office: "Department of Mechanical", number: "0422-2691128" },
-        { office: "Library", number: "0422-2691129" },
-        { office: "Hostel Office", number: "0422-2691130" },
-        { office: "Placement Cell", number: "0422-2691131" },
-        { office: "Examination Cell", number: "0422-2691132" }
+        { office: "Dean's Office", number: "0422-2984002" },
+        { office: "Administrative Office", number: "-" },
+        { office: "Department of CSE", number: "-" },
+        { office: "Department of ECE", number: "-" },
+        { office: "Department of EEE", number: "-" },
+        { office: "Department of Mechanical", number: "-" },
+        { office: "Placement Cell", number: "-" },
+        { office: "General Administration-1", number: "0422-2984006" },
+        { office: "General Administration-2", number: "0422-2984007" },
+        { office: "General Administration-3", number: "0422-2984009" },
+        { office: "Library", number: "-" },
+        { office: "Hostel Office", number: "-" },
+        { office: "Placement Cell", number: "-" },
+        { office: "Examination Cell", number: "0422-2984005" }
     ];
 
     return (
-        <div className="flex-grow bg-gray-50 min-h-screen text-left">
+        <div className="flex-grow bg-gray-50 min-h-screen text-left pt-[116px] sm:pt-[126px] lg:pt-[136px]">
             {/* Hero section */}
             <section className="relative h-[40vh] md:h-[50vh] flex items-center justify-center overflow-hidden">
                 <img
@@ -119,14 +177,63 @@ const Contact = () => {
                         <h2 className="text-3xl font-black mb-2 uppercase tracking-tighter">Send a Message</h2>
                         <p className="text-gray-900 font-medium mb-8">Fill out the form below and we'll get back to you within 24 hours.</p>
 
-                        <form className="space-y-5">
-                            <div className="grid grid-cols-2 gap-5">
-                                <input type="text" placeholder="Full Name" className="bg-white/10 border border-white/20 rounded-2xl p-4 outline-none focus:bg-white focus:text-[rgb(90,20,20)] transition-all font-bold placeholder:text-white" />
-                                <input type="email" placeholder="Email Address" className="bg-white/10 border border-white/20 rounded-2xl p-4 outline-none focus:bg-white focus:text-[rgb(90,20,20)] transition-all font-bold placeholder:text-white" />
+                        {submitStatus === 'success' && (
+                            <div className="bg-green-100 border border-green-400 text-green-800 px-4 py-3 rounded-2xl relative mb-6 font-bold text-center">
+                                ✓ Message sent successfully! It has been dispatched to {recipientEmail}.
                             </div>
-                            <input type="text" placeholder="Subject" className="w-full bg-white/10 border border-white/20 rounded-2xl p-4 outline-none focus:bg-white focus:text-[rgb(90,20,20)] transition-all font-bold placeholder:text-white" />
-                            <textarea placeholder="Your message here..." rows="4" className="w-full bg-white/10 border border-white/20 rounded-2xl p-4 outline-none focus:bg-white focus:text-[rgb(90,20,20)] transition-all font-bold placeholder:text-white resize-none"></textarea>
-                            <button className="w-full py-5 bg-[rgb(115,40,40)] text-white font-black text-lg rounded-2xl hover:bg-white hover:text-[rgb(100,25,25)] transition-all shadow-xl active:scale-95 uppercase tracking-widest">Send Message</button>
+                        )}
+                        {submitStatus === 'error' && (
+                            <div className="bg-red-100 border border-red-400 text-red-800 px-4 py-3 rounded-2xl relative mb-6 font-bold text-center">
+                                ⚠ {errorMessage}
+                            </div>
+                        )}
+
+                        <form onSubmit={handleSubmit} className="space-y-5">
+                            <div className="grid grid-cols-2 gap-5">
+                                <input
+                                    type="text"
+                                    id="name"
+                                    value={form.name}
+                                    onChange={handleChange}
+                                    required
+                                    placeholder="Full Name"
+                                    className="bg-white/10 border border-white/20 rounded-2xl p-4 outline-none focus:bg-white focus:text-[rgb(90,20,20)] transition-all font-bold placeholder:text-white"
+                                />
+                                <input
+                                    type="email"
+                                    id="email"
+                                    value={form.email}
+                                    onChange={handleChange}
+                                    required
+                                    placeholder="Email Address"
+                                    className="bg-white/10 border border-white/20 rounded-2xl p-4 outline-none focus:bg-white focus:text-[rgb(90,20,20)] transition-all font-bold placeholder:text-white"
+                                />
+                            </div>
+                            <input
+                                type="text"
+                                id="subject"
+                                value={form.subject}
+                                onChange={handleChange}
+                                required
+                                placeholder="Subject"
+                                className="w-full bg-white/10 border border-white/20 rounded-2xl p-4 outline-none focus:bg-white focus:text-[rgb(90,20,20)] transition-all font-bold placeholder:text-white"
+                            />
+                            <textarea
+                                id="message"
+                                value={form.message}
+                                onChange={handleChange}
+                                required
+                                placeholder="Your message here..."
+                                rows="4"
+                                className="w-full bg-white/10 border border-white/20 rounded-2xl p-4 outline-none focus:bg-white focus:text-[rgb(90,20,20)] transition-all font-bold placeholder:text-white resize-none"
+                            ></textarea>
+                            <button
+                                type="submit"
+                                disabled={isSubmitting}
+                                className="w-full py-5 bg-[rgb(115,40,40)] text-white font-black text-lg rounded-2xl hover:bg-white hover:text-[rgb(100,25,25)] transition-all shadow-xl active:scale-95 uppercase tracking-widest disabled:opacity-50 disabled:cursor-not-allowed"
+                            >
+                                {isSubmitting ? "Sending..." : "Send Message"}
+                            </button>
                         </form>
                     </div>
                 </section>

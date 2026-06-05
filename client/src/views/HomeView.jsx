@@ -66,45 +66,18 @@ const HomeView = () => {
   // Scroll to section if navigated with state
   const location = useLocation();
 
-  useEffect(() => {
-    if (location.state?.scrollTo) {
-      const el = document.getElementById(location.state.scrollTo);
-      if (el) {
-        el.scrollIntoView({ behavior: "smooth" });
-      }
-    }
-  }, [location]);
-
-  // Static Data
-  const galleryImages = [
+  // State for Database dynamic contents
+  const [tickerItems, setTickerItems] = useState([
     {
-      src: "/1.webp",
-      alt: "College Event",
-      description: "Annual cultural festival celebrating diverse talents",
+      name: "Anna University Grievances Cell",
+      url: "https://www.annauniv.edu/auccgrcell/",
     },
     {
-      src: "/cse-girls-closeup.webp",
-      alt: "Students in Lab",
-      description: "Students collaborating on innovative projects",
+      name: "AICTE Feedback Link",
+      url: "https://www.aicte.gov.in/feedback/index.php",
     },
-    {
-      src: "/4.webp",
-      alt: "Campus View",
-      description: "Our beautiful campus surrounded by greenery",
-    },
-    {
-      src: "/computer-lab.webp",
-      alt: "Computer Lab",
-      description: "State-of-the-art computer lab with latest equipment",
-    },
-    {
-      src: "/Drone_shot.jpg",
-      alt: "Aerial View",
-      description: "Aerial view of our sprawling campus facilities",
-    },
-  ];
-
-  const news = [
+  ]);
+  const [news, setNews] = useState([
     {
       name: "CMRG 250509 - Temporary Position of Project Assistant - Dept. of EEE - Regional Campus Coimbatore-Last Date: 09.05.2026",
       url: "/forms/CMRG 250509 - Temporary Position of Project Assistant - Dept. of EEE - Regional Campus Coimbatore.pdf",
@@ -153,9 +126,8 @@ const HomeView = () => {
       name: "JRF Application Form for MeitY Project",
       url: "http://aurcc.ac.in/loginpage/loginpage/uploads/370.pdf",
     },
-  ];
-
-  const events = [
+  ]);
+  const [events, setEvents] = useState([
     {
       name: "Graduation Day 2026 at AURCC",
       url: "/forms/Graduation Day 2026 at AURCC.pdf",
@@ -204,6 +176,82 @@ const HomeView = () => {
       name: "Scholarship - List of Beneficiaries",
       url: "/forms/Scholarship - List of Beneficiaries.pdf",
     },
+  ]);
+  const [deanDesk, setDeanDesk] = useState({
+    name: "Dr. M. Saravanakumar",
+    credentials: "MBA., MS(IT)., M.Phil., Ph.D.,",
+    designation: "Dean, Anna University Regional Campus Coimbatore",
+    quote: "Empowering the next generation of innovators and leaders.",
+    paragraphs: [
+      "Welcome to Anna University. It gives me immense pleasure to greet you as part of an institution that has long been a beacon of excellence in technological education and research. At Anna University, we are committed to fostering a culture of innovation, integrity, and academic rigor. Our legacy is built upon a strong foundation of knowledge, discipline, and a relentless pursuit of progress.",
+      "We take pride in offering a dynamic learning environment that encourages students to explore, question, and create. Our distinguished faculty members, state-of-the-art infrastructure, and industry-oriented curriculum ensure that our students are well-equipped to meet the challenges of a rapidly evolving world. We continuously strive to bridge the gap between theoretical knowledge and practical application, empowering our students to become competent professionals.",
+      "At the heart of our mission lies the goal of nurturing visionary leaders who can contribute meaningfully to society. We emphasize not only technical proficiency but also ethical values, critical thinking, and leadership skills. Through various academic and co-curricular initiatives, we aim to shape individuals who are innovative, socially responsible, and globally competitive.",
+      "As you embark on your journey with us, I encourage you to make the most of the opportunities available at Anna University. Engage actively in your academic pursuits, participate in collaborative learning, and strive for excellence in all that you do. I wish you a rewarding and transformative experience that will prepare you for a bright and successful future."
+    ],
+    image: "/DEAN_DESK.jpeg"
+  });
+
+  useEffect(() => {
+    if (location.state?.scrollTo) {
+      const el = document.getElementById(location.state.scrollTo);
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  }, [location]);
+
+  useEffect(() => {
+    const fetchHomeData = async () => {
+      try {
+        const response = await fetch("/api/home");
+        if (!response.ok) throw new Error("Failed to fetch home data");
+        const data = await response.json();
+        if (data.latestNews && data.latestNews.length > 0) {
+          setTickerItems(data.latestNews);
+        }
+        if (data.newsAdmissions && data.newsAdmissions.length > 0) {
+          setNews(data.newsAdmissions);
+        }
+        if (data.eventsScholarships && data.eventsScholarships.length > 0) {
+          setEvents(data.eventsScholarships);
+        }
+        if (data.deanDesk) {
+          setDeanDesk(data.deanDesk);
+        }
+      } catch (error) {
+        console.error("Error loading home page data:", error);
+      }
+    };
+    fetchHomeData();
+  }, []);
+
+  // Static Data
+  const galleryImages = [
+    {
+      src: "/1.webp",
+      alt: "College Event",
+      description: "Annual cultural festival celebrating diverse talents",
+    },
+    {
+      src: "/cse-girls-closeup.webp",
+      alt: "Students in Lab",
+      description: "Students collaborating on innovative projects",
+    },
+    {
+      src: "/4.webp",
+      alt: "Campus View",
+      description: "Our beautiful campus surrounded by greenery",
+    },
+    {
+      src: "/computer-lab.webp",
+      alt: "Computer Lab",
+      description: "State-of-the-art computer lab with latest equipment",
+    },
+    {
+      src: "/Drone_shot.jpg",
+      alt: "Aerial View",
+      description: "Aerial view of our sprawling campus facilities",
+    },
   ];
 
   const testimonials = [
@@ -222,8 +270,8 @@ const HomeView = () => {
       branch: "CSE",
       batch: "2021-2025",
       company: "ZOHO",
-      role:"Android developer",
-      message:"Anna University Regional Campus, Coimbatore is a good place to study with decent infrastructure and well-equipped labs. Though the campus is smaller, it offers supportive faculty, good exposure, and valuable academic opportunities.",
+      role: "Android developer",
+      message: "Anna University Regional Campus, Coimbatore is a good place to study with decent infrastructure and well-equipped labs. Though the campus is smaller, it offers supportive faculty, good exposure, and valuable academic opportunities.",
       image: "/SUBASHS.png",
     },
     {
@@ -231,7 +279,7 @@ const HomeView = () => {
       branch: "CSE",
       batch: "2020 - 2024",
       company: "HCL GUVI",
-      role:"Software Engineer",
+      role: "Software Engineer",
       message:
         "The college management and department staff are extremely supportive. I learned many valuable lessons from them during my time at the institution.",
       image: "/ragul.jpeg",
@@ -241,7 +289,7 @@ const HomeView = () => {
       branch: "CSE",
       batch: "2019-2023",
       company: "Deloitte",
-      role:"Cloud Engineer",
+      role: "Cloud Engineer",
       message:
         "What began as a phase of education became a meaningful journey that shaped my growth beyond academics. Anna University Coimbatore helped me discover my potential, and I remain grateful for the experiences and lessons it provided.",
       image: "/YogananthR.jpeg",
@@ -260,16 +308,16 @@ const HomeView = () => {
       branch: "CSE",
       batch: "2021-2025",
       company: "Deloitte",
-      role:"Analyst",
-      message:"AURCC gave me knowledge, confidence, and valuable opportunities through supportive faculty and skill-building programs. Fee support made my education possible, and I’m proud to be its alumnus.",      
+      role: "Analyst",
+      message: "AURCC gave me knowledge, confidence, and valuable opportunities through supportive faculty and skill-building programs. Fee support made my education possible, and I’m proud to be its alumnus.",
       image: "/RajalakshmiR.jpeg",
-    },{
+    }, {
       name: "Thangaraj P",
       branch: "Mech",
       batch: "2019-2023",
       company: "Deloitte",
-      role:"Oracle Analyst",
-      message:"Anna University Regional Campus, Coimbatore offers a strong academic foundation with supportive faculty and a positive learning environment. The college helped me develop technical and personal skills while preparing me well for my professional career.",      
+      role: "Oracle Analyst",
+      message: "Anna University Regional Campus, Coimbatore offers a strong academic foundation with supportive faculty and a positive learning environment. The college helped me develop technical and personal skills while preparing me well for my professional career.",
       image: "/ThangarajP.jpeg",
     },
   ];
@@ -485,13 +533,39 @@ const HomeView = () => {
       setLoading(false);
     }
   };
-
   return (
     <div className="min-w-[300px] min-h-[800px] overflow-x-hidden">
-      <div className="pt-[90px] sm:pt-[105px] lg:pt-[116px]">
+      <div className="pt-[126px] sm:pt-[130px]">
         {/* All page content here */}
 
         <main className="">
+          <div className="relative flex items-center bg-[rgb(115,25,25)] text-white py-1.5 sm:py-2 overflow-hidden z-20">
+            {/* LATEST NEWS badge with live pulsing dot */}
+            <div className="absolute left-0 top-0 bottom-0 bg-[#ffb300] text-black pr-6 pl-3 sm:pr-8 sm:pl-5 flex items-center font-extrabold z-30 text-[10px] sm:text-xs tracking-wider shadow-[4px_0_10px_rgba(0,0,0,0.3)] [clip-path:polygon(0_0,100%_0,88%_100%,0_100%)]">
+              <span className="relative flex h-2 w-2 mr-1.5 sm:mr-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-600 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-1.5 w-1.5 sm:h-2 sm:w-2 bg-red-600"></span>
+              </span>
+              LATEST NEWS
+            </div>
+
+            {/* Scrolling Ticker Content */}
+            <div className="ticker-container w-full">
+              <div className="ticker-content">
+                {[...tickerItems, ...tickerItems].map((item, index) => (
+                  <a
+                    key={index}
+                    href={item.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mx-6 sm:mx-10 text-yellow-300 hover:text-white whitespace-nowrap text-xs sm:text-sm font-semibold"
+                  >
+                    •  {item.name}
+                  </a>
+                ))}
+              </div>
+            </div>
+          </div>
           {/* Hero Section */}
           <section
             id="home_page"
@@ -537,8 +611,8 @@ const HomeView = () => {
             </div>
             <div className="relative text-center px-4 sm:px-6 max-w-5xl mx-auto z-20">
               <h1 className="text-xl sm:text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-4 sm:mb-6 tracking-tight leading-tight">
-                <span className="block text-2xl sm:text-4xl lg:text-5xl opacity-90">Welcome to</span>
-                <span className="block text-2xl sm:text-4xl lg:text-5xl mt-2 leading-tight">
+                <span className="block text-4xl sm:text-7xl lg:text-8xl opacity-95">Welcome to</span>
+                <span className="block text-2xl sm:text-4xl lg:text-5xl mt-2 leading-tight md:whitespace-nowrap">
                   Anna University Regional Campus Coimbatore
                 </span>
               </h1>
@@ -1001,7 +1075,7 @@ const HomeView = () => {
               <div className="flex flex-row items-center bg-white bg-opacity-10 rounded-lg shadow-xl overflow-hidden backdrop-filter border border-[rgb(180,100,100)] backdrop-blur-lg max-w-6xl mx-auto">
                 <div className="w-1/3 p-2 sm:p-6 md:p-8">
                   <img
-                    src="/DEAN_DESK.jpeg"
+                    src={deanDesk.image || "/DEAN_DESK.jpeg"}
                     alt="Dean's Photo"
                     className="w-full h-auto object-cover rounded-lg"
                   />
@@ -1010,27 +1084,23 @@ const HomeView = () => {
                   <div>
                     <div className="flex items-center gap-2">
                       <h3 className="text-[10px] sm:text-xl lg:text-2xl font-bold">
-                        Dr. M. Saravanakumar <span className="text-[6px] sm:text-sm lg:text-base font-normal text-gray-700">MBA., MS(IT)., M.Phil., Ph.D.,</span>
+                        {deanDesk.name} <span className="text-[6px] sm:text-sm lg:text-base font-normal text-gray-700">{deanDesk.credentials}</span>
                       </h3>
                     </div>
 
                     <p className="text-[6px] sm:text-base text-gray-800 mt-1">
-                      Dean, Anna University Regional Campus Coimbatore
+                      {deanDesk.designation}
                     </p>
                   </div>
                   <p className="text-[6px] sm:text-base text-[rgb(100,25,25)] mt-2 sm:mt-8 mb-2 sm:mb-6 italic">
-                    "Empowering the next generation of innovators and leaders."
+                    "{deanDesk.quote}"
                   </p>
                   <div className="h-[100px] sm:h-[250px] overflow-y-auto pr-2 sm:pr-4 scrollbar-custom border border-[rgb(180,100,100)]/30 rounded-xl p-2 sm:p-4 bg-white/5">
-                    <p className="text-[6px] sm:text-lg mb-1 sm:mb-3 text-gray-950 sm:mb-4">
-                      Welcome to Anna University. It gives me immense pleasure to greet you as part of an institution that has long been a beacon of excellence in technological education and research. At Anna University, we are committed to fostering a culture of innovation, integrity, and academic rigor. Our legacy is built upon a strong foundation of knowledge, discipline, and a relentless pursuit of progress.<br/><br/>
-
-                      We take pride in offering a dynamic learning environment that encourages students to explore, question, and create. Our distinguished faculty members, state-of-the-art infrastructure, and industry-oriented curriculum ensure that our students are well-equipped to meet the challenges of a rapidly evolving world. We continuously strive to bridge the gap between theoretical knowledge and practical application, empowering our students to become competent professionals.<br/><br/>
-
-                      At the heart of our mission lies the goal of nurturing visionary leaders who can contribute meaningfully to society. We emphasize not only technical proficiency but also ethical values, critical thinking, and leadership skills. Through various academic and co-curricular initiatives, we aim to shape individuals who are innovative, socially responsible, and globally competitive.<br/><br/>
-
-                      As you embark on your journey with us, I encourage you to make the most of the opportunities available at Anna University. Engage actively in your academic pursuits, participate in collaborative learning, and strive for excellence in all that you do. I wish you a rewarding and transformative experience that will prepare you for a bright and successful future.
-                    </p>
+                    {deanDesk.paragraphs && deanDesk.paragraphs.map((para, index) => (
+                      <p key={index} className="text-[6px] sm:text-lg mb-1 sm:mb-3 text-gray-950 sm:mb-4">
+                        {para}
+                      </p>
+                    ))}
                   </div>
                 </div>
               </div>
@@ -1273,70 +1343,70 @@ const HomeView = () => {
 
           {/* Gallery Section Commented Out */}
           {false && (
-          <section id="gallery" className="py-16 bg-white scroll-mt-32">
-            <div className="container mx-auto px-6 text-center">
-              <h2 className="text-3xl lg:text-4xl font-bold text-center mb-14  text-[rgb(100,25,25)] relative inline-block">
-                GALLERY OF MEMORIES
-                <span className="absolute -bottom-2 sm:-bottom-3 left-1/2 transform -translate-x-1/2 h-1 w-16 sm:w-20 lg:w-24 bg-yellow-500"></span>
-              </h2>
+            <section id="gallery" className="py-16 bg-white scroll-mt-32">
+              <div className="container mx-auto px-6 text-center">
+                <h2 className="text-3xl lg:text-4xl font-bold text-center mb-14  text-[rgb(100,25,25)] relative inline-block">
+                  GALLERY OF MEMORIES
+                  <span className="absolute -bottom-2 sm:-bottom-3 left-1/2 transform -translate-x-1/2 h-1 w-16 sm:w-20 lg:w-24 bg-yellow-500"></span>
+                </h2>
 
-              <div className="grid grid-cols-4 sm:grid-cols-2 lg:grid-cols-4 gap-2 sm:gap-8">
-                {/* Graduation */}
-                <Link to="/graduation">
-                  <div className="group cursor-pointer overflow-hidden rounded-md sm:rounded-xl shadow-xl">
-                    <img
-                      src="/Gallery/Graduation/graduationmain.png"
-                      className="w-full h-16 sm:h-60 object-cover group-hover:scale-110 transition duration-500"
-                    />
-                    <div className="bg-[rgb(115,25,25)] text-white text-center py-1 sm:py-3 font-semibold text-[6px] sm:text-base leading-tight">
-                      Graduation
+                <div className="grid grid-cols-4 sm:grid-cols-2 lg:grid-cols-4 gap-2 sm:gap-8">
+                  {/* Graduation */}
+                  <Link to="/graduation">
+                    <div className="group cursor-pointer overflow-hidden rounded-md sm:rounded-xl shadow-xl">
+                      <img
+                        src="/Gallery/Graduation/graduationmain.png"
+                        className="w-full h-16 sm:h-60 object-cover group-hover:scale-110 transition duration-500"
+                      />
+                      <div className="bg-[rgb(115,25,25)] text-white text-center py-1 sm:py-3 font-semibold text-[6px] sm:text-base leading-tight">
+                        Graduation
+                      </div>
                     </div>
-                  </div>
-                </Link>
+                  </Link>
 
-                {/* Annual Day */}
-                <Link to="/annualday">
-                  <div className="group cursor-pointer overflow-hidden rounded-md sm:rounded-xl shadow-xl">
-                    <img
-                      src="/Gallery/Annualday/2024/img01.JPG"
-                      className="w-full h-60 object-cover group-hover:scale-110 transition duration-500"
-                    />
-                    <div className="bg-[rgb(115,25,25)] text-white text-center py-1 sm:py-3 font-semibold text-[6px] sm:text-base leading-tight">
-                      Annual Day
+                  {/* Annual Day */}
+                  <Link to="/annualday">
+                    <div className="group cursor-pointer overflow-hidden rounded-md sm:rounded-xl shadow-xl">
+                      <img
+                        src="/Gallery/Annualday/2024/img01.JPG"
+                        className="w-full h-60 object-cover group-hover:scale-110 transition duration-500"
+                      />
+                      <div className="bg-[rgb(115,25,25)] text-white text-center py-1 sm:py-3 font-semibold text-[6px] sm:text-base leading-tight">
+                        Annual Day
+                      </div>
                     </div>
-                  </div>
-                </Link>
+                  </Link>
 
-                {/* ARUA */}
-                <Link to="/culturalsday">
-                  <div className="group cursor-pointer overflow-hidden rounded-xl shadow-xl">
-                    <img
-                      src="/fresher.jpg"
-                      className="w-full h-16 sm:h-60 object-cover group-hover:scale-110 transition duration-500"
-                    />
-                    <div className="bg-[rgb(115,25,25)] text-white text-center py-3 font-semibold">
-                     Culturals
+                  {/* ARUA */}
+                  <Link to="/culturalsday">
+                    <div className="group cursor-pointer overflow-hidden rounded-xl shadow-xl">
+                      <img
+                        src="/fresher.jpg"
+                        className="w-full h-16 sm:h-60 object-cover group-hover:scale-110 transition duration-500"
+                      />
+                      <div className="bg-[rgb(115,25,25)] text-white text-center py-3 font-semibold">
+                        Culturals
 
+                      </div>
                     </div>
-                  </div>
-                </Link>
+                  </Link>
 
 
-                {/* Pongal */}
-                <Link to="/gallery/pongal">
-                  <div className="group cursor-pointer overflow-hidden rounded-md sm:rounded-xl shadow-xl">
-                    <img
-                      src="/Pongal.jpg"
-                      className="w-full h-16 sm:h-60 object-cover group-hover:scale-110 transition duration-500"
-                    />
-                    <div className="bg-[rgb(115,25,25)] text-white text-center py-1 sm:py-3 font-semibold text-[6px] sm:text-base leading-tight">
-                      Pongal Celebration
+                  {/* Pongal */}
+                  <Link to="/gallery/pongal">
+                    <div className="group cursor-pointer overflow-hidden rounded-md sm:rounded-xl shadow-xl">
+                      <img
+                        src="/Pongal.jpg"
+                        className="w-full h-16 sm:h-60 object-cover group-hover:scale-110 transition duration-500"
+                      />
+                      <div className="bg-[rgb(115,25,25)] text-white text-center py-1 sm:py-3 font-semibold text-[6px] sm:text-base leading-tight">
+                        Pongal Celebration
+                      </div>
                     </div>
-                  </div>
-                </Link>
+                  </Link>
+                </div>
               </div>
-            </div>
-          </section>
+            </section>
           )}
 
           {/* Alumni Testimonials */}

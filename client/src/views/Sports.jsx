@@ -1,4 +1,4 @@
-﻿import React, { useState, useEffect, useRef, useMemo } from "react";
+import React, { useState, useEffect, useRef, useMemo } from "react";
 import "./Sports.css";
 
 const Sports = () => {
@@ -114,6 +114,58 @@ const Sports = () => {
           <div className="p-8">
             <p className="text-lg text-gray-800 leading-relaxed">
               {data.description}
+            </p>
+          </div>
+        </div>
+
+        {/* Physical Education Staff Section */}
+        <div className="text-center">
+          <h2 className="text-2xl sm:text-3xl lg:text-3xl font-bold text-gray-800 font-serif mb-2">
+            Sports Administration
+          </h2>
+          <div className="flex justify-center mb-6">
+            <span className="block w-24 h-1.5 rounded-full bg-[#f5c842]"></span>
+          </div>
+        </div>
+
+        <div className="flex flex-col md:flex-row justify-center items-stretch gap-8 max-w-5xl mx-auto">
+          {/* Card 1: Dr Saravanamoorthy D */}
+          <div className="bg-[#f9f9f9] border-2 border-gray-200 rounded-3xl p-8 flex flex-col items-center w-full max-w-sm mx-auto shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 text-center">
+            <div className="w-48 h-56 rounded-xl overflow-hidden border-2 border-gray-300 shadow-md bg-white mb-6">
+              <img
+                src="/public/Saravanamoorthy.jpeg"
+                alt="Dr Saravanamoorthy D"
+                className="w-full h-full object-cover object-top"
+              />
+            </div>
+            <h3 className="text-xl font-bold text-black mb-3 leading-snug">
+              Dr Saravanamoorthy D
+            </h3>
+            <p className="text-base font-bold text-black mb-4 leading-relaxed flex-grow">
+              Physical Training Instructor (Selection Grade) and Sports Coordinator
+            </p>
+            <p className="text-base font-bold text-black mt-auto">
+              E-mail id - <a href="mailto:peaurcc@gmail.com" className="hover:underline">peaurcc@gmail.com</a>
+            </p>
+          </div>
+
+          {/* Card 2: Dr Shanmuga Priya R */}
+          <div className="bg-[#f9f9f9] border-2 border-gray-200 rounded-3xl p-8 flex flex-col items-center w-full max-w-sm mx-auto shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 text-center">
+            <div className="w-48 h-56 rounded-xl overflow-hidden border-2 border-gray-300 shadow-md bg-white mb-6">
+              <img
+                src="/public/Shanmuga.jpg"
+                alt="Dr Shanmuga Priya R"
+                className="w-full h-full object-cover object-top"
+              />
+            </div>
+            <h3 className="text-xl font-bold text-black mb-3 leading-snug">
+              Dr Shanmuga Priya R
+            </h3>
+            <p className="text-base font-bold text-black mb-4 leading-relaxed flex-grow">
+              Assistant Director of Physical Education
+            </p>
+            <p className="text-base font-bold text-black mt-auto">
+              E-mail id - <a href="mailto:shanmugapriya@aurcc.ac.in" className="hover:underline">shanmugapriya@aurcc.ac.in</a>
             </p>
           </div>
         </div>

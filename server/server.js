@@ -36,11 +36,16 @@ import sportsRoutes from "./routes/sportsRoutes.js";
 import hostelRoutes from "./routes/hostelRoutes.js";
 import aicteRoutes from "./routes/aicteRoutes.js";
 import studentAffairsRoutes from "./routes/studentAffairsRoutes.js";
+import homeRoutes from "./routes/homeRoutes.js";
+import contactRoutes from "./routes/contactRoutes.js";
+import { seedHomeData } from "./config/seedHomeData.js";
 
 import errorHandler from "./middleware/errorHandler.js";
 
 dotenv.config();
-connectDB();
+connectDB().then(() => {
+  seedHomeData();
+});
 
 const app = express();
 
@@ -85,6 +90,8 @@ app.use("/api/sports", sportsRoutes);
 app.use("/api/hostel", hostelRoutes);
 app.use("/api/aicte-moe", aicteRoutes);
 app.use("/api/student-affairs", studentAffairsRoutes);
+app.use("/api/home", homeRoutes);
+app.use("/api/contact", contactRoutes);
 
 /* Test API */
 app.get("/api/test", (req, res) => {
