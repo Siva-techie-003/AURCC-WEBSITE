@@ -47,60 +47,56 @@ const DepartmentsView = () => {
     fetchDepartment();
   }, [departmentName, navigate]);
 
-const BACKEND_URL = "";
+  const BACKEND_URL = "";
 
-/* ---------------- SECTION HIGHLIGHT ON SCROLL ---------------- */
-useEffect(() => {
-  const handleScroll = () => {
-    const scrollPosition = window.scrollY + 180;
+  /* ---------------- SECTION HIGHLIGHT ON SCROLL ---------------- */
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY + 180;
 
-    sections.forEach((section) => {
-      const sectionId = section.toLowerCase().replace(/\s+/g, "-");
-      const element = document.getElementById(sectionId);
+      sections.forEach((section) => {
+        const sectionId = section.toLowerCase().replace(/\s+/g, "-");
+        const element = document.getElementById(sectionId);
 
-      if (element) {
-        const top = element.offsetTop;
-        const height = element.offsetHeight;
+        if (element) {
+          const top = element.offsetTop;
+          const height = element.offsetHeight;
 
-        if (
-          scrollPosition >= top &&
-          scrollPosition < top + height
-        ) {
-          setCurrentSection(section);
+          if (scrollPosition >= top && scrollPosition < top + height) {
+            setCurrentSection(section);
+          }
         }
-      }
+      });
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("resize", handleScroll);
+
+    handleScroll();
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleScroll);
+    };
+  }, [department]);
+
+  /* ---------------- SCROLL TO SECTION ---------------- */
+  const scrollToSection = (section) => {
+    const sectionId = section.toLowerCase().replace(/\s+/g, "-");
+    const element = document.getElementById(sectionId);
+
+    if (!element) return;
+
+    const headerOffset = 160;
+
+    const elementPosition =
+      element.getBoundingClientRect().top + window.pageYOffset;
+
+    window.scrollTo({
+      top: elementPosition - headerOffset,
+      behavior: "smooth",
     });
   };
-
-  window.addEventListener("scroll", handleScroll);
-  window.addEventListener("resize", handleScroll);
-
-  handleScroll();
-
-  return () => {
-    window.removeEventListener("scroll", handleScroll);
-    window.removeEventListener("resize", handleScroll);
-  };
-}, [department]);
-
-/* ---------------- SCROLL TO SECTION ---------------- */
-const scrollToSection = (section) => {
-  const sectionId = section.toLowerCase().replace(/\s+/g, "-");
-  const element = document.getElementById(sectionId);
-
-  if (!element) return;
-
-  const headerOffset = 160;
-
-  const elementPosition =
-    element.getBoundingClientRect().top +
-    window.pageYOffset;
-
-  window.scrollTo({
-    top: elementPosition - headerOffset,
-    behavior: "smooth",
-  });
-};
 
   const showDetails = (staff) => {
     setSelectedStaff(staff);
@@ -161,27 +157,27 @@ const scrollToSection = (section) => {
 
         {/* Navigation Tabs */}
         {/* Navigation Tabs */}
-<div className="sticky top-[90px] z-50 bg-white/95 backdrop-blur-md shadow-lg">
-  <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
-    <div className="py-2 flex justify-center overflow-x-auto no-scrollbar">
-      <nav className="flex justify-center gap-2">
-        {sections.map((section, index) => (
-          <button
-            key={index}
-            onClick={() => scrollToSection(section)}
-            className={`font-medium px-4 py-2 rounded-full text-sm lg:text-base whitespace-nowrap transition-all duration-300 ${
-              currentSection === section
-                ? "bg-[rgb(115,40,40)] text-white shadow-lg scale-105"
-                : "text-gray-700 hover:bg-gray-100 hover:scale-105"
-            }`}
-          >
-            {section}
-          </button>
-        ))}
-      </nav>
-    </div>
-  </div>
-</div>
+        <div className="sticky top-[90px] z-50 bg-white/95 backdrop-blur-md shadow-lg">
+          <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
+            <div className="py-2 flex justify-center overflow-x-auto no-scrollbar">
+              <nav className="flex justify-center gap-2">
+                {sections.map((section, index) => (
+                  <button
+                    key={index}
+                    onClick={() => scrollToSection(section)}
+                    className={`font-medium px-4 py-2 rounded-full text-sm lg:text-base whitespace-nowrap transition-all duration-300 ${
+                      currentSection === section
+                        ? "bg-[rgb(115,40,40)] text-white shadow-lg scale-105"
+                        : "text-gray-700 hover:bg-gray-100 hover:scale-105"
+                    }`}
+                  >
+                    {section}
+                  </button>
+                ))}
+              </nav>
+            </div>
+          </div>
+        </div>
 
         {/* Content sections */}
         <section className="mx-auto">
@@ -395,15 +391,20 @@ const scrollToSection = (section) => {
                       {/* SCROLL CARD */}
                       <div className="bg-gray-50 rounded-lg p-5 mt-8 h-[320px] border border-gray-300 overflow-y-auto shadow-inner">
                         {department?.p1 && (
-                          <p className="mb-3 text-lg leading-relaxed">{department.p1}</p>
+                          <p className="mb-3 text-lg leading-relaxed">
+                            {department.p1}
+                          </p>
                         )}
                         {department?.p2 && (
-                          <p className="mb-3 text-lg leading-relaxed">{department.p2}</p>
+                          <p className="mb-3 text-lg leading-relaxed">
+                            {department.p2}
+                          </p>
                         )}
                         {department?.p3 && (
-                          <p className="mb-3 text-lg leading-relaxed">{department.p3}</p>
+                          <p className="mb-3 text-lg leading-relaxed">
+                            {department.p3}
+                          </p>
                         )}
-  
                       </div>
                     </div>
                   </div>
@@ -1029,24 +1030,15 @@ const scrollToSection = (section) => {
                   )}
 
                   {/* EDUCATION */}
-                  {(selectedStaff.education?.ug ||
-                    selectedStaff.education?.pg ||
-                    selectedStaff.education?.phd ||
-                    selectedStaff.education?.post_doctorate) && (
+                  {selectedStaff.education?.qualifications?.length > 0 && (
                     <section>
                       <h3 className="font-bold text-lg">Education</h3>
+
                       <ul className="list-disc pl-5">
-                        {selectedStaff.education.ug && (
-                          <li>{selectedStaff.education.ug}</li>
-                        )}
-                        {selectedStaff.education.pg && (
-                          <li>{selectedStaff.education.pg}</li>
-                        )}
-                        {selectedStaff.education.phd && (
-                          <li>{selectedStaff.education.phd}</li>
-                        )}
-                        {selectedStaff.education.post_doctorate && (
-                          <li>{selectedStaff.education.post_doctorate}</li>
+                        {selectedStaff.education.qualifications.map(
+                          (degree, index) => (
+                            <li key={index}>{degree}</li>
+                          ),
                         )}
                       </ul>
                     </section>
