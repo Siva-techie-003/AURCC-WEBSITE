@@ -156,7 +156,7 @@ const DepartmentsView = () => {
         </section>
 
         {/* Navigation Tabs */}
-        <div className="sticky-nav bg-white/95 backdrop-blur-md shadow-lg">
+        <div className="hidden lg:block sticky-nav bg-white/95 backdrop-blur-md shadow-lg">
           <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
             <div className="py-2 flex md:justify-center overflow-x-auto no-scrollbar">
               <nav className="flex gap-2 px-2 md:px-0">
@@ -357,7 +357,7 @@ const DepartmentsView = () => {
                 ).map((staff, i) => (
                   <div
                     key={i}
-                    className="w-full bg-white rounded-xl shadow-md border border-red-200 p-10 grid md:grid-cols-2 gap-12 items-stretch"
+                    className="w-full bg-white rounded-xl shadow-md border border-red-200 p-5 sm:p-10 grid md:grid-cols-2 gap-6 md:gap-12 items-stretch"
                   >
                     {/* LEFT IMAGE */}
                     <div className="flex justify-center">
@@ -374,33 +374,33 @@ const DepartmentsView = () => {
                     {/* RIGHT CONTENT */}
                     <div className="flex flex-col h-full">
                       <div>
-                        <h3 className="text-2xl sm:text-4xl font-bold text-[rgb(115,40,40)] mb-2">
+                        <h3 className="text-xl sm:text-4xl font-bold text-[rgb(115,40,40)] mb-1 sm:mb-2">
                           {staff.name}
                         </h3>
 
-                        <p className="text-lg font-bold mt-2 text-gray-800">
+                        <p className="text-[10px] xs:text-xs sm:text-lg font-bold mt-1 sm:mt-2 text-gray-800 leading-tight">
                           {staff.position}
                         </p>
 
-                        <p className="text-lg font-semibold mt-1 text-gray-800">
+                        <p className="text-[10px] xs:text-xs sm:text-lg font-semibold mt-1 text-gray-800 leading-tight">
                           {staff.college}
                         </p>
                       </div>
 
                       {/* SCROLL CARD */}
-                      <div className="bg-gray-50 rounded-lg p-5 mt-8 h-[320px] border border-gray-300 overflow-y-auto shadow-inner text-justify">
+                      <div className="bg-gray-50 rounded-lg p-4 sm:p-5 mt-4 sm:mt-8 h-[240px] sm:h-[320px] border border-gray-300 overflow-y-auto shadow-inner text-justify">
                         {department?.p1 && (
-                          <p className="mb-3 text-lg leading-relaxed">
+                          <p className="mb-2 sm:mb-3 text-xs sm:text-lg leading-relaxed">
                             {department.p1}
                           </p>
                         )}
                         {department?.p2 && (
-                          <p className="mb-3 text-lg leading-relaxed">
+                          <p className="mb-2 sm:mb-3 text-xs sm:text-lg leading-relaxed">
                             {department.p2}
                           </p>
                         )}
                         {department?.p3 && (
-                          <p className="mb-3 text-lg leading-relaxed">
+                          <p className="mb-2 sm:mb-3 text-xs sm:text-lg leading-relaxed">
                             {department.p3}
                           </p>
                         )}
