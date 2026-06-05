@@ -17,7 +17,7 @@ const BISClub = () => {
                     Name: "Dr. R. Sathiya Moorthy",
                     Designation: "Coordinator",
                     Email: "bisclubaurcc@gmail.com",
-                    Image: "1.webp"
+                    Image: "sathiyamoorthy.webp"
                 }
             };
     
@@ -130,7 +130,7 @@ const BISClub = () => {
                         </div>
                         <div className="p-4 sm:p-6 md:p-8 lg:p-10 flex justify-center">
                             <div className="bg-white/80 rounded-xl shadow-md p-6 border border-gray-100 flex flex-col gap-2 max-w-md w-full text-center animate-fadeInUp">
-                                <img src={`/public/${data.Coordinator.Image}`} alt={data.Coordinator.Name} className="w-28 h-32  object-cover mx-auto " />
+                                <img src={`/${data.Coordinator.Image}`} alt={data.Coordinator.Name} className="w-28 h-32  object-cover mx-auto " />
                                 <div className="font-bold text-lg lg:text-xl text-[rgb(110,35,35)]">{data.Coordinator.Name}</div>
                                 <div className="text-sm lg:text-base text-gray-700 font-semibold">{data.Coordinator.Designation}</div>
                                 <div className="text-sm lg:text-base text-gray-700 font-semibold">{data.Coordinator.Email}</div>
