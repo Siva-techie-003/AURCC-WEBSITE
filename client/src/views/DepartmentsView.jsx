@@ -980,20 +980,20 @@ const DepartmentsView = () => {
                   className="w-24 h-32 md:w-48 md:h-60 rounded-xl border shadow object-cover shrink-0"
                 />
 
-                <div className="flex flex-col justify-center md:items-center min-w-0">
-                  <h2 className="text-lg md:text-xl text-[rgb(100,25,25)] font-bold mt-0 md:mt-4 leading-tight">
+                <div className="flex flex-col justify-center md:items-center min-w-0 pr-8 md:pr-0">
+                  <h2 className="text-base sm:text-lg md:text-xl text-[rgb(100,25,25)] font-bold mt-0 md:mt-4 leading-tight">
                     {selectedStaff.title} {selectedStaff.name}
                   </h2>
 
-                  <p className="text-sm md:text-[rgb(100,25,25)] font-medium mt-1 md:mt-2 text-[rgb(100,25,25)] leading-tight">
+                  <p className="text-xs sm:text-sm md:text-base text-[rgb(115,40,40)] font-semibold mt-1 md:mt-2 leading-tight">
                     {selectedStaff.position}
                   </p>
 
-                  <p className="text-xs md:text-sm text-[rgb(100,25,25)] font-medium leading-tight">
+                  <p className="text-[10px] sm:text-xs md:text-sm text-[rgb(100,25,25)]/80 font-medium mt-0.5 leading-tight">
                     {selectedStaff.department}
                   </p>
 
-                  <p className="text-xs md:text-base mt-1 md:mt-2 text-blue-600 font-medium break-all leading-tight">
+                  <p className="text-[10px] sm:text-xs md:text-sm mt-1.5 md:mt-2.5 text-blue-600 font-medium break-all leading-tight hover:underline">
                     {selectedStaff.contact?.email}
                   </p>
                 </div>
@@ -1010,22 +1010,22 @@ const DepartmentsView = () => {
                 </div>
 
                 {/* 🔹 SCROLLABLE CONTENT */}
-                <div className="p-6 overflow-y-auto space-y-6 scrollbar-thin scrollbar-thumb-gray-400">
+                <div className="p-4 sm:p-6 overflow-y-auto space-y-5 sm:space-y-6 scrollbar-thin scrollbar-thumb-gray-400">
                   {/* ABOUT */}
                   {selectedStaff.about && (
                     <section>
-                      <h3 className="font-bold text-lg">About</h3>
-                      <p>{selectedStaff.about}</p>
+                      <h3 className="font-bold text-sm sm:text-base md:text-lg text-gray-800 border-b border-gray-100 pb-1">About</h3>
+                      <p className="text-xs sm:text-sm md:text-base text-gray-600 leading-relaxed text-justify mt-1.5">{selectedStaff.about}</p>
                     </section>
                   )}
 
                   {/* PRESENT ROLES */}
                   {selectedStaff.present_roles?.length > 0 && (
                     <section>
-                      <h3 className="font-bold text-lg">Present Roles</h3>
-                      <ul className="list-disc pl-5">
+                      <h3 className="font-bold text-sm sm:text-base md:text-lg text-gray-800 border-b border-gray-100 pb-1">Present Roles</h3>
+                      <ul className="list-disc pl-4 sm:pl-5 space-y-1 sm:space-y-1.5 mt-1.5">
                         {selectedStaff.present_roles.map((r, i) => (
-                          <li key={i}>{r}</li>
+                          <li key={i} className="text-xs sm:text-sm md:text-base text-gray-600 leading-relaxed">{r}</li>
                         ))}
                       </ul>
                     </section>
@@ -1034,12 +1034,11 @@ const DepartmentsView = () => {
                   {/* EDUCATION */}
                   {selectedStaff.education?.qualifications?.length > 0 && (
                     <section>
-                      <h3 className="font-bold text-lg">Education</h3>
-
-                      <ul className="list-disc pl-5">
+                      <h3 className="font-bold text-sm sm:text-base md:text-lg text-gray-800 border-b border-gray-100 pb-1">Education</h3>
+                      <ul className="list-disc pl-4 sm:pl-5 space-y-1 sm:space-y-1.5 mt-1.5">
                         {selectedStaff.education.qualifications.map(
                           (degree, index) => (
-                            <li key={index}>{degree}</li>
+                            <li key={index} className="text-xs sm:text-sm md:text-base text-gray-600 leading-relaxed">{degree}</li>
                           ),
                         )}
                       </ul>
@@ -1049,10 +1048,10 @@ const DepartmentsView = () => {
                   {/* EXPERIENCE */}
                   {selectedStaff.experience?.length > 0 && (
                     <section>
-                      <h3 className="font-bold text-lg">Experience</h3>
-                      <ul className="list-disc pl-5">
+                      <h3 className="font-bold text-sm sm:text-base md:text-lg text-gray-800 border-b border-gray-100 pb-1">Experience</h3>
+                      <ul className="list-disc pl-4 sm:pl-5 space-y-1 sm:space-y-1.5 mt-1.5">
                         {selectedStaff.experience.map((exp, i) => (
-                          <li key={i}>{exp}</li>
+                          <li key={i} className="text-xs sm:text-sm md:text-base text-gray-600 leading-relaxed">{exp}</li>
                         ))}
                       </ul>
                     </section>
@@ -1061,10 +1060,10 @@ const DepartmentsView = () => {
                   {/* EXPERTISE */}
                   {selectedStaff.expertise?.length > 0 && (
                     <section>
-                      <h3 className="font-bold text-lg">Area of Expertise</h3>
-                      <ul className="list-disc pl-5">
+                      <h3 className="font-bold text-sm sm:text-base md:text-lg text-gray-800 border-b border-gray-100 pb-1">Area of Expertise</h3>
+                      <ul className="list-disc pl-4 sm:pl-5 space-y-1 sm:space-y-1.5 mt-1.5">
                         {selectedStaff.expertise.map((e, i) => (
-                          <li key={i}>{e}</li>
+                          <li key={i} className="text-xs sm:text-sm md:text-base text-gray-600 leading-relaxed">{e}</li>
                         ))}
                       </ul>
                     </section>
@@ -1073,10 +1072,10 @@ const DepartmentsView = () => {
                   {/* PHD GUIDED */}
                   {selectedStaff.phd_guided_completed?.length > 0 && (
                     <section>
-                      <h3 className="font-bold text-lg">Ph.D Guided</h3>
-                      <ul className="list-disc pl-5">
+                      <h3 className="font-bold text-sm sm:text-base md:text-lg text-gray-800 border-b border-gray-100 pb-1">Ph.D Guided</h3>
+                      <ul className="list-disc pl-4 sm:pl-5 space-y-1 sm:space-y-1.5 mt-1.5">
                         {selectedStaff.phd_guided_completed.map((p, i) => (
-                          <li key={i}>{p}</li>
+                          <li key={i} className="text-xs sm:text-sm md:text-base text-gray-600 leading-relaxed">{p}</li>
                         ))}
                       </ul>
                     </section>
@@ -1085,10 +1084,10 @@ const DepartmentsView = () => {
                   {/* ONGOING */}
                   {selectedStaff.phd_ongoing?.length > 0 && (
                     <section>
-                      <h3 className="font-bold text-lg">Ongoing Research</h3>
-                      <ul className="list-disc pl-5">
+                      <h3 className="font-bold text-sm sm:text-base md:text-lg text-gray-800 border-b border-gray-100 pb-1">Ongoing Research</h3>
+                      <ul className="list-disc pl-4 sm:pl-5 space-y-1 sm:space-y-1.5 mt-1.5">
                         {selectedStaff.phd_ongoing.map((p, i) => (
-                          <li key={i}>{p}</li>
+                          <li key={i} className="text-xs sm:text-sm md:text-base text-gray-600 leading-relaxed">{p}</li>
                         ))}
                       </ul>
                     </section>
@@ -1097,10 +1096,10 @@ const DepartmentsView = () => {
                   {/* BOOKS (OLD) */}
                   {selectedStaff.books_published?.length > 0 && (
                     <section>
-                      <h3 className="font-bold text-lg">Books Published</h3>
-                      <ul className="list-disc pl-5">
+                      <h3 className="font-bold text-sm sm:text-base md:text-lg text-gray-800 border-b border-gray-100 pb-1">Books Published</h3>
+                      <ul className="list-disc pl-4 sm:pl-5 space-y-1 sm:space-y-1.5 mt-1.5">
                         {selectedStaff.books_published.map((b, i) => (
-                          <li key={i}>{b}</li>
+                          <li key={i} className="text-xs sm:text-sm md:text-base text-gray-600 leading-relaxed">{b}</li>
                         ))}
                       </ul>
                     </section>
@@ -1109,12 +1108,12 @@ const DepartmentsView = () => {
                   {/* INTERNATIONAL VISITS */}
                   {selectedStaff.international_visits?.length > 0 && (
                     <section>
-                      <h3 className="font-bold text-lg">
+                      <h3 className="font-bold text-sm sm:text-base md:text-lg text-gray-800 border-b border-gray-100 pb-1">
                         International Visits
                       </h3>
-                      <ul className="list-disc pl-5">
+                      <ul className="list-disc pl-4 sm:pl-5 space-y-1 sm:space-y-1.5 mt-1.5">
                         {selectedStaff.international_visits.map((v, i) => (
-                          <li key={i}>{v}</li>
+                          <li key={i} className="text-xs sm:text-sm md:text-base text-gray-600 leading-relaxed">{v}</li>
                         ))}
                       </ul>
                     </section>
@@ -1123,10 +1122,10 @@ const DepartmentsView = () => {
                   {/* PROJECTS */}
                   {selectedStaff.projects?.length > 0 && (
                     <section>
-                      <h3 className="font-bold text-lg">Projects</h3>
-                      <ul className="list-disc pl-5">
+                      <h3 className="font-bold text-sm sm:text-base md:text-lg text-gray-800 border-b border-gray-100 pb-1">Projects</h3>
+                      <ul className="list-disc pl-4 sm:pl-5 space-y-1 sm:space-y-1.5 mt-1.5">
                         {selectedStaff.projects.map((p, i) => (
-                          <li key={i}>{p}</li>
+                          <li key={i} className="text-xs sm:text-sm md:text-base text-gray-600 leading-relaxed">{p}</li>
                         ))}
                       </ul>
                     </section>
@@ -1135,10 +1134,10 @@ const DepartmentsView = () => {
                   {/* ACHIEVEMENTS */}
                   {selectedStaff.achievements?.length > 0 && (
                     <section>
-                      <h3 className="font-bold text-lg">Achievements</h3>
-                      <ul className="list-disc pl-5">
+                      <h3 className="font-bold text-sm sm:text-base md:text-lg text-gray-800 border-b border-gray-100 pb-1">Achievements</h3>
+                      <ul className="list-disc pl-4 sm:pl-5 space-y-1 sm:space-y-1.5 mt-1.5">
                         {selectedStaff.achievements.map((a, i) => (
-                          <li key={i}>{a}</li>
+                          <li key={i} className="text-xs sm:text-sm md:text-base text-gray-600 leading-relaxed">{a}</li>
                         ))}
                       </ul>
                     </section>
@@ -1149,25 +1148,26 @@ const DepartmentsView = () => {
                     selectedStaff.research_ids?.scopus_id ||
                     selectedStaff.research_ids?.orcid_id) && (
                     <section>
-                      <h3 className="font-bold text-lg">Profiles</h3>
-                      <ul className="list-disc pl-5">
+                      <h3 className="font-bold text-sm sm:text-base md:text-lg text-gray-800 border-b border-gray-100 pb-1">Profiles</h3>
+                      <ul className="list-disc pl-4 sm:pl-5 space-y-1 sm:space-y-1.5 mt-1.5">
                         {selectedStaff.research_ids?.google_scholar && (
-                          <li>
+                          <li className="text-xs sm:text-sm md:text-base text-gray-600 leading-relaxed">
                             <a
                               href={selectedStaff.research_ids.google_scholar}
                               target="_blank"
+                              className="text-blue-600 hover:underline"
                             >
                               Google Scholar
                             </a>
                           </li>
                         )}
                         {selectedStaff.research_ids?.scopus_id && (
-                          <li>
+                          <li className="text-xs sm:text-sm md:text-base text-gray-600 leading-relaxed">
                             Scopus ID: {selectedStaff.research_ids.scopus_id}
                           </li>
                         )}
                         {selectedStaff.research_ids?.orcid_id && (
-                          <li>Orcid: {selectedStaff.research_ids.orcid_id}</li>
+                          <li className="text-xs sm:text-sm md:text-base text-gray-600 leading-relaxed">Orcid: {selectedStaff.research_ids.orcid_id}</li>
                         )}
                       </ul>
                     </section>
@@ -1176,10 +1176,10 @@ const DepartmentsView = () => {
                   {/* PUBLICATIONS - BOOKS */}
                   {selectedStaff.publications?.books?.length > 0 && (
                     <section>
-                      <h3 className="font-bold text-lg">Books Published</h3>
-                      <ul className="list-disc pl-5">
+                      <h3 className="font-bold text-sm sm:text-base md:text-lg text-gray-800 border-b border-gray-100 pb-1">Books Published</h3>
+                      <ul className="list-disc pl-4 sm:pl-5 space-y-1 sm:space-y-1.5 mt-1.5">
                         {selectedStaff.publications.books.map((b, i) => (
-                          <li key={i}>{b}</li>
+                          <li key={i} className="text-xs sm:text-sm md:text-base text-gray-600 leading-relaxed">{b}</li>
                         ))}
                       </ul>
                     </section>
@@ -1188,12 +1188,12 @@ const DepartmentsView = () => {
                   {/* PUBLICATIONS - CONFERENCES */}
                   {selectedStaff.publications?.conferences?.length > 0 && (
                     <section>
-                      <h3 className="font-bold text-lg">
+                      <h3 className="font-bold text-sm sm:text-base md:text-lg text-gray-800 border-b border-gray-100 pb-1">
                         Conference Publications
                       </h3>
-                      <ul className="list-disc pl-5">
+                      <ul className="list-disc pl-4 sm:pl-5 space-y-1 sm:space-y-1.5 mt-1.5">
                         {selectedStaff.publications.conferences.map((c, i) => (
-                          <li key={i}>{c}</li>
+                          <li key={i} className="text-xs sm:text-sm md:text-base text-gray-600 leading-relaxed">{c}</li>
                         ))}
                       </ul>
                     </section>
@@ -1202,10 +1202,10 @@ const DepartmentsView = () => {
                   {/* PATENTS */}
                   {selectedStaff.patents?.length > 0 && (
                     <section>
-                      <h3 className="font-bold text-lg">Patents</h3>
-                      <ul className="list-disc pl-5">
+                      <h3 className="font-bold text-sm sm:text-base md:text-lg text-gray-800 border-b border-gray-100 pb-1">Patents</h3>
+                      <ul className="list-disc pl-4 sm:pl-5 space-y-1 sm:space-y-1.5 mt-1.5">
                         {selectedStaff.patents.map((p, i) => (
-                          <li key={i}>{p}</li>
+                          <li key={i} className="text-xs sm:text-sm md:text-base text-gray-600 leading-relaxed">{p}</li>
                         ))}
                       </ul>
                     </section>
@@ -1214,10 +1214,10 @@ const DepartmentsView = () => {
                   {/* CONSULTANCY */}
                   {selectedStaff.consultancy?.length > 0 && (
                     <section>
-                      <h3 className="font-bold text-lg">Consultancy</h3>
-                      <ul className="list-disc pl-5">
+                      <h3 className="font-bold text-sm sm:text-base md:text-lg text-gray-800 border-b border-gray-100 pb-1">Consultancy</h3>
+                      <ul className="list-disc pl-4 sm:pl-5 space-y-1 sm:space-y-1.5 mt-1.5">
                         {selectedStaff.consultancy.map((c, i) => (
-                          <li key={i}>{c}</li>
+                          <li key={i} className="text-xs sm:text-sm md:text-base text-gray-600 leading-relaxed">{c}</li>
                         ))}
                       </ul>
                     </section>
@@ -1226,12 +1226,12 @@ const DepartmentsView = () => {
                   {/* MEMBERSHIPS */}
                   {selectedStaff.memberships?.length > 0 && (
                     <section>
-                      <h3 className="font-bold text-lg">
+                      <h3 className="font-bold text-sm sm:text-base md:text-lg text-gray-800 border-b border-gray-100 pb-1">
                         Professional Memberships
                       </h3>
-                      <ul className="list-disc pl-5">
+                      <ul className="list-disc pl-4 sm:pl-5 space-y-1 sm:space-y-1.5 mt-1.5">
                         {selectedStaff.memberships.map((m, i) => (
-                          <li key={i}>{m}</li>
+                          <li key={i} className="text-xs sm:text-sm md:text-base text-gray-600 leading-relaxed">{m}</li>
                         ))}
                       </ul>
                     </section>
@@ -1240,10 +1240,10 @@ const DepartmentsView = () => {
                   {/* AWARDS */}
                   {selectedStaff.awards?.length > 0 && (
                     <section>
-                      <h3 className="font-bold text-lg">Awards</h3>
-                      <ul className="list-disc pl-5">
+                      <h3 className="font-bold text-sm sm:text-base md:text-lg text-gray-800 border-b border-gray-100 pb-1">Awards</h3>
+                      <ul className="list-disc pl-4 sm:pl-5 space-y-1 sm:space-y-1.5 mt-1.5">
                         {selectedStaff.awards.map((a, i) => (
-                          <li key={i}>{a}</li>
+                          <li key={i} className="text-xs sm:text-sm md:text-base text-gray-600 leading-relaxed">{a}</li>
                         ))}
                       </ul>
                     </section>
@@ -1252,10 +1252,10 @@ const DepartmentsView = () => {
                   {/* ADDITIONAL ROLES */}
                   {selectedStaff.additional_roles?.length > 0 && (
                     <section>
-                      <h3 className="font-bold text-lg">Additional Roles</h3>
-                      <ul className="list-disc pl-5">
+                      <h3 className="font-bold text-sm sm:text-base md:text-lg text-gray-800 border-b border-gray-100 pb-1">Additional Roles</h3>
+                      <ul className="list-disc pl-4 sm:pl-5 space-y-1 sm:space-y-1.5 mt-1.5">
                         {selectedStaff.additional_roles.map((r, i) => (
-                          <li key={i}>{r}</li>
+                          <li key={i} className="text-xs sm:text-sm md:text-base text-gray-600 leading-relaxed">{r}</li>
                         ))}
                       </ul>
                     </section>
