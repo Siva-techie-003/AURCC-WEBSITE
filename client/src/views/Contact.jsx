@@ -175,7 +175,7 @@ const Contact = () => {
 
                     <div className="bg-[rgb(100,25,25)] rounded-3xl shadow-2xl p-10 text-white flex flex-col justify-center animate-fadeInUp">
                         <h2 className="text-3xl font-black mb-2 uppercase tracking-tighter">Send a Message</h2>
-                        <p className="text-gray-900 font-medium mb-8">Fill out the form below and we'll get back to you within 24 hours.</p>
+                        <p className="text-white font-medium mb-8">Fill out the form below and we'll get back to you within 24 hours.</p>
 
                         {submitStatus === 'success' && (
                             <div className="bg-green-100 border border-green-400 text-green-800 px-4 py-3 rounded-2xl relative mb-6 font-bold text-center">
@@ -197,7 +197,7 @@ const Contact = () => {
                                     onChange={handleChange}
                                     required
                                     placeholder="Full Name"
-                                    className="bg-white/10 border border-white/20 rounded-2xl p-4 outline-none focus:bg-white focus:text-[rgb(90,20,20)] transition-all font-bold placeholder:text-white"
+                                    className="bg-white/10 border border-white/20 rounded-2xl p-4 outline-none text-white focus:bg-white/20 focus:border-white/50 focus:ring-2 focus:ring-white/20 transition-all font-bold placeholder:text-white/60"
                                 />
                                 <input
                                     type="email"
@@ -206,7 +206,7 @@ const Contact = () => {
                                     onChange={handleChange}
                                     required
                                     placeholder="Email Address"
-                                    className="bg-white/10 border border-white/20 rounded-2xl p-4 outline-none focus:bg-white focus:text-[rgb(90,20,20)] transition-all font-bold placeholder:text-white"
+                                    className="bg-white/10 border border-white/20 rounded-2xl p-4 outline-none text-white focus:bg-white/20 focus:border-white/50 focus:ring-2 focus:ring-white/20 transition-all font-bold placeholder:text-white/60"
                                 />
                             </div>
                             <input
@@ -216,7 +216,7 @@ const Contact = () => {
                                 onChange={handleChange}
                                 required
                                 placeholder="Subject"
-                                className="w-full bg-white/10 border border-white/20 rounded-2xl p-4 outline-none focus:bg-white focus:text-[rgb(90,20,20)] transition-all font-bold placeholder:text-white"
+                                className="w-full bg-white/10 border border-white/20 rounded-2xl p-4 outline-none text-white focus:bg-white/20 focus:border-white/50 focus:ring-2 focus:ring-white/20 transition-all font-bold placeholder:text-white/60"
                             />
                             <textarea
                                 id="message"
@@ -225,7 +225,7 @@ const Contact = () => {
                                 required
                                 placeholder="Your message here..."
                                 rows="4"
-                                className="w-full bg-white/10 border border-white/20 rounded-2xl p-4 outline-none focus:bg-white focus:text-[rgb(90,20,20)] transition-all font-bold placeholder:text-white resize-none"
+                                className="w-full bg-white/10 border border-white/20 rounded-2xl p-4 outline-none text-white focus:bg-white/20 focus:border-white/50 focus:ring-2 focus:ring-white/20 transition-all font-bold placeholder:text-white/60 resize-none"
                             ></textarea>
                             <button
                                 type="submit"
