@@ -753,13 +753,13 @@ const HomeView = () => {
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
               {/* Row 1: About Description + Featured Image */}
               <div className="grid grid-cols-12 gap-2 sm:gap-16 items-center mb-12 sm:mb-16">
-                <div className="col-span-7 space-y-2 sm:space-y-8">
+                <div className="col-span-12 md:col-span-7 space-y-2 sm:space-y-8">
                   <h2 className="text-base sm:text-3xl font-bold text-[rgb(100,25,25)] relative inline-block group">
                     ABOUT OUR CAMPUS
                     <span className="absolute -bottom-1 sm:-bottom-3 left-1/2 transform -translate-x-1/2 h-[1px] sm:h-1 w-16 sm:w-40 lg:w-32 bg-yellow-500"></span>
                   </h2>
-                  <div className="bg-white/80 backdrop-blur-sm shadow-xl border border-[rgb(180,100,100)] p-3 sm:p-8 rounded-xl">
-                    <p className="text-xs sm:text-xl text-gray-700 leading-tight sm:leading-relaxed">
+                  <div className="bg-white/80 backdrop-blur-sm shadow-xl border border-[rgb(180,100,100)] p-5 sm:p-8 rounded-xl">
+                    <p className="text-sm sm:text-xl text-gray-700 leading-relaxed">
                       The Regional Campus Coimbatore of Anna University,
                       established in 2012, offers world-class education in
                       Engineering and Technology. Nestled in a serene
@@ -768,7 +768,7 @@ const HomeView = () => {
                       qualified faculty members dedicated to academic
                       excellence.
                     </p>
-                    <p className="text-xs sm:text-xl text-gray-700 leading-tight sm:leading-relaxed mt-2 sm:mt-4">
+                    <p className="text-sm sm:text-xl text-gray-700 leading-relaxed mt-4">
                       Our university is committed to holistic education with a
                       focus on innovation, research, and industry collaboration.
                       We provide an engaging learning environment where students
@@ -778,12 +778,12 @@ const HomeView = () => {
                     </p>
                   </div>
                 </div>
-                <div className="col-span-5 mt-2 sm:mt-10">
+                <div className="col-span-12 md:col-span-5 mt-4 md:mt-10">
                   <div className="relative group overflow-hidden rounded-md sm:rounded-2xl shadow-2xl border-2 sm:border-4 border-white/50 transform hover:scale-[1.02] transition-all duration-500 hover:shadow-[0_0_30px_rgba(115,25,25,0.3)]">
                     <img
                       src="/ANN UNIV_WIDE.jpg"
                       alt="Campus Aerial View"
-                      className="w-full h-[140px] sm:h-[400px] object-cover"
+                      className="w-full h-[200px] sm:h-[400px] object-cover"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-[rgb(115,25,25)]/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-2 sm:p-6">
                       <p className="text-white font-black text-[9px] sm:text-sm uppercase tracking-widest leading-none">
@@ -1091,32 +1091,32 @@ const HomeView = () => {
                   <span className="absolute -bottom-2 sm:-bottom-3 left-1/2 transform -translate-x-1/2 h-1 w-16 sm:w-20 lg:w-24 bg-yellow-500"></span>
                 </h2>
               </div>
-              <div className="flex flex-row items-center bg-white bg-opacity-10 rounded-lg shadow-xl overflow-hidden backdrop-filter border border-[rgb(180,100,100)] backdrop-blur-lg max-w-6xl mx-auto">
-                <div className="w-1/3 p-2 sm:p-6 md:p-8">
+              <div className="flex flex-col sm:flex-row items-center bg-white bg-opacity-10 rounded-lg shadow-xl overflow-hidden backdrop-filter border border-[rgb(180,100,100)] backdrop-blur-lg max-w-6xl mx-auto">
+                <div className="w-full sm:w-1/3 p-4 sm:p-6 md:p-8 flex items-center justify-center">
                   <img
                     src={deanDesk.image || "/DEAN_DESK.jpeg"}
                     alt="Dean's Photo"
-                    className="w-full h-auto object-cover rounded-lg"
+                    className="w-48 sm:w-full h-auto object-cover rounded-lg shadow-md"
                   />
                 </div>
-                <div className="w-2/3 p-2 text-gray-900 sm:p-6 md:p-8">
+                <div className="w-full sm:w-2/3 p-4 sm:p-6 md:p-8 text-gray-900">
                   <div>
                     <div className="flex items-center gap-2">
-                      <h3 className="text-sm sm:text-xl lg:text-2xl font-bold">
-                        {deanDesk.name} <span className="text-[9px] sm:text-sm lg:text-base font-normal text-gray-700">{deanDesk.credentials}</span>
+                      <h3 className="text-base sm:text-xl lg:text-2xl font-bold">
+                        {deanDesk.name} <span className="text-[10px] sm:text-sm lg:text-base font-normal text-gray-700">{deanDesk.credentials}</span>
                       </h3>
                     </div>
 
-                    <p className="text-[10px] sm:text-base text-gray-800 mt-1">
+                    <p className="text-xs sm:text-base text-gray-800 mt-1">
                       {deanDesk.designation}
                     </p>
                   </div>
-                  <p className="text-xs sm:text-base text-[rgb(100,25,25)] mt-2 sm:mt-8 mb-2 sm:mb-6 italic">
+                  <p className="text-xs sm:text-base text-[rgb(100,25,25)] mt-2 sm:mt-6 mb-2 sm:mb-4 italic font-medium">
                     "{deanDesk.quote}"
                   </p>
-                  <div className="h-[140px] sm:h-[250px] overflow-y-auto pr-2 sm:pr-4 scrollbar-custom border border-[rgb(180,100,100)]/30 rounded-xl p-2 sm:p-4 bg-white/5">
+                  <div className="h-[180px] sm:h-[250px] overflow-y-auto pr-2 sm:pr-4 scrollbar-custom border border-[rgb(180,100,100)]/30 rounded-xl p-3 sm:p-4 bg-white/5">
                     {deanDesk.paragraphs && deanDesk.paragraphs.map((para, index) => (
-                      <p key={index} className="text-xs sm:text-lg mb-1.5 sm:mb-3 text-gray-950 sm:mb-4">
+                      <p key={index} className="text-xs sm:text-lg mb-2 sm:mb-4 text-gray-950">
                         {para}
                       </p>
                     ))}
@@ -1238,9 +1238,9 @@ const HomeView = () => {
                   <span className="absolute -bottom-3 left-1/2 -translate-x-1/2 h-1 w-20 bg-yellow-500"></span>
                 </h2>
               </div>
-              <div className="container mx-auto px-2 sm:px-6 lg:px-16 grid grid-cols-2 lg:grid-cols-2 gap-2 sm:gap-12 lg:gap-24 items-center">
+              <div className="container mx-auto px-4 sm:px-6 lg:px-16 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 lg:gap-24 items-center">
                 {/* LEFT IMAGE COLLAGE */}
-                <div className="relative w-full h-[220px] sm:h-[450px] lg:h-[500px] flex items-center justify-center lg:-ml-10 -mt-2 sm:-mt-24">
+                <div className="relative w-full h-[260px] sm:h-[450px] lg:h-[500px] flex items-center justify-center lg:-ml-10 -mt-2 sm:-mt-24">
                   <div className="absolute inset-0 opacity-30 text-[rgb(115,40,40)] pointer-events-none">
                     <svg
                       width="100%"
@@ -1291,22 +1291,22 @@ const HomeView = () => {
                   {/* <p className="text-gray-800 tracking-widest text-sm text-center font-semibold mb-6">
                   THE BRIDGE BETWEEN ONSET AND ACHIEVEMENT
                 </p> */}
-                  <div className="flex flex-col gap-1 sm:gap-8">
+                  <div className="flex flex-col gap-4 sm:gap-8">
                     {/* Card 3 */}
                     <div
-                      className="lg:ml-32 bg-white p-3 sm:p-6 rounded-md sm:rounded-xl shadow-md 
+                      className="lg:ml-32 bg-white p-4 sm:p-6 rounded-md sm:rounded-xl shadow-md 
   hover:bg-gradient-to-r hover:from-[rgb(115,63,63)] hover:to-[rgb(115,25,25)]
   hover:text-white hover:-translate-y-2 transition-all duration-300"
                     >
-                      <div className="flex gap-1.5 sm:gap-4">
-                        <span className="text-blue-600 text-xs sm:text-xl">✔</span>
+                      <div className="flex gap-2 sm:gap-4">
+                        <span className="text-blue-600 text-sm sm:text-xl">✔</span>
 
                         <div>
-                          <h3 className="font-bold text-sm sm:text-lg mb-0 sm:mb-2 leading-tight">
+                          <h3 className="font-bold text-base sm:text-lg mb-1 sm:mb-2 leading-tight">
                             Career Development
                           </h3>
 
-                          <p className="text-xs sm:text-base leading-tight text-gray-700 hover:text-white/95">
+                          <p className="text-sm sm:text-base leading-relaxed text-gray-700 hover:text-white/95">
                             The Career Development supports students with mentorship, leadership training, and career guidance to shape confident professionals for future success.
                           </p>
                         </div>
@@ -1315,19 +1315,19 @@ const HomeView = () => {
 
                     {/* Card 2 */}
                     <div
-                      className="lg:ml-16 bg-white p-3 sm:p-6 rounded-md sm:rounded-xl shadow-md
+                      className="lg:ml-16 bg-white p-4 sm:p-6 rounded-md sm:rounded-xl shadow-md
   hover:bg-gradient-to-r hover:from-[rgb(115,63,63)] hover:to-[rgb(115,25,25)]
   hover:text-white hover:-translate-y-2 transition-all duration-300"
                     >
-                      <div className="flex gap-1.5 sm:gap-4">
-                        <span className="text-blue-600 text-xs sm:text-xl">✔</span>
+                      <div className="flex gap-2 sm:gap-4">
+                        <span className="text-blue-600 text-sm sm:text-xl">✔</span>
 
                         <div>
-                          <h3 className="font-bold text-sm sm:text-lg mb-0 sm:mb-2 leading-tight">
+                          <h3 className="font-bold text-base sm:text-lg mb-1 sm:mb-2 leading-tight">
                             Placement Support
                           </h3>
 
-                          <p className="text-xs sm:text-base leading-tight text-gray-700 hover:text-white/95">
+                          <p className="text-sm sm:text-base leading-relaxed text-gray-700 hover:text-white/95">
                             The Placement Assistance team prepares students through aptitude training, mock interviews, and industry guidance to achieve excellent placement opportunities.
                           </p>
                         </div>
@@ -1336,19 +1336,19 @@ const HomeView = () => {
 
                     {/* Card 1 */}
                     <div
-                      className="bg-white p-3 sm:p-6 rounded-md sm:rounded-xl shadow-md
+                      className="bg-white p-4 sm:p-6 rounded-md sm:rounded-xl shadow-md
   hover:bg-gradient-to-r hover:from-[rgb(115,63,63)] hover:to-[rgb(115,25,25)]
   hover:text-white hover:-translate-y-2 transition-all duration-300"
                     >
-                      <div className="flex gap-1.5 sm:gap-4">
-                        <span className="text-blue-600 text-xs sm:text-xl">✔</span>
+                      <div className="flex gap-2 sm:gap-4">
+                        <span className="text-blue-600 text-sm sm:text-xl">✔</span>
 
                         <div>
-                          <h3 className="font-bold text-sm sm:text-lg mb-0 sm:mb-2 leading-tight">
+                          <h3 className="font-bold text-base sm:text-lg mb-1 sm:mb-2 leading-tight">
                             Skill Development
                           </h3>
 
-                          <p className="text-xs sm:text-base leading-tight text-gray-700 hover:text-white/95">
+                          <p className="text-sm sm:text-base leading-relaxed text-gray-700 hover:text-white/95">
                             The Skill Development enhances students through technical training, innovative workshops, and real-world projects to strengthen professional abilities.
                           </p>
                         </div>
@@ -1468,9 +1468,9 @@ const HomeView = () => {
                 <span className="absolute -bottom-2 sm:-bottom-3 left-1/2 transform -translate-x-1/2 h-1 w-16 sm:w-20 lg:w-24 bg-yellow-500"></span>
               </h2>
               <div className="relative max-w-[1800px] mx-auto px-4 xl:px-0">
-                <div className="grid grid-cols-2 lg:grid-cols-2 gap-2 sm:gap-12 lg:gap-28">
+                <div className="grid grid-cols-2 gap-2 sm:gap-12 lg:gap-28">
                   {/* Left Card Area */}
-                  <div className="relative overflow-hidden rounded-md sm:rounded-xl shadow-xl min-h-[160px] sm:min-h-[450px] xl:min-h-[300px] bg-white">
+                  <div className="relative overflow-hidden rounded-md sm:rounded-xl shadow-xl min-h-[230px] sm:min-h-[450px] xl:min-h-[300px] bg-white">
                     {testimonials.map((testimonial, idx) => {
                       // Next cards wait on the left, prev cards exit to the left
                       let positionClass =
@@ -1486,27 +1486,27 @@ const HomeView = () => {
                       return (
                         <div
                           key={`left-${idx}`}
-                          className={`absolute inset-0 w-full h-full flex-shrink-0 flex flex-row text-left bg-white ${positionClass}`}
+                          className={`absolute inset-0 w-full h-full flex-shrink-0 flex flex-col sm:flex-row text-left bg-white ${positionClass}`}
                         >
-                          <div className="w-[40%] sm:w-[35%] lg:w-[40%] xl:w-[45%] bg-gradient-to-br from-[rgb(115,63,63)] to-[rgb(115,25,25)] p-1.5 sm:p-2 lg:p-3 xl:p-4 flex flex-col items-center justify-center">
+                          <div className="h-[45%] sm:h-full w-full sm:w-[40%] bg-gradient-to-br from-[rgb(115,63,63)] to-[rgb(115,25,25)] p-1 sm:p-2 lg:p-3 xl:p-4 flex flex-col items-center justify-center">
                             <img
                               src={testimonial.image}
                               alt={testimonial.name}
-                              className="rounded-md w-12 h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20 xl:w-24 xl:h-24 border-[1px] sm:border-2 border-white mb-1 sm:mb-2 mt-1 sm:mt-2 object-cover object-top shadow-lg"
+                              className="rounded-md w-8 h-8 sm:w-16 sm:h-16 lg:w-20 lg:h-20 xl:w-24 xl:h-24 border-[1px] sm:border-2 border-white mb-0.5 sm:mb-2 mt-0.5 sm:mt-2 object-cover object-top shadow-lg"
                             />
-                            <h3 className="text-[9px] sm:text-xs lg:text-sm xl:text-base font-bold text-white text-center w-full mt-[1px] sm:mt-2 leading-tight">
+                            <h3 className="text-[9px] sm:text-xs lg:text-sm xl:text-base font-bold text-white text-center w-full mt-0.5 sm:mt-2 leading-tight">
                               {testimonial.name}
                             </h3>
-                            <p className="text-white text-center w-full text-[8px] sm:text-[10px] lg:text-xs xl:text-sm leading-tight mt-[1px] sm:mt-1">
+                            <p className="text-[7.5px] sm:text-[10px] lg:text-xs xl:text-sm text-white text-center w-full leading-tight mt-0.5">
                               {testimonial.branch} | {testimonial.batch}
                             </p>
                             {testimonial.role && (
-                              <p className="text-white text-center w-full text-[8px] sm:text-[10px] lg:text-xs xl:text-sm leading-tight mt-[1px] sm:mt-1">
+                              <p className="text-[7.5px] sm:text-[10px] lg:text-xs xl:text-sm text-white text-center w-full leading-tight mt-0.5">
                                 {testimonial.role}
                               </p>
                             )}
                             {testimonial.company && (
-                              <p className="text-white font-semibold text-center text-[8px] sm:text-[10px] lg:text-xs xl:text-sm w-full leading-tight mt-[1px] sm:mt-1">
+                              <p className="text-[7.5px] sm:text-[10px] lg:text-xs xl:text-sm text-white font-semibold text-center w-full leading-tight mt-0.5">
                                 Placed in{" "}
                                 <span className="text-yellow-300 block xl:inline">
                                   {testimonial.company}
@@ -1514,15 +1514,15 @@ const HomeView = () => {
                               </p>
                             )}
                           </div>
-                          <div className="w-[60%] sm:w-[65%] lg:w-[60%] xl:w-[55%] p-2 sm:p-6 flex flex-col justify-center">
+                          <div className="h-[55%] sm:h-full w-full sm:w-[60%] p-2 sm:p-6 flex flex-col justify-center">
                             <svg
-                              className="w-6 h-6 sm:w-10 sm:h-10 text-[rgb(200,120,120)] mb-1 sm:mb-2"
+                              className="w-4 h-4 sm:w-10 sm:h-10 text-[rgb(200,120,120)] mb-1 sm:mb-2"
                               fill="currentColor"
                               viewBox="0 0 24 24"
                             >
                               <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
                             </svg>
-                            <p className="text-gray-700 leading-tight sm:leading-relaxed mb-2 sm:mb-4 text-[10px] sm:text-xs lg:text-sm">
+                            <p className="text-gray-700 leading-tight sm:leading-relaxed mb-1 sm:mb-4 text-[8.5px] sm:text-xs lg:text-sm">
                               {testimonial.message}
                             </p>
                           </div>
@@ -1532,7 +1532,7 @@ const HomeView = () => {
                   </div>
 
                   {/* Right Card Area */}
-                  <div className="relative overflow-hidden rounded-md sm:rounded-xl shadow-xl min-h-[160px] sm:min-h-[450px] xl:min-h-[300px] bg-white">
+                  <div className="relative overflow-hidden rounded-md sm:rounded-xl shadow-xl min-h-[230px] sm:min-h-[450px] xl:min-h-[300px] bg-white">
                     {testimonials.map((_, idx) => {
                       const rightIdx = (idx + 1) % testimonials.length;
                       const testimonial = testimonials[rightIdx];
@@ -1551,27 +1551,27 @@ const HomeView = () => {
                       return (
                         <div
                           key={`right-${idx}`}
-                          className={`absolute inset-0 w-full h-full flex-shrink-0 flex flex-row text-left bg-white ${positionClass}`}
+                          className={`absolute inset-0 w-full h-full flex-shrink-0 flex flex-col sm:flex-row text-left bg-white ${positionClass}`}
                         >
-                          <div className="w-[40%] sm:w-[35%] lg:w-[40%] xl:w-[45%] bg-gradient-to-br from-[rgb(115,63,63)] to-[rgb(115,25,25)] p-1.5 sm:p-2 lg:p-3 xl:p-4 flex flex-col items-center justify-center">
+                          <div className="h-[45%] sm:h-full w-full sm:w-[40%] bg-gradient-to-br from-[rgb(115,63,63)] to-[rgb(115,25,25)] p-1 sm:p-2 lg:p-3 xl:p-4 flex flex-col items-center justify-center">
                             <img
                               src={testimonial.image}
                               alt={testimonial.name}
-                              className="rounded-md w-12 h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20 xl:w-24 xl:h-24 border-[1px] sm:border-2 border-white mb-1 sm:mb-2 mt-1 sm:mt-2 object-cover object-top shadow-lg"
+                              className="rounded-md w-8 h-8 sm:w-16 sm:h-16 lg:w-20 lg:h-20 xl:w-24 xl:h-24 border-[1px] sm:border-2 border-white mb-0.5 sm:mb-2 mt-0.5 sm:mt-2 object-cover object-top shadow-lg"
                             />
-                            <h3 className="text-[9px] sm:text-xs lg:text-sm xl:text-base font-bold text-white text-center w-full mt-[1px] sm:mt-2 leading-tight">
+                            <h3 className="text-[9px] sm:text-xs lg:text-sm xl:text-base font-bold text-white text-center w-full mt-0.5 sm:mt-2 leading-tight">
                               {testimonial.name}
                             </h3>
-                            <p className="text-white text-center w-full text-[8px] sm:text-[10px] lg:text-xs xl:text-sm leading-tight mt-[1px] sm:mt-1">
+                            <p className="text-[7.5px] sm:text-[10px] lg:text-xs xl:text-sm text-white text-center w-full leading-tight mt-0.5">
                               {testimonial.branch} | {testimonial.batch}
                             </p>
                             {testimonial.role && (
-                              <p className="text-white text-center w-full text-[8px] sm:text-[10px] lg:text-xs xl:text-sm leading-tight mt-[1px] sm:mt-1">
+                              <p className="text-[7.5px] sm:text-[10px] lg:text-xs xl:text-sm text-white text-center w-full leading-tight mt-0.5">
                                 {testimonial.role}
                               </p>
                             )}
                             {testimonial.company && (
-                              <p className="text-white font-semibold text-center text-[8px] sm:text-[10px] lg:text-xs xl:text-sm w-full leading-tight mt-[1px] sm:mt-1">
+                              <p className="text-[7.5px] sm:text-[10px] lg:text-xs xl:text-sm text-white font-semibold text-center w-full leading-tight mt-0.5">
                                 Placed in{" "}
                                 <span className="text-yellow-300 block xl:inline">
                                   {testimonial.company}
@@ -1579,15 +1579,15 @@ const HomeView = () => {
                               </p>
                             )}
                           </div>
-                          <div className="w-[60%] sm:w-[65%] lg:w-[60%] xl:w-[55%] p-2 sm:p-6 flex flex-col justify-center">
+                          <div className="h-[55%] sm:h-full w-full sm:w-[60%] p-2 sm:p-6 flex flex-col justify-center">
                             <svg
-                              className="w-6 h-6 sm:w-10 sm:h-10 text-[rgb(200,120,120)] mb-1 sm:mb-2"
+                              className="w-4 h-4 sm:w-10 sm:h-10 text-[rgb(200,120,120)] mb-1 sm:mb-2"
                               fill="currentColor"
                               viewBox="0 0 24 24"
                             >
                               <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
                             </svg>
-                            <p className="text-gray-700 leading-tight sm:leading-relaxed mb-2 sm:mb-4 text-[10px] sm:text-xs lg:text-sm">
+                            <p className="text-gray-700 leading-tight sm:leading-relaxed mb-1 sm:mb-4 text-[8.5px] sm:text-xs lg:text-sm">
                               {testimonial.message}
                             </p>
                           </div>
