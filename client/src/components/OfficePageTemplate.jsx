@@ -1,4 +1,4 @@
-﻿import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import './OfficePageTemplate.css';
 
 const OfficePageTemplate = ({
@@ -67,7 +67,7 @@ overflow-hidden flex items-center justify-center animate-fadeIn px-4 sm:px-6 lg:
             </section>
 
             {/* Sticky Navigation Tabs */}
-            <div className="sticky top-0 z-20">
+            <div className="sticky top-0 z-20 hidden sm:block">
                 <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
                     <div className="bg-white/95 backdrop-blur-sm shadow-lg rounded-full -mt-4 sm:-mt-6 py-1 px-2 flex justify-center overflow-x-auto no-scrollbar">
                         <nav role="tablist" className="tabs flex space-x-1 sm:space-x-2">

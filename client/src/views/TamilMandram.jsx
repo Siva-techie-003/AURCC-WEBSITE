@@ -1,4 +1,4 @@
-﻿import React, { useState, useEffect, useRef, useMemo } from "react";
+import React, { useState, useEffect, useRef, useMemo } from "react";
 import "./TamilMandram.css";
 
 const TamilMandram = () => {
@@ -88,7 +88,7 @@ const TamilMandram = () => {
   }
 
   return (
-    <main className="flex-grow min-h-screen">
+    <main className="flex-grow min-h-screen pt-[126px] sm:pt-[130px]">
       {/* Hero section */}
       <section className="relative w-full min-h-[35vh] sm:min-h-[40vh] md:min-h-[50vh] lg:min-h-[60vh] overflow-hidden flex items-center justify-center">
         <img
@@ -106,38 +106,6 @@ const TamilMandram = () => {
           </div>
         </div>
       </section>
-
-      {/* Navigation Tabs - Retro Style */}
-      <nav className="w-full text-white shadow-xl py-4 bg-[#23120b] sticky top-0 z-30">
-        <div className="container mx-auto px-4">
-          <ul className="flex flex-wrap justify-center gap-4">
-            <li>
-              <a
-                href="#overview"
-                className="px-6 py-2 block text-sm lg:text-base font-bold bg-[#3c2f25] text-white hover:text-[#fdb827] rounded-full transition-all border border-[#4d3c2e]"
-              >
-                முகப்பு
-              </a>
-            </li>
-            <li>
-              <a
-                href="#events"
-                className="px-6 py-2 block text-sm lg:text-base font-bold bg-[#3c2f25] text-white hover:text-[#fdb827] rounded-full transition-all border border-[#4d3c2e]"
-              >
-                நிகழ்வுகள்
-              </a>
-            </li>
-            <li>
-              <a
-                href="#staff"
-                className="px-6 py-2 block text-sm lg:text-base font-bold bg-[#3c2f25] text-white hover:text-[#fdb827] rounded-full transition-all border border-[#4d3c2e]"
-              >
-                பொறுப்பாளர்
-              </a>
-            </li>
-          </ul>
-        </div>
-      </nav>
 
       {/* Content section */}
       <section className="relative py-12 sm:py-20 px-4 mx-auto overflow-hidden">

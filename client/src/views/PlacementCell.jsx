@@ -164,7 +164,7 @@ const PlacementCell = () => {
                   <p className="text-lg lg:text-xl font-bold mb-2">
                     The Centre for University-Industry Collaboration (CUIC)
                   </p>
-                  <p className="text-[rgb(200,120,120)] opacity-90">
+                  <p className="text-white/90">
                     Bridges the gap between students and leading employers
                     through specialized initiatives.
                   </p>
@@ -268,7 +268,7 @@ const PlacementCell = () => {
          
 
               {/* 3-Card Carousel Container */}
-              <div className="relative flex items-center justify-center gap-8 lg:gap-16 w-full max-w-none h-[450px] sm:h-[400px] lg:h-[550px]">
+              <div className="relative flex items-center justify-center gap-8 lg:gap-16 w-full max-w-none h-[280px] sm:h-[400px] lg:h-[550px]">
                 {/* Card 1 (Left - Lite Fade) */}
                 <div className="hidden md:flex max-w-[250px] lg:max-w-[400px] w-auto h-auto bg-white/40 backdrop-blur-sm rounded-2xl shadow-lg items-center justify-center p-0 opacity-40 transition-all duration-700 ease-in-out border-[3px] border-white/30 overflow-hidden">
                   <img
@@ -283,7 +283,7 @@ const PlacementCell = () => {
                 </div>
 
                 {/* Card 2 (Center - Clear/Active) */}
-                <div className="relative max-w-[320px] sm:max-w-[450px] lg:max-w-[750px] h-[450px] sm:h-[350px] lg:h-[500px] bg-white rounded-3xl shadow-2xl flex items-center justify-center p-0 transition-all duration-700 ease-in-out border-[6px] border-[rgb(100,25,25)] z-10 overflow-hidden">
+                <div className="relative max-w-[320px] sm:max-w-[450px] lg:max-w-[750px] h-[270px] sm:h-[350px] lg:h-[500px] bg-white rounded-2xl sm:rounded-3xl shadow-2xl flex items-center justify-center p-0 transition-all duration-700 ease-in-out border-4 sm:border-[6px] border-[rgb(100,25,25)] z-10 overflow-hidden">
                   <img
                     key={currentLogoIndex}
                     src={logos[currentLogoIndex]}

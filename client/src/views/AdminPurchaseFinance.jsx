@@ -41,7 +41,7 @@ const AdminPurchaseFinance = () => {
     }
 
     return (
-        <div className="bg-white min-h-screen pt-[100px] sm:pt-[120px]">
+        <div className="bg-white min-h-screen pt-[126px] sm:pt-[130px]">
             <div className="text-center md:py-6 py-3 bg-[rgb(110,35,35)]">
                 <h1 className="text-lg sm:text-xl lg:text-2xl xl:text-3xl font-semibold font-serif text-white tracking-wide uppercase">
                     Administrative Staff

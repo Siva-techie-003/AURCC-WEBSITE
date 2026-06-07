@@ -21,7 +21,7 @@ const QuickLinksSidebar = () => {
       {/* Expanded Panel – Render ONLY when open */}
       {isOpen && (
         <div
-          className="fixed right-0 top-1/2 -translate-y-1/2 z-[1005] flex items-center"
+          className="fixed right-0 top-1/2 -translate-y-1/2 z-[1005] flex items-center mobile-menu-hide"
           onMouseLeave={() => setIsOpen(false)}
         >
           <div className="flex flex-col mr-3 sm:mr-10 w-[280px] sm:w-[350px] bg-white/70 backdrop-blur-md rounded-2xl border border-[rgb(115,25,25)]/30 shadow-[0_10px_40px_rgba(0,0,0,0.1)] overflow-hidden">
@@ -66,7 +66,7 @@ const QuickLinksSidebar = () => {
       {/* Vertical Tab – Always Visible */}
       <div
         onClick={() => setIsOpen(prev => !prev)}
-        className="fixed right-0 top-1/2 -translate-y-1/2 z-[1006] cursor-pointer bg-gradient-to-b from-[rgb(115,63,63)] to-[rgb(115,25,25)] text-white px-2 py-4 sm:px-3 sm:py-7 rounded-l-md sm:rounded-l-2xl shadow-lg border-y-[1px] sm:border-y-2 border-l-[1px] sm:border-l-2 border-yellow-400 transition-all duration-300"
+        className="fixed right-0 top-1/2 -translate-y-1/2 z-[1006] cursor-pointer bg-gradient-to-b from-[rgb(115,63,63)] to-[rgb(115,25,25)] text-white px-2 py-4 sm:px-3 sm:py-7 rounded-l-md sm:rounded-l-2xl shadow-lg border-y-[1px] sm:border-y-2 border-l-[1px] sm:border-l-2 border-yellow-400 transition-all duration-300 mobile-menu-hide"
       >
         <div className="flex flex-col items-center gap-1.5 sm:gap-2">
           <svg

@@ -90,3 +90,9 @@
 .pause-on-hover:hover {
   animation-play-state: paused;
 }
+
+@media (max-width: 1279px) {
+  body.mobile-menu-open .mobile-menu-hide {
+    display: none !important;
+  }
+}

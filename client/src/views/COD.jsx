@@ -60,10 +60,10 @@ const COD = () => {
                             {entry.members.map((member, mIdx) => (
                                 <div
                                     key={mIdx}
-                                    className="cod-card bg-white rounded-3xl shadow-md border-2 border-[rgb(90,25,25)] overflow-hidden flex items-center p-8 gap-8 hover:shadow-2xl transition-all duration-500 group w-full max-w-2xl"
+                                    className="cod-card bg-white rounded-2xl sm:rounded-3xl shadow-md border-2 border-[rgb(90,25,25)] overflow-hidden flex items-center p-4 sm:p-8 gap-4 sm:gap-8 hover:shadow-2xl transition-all duration-500 group w-full max-w-2xl"
                                 >
                                     {/* Larger Square photo frame */}
-                                    <div className="flex-shrink-0 w-32 h-32 rounded-2xl overflow-hidden border-2 border-[rgb(110,35,35)] shadow-md bg-gray-50">
+                                    <div className="flex-shrink-0 w-20 h-20 sm:w-32 sm:h-32 rounded-xl sm:rounded-2xl overflow-hidden border-2 border-[rgb(110,35,35)] shadow-md bg-gray-50">
                                         <img
                                             src={`${BACKEND_URL}/${member.photo}`}
                                             alt={member.name}
@@ -72,24 +72,20 @@ const COD = () => {
                                     </div>
                                     
                                     {/* Member info */}
-                                    <div className="flex flex-col justify-center">
-                                        <h4 className="text-lg font-bold text-[rgb(100,25,25)] uppercase leading-tight tracking-tight">
+                                    <div className="flex flex-col justify-center flex-grow min-w-0 gap-1 sm:gap-2">
+                                        <h4 className="text-sm sm:text-lg font-bold text-[rgb(100,25,25)] uppercase leading-tight tracking-tight break-words">
                                             {member.name}
                                         </h4>
-                                    </div>
-
-                                     {/* Member position */}
-                                    <div className="flex flex-col justify-center">
-                                        <h4 className="text-lg font-bold text-[rgb(100,25,25)] uppercase leading-tight tracking-tight">
-                                            {member.position}
-                                        </h4>
-                                    </div>
-
-                                     {/* Member coordinator */}
-                                    <div className="flex flex-col justify-center">
-                                        <h4 className="text-lg font-bold text-[rgb(100,25,25)] uppercase leading-tight tracking-tight">
-                                            {member.coordinator}
-                                        </h4>
+                                        {member.position && (
+                                            <h5 className="text-xs sm:text-base font-semibold text-gray-700 uppercase leading-tight tracking-tight break-words">
+                                                {member.position}
+                                            </h5>
+                                        )}
+                                        {member.coordinator && (
+                                            <p className="text-[10px] sm:text-sm font-medium text-gray-500 uppercase leading-tight tracking-tight break-words">
+                                                {member.coordinator}
+                                            </p>
+                                        )}
                                     </div>
                                 </div>
                             ))}

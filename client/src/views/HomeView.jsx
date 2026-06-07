@@ -548,12 +548,12 @@ const HomeView = () => {
         <main className="">
           <div className="relative flex items-center bg-[rgb(115,25,25)] text-white py-1.5 sm:py-2 overflow-hidden z-20">
             {/* LATEST NEWS badge with live pulsing dot */}
-            <div className="absolute left-0 top-0 bottom-0 bg-[#ffb300] text-black pr-6 pl-3 sm:pr-8 sm:pl-5 flex items-center font-extrabold z-30 text-xs sm:text-xs tracking-wider shadow-[4px_0_10px_rgba(0,0,0,0.3)] [clip-path:polygon(0_0,100%_0,88%_100%,0_100%)]">
-              <span className="relative flex h-2 w-2 mr-1.5 sm:mr-2">
+            <div className="absolute left-0 top-0 bottom-0 bg-[#ffb300] text-black pr-3.5 pl-1.5 sm:pr-8 sm:pl-5 flex items-center font-extrabold z-30 text-[9px] sm:text-xs tracking-wider shadow-[4px_0_10px_rgba(0,0,0,0.3)] [clip-path:polygon(0_0,100%_0,88%_100%,0_100%)]">
+              <span className="relative flex h-2 w-2 mr-1 sm:mr-2">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-600 opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-1.5 w-1.5 sm:h-2 sm:w-2 bg-red-600"></span>
               </span>
-              LATEST NEWS
+              <span className="hidden sm:inline">LATEST&nbsp;</span>NEWS
             </div>
 
             {/* Scrolling Ticker Content */}
@@ -642,9 +642,9 @@ const HomeView = () => {
             </div>
 
             {/* Scroll Indicator */}
-            <div 
+            <div
               onClick={handleScrollDown}
-              className="absolute bottom-3 sm:bottom-6 left-1/2 transform -translate-x-1/2 flex flex-col items-center gap-1 sm:gap-2 cursor-pointer z-30 group hover:opacity-100 transition-opacity duration-300 opacity-90"
+              className="absolute bottom-3 sm:bottom-6 left-1/2 transform -translate-x-1/2 hidden sm:flex flex-col items-center gap-1 sm:gap-2 cursor-pointer z-30 group hover:opacity-100 transition-opacity duration-300 opacity-90"
             >
               <span className="text-[10px] sm:text-[11px] font-black text-yellow-400 tracking-[0.2em] sm:tracking-[0.25em] uppercase select-none group-hover:text-white transition-colors duration-300">
                 Scroll Down
@@ -660,7 +660,7 @@ const HomeView = () => {
             ref={statsRef}
             className="container mx-auto px-4 sm:px-6 lg:px-8 relative mt-16 sm:mt-20 md:mt-24 lg:mt-12 z-30 mb-12 sm:mb-16 lg:mb-20"
           >
-            <div className="grid grid-cols-4 gap-1 sm:gap-6">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-2 sm:gap-6">
               {[
                 {
                   label: "Global Alumni",
@@ -1100,8 +1100,8 @@ const HomeView = () => {
                   />
                 </div>
                 <div className="w-full sm:w-2/3 p-4 sm:p-6 md:p-8 text-gray-900">
-                  <div>
-                    <div className="flex items-center gap-2">
+                  <div className="text-center">
+                    <div className="flex justify-center items-center gap-2">
                       <h3 className="text-base sm:text-xl lg:text-2xl font-bold">
                         {deanDesk.name} <span className="text-[10px] sm:text-sm lg:text-base font-normal text-gray-700">{deanDesk.credentials}</span>
                       </h3>
@@ -1111,10 +1111,10 @@ const HomeView = () => {
                       {deanDesk.designation}
                     </p>
                   </div>
-                  <p className="text-xs sm:text-base text-[rgb(100,25,25)] mt-2 sm:mt-6 mb-2 sm:mb-4 italic font-medium">
+                  <p className="text-center text-xs sm:text-base text-[rgb(100,25,25)] mt-2 sm:mt-6 mb-2 sm:mb-4 italic font-medium">
                     "{deanDesk.quote}"
                   </p>
-                  <div className="h-[180px] sm:h-[250px] overflow-y-auto pr-2 sm:pr-4 scrollbar-custom border border-[rgb(180,100,100)]/30 rounded-xl p-3 sm:p-4 bg-white/5">
+                  <div className="h-[180px] sm:h-[250px] overflow-y-auto pr-2 sm:pr-4 scrollbar-custom border-2 border-[rgb(180,100,100)] rounded-xl p-3 sm:p-4 bg-white/5">
                     {deanDesk.paragraphs && deanDesk.paragraphs.map((para, index) => (
                       <p key={index} className="text-xs sm:text-lg mb-2 sm:mb-4 text-gray-950">
                         {para}
@@ -1678,7 +1678,7 @@ const HomeView = () => {
                     onChange={(e) => setUserMessage(e.target.value)}
                     onKeyUp={(e) => e.key === "Enter" && sendMessage()}
                     type="text"
-                    className="flex-grow px-4 py-3 bg-gray-50 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-[rgb(115,25,25)]/20 transition-all border-none"
+                    className="flex-grow px-4 py-3 bg-gray-50 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-[rgb(115,25,25)]/20 transition-all border-2 border-gray-300 focus:border-[rgb(115,25,25)]"
                     placeholder="Type a message..."
                   />
                   <button

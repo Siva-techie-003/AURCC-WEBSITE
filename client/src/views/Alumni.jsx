@@ -1,10 +1,10 @@
-﻿import React from 'react';
+import React from 'react';
 import jsonData from '../assets/alumni.json';
 import './Alumni.css';
 
 const Alumni = () => {
     return (
-        <main className="flex-grow font-sans bg-white">
+        <main className="flex-grow font-sans bg-white pt-[126px] sm:pt-[130px]">
             {/* Hero section */}
             <section className="relative w-full min-h-[35vh] sm:min-h-[40vh] md:min-h-[50vh] lg:min-h-[60vh] overflow-hidden flex items-center justify-center">
                 <img src="https://images.unsplash.com/photo-1503676382389-4809596d5290?auto=format&fit=crop&w=1200&q=80" alt="Alumni" className="absolute inset-0 w-full h-full object-cover object-center" />
@@ -39,7 +39,6 @@ const Alumni = () => {
                     <div className="bg-white/70 backdrop-blur-md rounded-2xl shadow-lg border border-gray-100 overflow-hidden">
                         <div className="bg-gradient-to-r from-[rgb(115,63,63)] to-[rgb(115,25,25)] py-4 sm:py-5 flex flex-col items-center justify-center gap-2 sm:gap-3 relative">
                             <div className="flex items-center gap-2">
-                                <span className="text-lg lg:text-xl">🎓</span>
                                 <h2 className="text-lg lg:text-xl xl:text-2xl font-bold text-white text-center">Notable Alumni</h2>
                             </div>
                         </div>
@@ -51,7 +50,7 @@ const Alumni = () => {
                                 <div key={deptName} className="mb-8 sm:mb-12 lg:mb-16">
                                     <div className="bg-white/80 rounded-2xl shadow-md p-6 sm:p-8 border border-gray-100">
                                         <h3 className="text-lg lg:text-xl xl:text-2xl font-bold text-[rgb(100,25,25)] mb-6 sm:mb-8 flex items-center justify-center gap-3">
-                                            <span className="text-2xl">🏢</span>{deptName}
+                                            {deptName}
                                         </h3>
                                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                                             {department.map((alumnus, index) => (

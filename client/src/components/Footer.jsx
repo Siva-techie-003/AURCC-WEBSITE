@@ -232,34 +232,34 @@ const Footer = ({
 <div className="flex flex-col items-center w-full">
 
   <div
-    className="w-full max-w-[420px] h-fit rounded-lg lg:rounded-xl p-2"
+    className="w-full max-w-[420px] lg:max-w-none h-[98px] sm:h-auto rounded-lg lg:rounded-xl p-1 sm:p-2 flex flex-col gap-1 justify-between"
     style={{
       background: "#9b3535",
       border: "2px solid rgba(245,200,66,0.5)",
     }}
   >
-    <h3 className="text-[10px] sm:text-sm lg:text-xl font-black uppercase tracking-wide text-center mb-1 sm:mb-3 lg:mb-6 leading-tight">
+    <h3 className="text-[8px] sm:text-sm lg:text-xl font-black uppercase tracking-wide text-center leading-tight">
       Website <span style={{ color: "#f5c842" }}>Development</span> Team
     </h3>
 
     <div
-      className="rounded-lg p-2 text-center"
+      className="rounded-lg p-1 sm:p-2 text-center flex-grow flex flex-col justify-center items-center gap-[2px] sm:gap-1"
       style={{
         background: "rgba(255,255,255,0.08)",
         border: "1px solid rgba(255,255,255,0.15)",
       }}
     >
-      <h4 className="text-[9px] sm:text-sm lg:text-lg font-bold mb-1">
+      <h4 className="text-[7px] sm:text-sm lg:text-lg font-bold leading-tight">
         Meet Our Team
       </h4>
 
-      <p className="text-[8px] sm:text-xs lg:text-sm text-white/70 mb-2 leading-relaxed">
+      <p className="text-[6px] sm:text-xs lg:text-sm text-white/70 leading-normal">
         View the developers behind this website.
       </p>
 
       <Link
         to="/team"
-        className="inline-block px-3 py-1.5 rounded-lg font-bold text-[8px] sm:text-xs lg:text-sm transition-all duration-300"
+        className="inline-block px-2 py-0.5 sm:px-3 sm:py-1.5 rounded-lg font-bold text-[6px] sm:text-xs lg:text-sm transition-all duration-300"
         style={{
           background: "#f5c842",
           color: "#6b1a1a",
@@ -301,7 +301,7 @@ const Footer = ({
                         href={item.url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-center py-1 lg:py-4 px-1 lg:px-4 rounded-full text-[6px] sm:text-xs lg:text-sm font-bold transition-all duration-200"
+                        className="text-center py-1 lg:py-4 px-1 lg:px-4 rounded-full text-[6px] sm:text-xs lg:text-sm font-bold transition-all duration-200 break-all"
                         style={{
                           background: "rgb(140,45,45)",
                           color: "#ffffff",

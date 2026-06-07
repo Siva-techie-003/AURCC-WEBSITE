@@ -1,10 +1,21 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { href, Link, useNavigate } from "react-router-dom";
 
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isQuickLinksOpen, setIsQuickLinksOpen] = useState(false);
   const navigate = useNavigate();
+
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      document.body.classList.add("mobile-menu-open");
+    } else {
+      document.body.classList.remove("mobile-menu-open");
+    }
+    return () => {
+      document.body.classList.remove("mobile-menu-open");
+    };
+  }, [isMobileMenuOpen]);
 
   const mobileSections = [
     {
@@ -152,11 +163,25 @@ const Header = () => {
   ];
 
   const [sections, setSections] = useState(mobileSections);
+  const [openSubLinks, setOpenSubLinks] = useState({});
 
   const toggleSection = (index) => {
-    const newSections = [...sections];
-    newSections[index].isOpen = !newSections[index].isOpen;
-    setSections(newSections);
+    setSections((prev) =>
+      prev.map((section, idx) => {
+        if (idx === index) {
+          return { ...section, isOpen: !section.isOpen };
+        }
+        return { ...section, isOpen: false };
+      })
+    );
+  };
+
+  const toggleSubLink = (sectionIdx, linkIdx) => {
+    const key = `${sectionIdx}-${linkIdx}`;
+    setOpenSubLinks((prev) => ({
+      ...prev,
+      [key]: !prev[key],
+    }));
   };
 
   return (
@@ -553,32 +578,54 @@ const Header = () => {
                     <div className="pl-4 pb-4 space-y-1">
                       {section.links.map((link, lIdx) =>
                         link.subLinks ? (
-                          <div key={lIdx}>
-                            <p className="py-2 px-4 text-sm font-black text-[rgb(90,20,20)] uppercase tracking-widest">
-                              {link.name}
-                            </p>
-                            {link.subLinks.map((sub, sIdx) =>
-                              sub.href ? (
-                                <a
-                                  key={sIdx}
-                                  href={sub.href}
-                                  target="_blank"
-                                  rel="noopener noreferrer"
-                                  onClick={() => setIsMobileMenuOpen(false)}
-                                  className="block py-2 px-8 text-base font-bold text-gray-500 hover:text-[rgb(115,40,40)] hover:bg-[rgb(220,140,140)] rounded-xl transition-all"
-                                >
-                                  › {sub.name}
-                                </a>
-                              ) : (
-                                <Link
-                                  key={sIdx}
-                                  to={sub.route}
-                                  onClick={() => setIsMobileMenuOpen(false)}
-                                  className="block py-2 px-8 text-base font-bold text-gray-500 hover:text-[rgb(115,40,40)] hover:bg-[rgb(220,140,140)] rounded-xl transition-all"
-                                >
-                                  › {sub.name}
-                                </Link>
-                              ),
+                          <div key={lIdx} className="mb-2">
+                            <button
+                              onClick={() => toggleSubLink(idx, lIdx)}
+                              className="w-full flex items-center justify-between py-2.5 px-4 text-base font-bold text-gray-500 hover:text-[rgb(115,40,40)] transition-all"
+                            >
+                              <span>{link.name}</span>
+                              <svg
+                                className={`w-3.5 h-3.5 transform transition-transform duration-300 ${
+                                  openSubLinks[`${idx}-${lIdx}`] ? "rotate-180" : ""
+                                }`}
+                                fill="none"
+                                stroke="currentColor"
+                                viewBox="0 0 24 24"
+                              >
+                                <path
+                                  strokeLinecap="round"
+                                  strokeLinejoin="round"
+                                  strokeWidth="2.5"
+                                  d="M19 9l-7 7-7-7"
+                                />
+                              </svg>
+                            </button>
+                            {openSubLinks[`${idx}-${lIdx}`] && (
+                              <div className="pl-4 pb-2 space-y-1">
+                                {link.subLinks.map((sub, sIdx) =>
+                                  sub.href ? (
+                                    <a
+                                      key={sIdx}
+                                      href={sub.href}
+                                      target="_blank"
+                                      rel="noopener noreferrer"
+                                      onClick={() => setIsMobileMenuOpen(false)}
+                                      className="block py-2 px-8 text-base font-bold text-gray-500 hover:text-[rgb(115,40,40)] transition-all"
+                                    >
+                                      › {sub.name}
+                                    </a>
+                                  ) : (
+                                    <Link
+                                      key={sIdx}
+                                      to={sub.route}
+                                      onClick={() => setIsMobileMenuOpen(false)}
+                                      className="block py-2 px-8 text-base font-bold text-gray-500 hover:text-[rgb(115,40,40)] transition-all"
+                                    >
+                                      › {sub.name}
+                                    </Link>
+                                  ),
+                                )}
+                              </div>
                             )}
                           </div>
                         ) : (
@@ -589,7 +636,7 @@ const Header = () => {
                               target="_blank"
                               rel="noopener noreferrer"
                               onClick={() => setIsMobileMenuOpen(false)}
-                              className="block py-2.5 px-4 text-base font-bold text-gray-500 hover:text-[rgb(115,40,40)] hover:bg-[rgb(220,140,140)] rounded-xl transition-all"
+                              className="block py-2.5 px-4 text-base font-bold text-gray-500 hover:text-[rgb(115,40,40)] transition-all"
                             >
                               {link.name}
                             </a>
@@ -598,7 +645,7 @@ const Header = () => {
                               key={lIdx}
                               to={link.route}
                               onClick={() => setIsMobileMenuOpen(false)}
-                              className="block py-2.5 px-4 text-base font-bold text-gray-500 hover:text-[rgb(115,40,40)] hover:bg-[rgb(220,140,140)] rounded-xl transition-all"
+                              className="block py-2.5 px-4 text-base font-bold text-gray-500 hover:text-[rgb(115,40,40)] transition-all"
                             >
                               {link.name}
                             </Link>

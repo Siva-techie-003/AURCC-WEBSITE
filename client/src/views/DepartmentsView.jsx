@@ -366,7 +366,7 @@ const DepartmentsView = () => {
                           src={`${BACKEND_URL}/public/${staff.photo}`}
                           alt={staff.name}
                           onError={handleImageError}
-                          className="w-full h-full object-cover"
+                          className="w-full h-full object-cover object-right md:object-center"
                         />
                       </div>
                     </div>
