@@ -54,7 +54,7 @@ const Team = () => {
     {
       name: "Suresh Krishna P",
       role: "Student Developer",
-      image: "/suresh.jpeg",
+      image: "/suresh.png",
       linkedin: "https://www.linkedin.com/in/suresh-krishna-p/"
     }
   ];

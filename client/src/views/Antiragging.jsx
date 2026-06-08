@@ -86,7 +86,7 @@ const Antiragging = () => {
       </section>
 
       {/* Sticky Navigation Pill Bar - Overlapping design */}
-      <div className="sticky top-[116px] sm:top-[126px] lg:top-[136px] z-50 -mt-12 mb-4">
+      <div className="hidden sm:block sticky top-[116px] sm:top-[126px] lg:top-[136px] z-50 -mt-12 mb-4">
         <div className="max-w-7xl mx-auto px-4 text-center">
           <div className="max-w-5xl mx-auto bg-white/95 backdrop-blur-md shadow-xl rounded-full py-2 px-3 flex justify-center overflow-x-auto no-scrollbar gap-2 border border-[rgb(220,140,140)]">
             {navSections.map((section, index) => (

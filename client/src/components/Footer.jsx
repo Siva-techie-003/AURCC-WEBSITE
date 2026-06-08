@@ -232,7 +232,7 @@ const Footer = ({
 <div className="flex flex-col items-center w-full">
 
   <div
-    className="w-full max-w-[420px] lg:max-w-none h-[98px] sm:h-auto rounded-lg lg:rounded-xl p-1 sm:p-2 flex flex-col gap-1 justify-between"
+    className="w-full max-w-[420px] lg:max-w-none h-[80px] sm:h-auto lg:h-[220px] rounded-lg lg:rounded-xl p-1 sm:p-2 lg:p-4 flex flex-col gap-1 lg:gap-3 justify-between"
     style={{
       background: "#9b3535",
       border: "2px solid rgba(245,200,66,0.5)",
@@ -243,7 +243,7 @@ const Footer = ({
     </h3>
 
     <div
-      className="rounded-lg p-1 sm:p-2 text-center flex-grow flex flex-col justify-center items-center gap-[2px] sm:gap-1"
+      className="rounded-lg p-1 sm:p-2 lg:p-4 text-center flex-grow flex flex-col justify-center items-center gap-[2px] sm:gap-1 lg:gap-3"
       style={{
         background: "rgba(255,255,255,0.08)",
         border: "1px solid rgba(255,255,255,0.15)",
@@ -259,7 +259,7 @@ const Footer = ({
 
       <Link
         to="/team"
-        className="inline-block px-2 py-0.5 sm:px-3 sm:py-1.5 rounded-lg font-bold text-[6px] sm:text-xs lg:text-sm transition-all duration-300"
+        className="inline-block px-2 py-0.5 sm:px-3 sm:py-1.5 lg:px-4 lg:py-2 rounded-lg font-bold text-[6px] sm:text-xs lg:text-sm transition-all duration-300"
         style={{
           background: "#f5c842",
           color: "#6b1a1a",

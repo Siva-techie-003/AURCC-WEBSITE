@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { href, Link, useNavigate } from "react-router-dom";
 
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isQuickLinksOpen, setIsQuickLinksOpen] = useState(false);
   const navigate = useNavigate();
+  const quickLinksRef = useRef(null);
 
   useEffect(() => {
     if (isMobileMenuOpen) {
@@ -16,6 +17,22 @@ const Header = () => {
       document.body.classList.remove("mobile-menu-open");
     };
   }, [isMobileMenuOpen]);
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (quickLinksRef.current && !quickLinksRef.current.contains(event.target)) {
+        setIsQuickLinksOpen(false);
+      }
+    };
+    if (isQuickLinksOpen) {
+      document.addEventListener("mousedown", handleClickOutside);
+      document.addEventListener("touchstart", handleClickOutside);
+    }
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener("touchstart", handleClickOutside);
+    };
+  }, [isQuickLinksOpen]);
 
   const mobileSections = [
     {
@@ -301,7 +318,7 @@ const Header = () => {
             </div>
 
             {/* Mobile Dropdown (Only for phones) */}
-            <div className="sm:hidden relative">
+            <div className="sm:hidden relative" ref={quickLinksRef}>
               <button
                 onClick={() => setIsQuickLinksOpen(!isQuickLinksOpen)}
                 className="flex items-center gap-2 hover:text-yellow-300 transition-colors py-1 px-2 rounded-lg bg-white/10"

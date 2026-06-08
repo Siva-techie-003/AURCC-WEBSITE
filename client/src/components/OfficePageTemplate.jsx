@@ -47,15 +47,15 @@ const OfficePageTemplate = ({
     }, [sections, currentSection]);
 
     return (
-        <main className="bg-white min-h-screen font-sans text-gray-800">
+        <main className="bg-white min-h-screen font-sans text-gray-800 pt-[26px] sm:pt-0">
             {/* Hero Section */}
 <section className="relative w-full 
-min-h-[24vh] 
+min-h-[20vh] 
 sm:min-h-[30vh] 
 md:min-h-[40vh] 
 lg:min-h-[48vh] 
 xl:min-h-[55vh] 
-overflow-hidden flex items-center justify-center animate-fadeIn px-4 sm:px-6 lg:px-8">                <img src={heroImage} alt={officeName} className="absolute inset-0 w-full h-full object-cover object-center" />
+overflow-hidden flex items-center justify-center animate-fadeIn px-4 sm:px-6 lg:px-8">                <img src={heroImage} alt={officeName} className="absolute inset-0 w-full h-full object-cover object-top sm:object-center" />
                 <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-black/60 via-black/30 to-transparent"></div>
                 <div className="absolute inset-0 flex flex-col items-center justify-center z-10 px-3 sm:px-4">
                     <div className="backdrop-blur-md bg-white/30 rounded-xl sm:rounded-2xl shadow-lg px-3 py-3 sm:px-6 sm:py-4 md:px-8 md:py-6 lg:px-12 lg:py-10 flex flex-col items-center w-full max-w-xs sm:max-w-lg md:max-w-2xl border border-white/30">
