@@ -8,6 +8,17 @@ const Team = () => {
       dept: "Department of CSE",
       image: "/preethi.webp"
     }, {
+      name: "Dr. M. Newlin Rajkumar",
+      role: "Assistant Professor",
+      dept: "Department of EEE",
+      image: "/newlin.webp"
+    },
+    {
+      name: "Mr. K.S.Babu Magendra",
+      role: "System Administrator",
+      dept: "Department of CSE",
+      image: "/babu.webp"
+    }, {
       name: "Mr. S. Benedict",
       role: "Professional Assistant - I",
       dept: "Department of CSE",
@@ -22,10 +33,10 @@ const Team = () => {
 
   const members = [
     {
-      name: "Anbu Mani V",
+      name: "Siva E",
       role: "Student Developer",
-      image: "/anbu.webp",
-      linkedin: "https://www.linkedin.com/in/anbumani006/"
+      image: "/siva.png",
+      linkedin: "https://www.linkedin.com/in/siva-e/"
     },
     {
       name: "Dhivakar G",
@@ -33,11 +44,11 @@ const Team = () => {
       image: "/dhivakar.jpeg",
       linkedin: "https://www.linkedin.com/in/dhivakar-g/"
     },
-      {
-      name: "Sathya Moorthy R",
+    {
+      name: "Anbu Mani V",
       role: "Student Developer",
-      image: "/sathya.jpeg",
-      linkedin: "https://www.linkedin.com/in/sathyamoorthy-tech/"
+      image: "/anbu.webp",
+      linkedin: "https://www.linkedin.com/in/anbumani006/"
     },
     {
       name: "Santhosh S",
@@ -46,21 +57,21 @@ const Team = () => {
       linkedin: "https://www.linkedin.com/in/callsanthosh/"
     },
     {
-      name: "Siva E",
-      role: "Student Developer",
-      image: "/siva.png",
-      linkedin: "https://www.linkedin.com/in/siva-e/"
-    },
-    {
       name: "Suresh Krishna P",
       role: "Student Developer",
       image: "/suresh.png",
       linkedin: "https://www.linkedin.com/in/suresh-krishna-p/"
+    },
+    {
+      name: "Sathya Moorthy R",
+      role: "Student Developer",
+      image: "/sathya.jpeg",
+      linkedin: "https://www.linkedin.com/in/sathyamoorthy-tech/"
     }
   ];
 
   return (
-    <main className="flex-grow font-sans bg-white pt-[116px] sm:pt-[126px] lg:pt-[136px]">
+    <main className="flex-grow font-sans bg-white pt-[126px] sm:pt-[130px] lg:pt-[130px]">
       {/* Hero Header */}
       <section className="relative w-full overflow-hidden flex items-center justify-center bg-gradient-to-br from-[rgb(115,63,63)] to-[rgb(115,25,25)] text-center pt-10 pb-8 sm:pt-12 sm:pb-10 px-4">
         <div className="absolute inset-0 bg-black/40 z-0"></div>
@@ -75,7 +86,7 @@ const Team = () => {
       </section>
 
       {/* Content */}
-      <section className="max-w-[1400px] mx-auto py-12 px-4 space-y-10">
+      <section className="max-w-[1800px] w-full mx-auto py-12 px-4 sm:px-8 space-y-12">
         {/* Faculty Incharge */}
         <div className="space-y-6 animate-fadeIn">
           <div className="text-center">
@@ -86,40 +97,42 @@ const Team = () => {
               <span className="block w-24 h-1.5 rounded-full bg-[#f5c842]"></span>
             </div>
           </div>
-          <div className="flex flex-wrap gap-8 justify-center max-w-[1300px] mx-auto px-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 sm:gap-8 lg:gap-10 xl:gap-14 w-full mx-auto justify-items-center">
             {faculty.map((f, i) => (
               <div
                 key={i}
-                className="bg-white rounded-2xl shadow-md border-2 border-gray-100 hover:border-[#f5c842] overflow-hidden flex flex-col items-center hover:shadow-xl hover:-translate-y-1 transition-all duration-300 w-full max-w-[380px] h-[430px] mx-auto"
+                className="bg-white rounded-2xl shadow-md border-2 border-gray-100 hover:border-[#f5c842] overflow-hidden flex flex-col items-center hover:shadow-xl hover:-translate-y-1 transition-all duration-300 w-full h-full"
               >
                 {/* Header Section */}
-                <div className="w-full h-28 bg-[rgb(110,35,35)] relative flex justify-center"></div>
+                <div className="w-full h-24 sm:h-28 bg-[rgb(110,35,35)] relative flex justify-center flex-shrink-0"></div>
 
                 {/* Profile Image Section */}
-                <div className="relative -mt-20 flex justify-center">
-                  <div className="w-40 h-40 rounded-full overflow-hidden border-4 border-white shadow-lg bg-white flex items-center justify-center">
+                <div className="relative -mt-16 sm:-mt-20 flex justify-center flex-shrink-0">
+                  <div className="w-32 h-32 sm:w-40 sm:h-40 rounded-full overflow-hidden border-4 border-white shadow-lg bg-white flex items-center justify-center p-1">
                     <img
                       src={f.image}
                       alt={f.name}
-                      className="w-full h-full object-cover object-top transition-transform duration-300 hover:scale-105"
+                      className="w-full h-full object-cover object-top transition-transform duration-300 hover:scale-105 rounded-full text-[10px] text-gray-500 break-words text-center flex items-center justify-center"
                     />
                   </div>
                 </div>
 
                 {/* Content Section */}
-                <div className="w-full px-6 py-4 flex flex-col items-center flex-grow text-center justify-start pt-8 min-w-0">
-                  <h3 className="text-xl sm:text-2xl font-bold text-[rgb(110,35,35)] font-serif mb-1 leading-tight">
+                <div className="w-full px-2 sm:px-4 py-4 flex flex-col items-center flex-grow text-center justify-start pt-4 sm:pt-6 min-w-0">
+                  <h3 className="text-base sm:text-lg lg:text-xl font-bold text-[rgb(110,35,35)] font-serif mb-1 leading-tight break-words w-full">
                     {f.name}
                   </h3>
-                  <div className="text-xs sm:text-sm text-gray-500 font-semibold mb-3">
+                  <div className="text-[10px] sm:text-xs text-gray-500 font-semibold mb-3">
                     {f.dept}
                   </div>
-                  <div className="flex flex-col gap-2 w-full items-center">
-                    <div className="px-4 py-1.5 bg-[rgb(245,240,240)] rounded-full border border-[rgb(220,200,200)] flex items-center justify-center max-w-full">
-                      <span className="text-xs sm:text-sm font-black text-[rgb(110,35,35)] tracking-wide text-center whitespace-nowrap">
-                        {f.role}
-                      </span>
-                    </div>
+                  <div className="flex flex-col gap-2 w-full items-center mt-auto pb-2">
+                    {f.role && (
+                      <div className="px-2 py-1.5 bg-[rgb(245,240,240)] rounded-full border border-[rgb(220,200,200)] flex items-center justify-center w-full max-w-[95%]">
+                        <span className="text-[10px] sm:text-[11px] lg:text-xs font-black text-[rgb(110,35,35)] tracking-wide text-center leading-tight">
+                          {f.role}
+                        </span>
+                      </div>
+                    )}
                   </div>
                 </div>
               </div>
@@ -137,23 +150,23 @@ const Team = () => {
               <span className="block w-24 h-1.5 rounded-full bg-[#f5c842]"></span>
             </div>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-[1300px] mx-auto px-4 justify-items-center">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12 xl:gap-16 w-full mx-auto justify-items-center">
             {members.map((m, i) => (
               <div
                 key={i}
-                className="bg-white rounded-2xl shadow-md border-2 border-gray-100 hover:border-[#f5c842] p-4 sm:p-6 flex flex-row items-center hover:shadow-xl hover:-translate-y-1 transition-all duration-300 w-full max-w-[620px] h-[200px] sm:h-[220px] mx-auto"
+                className="bg-white rounded-2xl shadow-md border-2 border-gray-100 hover:border-[#f5c842] p-4 sm:p-6 flex flex-row items-center hover:shadow-xl hover:-translate-y-1 transition-all duration-300 w-full max-w-[620px] h-[180px] sm:h-[200px] mx-auto"
               >
                 {/* Profile Image Section */}
-                <div className="w-32 h-32 sm:w-36 sm:h-36 flex-shrink-0">
+                <div className="w-24 h-24 sm:w-32 sm:h-32 flex-shrink-0 flex items-center justify-center rounded-full border-2 border-[rgb(110,35,35)] shadow-md overflow-hidden bg-white">
                   <img
                     src={m.image}
                     alt={m.name}
-                    className="w-full h-full object-cover object-top rounded-full border-2 border-[rgb(110,35,35)] shadow-md transition-transform duration-300 hover:scale-105"
+                    className="w-full h-full object-cover object-top transition-transform duration-300 hover:scale-105 text-[10px] text-gray-500 break-words text-center flex items-center justify-center"
                   />
                 </div>
 
                 {/* Content Section */}
-                <div className="ml-5 sm:ml-8 flex flex-col justify-center text-left min-w-0 flex-grow h-full">
+                <div className="ml-4 sm:ml-6 flex flex-col justify-center text-left min-w-0 flex-grow h-full">
                   <h3 className="text-xl sm:text-2xl font-bold text-[rgb(110,35,35)] mb-1 leading-tight truncate">
                     {m.name}
                   </h3>

@@ -293,7 +293,7 @@ const Footer = ({
                   </h3>
                 </div>
 
-                <div className="relative overflow-hidden group h-[70px] sm:h-[160px] lg:h-[320px]">
+                <div className="relative overflow-hidden group h-[90px] sm:h-[280px] lg:h-[400px]">
                   <div className="absolute inset-x-0 animate-marquee flex flex-col gap-1 lg:gap-2 px-1 lg:px-4 py-1 lg:py-3 group-hover:[animation-play-state:paused]">
                     {[...data.links, ...data.links].map((item, i) => (
                       <a
@@ -301,7 +301,7 @@ const Footer = ({
                         href={item.url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-center py-1 lg:py-4 px-1 lg:px-4 rounded-full text-[6px] sm:text-xs lg:text-sm font-bold transition-all duration-200 break-all"
+                        className="text-center py-1.5 lg:py-6 px-1 lg:px-4 rounded-full text-[6px] sm:text-xs lg:text-sm font-bold transition-all duration-200 break-all"
                         style={{
                           background: "rgb(140,45,45)",
                           color: "#ffffff",
