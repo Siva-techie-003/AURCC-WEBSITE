@@ -1100,8 +1100,8 @@ const HomeView = () => {
                   />
                 </div>
                 <div className="w-full sm:w-2/3 p-4 sm:p-6 md:p-8 text-gray-900">
-                  <div className="text-center">
-                    <div className="flex justify-center items-center gap-2">
+                  <div className="text-center lg:text-left">
+                    <div className="flex justify-center lg:justify-start items-center gap-2">
                       <h3 className="text-base sm:text-xl lg:text-2xl font-bold">
                         {deanDesk.name} <span className="text-[10px] sm:text-sm lg:text-base font-normal text-gray-700">{deanDesk.credentials}</span>
                       </h3>
@@ -1111,7 +1111,7 @@ const HomeView = () => {
                       {deanDesk.designation}
                     </p>
                   </div>
-                  <p className="text-center text-xs sm:text-base text-[rgb(100,25,25)] mt-2 sm:mt-6 mb-2 sm:mb-4 italic font-medium">
+                  <p className="text-center lg:text-left text-xs sm:text-base text-[rgb(100,25,25)] mt-2 sm:mt-6 mb-2 sm:mb-4 italic font-medium">
                     "{deanDesk.quote}"
                   </p>
                   <div className="h-[180px] sm:h-[250px] overflow-y-auto pr-2 sm:pr-4 scrollbar-custom border-2 border-[rgb(180,100,100)] rounded-xl p-3 sm:p-4 bg-white/5">
