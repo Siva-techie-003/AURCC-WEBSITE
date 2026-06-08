@@ -232,7 +232,7 @@ const Footer = ({
 <div className="flex flex-col items-center w-full">
 
   <div
-    className="w-full max-w-[420px] lg:max-w-none h-[80px] sm:h-auto lg:h-[220px] rounded-lg lg:rounded-xl p-1 sm:p-2 lg:p-4 flex flex-col gap-1 lg:gap-3 justify-between"
+    className="w-[85%] sm:w-full max-w-[250px] sm:max-w-[380px] lg:max-w-[500px] h-auto mt-1 lg:mt-4 rounded-md lg:rounded-xl p-1 sm:p-3 lg:p-3 flex flex-col gap-[2px] sm:gap-1 lg:gap-2 justify-between mx-auto"
     style={{
       background: "#9b3535",
       border: "2px solid rgba(245,200,66,0.5)",
@@ -243,7 +243,7 @@ const Footer = ({
     </h3>
 
     <div
-      className="rounded-lg p-1 sm:p-2 lg:p-4 text-center flex-grow flex flex-col justify-center items-center gap-[2px] sm:gap-1 lg:gap-3"
+      className="rounded-md p-0.5 sm:p-2 lg:p-3 text-center flex-grow flex flex-col justify-center items-center gap-0 sm:gap-1 lg:gap-2"
       style={{
         background: "rgba(255,255,255,0.08)",
         border: "1px solid rgba(255,255,255,0.15)",
