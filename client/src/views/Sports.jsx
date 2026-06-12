@@ -183,8 +183,12 @@ const Sports = () => {
               {/* Indoor Games */}
               <div className="bg-[rgb(220,140,140)]/50 rounded-2xl p-6 border border-[rgb(200,120,120)] flex flex-col items-start transition-all ">
                 <div className="flex items-center gap-3 mb-6">
-                  <div className="w-12 h-12 bg-white rounded-2xl shadow-sm flex items-center justify-center text-3xl">
-                    🎯
+                  <div className="w-12 h-12 bg-white rounded-2xl shadow-sm flex items-center justify-center text-[rgb(115,25,25)]">
+                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <circle cx="12" cy="12" r="10" strokeWidth="2" />
+                      <circle cx="12" cy="12" r="6" strokeWidth="2" />
+                      <circle cx="12" cy="12" r="2" strokeWidth="2" />
+                    </svg>
                   </div>
                   <h3 className="text-xl lg:text-2xl font-black text-[rgb(100,25,25)] uppercase">
                     Indoor Games
@@ -211,8 +215,14 @@ const Sports = () => {
               {/* Outdoor Games */}
               <div className="bg-[rgb(220,140,140)]/50 rounded-2xl p-6 border border-[rgb(200,120,120)] flex flex-col items-start transition-all ">
                 <div className="flex items-center gap-3 mb-6">
-                  <div className="w-12 h-12 bg-white rounded-2xl shadow-sm flex items-center justify-center text-3xl">
-                    ⚽
+                  <div className="w-12 h-12 bg-white rounded-2xl shadow-sm flex items-center justify-center text-[rgb(115,25,25)]">
+                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <circle cx="12" cy="12" r="10" strokeWidth="2" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 2a10 10 0 0 1 10 10" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M2 12a10 10 0 0 0 10 10" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M7 7c3 3 7 3 10 0" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M7 17c3-3 7-3 10 0" />
+                    </svg>
                   </div>
                   <h3 className="text-xl lg:text-2xl font-black text-emerald-900 uppercase">
                     Outdoor Games

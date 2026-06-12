@@ -30,7 +30,8 @@
       "members": [
         {
           "name": "Dr. J. Preethi",
-          "photo": "preethi.webp"
+          "photo": "preethi.webp",
+          "position": "Assistant Professor (Selection Grade)"
         },
         {
           "name": "Dr. M. Newlin Rajkumar",
@@ -158,7 +159,8 @@
       "members": [
         {
           "name": "Dr. J. Preethi",
-          "photo": "preethi.webp"
+          "photo": "preethi.webp",
+          "position": "Assistant Professor (Selection Grade)"
         },
         {
           "name": "Dr. T. Suganthalakshmi",

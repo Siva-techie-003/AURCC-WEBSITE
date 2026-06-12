@@ -38,6 +38,11 @@ const DepartmentsView = () => {
           return;
         }
 
+        // Intercept and update HOD desk photo if department is MBA
+        if (departmentName === "mba" && data.faculty?.hod_desk?.length > 0) {
+          data.faculty.hod_desk[0].photo = "DEAN_DESK.jpeg";
+        }
+
         setDepartment(data);
       } catch (error) {
         console.error("Error fetching department:", error);
@@ -357,16 +362,16 @@ const DepartmentsView = () => {
                 ).map((staff, i) => (
                   <div
                     key={i}
-                    className="w-full bg-white rounded-xl shadow-md border border-red-200 p-5 sm:p-10 grid md:grid-cols-2 gap-6 md:gap-12 items-stretch"
+                    className="w-full bg-white rounded-xl shadow-md border border-red-200 p-5 sm:p-10 grid md:grid-cols-2 gap-6 md:gap-12 items-center"
                   >
                     {/* LEFT IMAGE */}
-                    <div className="flex justify-center">
-                      <div className="w-full h-[250px] md:h-full rounded-xl overflow-hidden">
+                    <div className="w-full">
+                      <div className="w-full h-[220px] sm:h-[280px] md:h-[340px] lg:h-[400px] rounded-xl overflow-hidden bg-gray-50 flex items-center justify-center">
                         <img
                           src={`${BACKEND_URL}/public/${staff.photo}`}
                           alt={staff.name}
                           onError={handleImageError}
-                          className="w-full h-full object-cover object-right md:object-center"
+                          className="max-w-full max-h-full object-contain"
                         />
                       </div>
                     </div>
@@ -988,15 +993,15 @@ const DepartmentsView = () => {
                     {selectedStaff.title} {selectedStaff.name}
                   </h2>
 
-                  <p className="text-xs sm:text-sm md:text-base text-[rgb(115,40,40)] font-semibold mt-1 md:mt-2 leading-tight">
+                  <p className="text-[9.5px] min-[350px]:text-[11px] min-[400px]:text-xs sm:text-sm md:text-base text-[rgb(115,40,40)] font-semibold mt-1 md:mt-2 leading-tight whitespace-nowrap md:whitespace-normal">
                     {selectedStaff.position}
                   </p>
 
-                  <p className="text-[10px] sm:text-xs md:text-sm text-[rgb(100,25,25)]/80 font-medium mt-0.5 leading-tight">
+                  <p className="text-[9.5px] min-[350px]:text-[11px] min-[400px]:text-xs sm:text-sm md:text-sm text-[rgb(100,25,25)]/80 font-medium mt-0.5 leading-tight whitespace-nowrap md:whitespace-normal">
                     {selectedStaff.department}
                   </p>
 
-                  <p className="text-[10px] sm:text-xs md:text-sm mt-1.5 md:mt-2.5 text-blue-600 font-medium break-all leading-tight hover:underline">
+                  <p className="text-[9.5px] min-[350px]:text-[11px] min-[400px]:text-xs sm:text-sm md:text-sm mt-1.5 md:mt-2.5 text-blue-600 font-medium break-all leading-tight hover:underline whitespace-nowrap md:whitespace-normal">
                     {selectedStaff.contact?.email}
                   </p>
                 </div>

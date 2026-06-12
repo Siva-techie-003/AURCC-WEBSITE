@@ -126,19 +126,21 @@ const Footer = ({
           <div className="grid grid-cols-4 gap-2 sm:gap-4 lg:gap-8">
 
             {/* ── COL 1 : CAMPUS LOCATION ── */}
-            <div className="flex flex-col col-span-1">
-              <h3 className="text-[6px] sm:text-sm lg:text-xl font-black mb-[1px] lg:mb-4 uppercase tracking-wide leading-tight">
-                Campus <span style={{ color: "#f5c842" }}>Location</span>
-              </h3>
-              <p className="font-bold text-[5px] sm:text-xs lg:text-sm leading-tight">Anna University Regional Campus Coimbatore</p>
-              <p className="text-[5px] sm:text-xs lg:text-xs mt-[1px] text-white/70 leading-tight">
-                Maruthamalai Road, Navavoor, Coimbatore - 641046
-              </p>
-              <p className="mt-[1px] lg:mt-2 font-bold text-[5px] sm:text-xs lg:text-sm leading-tight">0422-2984007</p>
+            <div className="flex flex-col col-span-1 justify-between">
+              <div>
+                <h3 className="text-[6px] sm:text-sm lg:text-xl font-black mb-[1px] lg:mb-4 uppercase tracking-wide leading-tight">
+                  Campus <span style={{ color: "#f5c842" }}>Location</span>
+                </h3>
+                <p className="font-bold text-[5px] sm:text-xs lg:text-sm leading-tight">Anna University Regional Campus Coimbatore</p>
+                <p className="text-[5px] sm:text-xs lg:text-xs mt-[1px] text-white/70 leading-tight">
+                  Maruthamalai Road, Navavoor, Coimbatore - 641046
+                </p>
+                <p className="mt-[1px] lg:mt-2 font-bold text-[5px] sm:text-xs lg:text-sm leading-tight">0422-2984007</p>
+              </div>
 
               {/* MAP */}
               <div
-                className="mt-[2px] lg:mt-5 w-[80px] h-[100px] sm:w-full sm:min-h-[120px] lg:min-h-[220px] lg:flex-grow rounded sm:rounded-xl overflow-hidden"
+                className="mt-[2px] lg:mt-5 w-[80px] h-[100px] sm:w-full sm:min-h-[120px] lg:min-h-[220px] flex-grow rounded sm:rounded-xl overflow-hidden"
                 style={{ border: "1px solid rgba(255,255,255,0.15)" }}
               >
                 <iframe
@@ -153,7 +155,7 @@ const Footer = ({
             </div>
 
             {/* ── COL 2 & 3 : NAV + PORTAL + CONNECT ── */}
-            <div className="col-span-2 flex flex-col gap-2 lg:gap-4">
+            <div className="col-span-2 flex flex-col gap-2 lg:gap-4 justify-between">
               <div className="grid grid-cols-2 gap-2 lg:gap-4">
 
                 {/* Navigation Hub */}
@@ -229,62 +231,104 @@ const Footer = ({
 
               {/* Connect With Us */}
               {/* CONNECT + TEAM (STACKED) */}
-<div className="flex flex-col items-center w-full">
+              <div className="flex flex-col items-center w-full flex-grow justify-end">
 
-  <div
-    className="w-[85%] sm:w-full max-w-[250px] sm:max-w-[380px] lg:max-w-[500px] h-auto mt-1 lg:mt-4 rounded-md lg:rounded-xl p-1 sm:p-3 lg:p-3 flex flex-col gap-[2px] sm:gap-1 lg:gap-2 justify-between mx-auto"
-    style={{
-      background: "#9b3535",
-      border: "2px solid rgba(245,200,66,0.5)",
-    }}
-  >
-    <h3 className="text-[8px] sm:text-sm lg:text-xl font-black uppercase tracking-wide text-center leading-tight">
-      Website <span style={{ color: "#f5c842" }}>Development</span> Team
-    </h3>
+                <div
+                  className="w-[85%] sm:w-full max-w-[250px] sm:max-w-[380px] lg:max-w-[500px] h-auto mt-1 lg:mt-4 rounded-md lg:rounded-xl p-1 sm:p-3 lg:p-3 flex flex-col gap-[2px] sm:gap-1 lg:gap-2 justify-between mx-auto"
+                  style={{
+                    background: "#9b3535",
+                    border: "2px solid rgba(245,200,66,0.5)",
+                  }}
+                >
+                  <h3 className="text-[8px] sm:text-sm lg:text-xl font-black uppercase tracking-wide text-center leading-tight">
+                    Website <span style={{ color: "#f5c842" }}>Development</span> Team
+                  </h3>
 
-    <div
-      className="rounded-md p-0.5 sm:p-2 lg:p-3 text-center flex-grow flex flex-col justify-center items-center gap-0 sm:gap-1 lg:gap-2"
-      style={{
-        background: "rgba(255,255,255,0.08)",
-        border: "1px solid rgba(255,255,255,0.15)",
-      }}
-    >
-      <h4 className="text-[7px] sm:text-sm lg:text-lg font-bold leading-tight">
-        Meet Our Team
-      </h4>
+                  <div
+                    className="rounded-md p-0.5 sm:p-2 lg:p-3 text-center flex-grow flex flex-col justify-center items-center gap-0 sm:gap-1 lg:gap-2"
+                    style={{
+                      background: "rgba(255,255,255,0.08)",
+                      border: "1px solid rgba(255,255,255,0.15)",
+                    }}
+                  >
+                    <h4 className="text-[7px] sm:text-sm lg:text-lg font-bold leading-tight">
+                      Meet Our Team
+                    </h4>
 
-      <p className="text-[6px] sm:text-xs lg:text-sm text-white/70 leading-normal">
-        View the developers behind this website.
-      </p>
+                    <p className="text-[6px] sm:text-xs lg:text-sm text-white/70 leading-normal">
+                      View the developers behind this website.
+                    </p>
 
-      <Link
-        to="/team"
-        className="inline-block px-2 py-0.5 sm:px-3 sm:py-1.5 lg:px-4 lg:py-2 rounded-lg font-bold text-[6px] sm:text-xs lg:text-sm transition-all duration-300"
-        style={{
-          background: "#f5c842",
-          color: "#6b1a1a",
-        }}
-      >
-        View Team →
-      </Link>
-    </div>
+                    <Link
+                      to="/team"
+                      className="inline-block px-2 py-0.5 sm:px-3 sm:py-1.5 lg:px-4 lg:py-2 rounded-lg font-bold text-[6px] sm:text-xs lg:text-sm transition-all duration-300"
+                      style={{
+                        background: "#f5c842",
+                        color: "#6b1a1a",
+                      }}
+                    >
+                      View Team →
+                    </Link>
+                  </div>
 
-  </div>
+                </div>
 
-</div> </div>
+                {/* Social Media Icons below the card */}
+                <div className="flex justify-center items-center gap-1.5 sm:gap-2 lg:gap-3 mt-3 lg:mt-5 flex-wrap">
+                  {socials.map((soc, idx) => (
+                    <a
+                      key={idx}
+                      href={soc.url || "#"}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={soc.label}
+                      className="flex items-center justify-center rounded-md lg:rounded-xl transition-all duration-200"
+                      style={{
+                        width: "clamp(24px, 3.5vw, 38px)",
+                        height: "clamp(24px, 3.5vw, 38px)",
+                        minWidth: "clamp(24px, 3.5vw, 38px)",
+                        background: "#f5c842",
+                        color: "rgb(140,45,45)",
+                      }}
+                      onMouseEnter={e => {
+                        e.currentTarget.style.background = "white";
+                        e.currentTarget.style.color = "rgb(107,26,26)";
+                        e.currentTarget.style.transform = "translateY(-2px)";
+                      }}
+                      onMouseLeave={e => {
+                        e.currentTarget.style.background = "#f5c842";
+                        e.currentTarget.style.color = "rgb(140,45,45)";
+                        e.currentTarget.style.transform = "translateY(0)";
+                      }}
+                    >
+                      <svg
+                        className="w-3.5 h-3.5 sm:w-5 sm:h-5"
+                        fill="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path d={soc.icon} />
+                      </svg>
+                    </a>
+                  ))}
+                </div>
+
+              </div>
+            </div>
 
             {/* ── COL 4 : ABOUT + USEFUL LINKS ── */}
-            <div className="flex flex-col col-span-1">
-              <h3 className="text-[10px] sm:text-sm lg:text-xl font-black mb-1 lg:mb-3 uppercase tracking-wide">
-                About <span style={{ color: "#f5c842" }}>Campus</span>
-              </h3>
-              <p className="text-[6px] sm:text-xs text-white/70 leading-relaxed">
-                Anna University Coimbatore is committed to delivering quality education and innovation.
-              </p>
+            <div className="flex flex-col col-span-1 justify-between">
+              <div>
+                <h3 className="text-[10px] sm:text-sm lg:text-xl font-black mb-1 lg:mb-3 uppercase tracking-wide">
+                  About <span style={{ color: "#f5c842" }}>Campus</span>
+                </h3>
+                <p className="text-[6px] sm:text-xs text-white/70 leading-relaxed">
+                  Anna University Coimbatore is committed to delivering quality education and innovation.
+                </p>
+              </div>
 
               {/* Useful Links */}
               <div
-                className="mt-1 lg:mt-11 rounded-md sm:rounded-xl overflow-hidden flex flex-col flex-shrink-0"
+                className="mt-1 lg:mt-11 rounded-md sm:rounded-xl overflow-hidden flex flex-col flex-grow"
                 style={{ background: "#9b3535", border: "2px solid rgba(245,200,66,0.5)" }}
               >
                 <div className="px-1 lg:px-4 py-1 lg:py-3" style={{ borderBottom: "1px solid rgba(255,255,255,0.1)" }}>
@@ -332,71 +376,28 @@ const Footer = ({
 
       {/* ── BOTTOM BAR ── */}
       <div style={{ background: "rgba(0,0,0,0.25)", borderTop: "1px solid rgba(255,255,255,0.1)" }}>
+        <div className="w-full px-2 sm:px-6 py-3">
+          <div className="flex flex-row items-center justify-between gap-2 sm:gap-3">
 
-        <div className="w-full px-2 sm:px-6 py-2 lg:py-3">
-
-          <div className="flex flex-row items-center justify-between">
-
-            {/* LEFT */}
-            <p className="text-white/60 text-[5px] sm:text-xs font-semibold uppercase tracking-widest text-left hidden sm:block w-1/3">
-              © 2026 Anna University Regional Campus Coimbatore. All rights reserved.
-            </p>
-            <p className="text-white/60 text-[5px] sm:hidden font-semibold uppercase tracking-widest text-left w-1/3">
-              © 2026 AURCC.
-            </p>
+            {/* LEFT (Symmetrical Spacing Holder on Desktop) */}
+            <div className="hidden sm:block w-1/4"></div>
 
             {/* CENTER */}
-<div className="flex justify-center items-center gap-1 sm:gap-4 flex-wrap w-1/3">
-  {socials.map((soc, idx) => (
-    <a
-      key={idx}
-      href={soc.url || "#"}
-      target="_blank"
-      rel="noopener noreferrer"
-      aria-label={soc.label}
-      className="flex items-center justify-center rounded-md lg:rounded-xl transition-all duration-200"
-      style={{
-        width: "clamp(16px, 3vw, 40px)",
-        height: "clamp(16px, 3vw, 40px)",
-        minWidth: "clamp(16px, 3vw, 40px)",
-
-        // 🔁 STATIC (inverted)
-        background: "#f5c842",
-        color: "rgb(140,45,45)",
-      }}
-      onMouseEnter={e => {
-        e.currentTarget.style.background = "white";
-        e.currentTarget.style.color = "rgb(107,26,26)";
-        e.currentTarget.style.transform = "translateY(-3px)";
-        e.currentTarget.style.boxShadow = "0 4px 12px rgba(0,0,0,0.2)";
-      }}
-      onMouseLeave={e => {
-        e.currentTarget.style.background = "#f5c842";
-        e.currentTarget.style.color = "rgb(140,45,45)";
-        e.currentTarget.style.transform = "translateY(0)";
-        e.currentTarget.style.boxShadow = "none";
-      }}
-    >
-      <svg
-        className="w-2 h-2 sm:w-5 sm:h-5"
-        fill="currentColor"
-        viewBox="0 0 24 24"
-      >
-        <path d={soc.icon} />
-      </svg>
-    </a>
-  ))}
-</div>
+            <div className="text-center w-[65%] sm:w-2/4">
+              <p className="text-white/60 text-[6px] sm:text-xs font-semibold uppercase tracking-wider sm:tracking-widest leading-normal">
+                © 2026 Anna University Regional Campus Coimbatore. All rights reserved.
+              </p>
+            </div>
 
             {/* RIGHT (FORCED CORNER) */}
-            <div className="flex gap-1 sm:gap-6 items-center justify-end w-1/3">
+            <div className="flex gap-2 sm:gap-6 items-center justify-end w-[35%] sm:w-1/4">
               {["Team", "Privacy", "Safety"].map((item) => {
                 if (item === "Team") {
                   return (
                     <Link
                       key={item}
                       to="/team"
-                      className="text-white/60 hover:text-yellow-400 text-[5px] sm:text-xs font-black uppercase tracking-widest transition-colors"
+                      className="text-white/60 hover:text-yellow-400 text-[6px] sm:text-xs font-black uppercase tracking-wider sm:tracking-widest transition-colors"
                     >
                       {item}
                     </Link>
@@ -406,7 +407,7 @@ const Footer = ({
                   <a
                     key={item}
                     href="#"
-                    className="text-white/60 hover:text-yellow-400 text-[5px] sm:text-xs font-black uppercase tracking-widest transition-colors"
+                    className="text-white/60 hover:text-yellow-400 text-[6px] sm:text-xs font-black uppercase tracking-wider sm:tracking-widest transition-colors"
                   >
                     {item}
                   </a>
@@ -415,7 +416,6 @@ const Footer = ({
             </div>
 
           </div>
-
         </div>
       </div>
     </footer>

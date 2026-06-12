@@ -138,11 +138,13 @@ const Library = () => {
                 Salient Features
               </h3>
 
-              <ul className="space-y-2">
+              <ul className="space-y-2 text-gray-700 font-medium">
                 {libraryData.e_journals.library_salient_features.map(
                   (feature, i) => (
                     <li key={i} className="flex gap-2 items-start">
-                      <span className="text-green-500">▶</span>
+                      <svg className="w-3.5 h-3.5 text-[rgb(115,25,25)] mt-1.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M9 5l7 7-7 7" />
+                      </svg>
                       {feature}
                     </li>
                   ),
@@ -156,10 +158,12 @@ const Library = () => {
                 Library Services
               </h3>
 
-              <ul className="space-y-2">
+              <ul className="space-y-2 text-gray-700 font-medium">
                 {libraryData.e_journals.library_services.map((service, i) => (
                   <li key={i} className="flex gap-2 items-start">
-                    <span className="text-green-500">▶</span>
+                    <svg className="w-3.5 h-3.5 text-[rgb(115,25,25)] mt-1.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M9 5l7 7-7 7" />
+                    </svg>
                     {service}
                   </li>
                 ))}
@@ -186,7 +190,11 @@ const Library = () => {
               {Object.entries(libraryData.library_resources.collection).map(
                 ([key, value], i) => (
                   <div key={i} className="text-center">
-                    <span className="text-3xl block mb-2">📚</span>
+                    <div className="flex justify-center mb-2">
+                      <svg className="w-8 h-8 text-[rgb(115,25,25)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                      </svg>
+                    </div>
 
                     <span className="text-2xl font-bold text-[rgb(100,25,25)]">
                       {value}
@@ -215,12 +223,18 @@ const Library = () => {
             </p>
 
             <div className="grid sm:grid-cols-2 gap-6 max-w-4xl mx-auto">
-              <div className="px-6 py-4 bg-white text-[rgb(100,25,25)] rounded-2xl border border-[rgb(200,120,120)] hover:bg-[rgb(220,140,140)] hover:shadow-md hover:-translate-y-1 transition-all text-center">
-                🌐 {libraryData.digital_library.e_resources}
+              <div className="px-6 py-4 bg-white text-[rgb(100,25,25)] rounded-2xl border border-[rgb(200,120,120)] hover:bg-[rgb(220,140,140)] hover:shadow-md hover:-translate-y-1 transition-all flex items-center justify-center gap-3">
+                <svg className="w-5 h-5 text-[rgb(115,25,25)] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
+                </svg>
+                <span>{libraryData.digital_library.e_resources}</span>
               </div>
 
-              <div className="px-6 py-4 bg-white text-[rgb(100,25,25)] rounded-2xl border border-[rgb(200,120,120)] hover:bg-[rgb(220,140,140)] hover:shadow-md hover:-translate-y-1 transition-all text-center">
-                🎞️ {libraryData.digital_library.multimedia}
+              <div className="px-6 py-4 bg-white text-[rgb(100,25,25)] rounded-2xl border border-[rgb(200,120,120)] hover:bg-[rgb(220,140,140)] hover:shadow-md hover:-translate-y-1 transition-all flex items-center justify-center gap-3">
+                <svg className="w-5 h-5 text-[rgb(115,25,25)] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M7 4v16M17 4v16M3 8h4m10 0h4M3 12h18M3 16h4m10 0h4M4 20h16a1 1 0 001-1V5a1 1 0 00-1-1H4a1 1 0 00-1 1v14a1 1 0 001 1z" />
+                </svg>
+                <span>{libraryData.digital_library.multimedia}</span>
               </div>
             </div>
           </div>
@@ -243,7 +257,9 @@ const Library = () => {
                   key={i}
                   className="px-6 py-4 bg-white text-[rgb(100,25,25)] font-bold rounded-2xl border border-[rgb(200,120,120)] flex items-center gap-3 hover:bg-[rgb(220,140,140)] hover:shadow-md hover:-translate-y-1 transition-all"
                 >
-                  <span className="text-[rgb(140,60,60)]">🔗</span>
+                  <svg className="w-4 h-4 text-[rgb(140,60,60)] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
+                  </svg>
                   {resource}
                 </div>
               ))}

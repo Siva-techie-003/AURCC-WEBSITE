@@ -63,7 +63,7 @@ const POSH = () => {
             </section>
 
             {/* Sticky Navigation Pill Bar - Overlapping design */}
-            <div className="sticky top-[116px] sm:top-[126px] lg:top-[136px] z-50 -mt-12 mb-4">
+            <div className="hidden md:block sticky top-[116px] sm:top-[126px] lg:top-[136px] z-50 -mt-12 mb-4">
                 <div className="max-w-7xl mx-auto px-4 text-center">
                     <div className="max-w-5xl mx-auto bg-white/95 backdrop-blur-md shadow-xl rounded-full py-2 px-3 flex justify-center overflow-x-auto no-scrollbar gap-2 border border-[rgb(220,140,140)]">
                         {navSections.map((section, index) => (
@@ -83,7 +83,9 @@ const POSH = () => {
             <section className="max-w-7xl mx-auto py-8 sm:py-12 lg:py-14 px-4 flex flex-col gap-12">
                 <div ref={resourcesRef} className="bg-white/70 backdrop-blur-md rounded-2xl shadow-lg border border-gray-100 overflow-hidden animate-fadeIn">
                     <div className="bg-gradient-to-r from-[rgb(115,63,63)] to-[rgb(115,25,25)] py-4 sm:py-5 flex items-center justify-center gap-2 sm:gap-3">
-                        <span className="text-lg lg:text-xl text-white">👩‍⚖️</span>
+                        <svg className="w-5 h-5 sm:w-6 sm:h-6 text-white" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7V2m0 2h12m0 0l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M21 7l-3 9M18 7V2M12 2v20m-5 0h10" />
+                        </svg>
                         <h2 className="text-lg sm:text-xl lg:text-2xl xl:text-3xl font-bold text-white text-center">POSH Resources & Guidelines</h2>
                     </div>
                     <div className="p-4 sm:p-6 md:p-8 lg:p-10 text-left">
@@ -95,7 +97,7 @@ const POSH = () => {
                                 { title: 'UGC Regulations 2015 Handbook', href: 'http://www.aurcc.ac.in/downloads/UGC%20Regulations%202015.pdf' },
                                 { title: 'Saksham: Gender Sensitisation Measures 2013', href: 'http://www.aurcc.ac.in/downloads/Saksham%20Measures.pdf' },
                                 { title: 'Working Women Sexual Harassment Handbook 2013', href: 'http://www.aurcc.ac.in/downloads/Handbook.pdf' },
-                                { title: 'Internal Complaint Committee Members', href: 'http://www.aurcc.ac.in/downloads/ICC%20committee.pdf' }
+                                { title: 'Internal Complaint Committee ICC Members', href: 'http://www.aurcc.ac.in/downloads/ICC%20committee.pdf' }
                             ].map((link, i) => (
                                 <li key={i}>
                                     <a
@@ -111,21 +113,23 @@ const POSH = () => {
                                         <svg className="ml-auto w-5 h-5 text-gray-400 group-hover:text-[rgb(120,45,45)] transform group-hover:translate-x-1 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7" /></svg>
                                     </a>
                                 </li>
-                            ))}
+                             ))}
                         </ul>
                     </div>
                 </div>
 
                 <div ref={contactRef} className="bg-white/70 backdrop-blur-md rounded-2xl shadow-lg border border-gray-100 overflow-hidden animate-fadeIn">
                     <div className="bg-gradient-to-r from-[rgb(115,63,63)] to-[rgb(115,25,25)] py-4 sm:py-5 flex items-center justify-center gap-2 sm:gap-3">
-                        <span className="text-lg lg:text-xl text-white">📞</span>
+                        <svg className="w-5 h-5 sm:w-6 sm:h-6 text-white" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.94.725l.548 2.2a1 1 0 01-.321.988l-1.305.98a10.582 10.582 0 004.872 4.872l.98-1.305a1 1 0 01.988-.321l2.2.548a1 1 0 01.725.94V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                        </svg>
                         <h2 className="text-lg sm:text-xl lg:text-2xl xl:text-3xl font-bold text-white text-center">Contact Us</h2>
                     </div>
                     <div className="p-4 sm:p-6 md:p-8 lg:p-10 text-center space-y-4">
-                        <div className="bg-[rgb(220,140,140)] p-6 rounded-2xl border border-[rgb(200,120,120)] max-w-2xl mx-auto shadow-sm">
+                        <div className="bg-amber-50/60 p-6 rounded-2xl border-2 border-[rgb(115,40,40)]/20 max-w-2xl mx-auto shadow-sm hover:border-[rgb(115,40,40)]/40 transition-all duration-300">
                             <p className="font-bold text-lg text-[rgb(100,25,25)] mb-2">The Coordinator,</p>
                             <p className="text-gray-700 font-medium">POSH CELL,<br />Anna University Regional Campus,<br />Maruthamalai Main Road,<br />Coimbatore(Dt), Pin - 641 046.</p>
-                            <div className="mt-4 pt-4 border-t border-[rgb(180,100,100)] flex flex-wrap justify-center gap-6">
+                            <div className="mt-4 pt-4 border-t border-[rgb(115,40,40)]/20 flex flex-wrap justify-center gap-6">
                                 <div className="flex items-center gap-2">
                                     <span className="font-bold text-[rgb(100,25,25)]">Phone:</span>
                                     <span className="text-gray-800">0422-2984001</span>

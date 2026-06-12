@@ -44,7 +44,7 @@ const COD = () => {
                 </div>
             </div>
 
-            <div className="container mx-auto font-sans flex flex-col gap-16 mb-20 px-4">
+            <div className="container mx-auto font-sans flex flex-col gap-8 sm:gap-16 mb-20 px-4">
                 {sorted.map((entry, index) => (
                     <section key={index} className="w-full flex flex-col items-center">
                         {/* Centered Section Header */}
@@ -56,14 +56,14 @@ const COD = () => {
                         </div>
 
                         {/* Members container - Centered using flexbox */}
-                        <div className="flex flex-wrap justify-center gap-10 w-full px-4">
+                        <div className="flex flex-wrap justify-center gap-4 sm:gap-10 w-full px-4">
                             {entry.members.map((member, mIdx) => (
                                 <div
                                     key={mIdx}
-                                    className="cod-card bg-white rounded-2xl sm:rounded-3xl shadow-md border-2 border-[rgb(90,25,25)] overflow-hidden flex items-center p-4 sm:p-8 gap-4 sm:gap-8 hover:shadow-2xl transition-all duration-500 group w-full max-w-2xl"
+                                    className="cod-card bg-white rounded-2xl sm:rounded-3xl shadow-md border-2 border-[rgb(90,25,25)] overflow-hidden flex items-center p-2.5 xs:p-4 sm:p-8 gap-2.5 xs:gap-4 sm:gap-8 hover:shadow-2xl transition-all duration-500 group w-full max-w-2xl"
                                 >
                                     {/* Larger Square photo frame */}
-                                    <div className="flex-shrink-0 w-20 h-20 sm:w-32 sm:h-32 rounded-xl sm:rounded-2xl overflow-hidden border-2 border-[rgb(110,35,35)] shadow-md bg-gray-50">
+                                    <div className="flex-shrink-0 w-16 h-16 xs:w-20 xs:h-20 sm:w-32 sm:h-32 rounded-xl sm:rounded-2xl overflow-hidden border-2 border-[rgb(110,35,35)] shadow-md bg-gray-50">
                                         <img
                                             src={`${BACKEND_URL}/${member.photo}`}
                                             alt={member.name}
@@ -73,11 +73,11 @@ const COD = () => {
                                     
                                     {/* Member info */}
                                     <div className="flex flex-col justify-center flex-grow min-w-0 gap-1 sm:gap-2">
-                                        <h4 className="text-sm sm:text-lg font-bold text-[rgb(100,25,25)] uppercase leading-tight tracking-tight break-words">
+                                        <h4 className="text-[7.5px] min-[350px]:text-[9px] min-[390px]:text-[10px] min-[430px]:text-xs sm:text-lg font-bold text-[rgb(100,25,25)] uppercase leading-tight tracking-tight truncate">
                                             {member.name}
                                         </h4>
                                         {member.position && (
-                                            <h5 className="text-xs sm:text-base font-semibold text-gray-700 uppercase leading-tight tracking-tight break-words">
+                                            <h5 className="text-[8px] min-[400px]:text-[9px] sm:text-xs font-semibold text-gray-700 uppercase leading-tight tracking-tight break-words">
                                                 {member.position}
                                             </h5>
                                         )}

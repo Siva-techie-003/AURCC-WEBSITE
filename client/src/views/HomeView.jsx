@@ -1600,7 +1600,7 @@ const HomeView = () => {
             </div>
           </section>
 
-          {/* Support Chatbot */}
+          {/* Support Chatbot
           <button
             onClick={() => document.getElementById("my_modal_5").showModal()}
             className=" flex gap-1.5 sm:gap-2 fixed bottom-3 right-3 sm:bottom-6 sm:right-6 bg-gradient-to-r from-[rgb(115,63,63)] to-[rgb(115,25,25)] text-white p-3.5 sm:p-5 rounded-full shadow-2xl z-50 transform hover:scale-110 active:scale-95 transition-all duration-300 group">
@@ -1693,6 +1693,7 @@ const HomeView = () => {
               </div>
             </div>
           </dialog>
+          */}
 
           {/* Page Navigation Arrow */}
           <div className={`fixed left-3 bottom-3 sm:left-6 sm:bottom-6 z-50 transition-all duration-500 transform ${showScrollButtons ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10 pointer-events-none"}`}>

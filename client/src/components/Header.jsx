@@ -154,7 +154,7 @@ const Header = () => {
         { name: "Research Cell", route: "/research-cell" },
         { name: "DGATE Cell", route: "/dgate" },
         { name: "PACE Cell", route: "/pace-cell" },
-        { name: "POSH Cell", route: "/posh-cell" },
+        { name: "POSH Cell", route: "/posh" },
         // { name: "UBA Cell", route: "/pace-cell" },
         // { name: "Institute Innovation Council", route: "/pace-cell" },
         { name: "Distance Education Cell", route: "/distance-education" },
@@ -340,48 +340,56 @@ const Header = () => {
               </button>
 
               {isQuickLinksOpen && (
-                <div className="absolute right-0 mt-2 w-48 bg-white rounded-xl shadow-2xl py-2 z-[1001] border border-gray-100 animate-slideDown">
+                <div className="absolute right-0 mt-2 w-56 bg-white rounded-xl shadow-2xl py-2 z-[1001] border border-gray-100 animate-slideDown">
                   {[
                     {
                       name: "Library",
                       to: "/library",
-                      icon: "M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20",
+                      icon: (
+                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20" />
+                        </svg>
+                      ),
                     },
                     {
                       name: "Hostel",
                       to: "/hostel",
-                      icon: "M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z",
+                      icon: (
+                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                        </svg>
+                      ),
                     },
                     {
                       name: "Contact",
                       to: "/contact",
-                      icon: "M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z",
+                      icon: (
+                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                        </svg>
+                      ),
                     },
                     {
-                      name: "Feedback",
-                      to: "/feedback",
-                      icon: "M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20",
+                      name: "Physical Education",
+                      to: "/sports",
+                      icon: (
+                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <circle cx="12" cy="12" r="10" strokeWidth="2"></circle>
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 2a10 10 0 0 1 10 10"></path>
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M2 12a10 10 0 0 0 10 10"></path>
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M7 7c3 3 7 3 10 0"></path>
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M7 17c3-3 7-3 10 0"></path>
+                        </svg>
+                      ),
                     },
                   ].map((link, i) => (
                     <Link
                       key={i}
                       to={link.to}
                       onClick={() => setIsQuickLinksOpen(false)}
-                      className="flex items-center gap-3 px-4 py-2.5 text-base font-bold text-gray-700 hover:bg-[rgb(115,40,40)] hover:text-white transition-all"
+                      className="flex items-center gap-3 px-4 py-2.5 text-base font-bold text-gray-700 hover:bg-[rgb(115,40,40)] hover:text-white transition-all whitespace-nowrap"
                     >
-                      <svg
-                        className="w-4 h-4"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth="2"
-                          d={link.icon}
-                        />
-                      </svg>
+                      {link.icon}
                       {link.name}
                     </Link>
                   ))}
