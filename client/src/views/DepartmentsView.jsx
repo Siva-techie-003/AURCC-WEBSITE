@@ -981,7 +981,10 @@ const DepartmentsView = () => {
                 />
 
                 <div className="flex flex-col justify-center md:items-center min-w-0 pr-8 md:pr-0">
-                  <h2 className="text-base sm:text-lg md:text-xl text-[rgb(100,25,25)] font-bold mt-0 md:mt-4 leading-tight">
+                  <h2
+                    className="mobile-faculty-name text-[rgb(100,25,25)] font-bold mt-0 md:mt-4 leading-tight"
+                    style={{ "--name-length": `${selectedStaff.title || ""} ${selectedStaff.name || ""}`.trim().length }}
+                  >
                     {selectedStaff.title} {selectedStaff.name}
                   </h2>
 

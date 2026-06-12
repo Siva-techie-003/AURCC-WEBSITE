@@ -71,8 +71,8 @@ fetch("/api/hostel")
 }
 
     return (
-        <div className="min-h-screen flex flex-col bg-gray-50 text-left relative pt-[120px] sm:pt-[140px] lg:pt-[120px]">
-            <div className="absolute inset-0 pointer-events-none opacity-20 z-0 overflow-hidden">
+        <div className="min-h-screen flex flex-col bg-gray-50 text-left relative pt-[120px] sm:pt-[140px] lg:pt-[120px] w-full max-w-full overflow-x-hidden">
+            <div className="absolute inset-0 w-full h-full pointer-events-none opacity-20 z-0 overflow-hidden">
                 <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
                     <pattern id="square-pattern" width="40" height="40" patternUnits="userSpaceOnUse">
                         <rect x="1" y="1" width="38" height="38" fill="none" stroke="currentColor" strokeWidth="1" />
@@ -83,7 +83,7 @@ fetch("/api/hostel")
                 </svg>
             </div>
             {/* Hero section */}
-            <section className="relative w-full h-56 sm:h-60 md:h-80 lg:h-[50vh] overflow-hidden ">
+            <section className="relative z-10 w-full min-h-[340px] lg:h-[50vh] flex flex-col justify-between overflow-hidden py-10 lg:py-0">
                 <img src="/hostel.webp" alt="Hostel" className="absolute inset-0 w-full h-full object-cover object-center" />
                 <div className="absolute top-0 left-0 w-full h-[200px] bg-gradient-to-b from-black/60 via-black/30 to-transparent"></div>
                 <div className="backdrop-blur-md rounded-2xl shadow-lg px-6 py-6 md:py-10 flex flex-col items-center max-w-2xl mx-auto border border-white/30 animate-popIn mt-10">
@@ -118,8 +118,8 @@ fetch("/api/hostel")
             </div>
             </section>
 
-            {/* Sticky Horizontal Tab Bar */}
-            <div className="sticky top-4 z-30 px-4 sm:px-6 lg:px-8">
+            {/* Sticky Horizontal Tab Bar - Hidden/Commented out in mobile view */}
+            <div className="hidden lg:block sticky top-4 z-30 px-4 sm:px-6 lg:px-8">
                 <div className="w-full max-w-7xl mx-auto">
                     <div className="bg-white/95 backdrop-blur-md shadow-lg rounded-full -mt-6 py-2 px-2 flex justify-center overflow-x-auto scroll-smooth no-scrollbar border border-[rgb(220,140,140)]">
                         <div className="flex gap-2 justify-center min-w-max px-4">
@@ -144,7 +144,7 @@ fetch("/api/hostel")
             </div>
 
             {/* Content sections */}
-            <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-16">
+            <main className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-16">
                 {/* Description Section */}
                 <section id="Description" className="bg-white rounded-3xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-lg transition-all animate-fadeIn">
                     <div className="bg-gradient-to-r from-[rgb(115,63,63)] to-[rgb(115,25,25)] py-6 px-6 sm:px-8 text-center text-white">
@@ -206,7 +206,7 @@ fetch("/api/hostel")
                                             p-6 rounded-2xl shadow-md hover:shadow-xl
                                             transition-all duration-300
                                             flex flex-col sm:flex-row items-center justify-between
-                                            max-w-md mx-auto hover:bg-[rgb(233,169,169)]"
+                                            max-w-md w-full mx-auto hover:bg-[rgb(233,169,169)]"
                                             >
 
                                             {/* LEFT SIDE - Content */}
@@ -256,7 +256,7 @@ fetch("/api/hostel")
                                         Deputy Wardens
                                     </h3>
 
-                                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 justify-items-center max-w-4xl mx-auto">
+                                            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 justify-items-center max-w-4xl mx-auto">
                                                 {hostelData.Administration.Deputy_Wardens.map((dw, i) => (
                                             <div
                                             key={i}
@@ -319,7 +319,7 @@ fetch("/api/hostel")
                         <h2 className="text-2xl lg:text-3xl font-bold flex items-center justify-center gap-3">Fees Structure</h2>
                     </div>
                     <div className="p-6 sm:p-8 text-center space-y-10">
-                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-4xl mx-auto">
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
                             <a href={hostelData['Fees Structure']['New Admission']} className="p-8 bg-white border border-[rgb(200,120,120)] rounded-3xl hover:shadow-xl transition-all group hover:bg-[rgb(220,140,140)]">
                                 <div className="w-16 h-16 bg-[rgb(115,40,40)] text-white rounded-2xl flex items-center justify-center text-3xl mx-auto mb-4 group-hover: transition-transform">📄</div>
                                 <h4 className="text-xl font-bold text-[rgb(100,25,25)] mb-2">New Admission</h4>

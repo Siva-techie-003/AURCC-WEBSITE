@@ -82,18 +82,18 @@ const Contact = () => {
                     alt="Contact Background"
                     className="absolute inset-0 h-full w-full object-cover"
                 />
-                <div className="bg-[rgb(120,12,12)]/60 backdrop-blur-md rounded-2xl shadow-lg px-6 py-6 md:py-10 flex flex-col items-center max-w-2xl mx-auto border border-white/30 animate-popIn">
-                    <h1 className="text-3xl sm:text-4xl lg:text-6xl font-black text-white mb-6 uppercase tracking-tight">
+                <div className="bg-[rgb(120,12,12)]/60 backdrop-blur-md rounded-2xl shadow-lg px-6 py-6 md:py-10 flex flex-col items-center max-w-2xl mx-4 sm:mx-auto border border-white/30 animate-popIn text-center">
+                    <h1 className="text-3xl sm:text-4xl lg:text-6xl font-black text-white mb-4 sm:mb-6 uppercase tracking-tight text-center">
                         Contact <span className="text-white">Us</span>
                     </h1>
-                    <p className="text-lg lg:text-xl text-white font-medium opacity-90">
+                    <p className="text-base sm:text-lg lg:text-xl text-white font-medium opacity-90 text-center">
                         Get in touch with the relevant offices for any assistance or inquiries
                     </p>
                 </div>
             </section>
 
             {/* Main Content */}
-            <main className="max-w-7xl mx-auto py-16 px-4 space-y-20">
+            <main className="max-w-7xl mx-auto py-10 sm:py-16 px-4 space-y-16 sm:space-y-20">
                 {/* Contact Offices Table Wrapper */}
                 <section className="animate-fadeIn">
                     <div className="text-center mb-12">
@@ -116,15 +116,15 @@ const Contact = () => {
                             <table className="w-full text-left">
                                 <thead className="bg-[rgb(100,25,25)] border-b border-gray-100">
                                     <tr>
-                                        <th className="px-8 py-5 text-xs font-black text-white uppercase tracking-widest">Office / Department</th>
-                                        <th className="px-8 py-5 text-xs font-black text-white uppercase tracking-widest">Contact Number</th>
+                                        <th className="px-4 sm:px-8 py-5 text-xs font-black text-white uppercase tracking-widest">Office / Department</th>
+                                        <th className="px-4 sm:px-8 py-5 text-xs font-black text-white uppercase tracking-widest">Contact Number</th>
                                     </tr>
                                 </thead>
                                 <tbody className="divide-y divide-gray-50">
                                     {contacts.map((contact, i) => (
                                         <tr key={i} className="hover:bg-[rgb(220,140,140)]/30 transition-colors group">
-                                            <td className="px-8 py-4 text-sm font-bold text-gray-700 group-hover:text-[rgb(100,25,25)]">{contact.office}</td>
-                                            <td className="px-8 py-4">
+                                            <td className="px-4 sm:px-8 py-4 text-sm font-bold text-gray-700 group-hover:text-[rgb(100,25,25)]">{contact.office}</td>
+                                            <td className="px-4 sm:px-8 py-4">
                                                 <a href={`tel:${contact.number}`} className="text-[rgb(115,40,40)] font-black hover:underline">{contact.number}</a>
                                             </td>
                                         </tr>
@@ -136,13 +136,13 @@ const Contact = () => {
                 </section>
 
                 {/* Info Cards Grid */}
-                <section className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                     {[
                         { title: 'Campus Address', icon: '📍', content: ['Maruthamalai Road,', 'Navavoor, Coimbatore - 641046'], color: 'red' },
                         { title: 'Support Lines', icon: '📞', content: ['0422-2984007', '0422-2691124'], color: 'red' },
                         { title: 'Email Enquiries', icon: '✉', content: ['info@aurcc.edu.in', 'admissions@aurcc.edu.in'], color: 'emerald' }
                     ].map((card, i) => (
-                        <div key={i} className="bg-white p-10 rounded-3xl shadow-sm border border-gray-100 text-center hover:shadow-xl hover:-translate-y-2 transition-all group">
+                        <div key={i} className="bg-white p-6 sm:p-8 lg:p-10 rounded-3xl shadow-sm border border-gray-100 text-center hover:shadow-xl hover:-translate-y-2 transition-all group">
                             <div className={`w-20 h-20 bg-${card.color}-50 rounded-2xl flex items-center justify-center text-3xl mx-auto mb-6 group-hover: transition-transform`}>
                                 {card.icon}
                             </div>
@@ -158,7 +158,7 @@ const Contact = () => {
 
                 {/* Map and Form Split */}
                 <section className="grid grid-cols-1 lg:grid-cols-2 gap-10">
-                    <div className="bg-white rounded-3xl shadow-sm border border-gray-100 overflow-hidden h-[500px] flex flex-col">
+                    <div className="bg-white rounded-3xl shadow-sm border border-gray-100 overflow-hidden h-[320px] sm:h-[420px] lg:h-[500px] flex flex-col">
                         <div className="p-6 bg-gray-50 border-b border-gray-100 font-black text-xs uppercase tracking-widest text-[rgb(100,25,25)] flex justify-between">
                             <span>📍 Locate Us</span>
                             <span className="text-[rgb(140,60,60)]">Google Maps</span>
@@ -173,7 +173,7 @@ const Contact = () => {
                         ></iframe>
                     </div>
 
-                    <div className="bg-[rgb(100,25,25)] rounded-3xl shadow-2xl p-10 text-white flex flex-col justify-center animate-fadeInUp">
+                    <div className="bg-[rgb(100,25,25)] rounded-3xl shadow-2xl p-6 sm:p-10 text-white flex flex-col justify-center animate-fadeInUp">
                         <h2 className="text-3xl font-black mb-2 uppercase tracking-tighter">Send a Message</h2>
                         <p className="text-white font-medium mb-8">Fill out the form below and we'll get back to you within 24 hours.</p>
 
@@ -189,7 +189,7 @@ const Contact = () => {
                         )}
 
                         <form onSubmit={handleSubmit} className="space-y-5">
-                            <div className="grid grid-cols-2 gap-5">
+                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                                 <input
                                     type="text"
                                     id="name"
