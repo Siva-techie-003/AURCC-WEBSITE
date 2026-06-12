@@ -83,34 +83,34 @@ fetch("/api/hostel")
                 </svg>
             </div>
             {/* Hero section */}
-            <section className="relative z-10 w-full min-h-[340px] lg:h-[50vh] flex flex-col justify-between overflow-hidden py-10 lg:py-0">
+            <section className="relative z-10 w-full min-h-[240px] sm:min-h-[340px] lg:h-[50vh] flex flex-col justify-between overflow-hidden py-4 sm:py-10 lg:py-0">
                 <img src="/hostel.webp" alt="Hostel" className="absolute inset-0 w-full h-full object-cover object-center" />
                 <div className="absolute top-0 left-0 w-full h-[200px] bg-gradient-to-b from-black/60 via-black/30 to-transparent"></div>
-                <div className="backdrop-blur-md rounded-2xl shadow-lg px-6 py-6 md:py-10 flex flex-col items-center max-w-2xl mx-auto border border-white/30 animate-popIn mt-10">
-                    <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold mb-4 text-white drop-shadow-lg tracking-tight text-center">Hostel Life</h1>
-                    <p className="text-base lg:text-xl text-white drop-shadow text-center font-medium opacity-90">Your Home Away From Our Home</p>
+                <div className="backdrop-blur-md rounded-xl sm:rounded-2xl shadow-lg px-4 sm:px-6 py-2.5 sm:py-6 md:py-10 flex flex-col items-center max-w-2xl mx-auto border border-white/30 animate-popIn mt-4 sm:mt-10">
+                    <h1 className="text-xl sm:text-4xl lg:text-5xl font-extrabold mb-2 sm:mb-4 text-white drop-shadow-lg tracking-tight text-center">Hostel Life</h1>
+                    <p className="text-xs sm:text-base lg:text-xl text-white drop-shadow text-center font-medium opacity-90">Your Home Away From Our Home</p>
                 </div>
                 {/* Testimonial Carousel */}
-            <div className="w-full bg-white/50 border-b border-gray-100 py-6">
+            <div className="w-full bg-white/50 border-b border-gray-100 py-2 sm:py-6">
                 <div className="max-w-3xl mx-auto px-4 text-center">
-                    <div className="relative h-24 sm:h-20 mb-4">
+                    <div className="relative h-14 sm:h-20 mb-2 sm:mb-4">
                         {testimonials.map((t, idx) => (
                             <div
                                 key={idx}
                                 className={`absolute inset-0 transition-all duration-1000 transform ${currentTestimonial === idx ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4 pointer-events-none'
                                     }`}
                             >
-                                <p className="text-sm sm:text-base lg:text-lg italic text-white font-medium leading-relaxed">"{t.quote}"</p>
-                                <p className="text-xs sm:text-sm font-bold text-yellow-500 mt-2">— {t.author}</p>
+                                <p className="text-xs sm:text-base lg:text-lg italic text-white font-medium leading-relaxed">"{t.quote}"</p>
+                                <p className="text-[10px] sm:text-sm font-bold text-yellow-500 mt-1 sm:mt-2">— {t.author}</p>
                             </div>
                         ))}
                     </div>
-                    <div className="flex justify-center gap-2">
+                    <div className="flex justify-center gap-1.5 sm:gap-2">
                         {testimonials.map((_, idx) => (
                             <button
                                 key={idx}
                                 onClick={() => setCurrentTestimonial(idx)}
-                                className={`h-2 w-2 rounded-full transition-all duration-500 ${currentTestimonial === idx ? 'bg-[rgb(115,40,40)] w-6' : 'bg-gray-300'}`}
+                                className={`h-1.5 w-1.5 sm:h-2 sm:w-2 rounded-full transition-all duration-500 ${currentTestimonial === idx ? 'bg-[rgb(115,40,40)] w-4 sm:w-6' : 'bg-gray-300'}`}
                             />
                         ))}
                     </div>
