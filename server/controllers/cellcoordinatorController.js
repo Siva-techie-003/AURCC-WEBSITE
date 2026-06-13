@@ -6,17 +6,17 @@ const cleanName = (name) => {
   let str = name.toLowerCase()
     .replace(/^(dr|mr|mrs|ms)\.?\s+/g, "")
     .replace(/^(dr|mr|mrs|ms)\./g, ""); // e.g. dr.preethi
-  
+
   // Replace spelling variants
   str = str.replace(/kandhavel/g, "kanthavel")
-           .replace(/babitha/g, "bapitha");
-  
+    .replace(/babitha/g, "bapitha");
+
   // Replace all punctuation with space
   str = str.replace(/[^a-z0-9]/g, " ");
-  
+
   // Remove standalone single letters (initials)
   str = str.replace(/\b[a-z]\b/g, " ");
-  
+
   // Remove all spaces
   return str.replace(/\s+/g, "");
 };
@@ -65,6 +65,9 @@ export const getCellCoordinators = async (req, res) => {
           let position = positionMap.get(nameKey) || "";
           if (nameKey === "preethi" && !position) {
             position = "Assistant Professor (Selection Grade)";
+          }
+          if (member.name && member.name.toLowerCase().includes("m. saravanakumar")) {
+            position = "DEAN and Head of Department - Master of Business Administration";
           }
           return {
             ...member,

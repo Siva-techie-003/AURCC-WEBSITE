@@ -3,6 +3,7 @@ import { Routes, Route, Navigate } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
+import PageTitleUpdater from './components/PageTitleUpdater';
 
 // Lazy load components for performance
 const HomeView = lazy(() => import('./views/HomeView'));
@@ -69,6 +70,7 @@ function App() {
             <Header />
             <main className="flex-grow">
                 <ScrollToTop />
+                <PageTitleUpdater />
                 <Suspense fallback={<div className="flex items-center justify-center p-20 text-[rgb(115,40,40)] font-bold animate-pulse">Loading Institutional Assets...</div>}>
                     <Routes>
                         <Route path="/" element={<HomeView />} />
