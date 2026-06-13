@@ -64,6 +64,8 @@ const AnnualDayPage = lazy(() => import('./views/AnnualDayPage'));
 const AnnualDayGallery = lazy(() => import('./views/AnnualDayGallery'));
 const FeedbackView = lazy(() => import('./views/FeedbackView'));
 const Team = lazy(() => import('./views/Team'));
+const Privacy = lazy(() => import('./views/Privacy'));
+const Safety = lazy(() => import('./views/Safety'));
 function App() {
     return (
         <div className="App min-h-screen flex flex-col overflow-x-clip">
@@ -131,6 +133,8 @@ function App() {
                         <Route path="/posh" element={<POSH />} />
                         <Route path="/feedback" element={<FeedbackView />} />
                         <Route path="/team" element={<Team />} />
+                        <Route path="/privacy" element={<Privacy />} />
+                        <Route path="/safety" element={<Safety />} />
                         <Route path="*" element={<NotFound />} />
                     </Routes>
                 </Suspense>

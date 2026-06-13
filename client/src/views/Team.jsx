@@ -47,7 +47,7 @@ const Team = () => {
     {
       name: "Anbu Mani V",
       role: "Student Developer",
-      image: "/anbu.webp",
+      image: "/anbumani.jpeg",
       linkedin: "https://www.linkedin.com/in/anbumani006/"
     },
     {

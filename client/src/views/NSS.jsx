@@ -150,7 +150,7 @@ const NSS = () => {
         </div>
       </section>
       {/* Content sections */}
-      <section className="container mx-auto py-8 sm:py-12 lg:py-14 px-4">
+      <section className="container mx-auto pt-0 pb-8 sm:py-12 lg:py-14 px-4">
         <div className="max-w-7xl mx-auto flex flex-col gap-8 sm:gap-10 lg:gap-12">
           {/* About Card */}
           {/* Section Heading */}

@@ -403,6 +403,29 @@ const Footer = ({
                     </Link>
                   );
                 }
+                                
+                if (item === "Privacy") {
+                  return (
+                    <Link
+                      key={item}
+                      to="/privacy"
+                      className="text-white/60 hover:text-yellow-400 text-[6px] sm:text-xs font-black uppercase tracking-wider sm:tracking-widest transition-colors"
+                    >
+                      {item}
+                    </Link>
+                  );
+                }                
+                if (item === "Safety") {
+                  return (
+                    <Link
+                      key={item}
+                      to="/safety"
+                      className="text-white/60 hover:text-yellow-400 text-[6px] sm:text-xs font-black uppercase tracking-wider sm:tracking-widest transition-colors"
+                    >
+                      {item}
+                    </Link>
+                  );
+                }
                 return (
                   <a
                     key={item}
