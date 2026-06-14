@@ -133,6 +133,8 @@ function App() {
                         <Route path="/posh" element={<POSH />} />
                         <Route path="/feedback" element={<FeedbackView />} />
                         <Route path="/team" element={<Team />} />
+                        <Route path="/team/faculty" element={<Team />} />
+                        <Route path="/team/developers" element={<Team />} />
                         <Route path="/privacy" element={<Privacy />} />
                         <Route path="/safety" element={<Safety />} />
                         <Route path="*" element={<NotFound />} />

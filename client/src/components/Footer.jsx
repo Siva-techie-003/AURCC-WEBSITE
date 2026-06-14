@@ -259,16 +259,39 @@ const Footer = ({
                       View the developers behind this website.
                     </p>
 
-                    <Link
-                      to="/team"
-                      className="inline-block px-2 py-0.5 sm:px-3 sm:py-1.5 lg:px-4 lg:py-2 rounded-lg font-bold text-[6px] sm:text-xs lg:text-sm transition-all duration-300"
-                      style={{
-                        background: "#f5c842",
-                        color: "#6b1a1a",
-                      }}
-                    >
-                      View Team →
-                    </Link>
+                    <div className="dropdown dropdown-top dropdown-hover inline-block">
+                      <div
+                        tabIndex={0}
+                        role="button"
+                        className="inline-flex items-center gap-1 px-2 py-0.5 sm:px-3 sm:py-1.5 lg:px-4 lg:py-2 rounded-lg font-bold text-[6px] sm:text-xs lg:text-sm transition-all duration-300"
+                        style={{
+                          background: "#f5c842",
+                          color: "#6b1a1a",
+                        }}
+                      >
+                        View Team &darr;
+                      </div>
+                      <ul
+                        tabIndex={0}
+                        className="dropdown-content menu p-1 sm:p-2 shadow-2xl rounded-lg w-28 sm:w-44 text-[6px] sm:text-xs lg:text-sm z-[100] font-bold"
+                        style={{
+                          background: "#8b2a2a",
+                          border: "1px solid rgba(245,200,66,0.5)",
+                          color: "white",
+                        }}
+                      >
+                        <li className="hover:bg-white/10 rounded-md">
+                          <Link to="/team/faculty" className="py-1 sm:py-2 block text-center hover:text-yellow-400">
+                            Faculty Incharge
+                          </Link>
+                        </li>
+                        <li className="hover:bg-white/10 rounded-md">
+                          <Link to="/team/developers" className="py-1 sm:py-2 block text-center hover:text-yellow-400">
+                            Student Developer
+                          </Link>
+                        </li>
+                      </ul>
+                    </div>
                   </div>
 
                 </div>

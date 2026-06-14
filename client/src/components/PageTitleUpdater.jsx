@@ -65,6 +65,8 @@ function PageTitleUpdater() {
             '/posh': 'POSH',
             '/feedback': 'Feedback',
             '/team': 'Team',
+            '/team/faculty': 'Faculty Incharge',
+            '/team/developers': 'Student Developers',
             '/departments/cse': 'Department of Computer Science and Engineering',
             '/departments/mech': 'Department of Mechanical Engineering',
             '/departments/mba': 'Department of Master of Business Administration',

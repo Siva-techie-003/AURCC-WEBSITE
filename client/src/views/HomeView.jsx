@@ -796,7 +796,7 @@ const HomeView = () => {
 
               {/* Row 2: News & Events (Full Width) */}
               <div className="w-full">
-                <div className="grid grid-cols-2 gap-2 sm:gap-6 relative">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-6 relative">
                   <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-20 z-0">
                     <svg
                       width="100%"
@@ -1468,9 +1468,9 @@ const HomeView = () => {
                 <span className="absolute -bottom-2 sm:-bottom-3 left-1/2 transform -translate-x-1/2 h-1 w-16 sm:w-20 lg:w-24 bg-yellow-500"></span>
               </h2>
               <div className="relative max-w-[1800px] mx-auto px-4 xl:px-0">
-                <div className="grid grid-cols-2 gap-2 sm:gap-12 lg:gap-28">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-12 lg:gap-28">
                   {/* Left Card Area */}
-                  <div className="relative overflow-hidden rounded-md sm:rounded-xl shadow-xl min-h-[230px] sm:min-h-[450px] xl:min-h-[300px] bg-white">
+                  <div className="w-[85%] max-w-sm mx-auto sm:w-full sm:max-w-none relative overflow-hidden rounded-md sm:rounded-xl shadow-xl min-h-[230px] sm:min-h-[450px] xl:min-h-[300px] bg-white">
                     {testimonials.map((testimonial, idx) => {
                       // Next cards wait on the left, prev cards exit to the left
                       let positionClass =
@@ -1488,31 +1488,33 @@ const HomeView = () => {
                           key={`left-${idx}`}
                           className={`absolute inset-0 w-full h-full flex-shrink-0 flex flex-col sm:flex-row text-left bg-white ${positionClass}`}
                         >
-                          <div className="h-[45%] sm:h-full w-full sm:w-[40%] bg-gradient-to-br from-[rgb(115,63,63)] to-[rgb(115,25,25)] p-1 sm:p-2 lg:p-3 xl:p-4 flex flex-col items-center justify-center">
+                          <div className="h-[45%] sm:h-full w-full sm:w-[40%] bg-gradient-to-br from-[rgb(115,63,63)] to-[rgb(115,25,25)] p-2 sm:p-2 lg:p-3 xl:p-4 flex flex-row sm:flex-col items-center justify-center gap-3 sm:gap-0">
                             <img
                               src={testimonial.image}
                               alt={testimonial.name}
-                              className="rounded-md w-8 h-8 sm:w-16 sm:h-16 lg:w-20 lg:h-20 xl:w-24 xl:h-24 border-[1px] sm:border-2 border-white mb-0.5 sm:mb-2 mt-0.5 sm:mt-2 object-cover object-top shadow-lg"
+                              className="rounded-md w-20 h-20 sm:w-16 sm:h-16 lg:w-20 lg:h-20 xl:w-24 xl:h-24 border-[1px] sm:border-2 border-white mb-0 sm:mb-2 mt-0 sm:mt-2 object-cover object-top shadow-lg"
                             />
-                            <h3 className="text-[9px] sm:text-xs lg:text-sm xl:text-base font-bold text-white text-center w-full mt-0.5 sm:mt-2 leading-tight">
-                              {testimonial.name}
-                            </h3>
-                            <p className="text-[7.5px] sm:text-[10px] lg:text-xs xl:text-sm text-white text-center w-full leading-tight mt-0.5">
-                              {testimonial.branch} | {testimonial.batch}
-                            </p>
-                            {testimonial.role && (
-                              <p className="text-[7.5px] sm:text-[10px] lg:text-xs xl:text-sm text-white text-center w-full leading-tight mt-0.5">
-                                {testimonial.role}
+                            <div className="flex flex-col items-start sm:items-center justify-center">
+                              <h3 className="text-[12px] sm:text-xs lg:text-sm xl:text-base font-bold text-white text-left sm:text-center w-full mt-0 sm:mt-2 leading-tight">
+                                {testimonial.name}
+                              </h3>
+                              <p className="text-[10px] sm:text-[10px] lg:text-xs xl:text-sm text-white text-left sm:text-center w-full leading-tight mt-0.5">
+                                {testimonial.branch} | {testimonial.batch}
                               </p>
-                            )}
-                            {testimonial.company && (
-                              <p className="text-[7.5px] sm:text-[10px] lg:text-xs xl:text-sm text-white font-semibold text-center w-full leading-tight mt-0.5">
-                                Placed in{" "}
-                                <span className="text-yellow-300 block xl:inline">
-                                  {testimonial.company}
-                                </span>
-                              </p>
-                            )}
+                              {testimonial.role && (
+                                <p className="text-[10px] sm:text-[10px] lg:text-xs xl:text-sm text-white text-left sm:text-center w-full leading-tight mt-0.5">
+                                  {testimonial.role}
+                                </p>
+                              )}
+                              {testimonial.company && (
+                                <p className="text-[10px] sm:text-[10px] lg:text-xs xl:text-sm text-white font-semibold text-left sm:text-center w-full leading-tight mt-0.5">
+                                  Placed in{" "}
+                                  <span className="text-yellow-300 block xl:inline">
+                                    {testimonial.company}
+                                  </span>
+                                </p>
+                              )}
+                            </div>
                           </div>
                           <div className="h-[55%] sm:h-full w-full sm:w-[60%] p-2 sm:p-6 flex flex-col justify-center">
                             <svg
@@ -1532,7 +1534,7 @@ const HomeView = () => {
                   </div>
 
                   {/* Right Card Area */}
-                  <div className="relative overflow-hidden rounded-md sm:rounded-xl shadow-xl min-h-[230px] sm:min-h-[450px] xl:min-h-[300px] bg-white">
+                  <div className="hidden sm:block w-[85%] max-w-sm mx-auto sm:w-full sm:max-w-none relative overflow-hidden rounded-md sm:rounded-xl shadow-xl min-h-[230px] sm:min-h-[450px] xl:min-h-[300px] bg-white">
                     {testimonials.map((_, idx) => {
                       const rightIdx = (idx + 1) % testimonials.length;
                       const testimonial = testimonials[rightIdx];
@@ -1553,31 +1555,33 @@ const HomeView = () => {
                           key={`right-${idx}`}
                           className={`absolute inset-0 w-full h-full flex-shrink-0 flex flex-col sm:flex-row text-left bg-white ${positionClass}`}
                         >
-                          <div className="h-[45%] sm:h-full w-full sm:w-[40%] bg-gradient-to-br from-[rgb(115,63,63)] to-[rgb(115,25,25)] p-1 sm:p-2 lg:p-3 xl:p-4 flex flex-col items-center justify-center">
+                          <div className="h-[45%] sm:h-full w-full sm:w-[40%] bg-gradient-to-br from-[rgb(115,63,63)] to-[rgb(115,25,25)] p-2 sm:p-2 lg:p-3 xl:p-4 flex flex-row sm:flex-col items-center justify-center gap-3 sm:gap-0">
                             <img
                               src={testimonial.image}
                               alt={testimonial.name}
-                              className="rounded-md w-8 h-8 sm:w-16 sm:h-16 lg:w-20 lg:h-20 xl:w-24 xl:h-24 border-[1px] sm:border-2 border-white mb-0.5 sm:mb-2 mt-0.5 sm:mt-2 object-cover object-top shadow-lg"
+                              className="rounded-md w-20 h-20 sm:w-16 sm:h-16 lg:w-20 lg:h-20 xl:w-24 xl:h-24 border-[1px] sm:border-2 border-white mb-0 sm:mb-2 mt-0 sm:mt-2 object-cover object-top shadow-lg"
                             />
-                            <h3 className="text-[9px] sm:text-xs lg:text-sm xl:text-base font-bold text-white text-center w-full mt-0.5 sm:mt-2 leading-tight">
-                              {testimonial.name}
-                            </h3>
-                            <p className="text-[7.5px] sm:text-[10px] lg:text-xs xl:text-sm text-white text-center w-full leading-tight mt-0.5">
-                              {testimonial.branch} | {testimonial.batch}
-                            </p>
-                            {testimonial.role && (
-                              <p className="text-[7.5px] sm:text-[10px] lg:text-xs xl:text-sm text-white text-center w-full leading-tight mt-0.5">
-                                {testimonial.role}
+                            <div className="flex flex-col items-start sm:items-center justify-center">
+                              <h3 className="text-[12px] sm:text-xs lg:text-sm xl:text-base font-bold text-white text-left sm:text-center w-full mt-0 sm:mt-2 leading-tight">
+                                {testimonial.name}
+                              </h3>
+                              <p className="text-[10px] sm:text-[10px] lg:text-xs xl:text-sm text-white text-left sm:text-center w-full leading-tight mt-0.5">
+                                {testimonial.branch} | {testimonial.batch}
                               </p>
-                            )}
-                            {testimonial.company && (
-                              <p className="text-[7.5px] sm:text-[10px] lg:text-xs xl:text-sm text-white font-semibold text-center w-full leading-tight mt-0.5">
-                                Placed in{" "}
-                                <span className="text-yellow-300 block xl:inline">
-                                  {testimonial.company}
-                                </span>
-                              </p>
-                            )}
+                              {testimonial.role && (
+                                <p className="text-[10px] sm:text-[10px] lg:text-xs xl:text-sm text-white text-left sm:text-center w-full leading-tight mt-0.5">
+                                  {testimonial.role}
+                                </p>
+                              )}
+                              {testimonial.company && (
+                                <p className="text-[10px] sm:text-[10px] lg:text-xs xl:text-sm text-white font-semibold text-left sm:text-center w-full leading-tight mt-0.5">
+                                  Placed in{" "}
+                                  <span className="text-yellow-300 block xl:inline">
+                                    {testimonial.company}
+                                  </span>
+                                </p>
+                              )}
+                            </div>
                           </div>
                           <div className="h-[55%] sm:h-full w-full sm:w-[60%] p-2 sm:p-6 flex flex-col justify-center">
                             <svg
