@@ -135,6 +135,22 @@ const DepartmentsView = () => {
   const showNextEvent = () =>
     setCurrentIndex((prev) => Math.min(events.length - 1, prev + 1));
 
+  useEffect(() => {
+    if (department) {
+      document.title = `AURCC | ${department.name}`;
+      const metaDescription = document.querySelector('meta[name="description"]');
+      const descText = `Explore the ${department.name} at AURCC. Read about our vision, mission, and world-class facilities.`;
+      if (metaDescription) {
+        metaDescription.setAttribute("content", descText);
+      } else {
+        const meta = document.createElement('meta');
+        meta.name = "description";
+        meta.content = descText;
+        document.head.appendChild(meta);
+      }
+    }
+  }, [department]);
+
   if (!department) return null;
 
   return (
@@ -223,7 +239,7 @@ const DepartmentsView = () => {
                   <div className="bg-white p-4 rounded-xl shadow-md h-full flex items-center">
                     <img
                       src="/Drone_shot.jpg"
-                      alt="Department"
+                      alt={`${department?.name} Building`}
                       className="w-full h-[450px] object-cover rounded-lg"
                     />
                   </div>
