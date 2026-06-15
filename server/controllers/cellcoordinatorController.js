@@ -66,9 +66,17 @@ export const getCellCoordinators = async (req, res) => {
           if (nameKey === "preethi" && !position) {
             position = "Assistant Professor (Selection Grade)";
           }
-          if (member.name && member.name.toLowerCase().includes("m. saravanakumar")) {
-            position = "DEAN and Head of Department - Master of Business Administration";
+
+          if (
+            position.includes("Head of The Department - Computer Science and Engineering") ||
+            position.includes("DEAN and Head of Department - Master of Business Administration") ||
+            position.includes("Head of The Department - Science and Humanities") ||
+            position.startsWith("Head of The Department") ||
+            position.includes("Head of Department")
+          ) {
+            position = "Associate Professor";
           }
+
           return {
             ...member,
             position: position

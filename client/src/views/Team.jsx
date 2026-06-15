@@ -1,14 +1,15 @@
 import React from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, Link } from "react-router-dom";
 
 const Team = () => {
   const location = useLocation();
   const isFacultyPage = location.pathname === "/team/faculty";
   const isDevelopersPage = location.pathname === "/team/developers";
+  const isTeamRoot = !isFacultyPage && !isDevelopersPage;
 
-  // Show both by default if navigating to "/team" directly
-  const showFaculty = isFacultyPage || (!isFacultyPage && !isDevelopersPage);
-  const showDevelopers = isDevelopersPage || (!isFacultyPage && !isDevelopersPage);
+  // Show lists only on their respective pages
+  const showFaculty = isFacultyPage;
+  const showDevelopers = isDevelopersPage;
 
   const faculty = [
     {
@@ -96,6 +97,29 @@ const Team = () => {
 
       {/* Content */}
       <section className="max-w-[1800px] w-full mx-auto py-12 px-4 sm:px-8 space-y-12">
+        {/* Team Root - Navigation Cards */}
+        {isTeamRoot && (
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 w-full max-w-4xl mx-auto px-4 mt-8">
+            {/* Faculty Incharge Card */}
+            <Link to="/team/faculty" className="group flex flex-col items-center justify-center p-8 bg-white rounded-2xl shadow-md border-2 border-gray-100 hover:border-[#f5c842] hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+              <div className="w-24 h-24 mb-6 rounded-full bg-[rgb(110,35,35)] text-white flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+                <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" /></svg>
+              </div>
+              <h3 className="text-2xl font-bold text-[rgb(110,35,35)] font-serif mb-2 text-center">Faculty Incharge</h3>
+              <p className="text-gray-500 text-center text-sm font-semibold">View the faculty guiding our web development team</p>
+            </Link>
+
+            {/* Student Developers Card */}
+            <Link to="/team/developers" className="group flex flex-col items-center justify-center p-8 bg-white rounded-2xl shadow-md border-2 border-gray-100 hover:border-[#f5c842] hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+              <div className="w-24 h-24 mb-6 rounded-full bg-[rgb(110,35,35)] text-white flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+                <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" /></svg>
+              </div>
+              <h3 className="text-2xl font-bold text-[rgb(110,35,35)] font-serif mb-2 text-center">Student Developers</h3>
+              <p className="text-gray-500 text-center text-sm font-semibold">Meet the student developers behind this website</p>
+            </Link>
+          </div>
+        )}
+
         {/* Faculty Incharge */}
         {showFaculty && (
           <div className="space-y-6 animate-fadeIn">

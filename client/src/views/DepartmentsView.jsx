@@ -368,7 +368,7 @@ const DepartmentsView = () => {
                     <div className="w-full">
                       <div className="w-full h-[220px] sm:h-[280px] md:h-[340px] lg:h-[400px] rounded-xl overflow-hidden bg-gray-50 flex items-center justify-center">
                         <img
-                          src={`${BACKEND_URL}/public/${staff.photo}`}
+                          src={`${BACKEND_URL}/public/${staff.photo || staff.image}`}
                           alt={staff.name}
                           onError={handleImageError}
                           className="max-w-full max-h-full object-contain"
@@ -390,6 +390,13 @@ const DepartmentsView = () => {
                         <p className="text-[10px] xs:text-xs sm:text-lg font-semibold mt-1 text-gray-800 leading-tight">
                           {staff.college}
                         </p>
+
+                        <button 
+                          onClick={() => showDetails(staff)}
+                          className="mt-4 px-4 py-2 bg-gradient-to-r from-[rgb(115,63,63)] to-[rgb(115,25,25)] text-white text-sm sm:text-base rounded-lg hover:from-[rgb(115,63,63)] hover:to-[rgb(115,25,25)] transition-all font-semibold"
+                        >
+                          View Profile
+                        </button>
                       </div>
 
                       {/* SCROLL CARD */}
@@ -565,7 +572,7 @@ const DepartmentsView = () => {
                         <h4 className="text-lg font-bold text-transparent bg-clip-text bg-gradient-to-r from-[rgb(115,63,63)] to-[rgb(115,25,25)] mb-2">
                           {staff.name}
                         </h4>
-                        <p className="text-gray-700 font-semibold">
+                        <p className="text-xs sm:text-base text-gray-700 font-semibold">
                           {staff.position}
                         </p>
                         <p className="text-gray-500 text-base">{staff.email}</p>
@@ -980,9 +987,9 @@ const DepartmentsView = () => {
               {/* LEFT SIDE */}
               <div className="w-full md:w-1/3 bg-[rgb(242,198,198)] text-left md:text-center p-4 md:p-6 flex flex-row md:flex-col items-center gap-4 md:gap-0 shrink-0">
                 <img
-                  src={`${BACKEND_URL}/public/${selectedStaff.photo}`}
+                  src={`${BACKEND_URL}/public/${selectedStaff.photo || selectedStaff.image}`}
                   alt={selectedStaff.name}
-                  className="w-24 h-32 md:w-48 md:h-60 rounded-xl border shadow object-cover shrink-0"
+                  className="w-24 md:w-48 h-auto max-h-40 md:max-h-64 rounded-xl border shadow shrink-0 object-cover"
                 />
 
                 <div className="flex flex-col justify-center md:items-center min-w-0 pr-8 md:pr-0">
@@ -993,16 +1000,16 @@ const DepartmentsView = () => {
                     {selectedStaff.title} {selectedStaff.name}
                   </h2>
 
-                  <p className="text-[9.5px] min-[350px]:text-[11px] min-[400px]:text-xs sm:text-sm md:text-base text-[rgb(115,40,40)] font-semibold mt-1 md:mt-2 leading-tight whitespace-nowrap md:whitespace-normal">
+                  <p className="text-[9.5px] min-[350px]:text-[11px] min-[400px]:text-xs sm:text-sm md:text-base text-[rgb(115,40,40)] font-semibold mt-1 md:mt-2 leading-tight whitespace-normal break-words">
                     {selectedStaff.position}
                   </p>
 
-                  <p className="text-[9.5px] min-[350px]:text-[11px] min-[400px]:text-xs sm:text-sm md:text-sm text-[rgb(100,25,25)]/80 font-medium mt-0.5 leading-tight whitespace-nowrap md:whitespace-normal">
+                  <p className="text-[9.5px] min-[350px]:text-[11px] min-[400px]:text-xs sm:text-sm md:text-sm text-[rgb(100,25,25)]/80 font-medium mt-0.5 leading-tight whitespace-normal break-words">
                     {selectedStaff.department}
                   </p>
 
-                  <p className="text-[9.5px] min-[350px]:text-[11px] min-[400px]:text-xs sm:text-sm md:text-sm mt-1.5 md:mt-2.5 text-blue-600 font-medium break-all leading-tight hover:underline whitespace-nowrap md:whitespace-normal">
-                    {selectedStaff.contact?.email}
+                  <p className="text-[9.5px] min-[350px]:text-[11px] min-[400px]:text-xs sm:text-sm md:text-sm mt-1.5 md:mt-2.5 text-blue-600 font-medium break-all leading-tight hover:underline whitespace-normal break-words">
+                    {selectedStaff.contact?.email || selectedStaff.email}
                   </p>
                 </div>
               </div>
@@ -1040,37 +1047,52 @@ const DepartmentsView = () => {
                   )}
 
                   {/* EDUCATION */}
-                  {selectedStaff.education?.qualifications?.length > 0 && (
+                  {(selectedStaff.education?.qualifications?.length > 0 || Array.isArray(selectedStaff.education) || (typeof selectedStaff.education === 'string' && selectedStaff.education !== '')) && (
                     <section>
                       <h3 className="font-bold text-sm sm:text-base md:text-lg text-gray-800 border-b border-gray-100 pb-1">Education</h3>
                       <ul className="list-disc pl-4 sm:pl-5 space-y-1 sm:space-y-1.5 mt-1.5">
-                        {selectedStaff.education.qualifications.map(
-                          (degree, index) => (
-                            <li key={index} className="text-xs sm:text-sm md:text-base text-gray-600 leading-relaxed">{degree}</li>
-                          ),
-                        )}
+                        {selectedStaff.education?.qualifications?.length > 0 
+                          ? selectedStaff.education.qualifications.map((degree, index) => (
+                              <li key={index} className="text-xs sm:text-sm md:text-base text-gray-600 leading-relaxed">{degree}</li>
+                            ))
+                          : Array.isArray(selectedStaff.education) ? selectedStaff.education.map((ed, index) => (
+                              <li key={index} className="text-xs sm:text-sm md:text-base text-gray-600 leading-relaxed">
+                                {typeof ed === "object" ? `${ed.degree}${ed.institution ? ` - ${ed.institution}` : ""}${ed.year ? ` (${ed.year})` : ""}` : ed}
+                              </li>
+                            ))
+                          : (
+                              <li className="text-xs sm:text-sm md:text-base text-gray-600 leading-relaxed">{selectedStaff.education}</li>
+                            )
+                        }
                       </ul>
                     </section>
                   )}
 
                   {/* EXPERIENCE */}
-                  {selectedStaff.experience?.length > 0 && (
+                  {(selectedStaff.experience?.length > 0 || (typeof selectedStaff.experience === 'string' && selectedStaff.experience !== '') || selectedStaff.professional_experience?.length > 0 || selectedStaff.previous_positions?.length > 0 || selectedStaff.teaching_experience) && (
                     <section>
                       <h3 className="font-bold text-sm sm:text-base md:text-lg text-gray-800 border-b border-gray-100 pb-1">Experience</h3>
-                      <ul className="list-disc pl-4 sm:pl-5 space-y-1 sm:space-y-1.5 mt-1.5">
-                        {selectedStaff.experience.map((exp, i) => (
-                          <li key={i} className="text-xs sm:text-sm md:text-base text-gray-600 leading-relaxed">{exp}</li>
-                        ))}
-                      </ul>
+                      {selectedStaff.teaching_experience && (
+                        <p className="text-xs sm:text-sm md:text-base text-gray-600 leading-relaxed mt-1.5 mb-2"><span className="font-semibold">Teaching Experience:</span> {selectedStaff.teaching_experience}</p>
+                      )}
+                      {(selectedStaff.experience?.length > 0 || (typeof selectedStaff.experience === 'string' && selectedStaff.experience !== '') || selectedStaff.professional_experience?.length > 0 || selectedStaff.previous_positions?.length > 0) && (
+                        <ul className="list-disc pl-4 sm:pl-5 space-y-1 sm:space-y-1.5 mt-1.5">
+                          {(Array.isArray(selectedStaff.experience) ? selectedStaff.experience : typeof selectedStaff.experience === 'string' && selectedStaff.experience !== '' ? [selectedStaff.experience] : selectedStaff.professional_experience || selectedStaff.previous_positions || []).map((exp, i) => (
+                            <li key={i} className="text-xs sm:text-sm md:text-base text-gray-600 leading-relaxed">
+                              {typeof exp === "object" ? `${exp.position}${exp.institution || exp.company ? ` at ${exp.institution || exp.company}` : ""}${exp.duration ? ` (${exp.duration})` : ""}` : exp}
+                            </li>
+                          ))}
+                        </ul>
+                      )}
                     </section>
                   )}
 
-                  {/* EXPERTISE */}
-                  {selectedStaff.expertise?.length > 0 && (
+                  {/* EXPERTISE / RESEARCH INTERESTS */}
+                  {(selectedStaff.expertise?.length > 0 || selectedStaff.research_interests?.length > 0) && (
                     <section>
                       <h3 className="font-bold text-sm sm:text-base md:text-lg text-gray-800 border-b border-gray-100 pb-1">Area of Expertise</h3>
                       <ul className="list-disc pl-4 sm:pl-5 space-y-1 sm:space-y-1.5 mt-1.5">
-                        {selectedStaff.expertise.map((e, i) => (
+                        {(selectedStaff.expertise || selectedStaff.research_interests).map((e, i) => (
                           <li key={i} className="text-xs sm:text-sm md:text-base text-gray-600 leading-relaxed">{e}</li>
                         ))}
                       </ul>
@@ -1139,24 +1161,25 @@ const DepartmentsView = () => {
                     </section>
                   )}
 
-                  {/* ACHIEVEMENTS */}
-                  {selectedStaff.achievements?.length > 0 && (
+                  {/* ACHIEVEMENTS / CONTRIBUTIONS */}
+                  {((Array.isArray(selectedStaff.achievements) && selectedStaff.achievements.length > 0) || (Array.isArray(selectedStaff.contributions) && selectedStaff.contributions.length > 0) || (typeof selectedStaff.achievements === 'string' && selectedStaff.achievements !== 'Nil' && selectedStaff.achievements !== '')) && (
                     <section>
-                      <h3 className="font-bold text-sm sm:text-base md:text-lg text-gray-800 border-b border-gray-100 pb-1">Achievements</h3>
+                      <h3 className="font-bold text-sm sm:text-base md:text-lg text-gray-800 border-b border-gray-100 pb-1">Achievements & Contributions</h3>
                       <ul className="list-disc pl-4 sm:pl-5 space-y-1 sm:space-y-1.5 mt-1.5">
-                        {selectedStaff.achievements.map((a, i) => (
+                        {(Array.isArray(selectedStaff.achievements) ? selectedStaff.achievements : typeof selectedStaff.achievements === 'string' && selectedStaff.achievements !== 'Nil' ? [selectedStaff.achievements] : selectedStaff.contributions || []).map((a, i) => (
                           <li key={i} className="text-xs sm:text-sm md:text-base text-gray-600 leading-relaxed">{a}</li>
                         ))}
                       </ul>
                     </section>
                   )}
 
-                  {/* PROFILES */}
+                  {/* PROFILES & LINKS */}
                   {(selectedStaff.research_ids?.google_scholar ||
                     selectedStaff.research_ids?.scopus_id ||
-                    selectedStaff.research_ids?.orcid_id) && (
+                    selectedStaff.research_ids?.orcid_id ||
+                    (selectedStaff.links && Object.keys(selectedStaff.links).length > 0)) && (
                     <section>
-                      <h3 className="font-bold text-sm sm:text-base md:text-lg text-gray-800 border-b border-gray-100 pb-1">Profiles</h3>
+                      <h3 className="font-bold text-sm sm:text-base md:text-lg text-gray-800 border-b border-gray-100 pb-1">Profiles & Links</h3>
                       <ul className="list-disc pl-4 sm:pl-5 space-y-1 sm:space-y-1.5 mt-1.5">
                         {selectedStaff.research_ids?.google_scholar && (
                           <li className="text-xs sm:text-sm md:text-base text-gray-600 leading-relaxed">
@@ -1177,6 +1200,21 @@ const DepartmentsView = () => {
                         {selectedStaff.research_ids?.orcid_id && (
                           <li className="text-xs sm:text-sm md:text-base text-gray-600 leading-relaxed">Orcid: {selectedStaff.research_ids.orcid_id}</li>
                         )}
+                        {selectedStaff.links && Object.entries(selectedStaff.links).map(([key, url], i) => (
+                          <li key={i} className="text-xs sm:text-sm md:text-base text-gray-600 leading-relaxed">
+                            {url.startsWith('http') || url.startsWith('mailto') ? (
+                              <a
+                                href={url}
+                                target="_blank"
+                                className="text-blue-600 hover:underline capitalize"
+                              >
+                                {key.replace(/_/g, ' ')}
+                              </a>
+                            ) : (
+                              <span className="capitalize">{key.replace(/_/g, ' ')}: {url}</span>
+                            )}
+                          </li>
+                        ))}
                       </ul>
                     </section>
                   )}

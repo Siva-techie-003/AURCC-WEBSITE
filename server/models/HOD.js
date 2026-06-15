@@ -5,7 +5,8 @@ const hodSchema = new mongoose.Schema({
     {
       name: String,
       department: String,
-      photo: String
+      photo: String,
+      degree: String
     }
   ]
 });

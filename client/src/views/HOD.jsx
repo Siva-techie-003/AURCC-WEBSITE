@@ -33,7 +33,7 @@ const HOD = () => {
         <div className="min-h-screen bg-white py-12 px-4 text-left pt-[150px] sm:pt-[140px] lg:pt-[180px]">
             <div className="max-w-7xl mx-auto">
                 <header className="text-center mb-16 animate-fadeIn">
-                    <h1 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-black text-[rgb(90,20,20)] uppercase tracking-tighter font-serif mb-4">Head of the Departments</h1>
+                    <h1 className="text-[20px] min-[380px]:text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-black text-[rgb(90,20,20)] uppercase tracking-tighter font-serif mb-4 whitespace-nowrap">Head of the Departments</h1>
                     <div className="flex justify-center">
                         <span className="block w-24 sm:w-32 h-2 rounded-full bg-[#f5c842]"></span>
                     </div>
@@ -64,6 +64,13 @@ const HOD = () => {
                             <div className="w-full px-2 py-4 sm:p-6 flex flex-col items-center flex-grow text-center justify-start pt-3 min-w-0">
                                 <h2 className="text-xl font-bold text-[rgb(110,35,35)] font-serif mb-2 leading-tight ">{hod.name}</h2>
                                 <div className="flex flex-col gap-2 w-full items-center">
+                                    {hod.degree && (
+                                        <div className="flex items-center justify-center max-w-full px-2">
+                                            <span className="text-[11px] sm:text-xs lg:text-[10px] xl:text-[11px] 2xl:text-xs font-bold text-[rgb(110,35,35)] text-center lg:whitespace-nowrap whitespace-normal">
+                                                {hod.degree}
+                                            </span>
+                                        </div>
+                                    )}
                                     <div className="px-1.5 py-1 sm:px-4 sm:py-1.5 bg-[rgb(245,240,240)] rounded-full border border-[rgb(220,200,200)] flex items-center justify-center max-w-full">
                                         <span className="text-[8.5px] min-[360px]:text-[9.5px] sm:text-xs font-black text-[rgb(110,35,35)] tracking-wide text-center whitespace-nowrap">{hod.department}</span>
                                     </div>
