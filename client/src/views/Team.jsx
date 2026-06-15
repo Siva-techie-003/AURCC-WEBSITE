@@ -200,7 +200,8 @@ const Team = () => {
                   <div className="w-24 h-24 sm:w-32 sm:h-32 flex-shrink-0 flex items-center justify-center rounded-full border-2 border-[rgb(110,35,35)] shadow-md overflow-hidden bg-white">
                     <img
                       src={m.image}
-                      alt={m.name}
+                      alt={`${m.name} - ${m.role} at AURCC`}
+                      title={`${m.name} - ${m.role} at AURCC`}
                       className="w-full h-full object-cover object-top transition-transform duration-300 hover:scale-105 text-[10px] text-gray-500 break-words text-center flex items-center justify-center"
                     />
                   </div>
