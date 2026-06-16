@@ -1,4 +1,4 @@
-﻿import React from 'react';
+import React from 'react';
 import './About.css';
 
 const About = () => {
@@ -59,7 +59,7 @@ const About = () => {
                                 className="bg-white rounded-xl shadow-lg overflow-hidden border border-[rgb(200,120,120)] transform hover:translate-y-[-5px] hover:shadow-xl transition-all duration-300 flex flex-col h-full"
                             >
                                 <div className="relative pt-6 sm:pt-8 pb-3 sm:pb-4 flex justify-center">
-                                    <div className="absolute inset-0 h-1/2 bg-gradient-to-r from-[rgb(115,63,63)] to-[rgb(115,25,25)]"></div>
+                                    <div className="absolute inset-0 h-1/2 bg-[rgb(110,35,35)]"></div>
                                     <div className="relative">
                                         <img
                                             src={`/${member.photo}`}
@@ -71,7 +71,7 @@ const About = () => {
 
                                 <div className="p-4 sm:p-6 text-center flex-1 flex flex-col justify-between">
                                     <div>
-                                        <h3 className="text-lg lg:text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[rgb(115,63,63)] to-[rgb(115,25,25)] mb-2">
+                                        <h3 className="text-lg lg:text-xl font-bold text-transparent bg-clip-text bg-[rgb(110,35,35)] mb-2">
                                             {member.name}
                                         </h3>
                                         <p className="text-sm lg:text-base text-gray-600">{member.department}</p>

@@ -39,7 +39,7 @@ const Header = () => {
       name: "Home",
       route: "/",
       sections: "home_page",
-      isOpen: true,
+      isOpen: false,
       links: [
         { name: "About Campus", route: "/", section: "about" },
         { name: "Dean's Details", route: "/", section: "deans-message" },
@@ -182,6 +182,13 @@ const Header = () => {
   const [sections, setSections] = useState(mobileSections);
   const [openSubLinks, setOpenSubLinks] = useState({});
 
+  useEffect(() => {
+    if (!isMobileMenuOpen) {
+      setSections(mobileSections);
+      setOpenSubLinks({});
+    }
+  }, [isMobileMenuOpen]);
+
   const toggleSection = (index) => {
     setSections((prev) =>
       prev.map((section, idx) => {
@@ -204,7 +211,7 @@ const Header = () => {
   return (
     <div className="fixed top-0 left-0 w-full z-[1000]">
       {/* Top Bar */}
-      <div className="bg-gradient-to-r from-[rgb(115,63,63)] to-[rgb(115,25,25)] text-white">
+      <div className="bg-[rgb(110,35,35)] text-white">
         <div className="w-full px-4 sm:px-6 lg:px-12">
           <div className="flex items-center justify-between py-2 text-sm sm:text-base">
             <div className="flex items-center gap-2 sm:gap-6 lg:gap-10">
@@ -668,7 +675,8 @@ const Header = () => {
                           ) : (
                             <Link
                               key={lIdx}
-                              to={link.route}
+                              to={link.section ? "/" : link.route}
+                              state={link.section ? { scrollTo: link.section } : null}
                               onClick={() => setIsMobileMenuOpen(false)}
                               className="block py-2.5 px-4 text-base font-bold text-gray-500 hover:text-[rgb(115,40,40)] transition-all"
                             >

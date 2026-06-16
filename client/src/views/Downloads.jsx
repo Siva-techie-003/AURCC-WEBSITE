@@ -1,12 +1,12 @@
-﻿import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import './Downloads.css';
 
 const Downloads = () => {
     const sections = [
-        { key: 'various_forms', label: 'Various Forms', icon: '📄' },
-        { key: 'wifi_forms', label: 'Wifi Registration', icon: '📶' },
-        { key: 'scholarship_forms', label: 'Scholarship Forms', icon: '🎓' },
-        { key: 'application_forms', label: 'Application Forms', icon: '📝' }
+        { key: 'various_forms', label: 'Various Forms', icon: '??' },
+        { key: 'wifi_forms', label: 'Wifi Registration', icon: '??' },
+        { key: 'scholarship_forms', label: 'Scholarship Forms', icon: '??' },
+        { key: 'application_forms', label: 'Application Forms', icon: '??' }
     ];
 
     const [currentSection, setCurrentSection] = useState('various_forms');
@@ -52,7 +52,7 @@ const Downloads = () => {
     /* ---------------- Download Card ---------------- */
     const DownloadCard = ({ title, links }) => (
         <div className="bg-white/70 backdrop-blur-md rounded-3xl shadow-xl border border-gray-100 overflow-hidden hover:shadow-2xl transition-all animate-fadeIn h-full flex flex-col">
-            <div className="bg-gradient-to-r from-[rgb(115,63,63)] to-[rgb(115,25,25)] py-6 px-8 flex justify-between items-center text-white">
+            <div className="bg-[rgb(110,35,35)] py-6 px-8 flex justify-between items-center text-white">
                 <h2 className="text-xl lg:text-2xl font-bold">{title}</h2>
             </div>
 
@@ -151,7 +151,7 @@ const Downloads = () => {
     <div id="various_forms" ref={sectionRefs.various_forms}>
         <DownloadCard
             title="Various Forms Download"
-            icon="📄"
+            icon="??"
             links={[
                 { label: "New Email Id Creation Form", href: "/forms/Email Id Creation form.pdf" },
             ]}
@@ -161,7 +161,7 @@ const Downloads = () => {
     <div id="wifi_forms" ref={sectionRefs.wifi_forms}>
         <DownloadCard
             title="Wifi Registration Forms"
-            icon="📶"
+            icon="??"
             links={[
                 { label: "Staff Wifi Registration form", href: "/forms/StaffWifiRegistrationform.pdf" },
                 { label: "Student Wifi Registration form", href: "/forms/StudentWIFIRegistrationform.pdf" }
@@ -172,7 +172,7 @@ const Downloads = () => {
     <div id="scholarship_forms" ref={sectionRefs.scholarship_forms}>
         <DownloadCard
             title="Scholarship Forms"
-            icon="🎓"
+            icon="??"
             links={[
                 { label: "BC - MBC Fresh Scholarship form - 2024-2025", href: "/forms/BC-MBC FRESH 2023-24.pdf" },
                 { label: "BC - MBC Renewal Scholarship form - 2024-2025", href: "/forms/BC-MBC RENEWAL 2023-24.pdf" },
@@ -185,7 +185,7 @@ const Downloads = () => {
     <div id="application_forms" ref={sectionRefs.application_forms}>
         <DownloadCard
             title="Application Forms"
-            icon="📝"
+            icon="??"
             links={[
                 { label: "Bonafide Form", href: "/forms/bonafide format.pdf" },
                 { label: "Discontinue Form", href: "/forms/DISCONT FORMAT.pdf" },

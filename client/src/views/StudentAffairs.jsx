@@ -126,7 +126,7 @@ const StudentAffairs = () => {
             <main className="max-w-7xl mx-auto py-8 lg:py-12 px-4 space-y-12">
                 {/* Description Section */}
                 <div id="description" ref={sectionRefs.description} className="bg-white rounded-3xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-lg transition-all">
-                    <div className="bg-gradient-to-r from-[rgb(115,63,63)] to-[rgb(115,25,25)] py-6 px-8 flex justify-between items-center text-white">
+                    <div className="bg-[rgb(110,35,35)] py-6 px-8 flex justify-between items-center text-white">
                         <h2 className="text-xl lg:text-2xl font-bold">Description</h2>
                     </div>
                     <div className="p-8 space-y-4">
@@ -140,7 +140,7 @@ const StudentAffairs = () => {
 
                 {/* Re-Admission Section */}
                 <div id="reAdmission" ref={sectionRefs.reAdmission} className="bg-white rounded-3xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-lg transition-all">
-                    <div className="bg-gradient-to-r from-[rgb(115,63,63)] to-[rgb(115,25,25)] py-6 px-8 flex justify-between items-center text-white">
+                    <div className="bg-[rgb(110,35,35)] py-6 px-8 flex justify-between items-center text-white">
                         <h2 className="text-xl lg:text-2xl font-bold">Re-Admission</h2>
                     </div>
                     <div className="p-8">
@@ -152,7 +152,7 @@ const StudentAffairs = () => {
 
                 {/* Scholarships Section */}
                 <div id="scholarships" ref={sectionRefs.scholarships} className="bg-white rounded-3xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-lg transition-all">
-                    <div className="bg-gradient-to-r from-[rgb(115,63,63)] to-[rgb(115,25,25)] py-6 px-8 flex justify-between items-center text-white">
+                    <div className="bg-[rgb(110,35,35)] py-6 px-8 flex justify-between items-center text-white">
                         <h2 className="text-xl lg:text-2xl font-bold">Scholarships</h2>
                     </div>
                     <div className="p-8">
@@ -179,7 +179,7 @@ const StudentAffairs = () => {
 
                 {/* Fees Section */}
                 <div id="fees" ref={sectionRefs.fees} className="bg-white rounded-3xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-lg transition-all max-w-2xl mx-auto">
-                    <div className="bg-gradient-to-r from-[rgb(115,63,63)] to-[rgb(115,25,25)] py-6 px-8 flex justify-between items-center text-white">
+                    <div className="bg-[rgb(110,35,35)] py-6 px-8 flex justify-between items-center text-white">
                         <h2 className="text-xl lg:text-2xl font-bold">Fees Details</h2>
                     </div>
                     <div className="p-8 flex justify-center">
@@ -198,7 +198,7 @@ const StudentAffairs = () => {
 
                 {/* Staff Section */}
                 <div id="staff" ref={sectionRefs.staff} className="bg-white rounded-3xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-lg transition-all">
-                    <div className="bg-gradient-to-r from-[rgb(115,63,63)] to-[rgb(115,25,25)] py-6 px-8 flex justify-between items-center text-white">
+                    <div className="bg-[rgb(110,35,35)] py-6 px-8 flex justify-between items-center text-white">
                         <h2 className="text-xl lg:text-2xl font-bold">Administration Staff</h2>
                     </div>
                     <div className="p-8">

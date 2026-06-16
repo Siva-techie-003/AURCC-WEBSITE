@@ -1,4 +1,4 @@
-﻿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import './Grievance.css';
 
 const Grievance = () => {
@@ -57,7 +57,7 @@ const Grievance = () => {
     return (
         <main className="min-h-screen bg-gradient-to-br from-[rgb(115,63,63)] via-[rgb(115,45,45)] to-white py-12 px-4 flex justify-center items-center text-left">
             <div className="max-w-4xl w-full bg-white rounded-3xl shadow-2xl overflow-hidden border border-[rgb(200,120,120)] animate-fadeIn">
-                <div className="bg-gradient-to-r from-[rgb(115,63,63)] to-[rgb(115,25,25)] py-8 px-10 text-center text-white">
+                <div className="bg-[rgb(110,35,35)] py-8 px-10 text-center text-white">
                     <h1 className="text-2xl sm:text-3xl lg:text-4xl font-black uppercase tracking-tight mb-2">Online Grievance Form</h1>
                     <p className="text-[rgb(200,120,120)] font-medium opacity-80">Submit your concerns directly to the administration</p>
                 </div>
@@ -161,14 +161,14 @@ const Grievance = () => {
                             <button
                                 type="submit"
                                 disabled={isSubmitting || !isCaptchaValid}
-                                className="w-full py-5 bg-gradient-to-r from-[rgb(115,63,63)] to-[rgb(115,25,25)] text-white font-black text-lg rounded-2xl shadow-xl hover:shadow-2xl hover:scale-[1.01] transition-all active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed disabled:scale-100"
+                                className="w-full py-5 bg-[rgb(110,35,35)] text-white font-black text-lg rounded-2xl shadow-xl hover:shadow-2xl hover:scale-[1.01] transition-all active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed disabled:scale-100"
                             >
                                 {isSubmitting ? 'SUBMITTING...' : 'SUBMIT GRIEVANCE'}
                             </button>
                         </form>
                     ) : (
                         <div className="py-20 text-center animate-scale-in">
-                            <div className="w-24 h-24 bg-green-100 text-green-600 rounded-full flex items-center justify-center text-5xl mx-auto mb-8 animate-bounce">✓</div>
+                            <div className="w-24 h-24 bg-green-100 text-green-600 rounded-full flex items-center justify-center text-5xl mx-auto mb-8 animate-bounce">?</div>
                             <h2 className="text-3xl font-black text-[rgb(90,20,20)] mb-4">Submission Successful!</h2>
                             <p className="text-lg text-gray-500 font-medium max-w-md mx-auto">Your grievance has been successfully submitted and will be reviewed by the administration soon.</p>
                             <button

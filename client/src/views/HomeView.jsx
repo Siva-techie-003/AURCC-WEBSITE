@@ -826,7 +826,7 @@ const HomeView = () => {
 
                   {/* News Card */}
                   <div className="rounded-lg bg-white/80 backdrop-blur-sm shadow-lg overflow-hidden border border-[rgb(180,100,100)]">
-                    <div className="bg-gradient-to-r from-[rgb(115,63,63)] to-[rgb(115,25,25)] py-1.5 sm:py-4 px-2.5 sm:px-6 flex items-center justify-between">
+                    <div className="bg-[rgb(110,35,35)] py-1.5 sm:py-4 px-2.5 sm:px-6 flex items-center justify-between">
                       <h3 className="text-xs sm:text-lg font-semibold text-white">
                         News & Admissions
                       </h3>
@@ -883,7 +883,7 @@ const HomeView = () => {
 
                   {/* Events Card */}
                   <div className="rounded-lg bg-white/80 backdrop-blur-sm shadow-lg overflow-hidden border border-[rgb(180,100,100)]">
-                    <div className="bg-gradient-to-r from-[rgb(115,63,63)] to-[rgb(115,25,25)] py-1.5 sm:py-4 px-2.5 sm:px-6 flex items-center justify-between">
+                    <div className="bg-[rgb(110,35,35)] py-1.5 sm:py-4 px-2.5 sm:px-6 flex items-center justify-between">
                       <h3 className="text-xs sm:text-lg font-semibold text-white">
                         Events & Scholarships
                       </h3>
@@ -1295,7 +1295,7 @@ const HomeView = () => {
                     {/* Card 3 */}
                     <div
                       className="lg:ml-32 bg-white p-4 sm:p-6 rounded-md sm:rounded-xl shadow-md 
-  hover:bg-gradient-to-r hover:from-[rgb(115,63,63)] hover:to-[rgb(115,25,25)]
+  hover:bg-[rgb(110,35,35)]
   hover:text-white hover:-translate-y-2 transition-all duration-300"
                     >
                       <div className="flex gap-2 sm:gap-4">
@@ -1316,7 +1316,7 @@ const HomeView = () => {
                     {/* Card 2 */}
                     <div
                       className="lg:ml-16 bg-white p-4 sm:p-6 rounded-md sm:rounded-xl shadow-md
-  hover:bg-gradient-to-r hover:from-[rgb(115,63,63)] hover:to-[rgb(115,25,25)]
+  hover:bg-[rgb(110,35,35)]
   hover:text-white hover:-translate-y-2 transition-all duration-300"
                     >
                       <div className="flex gap-2 sm:gap-4">
@@ -1337,7 +1337,7 @@ const HomeView = () => {
                     {/* Card 1 */}
                     <div
                       className="bg-white p-4 sm:p-6 rounded-md sm:rounded-xl shadow-md
-  hover:bg-gradient-to-r hover:from-[rgb(115,63,63)] hover:to-[rgb(115,25,25)]
+  hover:bg-[rgb(110,35,35)]
   hover:text-white hover:-translate-y-2 transition-all duration-300"
                     >
                       <div className="flex gap-2 sm:gap-4">
@@ -1488,7 +1488,7 @@ const HomeView = () => {
                           key={`left-${idx}`}
                           className={`absolute inset-0 w-full h-full flex-shrink-0 flex flex-col sm:flex-row text-left bg-white ${positionClass}`}
                         >
-                          <div className="h-[45%] sm:h-full w-full sm:w-[40%] bg-gradient-to-br from-[rgb(115,63,63)] to-[rgb(115,25,25)] p-2 sm:p-2 lg:p-3 xl:p-4 flex flex-row sm:flex-col items-center justify-center gap-3 sm:gap-0">
+                          <div className="h-[45%] sm:h-full w-full sm:w-[40%] bg-[rgb(110,35,35)] p-2 sm:p-2 lg:p-3 xl:p-4 flex flex-row sm:flex-col items-center justify-center gap-3 sm:gap-0">
                             <img
                               src={testimonial.image}
                               alt={testimonial.name}
@@ -1555,7 +1555,7 @@ const HomeView = () => {
                           key={`right-${idx}`}
                           className={`absolute inset-0 w-full h-full flex-shrink-0 flex flex-col sm:flex-row text-left bg-white ${positionClass}`}
                         >
-                          <div className="h-[45%] sm:h-full w-full sm:w-[40%] bg-gradient-to-br from-[rgb(115,63,63)] to-[rgb(115,25,25)] p-2 sm:p-2 lg:p-3 xl:p-4 flex flex-row sm:flex-col items-center justify-center gap-3 sm:gap-0">
+                          <div className="h-[45%] sm:h-full w-full sm:w-[40%] bg-[rgb(110,35,35)] p-2 sm:p-2 lg:p-3 xl:p-4 flex flex-row sm:flex-col items-center justify-center gap-3 sm:gap-0">
                             <img
                               src={testimonial.image}
                               alt={testimonial.name}
@@ -1607,7 +1607,7 @@ const HomeView = () => {
           {/* Support Chatbot
           <button
             onClick={() => document.getElementById("my_modal_5").showModal()}
-            className=" flex gap-1.5 sm:gap-2 fixed bottom-3 right-3 sm:bottom-6 sm:right-6 bg-gradient-to-r from-[rgb(115,63,63)] to-[rgb(115,25,25)] text-white p-3.5 sm:p-5 rounded-full shadow-2xl z-50 transform hover:scale-110 active:scale-95 transition-all duration-300 group">
+            className=" flex gap-1.5 sm:gap-2 fixed bottom-3 right-3 sm:bottom-6 sm:right-6 bg-[rgb(110,35,35)] text-white p-3.5 sm:p-5 rounded-full shadow-2xl z-50 transform hover:scale-110 active:scale-95 transition-all duration-300 group">
             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 sm:h-7 sm:w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
             </svg>

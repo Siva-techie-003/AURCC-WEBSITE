@@ -120,7 +120,7 @@ const Sports = () => {
 
         {/* Physical Education Staff Section */}
         <div className="bg-white/70 backdrop-blur-md rounded-2xl shadow-lg animate-fadeIn border border-gray-100 overflow-hidden max-w-5xl mx-auto">
-          <div className="bg-gradient-to-r from-[rgb(115,63,63)] to-[rgb(115,25,25)] py-3 sm:py-4 md:py-5 flex items-center justify-center gap-2 sm:gap-3">
+          <div className="bg-[rgb(110,35,35)] py-3 sm:py-4 md:py-5 flex items-center justify-center gap-2 sm:gap-3">
             <h2 className="text-lg sm:text-xl lg:text-2xl xl:text-3xl font-bold text-white text-center">
               Physical Education Staffs
             </h2>
@@ -172,7 +172,7 @@ const Sports = () => {
 
         {/* Facilities Card */}
         <div className="bg-white rounded-3xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-lg transition-all animate-fadeIn">
-          <div className="bg-gradient-to-r from-[rgb(115,63,63)] to-[rgb(115,25,25)] py-5 flex items-center justify-center gap-3">
+          <div className="bg-[rgb(110,35,35)] py-5 flex items-center justify-center gap-3">
             <h2 className="text-xl lg:text-3xl font-bold text-white text-center">
               Facilities
             </h2>

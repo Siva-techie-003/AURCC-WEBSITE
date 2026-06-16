@@ -119,7 +119,7 @@ useEffect(() => {
             <section className="max-w-7xl mx-auto py-8 sm:py-12 lg:py-14 px-2 md:px-9 flex flex-col gap-8 sm:gap-10 lg:gap-12">
                 {/* Approval Letters */}
                 <div id="approval_letters" ref={sectionRefs.approval_letters} className="bg-white/70 backdrop-blur-md rounded-2xl shadow-lg border border-gray-100 overflow-hidden">
-                    <div className="bg-gradient-to-r from-[rgb(115,63,63)] to-[rgb(115,25,25)] py-4 sm:py-5 flex items-center justify-center gap-2 sm:gap-3">
+                    <div className="bg-[rgb(110,35,35)] py-4 sm:py-5 flex items-center justify-center gap-2 sm:gap-3">
                         <span className="text-lg lg:text-xl text-white"></span>
                         <h2 className="text-lg sm:text-xl lg:text-2xl xl:text-3xl font-bold text-white text-center">Approval Letters</h2>
                     </div>
@@ -142,7 +142,7 @@ useEffect(() => {
                 
                 {/* Objectives */}
                 <div id="objectives" ref={sectionRefs.objectives} className="bg-white/70 backdrop-blur-md rounded-2xl shadow-lg border border-gray-100 overflow-hidden">
-                    <div className="bg-gradient-to-r from-[rgb(115,63,63)] to-[rgb(115,25,25)] py-4 sm:py-5 flex items-center justify-center gap-2 sm:gap-3">
+                    <div className="bg-[rgb(110,35,35)] py-4 sm:py-5 flex items-center justify-center gap-2 sm:gap-3">
                         <span className="text-lg lg:text-xl text-white"></span>
                         <h2 className="text-lg sm:text-xl lg:text-2xl xl:text-3xl font-bold text-white text-center">Objectives</h2>
                     </div>
@@ -159,7 +159,7 @@ useEffect(() => {
 
                 {/* Important Links */}
                 <div id="important_links" ref={sectionRefs.important_links} className="bg-white/70 backdrop-blur-md rounded-2xl shadow-lg border border-gray-100 overflow-hidden">
-                    <div className="bg-gradient-to-r from-[rgb(115,63,63)] to-[rgb(115,25,25)] py-4 sm:py-5 flex items-center justify-center gap-2 sm:gap-3">
+                    <div className="bg-[rgb(110,35,35)] py-4 sm:py-5 flex items-center justify-center gap-2 sm:gap-3">
                         <h2 className="text-lg sm:text-xl lg:text-2xl xl:text-3xl font-bold text-white text-center">Important Links</h2>
                     </div>
                     <div className="p-4 sm:p-6 md:p-8 lg:p-10 text-left">
@@ -175,7 +175,7 @@ useEffect(() => {
 
                 {/* Circulars & Notifications */}
                 <div id="circulars_notifications" ref={sectionRefs.circulars_notifications} className="bg-white/70 backdrop-blur-md rounded-2xl shadow-lg border border-gray-100 overflow-hidden">
-                    <div className="bg-gradient-to-r from-[rgb(115,63,63)] to-[rgb(115,25,25)] py-4 sm:py-5 flex items-center justify-center gap-2 sm:gap-3">
+                    <div className="bg-[rgb(110,35,35)] py-4 sm:py-5 flex items-center justify-center gap-2 sm:gap-3">
                         <h2 className="text-lg sm:text-xl lg:text-2xl xl:text-3xl font-bold text-white text-center">Circulars & Notifications</h2>
                     </div>
                     <div className="p-4 sm:p-6 md:p-8 lg:p-10 text-left">

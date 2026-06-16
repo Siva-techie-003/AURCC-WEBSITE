@@ -409,7 +409,7 @@ const DepartmentsView = () => {
 
                         <button 
                           onClick={() => showDetails(staff)}
-                          className="mt-4 px-4 py-2 bg-gradient-to-r from-[rgb(115,63,63)] to-[rgb(115,25,25)] text-white text-sm sm:text-base rounded-lg hover:from-[rgb(115,63,63)] hover:to-[rgb(115,25,25)] transition-all font-semibold"
+                          className="mt-4 px-4 py-2 bg-[rgb(110,35,35)] text-white text-sm sm:text-base rounded-lg hover:from-[rgb(115,63,63)] hover:to-[rgb(115,25,25)] transition-all font-semibold"
                         >
                           View Profile
                         </button>
@@ -445,13 +445,13 @@ const DepartmentsView = () => {
               className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto py-12 bg-white scroll-mt-40"
             >
               {/* <h2 className="text-3xl md:text-4xl font-bold text-center mb-10 text-gray-800">
-                <span className="bg-gradient-to-r from-[rgb(115,63,63)] to-[rgb(115,25,25)] bg-clip-text text-transparent">
+                <span className="bg-[rgb(110,35,35)] bg-clip-text text-transparent">
                   Courses Offered
                 </span>
               </h2> */}
               <div className="max-w-6xl mx-auto">
                 <div className="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden transition-all duration-300 hover:shadow-xl">
-                  <div className="bg-gradient-to-r from-[rgb(115,63,63)] to-[rgb(115,25,25)] py-6 sm:py-7 md:py-8">
+                  <div className="bg-[rgb(110,35,35)] py-6 sm:py-7 md:py-8">
                     <h3 className="text-lg sm:text-xl lg:text-2xl xl:text-3xl text-white font-bold text-center">
                       Programmes Offered
                     </h3>
@@ -464,7 +464,7 @@ const DepartmentsView = () => {
                         (course, index) => (
                           <div
                             key={index}
-                            className="bg-gradient-to-r from-[rgb(115,63,63)] to-[rgb(115,25,25)] p-4 sm:p-5 md:p-6 rounded-xl border border-[rgb(180,100,100)] hover:border-[rgb(160,80,80)] transition-all duration-300 hover:shadow-md"
+                            className="bg-[rgb(110,35,35)] p-4 sm:p-5 md:p-6 rounded-xl border border-[rgb(180,100,100)] hover:border-[rgb(160,80,80)] transition-all duration-300 hover:shadow-md"
                           >
                             <div className="flex items-start space-x-2 sm:space-x-3">
                               <div className="flex-shrink-0 w-6 h-6 sm:w-8 sm:h-8 bg-yellow-400 rounded-full flex items-center justify-center">
@@ -555,12 +555,12 @@ const DepartmentsView = () => {
               >
                 <h2 className="text-2xl text-center sm:text-3xl lg:text-4xl font-bold text-gray-700 relative inline-block group">
                   OUR FACULTY
-                  <span className="absolute -bottom-2 sm:-bottom-3 left-0 h-1 w-full bg-gradient-to-r from-[rgb(115,63,63)] to-[rgb(115,25,25)]"></span>
+                  <span className="absolute -bottom-2 sm:-bottom-3 left-0 h-1 w-full bg-[rgb(110,35,35)]"></span>
                 </h2>
               </div>
               {/* Assistant Professors */}
               <div>
-                <h3 className="text-2xl font-bold text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-[rgb(115,63,63)] to-[rgb(115,25,25)]">
+                <h3 className="text-2xl font-bold text-center mb-8 text-transparent bg-clip-text bg-[rgb(110,35,35)]">
                   Professors
                 </h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center">
@@ -574,7 +574,7 @@ const DepartmentsView = () => {
                       onClick={() => showDetails(staff)}
                     >
                       <div className="relative pt-2 flex justify-center">
-                        <div className="absolute inset-0 h-1/2 bg-gradient-to-r from-[rgb(115,63,63)] to-[rgb(115,25,25)]"></div>
+                        <div className="absolute inset-0 h-1/2 bg-[rgb(110,35,35)]"></div>
                         <div className="relative">
                           <img
                             src={`${BACKEND_URL}/public/${staff.photo}`}
@@ -585,14 +585,14 @@ const DepartmentsView = () => {
                         </div>
                       </div>
                       <div className="p-6 text-center">
-                        <h4 className="text-lg font-bold text-transparent bg-clip-text bg-gradient-to-r from-[rgb(115,63,63)] to-[rgb(115,25,25)] mb-2">
+                        <h4 className="text-lg font-bold text-transparent bg-clip-text bg-[rgb(110,35,35)] mb-2">
                           {staff.name}
                         </h4>
                         <p className="text-xs sm:text-base text-gray-700 font-semibold">
                           {staff.position}
                         </p>
                         <p className="text-gray-500 text-base">{staff.email}</p>
-                        <button className="mt-4 px-4 py-2 bg-gradient-to-r from-[rgb(115,63,63)] to-[rgb(115,25,25)] text-white text-sm rounded-lg hover:from-[rgb(115,63,63)] hover:to-[rgb(115,25,25)] transition-all font-semibold">
+                        <button className="mt-4 px-4 py-2 bg-[rgb(110,35,35)] text-white text-sm rounded-lg hover:from-[rgb(115,63,63)] hover:to-[rgb(115,25,25)] transition-all font-semibold">
                           View Profile
                         </button>
                       </div>
@@ -610,7 +610,7 @@ const DepartmentsView = () => {
                   className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto py-12 bg-white"
                 >
                   <h2 className="text-3xl md:text-4xl font-bold text-center mb-10 text-gray-800">
-                    <span className="bg-gradient-to-r from-[rgb(115,63,63)] to-[rgb(115,25,25)] bg-clip-text text-transparent">
+                    <span className="bg-[rgb(110,35,35)] bg-clip-text text-transparent">
                       System Administator
                     </span>
                   </h2>
@@ -627,7 +627,7 @@ const DepartmentsView = () => {
                         onClick={() => showDetails(staff)}
                       >
                         <div className="relative pt-2 flex justify-center">
-                          <div className="absolute inset-0 h-1/2 bg-gradient-to-r from-[rgb(115,63,63)] to-[rgb(115,25,25)]"></div>
+                          <div className="absolute inset-0 h-1/2 bg-[rgb(110,35,35)]"></div>
                           <div className="relative">
                             <img
                               src={`${BACKEND_URL}/${staff.image}`}
@@ -639,7 +639,7 @@ const DepartmentsView = () => {
                         </div>
 
                         <div className="p-6 text-center">
-                          <h4 className="text-lg font-bold text-transparent bg-clip-text bg-gradient-to-r from-[rgb(115,63,63)] to-[rgb(115,25,25)] mb-2">
+                          <h4 className="text-lg font-bold text-transparent bg-clip-text bg-[rgb(110,35,35)] mb-2">
                             {staff.name}
                           </h4>
                           <p className="text-gray-700 font-medium">
@@ -651,7 +651,7 @@ const DepartmentsView = () => {
                             </p>
                           )}
                           <button
-                            className="mt-4 px-4 py-2 bg-gradient-to-r from-[rgb(115,63,63)] to-[rgb(115,25,25)]
+                            className="mt-4 px-4 py-2 bg-[rgb(110,35,35)]
                                                       text-white text-sm rounded-lg transition-all font-semibold"
                           >
                             View Profile
@@ -669,7 +669,7 @@ const DepartmentsView = () => {
               className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto py-12 bg-white scroll-mt-40"
             >
               <h2 className="text-3xl md:text-4xl font-bold text-center mb-10 text-gray-800">
-                <span className="bg-gradient-to-r from-[rgb(115,63,63)] to-[rgb(115,25,25)] bg-clip-text text-transparent">
+                <span className="bg-[rgb(110,35,35)] bg-clip-text text-transparent">
                   Administrative and Technical Staff
                 </span>
               </h2>
@@ -684,7 +684,7 @@ const DepartmentsView = () => {
                       className="admin-staff-card bg-white rounded-xl shadow border border-[rgb(220,140,140)] overflow-hidden w-64 mb-6"
                     >
                       <div className="relative pt-2 flex justify-center">
-                        <div className="absolute inset-0 h-1/2 bg-gradient-to-r from-[rgb(115,63,63)] to-[rgb(115,25,25)]"></div>
+                        <div className="absolute inset-0 h-1/2 bg-[rgb(110,35,35)]"></div>
                         <div className="relative">
                           <img
                             src={`${BACKEND_URL}/public/${staff.image}`}
@@ -694,7 +694,7 @@ const DepartmentsView = () => {
                         </div>
                       </div>
                       <div className="p-4 text-center">
-                        <h4 className="text-base font-bold text-transparent bg-clip-text bg-gradient-to-r from-[rgb(115,63,63)] to-[rgb(115,25,25)] mb-1">
+                        <h4 className="text-base font-bold text-transparent bg-clip-text bg-[rgb(110,35,35)] mb-1">
                           {staff.name}
                         </h4>
                         <p className="text-sm text-gray-700 font-medium">
@@ -713,7 +713,7 @@ const DepartmentsView = () => {
               className="px-4 sm:px-6 border-4 lg:px-8 max-w-7xl mx-auto py-12 bg-white scroll-mt-40"
             >
               <h2 className="text-3xl md:text-4xl font-bold text-center mb-10 text-gray-800">
-                <span className="bg-gradient-to-r from-[rgb(115,63,63)] to-[rgb(115,25,25)] bg-clip-text text-transparent">
+                <span className="bg-[rgb(110,35,35)] bg-clip-text text-transparent">
                   Upcoming Events
                 </span>
               </h2>
@@ -833,7 +833,7 @@ const DepartmentsView = () => {
                   className="bg-white rounded-xl shadow-md border border-gray-200 overflow-hidden scroll-mt-40"
                 >
                   {/* Header */}
-                  <div className="flex items-center justify-between bg-gradient-to-r from-[rgb(115,63,63)] to-[rgb(115,25,25)] text-white px-6 py-4">
+                  <div className="flex items-center justify-between bg-[rgb(110,35,35)] text-white px-6 py-4">
                     <h2 className="text-lg font-semibold">
                       Research & Publications
                     </h2>
@@ -875,7 +875,7 @@ const DepartmentsView = () => {
                   className="bg-white rounded-xl shadow-md border border-gray-200 overflow-hidden scroll-mt-40"
                 >
                   {/* Header */}
-                  <div className="flex items-center justify-between bg-gradient-to-r from-[rgb(115,63,63)] to-[rgb(115,25,25)] text-white px-6 py-4">
+                  <div className="flex items-center justify-between bg-[rgb(110,35,35)] text-white px-6 py-4">
                     <h2 className="text-lg font-semibold">
                       Department Achievements
                     </h2>
@@ -919,7 +919,7 @@ const DepartmentsView = () => {
               className="px-4 sm:px-6 lg:px-8 max-w-full mx-auto py-12 bg-white v"
             >
               <h2 className="text-3xl md:text-4xl font-bold text-center mb-10 text-gray-800">
-                <span className="bg-gradient-to-r from-[rgb(115,63,63)] to-[rgb(115,25,25)] bg-clip-text text-transparent">
+                <span className="bg-[rgb(110,35,35)] bg-clip-text text-transparent">
                   World-Class Facilities
                 </span>
               </h2>
@@ -934,7 +934,7 @@ const DepartmentsView = () => {
                   >
                     <div className="lg:w-1/2">
                       <div className="relative">
-                        <div className="absolute inset-0 bg-gradient-to-r from-[rgb(115,63,63)] to-[rgb(115,25,25)] transform rotate-3 rounded-2xl"></div>
+                        <div className="absolute inset-0 bg-[rgb(110,35,35)] transform rotate-3 rounded-2xl"></div>
                         <img
                           src={`${BACKEND_URL}/${facility.image}`}
                           alt={facility.name}

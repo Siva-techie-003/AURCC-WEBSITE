@@ -44,37 +44,37 @@ const Team = () => {
   const members = [
     {
       name: "Siva E",
-      role: "Student Developer",
+      role: "Developer",
       image: "/siva.png",
       linkedin: "https://www.linkedin.com/in/siva-e/"
     },
     {
       name: "Dhivakar G",
-      role: "Student Developer",
+      role: "Developer",
       image: "/dhivakar.jpeg",
       linkedin: "https://www.linkedin.com/in/dhivakar-g/"
     },
     {
       name: "Anbu Mani V",
-      role: "Student Developer",
+      role: "Developer",
       image: "/anbumani.jpeg",
       linkedin: "https://www.linkedin.com/in/anbumani006/"
     },
     {
       name: "Santhosh S",
-      role: "Student Developer",
+      role: "Developer",
       image: "/santhosh.jpeg",
       linkedin: "https://www.linkedin.com/in/callsanthosh/"
     },
     {
       name: "Suresh Krishna P",
-      role: "Student Developer",
+      role: "Developer",
       image: "/suresh.png",
       linkedin: "https://www.linkedin.com/in/suresh-krishna-p/"
     },
     {
       name: "Sathya Moorthy R",
-      role: "Student Developer",
+      role: "Developer",
       image: "/sathya.jpeg",
       linkedin: "https://www.linkedin.com/in/sathyamoorthy-tech/"
     }
@@ -83,11 +83,11 @@ const Team = () => {
   return (
     <main className="flex-grow font-sans bg-white pt-[126px] sm:pt-[130px] lg:pt-[130px]">
       {/* Hero Header */}
-      <section className="relative w-full overflow-hidden flex items-center justify-center bg-gradient-to-br from-[rgb(115,63,63)] to-[rgb(115,25,25)] text-center pt-10 pb-8 sm:pt-12 sm:pb-10 px-4">
+      <section className="relative w-full overflow-hidden flex items-center justify-center bg-[rgb(110,35,35)] text-center pt-10 pb-8 sm:pt-12 sm:pb-10 px-4">
         <div className="absolute inset-0 bg-black/40 z-0"></div>
         <div className="relative z-10 max-w-3xl mx-auto">
           <h1 className="text-xl sm:text-2xl lg:text-3xl font-extrabold text-white tracking-wide mb-1.5 animate-fadeIn">
-            {isFacultyPage ? "Faculty Incharge" : isDevelopersPage ? "Student Developers" : "Web Development Team"}
+            {isFacultyPage ? "Faculty Incharge" : isDevelopersPage ? "Developers" : "Web Development Team"}
           </h1>
           <p className="text-[10px] sm:text-xs text-yellow-400 font-semibold tracking-wider uppercase animate-fadeInUp">
             Anna University Regional Campus, Coimbatore
@@ -99,24 +99,24 @@ const Team = () => {
       <section className="max-w-[1800px] w-full mx-auto py-12 px-4 sm:px-8 space-y-12">
         {/* Team Root - Navigation Cards */}
         {isTeamRoot && (
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 w-full max-w-4xl mx-auto px-4 mt-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 w-full max-w-3xl mx-auto px-4 mt-8">
             {/* Faculty Incharge Card */}
-            <Link to="/team/faculty" className="group flex flex-col items-center justify-center p-8 bg-white rounded-2xl shadow-md border-2 border-gray-100 hover:border-[#f5c842] hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
-              <div className="w-24 h-24 mb-6 rounded-full bg-[rgb(110,35,35)] text-white flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
-                <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" /></svg>
-              </div>
-              <h3 className="text-2xl font-bold text-[rgb(110,35,35)] font-serif mb-2 text-center">Faculty Incharge</h3>
-              <p className="text-gray-500 text-center text-sm font-semibold">View the faculty guiding our web development team</p>
-            </Link>
+            <div className="flex flex-col items-center justify-center p-6 w-full max-w-xs mx-auto bg-white rounded-2xl shadow-md border-2 border-[#f5c842] hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+              <h3 className="text-xl font-bold text-[rgb(110,35,35)] font-serif mb-2 text-center">Faculty Incharge</h3>
+              <p className="text-gray-500 text-center text-xs font-semibold mb-6">View the faculty guiding our web development team</p>
+              <Link to="/team/faculty" className="px-5 py-2 text-sm font-bold text-[rgb(110,35,35)] border-2 border-[rgb(110,35,35)] rounded-full hover:bg-[rgb(110,35,35)] hover:text-white transition-colors duration-300">
+                View Faculty
+              </Link>
+            </div>
 
-            {/* Student Developers Card */}
-            <Link to="/team/developers" className="group flex flex-col items-center justify-center p-8 bg-white rounded-2xl shadow-md border-2 border-gray-100 hover:border-[#f5c842] hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
-              <div className="w-24 h-24 mb-6 rounded-full bg-[rgb(110,35,35)] text-white flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
-                <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" /></svg>
-              </div>
-              <h3 className="text-2xl font-bold text-[rgb(110,35,35)] font-serif mb-2 text-center">Student Developers</h3>
-              <p className="text-gray-500 text-center text-sm font-semibold">Meet the student developers behind this website</p>
-            </Link>
+            {/* Developers Card */}
+            <div className="flex flex-col items-center justify-center p-6 w-full max-w-xs mx-auto bg-white rounded-2xl shadow-md border-2 border-[#f5c842] hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+              <h3 className="text-xl font-bold text-[rgb(110,35,35)] font-serif mb-2 text-center">Student Developers</h3>
+              <p className="text-gray-500 text-center text-xs font-semibold mb-6">Meet the student developers behind this website</p>
+              <Link to="/team/developers" className="px-5 py-2 text-sm font-bold text-[rgb(110,35,35)] border-2 border-[rgb(110,35,35)] rounded-full hover:bg-[rgb(110,35,35)] hover:text-white transition-colors duration-300">
+                View Developers
+              </Link>
+            </div>
           </div>
         )}
 

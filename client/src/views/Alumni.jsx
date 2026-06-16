@@ -37,7 +37,7 @@ const Alumni = () => {
             <section className="container mx-auto py-8 sm:py-12 lg:py-14 px-4">
                 <div className="max-w-7xl mx-auto flex flex-col gap-8 sm:gap-10 lg:gap-12">
                     <div className="bg-white/70 backdrop-blur-md rounded-2xl shadow-lg border border-gray-100 overflow-hidden">
-                        <div className="bg-gradient-to-r from-[rgb(115,63,63)] to-[rgb(115,25,25)] py-4 sm:py-5 flex flex-col items-center justify-center gap-2 sm:gap-3 relative">
+                        <div className="bg-[rgb(110,35,35)] py-4 sm:py-5 flex flex-col items-center justify-center gap-2 sm:gap-3 relative">
                             <div className="flex items-center gap-2">
                                 <h2 className="text-lg lg:text-xl xl:text-2xl font-bold text-white text-center">Notable Alumni</h2>
                             </div>

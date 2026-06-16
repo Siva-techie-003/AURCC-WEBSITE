@@ -1,4 +1,4 @@
-﻿import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import OfficePageTemplate from '../components/OfficePageTemplate';
 import OfficeContentSection from '../components/OfficeContentSection';
 import StaffCard from '../components/StaffCard';
@@ -99,8 +99,8 @@ const Pace = () => {
                 </div>
                 {/* Rules Section */}
                  <section id="RulesandRegulations" className="bg-white rounded-3xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-lg transition-all animate-fadeIn">
-                    <div className="bg-gradient-to-r from-[rgb(115,63,63)] to-[rgb(115,25,25)] py-6 px-8 text-center text-white">
-                        <h2 className="text-2xl lg:text-3xl font-bold flex items-center justify-center gap-3"><span>📜</span> Books List</h2>
+                    <div className="bg-[rgb(110,35,35)] py-6 px-8 text-center text-white">
+                        <h2 className="text-2xl lg:text-3xl font-bold flex items-center justify-center gap-3"><span>??</span> Books List</h2>
                     </div>
                     <div className="p-8">
                         <div className="rounded-2xl overflow-hidden shadow-2xl border border-gray-200 mx-auto max-w-4xl">                            

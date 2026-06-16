@@ -83,7 +83,7 @@ const GraduationGallery = () => {
   return (
     <div className="p-10 mt-36">
       <div className="flex justify-center">
-        <div className="h-18 w-[500px] bg-gradient-to-r from-[rgb(115,63,63)] to-[rgb(115,25,25)] flex justify-center items-center rounded-lg">
+        <div className="h-18 w-[500px] bg-[rgb(110,35,35)] flex justify-center items-center rounded-lg">
           <h1 className="text-3xl font-bold text-white">
             Graduation {year} Gallery
           </h1>

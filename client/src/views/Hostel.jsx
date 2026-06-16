@@ -147,7 +147,7 @@ fetch("/api/hostel")
             <main className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-16">
                 {/* Description Section */}
                 <section id="Description" className="bg-white rounded-3xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-lg transition-all animate-fadeIn">
-                    <div className="bg-gradient-to-r from-[rgb(115,63,63)] to-[rgb(115,25,25)] py-6 px-6 sm:px-8 text-center text-white">
+                    <div className="bg-[rgb(110,35,35)] py-6 px-6 sm:px-8 text-center text-white">
                         <h2 className="text-2xl sm:text-3xl lg:text-3xl font-bold text-white font-serif mb-2">
             Overview
           </h2>
@@ -181,7 +181,7 @@ fetch("/api/hostel")
                 {/* Administration Section */}
                         <section id="Administration" className="bg-white rounded-3xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-lg transition-all animate-fadeIn">
                             
-                            <div className="bg-gradient-to-r from-[rgb(115,63,63)] to-[rgb(115,25,25)] py-6 px-8 text-center text-white">
+                            <div className="bg-[rgb(110,35,35)] py-6 px-8 text-center text-white">
                                 <h2 className="text-2xl lg:text-3xl font-bold flex items-center justify-center gap-3 mb-2">
                                      Administration
                                 </h2>
@@ -315,7 +315,7 @@ fetch("/api/hostel")
 
                 {/* Fees Structure Section */}
                 <section id="FeesStructure" className="bg-white rounded-3xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-lg transition-all animate-fadeIn">
-                    <div className="bg-gradient-to-r from-[rgb(115,63,63)] to-[rgb(115,25,25)] py-6 px-6 sm:px-8 text-center text-white">
+                    <div className="bg-[rgb(110,35,35)] py-6 px-6 sm:px-8 text-center text-white">
                         <h2 className="text-2xl lg:text-3xl font-bold flex items-center justify-center gap-3">Fees Structure</h2>
                     </div>
                     <div className="p-6 sm:p-8 text-center space-y-10">
@@ -336,7 +336,7 @@ fetch("/api/hostel")
                                 href="https://services.sabpaisa.in/pages/annauniversityregionalcampus.html"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="inline-flex items-center gap-3 px-10 py-5 bg-gradient-to-r from-[rgb(115,63,63)] to-[rgb(115,25,25)] text-white rounded-2xl font-black text-xl hover:shadow-2xl hover:scale-105 transition-all shadow-xl group"
+                                className="inline-flex items-center gap-3 px-10 py-5 bg-[rgb(110,35,35)] text-white rounded-2xl font-black text-xl hover:shadow-2xl hover:scale-105 transition-all shadow-xl group"
                             >
                                 PAY HOSTEL FEES ONLINE
                                 <svg className="w-6 h-6 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M14 5l7 7-7 7" /></svg>
@@ -347,7 +347,7 @@ fetch("/api/hostel")
 
                 {/* Rules Section */}
                  <section id="RulesandRegulations" className="bg-white rounded-3xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-lg transition-all animate-fadeIn">
-                    <div className="bg-gradient-to-r from-[rgb(115,63,63)] to-[rgb(115,25,25)] py-6 px-6 sm:px-8 text-center text-white">
+                    <div className="bg-[rgb(110,35,35)] py-6 px-6 sm:px-8 text-center text-white">
                         <h2 className="text-2xl lg:text-3xl font-bold flex items-center justify-center gap-3">Rules and Regulations</h2>
                     </div>
                     <div className="p-8">

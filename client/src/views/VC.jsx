@@ -54,7 +54,7 @@ const VC = () => {
                 {/* Profile Sidebar */}
                 <div className="md:w-1/3 flex flex-col items-center">
                     <div className="relative group">
-                        <div className="absolute -inset-1 bg-gradient-to-r from-[rgb(115,63,63)] to-[rgb(115,25,25)] rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
+                        <div className="absolute -inset-1 bg-[rgb(110,35,35)] rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
                         <img
                             src="/velraj.webp"
                             alt="Vice-Chancellor's Photo"

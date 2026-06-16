@@ -78,7 +78,7 @@ const UyirClub = () => {
                 <div className="max-w-7xl mx-auto flex flex-col gap-8 sm:gap-10 lg:gap-12">
                     {/* Description Section */}
                     <div className="bg-white/70 backdrop-blur-md rounded-2xl shadow-lg border border-gray-100 overflow-hidden animate-fadeIn">
-                        <div className="bg-gradient-to-r from-[rgb(115,63,63)] to-[rgb(115,25,25)] py-4 sm:py-5 flex items-center justify-center gap-2 sm:gap-3">
+                        <div className="bg-[rgb(110,35,35)] py-4 sm:py-5 flex items-center justify-center gap-2 sm:gap-3">
                             <h2 className="text-lg sm:text-xl lg:text-2xl xl:text-3xl font-bold text-white text-center">{data.name || "UYIR CLUB"}</h2>
                         </div>
                         <div className="p-4 sm:p-6 md:p-8 lg:p-10 text-left">
@@ -88,7 +88,7 @@ const UyirClub = () => {
 
                     {/* Coordinator Section */}
                     <div className="bg-white/70 backdrop-blur-md rounded-2xl shadow-lg border border-gray-100 overflow-hidden animate-fadeIn">
-                        <div className="bg-gradient-to-r from-[rgb(115,63,63)] to-[rgb(115,25,25)] py-4 sm:py-5 flex items-center justify-center gap-2 sm:gap-3">
+                        <div className="bg-[rgb(110,35,35)] py-4 sm:py-5 flex items-center justify-center gap-2 sm:gap-3">
                             <h2 className="text-lg sm:text-xl lg:text-2xl xl:text-3xl font-bold text-white text-center">Coordinator</h2>
                         </div>
                         <div className="p-4 sm:p-6 md:p-8 lg:p-10 flex justify-center">

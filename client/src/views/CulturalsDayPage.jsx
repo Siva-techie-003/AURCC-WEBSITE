@@ -31,7 +31,7 @@ const CulturalsDayPage = () => {
                 alt={item.year}
                 className="w-full h-48 object-cover rounded-t-xl"
               />
-              <div className="p-4 text-center hover:bg-gradient-to-r from-[rgb(115,63,63)] to-[rgb(115,25,25)] rounded-b-xl transition-colors duration-300 hover:text-white">
+              <div className="p-4 text-center hover:bg-[rgb(110,35,35)] rounded-b-xl transition-colors duration-300 hover:text-white">
                 <h2 className="text-lg font-bold">
                   {item.name}
                 </h2>

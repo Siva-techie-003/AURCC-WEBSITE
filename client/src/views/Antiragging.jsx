@@ -105,7 +105,7 @@ const Antiragging = () => {
       {/* Content Section */}
       <section className="max-w-[1400px] mx-auto py-8 sm:py-12 lg:py-14 px-4 flex flex-col gap-12">
         <div ref={policyRef} className="bg-white/70 backdrop-blur-md rounded-2xl shadow-xl border border-gray-100 overflow-hidden">
-          <div className="bg-gradient-to-r from-[rgb(115,63,63)] to-[rgb(115,25,25)] py-4 sm:py-5 flex items-center justify-center gap-2 sm:gap-3">
+          <div className="bg-[rgb(110,35,35)] py-4 sm:py-5 flex items-center justify-center gap-2 sm:gap-3">
             <h2 className="text-lg sm:text-xl lg:text-2xl xl:text-3xl font-bold text-white text-center uppercase tracking-wider">
               Zero Tolerance Policy
             </h2>
@@ -120,7 +120,7 @@ const Antiragging = () => {
         </div>
 
         <div ref={resourcesRef} className="bg-white/70 backdrop-blur-md rounded-2xl shadow-xl border border-gray-100 overflow-hidden">
-          <div className="bg-gradient-to-r from-[rgb(115,63,63)] to-[rgb(115,25,25)] py-4 sm:py-5 flex items-center justify-center gap-2 sm:gap-3">
+          <div className="bg-[rgb(110,35,35)] py-4 sm:py-5 flex items-center justify-center gap-2 sm:gap-3">
             <h2 className="text-lg sm:text-xl lg:text-2xl xl:text-3xl font-bold text-white text-center uppercase tracking-wider">
               Anti Ragging Resources
             </h2>

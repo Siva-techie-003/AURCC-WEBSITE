@@ -95,7 +95,7 @@ overflow-hidden flex items-center justify-center animate-fadeIn px-4 sm:px-6 lg:
 
             {/* Contact Button */}
             {/* <div className="flex justify-center mt-2 mb-6 sm:mb-8 px-4">
-                <a href={`mailto:${contactEmail}`} className="apply-contact-btn bg-gradient-to-r from-[rgb(115,63,63)] to-[rgb(115,25,25)] text-white font-bold py-3 px-6 sm:px-8 rounded-full shadow-lg hover:from-[rgb(115,63,63)] hover:to-[rgb(115,25,25)] transition-all text-base sm:text-lg md:text-xl transform hover:scale-105 touch-manipulation w-full sm:w-auto text-center">
+                <a href={`mailto:${contactEmail}`} className="apply-contact-btn bg-[rgb(110,35,35)] text-white font-bold py-3 px-6 sm:px-8 rounded-full shadow-lg hover:from-[rgb(115,63,63)] hover:to-[rgb(115,25,25)] transition-all text-base sm:text-lg md:text-xl transform hover:scale-105 touch-manipulation w-full sm:w-auto text-center">
                     {contactButtonText}
                 </a>
             </div> */}

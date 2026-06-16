@@ -4,7 +4,7 @@ const Safety = () => {
   return (
     <main className="flex-grow font-sans bg-white pt-[126px] sm:pt-[130px] lg:pt-[130px]">
       {/* Hero Header */}
-      <section className="relative w-full overflow-hidden flex items-center justify-center bg-gradient-to-br from-[rgb(115,63,63)] to-[rgb(115,25,25)] text-center pt-10 pb-8 sm:pt-12 sm:pb-10 px-4">
+      <section className="relative w-full overflow-hidden flex items-center justify-center bg-[rgb(110,35,35)] text-center pt-10 pb-8 sm:pt-12 sm:pb-10 px-4">
         <div className="absolute inset-0 bg-black/40 z-0"></div>
         <div className="relative z-10 max-w-3xl mx-auto">
           <h1 className="text-xl sm:text-2xl lg:text-3xl font-extrabold text-white tracking-wide mb-1.5 animate-fadeIn">

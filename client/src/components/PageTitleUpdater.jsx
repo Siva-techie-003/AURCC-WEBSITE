@@ -74,7 +74,7 @@ function PageTitleUpdater() {
             '/feedback': { title: 'Feedback', desc: 'Provide your valuable feedback and suggestions to help us improve the educational experience at AURCC.' },
             '/team': { title: 'Team', desc: 'Meet the dedicated faculty, staff, and student teams behind the successful functioning of AURCC.' },
             '/team/faculty': { title: 'Faculty Incharge', desc: 'Meet the faculty incharges who guide and mentor various academic and administrative activities at AURCC.' },
-            '/team/developers': { title: 'Student Developers', desc: 'Meet the talented student developers who designed and built the official AURCC website.' },
+            '/team/developers': { title: 'Developers', desc: 'Meet the talented Developers who designed and built the official AURCC website.' },
             '/departments/cse': { title: 'Department of Computer Science and Engineering', desc: 'Explore the CSE department at AURCC. Learn about our curriculum, faculty, labs, and student achievements.' },
             '/departments/mech': { title: 'Department of Mechanical Engineering', desc: 'Explore the Mechanical Engineering department at AURCC. Find details on academics, research, and facilities.' },
             '/departments/mba': { title: 'Department of Master of Business Administration', desc: 'Discover the MBA program at AURCC, focusing on business leadership, management skills, and industry readiness.' },

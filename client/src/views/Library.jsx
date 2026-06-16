@@ -245,7 +245,7 @@ const Library = () => {
           id="OpenAccessResources"
           className="bg-white rounded-3xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-lg transition-all animate-fadeIn"
         >
-          <div className="bg-gradient-to-r from-[rgb(115,63,63)] to-[rgb(115,25,25)] py-6 px-8 text-center text-white">
+          <div className="bg-[rgb(110,35,35)] py-6 px-8 text-center text-white">
             <h2 className="text-xl lg:text-2xl font-bold">
               Open Access Resources
             </h2>
@@ -272,7 +272,7 @@ const Library = () => {
           id="LibrarySections"
           className="bg-white rounded-3xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-lg transition-all animate-fadeIn"
         >
-          <div className="bg-gradient-to-r from-[rgb(115,63,63)] to-[rgb(115,25,25)] py-6 px-8 text-center text-white">
+          <div className="bg-[rgb(110,35,35)] py-6 px-8 text-center text-white">
             <h2 className="text-xl lg:text-2xl font-bold">Library Sections</h2>
           </div>
           <div className="p-8">
@@ -299,7 +299,7 @@ const Library = () => {
         {/* Faculty */}
         <section id="Faculty" className="w-full bg-gray-100 py-12 px-4">
           {/* Header */}
-          <div className="bg-gradient-to-r from-[rgb(115,63,63)] to-[rgb(115,25,25)] py-6 text-center text-white rounded-t-3xl max-w-6xl mx-auto">
+          <div className="bg-[rgb(110,35,35)] py-6 text-center text-white rounded-t-3xl max-w-6xl mx-auto">
             <h2 className="text-xl lg:text-2xl font-bold">Library Team</h2>
           </div>
 
@@ -324,9 +324,7 @@ const Library = () => {
                 >
                   {/* Top Gradient */}
                   <div
-                    className="h-24 bg-gradient-to-r 
-                                    from-[rgb(115,63,63)] 
-                                    to-[rgb(115,25,25)]"
+                    className="h-24 bg-[rgb(110,35,35)]"
                   ></div>
 
                   {/* Profile Image */}

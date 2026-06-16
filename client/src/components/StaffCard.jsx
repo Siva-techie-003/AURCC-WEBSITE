@@ -33,7 +33,7 @@ const StaffCard = ({ staff }) => {
             </div>
 
             {/* Text Section */}
-            <div className="w-full bg-gradient-to-r from-[rgb(115,63,63)] to-[rgb(115,25,25)] py-2 sm:py-4 px-2 sm:px-3 flex flex-col items-center justify-center flex-grow">
+            <div className="w-full bg-[rgb(110,35,35)] py-2 sm:py-4 px-2 sm:px-3 flex flex-col items-center justify-center flex-grow">
                 <h3 className="text-xs sm:text-base font-bold text-white font-sans tracking-wide leading-tight mb-1 line-clamp-2">{staff.name}</h3>
                 <p className="text-[10px] sm:text-sm text-white font-sans leading-tight line-clamp-2">{staff.position || staff.designation}</p>
             </div>

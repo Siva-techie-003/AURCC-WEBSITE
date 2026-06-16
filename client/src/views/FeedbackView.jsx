@@ -69,7 +69,7 @@ const FeedbackView = () => {
                                     href={card.formUrl} 
                                     target="_blank" 
                                     rel="noopener noreferrer"
-                                    className="w-full inline-flex items-center justify-center px-6 py-4 bg-gradient-to-r from-[rgb(115,63,63)] to-[rgb(115,25,25)] text-white font-bold rounded-2xl shadow-lg hover:shadow-xl hover:scale-[1.02] transform transition-all duration-300 group-hover:from-[rgb(130,70,70)] group-hover:to-[rgb(130,30,30)]"
+                                    className="w-full inline-flex items-center justify-center px-6 py-4 bg-[rgb(110,35,35)] text-white font-bold rounded-2xl shadow-lg hover:shadow-xl hover:scale-[1.02] transform transition-all duration-300 group-hover:from-[rgb(130,70,70)] group-hover:to-[rgb(130,30,30)]"
                                 >
                                     <span>Submit Feedback</span>
                                     <svg className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
