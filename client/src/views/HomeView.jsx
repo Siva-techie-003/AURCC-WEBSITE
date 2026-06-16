@@ -946,10 +946,10 @@ const HomeView = () => {
 
 
           {/* Programs Offered */}
-          <div className="mt-22 pb-12 relative">
+          <div id="programs" className="mt-22 pb-12 relative scroll-mt-24 lg:scroll-mt-32">
             <div className="text-center">
               <h2 className="text-base sm:text-3xl lg:text-4xl font-bold mt-4 sm:mt-16 sm:mb-16 uppercase text-[rgb(100,25,25)] relative inline-block">
-                Academic Programs
+                Academic Programmes
                 <span className="absolute -bottom-1 sm:-bottom-3 left-1/2 transform -translate-x-1/2 h-[1px] sm:h-1 w-16 sm:w-36 lg:w-44 bg-yellow-500"></span>
               </h2>
             </div>
@@ -965,8 +965,8 @@ const HomeView = () => {
                   { heading: "BACHELOR OF DEGREE", course: "Electronics and Communication Engineering", image: "/ece.jpg", url: "/departments/ece" },
                   { heading: "BACHELOR OF DEGREE", course: "Electrical and Electronics Engineering", image: "/eee.jpg", url: "/departments/eee" },
                   { heading: "BACHELOR OF DEGREE", course: "Mechanical Engineering", image: "/mech.jpg", url: "/departments/mech" },
-                  { heading: "BACHELOR OF TECHNOLOGY", course: "Artifical Intelligence and Data Science", image: "/ai.jpg", url: "/departments/ai" },
-                  { heading: "BACHELOR OF DEGREE", course: "Electronics Engineering (VLSI Design & Technology)", image: "/vlsi.jpg", url: "/departments/vlsi" },
+                  { heading: "BACHELOR OF TECHNOLOGY", course: "Artifical Intelligence and Data Science", image: "/ai.jpg", url: "/departments/cse" },
+                  { heading: "BACHELOR OF DEGREE", course: "Electronics Engineering (VLSI Design & Technology)", image: "/vlsi.jpg", url: "/departments/ece" },
                   { heading: "MASTER OF BUSINESS ADMINISTRATION", course: "MBA", image: "/mba.jpg", url: "/departments/mba" },
                   { heading: "MASTER OF BUSINESS ADMINISTRATION", course: "MBA Business Analytics", image: "/mba_ba.jpg", url: "/departments/mba" },
                 ].map((prog, idx) => (
@@ -1055,7 +1055,7 @@ const HomeView = () => {
               </button>
             </div>
           </div>
-
+          
           {/* Dean's Message */}
           <section
             id="deans-message"

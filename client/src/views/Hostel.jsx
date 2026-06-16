@@ -205,7 +205,7 @@ fetch("/api/hostel")
                                             className="bg-white border border-[rgb(200,120,120)]
                                             p-6 rounded-2xl shadow-md hover:shadow-xl
                                             transition-all duration-300
-                                            flex flex-col sm:flex-row items-center justify-between
+                                            flex flex-col-reverse sm:flex-row items-center justify-between
                                             max-w-md w-full mx-auto hover:bg-[rgb(233,169,169)]"
                                             >
 
@@ -237,7 +237,7 @@ fetch("/api/hostel")
                                             </div>
 
                                             {/* RIGHT SIDE - Photo */}
-                                            <div className="mt-4 sm:mt-0 sm:ml-4 w-28 h-32 rounded-lg overflow-hidden border-4 border-[rgb(120,45,45)] shadow-md">
+                                            <div className="mb-4 sm:mb-0 sm:ml-4 w-28 h-32 rounded-lg overflow-hidden border-4 border-[rgb(120,45,45)] shadow-md">
                                                 <img
                                                 src={`/public/${warden.photo}`}
                                                 alt={warden.Name}
@@ -263,7 +263,7 @@ fetch("/api/hostel")
                                             className="bg-white border border-gray-200
                                                         p-5 rounded-2xl shadow-md
                                                         hover:shadow-xl transition-all duration-300
-                                                        flex flex-col sm:flex-row items-center justify-between
+                                                        flex flex-col-reverse sm:flex-row items-center justify-between
                                                         max-w-md w-full"
                                             >
 
@@ -297,7 +297,7 @@ fetch("/api/hostel")
                                             </div>
 
                                             {/* RIGHT SIDE - Photo */}
-                                            <div className="mt-4 sm:mt-0 sm:ml-6 w-28 h-32 rounded-lg overflow-hidden border-4 border-[rgb(120,45,45)] shadow-md">
+                                            <div className="mb-4 sm:mb-0 sm:ml-6 w-28 h-32 rounded-lg overflow-hidden border-4 border-[rgb(120,45,45)] shadow-md">
                                                 <img
                                                 src={`/public/${dw.photo}`}
                                                 alt={dw.Name}

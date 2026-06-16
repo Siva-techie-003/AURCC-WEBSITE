@@ -57,7 +57,7 @@ useEffect(() => {
     return (
         <main className="bg-white min-h-screen font-sans text-gray-800 pt-[116px] sm:pt-[126px] lg:pt-[136px]">
             {/* Hero Section - No Gap with Header */}
-            <section className="relative w-full h-64 sm:h-80 md:h-96 lg:h-[55vh] flex items-center justify-center overflow-hidden -mt-[116px] sm:-mt-[126px] lg:-mt-[136px]">
+            <section className="relative w-full h-80 md:h-96 lg:h-[55vh] flex items-center justify-center overflow-hidden -mt-[116px] sm:-mt-[126px] lg:-mt-[136px]">
                 {/* Background Image */}
                 <img
                     src="/offices.webp"
@@ -130,7 +130,8 @@ useEffect(() => {
   "EOA(2020-21)": data["EOA(2020-21)"],
   "EOA(2021-22)": data["EOA(2021-22)"],
   "EOA(2022-23)": data["EOA(2022-23)"],
-  "EOA(2023-24)": data["EOA(2023-24)"]
+  "EOA(2023-24)": data["EOA(2023-24)"],
+  "EOA(2026-27)": data["EOA(2026-27)"]
 }).map(([title, link]) => (
                                 <li key={title} className="text-base lg:text-lg xl:text-xl">
                                     <a href={link} target="_blank" rel="noopener noreferrer" className="text-black underline hover:text-[rgb(110,35,35)] hover:font-semibold transition">{title}</a>

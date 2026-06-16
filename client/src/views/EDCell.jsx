@@ -34,6 +34,7 @@ if (!data) {
             heroSubtitle="Empowering innovation, startups, and entrepreneurial spirit"
             sections={sections}
             contactEmail="edcell@aurcc.ac.in"
+            heroHeightClasses="min-h-[35vh] sm:min-h-[30vh] md:min-h-[40vh] lg:min-h-[48vh] xl:min-h-[55vh]"
         >
             <div className="content space-y-16">
 
