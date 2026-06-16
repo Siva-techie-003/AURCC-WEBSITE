@@ -40,7 +40,24 @@ const DepartmentsView = () => {
 
         // Intercept and update HOD desk photo if department is MBA
         if (departmentName === "mba" && data.faculty?.hod_desk?.length > 0) {
-          data.faculty.hod_desk[0].photo = "DEAN_DESK.jpeg";
+          data.faculty.hod_desk[0].desk_photo = "DEAN_DESK.jpeg";
+        }
+
+        try {
+          const hodsRes = await fetch("/api/hods");
+          const hodsData = await hodsRes.json();
+          const hodsList = hodsData[0]?.departments || [];
+          if (data.faculty?.hod_desk?.length > 0) {
+            data.faculty.hod_desk = data.faculty.hod_desk.map(staff => {
+              const matchingHod = hodsList.find(h => h.name === staff.name);
+              if (matchingHod) {
+                return { ...staff, profile_photo: matchingHod.photo };
+              }
+              return staff;
+            });
+          }
+        } catch (err) {
+          console.error("Error fetching HODs:", err);
         }
 
         setDepartment(data);
@@ -384,7 +401,7 @@ const DepartmentsView = () => {
                     <div className="w-full">
                       <div className="w-full h-[220px] sm:h-[280px] md:h-[340px] lg:h-[400px] rounded-xl overflow-hidden bg-gray-50 flex items-center justify-center">
                         <img
-                          src={`${BACKEND_URL}/public/${staff.photo || staff.image}`}
+                          src={`${BACKEND_URL}/public/${staff.desk_photo || staff.photo || staff.image}`}
                           alt={staff.name}
                           onError={handleImageError}
                           className="max-w-full max-h-full object-contain"
@@ -1003,7 +1020,13 @@ const DepartmentsView = () => {
               {/* LEFT SIDE */}
               <div className="w-full md:w-1/3 bg-[rgb(242,198,198)] text-left md:text-center p-4 md:p-6 flex flex-row md:flex-col items-center gap-4 md:gap-0 shrink-0">
                 <img
-                  src={`${BACKEND_URL}/public/${selectedStaff.photo || selectedStaff.image}`}
+                  src={
+                    selectedStaff.profile_photo
+                      ? (selectedStaff.profile_photo.startsWith("public/") || selectedStaff.profile_photo.startsWith("/public/")
+                        ? `${BACKEND_URL}/${selectedStaff.profile_photo}`
+                        : `${BACKEND_URL}/public/${selectedStaff.profile_photo}`)
+                      : `${BACKEND_URL}/public/${selectedStaff.photo || selectedStaff.image}`
+                  }
                   alt={selectedStaff.name}
                   className="w-24 md:w-48 h-auto max-h-40 md:max-h-64 rounded-xl border shadow shrink-0 object-cover"
                 />
