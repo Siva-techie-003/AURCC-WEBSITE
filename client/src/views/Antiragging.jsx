@@ -47,7 +47,7 @@ const Antiragging = () => {
   return (
     <main className="bg-white min-h-screen font-sans text-gray-800 pt-[116px] sm:pt-[126px] lg:pt-[136px]">
       {/* Hero Section - No Gap with Header */}
-      <section className="relative w-full h-64 sm:h-80 md:h-96 lg:h-[55vh] flex items-center justify-center overflow-hidden -mt-[116px] sm:-mt-[126px] lg:-mt-[136px]">
+      <section className="relative w-full h-80 md:h-96 lg:h-[55vh] flex items-center justify-center overflow-hidden -mt-[116px] sm:-mt-[126px] lg:-mt-[136px]">
         {/* Background Image */}
         <img
           src="/offices.webp"
