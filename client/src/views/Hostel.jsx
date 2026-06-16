@@ -333,7 +333,7 @@ fetch("/api/hostel")
                         </div>
                         <div className="pt-4">
                             <a
-                                href="https://services.sabpaisa.in/pages/annauniversityregionalcampus.html"
+                                href="https://onlinesbi.sbi.bank.in/sbicollect/icollecthome.htm"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="inline-flex items-center gap-3 px-10 py-5 bg-[rgb(110,35,35)] text-white rounded-2xl font-black text-xl hover:shadow-2xl hover:scale-105 transition-all shadow-xl group"

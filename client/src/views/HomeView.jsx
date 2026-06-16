@@ -630,7 +630,7 @@ const HomeView = () => {
                   href="#programs"
                   className="inline-block px-3 sm:px-8 py-2 sm:py-4 bg-white text-[rgb(100,25,25)] rounded-full font-semibold transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl text-xs sm:text-base min-w-[120px] sm:min-w-[150px]"
                 >
-                  Explore Programs
+                  Explore Programmes
                 </a>
                 <button
                   onClick={() => document.getElementById("my_modal_7").showModal()}

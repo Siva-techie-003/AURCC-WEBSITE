@@ -87,7 +87,7 @@
 
 .news-scroll,
 .events-scroll {
-    animation: scrollUp 20s linear infinite;
+    animation: scrollUp 10s linear infinite;
 }
 
 .news-scroll:hover,
