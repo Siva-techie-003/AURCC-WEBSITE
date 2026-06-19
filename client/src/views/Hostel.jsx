@@ -319,19 +319,19 @@ fetch("/api/hostel")
                         <h2 className="text-2xl lg:text-3xl font-bold flex items-center justify-center gap-3">Fees Structure</h2>
                     </div>
                     <div className="p-6 sm:p-8 text-center space-y-10">
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-                            <a href={hostelData['Fees Structure']['New Admission']} className="p-8 bg-white border border-[rgb(200,120,120)] rounded-3xl hover:shadow-xl transition-all group hover:bg-[rgb(220,140,140)]">
-                                <div className="w-16 h-16 bg-[rgb(115,40,40)] text-white rounded-2xl flex items-center justify-center text-3xl mx-auto mb-4 group-hover: transition-transform">📄</div>
-                                <h4 className="text-xl font-bold text-[rgb(100,25,25)] mb-2">New Admission</h4>
-                                <p className="text-sm font-medium text-gray-700 uppercase tracking-widest">Download Fee Details</p>
-                            </a>
-                            <a href={hostelData['Fees Structure']['Existing Students']} className="p-8 bg-white border border-[rgb(200,120,120)] rounded-3xl hover:shadow-xl transition-all group hover:bg-[rgb(220,140,140)]">
-                                <div className="w-16 h-16 bg-[rgb(115,40,40)] text-white rounded-2xl flex items-center justify-center text-3xl mx-auto mb-4 group-hover: transition-transform">📄</div>
-                                <h4 className="text-xl font-bold text-[rgb(100,25,25)] mb-2">Existing Students</h4>
+                        <div className="flex justify-center max-w-4xl mx-auto px-4">
+                            <a 
+                                href="/forms/Hostel%20Fee%20structure.pdf" 
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="p-8 bg-white border border-[rgb(200,120,120)] rounded-3xl hover:shadow-xl transition-all group hover:bg-[rgb(220,140,140)] w-full max-w-md"
+                            >
+                                <div className="w-16 h-16 bg-[rgb(115,40,40)] text-white rounded-2xl flex items-center justify-center text-3xl mx-auto mb-4 group-hover:scale-110 transition-transform">📄</div>
+                                <h4 className="text-xl font-bold text-[rgb(100,25,25)] mb-2">Hostel Fees</h4>
                                 <p className="text-sm font-medium text-gray-700 uppercase tracking-widest">Download Fee Details</p>
                             </a>
                         </div>
-                        <div className="pt-4">
+                        <div className="pt-4 text-center">
                             <a
                                 href="https://onlinesbi.sbi.bank.in/sbicollect/icollecthome.htm"
                                 target="_blank"
