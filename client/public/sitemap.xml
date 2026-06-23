@@ -50,8 +50,6 @@
   <url><loc>https://www.aurcc.ac.in/departments/mba</loc><title>MBA Department</title><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://www.aurcc.ac.in/departments/eee</loc><title>EEE Department</title><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://www.aurcc.ac.in/departments/ece</loc><title>ECE Department</title><changefreq>weekly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.aurcc.ac.in/departments/ai</loc><title>AI &amp; DS Department</title><changefreq>weekly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.aurcc.ac.in/departments/vlsi</loc><title>VLSI Department</title><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://www.aurcc.ac.in/departments/science-and-humanities</loc><title>Science and Humanities Department</title><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://www.aurcc.ac.in/team/developers</loc><title>Developers</title><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://www.aurcc.ac.in/team/faculty</loc><title>Faculty</title><changefreq>monthly</changefreq><priority>0.8</priority></url>

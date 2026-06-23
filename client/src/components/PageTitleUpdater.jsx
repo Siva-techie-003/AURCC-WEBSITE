@@ -6,16 +6,48 @@ function PageTitleUpdater() {
 
     useEffect(() => {
         const defaultDesc = "Welcome to Anna University Regional Campus Coimbatore (AURCC). Explore our academic programs, departments, and campus life.";
-        const updateMetaDesc = (desc) => {
+        
+        const updateSEO = (title, desc) => {
+            document.title = title;
+            const finalD = desc || defaultDesc;
+            
+            // Standard Meta Description
             let metaDesc = document.querySelector('meta[name="description"]');
-            if (metaDesc) {
-                metaDesc.setAttribute('content', desc || defaultDesc);
+            if (metaDesc) metaDesc.setAttribute('content', finalD);
+
+            // Open Graph Description
+            let ogDesc = document.querySelector('meta[property="og:description"]');
+            if (ogDesc) ogDesc.setAttribute('content', finalD);
+
+            // Twitter Description
+            let twitterDesc = document.querySelector('meta[property="twitter:description"]');
+            if (twitterDesc) twitterDesc.setAttribute('content', finalD);
+
+            // Open Graph Title
+            let ogTitle = document.querySelector('meta[property="og:title"]');
+            if (ogTitle) ogTitle.setAttribute('content', title);
+
+            // Twitter Title
+            let twitterTitle = document.querySelector('meta[property="twitter:title"]');
+            if (twitterTitle) twitterTitle.setAttribute('content', title);
+
+            // Update URLs
+            const currentUrl = `https://www.aurcc.ac.in${pathname}`;
+            let ogUrl = document.querySelector('meta[property="og:url"]');
+            if (ogUrl) ogUrl.setAttribute('content', currentUrl);
+
+            let twitterUrl = document.querySelector('meta[property="twitter:url"]');
+            if (twitterUrl) twitterUrl.setAttribute('content', currentUrl);
+
+            
+            let canonicalLink = document.querySelector('link[rel="canonical"]');
+            if (canonicalLink) {
+                canonicalLink.setAttribute('href', currentUrl);
             }
         };
 
         if (pathname === '/') {
-            document.title = 'AURCC - Anna University Regional Campus Coimbatore';
-            updateMetaDesc(defaultDesc);
+            updateSEO('AURCC - Anna University Regional Campus Coimbatore', defaultDesc);
             return;
         }
 
@@ -79,7 +111,8 @@ function PageTitleUpdater() {
             '/departments/mech': { title: 'Department of Mechanical Engineering', desc: 'Explore the Mechanical Engineering department at AURCC. Find details on academics, research, and facilities.' },
             '/departments/mba': { title: 'Department of Master of Business Administration', desc: 'Discover the MBA program at AURCC, focusing on business leadership, management skills, and industry readiness.' },
             '/departments/eee': { title: 'Department of Electrical and Electronics Engineering', desc: 'Explore the EEE department at AURCC. Learn about our power systems, electronics labs, and academic excellence.' },
-            '/departments/ece': { title: 'Department of Electronics and Communication Engineering', desc: 'Explore the ECE department at AURCC. Information on our communications, VLSI labs, and cutting-edge research.' }
+            '/departments/ece': { title: 'Department of Electronics and Communication Engineering', desc: 'Explore the ECE department at AURCC. Information on our communications, VLSI labs, and cutting-edge research.' },
+            '/departments/science-and-humanities': { title: 'Department of Science and Humanities', desc: 'Explore the Department of Science and Humanities at AURCC. Learn about our faculty, chemistry and physics labs, and academic foundations.' }
         };
 
         const pathLower = pathname.toLowerCase();
@@ -102,8 +135,7 @@ function PageTitleUpdater() {
             }
         }
 
-        document.title = pathLower === '/' ? finalTitle : `${finalTitle} | AURCC`;
-        updateMetaDesc(finalDesc);
+        updateSEO(`${finalTitle} | AURCC`, finalDesc);
     }, [pathname]);
 
     return null;

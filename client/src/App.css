@@ -3,6 +3,32 @@
 @tailwind utilities;
 
 
+/* Prevent text selection across the website */
+body {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Allow text selection in input, textarea, and editable elements */
+input, textarea, select, [contenteditable="true"] {
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
+}
+
+/* Prevent image dragging and pointer-based interactions */
+img {
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+  user-drag: none;
+  pointer-events: none;
+}
+
 
 /* Modern Mobile Menu Animations */
 @keyframes mobile-menu-open {

@@ -1,4 +1,4 @@
-import React, { Suspense, lazy } from 'react';
+import React, { Suspense, lazy, useEffect } from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
@@ -67,6 +67,56 @@ const Team = lazy(() => import('./views/Team'));
 const Privacy = lazy(() => import('./views/Privacy'));
 const Safety = lazy(() => import('./views/Safety'));
 function App() {
+    useEffect(() => {
+        const handleContextMenu = (e) => {
+            // Only block context menu if target is not a text input or textarea
+            const tagName = e.target.tagName.toLowerCase();
+            if (tagName !== 'input' && tagName !== 'textarea') {
+                e.preventDefault();
+            }
+        };
+
+        const handleKeyDown = (e) => {
+            // Block common inspect / save shortcuts:
+            // F12
+            if (e.keyCode === 123) {
+                e.preventDefault();
+                return false;
+            }
+            // Ctrl+Shift+I (Inspect), Ctrl+Shift+J (Console), Ctrl+Shift+C (Inspect Element)
+            if (e.ctrlKey && e.shiftKey && (e.keyCode === 73 || e.keyCode === 74 || e.keyCode === 67)) {
+                e.preventDefault();
+                return false;
+            }
+            // Ctrl+U (View Source)
+            if (e.ctrlKey && e.keyCode === 85) {
+                e.preventDefault();
+                return false;
+            }
+            // Ctrl+S (Save Page)
+            if (e.ctrlKey && e.keyCode === 83) {
+                e.preventDefault();
+                return false;
+            }
+        };
+
+        const handleDragStart = (e) => {
+            if (e.target.tagName.toLowerCase() === 'img') {
+                e.preventDefault();
+            }
+        };
+
+        document.addEventListener('contextmenu', handleContextMenu);
+        document.addEventListener('keydown', handleKeyDown);
+        document.addEventListener('dragstart', handleDragStart);
+
+        return () => {
+            document.removeEventListener('contextmenu', handleContextMenu);
+            document.removeEventListener('keydown', handleKeyDown);
+            document.removeEventListener('dragstart', handleDragStart);
+        };
+    }, []);
+
     return (
         <div className="App min-h-screen flex flex-col overflow-x-clip">
             <Header />
