@@ -111,8 +111,8 @@ const Team = () => {
 
             {/* Developers Card */}
             <div className="flex flex-col items-center justify-center p-6 w-full max-w-xs mx-auto bg-white rounded-2xl shadow-md border-2 border-[#f5c842] hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
-              <h3 className="text-xl font-bold text-[rgb(110,35,35)] font-serif mb-2 text-center">Student Developers</h3>
-              <p className="text-gray-500 text-center text-xs font-semibold mb-6">Meet the student developers behind this website</p>
+              <h3 className="text-xl font-bold text-[rgb(110,35,35)] font-serif mb-2 text-center">Developers</h3>
+              <p className="text-gray-500 text-center text-xs font-semibold mb-6">Meet our developers behind this website</p>
               <Link to="/team/developers" className="px-5 py-2 text-sm font-bold text-[rgb(110,35,35)] border-2 border-[rgb(110,35,35)] rounded-full hover:bg-[rgb(110,35,35)] hover:text-white transition-colors duration-300">
                 View Developers
               </Link>
