@@ -58,19 +58,14 @@ const Contact = () => {
 
     const contacts = [
         { office: "Dean's Office", number: "0422-2984002" },
-        { office: "Administrative Office", number: "-" },
-        { office: "Department of CSE", number: "-" },
-        { office: "Department of ECE", number: "-" },
-        { office: "Department of EEE", number: "-" },
-        { office: "Department of Mechanical", number: "-" },
-        { office: "Placement Cell", number: "-" },
+        { office: "Zonal Office (Zone-IX)", number: "0422-2984003" },
+        { office: "Examination Cell", number: "0422-2984005" },
         { office: "General Administration-1", number: "0422-2984006" },
         { office: "General Administration-2", number: "0422-2984007" },
         { office: "General Administration-3", number: "0422-2984009" },
-        { office: "Library", number: "-" },
-        { office: "Hostel Office", number: "-" },
-        { office: "Placement Cell", number: "-" },
-        { office: "Examination Cell", number: "0422-2984005" }
+        { office: "Affiliation", number: "0422-2984010" },
+        { office: "Academic Coordinator-UG Programmes", number: "0422-2984011" },
+        { office: "Academic Coordinator-PG Programmes", number: "0422-2984012" }
     ];
 
     return (

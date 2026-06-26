@@ -313,62 +313,64 @@ fetch("/api/hostel")
                             </div>
                         </section>
 
-                {/* Fees Structure Section */}
-                <section id="FeesStructure" className="bg-white rounded-3xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-lg transition-all animate-fadeIn">
-                    <div className="bg-[rgb(110,35,35)] py-6 px-6 sm:px-8 text-center text-white">
-                        <h2 className="text-2xl lg:text-3xl font-bold flex items-center justify-center gap-3">Fees Structure</h2>
-                    </div>
-                    <div className="p-6 sm:p-8 text-center space-y-10">
-                        <div className="flex justify-center max-w-4xl mx-auto px-4">
-                            <a 
-                                href="/forms/Hostel%20Fee%20structure.pdf" 
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="p-8 bg-white border border-[rgb(200,120,120)] rounded-3xl hover:shadow-xl transition-all group hover:bg-[rgb(220,140,140)] w-full max-w-md"
-                            >
-                                <div className="w-16 h-16 bg-[rgb(115,40,40)] text-white rounded-2xl flex items-center justify-center text-3xl mx-auto mb-4 group-hover:scale-110 transition-transform">📄</div>
-                                <h4 className="text-xl font-bold text-[rgb(100,25,25)] mb-2">Hostel Fees</h4>
-                                <p className="text-sm font-medium text-gray-700 uppercase tracking-widest">Download Fee Details</p>
-                            </a>
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
+                    {/* Fees Structure Section */}
+                    <section id="FeesStructure" className="bg-white rounded-3xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-lg transition-all animate-fadeIn flex flex-col h-full">
+                        <div className="bg-[rgb(110,35,35)] py-4 px-6 sm:px-8 text-center text-white">
+                            <h2 className="text-xl lg:text-2xl font-bold flex items-center justify-center gap-3">Fees Structure</h2>
                         </div>
-                        <div className="pt-4 text-center">
-                            <a
-                                href="https://onlinesbi.sbi.bank.in/sbicollect/icollecthome.htm"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="inline-flex items-center gap-3 px-10 py-5 bg-[rgb(110,35,35)] text-white rounded-2xl font-black text-xl hover:shadow-2xl hover:scale-105 transition-all shadow-xl group"
-                            >
-                                PAY HOSTEL FEES ONLINE
-                                <svg className="w-6 h-6 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M14 5l7 7-7 7" /></svg>
-                            </a>
+                        <div className="p-6 text-center space-y-6 flex-1 flex flex-col justify-center">
+                            <div className="flex justify-center max-w-4xl mx-auto px-4 w-full">
+                                <a 
+                                    href="/forms/Hostel%20Fee%20structure.pdf" 
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="p-6 bg-white border border-[rgb(200,120,120)] rounded-3xl hover:shadow-xl transition-all group hover:bg-[rgb(220,140,140)] w-full max-w-md"
+                                >
+                                    <div className="w-12 h-12 bg-[rgb(115,40,40)] text-white rounded-2xl flex items-center justify-center text-2xl mx-auto mb-3 group-hover:scale-110 transition-transform">📄</div>
+                                    <h4 className="text-lg font-bold text-[rgb(100,25,25)] mb-1">Hostel Fees</h4>
+                                    <p className="text-xs font-medium text-gray-700 uppercase tracking-widest">Download Fee Details</p>
+                                </a>
+                            </div>
+                            <div className="pt-2 text-center">
+                                <a
+                                    href="https://onlinesbi.sbi.bank.in/sbicollect/icollecthome.htm"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="inline-flex items-center gap-2 px-8 py-4 bg-[rgb(110,35,35)] text-white rounded-2xl font-black text-lg hover:shadow-2xl hover:scale-105 transition-all shadow-xl group"
+                                >
+                                    PAY HOSTEL FEES ONLINE
+                                    <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M14 5l7 7-7 7" /></svg>
+                                </a>
+                            </div>
                         </div>
-                    </div>
-                </section>
+                    </section>
 
-                {/* Rules Section */}
-                 <section id="RulesandRegulations" className="bg-white rounded-3xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-lg transition-all animate-fadeIn">
-                    <div className="bg-[rgb(110,35,35)] py-6 px-6 sm:px-8 text-center text-white">
-                        <h2 className="text-2xl lg:text-3xl font-bold flex items-center justify-center gap-3">Rules and Regulations</h2>
-                    </div>
-                    <div className="p-8">
-                        <div className="rounded-2xl overflow-hidden shadow-2xl border border-gray-200 mx-auto max-w-full">
-                            <iframe
-                            src={`${hostelData["Rules and Regulations"]}#toolbar=0&navpanes=0&scrollbar=0`}
-                            className="w-full min-h-[360px] sm:min-h-[420px] lg:min-h-[520px] rounded-xl"
-                            title="Hostel Rules"
-                            />
+                    {/* Rules Section */}
+                    <section id="RulesandRegulations" className="bg-white rounded-3xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-lg transition-all animate-fadeIn flex flex-col h-full">
+                        <div className="bg-[rgb(110,35,35)] py-4 px-6 sm:px-8 text-center text-white">
+                            <h2 className="text-xl lg:text-2xl font-bold flex items-center justify-center gap-3">Rules and Regulations</h2>
                         </div>
-                    </div>
-                    <div className="text-center mb-6">
-                        <a
-                            href={`${hostelData["Rules and Regulations"]}`}
-                            download="Hostel_Rules.pdf"
-                            className="inline-flex items-center gap-3 px-6 py-3 bg-[rgb(115,40,40)] text-white font-bold rounded-2xl shadow-lg hover:shadow-xl hover:scale-105 transition-all"
-                        >
-                            ⬇ Download Rules & Regulations PDF
-                        </a>
-                    </div>
-                </section>
+                        <div className="p-6 flex-1 flex flex-col justify-between">
+                            <div className="rounded-2xl overflow-hidden shadow-2xl border border-gray-200 mx-auto w-full flex-1">
+                                <iframe
+                                    src={`${hostelData["Rules and Regulations"]}#toolbar=0&navpanes=0&scrollbar=0`}
+                                    className="w-full h-full min-h-[250px] sm:min-h-[300px] lg:min-h-[320px] rounded-xl"
+                                    title="Hostel Rules"
+                                />
+                            </div>
+                            <div className="text-center mt-4">
+                                <a
+                                    href={`${hostelData["Rules and Regulations"]}`}
+                                    download="Hostel_Rules.pdf"
+                                    className="inline-flex items-center gap-2 px-5 py-2.5 bg-[rgb(115,40,40)] text-white font-bold text-sm rounded-2xl shadow-lg hover:shadow-xl hover:scale-105 transition-all"
+                                >
+                                    ⬇ Download Rules & Regulations PDF
+                                </a>
+                            </div>
+                        </div>
+                    </section>
+                </div>
             </main>
         </div>
     );
