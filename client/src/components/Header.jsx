@@ -42,7 +42,7 @@ const Header = () => {
       isOpen: false,
       links: [
         { name: "About Campus", route: "/", section: "about" },
-        { name: "Dean's Details", route: "/", section: "deans-message" },
+        { name: "Dean Desk", route: "/", section: "deans-message" },
         { name: "Gallery of Memories", route: "/", section: "gallery" },
         { name: "Our Recruiters", route: "/", section: "our_recruiters" },
         { name: "Alumi Speak", route: "/", section: "alumni" },

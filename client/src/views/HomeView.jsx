@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef, useMemo } from "react";
+﻿import React, { useState, useEffect, useRef, useMemo } from "react";
 import { Link, useLocation } from "react-router-dom";
 import QuickLinksSidebar from "../components/QuickLinksSidebar";
 import "./HomeView.css";
@@ -472,7 +472,7 @@ const HomeView = () => {
       alumni: 5000,
       rank: 7,
       years: 20,
-      placement: 100,
+      placement: 77,
     };
 
     let currentStep = 0;
