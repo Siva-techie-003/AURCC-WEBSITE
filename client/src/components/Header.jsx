@@ -53,7 +53,7 @@ const Header = () => {
       name: "Administration",
       isOpen: false,
       links: [
-        { name: "University Administration", route: "/Registrar" },
+        { name: "University Administration", href: "https://www.annauniv.edu/administration.php" },
         { name: "Head of the Departments", route: "/HOD" },
         {
           name: "Campus Administrative Staffs",

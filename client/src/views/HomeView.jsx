@@ -472,7 +472,7 @@ const HomeView = () => {
       alumni: 5000,
       rank: 7,
       years: 20,
-      placement: 77,
+      placement: 100,
     };
 
     let currentStep = 0;
