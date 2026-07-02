@@ -1,8 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './AicteAndMoe.css';
+import StaffCard from '../components/StaffCard';
 
 const AicteAndMoe = () => {
-    const [currentSection, setCurrentSection] = useState('objectives');
+    const [currentSection, setCurrentSection] = useState('approval_letters');
     const [data, setData] = useState(null);
 
 useEffect(() => {
@@ -12,10 +13,11 @@ useEffect(() => {
 }, []);
 
     const sectionRefs = {
+        approval_letters: useRef(null),
         objectives: useRef(null),
         important_links: useRef(null),
         circulars_notifications: useRef(null),
-        approval_letters: useRef(null)
+        staff: useRef(null)
     };
 
     const sections = [
@@ -23,6 +25,7 @@ useEffect(() => {
         { key: 'objectives', label: 'Objectives' },
         { key: 'important_links', label: 'Important Links' },
         { key: 'circulars_notifications', label: 'Circulars & Notifications' },
+        { key: 'staff', label: 'Staff' }
     ];
 
     useEffect(() => {
@@ -190,6 +193,36 @@ useEffect(() => {
                     </div>
                 </div>
 
+                {/* Staff Section */}
+                <div id="staff" ref={sectionRefs.staff} className="bg-white/70 backdrop-blur-md rounded-2xl shadow-lg border border-gray-100 overflow-hidden">
+                    <div className="bg-[rgb(110,35,35)] py-4 sm:py-5 flex items-center justify-center gap-2 sm:gap-3">
+                        <h2 className="text-lg sm:text-xl lg:text-2xl xl:text-3xl font-bold text-white text-center">Staff</h2>
+                    </div>
+                    <div className="p-8">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 justify-center">
+                            {[
+                                {
+                                    name: "Mr. R. Balamurugan",
+                                    position: "AICTE Coordinator",
+                                    department: "AICTE & MoE Cell",
+                                    university: "Anna University Regional Campus",
+                                    address: "Navavoor, Coimbatore-641 046",
+                                    image: "Balamurugan.webp"
+                                },
+                                {
+                                    name: "Dr. R. Rajalakshmi",
+                                    position: "IIC Coordinator",
+                                    department: "Institution's Innovation Council",
+                                    university: "Anna University Regional Campus",
+                                    address: "Navavoor, Coimbatore-641 046",
+                                    image: ""
+                                }
+                            ].map((member, i) => (
+                                <StaffCard key={i} staff={member} />
+                            ))}
+                        </div>
+                    </div>
+                </div>
                 
             </section>
         </main>

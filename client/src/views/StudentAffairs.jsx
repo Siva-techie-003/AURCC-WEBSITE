@@ -10,8 +10,7 @@ const StudentAffairs = () => {
         reAdmission: useRef(null),
         scholarships: useRef(null),
         fees: useRef(null),
-        staff: useRef(null),
-        contact: useRef(null)
+        staff: useRef(null)
     };
 
     const sections = [
@@ -19,8 +18,7 @@ const StudentAffairs = () => {
         { key: 'reAdmission', name: 'Re-Admission' },
         { key: 'scholarships', name: 'Scholarships' },
         { key: 'fees', name: 'Fees Details' },
-        { key: 'staff', name: 'Administration Staff' },
-        { key: 'contact', name: 'Contact Us' }
+        { key: 'staff', name: 'Administration Staff' }
     ];
     useEffect(() => {
     fetch("/api/student-affairs")
@@ -105,7 +103,7 @@ const StudentAffairs = () => {
             {/* Navigation Tabs - Overlapping design */}
             <div className="hidden sm:block sticky top-[116px] sm:top-[126px] lg:top-[136px] z-50 -mt-12 mb-4">
                 <div className="max-w-7xl mx-auto px-4">
-                    <div className="max-w-5xl mx-auto bg-white/95 backdrop-blur-md shadow-xl rounded-full py-2 px-3 flex justify-center overflow-x-auto no-scrollbar gap-2 border border-[rgb(220,140,140)]">
+                    <div className="w-fit mx-auto bg-white/95 backdrop-blur-md shadow-xl rounded-full py-2 px-3 flex justify-center overflow-x-auto no-scrollbar gap-2 border border-[rgb(220,140,140)]">
                         {sections.map((section) => (
                             <button
                                 key={section.key}
