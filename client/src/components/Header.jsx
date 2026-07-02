@@ -156,7 +156,7 @@ const Header = () => {
         { name: "PACE Cell", route: "/pace-cell" },
         { name: "POSH Cell", route: "/posh" },
         // { name: "UBA Cell", route: "/pace-cell" },
-        // { name: "Institute Innovation Council", route: "/pace-cell" },
+        { name: "Institute Innovation Council", route: "/iic" },
         { name: "Distance Education Cell", route: "/distance-education" },
         { name: "ED Cell", route: "/ed-cell" },
         { name: "Exam Cell", route: "/exam-cell" },

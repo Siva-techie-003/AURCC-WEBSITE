@@ -30,6 +30,7 @@ const DistanceEdu = lazy(() => import('./views/DistanceEdu'));
 const OfficeOfAffiliation = lazy(() => import('./views/OfficeOfAffiliation'));
 const Zonal = lazy(() => import('./views/Zonal'));
 const Pace = lazy(() => import('./views/Pace'));
+const IIC = lazy(() => import('./views/IIC'));
 const Admin = lazy(() => import('./views/Admin'));
 const AdminEstablishment = lazy(() => import('./views/AdminEstablishment'));
 const AdminPurchaseFinance = lazy(() => import('./views/AdminPurchaseFinance'));
@@ -154,6 +155,7 @@ function App() {
                         <Route path="/office-affiliation" element={<OfficeOfAffiliation />} />
                         <Route path="/zonal" element={<Zonal />} />
                         <Route path="/pace-cell" element={<Pace />} />
+                        <Route path="/iic" element={<IIC />} />
                         <Route path="/administration" element={<Admin />} />
                         <Route path="/admin/establishment" element={<AdminEstablishment />} />
                         <Route path="/admin/purchase-finance" element={<AdminPurchaseFinance />} />
