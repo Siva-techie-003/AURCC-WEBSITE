@@ -8,6 +8,16 @@ const Header = () => {
   const navigate = useNavigate();
   const quickLinksRef = useRef(null);
 
+  const quickNames = ["Library", "Sports", "Hostel", "Contact"];
+  const [currentQuickNameIndex, setCurrentQuickNameIndex] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentQuickNameIndex((prev) => (prev + 1) % quickNames.length);
+    }, 2500);
+    return () => clearInterval(timer);
+  }, []);
+
   useEffect(() => {
     fetch("/api/site-settings")
       .then((res) => res.json())
@@ -218,6 +228,18 @@ const Header = () => {
 
   return (
     <div className="fixed top-0 left-0 w-full z-[1000]">
+      <style>{`
+        @keyframes fadeSlide {
+          0% { opacity: 0; transform: translateY(3px); }
+          8% { opacity: 1; transform: translateY(0); }
+          92% { opacity: 1; transform: translateY(0); }
+          100% { opacity: 0; transform: translateY(-3px); }
+        }
+        .animate-fade-slide {
+          display: inline-block;
+          animation: fadeSlide 2.5s infinite;
+        }
+      `}</style>
       {/* Top Bar */}
       <div className="bg-[rgb(110,35,35)] text-white">
         <div className="w-full px-4 sm:px-6 lg:px-12">
@@ -336,9 +358,11 @@ const Header = () => {
             <div className="sm:hidden relative" ref={quickLinksRef}>
               <button
                 onClick={() => setIsQuickLinksOpen(!isQuickLinksOpen)}
-                className="flex items-center gap-2 hover:text-yellow-300 transition-colors py-1 px-2 rounded-lg bg-white/10"
+                className="flex items-center gap-2 hover:text-yellow-300 transition-colors py-1 px-2 rounded-lg bg-white/10 min-w-[85px] justify-between"
               >
-                {/* <span className="font-bold uppercase tracking-wider text-[10px]">Links</span> */}
+                <span key={currentQuickNameIndex} className="font-bold uppercase tracking-wider text-[9px] text-yellow-300 animate-fade-slide whitespace-nowrap">
+                  {quickNames[currentQuickNameIndex]}
+                </span>
                 <svg
                   className={`w-3 h-3 transition-transform ${isQuickLinksOpen ? "rotate-180" : ""}`}
                   fill="none"

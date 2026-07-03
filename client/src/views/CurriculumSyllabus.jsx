@@ -54,7 +54,7 @@ const CurriculumSyllabus = () => {
             <section className="relative w-full h-64 sm:h-80 md:h-96 lg:h-[55vh] flex items-center justify-center overflow-hidden -mt-[116px] sm:-mt-[126px] lg:-mt-[136px]">
 
                 <img
-                    src="http://localhost:5000/public/syllabus.webp"
+                    src="/public/syllabus.webp"
                     alt="Curriculum & Syllabus"
                     className="absolute inset-0 w-full h-full object-cover object-center"
                 />

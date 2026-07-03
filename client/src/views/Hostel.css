@@ -251,23 +251,25 @@ details>summary {
     transition: all 500ms ease-out;
 }
 
-/* Custom Scrollbar for Dean's Message */
 .scrollbar-custom::-webkit-scrollbar {
-    width: 6px;
+    width: 14px;
 }
 
 .scrollbar-custom::-webkit-scrollbar-track {
-    background: #f3f4f6;
-    border-radius: 10px;
+    background: transparent;
 }
 
 .scrollbar-custom::-webkit-scrollbar-thumb {
-    background: rgb(115, 25, 25);
+    background-color: #dc7070;
+    border: 4px solid transparent;
+    background-clip: padding-box;
     border-radius: 10px;
 }
 
 .scrollbar-custom::-webkit-scrollbar-thumb:hover {
-    background: rgb(90, 20, 20);
+    background-color: #9f604d;
+    border: 4px solid transparent;
+    background-clip: padding-box;
 }
 .ticker-container {
   overflow: hidden;

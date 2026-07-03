@@ -126,7 +126,7 @@ const Footer = ({
           <div className="grid grid-cols-4 gap-2 sm:gap-4 lg:gap-8">
 
             {/* ── COL 1 : CAMPUS LOCATION ── */}
-            <div className="flex flex-col col-span-1 justify-between">
+            <div className="flex flex-col col-span-1 justify-between h-full">
               <div>
                 <h3 className="text-[6px] sm:text-sm lg:text-xl font-black mb-[1px] lg:mb-4 uppercase tracking-wide leading-tight">
                   Campus <span style={{ color: "#f5c842" }}>Location</span>
@@ -135,7 +135,7 @@ const Footer = ({
                 <p className="text-[5px] sm:text-xs lg:text-xs mt-[1px] text-white/70 leading-tight">
                   Maruthamalai Road, Navavoor, Coimbatore - 641046
                 </p>
-                <p className="mt-[1px] lg:mt-2 font-bold text-[5px] sm:text-xs lg:text-sm leading-tight">0422-2984007</p>
+                <p className="mt-[1px] lg:mt-2 font-bold text-[5px] sm:text-xs lg:text-sm leading-tight">Ph.No: 0422-2984007</p>
               </div>
 
               {/* MAP */}
@@ -316,19 +316,10 @@ const Footer = ({
             </div>
 
             {/* ── COL 4 : ABOUT + USEFUL LINKS ── */}
-            <div className="flex flex-col col-span-1 justify-between">
-              <div>
-                <h3 className="text-[10px] sm:text-sm lg:text-xl font-black mb-1 lg:mb-3 uppercase tracking-wide">
-                  About <span style={{ color: "#f5c842" }}>Campus</span>
-                </h3>
-                <p className="text-[6px] sm:text-xs text-white/70 leading-relaxed">
-                  Anna University Coimbatore is committed to delivering quality education and innovation.
-                </p>
-              </div>
-
+            <div className="flex flex-col col-span-1 h-full">
               {/* Useful Links */}
               <div
-                className="mt-1 lg:mt-11 rounded-md sm:rounded-xl overflow-hidden flex flex-col flex-grow"
+                className="rounded-md sm:rounded-xl overflow-hidden flex flex-col flex-grow"
                 style={{ background: "#9b3535", border: "2px solid rgba(245,200,66,0.5)" }}
               >
                 <div className="px-1 lg:px-4 py-1 lg:py-3" style={{ borderBottom: "1px solid rgba(255,255,255,0.1)" }}>
@@ -337,7 +328,7 @@ const Footer = ({
                   </h3>
                 </div>
 
-                <div className="relative overflow-hidden group h-[90px] sm:h-[280px] lg:h-[400px]">
+                <div className="relative overflow-hidden group flex-grow h-0">
                   <div className="absolute inset-x-0 animate-marquee flex flex-col gap-1 lg:gap-2 px-1 lg:px-4 py-1 lg:py-3 group-hover:[animation-play-state:paused]">
                     {[...data.links, ...data.links].map((item, i) => (
                       <a
