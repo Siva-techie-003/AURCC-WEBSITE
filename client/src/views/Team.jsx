@@ -44,19 +44,19 @@ const Team = () => {
   const members = [
     {
       name: "Siva E",
-      role: "Backend & DevOps Engineer",
+      role: "Team Lead and Deployment Engineer",
       image: "/siva.png",
       linkedin: "https://www.linkedin.com/in/siva-e/"
     },
     {
       name: "Dhivakar G",
-      role: "Frontend & SEO Engineer",
+      role: "Frontend and SEO Professional",
       image: "/dhivakar.jpeg",
       linkedin: "https://www.linkedin.com/in/dhivakar-g/"
     },
     {
       name: "Anbu Mani V",
-      role: "Frontend Developer",
+      role: "Database Developer",
       image: "/anbumani.jpeg",
       linkedin: "https://www.linkedin.com/in/anbumani006/"
     },
@@ -74,7 +74,7 @@ const Team = () => {
     },
     {
       name: "Sathya Moorthy R",
-      role: "Photography & Database Engineer",
+      role: "Visual and UI/UX Designer",
       image: "/sathya.jpeg",
       linkedin: "https://www.linkedin.com/in/sathyamoorthy-tech/"
     }
