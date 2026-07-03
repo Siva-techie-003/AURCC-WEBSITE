@@ -4,7 +4,7 @@ import OfficeContentSection from "../components/OfficeContentSection";
 import StaffCard from "../components/StaffCard";
 import "./EstateOffice.css";
 
-// ✅ Service Cards (Using Backend served Image Icons)
+//  Service Cards (Using Backend served Image Icons)
 const serviceCards = [
   {
     icon: "/public/icons/buildings.png",

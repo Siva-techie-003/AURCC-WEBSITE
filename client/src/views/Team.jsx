@@ -134,11 +134,11 @@ const Team = () => {
                 </div>
               </div>
             )}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 sm:gap-8 lg:gap-10 xl:gap-14 w-full mx-auto justify-items-center">
+            <div className="flex flex-wrap justify-center gap-6 sm:gap-8 lg:gap-10 xl:gap-14 w-full mx-auto">
               {faculty.map((f, i) => (
                 <div
                   key={i}
-                  className="bg-white rounded-2xl shadow-md border-2 border-gray-100 hover:border-[#f5c842] overflow-hidden flex flex-col items-center hover:shadow-xl hover:-translate-y-1 transition-all duration-300 w-full h-full"
+                  className="bg-white rounded-2xl shadow-md border-2 border-gray-100 hover:border-[#f5c842] overflow-hidden flex flex-col items-center hover:shadow-xl hover:-translate-y-1 transition-all duration-300 w-full max-w-[280px]"
                 >
                   {/* Header Section */}
                   <div className="w-full h-24 sm:h-28 bg-[rgb(110,35,35)] relative flex justify-center flex-shrink-0"></div>
