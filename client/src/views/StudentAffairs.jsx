@@ -7,9 +7,6 @@ const StudentAffairs = () => {
     const getStaffImageUrl = (imagePath) => {
         if (!imagePath) return '/public/default-staff.jpg';
         let path = imagePath;
-        if (path.includes('rathinasamyGA.webp')) {
-            path = 'rathinasamy.webp';
-        }
         if (path.startsWith('/')) {
             path = path.slice(1);
         }
