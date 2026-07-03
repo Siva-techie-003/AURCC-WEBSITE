@@ -56,7 +56,7 @@ const OfficePageTemplate = ({
                     <div className="backdrop-blur-md bg-white/30 rounded-xl sm:rounded-2xl shadow-lg px-3 py-3 sm:px-6 sm:py-4 md:px-8 md:py-6 lg:px-12 lg:py-10 flex flex-col items-center w-full max-w-xs sm:max-w-lg md:max-w-2xl border border-white/30">
                         <h1 className="text-xl sm:text-2xl md:text-4xl lg:text-5xl font-extrabold text-white drop-shadow-lg tracking-wide text-center mb-2 leading-tight">{officeName}</h1>
                     </div>
-                                            <p className="text-sm sm:text-base md:text-lg lg:text-2xl text-white drop-shadow text-center font-medium pt-2">{heroSubtitle}</p>
+                    <p className="text-sm sm:text-base md:text-lg lg:text-2xl text-white drop-shadow text-center font-medium pt-2">{heroSubtitle}</p>
 
                 </div>
             </section>

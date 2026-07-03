@@ -2,7 +2,22 @@ import React, { useState, useEffect, useRef } from 'react';
 import './StudentAffairs.css';
 
 const StudentAffairs = () => {
-    const backgroundImage = 'http://localhost:5000/public/studentaffairs.webp';
+    const backgroundImage = '/public/studentaffairs.webp';
+
+    const getStaffImageUrl = (imagePath) => {
+        if (!imagePath) return '/public/default-staff.jpg';
+        let path = imagePath;
+        if (path.includes('rathinasamyGA.webp')) {
+            path = 'rathinasamy.webp';
+        }
+        if (path.startsWith('/')) {
+            path = path.slice(1);
+        }
+        if (!path.startsWith('public/')) {
+            path = `public/${path}`;
+        }
+        return `/${path}`;
+    };
     const [content, setContent] = useState(null);
     const [currentSection, setCurrentSection] = useState('description');
     const sectionRefs = {
@@ -21,14 +36,14 @@ const StudentAffairs = () => {
         { key: 'staff', name: 'Administration Staff' }
     ];
     useEffect(() => {
-    fetch("/api/student-affairs")
-        .then(res => res.json())
-        .then(data => {
-            console.log(data);
-            setContent(data);
-        })
-        .catch(err => console.error(err));
-}, []);
+        fetch("/api/student-affairs")
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                setContent(data);
+            })
+            .catch(err => console.error(err));
+    }, []);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -56,8 +71,8 @@ const StudentAffairs = () => {
         }
     };
     if (!content) {
-    return <p className="text-center mt-20 text-lg">Loading Student Affairs...</p>;
-}
+        return <p className="text-center mt-20 text-lg">Loading Student Affairs...</p>;
+    }
 
     return (
         <div className="min-h-screen flex flex-col bg-gray-50 text-left pt-[116px] sm:pt-[126px] lg:pt-[136px]">
@@ -69,7 +84,7 @@ const StudentAffairs = () => {
                     alt="Student Affairs"
                     className="absolute inset-0 w-full h-full object-cover object-center"
                 />
-                
+
                 {/* Soft Gradient Overlay */}
                 <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-black/60"></div>
 
@@ -160,15 +175,15 @@ const StudentAffairs = () => {
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                             {(Array.isArray(content?.Scholarship?.['list of scholarships']) ? content.Scholarship['list of scholarships'] : []).map((scholarship, index) => (
                                 <div key={index} className="flex items-center gap-3 p-4 bg-white border border-gray-200 rounded-xl hover:border-[rgb(160,80,80)] transition-colors">
-<span className="w-8 h-8 min-w-[32px] 
+                                    <span className="w-8 h-8 min-w-[32px] 
                  rounded-full 
                  flex items-center justify-center 
                  bg-[rgb(200,120,120)] 
                  text-[rgb(110,35,35)] 
                  text-sm font-bold 
                  leading-none">
-    ★
-</span>                                    <span className="text-base font-semibold text-gray-800">{scholarship}</span>
+                                        ★
+                                    </span>                                    <span className="text-base font-semibold text-gray-800">{scholarship}</span>
                                 </div>
                             ))}
                         </div>
@@ -209,7 +224,7 @@ const StudentAffairs = () => {
                                     <div className="relative mb-4">
                                         <div className="w-32 h-32 rounded-2xl overflow-hidden border-2 border-[rgb(110,35,35)] shadow-md bg-gray-50 flex-shrink-0">
                                             <img
-                                                src={staff.Image}
+                                                src={getStaffImageUrl(staff.Image)}
                                                 alt={staff['Name of the Staff']}
                                                 className="w-full h-full object-cover object-top"
                                             />
@@ -224,7 +239,7 @@ const StudentAffairs = () => {
                     </div>
                 </div>
 
-                
+
             </main>
         </div>
     );

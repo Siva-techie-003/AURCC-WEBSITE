@@ -97,13 +97,13 @@ function PageTitleUpdater() {
             '/student_affairs': { title: 'Student Affairs', desc: 'The Student Affairs office supports student well-being, grievances, counseling, and extracurricular engagement.' },
             '/cod': { title: 'Cell Coordinators', desc: 'Directory of Cell Coordinators managing various specialized cells and clubs at AURCC.' },
             '/administrator': { title: 'Administrator', desc: 'Information about the key administrators ensuring the effective management of the institution.' },
-            '/estateoff': { title: 'Estate Office', desc: 'The Estate Office manages campus infrastructure, maintenance, and development projects at AURCC.' },
-            '/grievence': { title: 'Grievance', desc: 'Student and staff Grievance Redressal mechanism at AURCC to ensure a fair and transparent campus environment.' },
-            '/news': { title: 'News', desc: 'Stay updated with the latest news, announcements, and press releases from Anna University Regional Campus Coimbatore.' },
-            '/events': { title: 'Events', desc: 'Upcoming and past events, workshops, seminars, and conferences held at AURCC.' },
-            '/downloads': { title: 'Downloads', desc: 'Download important forms, circulars, academic calendars, and resources for students and staff.' },
-            '/posh': { title: 'POSH', desc: 'Prevention of Sexual Harassment (POSH) cell at AURCC ensures a safe and inclusive workplace and campus environment.' },
-            '/feedback': { title: 'Feedback', desc: 'Provide your valuable feedback and suggestions to help us improve the educational experience at AURCC.' },
+            '/estateoff': { title: 'Estate Office', desc: 'The Estate Office coordinates infrastructural development, maintenance, and engineering services at AURCC.' },
+            '/grievence': { title: 'Grievance Redressal', desc: 'Online grievance redressal platform for students and staff at AURCC.' },
+            '/news': { title: 'News', desc: 'Read the latest notifications, announcements, and news from Anna University Regional Campus Coimbatore.' },
+            '/events': { title: 'Events', desc: 'Stay updated with upcoming and past academic conferences, seminars, and events at AURCC.' },
+            '/downloads': { title: 'Downloads', desc: 'Download student/staff applications, registration forms, syllabus, and official documents.' },
+            '/posh': { title: 'POSH', desc: 'Internal Complaints Committee (ICC) & Prevention of Sexual Harassment cell at AURCC.' },
+            '/feedback': { title: 'Feedback', desc: 'Submit your feedback or suggestion about academics, facilities, and campus life at AURCC.' },
             '/team': { title: 'Team', desc: 'Meet the dedicated faculty, staff, and student teams behind the successful functioning of AURCC.' },
             '/team/faculty': { title: 'Faculty Incharge', desc: 'Meet the faculty incharges who guide and mentor various academic and administrative activities at AURCC.' },
             '/team/developers': { title: 'Developers', desc: 'Meet the talented Developers who designed and built the official AURCC website.' },
@@ -115,14 +115,7 @@ function PageTitleUpdater() {
             '/departments/science-and-humanities': { title: 'Department of Science and Humanities', desc: 'Explore the Department of Science and Humanities at AURCC. Learn about our faculty, chemistry and physics labs, and academic foundations.' },
             '/iic': { title: 'Institution\'s Innovation Council', desc: 'Institution\'s Innovation Council (IIC) at AURCC fosters innovation, entrepreneurship, and intellectual growth.' },
             '/privacy': { title: 'Privacy Policy', desc: 'Read the Privacy Policy of Anna University Regional Campus Coimbatore official website.' },
-            '/safety': { title: 'Safety Measures', desc: 'Explore safety rules, campus health guidelines, and emergency protocols at AURCC.' },
-            '/feedback': { title: 'Feedback', desc: 'Submit your feedback or suggestion about academics, facilities, and campus life at AURCC.' },
-            '/posh': { title: 'POSH', desc: 'Internal Complaints Committee (ICC) & Prevention of Sexual Harassment cell at AURCC.' },
-            '/downloads': { title: 'Downloads', desc: 'Download student/staff applications, registration forms, syllabus, and official documents.' },
-            '/events': { title: 'Events', desc: 'Stay updated with upcoming and past academic conferences, seminars, and events at AURCC.' },
-            '/news': { title: 'News', desc: 'Read the latest notifications, announcements, and news from Anna University Regional Campus Coimbatore.' },
-            '/grievence': { title: 'Grievance Redressal', desc: 'Online grievance redressal platform for students and staff at AURCC.' },
-            '/estateoff': { title: 'Estate Office', desc: 'The Estate Office coordinates infrastructural development, maintenance, and engineering services at AURCC.' }
+            '/safety': { title: 'Safety Measures', desc: 'Explore safety rules, campus health guidelines, and emergency protocols at AURCC.' }
         };
 
         const pathLower = pathname.toLowerCase();
