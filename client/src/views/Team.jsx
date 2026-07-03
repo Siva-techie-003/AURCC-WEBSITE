@@ -23,12 +23,13 @@ const Team = () => {
       dept: "Department of EEE",
       image: "/newlin.webp"
     },
+    // {
+    //   name: "Mr. K.S.Babu Magendra",
+    //   role: "System Administrator",
+    //   dept: "Department of CSE",
+    //   image: "/babu.webp"
+    // }, 
     {
-      name: "Mr. K.S.Babu Magendra",
-      role: "System Administrator",
-      dept: "Department of CSE",
-      image: "/babu.webp"
-    }, {
       name: "Mr. S. Benedict",
       role: "Professional Assistant - I",
       dept: "Department of CSE",
@@ -37,43 +38,43 @@ const Team = () => {
       name: "Ms. T. Mohanapriya",
       role: "Professional Assistant - II",
       dept: "Department of CSE",
-      image: "/mohana.webp"
+      image: "/mohanapriya.jpeg"
     },
   ];
 
   const members = [
     {
-      name: "Siva E",
+      name: "E . Siva",
       role: "Team Lead and Deployment Engineer",
       image: "/siva.png",
       linkedin: "https://www.linkedin.com/in/siva-e/"
     },
     {
-      name: "Dhivakar G",
+      name: "G . Dhivakar",
       role: "Frontend and SEO Professional",
       image: "/dhivakar.jpeg",
       linkedin: "https://www.linkedin.com/in/dhivakar-g/"
     },
     {
-      name: "Anbu Mani V",
+      name: "V . Anbu Mani",
       role: "Database Developer",
       image: "/anbumani.jpeg",
       linkedin: "https://www.linkedin.com/in/anbumani006/"
     },
     {
-      name: "Santhosh S",
+      name: "S . Santhosh",
       role: "Backend Developer",
       image: "/santhosh.jpeg",
       linkedin: "https://www.linkedin.com/in/callsanthosh/"
     },
     {
-      name: "Suresh Krishna P",
+      name: "P . Suresh Krishna",
       role: "Frontend Developer",
       image: "/suresh.png",
       linkedin: "https://www.linkedin.com/in/suresh-krishna-p/"
     },
     {
-      name: "Sathya Moorthy R",
+      name: "R . Sathyamoorthy",
       role: "Visual and UI/UX Designer",
       image: "/sathya.jpeg",
       linkedin: "https://www.linkedin.com/in/sathyamoorthy-tech/"
@@ -122,7 +123,7 @@ const Team = () => {
 
         {/* Faculty Incharge */}
         {showFaculty && (
-          <div className="space-y-6 animate-fadeIn">
+          <div className="space-y-6 items-center animate-fadeIn">
             {!isFacultyPage && (
               <div className="text-center">
                 <h2 className="text-2xl sm:text-3xl lg:text-3xl font-bold text-gray-800 font-serif mb-2">
