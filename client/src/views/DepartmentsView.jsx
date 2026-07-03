@@ -176,7 +176,7 @@ const DepartmentsView = () => {
         {/* Hero section */}
         <section
           className="scroll-mt-24 lg:scroll-mt-32 bg-cover bg-center relative h-64 sm:h-72 md:h-80 lg:h-72"
-          style={{ backgroundImage: `url(${BACKEND_URL}/${department.image})` }}
+          style={{ backgroundImage: `url(${BACKEND_URL}/public/${department.image})` }}
         >
           <div className="absolute inset-0 bg-gradient-to-r from-[rgb(115,63,63)]/70 to-[rgb(115,25,25)]/30"></div>
           <div className="container mx-auto h-full flex items-center relative z-10 px-3 sm:px-4 md:px-6 lg:px-9">
@@ -647,7 +647,7 @@ const DepartmentsView = () => {
                           <div className="absolute inset-0 h-1/2 bg-[rgb(110,35,35)]"></div>
                           <div className="relative">
                             <img
-                              src={`${BACKEND_URL}/${staff.image}`}
+                              src={`${BACKEND_URL}/public/${staff.image}`}
                               alt={staff.name}
                               className="w-28 h-36 object-cover rounded-full border-4 border-white shadow-lg"
                               onError={handleImageError}
@@ -953,7 +953,7 @@ const DepartmentsView = () => {
                       <div className="relative">
                         <div className="absolute inset-0 bg-[rgb(110,35,35)] transform rotate-3 rounded-2xl"></div>
                         <img
-                          src={`${BACKEND_URL}/${facility.image}`}
+                          src={`${BACKEND_URL}/public/${facility.image}`}
                           alt={facility.name}
                           className="relative z-10 w-full h-auto object-cover rounded-2xl shadow-lg"
                           onError={handleImageError}

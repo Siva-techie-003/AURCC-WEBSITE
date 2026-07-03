@@ -2,70 +2,61 @@ import React, { useState, useEffect, useRef, useMemo } from 'react';
 import './FineArtsClub.css';
 
 const FineArtsClub = () => {
-    // State for Image Gallery
-            const [currentImageIndex, setCurrentImageIndex] = useState(0);
-            const [touchStartX, setTouchStartX] = useState(0);
-            const [touchEndX, setTouchEndX] = useState(0);
-            const [data, setData] = useState(null);
+    const [currentImageIndex, setCurrentImageIndex] = useState(0);
+    const [touchStartX, setTouchStartX] = useState(0);
+    const [touchEndX, setTouchEndX] = useState(0);
+    const [data, setData] = useState(null);
+    const [siteSettings, setSiteSettings] = useState(null);
 
-            useEffect(() => {
-  fetch("/api/finearts")
-    .then(res => res.json())
-    .then(result => {
-      console.log("Fine Arts Data:", result);
-      setData(result);
-    })
-    .catch(err => console.error(err));
-}, []);
-    
-           // Static Data
-        const galleryImages = [
-            { src: '/fineart_club/1.png', alt: 'Fine Arts Club Memory', description: 'Celebrating our vibrant creativity and passion for the arts' },
-            { src: '/fineart_club/2.png', alt: 'Fine Arts Club Memory', description: 'Celebrating our vibrant creativity and passion for the arts' },
-            { src: '/fineart_club/3.png', alt: 'Fine Arts Club Memory', description: 'Celebrating our vibrant creativity and passion for the arts' },
-            { src: '/fineart_club/4.png', alt: 'Fine Arts Club Memory', description: 'Celebrating our vibrant creativity and passion for the arts' },
-            { src: '/fineart_club/5.png', alt: 'Fine Arts Club Memory', description: 'Celebrating our vibrant creativity and passion for the arts' },
-            { src: '/fineart_club/6.png', alt: 'Fine Arts Club Memory', description: 'Celebrating our vibrant creativity and passion for the arts' },
-            { src: '/fineart_club/7.png', alt: 'Fine Arts Club Memory', description: 'Celebrating our vibrant creativity and passion for the arts' },
-            { src: '/fineart_club/8.png', alt: 'Fine Arts Club Memory', description: 'Celebrating our vibrant creativity and passion for the arts' },
-            { src: '/fineart_club/9.png', alt: 'Fine Arts Club Memory', description: 'Celebrating our vibrant creativity and passion for the arts' },
-            { src: '/fineart_club/10.png', alt: 'Fine Arts Club Memory', description: 'Celebrating our vibrant creativity and passion for the arts' },
-            { src: '/fineart_club/11.png', alt: 'Fine Arts Club Memory', description: 'Celebrating our vibrant creativity and passion for the arts' },
-            { src: '/fineart_club/12.png', alt: 'Fine Arts Club Memory', description: 'Celebrating our vibrant creativity and passion for the arts' },
-            { src: '/fineart_club/13.png', alt: 'Fine Arts Club Memory', description: 'Celebrating our vibrant creativity and passion for the arts' },
-            { src: '/fineart_club/14.png', alt: 'Fine Arts Club Memory', description: 'Celebrating our vibrant creativity and passion for the arts' },
-            { src: '/fineart_club/15.png', alt: 'Fine Arts Club Memory', description: 'Celebrating our vibrant creativity and passion for the arts' },
-            { src: '/fineart_club/16.png', alt: 'Fine Arts Club Memory', description: 'Celebrating our vibrant creativity and passion for the arts' },
-            { src: '/fineart_club/17.png', alt: 'Fine Arts Club Memory', description: 'Celebrating our vibrant creativity and passion for the arts' },
-        ];
-    
-        // Logic for Image Gallery
-        const nextImage = () => {
-            setCurrentImageIndex((prev) => (prev + 1) % galleryImages.length);
-        };
-        const prevImage = () => {
-            setCurrentImageIndex((prev) => (prev - 1 + galleryImages.length) % galleryImages.length);
-        };
-        const goToImage = (index) => {
-            setCurrentImageIndex(index);
-        };
-    
-        const handleTouchStart = (e) => {
-            setTouchStartX(e.changedTouches[0].screenX);
-        };
-        const handleTouchEnd = (e) => {
-            const endX = e.changedTouches[0].screenX;
-            setTouchEndX(endX);
-            if (touchStartX - endX > 50) {
-                nextImage();
-            } else if (endX - touchStartX > 50) {
-                prevImage();
-            }
-        };
+    useEffect(() => {
+        fetch("/api/finearts")
+            .then(res => res.json())
+            .then(result => {
+                console.log("Fine Arts Data:", result);
+                setData(result);
+            })
+            .catch(err => console.error(err));
 
-        if (!data) {
-  return <p className="text-center mt-20">Loading Fine Arts Club...</p>;
-}
+        fetch("/api/site-settings")
+            .then((res) => res.json())
+            .then((settings) => setSiteSettings(settings))
+            .catch((err) => console.error(err));
+    }, []);
+
+    // Dynamic Gallery Data
+    const galleryImages = siteSettings?.fineArtsGallery?.map((src) => ({
+        src,
+        alt: 'Fine Arts Club Memory',
+        description: 'Celebrating our vibrant creativity and passion for the arts'
+    })) || [];
+
+    // Logic for Image Gallery
+    const nextImage = () => {
+        setCurrentImageIndex((prev) => (prev + 1) % galleryImages.length);
+    };
+    const prevImage = () => {
+        setCurrentImageIndex((prev) => (prev - 1 + galleryImages.length) % galleryImages.length);
+    };
+    const goToImage = (index) => {
+        setCurrentImageIndex(index);
+    };
+
+    const handleTouchStart = (e) => {
+        setTouchStartX(e.changedTouches[0].screenX);
+    };
+    const handleTouchEnd = (e) => {
+        const endX = e.changedTouches[0].screenX;
+        setTouchEndX(endX);
+        if (touchStartX - endX > 50) {
+            nextImage();
+        } else if (endX - touchStartX > 50) {
+            prevImage();
+        }
+    };
+
+    if (!data) {
+        return <p className="text-center mt-20">Loading Fine Arts Club...</p>;
+    }
 
     return (
         <main className="flex-grow font-sans bg-white pt-[126px] sm:pt-[130px]">
@@ -111,46 +102,46 @@ const FineArtsClub = () => {
                     </div>
 
                     {/* Gallery Section */}
-                <section id="gallery" className="overflow-hidden w-full relative">
-                   
-                       
-                   
-                    <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-                        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-center mb-12 sm:mb-16 text-[rgb(100,25,25)] relative inline-block mx-auto">
-                            Gallery of Memories
-                            <span className="absolute -bottom-2 sm:-bottom-3 left-1/2 transform -translate-x-1/2 h-1 w-16 sm:w-20 lg:w-24 bg-yellow-500"></span>
-                        </h2>
-                        <div className="relative flex items-center justify-center py-10 overflow-hidden" style={{ "--current-index": currentImageIndex }}>
-                            <button onClick={prevImage} className="absolute left-4 md:left-8 top-1/2 transform -translate-y-1/2 bg-[rgb(115,25,25)] text-white p-3 rounded-full z-30 shadow-lg group">
-                                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 group-hover:-translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 19l-7-7 7-7" /></svg>
-                            </button>
-                            <div className="w-full" onTouchStart={handleTouchStart} onTouchEnd={handleTouchEnd}>
-                                <div className="gallery-container">
-                                    {galleryImages.map((image, idx) => (
-                                        <div key={idx} className={`gallery-frame ${idx === currentImageIndex ? 'active' : ''}`}>
-                                            <div className="relative group overflow-hidden rounded-xl shadow-2xl h-full w-full">
-                                                <img src={image.src} alt={image.alt} className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105" />
-                                                <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-6">
-                                                    <p className="text-white text-lg md:text-xl">{image.description}</p>
+                    <section id="gallery" className="overflow-hidden w-full relative">
+
+
+
+                        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+                            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-center mb-12 sm:mb-16 text-[rgb(100,25,25)] relative inline-block mx-auto">
+                                Gallery of Memories
+                                <span className="absolute -bottom-2 sm:-bottom-3 left-1/2 transform -translate-x-1/2 h-1 w-16 sm:w-20 lg:w-24 bg-yellow-500"></span>
+                            </h2>
+                            <div className="relative flex items-center justify-center py-10 overflow-hidden" style={{ "--current-index": currentImageIndex }}>
+                                <button onClick={prevImage} className="absolute left-4 md:left-8 top-1/2 transform -translate-y-1/2 bg-[rgb(115,25,25)] text-white p-3 rounded-full z-30 shadow-lg group">
+                                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 group-hover:-translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 19l-7-7 7-7" /></svg>
+                                </button>
+                                <div className="w-full" onTouchStart={handleTouchStart} onTouchEnd={handleTouchEnd}>
+                                    <div className="gallery-container">
+                                        {galleryImages.map((image, idx) => (
+                                            <div key={idx} className={`gallery-frame ${idx === currentImageIndex ? 'active' : ''}`}>
+                                                <div className="relative group overflow-hidden rounded-xl shadow-2xl h-full w-full">
+                                                    <img src={image.src} alt={image.alt} className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105" />
+                                                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-6">
+                                                        <p className="text-white text-lg md:text-xl">{image.description}</p>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                    ))}
+                                        ))}
+                                    </div>
                                 </div>
+                                <button onClick={nextImage} className="absolute right-4 md:right-8 top-1/2 transform -translate-y-1/2 bg-[rgb(115,25,25)] text-white p-3 rounded-full z-30 shadow-lg group">
+                                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" /></svg>
+                                </button>
                             </div>
-                            <button onClick={nextImage} className="absolute right-4 md:right-8 top-1/2 transform -translate-y-1/2 bg-[rgb(115,25,25)] text-white p-3 rounded-full z-30 shadow-lg group">
-                                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" /></svg>
-                            </button>
+                            <div className="flex justify-center mt-8 space-x-2">
+                                {galleryImages.map((_, idx) => (
+                                    <button key={idx} onClick={() => goToImage(idx)} className={`h-1 w-4 md:w-8 rounded-full transition-colors ${idx === currentImageIndex ? 'bg-[rgb(115,40,40)]' : 'bg-[rgb(160,80,80)]'}`}></button>
+                                ))}
+                            </div>
                         </div>
-                        <div className="flex justify-center mt-8 space-x-2">
-                            {galleryImages.map((_, idx) => (
-                                <button key={idx} onClick={() => goToImage(idx)} className={`h-1 w-4 md:w-8 rounded-full transition-colors ${idx === currentImageIndex ? 'bg-[rgb(115,40,40)]' : 'bg-[rgb(160,80,80)]'}`}></button>
-                            ))}
-                        </div>
-                    </div>
-                </section>
+                    </section>
                 </div>
-            </section>   
+            </section>
         </main>
     );
 };

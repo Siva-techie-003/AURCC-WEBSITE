@@ -1,59 +1,48 @@
-﻿import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import OfficePageTemplate from "../components/OfficePageTemplate";
 import OfficeContentSection from "../components/OfficeContentSection";
 import StaffCard from "../components/StaffCard";
 import "./EstateOffice.css";
 
-import {
-  construction,
-  water,
-  electrical,
-  road,
-  garden,
-  facility,
-  housekeeping,
-  security,
-} from "../assets/icons";
-
-// ✅ Service Cards (Using Image Icons)
+// ✅ Service Cards (Using Backend served Image Icons)
 const serviceCards = [
   {
-    icon: construction,
+    icon: "/public/icons/buildings.png",
     title: "Building Construction & Maintenance",
     desc: "All construction activities and upkeep of campus buildings.",
   },
   {
-    icon: water,
+    icon: "/public/icons/water.png",
     title: "Water & Sewage Management",
     desc: "Ensuring water supply, sewage treatment, and disposal.",
   },
   {
-    icon: electrical,
+    icon: "/public/icons/electricity.png",
     title: "Electrical System Maintenance",
     desc: "Maintenance of campus electrical supply and systems.",
   },
   {
-    icon: road,
+    icon: "/public/icons/road.png",
     title: "Roads & Pathways",
     desc: "Construction and maintenance of campus roads and walkways.",
   },
   {
-    icon: garden,
+    icon: "/public/icons/garden.png",
     title: "Gardens & Lawns",
     desc: "Upkeep of lawns, gardens, and green spaces.",
   },
   {
-    icon: facility,
+    icon: "/public/icons/facility.png",
     title: "Facility Monitoring & Rent",
     desc: "Monitoring and rent collection for central facilities.",
   },
   {
-    icon: housekeeping,
+    icon: "/public/icons/cleaning.png",
     title: "Housekeeping",
     desc: "Campus-wide cleaning and housekeeping services.",
   },
   {
-    icon: security,
+    icon: "/public/icons/security.png",
     title: "Security",
     desc: "Ensuring safety and security across the campus.",
   },

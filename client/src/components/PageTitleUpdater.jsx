@@ -112,7 +112,17 @@ function PageTitleUpdater() {
             '/departments/mba': { title: 'Department of Master of Business Administration', desc: 'Discover the MBA program at AURCC, focusing on business leadership, management skills, and industry readiness.' },
             '/departments/eee': { title: 'Department of Electrical and Electronics Engineering', desc: 'Explore the EEE department at AURCC. Learn about our power systems, electronics labs, and academic excellence.' },
             '/departments/ece': { title: 'Department of Electronics and Communication Engineering', desc: 'Explore the ECE department at AURCC. Information on our communications, VLSI labs, and cutting-edge research.' },
-            '/departments/science-and-humanities': { title: 'Department of Science and Humanities', desc: 'Explore the Department of Science and Humanities at AURCC. Learn about our faculty, chemistry and physics labs, and academic foundations.' }
+            '/departments/science-and-humanities': { title: 'Department of Science and Humanities', desc: 'Explore the Department of Science and Humanities at AURCC. Learn about our faculty, chemistry and physics labs, and academic foundations.' },
+            '/iic': { title: 'Institution\'s Innovation Council', desc: 'Institution\'s Innovation Council (IIC) at AURCC fosters innovation, entrepreneurship, and intellectual growth.' },
+            '/privacy': { title: 'Privacy Policy', desc: 'Read the Privacy Policy of Anna University Regional Campus Coimbatore official website.' },
+            '/safety': { title: 'Safety Measures', desc: 'Explore safety rules, campus health guidelines, and emergency protocols at AURCC.' },
+            '/feedback': { title: 'Feedback', desc: 'Submit your feedback or suggestion about academics, facilities, and campus life at AURCC.' },
+            '/posh': { title: 'POSH', desc: 'Internal Complaints Committee (ICC) & Prevention of Sexual Harassment cell at AURCC.' },
+            '/downloads': { title: 'Downloads', desc: 'Download student/staff applications, registration forms, syllabus, and official documents.' },
+            '/events': { title: 'Events', desc: 'Stay updated with upcoming and past academic conferences, seminars, and events at AURCC.' },
+            '/news': { title: 'News', desc: 'Read the latest notifications, announcements, and news from Anna University Regional Campus Coimbatore.' },
+            '/grievence': { title: 'Grievance Redressal', desc: 'Online grievance redressal platform for students and staff at AURCC.' },
+            '/estateoff': { title: 'Estate Office', desc: 'The Estate Office coordinates infrastructural development, maintenance, and engineering services at AURCC.' }
         };
 
         const pathLower = pathname.toLowerCase();

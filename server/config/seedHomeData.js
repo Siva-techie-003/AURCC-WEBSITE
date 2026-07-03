@@ -2,6 +2,80 @@ import LatestNews from "../models/latestNewsModel.js";
 import DeanDesk from "../models/deanDeskModel.js";
 import NewsAdmissions from "../models/newsAdmissionsModel.js";
 import EventsScholarships from "../models/eventsScholarshipsModel.js";
+import SiteSettings from "../models/siteSettingsModel.js";
+
+const siteSettingsData = {
+  logo: "/public/logo.svg",
+  logo_new5: "/public/logo_new5.png",
+  aurcc_tamil: "/public/aurcc_tamil.jpg",
+  nssLogo: "/public/nsslogo.png",
+  stamp: "/public/icons/stamp.png",
+  defaultStaffAvatar: "/public/default-staff.jpg",
+  academicIcons: {
+    cse: "/public/icons/cse.png",
+    ece: "/public/icons/ece.png",
+    eee: "/public/icons/eee.png",
+    mech: "/public/icons/mech.png",
+    mba: "/public/icons/mba.png",
+    ai: "/public/icons/ai.png",
+    vlsi: "/public/icons/vlsi.png",
+    business_analytics: "/public/icons/business_analytics.png"
+  },
+  estateIcons: {
+    construction: "/public/icons/buildings.png",
+    water: "/public/icons/water.png",
+    electrical: "/public/icons/electricity.png",
+    road: "/public/icons/road.png",
+    garden: "/public/icons/garden.png",
+    facility: "/public/icons/facility.png",
+    housekeeping: "/public/icons/cleaning.png",
+    security: "/public/icons/security.png"
+  },
+  nssGallery: [
+    "/public/nss_gallery/img1.jpeg",
+    "/public/nss_gallery/img2.jpeg",
+    "/public/nss_gallery/img3.jpeg",
+    "/public/nss_gallery/img4.jpeg",
+    "/public/nss_gallery/img5.jpeg",
+    "/public/nss_gallery/img6.jpeg",
+    "/public/nss_gallery/img7.jpeg",
+    "/public/nss_gallery/img8.jpeg",
+    "/public/nss_gallery/img9.jpeg",
+    "/public/nss_gallery/img10.jpeg",
+    "/public/nss_gallery/img11.jpeg",
+    "/public/nss_gallery/img12.jpeg",
+    "/public/nss_gallery/img13.jpeg"
+  ],
+  bisGallery: [
+    "/public/Bis/1.jpg",
+    "/public/Bis/2.jpg",
+    "/public/Bis/3.jpg",
+    "/public/Bis/4.jpg",
+    "/public/Bis/5.jpg",
+    "/public/Bis/6.jpg",
+    "/public/Bis/7.jpg"
+  ],
+  fineArtsGallery: [
+    "/public/fineart_club/1.png",
+    "/public/fineart_club/2.png",
+    "/public/fineart_club/3.png",
+    "/public/fineart_club/4.png",
+    "/public/fineart_club/5.png",
+    "/public/fineart_club/6.png",
+    "/public/fineart_club/7.png",
+    "/public/fineart_club/8.png",
+    "/public/fineart_club/9.png",
+    "/public/fineart_club/10.png",
+    "/public/fineart_club/11.png",
+    "/public/fineart_club/12.png",
+    "/public/fineart_club/13.png",
+    "/public/fineart_club/14.png",
+    "/public/fineart_club/15.png",
+    "/public/fineart_club/16.png",
+    "/public/fineart_club/17.png"
+  ]
+};
+
 
 const tickerItems = [
   {
@@ -154,6 +228,11 @@ export const seedHomeData = async () => {
     if (eventsCount === 0) {
       await EventsScholarships.insertMany(eventsData);
       console.log("seeded events & scholarships list");
+    }
+
+    const settingsCount = await SiteSettings.countDocuments();
+    if (settingsCount === 0) {
+      await SiteSettings.create(siteSettingsData);
     }
   } catch (err) {
     console.error("error seeding home page data:", err);

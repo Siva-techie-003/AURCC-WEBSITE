@@ -53,7 +53,7 @@ const HOD = () => {
                             <div className="relative -mt-20 flex justify-center">
                                 <div className="w-32 h-40 rounded-full overflow-hidden border-4 border-white shadow-lg bg-white flex items-center justify-center">
                                     <img
-                                        src={`${BACKEND_URL}/${hod.photo}`}
+                                        src={`${BACKEND_URL}/public/${hod.photo}`}
                                         alt={hod.name}
                                         className="w-full h-full object-cover"
                                     />

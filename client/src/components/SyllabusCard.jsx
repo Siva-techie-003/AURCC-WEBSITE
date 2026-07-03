@@ -1,25 +1,16 @@
 import React from 'react';
 import './SyllabusCard.css';
 
-import cseIcon from '../assets/icons/cse.png';
-import mechIcon from '../assets/icons/mech.png';
-import eceIcon from '../assets/icons/ece.png';
-import vlsiIcon from '../assets/icons/vlsi.png';
-import aiIcon from '../assets/icons/ai.png';
-import mbaIcon from '../assets/icons/mba.png';
-import businessAnalyticsIcon from '../assets/icons/business_analytics.png';
-import eeeIcon from '../assets/icons/eee.png';
-
 const iconMap = {
-    'COMPUTER SCIENCE': cseIcon,
-    'ELECTRONICS': eceIcon,
-    'ELECTRICAL': eeeIcon,
-    'MECHANICAL': mechIcon,
-    'ARTIFICIAL INTELLIGENCE': aiIcon,
-    'VLSI': vlsiIcon,
-    'MBA': mbaIcon,
-    'BUSINESS ANALYTICS': businessAnalyticsIcon,
-    'default': mbaIcon
+    'COMPUTER SCIENCE': '/public/icons/cse.png',
+    'ELECTRONICS': '/public/icons/ece.png',
+    'ELECTRICAL': '/public/icons/eee.png',
+    'MECHANICAL': '/public/icons/mech.png',
+    'ARTIFICIAL INTELLIGENCE': '/public/icons/ai.png',
+    'VLSI': '/public/icons/vlsi.png',
+    'MBA': '/public/icons/mba.png',
+    'BUSINESS ANALYTICS': '/public/icons/business_analytics.png',
+    'default': '/public/icons/mba.png'
 };
 
 export const getIcon = (title = "") => {

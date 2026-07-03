@@ -65,7 +65,7 @@ const COD = () => {
                                     {/* Larger Square photo frame */}
                                     <div className="flex-shrink-0 w-16 h-16 xs:w-20 xs:h-20 sm:w-32 sm:h-32 rounded-xl sm:rounded-2xl overflow-hidden border-2 border-[rgb(110,35,35)] shadow-md bg-gray-50">
                                         <img
-                                            src={`${BACKEND_URL}/${member.photo}`}
+                                            src={`${BACKEND_URL}/public/${member.photo}`}
                                             alt={member.name}
                                             className="w-full h-full object-cover object-top"
                                         />

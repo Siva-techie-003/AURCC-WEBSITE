@@ -44,37 +44,37 @@ const Team = () => {
   const members = [
     {
       name: "Siva E",
-      role: "Developer",
+      role: "Backend & DevOps Engineer",
       image: "/siva.png",
       linkedin: "https://www.linkedin.com/in/siva-e/"
     },
     {
       name: "Dhivakar G",
-      role: "Developer",
+      role: "Frontend & SEO Engineer",
       image: "/dhivakar.jpeg",
       linkedin: "https://www.linkedin.com/in/dhivakar-g/"
     },
     {
       name: "Anbu Mani V",
-      role: "Developer",
+      role: "Frontend Developer",
       image: "/anbumani.jpeg",
       linkedin: "https://www.linkedin.com/in/anbumani006/"
     },
     {
       name: "Santhosh S",
-      role: "Developer",
+      role: "Backend Developer",
       image: "/santhosh.jpeg",
       linkedin: "https://www.linkedin.com/in/callsanthosh/"
     },
     {
       name: "Suresh Krishna P",
-      role: "Developer",
+      role: "Frontend Developer",
       image: "/suresh.png",
       linkedin: "https://www.linkedin.com/in/suresh-krishna-p/"
     },
     {
       name: "Sathya Moorthy R",
-      role: "Developer",
+      role: "Photography & Database Engineer",
       image: "/sathya.jpeg",
       linkedin: "https://www.linkedin.com/in/sathyamoorthy-tech/"
     }
@@ -147,7 +147,7 @@ const Team = () => {
                     <div className="w-32 h-32 sm:w-40 sm:h-40 rounded-full overflow-hidden border-4 border-white shadow-lg bg-white flex items-center justify-center p-1">
                       <img
                         src={f.image}
-                        alt={f.name}
+                        alt={`${f.name} - Faculty Incharge at AURCC`}
                         className="w-full h-full object-cover object-top transition-transform duration-300 hover:scale-105 rounded-full text-[10px] text-gray-500 break-words text-center flex items-center justify-center"
                       />
                     </div>
@@ -208,11 +208,11 @@ const Team = () => {
 
                   {/* Content Section */}
                   <div className="ml-4 sm:ml-6 flex flex-col justify-center text-left min-w-0 flex-grow h-full">
-                    <h3 className="text-xl sm:text-2xl font-bold text-[rgb(110,35,35)] mb-1 leading-tight truncate">
+                    <h3 className="text-base sm:text-xl font-bold text-[rgb(110,35,35)] mb-1 leading-tight">
                       {m.name}
                     </h3>
                     <div className="my-1.5 self-start">
-                      <span className="px-3 py-1 bg-[rgb(245,240,240)] rounded-full border border-[rgb(220,200,200)] text-xs sm:text-sm font-semibold text-[rgb(110,35,35)] tracking-wide whitespace-nowrap">
+                      <span className="inline-block px-2.5 py-1 bg-[rgb(245,240,240)] rounded-full border border-[rgb(220,200,200)] text-[9px] sm:text-xs font-semibold text-[rgb(110,35,35)] tracking-wide leading-tight">
                         {m.role}
                       </span>
                     </div>

@@ -20,13 +20,21 @@
   "address": "Navavoor, Coimbatore-641 046",
   "image": "subha.webp"
 },
-{
-  "name": "Dr. Karthikeyan",
-  "position": "Assistant Professor",
-  "department": "Dept of Management Studies",
-  "university": "Anna University Regional Campus",
-  "address": "Navavoor, Coimbatore-641 046",
-  "image": "karthikeyan.webp"
-}
+    {
+      "name": "Dr. Karthikeyan",
+      "position": "Assistant Professor",
+      "department": "Dept of Management Studies",
+      "university": "Anna University Regional Campus",
+      "address": "Navavoor, Coimbatore-641 046",
+      "image": "karthikeyan.webp"
+    },
+    {
+      "name": "Mr. Dinesh",
+      "position": "Support Staff",
+      "department": "Dept of Management Studies",
+      "university": "Anna University Regional Campus",
+      "address": "Navavoor, Coimbatore-641 046",
+      "image": ""
+    }
   ]
 }

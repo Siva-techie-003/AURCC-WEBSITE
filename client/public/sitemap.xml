@@ -53,4 +53,14 @@
   <url><loc>https://www.aurcc.ac.in/departments/science-and-humanities</loc><title>Science and Humanities Department</title><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://www.aurcc.ac.in/team/developers</loc><title>Developers</title><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://www.aurcc.ac.in/team/faculty</loc><title>Faculty</title><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.aurcc.ac.in/iic</loc><title>Institution's Innovation Council</title><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.aurcc.ac.in/privacy</loc><title>Privacy Policy</title><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://www.aurcc.ac.in/safety</loc><title>Safety Measures</title><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://www.aurcc.ac.in/feedback</loc><title>Feedback</title><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.aurcc.ac.in/posh</loc><title>POSH</title><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.aurcc.ac.in/downloads</loc><title>Downloads</title><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.aurcc.ac.in/events</loc><title>Events</title><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.aurcc.ac.in/news</loc><title>News</title><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.aurcc.ac.in/Grievence</loc><title>Grievance</title><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.aurcc.ac.in/EstateOff</loc><title>Estate Office</title><changefreq>monthly</changefreq><priority>0.7</priority></url>
 </urlset>

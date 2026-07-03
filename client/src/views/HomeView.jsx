@@ -12,8 +12,6 @@ const HomeView = () => {
   // State for Testimonials
   const [currentIndex, setCurrentIndex] = useState(0);
 
-
-  // State for Programs Slider
   // State for Programs Slider
   const [progIndex, setProgIndex] = useState(0);
   const progScrollRef = useRef(null);
@@ -353,21 +351,6 @@ const HomeView = () => {
     return () => clearInterval(timer);
   }, [testimonials.length]);
 
-  // // Logic for Testimonials
-  // const nextSlide = () => {
-  //   setCurrentIndex((prev) =>
-  //     prev === testimonials.length - 1 ? 0 : prev + 1,
-  //   );
-  // };
-  // const prevSlide = () => {
-  //   setCurrentIndex((prev) =>
-  //     prev === 0 ? testimonials.length - 1 : prev - 1,
-  //   );
-  // };
-  // const goToSlide = (index) => {
-  //   setCurrentIndex(index);
-  // };
-
   // Logic for Image Gallery
   const nextImage = () => {
     setCurrentImageIndex((prev) => (prev + 1) % galleryImages.length);
@@ -688,7 +671,7 @@ const HomeView = () => {
                   icon: <path d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />,
                 },
                 {
-                  label: "Placement Record",
+                  label: "Placement Assured",
                   value: "100%",
                   animatedValue: counts.placement,
                   suffix: "%",

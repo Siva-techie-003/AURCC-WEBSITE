@@ -22,10 +22,10 @@ const Registrar = () => {
     if (loading) {
         return <p className="text-center mt-20">Loading...</p>;
     }
-    const BACKEND_URL = "http://localhost:5000/public/";
+    const BACKEND_URL = "/public";
 
     const getPhotoPath = (photo) => {
-        return photo ? `${BACKEND_URL}/${photo}` : `${BACKEND_URL}/default.jpg`;
+        return photo ? `${BACKEND_URL}/${photo}` : `${BACKEND_URL}/default-staff.jpg`;
     };
 
     const toTitleCase = (str) => {

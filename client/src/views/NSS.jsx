@@ -4,6 +4,7 @@ import "./NSS.css";
 const NSS = () => {
   const [currentActivityIndex, setCurrentActivityIndex] = useState(0);
   const [data, setData] = useState(null);
+  const [siteSettings, setSiteSettings] = useState(null);
   // State for Image Gallery
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [touchStartX, setTouchStartX] = useState(0);
@@ -16,6 +17,11 @@ const NSS = () => {
         console.log("NSS API:", result);
         setData(result);
       })
+      .catch((err) => console.error(err));
+
+    fetch("/api/site-settings")
+      .then((res) => res.json())
+      .then((settings) => setSiteSettings(settings))
       .catch((err) => console.error(err));
   }, []);
 
@@ -34,68 +40,24 @@ const NSS = () => {
   };
 
   // Static Data
-  const galleryImages = [
-    {
-      src: "/nss_gallery/img3.jpeg",
-      alt: "NSS Activity",
-      description: "Engaging in social welfare and community outreach",
-    },
-    {
-      src: "/nss_gallery/img4.jpeg",
-      alt: "NSS Activity",
-      description: "Volunteers collaborating on campus improvement projects",
-    },
-    {
-      src: "/nss_gallery/img5.jpeg",
-      alt: "NSS Activity",
-      description: "NSS special camp highlights and team activities",
-    },
-    {
-      src: "/nss_gallery/img6.jpeg",
-      alt: "NSS Activity",
-      description: "Development sessions for NSS student volunteers",
-    },
-     {
-      src: "/nss_gallery/img1.jpeg",
-      alt: "NSS Activity",
-      description: "NSS volunteers participating in community service activities",
-    },
-    {
-      src: "/nss_gallery/img2.jpeg",
-      alt: "NSS Activity",
-      description: "NSS unit awareness programs and student engagement",
-    },
-    {
-      src: "/nss_gallery/img7.jpeg",
-      alt: "NSS Activity",
-      description: "Service to humanity through dedicated NSS programs",
-    },
-    {
-      src: "/nss_gallery/img8.jpeg",
-      alt: "NSS Activity",
-      description: "NSS volunteers working together for a social cause",
-    },
-    {
-      src: "/nss_gallery/img9.jpeg",
-      alt: "NSS Activity",
-      description: "Promoting social responsibility at AURCC campus",
-    },
-    {
-      src: "/nss_gallery/img10.jpeg",
-      alt: "NSS Activity",
-      description: "Sustainable development initiatives by the NSS unit",
-    },
-    {
-      src: "/nss_gallery/img12.jpeg",
-      alt: "NSS Activity",
-      description: "NSS group activities and community engagement",
-    },
-    {
-      src: "/nss_gallery/img13.jpeg",
-      alt: "NSS Activity",
-      description: "The journey of service: NSS AURCC highlights",
-    },
-  ];
+  const galleryImages = siteSettings?.nssGallery?.map((src, index) => ({
+    src,
+    alt: "NSS Activity",
+    description: [
+      "Engaging in social welfare and community outreach",
+      "Volunteers collaborating on campus improvement projects",
+      "NSS special camp highlights and team activities",
+      "Development sessions for NSS student volunteers",
+      "NSS volunteers participating in community service activities",
+      "NSS unit awareness programs and student engagement",
+      "Service to humanity through dedicated NSS programs",
+      "NSS volunteers working together for a social cause",
+      "Promoting social responsibility at AURCC campus",
+      "Sustainable development initiatives by the NSS unit",
+      "NSS group activities and community engagement",
+      "The journey of service: NSS AURCC highlights"
+    ][index % 12]
+  })) || [];
 
 
   // Logic for Image Gallery
@@ -133,8 +95,8 @@ const NSS = () => {
       {/* Hero section */}
       <section className="relative w-full min-h-[35vh] sm:min-h-[40vh] md:min-h-[50vh] lg:min-h-[60vh] overflow-hidden flex items-center justify-center">
         <img
-          src="/nsslogo.png"
-          alt="NSS"
+          src={siteSettings?.nssLogo || "/public/nsslogo.png"}
+          alt="National Service Scheme (NSS) Logo at AURCC"
           className="absolute inset-15 w-900 h-800 object-cover object-center"
         />
         <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-black/60 via-black/30 to-transparent"></div>
@@ -173,89 +135,87 @@ const NSS = () => {
             </div>
           </div>
 
-          
-         {/* Activities */}
-<div className="text-center mb-2">
-  <h2 className="text-2xl sm:text-3xl lg:text-3xl font-bold text-gray-800 font-serif uppercase mb-2">
-    Activities
-  </h2>
 
-  <div className="flex justify-center">
-    <span className="block w-24 h-1.5 rounded-full bg-[#f5c842]"></span>
-  </div>
-</div>
+          {/* Activities */}
+          <div className="text-center mb-2">
+            <h2 className="text-2xl sm:text-3xl lg:text-3xl font-bold text-gray-800 font-serif uppercase mb-2">
+              Activities
+            </h2>
 
-<div className="p-2 sm:p-6 md:p-8 lg:p-10 flex flex-col items-center">
-  <div className="relative w-full max-w-xl mx-auto">
-
-    {/* Activity Card */}
-    <div className="overflow-hidden h-20 sm:h-24 md:h-28 lg:h-32 rounded-xl bg-[rgb(220,140,140)] border border-[rgb(200,120,120)] shadow-inner flex items-center justify-center">
-      
-      <div className="relative w-full h-full">
-        {(Array.isArray(data?.activities) ? data.activities : []).map(
-          (activity, idx) => (
-            <div
-              key={idx}
-              className={`absolute inset-0 flex items-center justify-center px-6 text-center text-sm sm:text-base lg:text-lg xl:text-xl font-bold text-[rgb(100,25,25)] transition-all duration-700 transform ${
-                currentActivityIndex === idx
-                  ? "opacity-100 translate-y-0"
-                  : "opacity-0 translate-y-10 pointer-events-none"
-              }`}
-            >
-              {activity}
+            <div className="flex justify-center">
+              <span className="block w-24 h-1.5 rounded-full bg-[#f5c842]"></span>
             </div>
-          )
-        )}
-      </div>
+          </div>
 
-    </div>
+          <div className="p-2 sm:p-6 md:p-8 lg:p-10 flex flex-col items-center">
+            <div className="relative w-full max-w-xl mx-auto">
 
-    {/* Activity Indicator Bars */}
-    <div className="flex justify-center mt-4 space-x-2">
-      {(Array.isArray(data?.activities) ? data.activities : []).map(
-        (_, idx) => (
-          <button
-            key={idx}
-            onClick={() => setActivity(idx)}
-            className={`h-1.5 w-6 rounded-full transition-colors ${
-              idx === currentActivityIndex
-                ? "bg-[rgb(115,40,40)]"
-                : "bg-[rgb(200,120,120)]"
-            }`}
-          ></button>
-        )
-      )}
-    </div>
+              {/* Activity Card */}
+              <div className="overflow-hidden h-20 sm:h-24 md:h-28 lg:h-32 rounded-xl bg-[rgb(220,140,140)] border border-[rgb(200,120,120)] shadow-inner flex items-center justify-center">
 
-  </div>
-</div>
+                <div className="relative w-full h-full">
+                  {(Array.isArray(data?.activities) ? data.activities : []).map(
+                    (activity, idx) => (
+                      <div
+                        key={idx}
+                        className={`absolute inset-0 flex items-center justify-center px-6 text-center text-sm sm:text-base lg:text-lg xl:text-xl font-bold text-[rgb(100,25,25)] transition-all duration-700 transform ${currentActivityIndex === idx
+                            ? "opacity-100 translate-y-0"
+                            : "opacity-0 translate-y-10 pointer-events-none"
+                          }`}
+                      >
+                        {activity}
+                      </div>
+                    )
+                  )}
+                </div>
 
-{/* NSS Coordinators Card */}
-                    <div className="bg-white/70 backdrop-blur-md rounded-2xl shadow-lg animate-fadeIn border border-gray-100 overflow-hidden">
-                        <div className="bg-[rgb(110,35,35)] py-3 sm:py-4 md:py-5 flex items-center justify-center gap-2 sm:gap-3">
-                            <h2 className="text-lg sm:text-xl lg:text-2xl xl:text-3xl font-bold text-white text-center">NSS Coordinators</h2>
-                        </div>
-                        <div className="p-4 sm:p-6 md:p-8 lg:p-10">
-                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                                {(Array.isArray(data?.nss_coordinator?.['Office Bearers']) ? data.nss_coordinator['Office Bearers'] : []).map((coordinator, i) => (
-                                    <div
-                                        key={i}
-                                        className="bg-white/80 rounded-xl shadow-sm p-6 border border-gray-100 flex flex-col justify-center items-center text-center hover:shadow-md transition-all hover:-translate-y-1"
-                                    >
-                                         <div className="w-24 h-40 sm:w-28 sm:h-32 mb-4">
-                                        <img
-                                          src={`/public${coordinator.Photo}`}
-                                          alt={coordinator.Name}
-                                        className="w-full h-full object-cover object-top rounded-full border-4 border-[rgb(115,25,25)] shadow-md transition-transform duration-300 hover:scale-105"
-                                        />
-                                        </div>
-                                        <h3 className="text-sm sm:text-base lg:text-lg xl:text-xl font-bold text-[rgb(110,35,35)] mb-2">{coordinator.Name}</h3>
-                                        <div className="text-xs lg:text-sm text-gray-700 font-semibold">{coordinator.Designation}</div>
-                                    </div>
-                                ))}
-                            </div>
-                        </div>
+              </div>
+
+              {/* Activity Indicator Bars */}
+              <div className="flex justify-center mt-4 space-x-2">
+                {(Array.isArray(data?.activities) ? data.activities : []).map(
+                  (_, idx) => (
+                    <button
+                      key={idx}
+                      onClick={() => setActivity(idx)}
+                      className={`h-1.5 w-6 rounded-full transition-colors ${idx === currentActivityIndex
+                          ? "bg-[rgb(115,40,40)]"
+                          : "bg-[rgb(200,120,120)]"
+                        }`}
+                    ></button>
+                  )
+                )}
+              </div>
+
+            </div>
+          </div>
+
+          {/* NSS Coordinators Card */}
+          <div className="bg-white/70 backdrop-blur-md rounded-2xl shadow-lg animate-fadeIn border border-gray-100 overflow-hidden">
+            <div className="bg-[rgb(110,35,35)] py-3 sm:py-4 md:py-5 flex items-center justify-center gap-2 sm:gap-3">
+              <h2 className="text-lg sm:text-xl lg:text-2xl xl:text-3xl font-bold text-white text-center">NSS Coordinators</h2>
+            </div>
+            <div className="p-4 sm:p-6 md:p-8 lg:p-10">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {(Array.isArray(data?.nss_coordinator?.['Office Bearers']) ? data.nss_coordinator['Office Bearers'] : []).map((coordinator, i) => (
+                  <div
+                    key={i}
+                    className="bg-white/80 rounded-xl shadow-sm p-6 border border-gray-100 flex flex-col justify-center items-center text-center hover:shadow-md transition-all hover:-translate-y-1"
+                  >
+                    <div className="w-24 h-40 sm:w-28 sm:h-32 mb-4">
+                      <img
+                        src={`/public${coordinator.Photo}`}
+                        alt={coordinator.Name}
+                        className="w-full h-full object-cover object-top rounded-full border-4 border-[rgb(115,25,25)] shadow-md transition-transform duration-300 hover:scale-105"
+                      />
                     </div>
+                    <h3 className="text-sm sm:text-base lg:text-lg xl:text-xl font-bold text-[rgb(110,35,35)] mb-2">{coordinator.Name}</h3>
+                    <div className="text-xs lg:text-sm text-gray-700 font-semibold">{coordinator.Designation}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
 
 
           {/* Gallery Section */}
@@ -356,7 +316,7 @@ const NSS = () => {
       >
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-10 text-gray-800">
           <span className="bg-[rgb(100,25,25)] bg-clip-text text-transparent">
-           Our Achievements
+            Our Achievements
           </span>
         </h2>
 
@@ -419,10 +379,10 @@ const NSS = () => {
 
                   {(data?.achievements?.length === 0 ||
                     !data?.achievements) && (
-                    <p className="text-gray-500 italic text-center">
-                      No achievements available.
-                    </p>
-                  )}
+                      <p className="text-gray-500 italic text-center">
+                        No achievements available.
+                      </p>
+                    )}
                 </div>
               </div>
             </div>

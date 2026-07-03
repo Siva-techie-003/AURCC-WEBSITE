@@ -2,87 +2,71 @@ import React, { useState, useEffect, useRef, useMemo } from 'react';
 import './BISClub.css';
 
 const BISClub = () => {
-    // State for Image Gallery
-            const [currentImageIndex, setCurrentImageIndex] = useState(0);
-            const [touchStartX, setTouchStartX] = useState(0);
-            const [touchEndX, setTouchEndX] = useState(0);
-            const data = {
-                name: "BUREAU OF INDIAN STANDARDS CLUB",
-                description: [
-                    "Young and vibrant students are the future and form the foundation on which a strong, vibrant and dynamic nation is built. The values towards which the students community are exposed to in their formative years get inculcated in their young minds and serve as a force multiplier that has the capacity to transform the future of a nation. Quality consciousness, based on standardization, is one of the pillars of accelerated economic development and priming students to appreciate the significance of quality, standards and standardization can serve as a catalyst to improve societal awareness on these subjects.",
-                    "BIS has taken the initiative of creating Standards Clubs in educational institutions comprising teachers and students as members. Through a variety of activities under these Clubs, young talents get learning opportunities in the field of quality and standardization. Though in its nascent stage, the Standards Club have already garnered prominence and are being enthusiastically promoted by educational institutions to students by providing opportunities to better their professional and personal growth.",
-                    "The activities of the standards club are co-ordinated by a core group which consist of a faculty mentor, student leader and student members."
-                ],
-                Coordinator: {
-                    Name: "Dr. R. Sathiya Moorthy",
-                    Designation: "Coordinator",
-                    Email: "bisclubaurcc@gmail.com",
-                    Image: "sathiyamoorthy.webp"
-                }
-            };
-    
-           // Static Data
-        const galleryImages = [
-            {
-                src: '/Bis/1.jpg',
-                alt: 'BIS Club Activity',
-                description: 'Students participating in BIS Standards Club activities and training.'
-            },
-            {
-                src: '/Bis/2.jpg',
-                alt: 'BIS Club Activity',
-                description: 'Awareness program on quality control and Indian standards.'
-            },
-            {
-                src: '/Bis/3.jpg',
-                alt: 'BIS Club Activity',
-                description: 'Standards writing competition and student presentations.'
-            },
-            {
-                src: '/Bis/4.jpg',
-                alt: 'BIS Club Activity',
-                description: 'Interactive learning sessions on standardization processes.'
-            },
-            {
-                src: '/Bis/5.jpg',
-                alt: 'BIS Club Activity',
-                description: 'Industrial exposure visit highlighting quality assurance.'
-            },
-            {
-                src: '/Bis/6.jpg',
-                alt: 'BIS Club Activity',
-                description: 'Core group meetings and faculty-mentor coordination.'
-            },
-            {
-                src: '/Bis/7.jpg',
-                alt: 'BIS Club Activity',
-                description: 'Fostering quality consciousness and national building among student volunteers.'
-            },
-        ];
-    
-        // Logic for Image Gallery
-        const nextImage = () => {
-            setCurrentImageIndex((prev) => (prev + 1) % galleryImages.length);
-        };
-        const prevImage = () => {
-            setCurrentImageIndex((prev) => (prev - 1 + galleryImages.length) % galleryImages.length);
-        };
-        const goToImage = (index) => {
-            setCurrentImageIndex(index);
-        };
-    
-        const handleTouchStart = (e) => {
-            setTouchStartX(e.changedTouches[0].screenX);
-        };
-        const handleTouchEnd = (e) => {
-            const endX = e.changedTouches[0].screenX;
-            setTouchEndX(endX);
-            if (touchStartX - endX > 50) {
-                nextImage();
-            } else if (endX - touchStartX > 50) {
-                prevImage();
-            }
-        };
+    const [currentImageIndex, setCurrentImageIndex] = useState(0);
+    const [touchStartX, setTouchStartX] = useState(0);
+    const [touchEndX, setTouchEndX] = useState(0);
+    const [siteSettings, setSiteSettings] = useState(null);
+
+    useEffect(() => {
+        fetch("/api/site-settings")
+            .then((res) => res.json())
+            .then((settings) => setSiteSettings(settings))
+            .catch((err) => console.error(err));
+    }, []);
+
+    const data = {
+        name: "BUREAU OF INDIAN STANDARDS CLUB",
+        description: [
+            "Young and vibrant students are the future and form the foundation on which a strong, vibrant and dynamic nation is built. The values towards which the students community are exposed to in their formative years get inculcated in their young minds and serve as a force multiplier that has the capacity to transform the future of a nation. Quality consciousness, based on standardization, is one of the pillars of accelerated economic development and priming students to appreciate the significance of quality, standards and standardization can serve as a catalyst to improve societal awareness on these subjects.",
+            "BIS has taken the initiative of creating Standards Clubs in educational institutions comprising teachers and students as members. Through a variety of activities under these Clubs, young talents get learning opportunities in the field of quality and standardization. Though in its nascent stage, the Standards Club have already garnered prominence and are being enthusiastically promoted by educational institutions to students by providing opportunities to better their professional and personal growth.",
+            "The activities of the standards club are co-ordinated by a core group which consist of a faculty mentor, student leader and student members."
+        ],
+        Coordinator: {
+            Name: "Dr. R. Sathiya Moorthy",
+            Designation: "Coordinator",
+            Email: "bisclubaurcc@gmail.com",
+            Image: "sathiyamoorthy.webp"
+        }
+    };
+
+    // Dynamic Gallery Data
+    const galleryImages = siteSettings?.bisGallery?.map((src, index) => ({
+        src,
+        alt: 'BIS Club Activity',
+        description: [
+            'Students participating in BIS Standards Club activities and training.',
+            'Awareness program on quality control and Indian standards.',
+            'Standards writing competition and student presentations.',
+            'Interactive learning sessions on standardization processes.',
+            'Industrial exposure visit highlighting quality assurance.',
+            'Core group meetings and faculty-mentor coordination.',
+            'Fostering quality consciousness and national building among student volunteers.'
+        ][index % 7]
+    })) || [];
+
+    // Logic for Image Gallery
+    const nextImage = () => {
+        setCurrentImageIndex((prev) => (prev + 1) % galleryImages.length);
+    };
+    const prevImage = () => {
+        setCurrentImageIndex((prev) => (prev - 1 + galleryImages.length) % galleryImages.length);
+    };
+    const goToImage = (index) => {
+        setCurrentImageIndex(index);
+    };
+
+    const handleTouchStart = (e) => {
+        setTouchStartX(e.changedTouches[0].screenX);
+    };
+    const handleTouchEnd = (e) => {
+        const endX = e.changedTouches[0].screenX;
+        setTouchEndX(endX);
+        if (touchStartX - endX > 50) {
+            nextImage();
+        } else if (endX - touchStartX > 50) {
+            prevImage();
+        }
+    };
 
 
 
@@ -227,7 +211,7 @@ const BISClub = () => {
                         </div>
                     </section>
                 </div>
-            </section>   
+            </section>
         </main>
     );
 };

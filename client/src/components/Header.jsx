@@ -4,8 +4,16 @@ import { href, Link, useNavigate } from "react-router-dom";
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isQuickLinksOpen, setIsQuickLinksOpen] = useState(false);
+  const [siteSettings, setSiteSettings] = useState(null);
   const navigate = useNavigate();
   const quickLinksRef = useRef(null);
+
+  useEffect(() => {
+    fetch("/api/site-settings")
+      .then((res) => res.json())
+      .then((data) => setSiteSettings(data))
+      .catch((err) => console.error("Error fetching site settings:", err));
+  }, []);
 
   useEffect(() => {
     if (isMobileMenuOpen) {
@@ -420,7 +428,7 @@ const Header = () => {
               onClick={() => navigate("/")}
             >
               <img
-                src="/aurcc_tamil.jpg"
+                src={siteSettings?.aurcc_tamil || "/public/aurcc_tamil.jpg"}
                 alt="AURCC Logo"
                 className="h-10 sm:h-12 md:h-14 lg:h-16 xl:h-[80px] w-auto"
               />
