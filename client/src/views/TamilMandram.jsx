@@ -25,33 +25,11 @@ const TamilMandram = () => {
   }, []);
 
   // Static Data
-  const galleryImages = [
-    {
-      src: "/public/1.webp",
-      alt: "College Event",
-      description: "Annual cultural festival celebrating diverse talents",
-    },
-    {
-      src: "/public/cse-girls-closeup.webp",
-      alt: "Students in Lab",
-      description: "Students collaborating on innovative projects",
-    },
-    {
-      src: "/public/4.webp",
-      alt: "Campus View",
-      description: "Our beautiful campus surrounded by greenery",
-    },
-    {
-      src: "/public/computer-lab.webp",
-      alt: "Computer Lab",
-      description: "State-of-the-art computer lab with latest equipment",
-    },
-    {
-      src: "/public/Drone_shot.jpg",
-      alt: "Aerial View",
-      description: "Aerial view of our sprawling campus facilities",
-    },
-  ];
+  const galleryImages = Array.from({ length: 20 }, (_, i) => ({
+    src: `/public/tamil_mandram/${i + 1}.jpeg`,
+    alt: `Tamil Mandram Event ${i + 1}`,
+    description: "தமிழ் மன்றம்",
+  }));
 
   // Logic for Image Gallery
   const nextImage = () => {
@@ -169,42 +147,77 @@ const TamilMandram = () => {
             </div>
           </div>
 
-          {/* Staff Section */}
+                    {/* Staff Section */}
           <div
             id="staff"
             className="bg-white rounded-3xl shadow-2xl overflow-hidden border border-[#e5d5c0] animate-popIn"
           >
             <div className="bg-[#23120b] py-6 px-8 border-b-4 border-[#fdb827]">
               <h2 className="text-2xl sm:text-3xl lg:text-4xl text-[#fdb827] font-bold text-center">
-                பொறுப்பாளர்
+                ஒருங்கிணைப்பாளர்கள்
               </h2>
             </div>
-            <div className="p-8 sm:p-12 flex justify-center">
-              <div className="bg-amber-50 rounded-2xl p-8 shadow-inner border border-amber-100 max-w-lg w-full text-center hover:bg-white transition-colors group">
+            <div className="p-8 sm:p-12 gap-8 flex justify-center">
+              <div className="bg-amber-50 rounded-2xl p-8 shadow-inner border border-[rgb(138,57,57)] max-w-lg w-full text-center hover:bg-white transition-colors group">
                 <img
                   src={`/public/mani.webp`}
                   alt="manisekaran"
                   className="w-24 h-28 text-[#fdb827]flex items-center justify-center mx-auto mb-6 shadow-lg "
                 />
-                <h3 className="text-xl lg:text-2xl font-bold text-[#23120b] mb-4 border-b-2 border-amber-200 pb-2">
-                  அவைத்தலைவர்
-                </h3>
                 <div className="space-y-3">
                   <p className="text-lg text-gray-800">
-                    <span className="font-bold text-[#3c2f25]">பெயர்:</span>{" "}
-                    <span className="font-medium text-emerald-900">
+                    <span className="font-bold text-emerald-900">
                       {data.பொறுப்பாளர்.அவைத்தலைவர்.பெயர்}
                     </span>
                   </p>
-                  <p className="text-lg text-gray-800">
-                    <span className="font-bold text-[#3c2f25]">
-                      மின்னஞ்சல்:
-                    </span>{" "}
+                  <p className="text-base font-bold text-gray-800">
+                    <a
+                      href={`mailto:${data.பொறுப்பாளர்.அவைத்தலைவர்["துறை"]}`}
+                      className="text-[rgb(110,35,35)] hover:underline"
+                    >
+                      {data.பொறுப்பாளர்.அவைத்தலைவர்["துறை"]}
+                    </a>
+                  </p>
+                  <p className="text-base font-bold text-gray-800">
                     <a
                       href={`mailto:${data.பொறுப்பாளர்.அவைத்தலைவர்["அவர்களின் மின்னஞ்சல்"]}`}
                       className="text-[rgb(110,35,35)] hover:underline"
                     >
                       {data.பொறுப்பாளர்.அவைத்தலைவர்["அவர்களின் மின்னஞ்சல்"]}
+                    </a>
+                  </p>
+                </div>
+              </div>
+              <div className="bg-amber-50 rounded-2xl p-8 shadow-inner border border-[rgb(138,57,57)] max-w-lg w-full text-center hover:bg-white transition-colors group">
+                <img
+                  src={`/public/newlin.webp`}
+                  alt="manisekaran"
+                  className="w-24 h-28 text-[#fdb827]flex items-center justify-center mx-auto mb-6 shadow-lg "
+                />
+                <div className="space-y-3">
+                  <p className="text-lg text-gray-800">
+                    <span className="font-bold text-emerald-900">
+                      {data.பொறுப்பாளர்.ஒருங்கிணைப்பாளர்கள்.பெயர்}
+                    </span>
+                  </p>
+                  <p className="text-base font-bold text-gray-800">
+                    <a
+                      href={`mailto:${data.பொறுப்பாளர்.ஒருங்கிணைப்பாளர்கள்["துறை"]}`}
+                      className="text-[rgb(110,35,35)] hover:underline"
+                    >
+                      {data.பொறுப்பாளர்.ஒருங்கிணைப்பாளர்கள்["துறை"]}
+                    </a>
+                  </p>
+                  <p className="text-base font-bold text-gray-800">
+                    <a
+                      href={`mailto:${data.பொறுப்பாளர்.ஒருங்கிணைப்பாளர்கள்["அவர்களின் மின்னஞ்சல்"]}`}
+                      className="text-[rgb(110,35,35)] hover:underline"
+                    >
+                      {
+                        data.பொறுப்பாளர்.ஒருங்கிணைப்பாளர்கள்[
+                          "அவர்களின் மின்னஞ்சல்"
+                        ]
+                      }
                     </a>
                   </p>
                 </div>
@@ -252,13 +265,13 @@ const TamilMandram = () => {
                   >
                     {galleryImages.map((image, idx) => (
                       <div key={idx} className="flex-shrink-0 w-full px-4">
-                        <div className="relative group overflow-hidden rounded-xl shadow-2xl">
+                        <div className="relative group overflow-hidden rounded-xl shadow-2xl bg-black/5 flex items-center justify-center">
                           <img
                             src={image.src}
                             alt={image.alt}
-                            className="w-full h-54 md:h-80 object-cover transition-transform duration-700 group-hover:scale-105"
+                            className="w-full h-[300px] md:h-[500px] object-contain transition-transform duration-700 group-hover:scale-105"
                           />
-                          <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-6">
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-6">
                             <p className="text-white text-lg md:text-xl">
                               {image.description}
                             </p>
@@ -288,12 +301,12 @@ const TamilMandram = () => {
                   </svg>
                 </button>
               </div>
-              <div className="flex justify-center mt-8 space-x-2">
+              <div className="flex flex-wrap items-center justify-center mt-8 gap-3 px-4 py-2">
                 {galleryImages.map((_, idx) => (
                   <button
                     key={idx}
                     onClick={() => goToImage(idx)}
-                    className={`h-1 w-4 md:w-8 rounded-full transition-colors ${idx === currentImageIndex ? "bg-[rgb(115,40,40)]" : "bg-[rgb(160,80,80)]"}`}
+                    className={`rounded-full transition-all duration-300 ${idx === currentImageIndex ? "h-3 w-3 md:h-4 md:w-4 bg-[rgb(115,40,40)]" : "h-2 w-2 md:h-3 md:w-3 bg-[rgb(160,80,80)] opacity-70 hover:opacity-100"}`}
                   ></button>
                 ))}
               </div>
