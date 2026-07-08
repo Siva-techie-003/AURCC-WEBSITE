@@ -525,14 +525,14 @@ const HomeView = () => {
 
   return (
     <div className="min-w-[300px] min-h-[800px] overflow-x-hidden">
-      <div id="home_page" className="pt-[126px] sm:pt-[130px]">
+      <div id="home_page" className="pt-[106px] sm:pt-[130px]">
         {/* All page content here */}
 
         <main className="">
-          <div className="relative flex items-center bg-[rgb(115,25,25)] text-white py-1.5 sm:py-2 overflow-hidden z-20">
+          <div className="relative flex items-center bg-[rgb(115,25,25)] text-white py-2.5 sm:py-3 overflow-hidden z-20">
             {/* LATEST NEWS badge with live pulsing dot */}
-            <div className="absolute left-0 top-0 bottom-0 bg-[#ffb300] text-black pr-3.5 pl-1.5 sm:pr-8 sm:pl-5 flex items-center font-extrabold z-30 text-[9px] sm:text-xs tracking-wider shadow-[4px_0_10px_rgba(0,0,0,0.3)] [clip-path:polygon(0_0,100%_0,88%_100%,0_100%)]">
-              <span className="relative flex h-2 w-2 mr-1 sm:mr-2">
+            <div className="absolute left-0 top-0 bottom-0 bg-[#ffb300] text-black pr-5 pl-3 sm:pr-8 sm:pl-5 flex items-center font-black z-30 text-[11px] sm:text-xs tracking-wider shadow-[4px_0_10px_rgba(0,0,0,0.3)] [clip-path:polygon(0_0,100%_0,88%_100%,0_100%)]">
+              <span className="relative flex h-2 w-2 mr-1.5 sm:mr-2">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-600 opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-1.5 w-1.5 sm:h-2 sm:w-2 bg-red-600"></span>
               </span>
@@ -548,7 +548,7 @@ const HomeView = () => {
                     href={item.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="mx-6 sm:mx-10 text-yellow-300 hover:text-white whitespace-nowrap text-xs sm:text-sm font-semibold"
+                    className="mx-6 sm:mx-10 text-yellow-300 hover:text-white whitespace-nowrap text-sm sm:text-base font-bold"
                   >
                     •  {item.name}
                   </a>
