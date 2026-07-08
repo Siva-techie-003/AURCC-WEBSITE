@@ -25,33 +25,11 @@ const TamilMandram = () => {
   }, []);
 
   // Static Data
-  const galleryImages = [
-    {
-      src: "/public/1.webp",
-      alt: "College Event",
-      description: "Annual cultural festival celebrating diverse talents",
-    },
-    {
-      src: "/public/cse-girls-closeup.webp",
-      alt: "Students in Lab",
-      description: "Students collaborating on innovative projects",
-    },
-    {
-      src: "/public/4.webp",
-      alt: "Campus View",
-      description: "Our beautiful campus surrounded by greenery",
-    },
-    {
-      src: "/public/computer-lab.webp",
-      alt: "Computer Lab",
-      description: "State-of-the-art computer lab with latest equipment",
-    },
-    {
-      src: "/public/Drone_shot.jpg",
-      alt: "Aerial View",
-      description: "Aerial view of our sprawling campus facilities",
-    },
-  ];
+  const galleryImages = Array.from({ length: 20 }, (_, i) => ({
+    src: `/public/tamil_mandram/${i + 1}.jpeg`,
+    alt: `Tamil Mandram Event ${i + 1}`,
+    description: "தமிழ் மன்றம்",
+  }));
 
   // Logic for Image Gallery
   const nextImage = () => {
@@ -252,13 +230,13 @@ const TamilMandram = () => {
                   >
                     {galleryImages.map((image, idx) => (
                       <div key={idx} className="flex-shrink-0 w-full px-4">
-                        <div className="relative group overflow-hidden rounded-xl shadow-2xl">
+                        <div className="relative group overflow-hidden rounded-xl shadow-2xl bg-black/5 flex items-center justify-center">
                           <img
                             src={image.src}
                             alt={image.alt}
-                            className="w-full h-54 md:h-80 object-cover transition-transform duration-700 group-hover:scale-105"
+                            className="w-full h-[300px] md:h-[500px] object-contain transition-transform duration-700 group-hover:scale-105"
                           />
-                          <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-6">
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-6">
                             <p className="text-white text-lg md:text-xl">
                               {image.description}
                             </p>
@@ -288,12 +266,12 @@ const TamilMandram = () => {
                   </svg>
                 </button>
               </div>
-              <div className="flex justify-center mt-8 space-x-2">
+              <div className="flex flex-wrap items-center justify-center mt-8 gap-3 px-4 py-2">
                 {galleryImages.map((_, idx) => (
                   <button
                     key={idx}
                     onClick={() => goToImage(idx)}
-                    className={`h-1 w-4 md:w-8 rounded-full transition-colors ${idx === currentImageIndex ? "bg-[rgb(115,40,40)]" : "bg-[rgb(160,80,80)]"}`}
+                    className={`rounded-full transition-all duration-300 ${idx === currentImageIndex ? "h-3 w-3 md:h-4 md:w-4 bg-[rgb(115,40,40)]" : "h-2 w-2 md:h-3 md:w-3 bg-[rgb(160,80,80)] opacity-70 hover:opacity-100"}`}
                   ></button>
                 ))}
               </div>
