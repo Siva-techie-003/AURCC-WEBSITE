@@ -324,7 +324,7 @@ const TamilMandram = () => {
               </span>
             </h2>
 
-            <div className="max-w-6xl mx-auto">
+            <div className="max-w-7xl mx-auto">
               <div className="relative">
                 <div className="relative bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden transition-all duration-300 hover:shadow-xl">
                   <div className="h-80 sm:h-96 overflow-auto px-4 sm:px-6 py-4 sm:py-6 scrollbar-thin">
@@ -335,11 +335,11 @@ const TamilMandram = () => {
                       ).map((achievement, i) => (
                         <div
                           key={i}
-                          className="bg-white p-3 sm:p-4 rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-1 text-left"
+                          className="bg-white p-3 sm:p-4 rounded-xl border border-gray-300 shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-1 text-left"
                         >
                           <div className="flex flex-col md:flex-row md:items-center justify-between">
                             <div>
-                              <div className="flex items-center mb-2">
+                              <div className="flex flex-row gap-2 items-center mb-2">
                                 <svg
                                   xmlns="http://www.w3.org/2000/svg"
                                   className="h-4 w-4 sm:h-5 sm:w-5 text-[rgb(120,45,45)] mr-2"
@@ -357,26 +357,32 @@ const TamilMandram = () => {
                                 <h3 className="text-base lg:text-lg xl:text-xl font-semibold text-gray-800">
                                   {achievement.event}
                                 </h3>
-                              </div>
-
-                              <p className="text-sm lg:text-base text-gray-600 mb-1">
+                                <p className="text-sm lg:text-base font-bold text-gray-600 mb-1">
                                 {achievement.organized_by}
                               </p>
-
-                              <p className="text-sm lg:text-base font-medium text-gray-800">
-                                {achievement.name}
-                              </p>
-                            </div>
-
-                            <div className="mt-3 md:mt-0 bg-[rgb(220,140,140)] text-[rgb(110,35,35)] px-2 sm:px-3 py-1 rounded-full text-xs lg:text-sm font-medium h-fit">
-                              {achievement.date}
+                              </div>
+                              
                             </div>
                           </div>
 
-                          <div className="mt-3">
-                            <div className="inline-flex items-center bg-purple-50 text-purple-700 px-2 sm:px-3 py-1 rounded-full text-xs lg:text-sm font-medium">
+                          <div className="flex flex-col md:flex-row md:items-center justify-between">
+                             <div className="inline-flex items-center bg-[rgb(116,30,30)] text-white px-2 sm:px-3 py-1 rounded-full text-xs lg:text-sm font-semibold">
+                                {achievement.name}
+                              </div>
+
+                             <div className="inline-flex items-center bg-[rgb(116,30,30)] text-white px-2 sm:px-3 py-1 rounded-full text-xs lg:text-sm font-semibold">
                               {achievement.awards}
                             </div>
+
+                            <div className="inline-flex items-center bg-[rgb(116,30,30)] text-white px-2 sm:px-3 py-1 rounded-full text-xs lg:text-sm font-semibold gap-1">
+                              <span className="text-sm lg:text-base font-semibold text-white">பரிசு : </span>
+                              {achievement.amount}
+                            </div>
+
+                            <div className="mt-3 md:mt-0 bg-[rgb(116,30,30)] text-white px-2 sm:px-3 py-1 rounded-full text-xs lg:text-sm font-semibold h-fit">
+                              {achievement.date}
+                            </div>
+                            
                           </div>
                         </div>
                       ))}

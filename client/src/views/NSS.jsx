@@ -30,14 +30,10 @@ const NSS = () => {
 
     const interval = setInterval(() => {
       setCurrentActivityIndex((prev) => (prev + 1) % data.activities.length);
-    }, 3500);
+    }, 1000);
 
     return () => clearInterval(interval);
   }, [data]);
-
-  const setActivity = (idx) => {
-    setCurrentActivityIndex(idx);
-  };
 
   // Static Data
   const galleryImages = siteSettings?.nssGallery?.map((src, index) => ({
@@ -93,23 +89,12 @@ const NSS = () => {
   return (
     <main className="flex-grow font-sans bg-white pt-[126px] sm:pt-[130px]">
       {/* Hero section */}
-      <section className="relative w-full min-h-[35vh] sm:min-h-[40vh] md:min-h-[50vh] lg:min-h-[60vh] overflow-hidden flex items-center justify-center">
+      <section className="relative w-full min-h-[25vh] sm:min-h-[30vh] md:min-h-[35vh] lg:min-h-[40vh] overflow-hidden flex items-center justify-center border-b-4 border-[#f5c842] bg-white">
         <img
           src={siteSettings?.nssLogo || "/public/nsslogo.png"}
           alt="National Service Scheme (NSS) Logo at AURCC"
-          className="absolute inset-15 w-900 h-800 object-cover object-center"
+          className="absolute inset-0 w-full h-full object-contain object-center"
         />
-        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-black/60 via-black/30 to-transparent"></div>
-        <div className="absolute inset-0 flex items-center justify-center z-10 px-2">
-          <div className="backdrop-blur-md bg-brown/30 rounded-2xl shadow-lg px-6 py-6 md:py-10 flex flex-col items-center max-w-2xl mx-auto border border-white/30 animate-popIn">
-            <h1 className="text-lg sm:text-xl lg:text-3xl xl:text-4xl font-extrabold text-white drop-shadow-lg tracking-wide text-center mb-2 leading-tight">
-              {data.name}
-            </h1>
-            <p className="text-xs sm:text-sm lg:text-base xl:text-lg text-white drop-shadow text-center font-medium">
-              Community Service. Personality Development.
-            </p>
-          </div>
-        </div>
       </section>
       {/* Content sections */}
       <section className="container mx-auto pt-0 pb-8 sm:py-12 lg:py-14 px-4">
@@ -146,61 +131,38 @@ const NSS = () => {
               <span className="block w-24 h-1.5 rounded-full bg-[#f5c842]"></span>
             </div>
           </div>
-
-          <div className="p-2 sm:p-6 md:p-8 lg:p-10 flex flex-col items-center">
-            <div className="relative w-full max-w-xl mx-auto">
-
-              {/* Activity Card */}
-              <div className="overflow-hidden h-20 sm:h-24 md:h-28 lg:h-32 rounded-xl bg-[rgb(220,140,140)] border border-[rgb(200,120,120)] shadow-inner flex items-center justify-center">
-
-                <div className="relative w-full h-full">
-                  {(Array.isArray(data?.activities) ? data.activities : []).map(
-                    (activity, idx) => (
-                      <div
-                        key={idx}
-                        className={`absolute inset-0 flex items-center justify-center px-6 text-center text-sm sm:text-base lg:text-lg xl:text-xl font-bold text-[rgb(100,25,25)] transition-all duration-700 transform ${currentActivityIndex === idx
-                            ? "opacity-100 translate-y-0"
-                            : "opacity-0 translate-y-10 pointer-events-none"
-                          }`}
-                      >
-                        {activity}
-                      </div>
-                    )
-                  )}
-                </div>
-
-              </div>
-
-              {/* Activity Indicator Bars */}
-              <div className="flex justify-center mt-4 space-x-2">
+          <div className="max-w-md mx-auto px-4 py-4 w-full">
+            <div className="overflow-hidden h-24 sm:h-28 rounded-xl bg-white border-2 border-[rgb(110,35,35)] shadow-sm flex items-center justify-center p-3 relative">
+              <div className="relative w-full h-full">
                 {(Array.isArray(data?.activities) ? data.activities : []).map(
-                  (_, idx) => (
-                    <button
+                  (activity, idx) => (
+                    <div
                       key={idx}
-                      onClick={() => setActivity(idx)}
-                      className={`h-1.5 w-6 rounded-full transition-colors ${idx === currentActivityIndex
-                          ? "bg-[rgb(115,40,40)]"
-                          : "bg-[rgb(200,120,120)]"
-                        }`}
-                    ></button>
+                      className={`absolute inset-0 flex items-center justify-center px-4 text-center text-sm sm:text-base lg:text-lg font-bold text-[rgb(110,35,35)] transition-all duration-300 ${
+                        currentActivityIndex === idx
+                          ? "opacity-100 scale-100"
+                          : "opacity-0 scale-95 pointer-events-none"
+                      }`}
+                    >
+                      {activity}
+                    </div>
                   )
                 )}
               </div>
-
             </div>
           </div>
 
           {/* NSS Coordinators Card */}
-          <div className="bg-white/70 backdrop-blur-md rounded-2xl shadow-lg animate-fadeIn border border-gray-100 overflow-hidden">
+          <div className="max-w-3xl mx-auto w-full bg-white/70 backdrop-blur-md rounded-2xl shadow-lg animate-fadeIn border border-gray-100 overflow-hidden">
             <div className="bg-[rgb(110,35,35)] py-3 sm:py-4 md:py-5 flex items-center justify-center gap-2 sm:gap-3">
               <h2 className="text-lg sm:text-xl lg:text-2xl xl:text-3xl font-bold text-white text-center">NSS Coordinators</h2>
             </div>
             <div className="p-4 sm:p-6 md:p-8 lg:p-10">
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div className="flex flex-wrap justify-center gap-6">
                 {(Array.isArray(data?.nss_coordinator?.['Office Bearers']) ? data.nss_coordinator['Office Bearers'] : []).map((coordinator, i) => (
                   <div
                     key={i}
-                    className="bg-white/80 rounded-xl shadow-sm p-6 border border-gray-100 flex flex-col justify-center items-center text-center hover:shadow-md transition-all hover:-translate-y-1"
+                    className="w-full sm:w-64 bg-white/80 rounded-xl shadow-sm p-6 border border-gray-100 flex flex-col justify-center items-center text-center hover:shadow-md transition-all hover:-translate-y-1 hover:border-[rgb(110,35,35)]"
                   >
                     <div className="w-24 h-40 sm:w-28 sm:h-32 mb-4">
                       <img
@@ -309,86 +271,7 @@ const NSS = () => {
         </div>
       </section>
 
-      {/* Achievements Section */}
-      <section
-        id="achievements"
-        className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto py-12 "
-      >
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-10 text-gray-800">
-          <span className="bg-[rgb(100,25,25)] bg-clip-text text-transparent">
-            Our Achievements
-          </span>
-        </h2>
 
-        <div className="max-w-6xl mx-auto">
-          <div className="relative">
-            <div className="relative bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden transition-all duration-300 hover:shadow-xl">
-              <div className="h-80 sm:h-96 overflow-auto px-4 sm:px-6 py-4 sm:py-6 scrollbar-thin">
-                <div className="space-y-3 sm:space-y-4">
-                  {(Array.isArray(data?.achievements)
-                    ? data.achievements
-                    : []
-                  ).map((achievement, i) => (
-                    <div
-                      key={i}
-                      className="bg-white p-3 sm:p-4 rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-1 text-left"
-                    >
-                      <div className="flex flex-col md:flex-row md:items-center justify-between">
-                        <div>
-                          <div className="flex items-center mb-2">
-                            <svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              className="h-4 w-4 sm:h-5 sm:w-5 text-[rgb(120,45,45)] mr-2"
-                              fill="none"
-                              viewBox="0 0 24 24"
-                              stroke="currentColor"
-                            >
-                              <path
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                strokeWidth="2"
-                                d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-                              />
-                            </svg>
-                            <h3 className="text-base lg:text-lg xl:text-xl font-semibold text-gray-800">
-                              {achievement.event}
-                            </h3>
-                          </div>
-
-                          <p className="text-sm lg:text-base text-gray-600 mb-1">
-                            {achievement.organized_by}
-                          </p>
-
-                          <p className="text-sm lg:text-base font-medium text-gray-800">
-                            {achievement.name}
-                          </p>
-                        </div>
-
-                        <div className="mt-3 md:mt-0 bg-[rgb(220,140,140)] text-[rgb(110,35,35)] px-2 sm:px-3 py-1 rounded-full text-xs lg:text-sm font-medium h-fit">
-                          {achievement.date}
-                        </div>
-                      </div>
-
-                      <div className="mt-3">
-                        <div className="inline-flex items-center bg-purple-50 text-purple-700 px-2 sm:px-3 py-1 rounded-full text-xs lg:text-sm font-medium">
-                          {achievement.awards}
-                        </div>
-                      </div>
-                    </div>
-                  ))}
-
-                  {(data?.achievements?.length === 0 ||
-                    !data?.achievements) && (
-                      <p className="text-gray-500 italic text-center">
-                        No achievements available.
-                      </p>
-                    )}
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
     </main>
   );
 };
