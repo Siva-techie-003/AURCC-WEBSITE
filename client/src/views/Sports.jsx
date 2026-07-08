@@ -143,7 +143,7 @@ const Sports = () => {
                   Physical Training Instructor (Selection Grade) and Sports Coordinator
                 </div>
                 <p className="text-xs lg:text-sm text-gray-600 font-semibold mt-auto">
-                  E-mail id - <a href="mailto:peaurcc@gmail.com" className="hover:underline text-[rgb(110,35,35)]">peaurcc@gmail.com</a>
+                   <a href="mailto:peaurcc@gmail.com" className="hover:underline text-[rgb(110,35,35)]">peaurcc@gmail.com</a>
                 </p>
               </div>
 
@@ -163,7 +163,7 @@ const Sports = () => {
                   Assistant Director of Physical Education
                 </div>
                 <p className="text-xs lg:text-sm text-gray-600 font-semibold mt-auto">
-                  E-mail id - <a href="mailto:shanmugapriya@aurcc.ac.in" className="hover:underline text-[rgb(110,35,35)]">shanmugapriya@aurcc.ac.in</a>
+                  <a href="mailto:shanmugapriya@aurcc.ac.in" className="hover:underline text-[rgb(110,35,35)]">shanmugapriya@aurcc.ac.in</a>
                 </p>
               </div>
 
@@ -171,20 +171,17 @@ const Sports = () => {
               <div className="bg-white/80 rounded-xl shadow-sm p-6 border border-gray-100 flex flex-col justify-center items-center text-center hover:shadow-md transition-all hover:-translate-y-1">
                 <div className="w-28 h-28 sm:w-32 sm:h-32 mb-4">
                   <img
-                    src="/public/default-staff.jpg"
-                    alt="Mr. Vivek"
+                    src="/VIVEKANANDAN.jpeg"
+                    alt="Mr. S. VIVEKANANDAN"
                     className="w-full h-full object-cover object-top rounded-full border-4 border-[rgb(115,25,25)] shadow-md transition-transform duration-300 hover:scale-105"
                   />
                 </div>
                 <h3 className="text-sm sm:text-base lg:text-lg xl:text-xl font-bold text-[rgb(110,35,35)] mb-2">
-                  Mr. Vivek
+                  Mr. S. VIVEKANANDAN
                 </h3>
                 <div className="text-xs lg:text-sm text-gray-700 font-semibold mb-3 flex-grow">
-                  Support Staff
+                  Assistant NM - Skill and Placement Centre / Sports
                 </div>
-                <p className="text-xs lg:text-sm text-gray-600 font-semibold mt-auto">
-                  E-mail id - <a href="mailto:peaurcc@gmail.com" className="hover:underline text-[rgb(110,35,35)]">peaurcc@gmail.com</a>
-                </p>
               </div>
             </div>
           </div>
