@@ -147,42 +147,77 @@ const TamilMandram = () => {
             </div>
           </div>
 
-          {/* Staff Section */}
+                    {/* Staff Section */}
           <div
             id="staff"
             className="bg-white rounded-3xl shadow-2xl overflow-hidden border border-[#e5d5c0] animate-popIn"
           >
             <div className="bg-[#23120b] py-6 px-8 border-b-4 border-[#fdb827]">
               <h2 className="text-2xl sm:text-3xl lg:text-4xl text-[#fdb827] font-bold text-center">
-                பொறுப்பாளர்
+                ஒருங்கிணைப்பாளர்கள்
               </h2>
             </div>
-            <div className="p-8 sm:p-12 flex justify-center">
-              <div className="bg-amber-50 rounded-2xl p-8 shadow-inner border border-amber-100 max-w-lg w-full text-center hover:bg-white transition-colors group">
+            <div className="p-8 sm:p-12 gap-8 flex justify-center">
+              <div className="bg-amber-50 rounded-2xl p-8 shadow-inner border border-[rgb(138,57,57)] max-w-lg w-full text-center hover:bg-white transition-colors group">
                 <img
                   src={`/public/mani.webp`}
                   alt="manisekaran"
                   className="w-24 h-28 text-[#fdb827]flex items-center justify-center mx-auto mb-6 shadow-lg "
                 />
-                <h3 className="text-xl lg:text-2xl font-bold text-[#23120b] mb-4 border-b-2 border-amber-200 pb-2">
-                  அவைத்தலைவர்
-                </h3>
                 <div className="space-y-3">
                   <p className="text-lg text-gray-800">
-                    <span className="font-bold text-[#3c2f25]">பெயர்:</span>{" "}
-                    <span className="font-medium text-emerald-900">
+                    <span className="font-bold text-emerald-900">
                       {data.பொறுப்பாளர்.அவைத்தலைவர்.பெயர்}
                     </span>
                   </p>
-                  <p className="text-lg text-gray-800">
-                    <span className="font-bold text-[#3c2f25]">
-                      மின்னஞ்சல்:
-                    </span>{" "}
+                  <p className="text-base font-bold text-gray-800">
+                    <a
+                      href={`mailto:${data.பொறுப்பாளர்.அவைத்தலைவர்["துறை"]}`}
+                      className="text-[rgb(110,35,35)] hover:underline"
+                    >
+                      {data.பொறுப்பாளர்.அவைத்தலைவர்["துறை"]}
+                    </a>
+                  </p>
+                  <p className="text-base font-bold text-gray-800">
                     <a
                       href={`mailto:${data.பொறுப்பாளர்.அவைத்தலைவர்["அவர்களின் மின்னஞ்சல்"]}`}
                       className="text-[rgb(110,35,35)] hover:underline"
                     >
                       {data.பொறுப்பாளர்.அவைத்தலைவர்["அவர்களின் மின்னஞ்சல்"]}
+                    </a>
+                  </p>
+                </div>
+              </div>
+              <div className="bg-amber-50 rounded-2xl p-8 shadow-inner border border-[rgb(138,57,57)] max-w-lg w-full text-center hover:bg-white transition-colors group">
+                <img
+                  src={`/public/newlin.webp`}
+                  alt="manisekaran"
+                  className="w-24 h-28 text-[#fdb827]flex items-center justify-center mx-auto mb-6 shadow-lg "
+                />
+                <div className="space-y-3">
+                  <p className="text-lg text-gray-800">
+                    <span className="font-bold text-emerald-900">
+                      {data.பொறுப்பாளர்.ஒருங்கிணைப்பாளர்கள்.பெயர்}
+                    </span>
+                  </p>
+                  <p className="text-base font-bold text-gray-800">
+                    <a
+                      href={`mailto:${data.பொறுப்பாளர்.ஒருங்கிணைப்பாளர்கள்["துறை"]}`}
+                      className="text-[rgb(110,35,35)] hover:underline"
+                    >
+                      {data.பொறுப்பாளர்.ஒருங்கிணைப்பாளர்கள்["துறை"]}
+                    </a>
+                  </p>
+                  <p className="text-base font-bold text-gray-800">
+                    <a
+                      href={`mailto:${data.பொறுப்பாளர்.ஒருங்கிணைப்பாளர்கள்["அவர்களின் மின்னஞ்சல்"]}`}
+                      className="text-[rgb(110,35,35)] hover:underline"
+                    >
+                      {
+                        data.பொறுப்பாளர்.ஒருங்கிணைப்பாளர்கள்[
+                          "அவர்களின் மின்னஞ்சல்"
+                        ]
+                      }
                     </a>
                   </p>
                 </div>
