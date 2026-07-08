@@ -77,8 +77,8 @@ const TamilMandram = () => {
         />
         <div className="absolute top-0 left-0 w-full h-full bg-black/40"></div>
         <div className="absolute inset-0 flex items-center justify-center z-10 px-2">
-          <div className=" backdrop-blur-md bg-brown/30 rounded-2xl shadow-lg px-6 py-6 md:py-10 flex flex-col items-center w-cover max-w-5xl mx-auto border border-white/30 animate-popIn">
-            <h1 className="text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-extrabold text-white drop-shadow-lg tracking-wide text-center leading-tight">
+          <div className="backdrop-blur-md bg-brown/30 rounded-2xl shadow-lg px-8 py-8 sm:px-16 sm:py-12 md:py-16 flex flex-col items-center w-fit max-w-5xl mx-auto border border-white/30 animate-popIn">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-extrabold text-white drop-shadow-lg tracking-wide text-center leading-tight">
               {data.name}
             </h1>
           </div>
@@ -324,7 +324,7 @@ const TamilMandram = () => {
               </span>
             </h2>
 
-            <div className="max-w-6xl mx-auto">
+            <div className="max-w-7xl mx-auto">
               <div className="relative">
                 <div className="relative bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden transition-all duration-300 hover:shadow-xl">
                   <div className="h-80 sm:h-96 overflow-auto px-4 sm:px-6 py-4 sm:py-6 scrollbar-thin">

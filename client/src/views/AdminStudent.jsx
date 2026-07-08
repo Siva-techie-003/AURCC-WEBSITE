@@ -8,7 +8,7 @@ const AdminStaffCard = ({ member }) => {
             <div className="relative -mt-[72px] flex justify-center">
                 <div className="w-36 h-36 rounded-full overflow-hidden border-4 border-white shadow-lg bg-white flex justify-center items-center">
                     {member.image && !error ? (
-                        <img src={`/public/${member.image === 'Rathinasamy.jpeg' ? 'rathinasamy.webp' : member.image}`} alt={member.name} className="w-full h-full object-cover object-top" onError={() => setError(true)} />
+                        <img src={`/public/${member.image}`} alt={member.name} className="w-full h-full object-cover object-top" onError={() => setError(true)} />
                     ) : (
                         <span className="text-4xl text-[rgba(110, 35, 35, 1)]">👤</span>
                     )}

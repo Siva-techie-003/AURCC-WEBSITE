@@ -123,32 +123,6 @@ const POSH = () => {
                     </div>
                 </div>
 
-                {/* Contact Us Section */}
-                <div ref={contactRef} className="bg-white/70 backdrop-blur-md rounded-2xl shadow-lg border border-gray-100 overflow-hidden animate-fadeIn">
-                    <div className="bg-[rgb(110,35,35)] py-4 sm:py-5 flex items-center justify-center gap-2 sm:gap-3">
-                        <svg className="w-5 h-5 sm:w-6 sm:h-6 text-white" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.94.725l.548 2.2a1 1 0 01-.321.988l-1.305.98a10.582 10.582 0 004.872 4.872l.98-1.305a1 1 0 01.988-.321l2.2.548a1 1 0 01.725.94V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                        </svg>
-                        <h2 className="text-lg sm:text-xl lg:text-2xl xl:text-3xl font-bold text-white text-center">Contact Us</h2>
-                    </div>
-                    <div className="p-4 sm:p-6 md:p-8 lg:p-10 text-center space-y-4">
-                        <div className="bg-amber-50/60 p-6 rounded-2xl border-2 border-[rgb(115,40,40)]/20 max-w-2xl mx-auto shadow-sm hover:border-[rgb(115,40,40)]/40 transition-all duration-300">
-                            <p className="font-bold text-lg text-[rgb(100,25,25)] mb-2">The Coordinator,</p>
-                            <p className="text-gray-700 font-medium">POSH CELL,<br />Anna University Regional Campus,<br />Maruthamalai Main Road,<br />Coimbatore(Dt), Pin - 641 046.</p>
-                            <div className="mt-4 pt-4 border-t border-[rgb(115,40,40)]/20 flex flex-wrap justify-center gap-6">
-                                <div className="flex items-center gap-2">
-                                    <span className="font-bold text-[rgb(100,25,25)]">Phone:</span>
-                                    <span className="text-gray-800">0422-2984001</span>
-                                </div>
-                                <div className="flex items-center gap-2">
-                                    <span className="font-bold text-[rgb(100,25,25)]">E-Mail:</span>
-                                    <a href="mailto:poshcell@aurcc.ac.in" className="text-[rgb(115,40,40)] font-bold hover:underline">poshcell@aurcc.ac.in</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
                 {/* Staff Section */}
                 <div ref={staffRef} className="bg-white/70 backdrop-blur-md rounded-2xl shadow-lg border border-gray-100 overflow-hidden animate-fadeIn">
                     <div className="bg-[rgb(110,35,35)] py-4 sm:py-5 flex items-center justify-center gap-2 sm:gap-3">
@@ -178,6 +152,32 @@ const POSH = () => {
                             ].map((member, i) => (
                                 <StaffCard key={i} staff={member} />
                             ))}
+                        </div>
+                    </div>
+                </div>
+
+                {/* Contact Us Section */}
+                <div ref={contactRef} className="bg-white/70 backdrop-blur-md rounded-2xl shadow-lg border border-gray-100 overflow-hidden animate-fadeIn">
+                    <div className="bg-[rgb(110,35,35)] py-4 sm:py-5 flex items-center justify-center gap-2 sm:gap-3">
+                        <svg className="w-5 h-5 sm:w-6 sm:h-6 text-white" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.94.725l.548 2.2a1 1 0 01-.321.988l-1.305.98a10.582 10.582 0 004.872 4.872l.98-1.305a1 1 0 01.988-.321l2.2.548a1 1 0 01.725.94V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                        </svg>
+                        <h2 className="text-lg sm:text-xl lg:text-2xl xl:text-3xl font-bold text-white text-center">Contact Us</h2>
+                    </div>
+                    <div className="p-4 sm:p-6 md:p-8 lg:p-10 text-center space-y-4">
+                        <div className="bg-amber-50/60 p-6 rounded-2xl border-2 border-[rgb(115,40,40)]/20 max-w-2xl mx-auto shadow-sm hover:border-[rgb(115,40,40)]/40 transition-all duration-300">
+                            <p className="font-bold text-lg text-[rgb(100,25,25)] mb-2"> </p>
+                            <p className="text-gray-700 font-medium">POSH CELL,<br />Anna University Regional Campus,<br />Maruthamalai Main Road,<br />Coimbatore(Dt), Pin - 641 046.</p>
+                            <div className="mt-4 pt-4 border-t border-[rgb(115,40,40)]/20 flex flex-wrap justify-center gap-6">
+                                <div className="flex items-center gap-2">
+                                    <span className="font-bold text-[rgb(100,25,25)]">Phone:</span>
+                                    <span className="text-gray-800">0422-2984001</span>
+                                </div>
+                                <div className="flex items-center gap-2">
+                                    <span className="font-bold text-[rgb(100,25,25)]">E-Mail:</span>
+                                    <a href="mailto:poshcell@aurcc.ac.in" className="text-[rgb(115,40,40)] font-bold hover:underline">poshcell@aurcc.ac.in</a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

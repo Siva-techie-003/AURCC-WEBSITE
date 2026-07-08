@@ -210,7 +210,7 @@ useEffect(() => {
                                     image: "Balamurugan.webp"
                                 },
                                 {
-                                    name: "Dr. R. Rajalakshmi",
+                                    name: "Mrs. R. Rajalakshmi",
                                     position: "IIC Coordinator",
                                     department: "Institution's Innovation Council",
                                     university: "Anna University Regional Campus",
