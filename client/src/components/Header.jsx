@@ -243,16 +243,16 @@ const Header = () => {
       {/* Top Bar */}
       <div className="bg-[rgb(110,35,35)] text-white">
         <div className="w-full px-4 sm:px-6 lg:px-12">
-          <div className="flex items-center justify-between py-2 text-sm sm:text-base">
+          <div className="flex items-center justify-between py-2 text-xs sm:text-sm">
             <div className="flex items-center gap-2 sm:gap-6 lg:gap-10">
-              <span className="font-medium flex items-center gap-1 text-sm sm:text-base">
+              <span className="font-medium flex items-center gap-1 text-[11px] sm:text-sm">
                 <span className="hidden lg:inline">AICTE PID:</span>
                 <span className="lg:hidden">PID:</span>
                 <span className="text-yellow-300 font-bold whitespace-nowrap">
                   1- 4500612781
                 </span>
               </span>
-              <span className="font-medium flex items-center gap-1 text-sm sm:text-base">
+              <span className="font-medium flex items-center gap-1 text-[11px] sm:text-sm">
                 <span className="hidden lg:inline">Counselling Code:</span>
                 <span className="lg:hidden">Code:</span>
                 <span className="text-yellow-300 font-bold whitespace-nowrap">
@@ -360,7 +360,7 @@ const Header = () => {
                 onClick={() => setIsQuickLinksOpen(!isQuickLinksOpen)}
                 className="flex items-center gap-2 hover:text-yellow-300 transition-colors py-1 px-2 rounded-lg bg-white/10 min-w-[85px] justify-between"
               >
-                <span key={currentQuickNameIndex} className="font-bold uppercase tracking-wider text-[9px] text-yellow-300 animate-fade-slide whitespace-nowrap">
+                <span key={currentQuickNameIndex} className="font-black uppercase tracking-wider text-[9px] text-yellow-300 animate-fade-slide whitespace-nowrap">
                   {quickNames[currentQuickNameIndex]}
                 </span>
                 <svg
@@ -441,8 +441,7 @@ const Header = () => {
 
       {/* Main Header */}
       <header
-        className="w-full bg-white shadow-xl border-b border-gray-100 flex items-center"
-        style={{ minHeight: "90px" }}
+        className="w-full bg-white shadow-xl border-b border-gray-100 flex items-center min-h-[70px] sm:min-h-[90px]"
       >
         <div className="w-full px-4 sm:px-6 lg:px-12">
           <nav className="flex items-center justify-between gap-6">
