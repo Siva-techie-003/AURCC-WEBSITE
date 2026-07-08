@@ -101,16 +101,16 @@ const TamilMandram = () => {
           {/* Overview Section */}
           <div
             id="overview"
-            className="w-300px max-w-8xl mx-auto bg-white rounded-3xl shadow-2xl overflow-hidden border border-[#e5d5c0] animate-popIn"
+            className="w-full bg-white rounded-3xl shadow-2xl overflow-hidden border border-[#e5d5c0] animate-popIn"
           >
-            <div className="bg-[#23120b] py-6 px-8 border-b-4 border-[#fdb827]">
+            <div className="bg-[#23120b] py-6 px-4 sm:px-8 border-b-4 border-[#fdb827]">
               <h2 className="text-2xl sm:text-3xl lg:text-4xl text-[#fdb827] font-bold text-center">
                 முகப்பு
               </h2>
             </div>
 
-            <div className="p-8 sm:p-12">
-              <p className="text-base lg:text-lg xl:text-xl text-[#3c2f25] font-medium leading-loose text-justify italic">
+            <div className="p-6 sm:p-12">
+              <p className="text-base lg:text-lg xl:text-xl text-[#3c2f25] font-medium leading-relaxed sm:leading-loose text-left sm:text-justify italic break-words">
                 {data.முகப்பு}
               </p>
             </div>
@@ -121,12 +121,12 @@ const TamilMandram = () => {
             id="events"
             className="bg-white rounded-3xl shadow-2xl overflow-hidden border border-[#e5d5c0] animate-popIn"
           >
-            <div className="bg-[#23120b] py-6 px-8 border-b-4 border-[#fdb827]">
+            <div className="bg-[#23120b] py-6 px-4 sm:px-8 border-b-4 border-[#fdb827]">
               <h2 className="text-2xl sm:text-3xl lg:text-4xl text-[#fdb827] font-bold text-center">
                 நிகழ்வுகள்
               </h2>
             </div>
-            <div className="p-8 sm:p-12">
+            <div className="p-6 sm:p-12">
               <ul className="space-y-6">
                 {(Array.isArray(data?.நிகழ்வுகள்) ? data.நிகழ்வுகள் : []).map(
                   (event, index) => (
@@ -137,7 +137,7 @@ const TamilMandram = () => {
                       <span className="bg-[#fdb827] text-[#23120b] w-8 h-8 rounded-full flex items-center justify-center font-bold shrink-0 mt-1 shadow-md group-hover:scale-110 transition-transform">
                         {index + 1}
                       </span>
-                      <p className="text-base lg:text-lg xl:text-xl text-[#3c2f25] font-semibold text-left">
+                      <p className="text-sm sm:text-base lg:text-lg xl:text-xl text-[#3c2f25] font-semibold text-left break-words sm:break-keep">
                         {event}
                       </p>
                     </li>
@@ -152,25 +152,25 @@ const TamilMandram = () => {
             id="staff"
             className="bg-white rounded-3xl shadow-2xl overflow-hidden border border-[#e5d5c0] animate-popIn"
           >
-            <div className="bg-[#23120b] py-6 px-8 border-b-4 border-[#fdb827]">
+            <div className="bg-[#23120b] py-6 px-4 sm:px-8 border-b-4 border-[#fdb827]">
               <h2 className="text-2xl sm:text-3xl lg:text-4xl text-[#fdb827] font-bold text-center">
                 ஒருங்கிணைப்பாளர்கள்
               </h2>
             </div>
-            <div className="p-8 sm:p-12 gap-8 flex justify-center">
-              <div className="bg-amber-50 rounded-2xl p-8 shadow-inner border border-[rgb(138,57,57)] max-w-lg w-full text-center hover:bg-white transition-colors group">
+            <div className="p-8 sm:p-12 gap-8 flex flex-col items-center md:flex-row md:justify-center">
+                <div className="bg-amber-50 rounded-2xl p-6 sm:p-8 shadow-inner border border-[rgb(138,57,57)] max-w-lg w-full text-center hover:bg-white transition-colors group">
                 <img
                   src={`/public/mani.webp`}
                   alt="manisekaran"
                   className="w-24 h-28 text-[#fdb827]flex items-center justify-center mx-auto mb-6 shadow-lg "
                 />
                 <div className="space-y-3">
-                  <p className="text-lg text-gray-800">
+                  <p className="text-sm sm:text-base lg:text-lg text-gray-800 whitespace-nowrap">
                     <span className="font-bold text-emerald-900">
                       {data.பொறுப்பாளர்.அவைத்தலைவர்.பெயர்}
                     </span>
                   </p>
-                  <p className="text-base font-bold text-gray-800">
+                  <p className="text-sm sm:text-base font-bold text-gray-800">
                     <a
                       href={`mailto:${data.பொறுப்பாளர்.அவைத்தலைவர்["துறை"]}`}
                       className="text-[rgb(110,35,35)] hover:underline"
@@ -188,19 +188,19 @@ const TamilMandram = () => {
                   </p>
                 </div>
               </div>
-              <div className="bg-amber-50 rounded-2xl p-8 shadow-inner border border-[rgb(138,57,57)] max-w-lg w-full text-center hover:bg-white transition-colors group">
+              <div className="bg-amber-50 rounded-2xl p-6 sm:p-8 shadow-inner border border-[rgb(138,57,57)] max-w-lg w-full text-center hover:bg-white transition-colors group">
                 <img
                   src={`/public/newlin.webp`}
                   alt="manisekaran"
                   className="w-24 h-28 text-[#fdb827]flex items-center justify-center mx-auto mb-6 shadow-lg "
                 />
                 <div className="space-y-3">
-                  <p className="text-lg text-gray-800">
+                  <p className="text-sm sm:text-base lg:text-lg text-gray-800 whitespace-nowrap">
                     <span className="font-bold text-emerald-900">
                       {data.பொறுப்பாளர்.ஒருங்கிணைப்பாளர்கள்.பெயர்}
                     </span>
                   </p>
-                  <p className="text-base font-bold text-gray-800">
+                  <p className="text-sm sm:text-base font-bold text-gray-800">
                     <a
                       href={`mailto:${data.பொறுப்பாளர்.ஒருங்கிணைப்பாளர்கள்["துறை"]}`}
                       className="text-[rgb(110,35,35)] hover:underline"
@@ -235,7 +235,7 @@ const TamilMandram = () => {
               <div className="relative flex items-center justify-center">
                 <button
                   onClick={prevImage}
-                  className="absolute left-4 md:left-8 top-1/2 transform -translate-y-1/2 bg-[rgb(115,25,25)] text-white p-3 rounded-full z-30 shadow-lg group"
+                  className="absolute left-2 md:left-4 lg:left-8 top-1/2 transform -translate-y-1/2 bg-[rgb(115,25,25)] text-white p-2 md:p-3 rounded-full z-30 shadow-lg group"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -253,7 +253,7 @@ const TamilMandram = () => {
                   </svg>
                 </button>
                 <div
-                  className="w-full md:w-6/7 lg:w-5/6 xl:w-4/5"
+                  className="w-full md:w-11/12 lg:w-5/6 xl:w-4/5 overflow-hidden"
                   onTouchStart={handleTouchStart}
                   onTouchEnd={handleTouchEnd}
                 >
@@ -264,12 +264,12 @@ const TamilMandram = () => {
                     }}
                   >
                     {galleryImages.map((image, idx) => (
-                      <div key={idx} className="flex-shrink-0 w-full px-4">
+                      <div key={idx} className="flex-shrink-0 w-full px-0 sm:px-4 md:px-6">
                         <div className="relative group overflow-hidden rounded-xl shadow-2xl bg-black/5 flex items-center justify-center">
                           <img
                             src={image.src}
                             alt={image.alt}
-                            className="w-full h-[250px] md:h-[400px] object-contain transition-transform duration-700 group-hover:scale-105"
+                            className="w-full h-[300px] md:h-[500px] object-cover transition-transform duration-700 group-hover:scale-105"
                           />
                           <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-6">
                             <p className="text-white text-lg md:text-xl">
@@ -283,7 +283,7 @@ const TamilMandram = () => {
                 </div>
                 <button
                   onClick={nextImage}
-                  className="absolute right-4 md:right-8 top-1/2 transform -translate-y-1/2 bg-[rgb(115,25,25)] text-white p-3 rounded-full z-30 shadow-lg group"
+                  className="absolute right-2 md:right-4 lg:right-8 top-1/2 transform -translate-y-1/2 bg-[rgb(115,25,25)] text-white p-2 md:p-3 rounded-full z-30 shadow-lg group"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -301,12 +301,12 @@ const TamilMandram = () => {
                   </svg>
                 </button>
               </div>
-              <div className="flex flex-wrap items-center justify-center mt-8 gap-3 px-4 py-2">
+              <div className="flex flex-wrap items-center justify-center mt-6 md:mt-8 gap-1.5 sm:gap-2 md:gap-3 px-2 py-2 max-w-full">
                 {galleryImages.map((_, idx) => (
                   <button
                     key={idx}
                     onClick={() => goToImage(idx)}
-                    className={`rounded-full transition-all duration-300 ${idx === currentImageIndex ? "h-3 w-3 md:h-4 md:w-4 bg-[rgb(115,40,40)]" : "h-2 w-2 md:h-3 md:w-3 bg-[rgb(160,80,80)] opacity-70 hover:opacity-100"}`}
+                    className={`rounded-full transition-all duration-300 ${idx === currentImageIndex ? "h-2 w-2 md:h-4 md:w-4 bg-[rgb(115,40,40)]" : "h-1.5 w-1.5 md:h-3 md:w-3 bg-[rgb(160,80,80)] opacity-70 hover:opacity-100"}`}
                   ></button>
                 ))}
               </div>
@@ -324,12 +324,12 @@ const TamilMandram = () => {
               </span>
             </h2>
 
-            <div className="max-w-7xl mx-auto">
+            <div className="max-w-6xl mx-auto">
               <div className="relative">
                 <div className="relative bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden transition-all duration-300 hover:shadow-xl">
                   <div className="h-80 sm:h-96 overflow-auto px-4 sm:px-6 py-4 sm:py-6 scrollbar-thin">
                     <div className="space-y-3 sm:space-y-4">
-                      {(Array.isArray(data?.achievements)
+                       {(Array.isArray(data?.achievements)
                         ? data.achievements
                         : []
                       ).map((achievement, i) => (
@@ -337,7 +337,7 @@ const TamilMandram = () => {
                           key={i}
                           className="bg-white p-3 sm:p-4 rounded-xl border border-gray-300 shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-1 text-left"
                         >
-                          <div className="flex flex-col md:flex-row md:items-center justify-between">
+                          <div className="flex flex-col md:flex-row md:items-center justify-between mb-3">
                             <div>
                               <div className="flex flex-row gap-2 items-center mb-2">
                                 <svg
@@ -357,15 +357,14 @@ const TamilMandram = () => {
                                 <h3 className="text-base lg:text-lg xl:text-xl font-semibold text-gray-800">
                                   {achievement.event}
                                 </h3>
-                                <p className="text-sm lg:text-base font-bold text-gray-600 mb-1">
+                              </div>
+                              <p className="text-sm lg:text-base font-bold text-gray-600 mb-1">
                                 {achievement.organized_by}
                               </p>
-                              </div>
-                              
                             </div>
                           </div>
 
-                          <div className="flex flex-col md:flex-row md:items-center justify-start gap-2">
+                          <div className="flex flex-wrap items-center justify-start gap-3 sm:gap-4 md:gap-5 mt-4">
                             {achievement.name && String(achievement.name).trim() && (
                               <div className="inline-flex items-center bg-[rgb(116,30,30)] text-white px-2 sm:px-3 py-1 rounded-full text-xs lg:text-sm font-semibold">
                                 {achievement.name}
