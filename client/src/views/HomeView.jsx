@@ -710,7 +710,7 @@ const HomeView = () => {
           {/* About Section */}
           <section
             id="about"
-            className="container mx-auto px-4 sm:px-8 lg:px-14 relative py-12 sm:py-16 lg:py-10 overflow-hidden scroll-mt-24 lg:scroll-mt-32"
+            className="w-full relative py-12 sm:py-16 lg:py-10 overflow-hidden scroll-mt-24 lg:scroll-mt-32 bg-white"
           >
             <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-20">
               <svg
@@ -1044,28 +1044,26 @@ const HomeView = () => {
             id="deans-message"
             className="py-12 sm:py-16 lg:py-24 bg-gray-100 text-white relative overflow-hidden scroll-mt-24 lg:scroll-mt-32"
           >
-            <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-20 z-0">
-              {/* <svg
+            <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-30 z-0">
+              <svg
                 width="100%"
                 height="100%"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <pattern
-                  id="wave-pattern"
-                  width="100"
-                  height="20"
+                  id="deans-dots-pattern"
+                  width="40"
+                  height="40"
                   patternUnits="userSpaceOnUse"
                 >
-                  <path
-                    d="M0 10 Q 12.5 0, 25 10 T 50 10 T 75 10 T 100 10"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="1"
-                  />
+                  <circle cx="2" cy="2" r="1" fill="rgb(100,25,25)" />
+                  <circle cx="20" cy="20" r="1" fill="rgb(100,25,25)" />
+                  <circle cx="38" cy="38" r="1" fill="rgb(100,25,25)" />
+                  <circle cx="2" cy="38" r="1" fill="rgb(100,25,25)" />
+                  <circle cx="38" cy="2" r="1" fill="rgb(100,25,25)" />
                 </pattern>
-                <rect width="100%" height="100%" fill="url(#wave-pattern)" />
-              </svg> */}
-
+                <rect width="100%" height="100%" fill="url(#deans-dots-pattern)" />
+              </svg>
             </div>
             <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
               <div className="text-center mb-12 sm:mb-12 -mt-10">

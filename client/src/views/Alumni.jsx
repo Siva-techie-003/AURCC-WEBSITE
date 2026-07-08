@@ -52,9 +52,9 @@ const Alumni = () => {
                                         <h3 className="text-lg lg:text-xl xl:text-2xl font-bold text-[rgb(100,25,25)] mb-6 sm:mb-8 flex items-center justify-center gap-3">
                                             {deptName}
                                         </h3>
-                                        <div className="flex flex-wrap justify-center gap-6">
+                                        <div className="flex flex-wrap justify-center gap-12 md:gap-16">
                                             {department.map((alumnus, index) => (
-                                                <div key={index} className="w-full sm:w-[320px] bg-white rounded-xl shadow-sm p-5 border-2 border-[rgb(120,45,45)] flex flex-col gap-2 transition-all duration-300 hover:shadow-xl hover:-translate-y-2 text-left">
+                                                <div key={index} className="w-full sm:w-[380px] md:w-[420px] bg-white rounded-xl shadow-sm p-5 border-2 border-[rgb(120,45,45)] flex flex-col gap-2 transition-all duration-300 hover:shadow-xl hover:-translate-y-2 text-left">
                                                     <div className="font-bold text-base lg:text-lg text-[rgb(110,35,35)]">{alumnus.Name}</div>
                                                     <div className="text-sm lg:text-base text-black font-semibold">{alumnus.Position}</div>
                                                     <div className="text-sm lg:text-base text-black">{alumnus.Company}</div>

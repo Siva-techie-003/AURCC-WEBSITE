@@ -229,7 +229,7 @@ const TamilMandram = () => {
           <section id="gallery" className="overflow-hidden w-full relative">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-center mb-12 sm:mb-16 text-[rgb(100,25,25)] relative inline-block mx-auto">
-                Gallery of Memories
+                நினைவுத் தொகுப்பு
                 <span className="absolute -bottom-2 sm:-bottom-3 left-1/2 transform -translate-x-1/2 h-1 w-16 sm:w-20 lg:w-24 bg-yellow-500"></span>
               </h2>
               <div className="relative flex items-center justify-center">
@@ -269,7 +269,7 @@ const TamilMandram = () => {
                           <img
                             src={image.src}
                             alt={image.alt}
-                            className="w-full h-[300px] md:h-[500px] object-contain transition-transform duration-700 group-hover:scale-105"
+                            className="w-full h-[250px] md:h-[400px] object-contain transition-transform duration-700 group-hover:scale-105"
                           />
                           <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-6">
                             <p className="text-white text-lg md:text-xl">
@@ -320,7 +320,7 @@ const TamilMandram = () => {
           >
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-10 text-gray-800">
               <span className="bg-[rgb(100,25,25)] bg-clip-text text-transparent">
-                Our Achievements
+                எங்கள் சாதனைகள்
               </span>
             </h2>
 
@@ -365,24 +365,31 @@ const TamilMandram = () => {
                             </div>
                           </div>
 
-                          <div className="flex flex-col md:flex-row md:items-center justify-between">
-                             <div className="inline-flex items-center bg-[rgb(116,30,30)] text-white px-2 sm:px-3 py-1 rounded-full text-xs lg:text-sm font-semibold">
+                          <div className="flex flex-col md:flex-row md:items-center justify-start gap-2">
+                            {achievement.name && String(achievement.name).trim() && (
+                              <div className="inline-flex items-center bg-[rgb(116,30,30)] text-white px-2 sm:px-3 py-1 rounded-full text-xs lg:text-sm font-semibold">
                                 {achievement.name}
                               </div>
+                            )}
 
-                             <div className="inline-flex items-center bg-[rgb(116,30,30)] text-white px-2 sm:px-3 py-1 rounded-full text-xs lg:text-sm font-semibold">
-                              {achievement.awards}
-                            </div>
+                            {achievement.awards && String(achievement.awards).trim() && (
+                              <div className="inline-flex items-center bg-[rgb(116,30,30)] text-white px-2 sm:px-3 py-1 rounded-full text-xs lg:text-sm font-semibold">
+                                {achievement.awards}
+                              </div>
+                            )}
 
-                            <div className="inline-flex items-center bg-[rgb(116,30,30)] text-white px-2 sm:px-3 py-1 rounded-full text-xs lg:text-sm font-semibold gap-1">
-                              <span className="text-sm lg:text-base font-semibold text-white">பரிசு : </span>
-                              {achievement.amount}
-                            </div>
+                            {achievement.amount && String(achievement.amount).trim() && (
+                              <div className="inline-flex items-center bg-[rgb(116,30,30)] text-white px-2 sm:px-3 py-1 rounded-full text-xs lg:text-sm font-semibold gap-1">
+                                <span className="text-sm lg:text-base font-semibold text-white">பரிசு : </span>
+                                {achievement.amount}
+                              </div>
+                            )}
 
-                            <div className="mt-3 md:mt-0 bg-[rgb(116,30,30)] text-white px-2 sm:px-3 py-1 rounded-full text-xs lg:text-sm font-semibold h-fit">
-                              {achievement.date}
-                            </div>
-                            
+                            {achievement.date && String(achievement.date).trim() && (
+                              <div className="mt-3 md:mt-0 bg-[rgb(116,30,30)] text-white px-2 sm:px-3 py-1 rounded-full text-xs lg:text-sm font-semibold h-fit">
+                                {achievement.date}
+                              </div>
+                            )}
                           </div>
                         </div>
                       ))}
