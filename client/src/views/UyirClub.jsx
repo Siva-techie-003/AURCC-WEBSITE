@@ -63,10 +63,10 @@ const UyirClub = () => {
         <main className="flex-grow font-sans bg-white pt-[126px] sm:pt-[130px]">
             {/* Hero section */}
             <section className="relative w-full min-h-[35vh] sm:min-h-[40vh] md:min-h-[50vh] lg:min-h-[60vh] overflow-hidden flex items-center justify-center">
-                <img src="/sing.jpg" alt="Uyir Club" className="absolute inset-0 w-full h-full object-cover  blur-[0.5px]" />
+                <img src="/sing.jpg" alt="Uyir Club" className="absolute inset-0 w-full h-full object-cover blur-[0.5px]" />
                 <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-black/60 via-black/30 to-transparent"></div>
                 <div className="absolute inset-0 flex flex-col items-center justify-center z-10 px-2">
-                    <div className=" backdrop-blur-md bg-brown/30 rounded-2xl shadow-lg px-6 py-6 md:py-10 flex flex-col items-center w-full max-w-2xl mx-auto border border-white/30 animate-popIn">
+                    <div className="backdrop-blur-md bg-brown/30 rounded-2xl shadow-lg px-6 py-6 md:py-10 flex flex-col items-center w-full max-w-2xl mx-auto border border-white/30 animate-popIn">
                         <h1 className="text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-extrabold text-white drop-shadow-lg tracking-wide text-center mb-2 leading-tight">Uyir Club</h1>
                         <p className="text-sm sm:text-base lg:text-lg xl:text-xl text-white drop-shadow text-center font-medium">Celebrating Life and Well-being</p>
                     </div>
@@ -77,12 +77,23 @@ const UyirClub = () => {
             <section className="container mx-auto py-8 sm:py-12 lg:py-14 px-4">
                 <div className="max-w-7xl mx-auto flex flex-col gap-8 sm:gap-10 lg:gap-12">
                     {/* Description Section */}
-                    <div className="bg-white/70 backdrop-blur-md rounded-2xl shadow-lg border border-gray-100 overflow-hidden animate-fadeIn">
-                        <div className="bg-[rgb(110,35,35)] py-4 sm:py-5 flex items-center justify-center gap-2 sm:gap-3">
-                            <h2 className="text-lg sm:text-xl lg:text-2xl xl:text-3xl font-bold text-white text-center">{data.name || "UYIR CLUB"}</h2>
+                    <div className="text-center mb-2">
+                        <h2 className="text-2xl sm:text-3xl lg:text-3xl font-bold text-gray-800 font-serif uppercase mb-2">
+                            {data.name || "UYIR CLUB"}
+                        </h2>
+                        <div className="flex justify-center">
+                            <span className="block w-24 h-1.5 rounded-full bg-[#f5c842]"></span>
                         </div>
-                        <div className="p-4 sm:p-6 md:p-8 lg:p-10 text-left">
-                            <p className="text-base lg:text-lg xl:text-xl  text-base text-gray-700 leading-relaxed">{data.description}</p>
+                    </div>
+
+                    <div className="bg-gray-100 max-w-7xl mx-auto px-4 p-9 rounded-2xl border border-[rgb(200,120,120)]">
+                        <div className="px-8 py-8 text-center flex flex-col gap-6">
+                            <p className="lg:text-lg xl:text-lg font-medium text-gray-700 leading-relaxed">
+                                The Uyir Club is dedicated to celebrating life, promoting well-being, and creating a positive impact on society through various service-oriented and cultural activities. By engaging student volunteers, the club works actively towards raising public awareness on essential social causes and fostering a sense of civic duty.
+                            </p>
+                            <p className="lg:text-lg xl:text-lg font-medium text-gray-700 leading-relaxed">
+                                In collaboration with local organizations and health trusts, the Uyir Club regularly hosts road safety campaigns, health screening camps, blood donation drives, and drug-abuse prevention seminars. These initiatives empower youth to lead healthier lifestyles and build a safer, more responsible community.
+                            </p>
                         </div>
                     </div>
 
