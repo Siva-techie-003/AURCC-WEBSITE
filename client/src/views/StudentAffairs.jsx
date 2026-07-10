@@ -136,7 +136,7 @@ const StudentAffairs = () => {
             <main className="max-w-7xl mx-auto py-8 lg:py-12 px-4 space-y-12">
                 {/* Description Section */}
                 <div id="description" ref={sectionRefs.description} className="bg-white rounded-3xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-lg transition-all">
-                    <div className="bg-[rgb(110,35,35)] py-6 px-8 flex justify-between items-center text-white">
+                    <div className="bg-[rgb(110,35,35)] py-6 px-8 flex justify-center items-center text-white text-center">
                         <h2 className="text-xl lg:text-2xl font-bold">Description</h2>
                     </div>
                     <div className="p-8 space-y-4">
@@ -150,7 +150,7 @@ const StudentAffairs = () => {
 
                 {/* Re-Admission Section */}
                 <div id="reAdmission" ref={sectionRefs.reAdmission} className="bg-white rounded-3xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-lg transition-all">
-                    <div className="bg-[rgb(110,35,35)] py-6 px-8 flex justify-between items-center text-white">
+                    <div className="bg-[rgb(110,35,35)] py-6 px-8 flex justify-center items-center text-white text-center">
                         <h2 className="text-xl lg:text-2xl font-bold">Re-Admission</h2>
                     </div>
                     <div className="p-8">
@@ -162,7 +162,7 @@ const StudentAffairs = () => {
 
                 {/* Scholarships Section */}
                 <div id="scholarships" ref={sectionRefs.scholarships} className="bg-white rounded-3xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-lg transition-all">
-                    <div className="bg-[rgb(110,35,35)] py-6 px-8 flex justify-between items-center text-white">
+                    <div className="bg-[rgb(110,35,35)] py-6 px-8 flex justify-center items-center text-white text-center">
                         <h2 className="text-xl lg:text-2xl font-bold">Scholarships</h2>
                     </div>
                     <div className="p-8">
@@ -189,7 +189,7 @@ const StudentAffairs = () => {
 
                 {/* Fees Section */}
                 <div id="fees" ref={sectionRefs.fees} className="bg-white rounded-3xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-lg transition-all max-w-2xl mx-auto">
-                    <div className="bg-[rgb(110,35,35)] py-6 px-8 flex justify-between items-center text-white">
+                    <div className="bg-[rgb(110,35,35)] py-6 px-8 flex justify-center items-center text-white text-center">
                         <h2 className="text-xl lg:text-2xl font-bold">Fees Details</h2>
                     </div>
                     <div className="p-8 flex justify-center">
@@ -208,15 +208,15 @@ const StudentAffairs = () => {
 
                 {/* Staff Section */}
                 <div id="staff" ref={sectionRefs.staff} className="bg-white rounded-3xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-lg transition-all">
-                    <div className="bg-[rgb(110,35,35)] py-6 px-8 flex justify-between items-center text-white">
+                    <div className="bg-[rgb(110,35,35)] py-6 px-8 flex justify-center items-center text-white text-center">
                         <h2 className="text-xl lg:text-2xl font-bold">Administration Staff</h2>
                     </div>
                     <div className="p-8">
-                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
                             {(Array.isArray(content?.['Office bearers']?.['Administration staff']) ? content['Office bearers']['Administration staff'] : []).map((staff, index) => (
                                 <div
                                     key={index}
-                                    className="bg-gray-50/50 rounded-2xl p-6 border border-gray-100 flex flex-col items-center text-center hover:bg-white hover:shadow-md transition-all group"
+                                    className="bg-white rounded-2xl p-6 border border-[rgb(180,100,100)] flex flex-col items-center text-center hover:shadow-md transition-all group"
                                 >
                                     <div className="relative mb-4">
                                         <div className="w-32 h-32 rounded-2xl overflow-hidden border-2 border-[rgb(110,35,35)] shadow-md bg-gray-50 flex-shrink-0">
