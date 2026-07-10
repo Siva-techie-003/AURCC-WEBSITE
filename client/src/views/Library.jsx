@@ -388,75 +388,70 @@ const Library = () => {
           </div>
         </section>
 
-        {/* Library Administration */}
-        {libraryData.administration && libraryData.administration.length > 0 && (
-          <section id="LibraryAdministration" className="w-full bg-gray-100 py-12 px-4 mt-8">
-            {/* Header */}
-            <div className="bg-[rgb(110,35,35)] py-6 text-center text-white rounded-t-3xl max-w-6xl mx-auto">
-              <h2 className="text-xl lg:text-2xl font-bold">Library Administration</h2>
+        {/* Staff */}
+{libraryData.staff && libraryData.staff.length > 0 && (
+  <section
+    id="Staff"
+    className="w-full bg-gray-100 py-12 px-4 mt-8"
+  >
+    {/* Header */}
+    <div className="bg-[rgb(110,35,35)] py-6 text-center text-white rounded-t-3xl max-w-6xl mx-auto">
+      <h2 className="text-xl lg:text-2xl font-bold">
+        Staff
+      </h2>
+    </div>
+
+    {/* Cards Container */}
+    <div
+      className="max-w-6xl mx-auto bg-white rounded-b-3xl shadow-md
+                 border border-[rgb(180,100,100)]
+                 px-6 lg:px-12 py-14"
+    >
+      <div
+        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2
+                   gap-8 justify-items-center max-w-4xl mx-auto"
+      >
+        {libraryData.staff.map((staff, i) => (
+          <div
+            key={i}
+            className="relative w-[320px] bg-white rounded-3xl
+                       border border-[rgb(180,100,100)]
+                       shadow-md hover:shadow-xl
+                       transition-all duration-300
+                       overflow-hidden"
+          >
+            {/* Top Header */}
+            <div className="h-24 bg-[rgb(110,35,35)]"></div>
+
+            {/* Image */}
+            <div className="absolute top-12 left-1/2 -translate-x-1/2">
+              <img
+                src={
+                  staff.image
+                    ? `${BACKEND_URL}/public/${staff.image}`
+                    : `${BACKEND_URL}/public/default-staff.jpg`
+                }
+                alt={staff.name}
+                className="w-32 h-[152px] object-cover rounded-full border-4 border-white shadow-lg"
+              />
             </div>
 
-            {/* Cards Container */}
-            <div
-              className="max-w-6xl mx-auto bg-white rounded-3xl shadow-md 
-                              border border-[rgb(180,100,100)] 
-                              px-6 lg:px-12 py-14"
-            >
-              <div
-                className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 
-                              gap-8 justify-items-center max-w-4xl mx-auto"
-              >
-                {libraryData.administration.map((staff, i) => (
-                  <div
-                    key={i}
-                    className="relative w-[320px] bg-white rounded-3xl 
-                              border border-[rgb(180,100,100)] 
-                              shadow-md hover:shadow-xl 
-                              transition-all duration-300 
-                              overflow-hidden"
-                  >
-                    {/* Top Gradient */}
-                    <div
-                      className="h-24 bg-[rgb(110,35,35)]"
-                    ></div>
+            {/* Content */}
+            <div className="pt-28 pb-8 px-6 text-center">
+              <h3 className="text-lg font-bold text-[rgb(115,25,25)]">
+                {staff.name}
+              </h3>
 
-                    {/* Profile Image */}
-                    <div className="absolute top-12 left-1/2 -translate-x-1/2">
-                      <img
-                        src={
-                          staff.profile_photo
-                            ? (staff.profile_photo.startsWith("public/") || staff.profile_photo.startsWith("/public/")
-                              ? `${BACKEND_URL}/${staff.profile_photo}`
-                              : `${BACKEND_URL}/public/${staff.profile_photo}`)
-                            : `${BACKEND_URL}/public/${staff.photo || staff.image || staff.img || 'default-staff.jpg'}`
-                        }
-                        alt={staff.name}
-                        className="w-32 h-[152px] object-cover 
-                                  rounded-full border-4 
-                                  border-white shadow-lg"
-                      />
-                    </div>
-
-                    {/* Content */}
-                    <div className="pt-28 pb-8 px-6 text-center">
-                      <h3 className="text-lg font-bold text-[rgb(115,25,25)]">
-                        {staff.title ? `${staff.title} ` : ""}{staff.name}
-                      </h3>
-
-                      <p className="text-gray-600 font-semibold mt-2">
-                        {staff.position || staff.designation}
-                      </p>
-
-                      <p className="text-gray-500 text-sm mt-1">
-                        {staff.email}
-                      </p>
-                    </div>
-                  </div>
-                ))}
-              </div>
+              <p className="text-gray-600 font-semibold mt-2">
+                {staff.designation}
+              </p>
             </div>
-          </section>
-        )}
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+)}
       </div>
 
       {showPopover && selectedStaff && (
