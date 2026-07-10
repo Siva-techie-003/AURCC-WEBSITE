@@ -69,6 +69,17 @@ const DepartmentsView = () => {
     fetchDepartment();
   }, [departmentName, navigate]);
 
+  useEffect(() => {
+    if (showPopover) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+    return () => {
+      document.body.style.overflow = "unset";
+    };
+  }, [showPopover]);
+
   const BACKEND_URL = "";
 
   /* ---------------- SECTION HIGHLIGHT ON SCROLL ---------------- */

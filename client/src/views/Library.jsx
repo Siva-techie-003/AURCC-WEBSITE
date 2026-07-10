@@ -26,6 +26,17 @@ const Library = () => {
       });
   }, []);
 
+  useEffect(() => {
+    if (showPopover) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+    return () => {
+      document.body.style.overflow = "unset";
+    };
+  }, [showPopover]);
+
   const scrollToSection = (section) => {
     const element = document.getElementById(section.replace(/ /g, ""));
     if (element) {
@@ -83,11 +94,10 @@ const Library = () => {
               <button
                 key={section}
                 onClick={() => scrollToSection(section)}
-                className={`font-bold px-5 py-3 rounded-full text-xs sm:text-sm lg:text-base transition-all duration-300 whitespace-nowrap ${
-                  activeSection === section
+                className={`font-bold px-5 py-3 rounded-full text-xs sm:text-sm lg:text-base transition-all duration-300 whitespace-nowrap ${activeSection === section
                     ? "bg-[rgb(115,40,40)] text-white shadow-md"
                     : "text-gray-700 hover:bg-[rgb(220,140,140)] hover:text-[rgb(115,40,40)]"
-                }`}
+                  }`}
               >
                 {section}
               </button>
@@ -330,7 +340,13 @@ const Library = () => {
                   {/* Profile Image */}
                   <div className="absolute top-12 left-1/2 -translate-x-1/2">
                     <img
-                      src={`/public/${faculty.img}`}
+                      src={
+                        faculty.profile_photo
+                          ? (faculty.profile_photo.startsWith("public/") || faculty.profile_photo.startsWith("/public/")
+                            ? `${BACKEND_URL}/${faculty.profile_photo}`
+                            : `${BACKEND_URL}/public/${faculty.profile_photo}`)
+                          : `${BACKEND_URL}/public/${faculty.photo || faculty.image || faculty.img || 'default-staff.jpg'}`
+                      }
                       alt={faculty.name}
                       className="w-32 h-[152px] object-cover 
                                 rounded-full border-4 
@@ -341,11 +357,11 @@ const Library = () => {
                   {/* Content */}
                   <div className="pt-28 pb-8 px-6 text-center">
                     <h3 className="text-lg font-bold text-[rgb(115,25,25)]">
-                      {faculty.name}
+                      {faculty.title ? `${faculty.title} ` : ""}{faculty.name}
                     </h3>
 
                     <p className="text-gray-600 font-semibold mt-2">
-                      {faculty.designation}
+                      {faculty.position || faculty.designation}
                     </p>
 
                     <p className="text-gray-500 text-sm mt-1">
@@ -371,6 +387,76 @@ const Library = () => {
             </div>
           </div>
         </section>
+
+        {/* Library Administration */}
+        {libraryData.administration && libraryData.administration.length > 0 && (
+          <section id="LibraryAdministration" className="w-full bg-gray-100 py-12 px-4 mt-8">
+            {/* Header */}
+            <div className="bg-[rgb(110,35,35)] py-6 text-center text-white rounded-t-3xl max-w-6xl mx-auto">
+              <h2 className="text-xl lg:text-2xl font-bold">Library Administration</h2>
+            </div>
+
+            {/* Cards Container */}
+            <div
+              className="max-w-6xl mx-auto bg-white rounded-3xl shadow-md 
+                              border border-[rgb(180,100,100)] 
+                              px-6 lg:px-12 py-14"
+            >
+              <div
+                className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 
+                              gap-8 justify-items-center max-w-4xl mx-auto"
+              >
+                {libraryData.administration.map((staff, i) => (
+                  <div
+                    key={i}
+                    className="relative w-[320px] bg-white rounded-3xl 
+                              border border-[rgb(180,100,100)] 
+                              shadow-md hover:shadow-xl 
+                              transition-all duration-300 
+                              overflow-hidden"
+                  >
+                    {/* Top Gradient */}
+                    <div
+                      className="h-24 bg-[rgb(110,35,35)]"
+                    ></div>
+
+                    {/* Profile Image */}
+                    <div className="absolute top-12 left-1/2 -translate-x-1/2">
+                      <img
+                        src={
+                          staff.profile_photo
+                            ? (staff.profile_photo.startsWith("public/") || staff.profile_photo.startsWith("/public/")
+                              ? `${BACKEND_URL}/${staff.profile_photo}`
+                              : `${BACKEND_URL}/public/${staff.profile_photo}`)
+                            : `${BACKEND_URL}/public/${staff.photo || staff.image || staff.img || 'default-staff.jpg'}`
+                        }
+                        alt={staff.name}
+                        className="w-32 h-[152px] object-cover 
+                                  rounded-full border-4 
+                                  border-white shadow-lg"
+                      />
+                    </div>
+
+                    {/* Content */}
+                    <div className="pt-28 pb-8 px-6 text-center">
+                      <h3 className="text-lg font-bold text-[rgb(115,25,25)]">
+                        {staff.title ? `${staff.title} ` : ""}{staff.name}
+                      </h3>
+
+                      <p className="text-gray-600 font-semibold mt-2">
+                        {staff.position || staff.designation}
+                      </p>
+
+                      <p className="text-gray-500 text-sm mt-1">
+                        {staff.email}
+                      </p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+        )}
       </div>
 
       {showPopover && selectedStaff && (
@@ -393,7 +479,13 @@ const Library = () => {
             {/* LEFT SIDE */}
             <div className="w-full md:w-1/3 bg-[rgb(242,198,198)] text-left md:text-center p-4 md:p-6 flex flex-row md:flex-col items-center gap-4 md:gap-0 shrink-0">
               <img
-                src={`${BACKEND_URL}/public/${selectedStaff.photo || selectedStaff.img}`}
+                src={
+                  selectedStaff.profile_photo
+                    ? (selectedStaff.profile_photo.startsWith("public/") || selectedStaff.profile_photo.startsWith("/public/")
+                      ? `${BACKEND_URL}/${selectedStaff.profile_photo}`
+                      : `${BACKEND_URL}/public/${selectedStaff.profile_photo}`)
+                    : `${BACKEND_URL}/public/${selectedStaff.photo || selectedStaff.image || selectedStaff.img || 'default-staff.jpg'}`
+                }
                 alt={selectedStaff.name}
                 className="w-24 h-32 md:w-48 md:h-60 rounded-xl border shadow object-cover shrink-0"
               />
@@ -432,256 +524,286 @@ const Library = () => {
 
               {/* 🔹 SCROLLABLE CONTENT */}
               <div className="p-4 sm:p-6 overflow-y-auto space-y-5 sm:space-y-6 scrollbar-thin scrollbar-thumb-gray-400">
-                {/* ABOUT */}
-                {(selectedStaff.about || selectedStaff.description) && (
-                  <section>
-                    <h3 className="font-bold text-sm sm:text-base md:text-lg text-gray-800 border-b border-gray-100 pb-1">About</h3>
-                    <p className="text-xs sm:text-sm md:text-base text-gray-600 leading-relaxed text-justify mt-1.5">{selectedStaff.about || selectedStaff.description}</p>
-                  </section>
-                )}
+                  {selectedStaff.about && (
+                    <section>
+                      <h3 className="font-bold text-sm sm:text-base md:text-lg text-gray-800 border-b border-gray-100 pb-1">About</h3>
+                      <p className="text-xs sm:text-sm md:text-base text-gray-600 leading-relaxed text-justify mt-1.5">{selectedStaff.about}</p>
+                    </section>
+                  )}
 
-                {/* PRESENT ROLES */}
-                {selectedStaff.present_roles?.length > 0 && (
-                  <section>
-                    <h3 className="font-bold text-sm sm:text-base md:text-lg text-gray-800 border-b border-gray-100 pb-1">Present Roles</h3>
-                    <ul className="list-disc pl-4 sm:pl-5 space-y-1 sm:space-y-1.5 mt-1.5">
-                      {selectedStaff.present_roles.map((r, i) => (
-                        <li key={i} className="text-xs sm:text-sm md:text-base text-gray-600 leading-relaxed">{r}</li>
-                      ))}
-                    </ul>
-                  </section>
-                )}
+                  {/* PRESENT ROLES */}
+                  {selectedStaff.present_roles?.length > 0 && (
+                    <section>
+                      <h3 className="font-bold text-sm sm:text-base md:text-lg text-gray-800 border-b border-gray-100 pb-1">Present Roles</h3>
+                      <ul className="list-disc pl-4 sm:pl-5 space-y-1 sm:space-y-1.5 mt-1.5">
+                        {selectedStaff.present_roles.map((r, i) => (
+                          <li key={i} className="text-xs sm:text-sm md:text-base text-gray-600 leading-relaxed">{r}</li>
+                        ))}
+                      </ul>
+                    </section>
+                  )}
 
-                {/* EDUCATION */}
-                {selectedStaff.education?.qualifications?.length > 0 && (
-                  <section>
-                    <h3 className="font-bold text-sm sm:text-base md:text-lg text-gray-800 border-b border-gray-100 pb-1">Education</h3>
-                    <ul className="list-disc pl-4 sm:pl-5 space-y-1 sm:space-y-1.5 mt-1.5">
-                      {selectedStaff.education.qualifications.map(
-                        (degree, index) => (
-                          <li key={index} className="text-xs sm:text-sm md:text-base text-gray-600 leading-relaxed">{degree}</li>
-                        ),
+                  {/* EDUCATION */}
+                  {(selectedStaff.education?.qualifications?.length > 0 || Array.isArray(selectedStaff.education) || (typeof selectedStaff.education === 'string' && selectedStaff.education !== '')) && (
+                    <section>
+                      <h3 className="font-bold text-sm sm:text-base md:text-lg text-gray-800 border-b border-gray-100 pb-1">Education</h3>
+                      <ul className="list-disc pl-4 sm:pl-5 space-y-1 sm:space-y-1.5 mt-1.5">
+                        {selectedStaff.education?.qualifications?.length > 0 
+                          ? selectedStaff.education.qualifications.map((degree, index) => (
+                              <li key={index} className="text-xs sm:text-sm md:text-base text-gray-600 leading-relaxed">{degree}</li>
+                            ))
+                          : Array.isArray(selectedStaff.education) ? selectedStaff.education.map((ed, index) => (
+                              <li key={index} className="text-xs sm:text-sm md:text-base text-gray-600 leading-relaxed">
+                                {typeof ed === "object" ? `${ed.degree}${ed.institution ? ` - ${ed.institution}` : ""}${ed.year ? ` (${ed.year})` : ""}` : ed}
+                              </li>
+                            ))
+                          : (
+                              <li className="text-xs sm:text-sm md:text-base text-gray-600 leading-relaxed">{selectedStaff.education}</li>
+                            )
+                        }
+                      </ul>
+                    </section>
+                  )}
+
+                  {/* EXPERIENCE */}
+                  {(selectedStaff.experience?.length > 0 || (typeof selectedStaff.experience === 'string' && selectedStaff.experience !== '') || selectedStaff.professional_experience?.length > 0 || selectedStaff.previous_positions?.length > 0 || selectedStaff.teaching_experience) && (
+                    <section>
+                      <h3 className="font-bold text-sm sm:text-base md:text-lg text-gray-800 border-b border-gray-100 pb-1">Experience</h3>
+                      {selectedStaff.teaching_experience && (
+                        <p className="text-xs sm:text-sm md:text-base text-gray-600 leading-relaxed mt-1.5 mb-2"><span className="font-semibold">Teaching Experience:</span> {selectedStaff.teaching_experience}</p>
                       )}
-                    </ul>
-                  </section>
-                )}
-
-                {/* EXPERIENCE */}
-                {selectedStaff.experience?.length > 0 && (
-                  <section>
-                    <h3 className="font-bold text-sm sm:text-base md:text-lg text-gray-800 border-b border-gray-100 pb-1">Experience</h3>
-                    <ul className="list-disc pl-4 sm:pl-5 space-y-1 sm:space-y-1.5 mt-1.5">
-                      {selectedStaff.experience.map((exp, i) => (
-                        <li key={i} className="text-xs sm:text-sm md:text-base text-gray-600 leading-relaxed">{exp}</li>
-                      ))}
-                    </ul>
-                  </section>
-                )}
-
-                {/* EXPERTISE */}
-                {selectedStaff.expertise?.length > 0 && (
-                  <section>
-                    <h3 className="font-bold text-sm sm:text-base md:text-lg text-gray-800 border-b border-gray-100 pb-1">Area of Expertise</h3>
-                    <ul className="list-disc pl-4 sm:pl-5 space-y-1 sm:space-y-1.5 mt-1.5">
-                      {selectedStaff.expertise.map((e, i) => (
-                        <li key={i} className="text-xs sm:text-sm md:text-base text-gray-600 leading-relaxed">{e}</li>
-                      ))}
-                    </ul>
-                  </section>
-                )}
-
-                {/* PHD GUIDED */}
-                {selectedStaff.phd_guided_completed?.length > 0 && (
-                  <section>
-                    <h3 className="font-bold text-sm sm:text-base md:text-lg text-gray-800 border-b border-gray-100 pb-1">Ph.D Guided</h3>
-                    <ul className="list-disc pl-4 sm:pl-5 space-y-1 sm:space-y-1.5 mt-1.5">
-                      {selectedStaff.phd_guided_completed.map((p, i) => (
-                        <li key={i} className="text-xs sm:text-sm md:text-base text-gray-600 leading-relaxed">{p}</li>
-                      ))}
-                    </ul>
-                  </section>
-                )}
-
-                {/* ONGOING */}
-                {selectedStaff.phd_ongoing?.length > 0 && (
-                  <section>
-                    <h3 className="font-bold text-sm sm:text-base md:text-lg text-gray-800 border-b border-gray-100 pb-1">Ongoing Research</h3>
-                    <ul className="list-disc pl-4 sm:pl-5 space-y-1 sm:space-y-1.5 mt-1.5">
-                      {selectedStaff.phd_ongoing.map((p, i) => (
-                        <li key={i} className="text-xs sm:text-sm md:text-base text-gray-600 leading-relaxed">{p}</li>
-                      ))}
-                    </ul>
-                  </section>
-                )}
-
-                {/* BOOKS (OLD) */}
-                {selectedStaff.books_published?.length > 0 && (
-                  <section>
-                    <h3 className="font-bold text-sm sm:text-base md:text-lg text-gray-800 border-b border-gray-100 pb-1">Books Published</h3>
-                    <ul className="list-disc pl-4 sm:pl-5 space-y-1 sm:space-y-1.5 mt-1.5">
-                      {selectedStaff.books_published.map((b, i) => (
-                        <li key={i} className="text-xs sm:text-sm md:text-base text-gray-600 leading-relaxed">{b}</li>
-                      ))}
-                    </ul>
-                  </section>
-                )}
-
-                {/* INTERNATIONAL VISITS */}
-                {selectedStaff.international_visits?.length > 0 && (
-                  <section>
-                    <h3 className="font-bold text-sm sm:text-base md:text-lg text-gray-800 border-b border-gray-100 pb-1">
-                      International Visits
-                    </h3>
-                    <ul className="list-disc pl-4 sm:pl-5 space-y-1 sm:space-y-1.5 mt-1.5">
-                      {selectedStaff.international_visits.map((v, i) => (
-                        <li key={i} className="text-xs sm:text-sm md:text-base text-gray-600 leading-relaxed">{v}</li>
-                      ))}
-                    </ul>
-                  </section>
-                )}
-
-                {/* PROJECTS */}
-                {selectedStaff.projects?.length > 0 && (
-                  <section>
-                    <h3 className="font-bold text-sm sm:text-base md:text-lg text-gray-800 border-b border-gray-100 pb-1">Projects</h3>
-                    <ul className="list-disc pl-4 sm:pl-5 space-y-1 sm:space-y-1.5 mt-1.5">
-                      {selectedStaff.projects.map((p, i) => (
-                        <li key={i} className="text-xs sm:text-sm md:text-base text-gray-600 leading-relaxed">{p}</li>
-                      ))}
-                    </ul>
-                  </section>
-                )}
-
-                {/* ACHIEVEMENTS */}
-                {selectedStaff.achievements?.length > 0 && (
-                  <section>
-                    <h3 className="font-bold text-sm sm:text-base md:text-lg text-gray-800 border-b border-gray-100 pb-1">Achievements</h3>
-                    <ul className="list-disc pl-4 sm:pl-5 space-y-1 sm:space-y-1.5 mt-1.5">
-                      {selectedStaff.achievements.map((a, i) => (
-                        <li key={i} className="text-xs sm:text-sm md:text-base text-gray-600 leading-relaxed">{a}</li>
-                      ))}
-                    </ul>
-                  </section>
-                )}
-
-                {/* PROFILES */}
-                {(selectedStaff.research_ids?.google_scholar ||
-                  selectedStaff.research_ids?.scopus_id ||
-                  selectedStaff.research_ids?.orcid_id) && (
-                  <section>
-                    <h3 className="font-bold text-sm sm:text-base md:text-lg text-gray-800 border-b border-gray-100 pb-1">Profiles</h3>
-                    <ul className="list-disc pl-4 sm:pl-5 space-y-1 sm:space-y-1.5 mt-1.5">
-                      {selectedStaff.research_ids?.google_scholar && (
-                        <li className="text-xs sm:text-sm md:text-base text-gray-600 leading-relaxed">
-                          <a
-                            href={selectedStaff.research_ids.google_scholar}
-                            target="_blank"
-                            className="text-blue-600 hover:underline"
-                          >
-                            Google Scholar
-                          </a>
-                        </li>
+                      {(selectedStaff.experience?.length > 0 || (typeof selectedStaff.experience === 'string' && selectedStaff.experience !== '') || selectedStaff.professional_experience?.length > 0 || selectedStaff.previous_positions?.length > 0) && (
+                        <ul className="list-disc pl-4 sm:pl-5 space-y-1 sm:space-y-1.5 mt-1.5">
+                          {(Array.isArray(selectedStaff.experience) ? selectedStaff.experience : typeof selectedStaff.experience === 'string' && selectedStaff.experience !== '' ? [selectedStaff.experience] : selectedStaff.professional_experience || selectedStaff.previous_positions || []).map((exp, i) => (
+                            <li key={i} className="text-xs sm:text-sm md:text-base text-gray-600 leading-relaxed">
+                              {typeof exp === "object" ? `${exp.position}${exp.institution || exp.company ? ` at ${exp.institution || exp.company}` : ""}${exp.duration ? ` (${exp.duration})` : ""}` : exp}
+                            </li>
+                          ))}
+                        </ul>
                       )}
-                      {selectedStaff.research_ids?.scopus_id && (
-                        <li className="text-xs sm:text-sm md:text-base text-gray-600 leading-relaxed">
-                          Scopus ID: {selectedStaff.research_ids.scopus_id}
-                        </li>
-                      )}
-                      {selectedStaff.research_ids?.orcid_id && (
-                        <li className="text-xs sm:text-sm md:text-base text-gray-600 leading-relaxed">Orcid: {selectedStaff.research_ids.orcid_id}</li>
-                      )}
-                    </ul>
-                  </section>
-                )}
+                    </section>
+                  )}
 
-                {/* PUBLICATIONS - BOOKS */}
-                {selectedStaff.publications?.books?.length > 0 && (
-                  <section>
-                    <h3 className="font-bold text-sm sm:text-base md:text-lg text-gray-800 border-b border-gray-100 pb-1">Books Published</h3>
-                    <ul className="list-disc pl-4 sm:pl-5 space-y-1 sm:space-y-1.5 mt-1.5">
-                      {selectedStaff.publications.books.map((b, i) => (
-                        <li key={i} className="text-xs sm:text-sm md:text-base text-gray-600 leading-relaxed">{b}</li>
-                      ))}
-                    </ul>
-                  </section>
-                )}
+                  {/* EXPERTISE / RESEARCH INTERESTS */}
+                  {(selectedStaff.expertise?.length > 0 || selectedStaff.research_interests?.length > 0) && (
+                    <section>
+                      <h3 className="font-bold text-sm sm:text-base md:text-lg text-gray-800 border-b border-gray-100 pb-1">Area of Expertise</h3>
+                      <ul className="list-disc pl-4 sm:pl-5 space-y-1 sm:space-y-1.5 mt-1.5">
+                        {(selectedStaff.expertise || selectedStaff.research_interests).map((e, i) => (
+                          <li key={i} className="text-xs sm:text-sm md:text-base text-gray-600 leading-relaxed">{e}</li>
+                        ))}
+                      </ul>
+                    </section>
+                  )}
 
-                {/* PUBLICATIONS - CONFERENCES */}
-                {selectedStaff.publications?.conferences?.length > 0 && (
-                  <section>
-                    <h3 className="font-bold text-sm sm:text-base md:text-lg text-gray-800 border-b border-gray-100 pb-1">
-                      Conference Publications
-                    </h3>
-                    <ul className="list-disc pl-4 sm:pl-5 space-y-1 sm:space-y-1.5 mt-1.5">
-                      {selectedStaff.publications.conferences.map((c, i) => (
-                        <li key={i} className="text-xs sm:text-sm md:text-base text-gray-600 leading-relaxed">{c}</li>
-                      ))}
-                    </ul>
-                  </section>
-                )}
+                  {/* PHD GUIDED */}
+                  {selectedStaff.phd_guided_completed?.length > 0 && (
+                    <section>
+                      <h3 className="font-bold text-sm sm:text-base md:text-lg text-gray-800 border-b border-gray-100 pb-1">Ph.D Guided</h3>
+                      <ul className="list-disc pl-4 sm:pl-5 space-y-1 sm:space-y-1.5 mt-1.5">
+                        {selectedStaff.phd_guided_completed.map((p, i) => (
+                          <li key={i} className="text-xs sm:text-sm md:text-base text-gray-600 leading-relaxed">{p}</li>
+                        ))}
+                      </ul>
+                    </section>
+                  )}
 
-                {/* PATENTS */}
-                {selectedStaff.patents?.length > 0 && (
-                  <section>
-                    <h3 className="font-bold text-sm sm:text-base md:text-lg text-gray-800 border-b border-gray-100 pb-1">Patents</h3>
-                    <ul className="list-disc pl-4 sm:pl-5 space-y-1 sm:space-y-1.5 mt-1.5">
-                      {selectedStaff.patents.map((p, i) => (
-                        <li key={i} className="text-xs sm:text-sm md:text-base text-gray-600 leading-relaxed">{p}</li>
-                      ))}
-                    </ul>
-                  </section>
-                )}
+                  {/* ONGOING */}
+                  {selectedStaff.phd_ongoing?.length > 0 && (
+                    <section>
+                      <h3 className="font-bold text-sm sm:text-base md:text-lg text-gray-800 border-b border-gray-100 pb-1">Ongoing Research</h3>
+                      <ul className="list-disc pl-4 sm:pl-5 space-y-1 sm:space-y-1.5 mt-1.5">
+                        {selectedStaff.phd_ongoing.map((p, i) => (
+                          <li key={i} className="text-xs sm:text-sm md:text-base text-gray-600 leading-relaxed">{p}</li>
+                        ))}
+                      </ul>
+                    </section>
+                  )}
 
-                {/* CONSULTANCY */}
-                {selectedStaff.consultancy?.length > 0 && (
-                  <section>
-                    <h3 className="font-bold text-sm sm:text-base md:text-lg text-gray-800 border-b border-gray-100 pb-1">Consultancy</h3>
-                    <ul className="list-disc pl-4 sm:pl-5 space-y-1 sm:space-y-1.5 mt-1.5">
-                      {selectedStaff.consultancy.map((c, i) => (
-                        <li key={i} className="text-xs sm:text-sm md:text-base text-gray-600 leading-relaxed">{c}</li>
-                      ))}
-                    </ul>
-                  </section>
-                )}
+                  {/* BOOKS (OLD) */}
+                  {selectedStaff.books_published?.length > 0 && (
+                    <section>
+                      <h3 className="font-bold text-sm sm:text-base md:text-lg text-gray-800 border-b border-gray-100 pb-1">Books Published</h3>
+                      <ul className="list-disc pl-4 sm:pl-5 space-y-1 sm:space-y-1.5 mt-1.5">
+                        {selectedStaff.books_published.map((b, i) => (
+                          <li key={i} className="text-xs sm:text-sm md:text-base text-gray-600 leading-relaxed">{b}</li>
+                        ))}
+                      </ul>
+                    </section>
+                  )}
 
-                {/* MEMBERSHIPS */}
-                {selectedStaff.memberships?.length > 0 && (
-                  <section>
-                    <h3 className="font-bold text-sm sm:text-base md:text-lg text-gray-800 border-b border-gray-100 pb-1">
-                      Professional Memberships
-                    </h3>
-                    <ul className="list-disc pl-4 sm:pl-5 space-y-1 sm:space-y-1.5 mt-1.5">
-                      {selectedStaff.memberships.map((m, i) => (
-                        <li key={i} className="text-xs sm:text-sm md:text-base text-gray-600 leading-relaxed">{m}</li>
-                      ))}
-                    </ul>
-                  </section>
-                )}
+                  {/* INTERNATIONAL VISITS */}
+                  {selectedStaff.international_visits?.length > 0 && (
+                    <section>
+                      <h3 className="font-bold text-sm sm:text-base md:text-lg text-gray-800 border-b border-gray-100 pb-1">
+                        International Visits
+                      </h3>
+                      <ul className="list-disc pl-4 sm:pl-5 space-y-1 sm:space-y-1.5 mt-1.5">
+                        {selectedStaff.international_visits.map((v, i) => (
+                          <li key={i} className="text-xs sm:text-sm md:text-base text-gray-600 leading-relaxed">{v}</li>
+                        ))}
+                      </ul>
+                    </section>
+                  )}
 
-                {/* AWARDS */}
-                {selectedStaff.awards?.length > 0 && (
-                  <section>
-                    <h3 className="font-bold text-sm sm:text-base md:text-lg text-gray-800 border-b border-gray-100 pb-1">Awards</h3>
-                    <ul className="list-disc pl-4 sm:pl-5 space-y-1 sm:space-y-1.5 mt-1.5">
-                      {selectedStaff.awards.map((a, i) => (
-                        <li key={i} className="text-xs sm:text-sm md:text-base text-gray-600 leading-relaxed">{a}</li>
-                      ))}
-                    </ul>
-                  </section>
-                )}
+                  {/* PROJECTS */}
+                  {selectedStaff.projects?.length > 0 && (
+                    <section>
+                      <h3 className="font-bold text-sm sm:text-base md:text-lg text-gray-800 border-b border-gray-100 pb-1">Projects</h3>
+                      <ul className="list-disc pl-4 sm:pl-5 space-y-1 sm:space-y-1.5 mt-1.5">
+                        {selectedStaff.projects.map((p, i) => (
+                          <li key={i} className="text-xs sm:text-sm md:text-base text-gray-600 leading-relaxed">{p}</li>
+                        ))}
+                      </ul>
+                    </section>
+                  )}
 
-                {/* ADDITIONAL ROLES */}
-                {selectedStaff.additional_roles?.length > 0 && (
-                  <section>
-                    <h3 className="font-bold text-sm sm:text-base md:text-lg text-gray-800 border-b border-gray-100 pb-1">Additional Roles</h3>
-                    <ul className="list-disc pl-4 sm:pl-5 space-y-1 sm:space-y-1.5 mt-1.5">
-                      {selectedStaff.additional_roles.map((r, i) => (
-                        <li key={i} className="text-xs sm:text-sm md:text-base text-gray-600 leading-relaxed">{r}</li>
-                      ))}
-                    </ul>
-                  </section>
-                )}
-              </div>
+                  {/* ACHIEVEMENTS / CONTRIBUTIONS */}
+                  {((Array.isArray(selectedStaff.achievements) && selectedStaff.achievements.length > 0) || (Array.isArray(selectedStaff.contributions) && selectedStaff.contributions.length > 0) || (typeof selectedStaff.achievements === 'string' && selectedStaff.achievements !== 'Nil' && selectedStaff.achievements !== '')) && (
+                    <section>
+                      <h3 className="font-bold text-sm sm:text-base md:text-lg text-gray-800 border-b border-gray-100 pb-1">Achievements & Contributions</h3>
+                      <ul className="list-disc pl-4 sm:pl-5 space-y-1 sm:space-y-1.5 mt-1.5">
+                        {(Array.isArray(selectedStaff.achievements) ? selectedStaff.achievements : typeof selectedStaff.achievements === 'string' && selectedStaff.achievements !== 'Nil' ? [selectedStaff.achievements] : selectedStaff.contributions || []).map((a, i) => (
+                          <li key={i} className="text-xs sm:text-sm md:text-base text-gray-600 leading-relaxed">{a}</li>
+                        ))}
+                      </ul>
+                    </section>
+                  )}
+
+                  {/* PROFILES & LINKS */}
+                  {(selectedStaff.research_ids?.google_scholar ||
+                    selectedStaff.research_ids?.scopus_id ||
+                    selectedStaff.research_ids?.orcid_id ||
+                    (selectedStaff.links && Object.keys(selectedStaff.links).length > 0)) && (
+                    <section>
+                      <h3 className="font-bold text-sm sm:text-base md:text-lg text-gray-800 border-b border-gray-100 pb-1">Profiles & Links</h3>
+                      <ul className="list-disc pl-4 sm:pl-5 space-y-1 sm:space-y-1.5 mt-1.5">
+                        {selectedStaff.research_ids?.google_scholar && (
+                          <li className="text-xs sm:text-sm md:text-base text-gray-600 leading-relaxed">
+                            <a
+                              href={selectedStaff.research_ids.google_scholar}
+                              target="_blank"
+                              className="text-blue-600 hover:underline"
+                            >
+                              Google Scholar
+                            </a>
+                          </li>
+                        )}
+                        {selectedStaff.research_ids?.scopus_id && (
+                          <li className="text-xs sm:text-sm md:text-base text-gray-600 leading-relaxed">
+                            Scopus ID: {selectedStaff.research_ids.scopus_id}
+                          </li>
+                        )}
+                        {selectedStaff.research_ids?.orcid_id && (
+                          <li className="text-xs sm:text-sm md:text-base text-gray-600 leading-relaxed">Orcid: {selectedStaff.research_ids.orcid_id}</li>
+                        )}
+                        {selectedStaff.links && Object.entries(selectedStaff.links).map(([key, url], i) => (
+                          <li key={i} className="text-xs sm:text-sm md:text-base text-gray-600 leading-relaxed">
+                            {url.startsWith('http') || url.startsWith('mailto') ? (
+                              <a
+                                href={url}
+                                target="_blank"
+                                className="text-blue-600 hover:underline capitalize"
+                              >
+                                {key.replace(/_/g, ' ')}
+                              </a>
+                            ) : (
+                              <span className="capitalize">{key.replace(/_/g, ' ')}: {url}</span>
+                            )}
+                          </li>
+                        ))}
+                      </ul>
+                    </section>
+                  )}
+
+                  {/* PUBLICATIONS - BOOKS */}
+                  {selectedStaff.publications?.books?.length > 0 && (
+                    <section>
+                      <h3 className="font-bold text-sm sm:text-base md:text-lg text-gray-800 border-b border-gray-100 pb-1">Books Published</h3>
+                      <ul className="list-disc pl-4 sm:pl-5 space-y-1 sm:space-y-1.5 mt-1.5">
+                        {selectedStaff.publications.books.map((b, i) => (
+                          <li key={i} className="text-xs sm:text-sm md:text-base text-gray-600 leading-relaxed">{b}</li>
+                        ))}
+                      </ul>
+                    </section>
+                  )}
+
+                  {/* PUBLICATIONS - CONFERENCES */}
+                  {selectedStaff.publications?.conferences?.length > 0 && (
+                    <section>
+                      <h3 className="font-bold text-sm sm:text-base md:text-lg text-gray-800 border-b border-gray-100 pb-1">
+                        Conference Publications
+                      </h3>
+                      <ul className="list-disc pl-4 sm:pl-5 space-y-1 sm:space-y-1.5 mt-1.5">
+                        {selectedStaff.publications.conferences.map((c, i) => (
+                          <li key={i} className="text-xs sm:text-sm md:text-base text-gray-600 leading-relaxed">{c}</li>
+                        ))}
+                      </ul>
+                    </section>
+                  )}
+
+                  {/* PATENTS */}
+                  {selectedStaff.patents?.length > 0 && (
+                    <section>
+                      <h3 className="font-bold text-sm sm:text-base md:text-lg text-gray-800 border-b border-gray-100 pb-1">Patents</h3>
+                      <ul className="list-disc pl-4 sm:pl-5 space-y-1 sm:space-y-1.5 mt-1.5">
+                        {selectedStaff.patents.map((p, i) => (
+                          <li key={i} className="text-xs sm:text-sm md:text-base text-gray-600 leading-relaxed">{p}</li>
+                        ))}
+                      </ul>
+                    </section>
+                  )}
+
+                  {/* CONSULTANCY */}
+                  {selectedStaff.consultancy?.length > 0 && (
+                    <section>
+                      <h3 className="font-bold text-sm sm:text-base md:text-lg text-gray-800 border-b border-gray-100 pb-1">Consultancy</h3>
+                      <ul className="list-disc pl-4 sm:pl-5 space-y-1 sm:space-y-1.5 mt-1.5">
+                        {selectedStaff.consultancy.map((c, i) => (
+                          <li key={i} className="text-xs sm:text-sm md:text-base text-gray-600 leading-relaxed">{c}</li>
+                        ))}
+                      </ul>
+                    </section>
+                  )}
+
+                  {/* MEMBERSHIPS */}
+                  {selectedStaff.memberships?.length > 0 && (
+                    <section>
+                      <h3 className="font-bold text-sm sm:text-base md:text-lg text-gray-800 border-b border-gray-100 pb-1">
+                        Professional Memberships
+                      </h3>
+                      <ul className="list-disc pl-4 sm:pl-5 space-y-1 sm:space-y-1.5 mt-1.5">
+                        {selectedStaff.memberships.map((m, i) => (
+                          <li key={i} className="text-xs sm:text-sm md:text-base text-gray-600 leading-relaxed">{m}</li>
+                        ))}
+                      </ul>
+                    </section>
+                  )}
+
+                  {/* AWARDS */}
+                  {selectedStaff.awards?.length > 0 && (
+                    <section>
+                      <h3 className="font-bold text-sm sm:text-base md:text-lg text-gray-800 border-b border-gray-100 pb-1">Awards</h3>
+                      <ul className="list-disc pl-4 sm:pl-5 space-y-1 sm:space-y-1.5 mt-1.5">
+                        {selectedStaff.awards.map((a, i) => (
+                          <li key={i} className="text-xs sm:text-sm md:text-base text-gray-600 leading-relaxed">{a}</li>
+                        ))}
+                      </ul>
+                    </section>
+                  )}
+
+                  {/* ADDITIONAL ROLES */}
+                  {selectedStaff.additional_roles?.length > 0 && (
+                    <section>
+                      <h3 className="font-bold text-sm sm:text-base md:text-lg text-gray-800 border-b border-gray-100 pb-1">Additional Roles</h3>
+                      <ul className="list-disc pl-4 sm:pl-5 space-y-1 sm:space-y-1.5 mt-1.5">
+                        {selectedStaff.additional_roles.map((r, i) => (
+                          <li key={i} className="text-xs sm:text-sm md:text-base text-gray-600 leading-relaxed">{r}</li>
+                        ))}
+                      </ul>
+                    </section>
+                  )}
+                </div>
             </div>
           </div>
         </div>
