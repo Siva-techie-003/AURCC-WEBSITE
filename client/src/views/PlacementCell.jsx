@@ -57,10 +57,24 @@ const PlacementCell = () => {
   const [currentLogoIndex, setCurrentLogoIndex] = useState(0);
 
   useEffect(() => {
-    fetch("/api/placement-cell")
-      .then((res) => res.json())
-      .then((data) => setData(data))
-      .catch((err) => console.error(err));
+    fetch("/api/institute-industry-cell")
+      .then((res) => {
+        if (!res.ok) throw new Error("Not Ok");
+        return res.json();
+      })
+      .then((resData) => {
+        if (resData && resData.message && resData.message.includes("not found")) {
+          throw new Error("Fallback to old API");
+        }
+        setData(resData);
+      })
+      .catch((err) => {
+        console.warn("Attempting fallback to legacy placement API:", err);
+        fetch("/api/placement-cell")
+          .then((res) => res.json())
+          .then((resData) => setData(resData))
+          .catch((fetchErr) => console.error("Fallback fetch failed:", fetchErr));
+      });
 
     const timer = setInterval(() => {
       setCurrentLogoIndex((prev) => (prev + 1) % logos.length);
@@ -74,77 +88,78 @@ const PlacementCell = () => {
   }
 
   return (
-    <section className="pt-[100px] sm:pt-[100px] lg:pt-[50px]">
+    <section className="pt-[140px] sm:pt-[160px] lg:pt-[120px]">
       <OfficePageTemplate
-        officeName="PLACEMENT CELL"
+        officeName="INSTITUTE INDUSTRY CELL"
         heroSubtitle="Empowering students for career success and industry connections"
         sections={sections}
         contactEmail="placementcell@aurcc.ac.in"
+        heroHeightClasses="min-h-[15vh] sm:min-h-[20vh] md:min-h-[25vh] lg:min-h-[30vh] xl:min-h-[35vh]"
       >
         <div className="content space-y-16">
           {/* ABOUT + CUIC SIDE BY SIDE */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-stretch">
             {/* About the Placement Cell */}
-            <section id="description">
+            <section id="description" className="h-full flex flex-col">
               <div className="text-center mb-8">
                 <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[rgb(100,25,25)] uppercase mb-2">
                   About the Placement Cell
                 </h2>
-
-
               </div>
 
-              <div className="bg-white rounded-2xl shadow-sm border border-[rgb(220,140,140)] p-6 lg:p-8">
-                <p className="text-base lg:text-lg xl:text-xl font-medium text-gray-800 text-left leading-relaxed mb-6">
-                  <span className="font-bold text-[rgb(100,25,25)]">
-                    The Placement Cell
-                  </span>{" "}
-                  at our Regional Campus is dedicated to empowering students for
-                  career success. We provide comprehensive support for every
-                  stage of your journey.
-                </p>
+              <div className="bg-white rounded-2xl shadow-sm border border-[rgb(220,140,140)] p-6 lg:p-8 flex-1 flex flex-col justify-between">
+                <div>
+                  <p className="text-base lg:text-lg xl:text-xl font-medium text-gray-800 text-left leading-relaxed mb-6">
+                    <span className="font-bold text-[rgb(100,25,25)]">
+                      The Placement Cell
+                    </span>{" "}
+                    at our Regional Campus is dedicated to empowering students for
+                    career success. We provide comprehensive support for every
+                    stage of your journey.
+                  </p>
 
-                <div className="grid grid-cols-1 gap-4 mb-8">
-                  {[
-                    {
-                      title: "Comprehensive Support",
-                      desc: "Guidance and training for every stage of the campus recruitment process.",
-                    },
-                    {
-                      title: "Expert Team",
-                      desc: "Coordinators, assistants, and volunteers from every department ensuring personalized attention.",
-                    },
-                    {
-                      title: "Skill Development",
-                      desc: "Pre-placement training, mock interviews, group discussions, and workshops.",
-                    },
-                    {
-                      title: "Industry Connections",
-                      desc: "Strong ties with top recruiters and regular campus drives.",
-                    },
-                    {
-                      title: "Career Awareness",
-                      desc: "Information on value-added courses and opportunities in private and government sectors.",
-                    },
-                  ].map((item, i) => (
-                    <div
-                      key={i}
-                      className="flex gap-3 p-4 bg-white rounded-xl border border-gray-100 hover:shadow-md transition"
-                    >
-                      <span className="text-[rgb(120,45,45)] font-bold text-lg">
-                        ✔
-                      </span>
+                  <div className="grid grid-cols-1 gap-4 mb-8">
+                    {[
+                      {
+                        title: "Comprehensive Support",
+                        desc: "Guidance and training for every stage of the campus recruitment process.",
+                      },
+                      {
+                        title: "Expert Team",
+                        desc: "Coordinators, assistants, and volunteers from every department ensuring personalized attention.",
+                      },
+                      {
+                        title: "Skill Development",
+                        desc: "Pre-placement training, mock interviews, group discussions, and workshops.",
+                      },
+                      {
+                        title: "Industry Connections",
+                        desc: "Strong ties with top recruiters and regular campus drives.",
+                      },
+                      {
+                        title: "Career Awareness",
+                        desc: "Information on value-added courses and opportunities in private and government sectors.",
+                      },
+                    ].map((item, i) => (
+                      <div
+                        key={i}
+                        className="flex gap-3 p-4 bg-white rounded-xl border border-gray-100 hover:shadow-md transition"
+                      >
+                        <span className="text-[rgb(120,45,45)] font-bold text-lg">
+                          ✔
+                        </span>
 
-                      <div>
-                        <span className="font-bold text-gray-900 block">
-                          {item.title}
-                        </span>
-                        <span className="text-sm text-gray-700">
-                          {item.desc}
-                        </span>
+                        <div>
+                          <span className="font-bold text-gray-900 block">
+                            {item.title}
+                          </span>
+                          <span className="text-sm text-gray-700">
+                            {item.desc}
+                          </span>
+                        </div>
                       </div>
-                    </div>
-                  ))}
+                    ))}
+                  </div>
                 </div>
 
                 <p className="text-base lg:text-lg text-[rgb(110,35,35)] font-bold border-l-4 border-l-[rgb(120,45,45)] pl-4 py-2 bg-gray-50 rounded-r-lg">
@@ -155,64 +170,69 @@ const PlacementCell = () => {
             </section>
 
             {/* CUIC */}
-            <OfficeContentSection
-              sectionId="cuic"
-              title="CUIC: Your Gateway to Top Recruiters"
-            >
-              <div className="text-left">
-                <div className="bg-[rgb(100,25,25)] text-white p-6 rounded-2xl mb-8 shadow-md">
-                  <p className="text-lg lg:text-xl font-bold mb-2">
-                    The Centre for University-Industry Collaboration (CUIC)
-                  </p>
-                  <p className="text-white/90">
-                    Bridges the gap between students and leading employers
-                    through specialized initiatives.
-                  </p>
-                </div>
+            <section id="cuic" className="h-full flex flex-col">
+              <div className="text-center mb-8">
+                <h2 className="text-base sm:text-xl md:text-2xl lg:text-3xl font-bold text-[rgb(100,25,25)] uppercase mb-2 whitespace-nowrap">
+                  CUIC: Your Gateway to Top Recruiters
+                </h2>
+              </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-1 gap-8">
-                  {[
-                    {
-                      title: "Industry Partnerships",
-                      desc: "Direct connections for internships and placements.",
-                    },
-                    {
-                      title: "Skill-Building",
-                      desc: "Workshops, seminars, and training programs.",
-                    },
-                    {
-                      title: "Placement Drives",
-                      desc: "Regular campus recruitment events.",
-                    },
-                    {
-                      title: "Career Guidance",
-                      desc: "Expert advice for informed career choices.",
-                    },
-                    {
-                      title: "Internship Assistance",
-                      desc: "Support in identifying and securing internships to gain practical industry experience and enhance job readiness.",
-                    },
-                  ].map((item, i) => (
-                    <div
-                      key={i}
-                      className="p-4 bg-white rounded-xl border border-[rgb(200,120,120)] shadow-sm flex items-start gap-3"
-                    >
-                      <span className="bg-[rgb(200,120,120)] text-[rgb(110,35,35)] w-8 h-8 rounded-full flex items-center justify-center font-bold shrink-0">
-                        {i + 1}
-                      </span>
-                      <div>
-                        <span className="font-bold text-[rgb(100,25,25)] block mb-1">
-                          {item.title}
+              <div className="bg-white rounded-2xl shadow-sm border border-[rgb(220,140,140)] p-6 lg:p-8 flex-1 flex flex-col justify-between">
+                <div className="text-left">
+                  <div className="mb-8">
+                    <p className="text-lg lg:text-xl font-bold mb-2 text-[rgb(110,35,35)]">
+                      The Centre for University-Industry Collaboration (CUIC)
+                    </p>
+                    <p className="text-gray-700 font-medium">
+                      Bridges the gap between students and leading employers
+                      through specialized initiatives.
+                    </p>
+                  </div>
+
+                  <div className="grid grid-cols-1 sm:grid-cols-1 gap-8">
+                    {[
+                      {
+                        title: "Industry Partnerships",
+                        desc: "Direct connections for internships and placements.",
+                      },
+                      {
+                        title: "Skill-Building",
+                        desc: "Workshops, seminars, and training programs.",
+                      },
+                      {
+                        title: "Placement Drives",
+                        desc: "Regular campus recruitment events.",
+                      },
+                      {
+                        title: "Career Guidance",
+                        desc: "Expert advice for informed career choices.",
+                      },
+                      {
+                        title: "Internship Assistance",
+                        desc: "Support in identifying and securing internships to gain practical industry experience and enhance job readiness.",
+                      },
+                    ].map((item, i) => (
+                      <div
+                        key={i}
+                        className="p-4 bg-white rounded-xl border border-[rgb(200,120,120)] shadow-sm flex items-start gap-3"
+                      >
+                        <span className="bg-[rgb(200,120,120)] text-[rgb(110,35,35)] w-8 h-8 rounded-full flex items-center justify-center font-bold shrink-0">
+                          {i + 1}
                         </span>
-                        <span className="text-sm text-gray-700">
-                          {item.desc}
-                        </span>
+                        <div>
+                          <span className="font-bold text-[rgb(100,25,25)] block mb-1">
+                            {item.title}
+                          </span>
+                          <span className="text-sm text-gray-700">
+                            {item.desc}
+                          </span>
+                        </div>
                       </div>
-                    </div>
-                  ))}
+                    ))}
+                  </div>
                 </div>
               </div>
-            </OfficeContentSection>
+            </section>
           </div>
 
           {/* Placement Statistics */}

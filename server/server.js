@@ -5,8 +5,6 @@ import path from "path";
 import { fileURLToPath } from "url";
 import helmet from "helmet";
 import mongoSanitize from "express-mongo-sanitize";
-
-
 import connectDB from "./config/db.js";
 
 /* Routes */
@@ -76,7 +74,7 @@ app.use("/api/zonal", zonalRoutes);
 app.use("/api/affiliation", affiliationRoutes);
 app.use("/api/distance-education", distanceEducationRoutes);
 app.use("/api/ed-cell", edCellRoutes);
-app.use("/api/placement-cell", placementCellRoutes);
+app.use("/api/institute-industry-cell", placementCellRoutes);
 app.use("/api/research-cell", crccRoutes);
 app.use("/api/exam-cell", examCellRoutes);
 app.use("/api/estate-office", estateOfficeRoutes);

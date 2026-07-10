@@ -67,6 +67,7 @@ const FeedbackView = lazy(() => import('./views/FeedbackView'));
 const Team = lazy(() => import('./views/Team'));
 const Privacy = lazy(() => import('./views/Privacy'));
 const Safety = lazy(() => import('./views/Safety'));
+const HelpDesk = lazy(() => import('./views/HelpDesk'));
 function App() {
     useEffect(() => {
         const handleContextMenu = (e) => {
@@ -187,8 +188,8 @@ function App() {
                         <Route path="/team" element={<Team />} />
                         <Route path="/team/faculty" element={<Team />} />
                         <Route path="/team/developers" element={<Team />} />
-                        <Route path="/privacy" element={<Privacy />} />
                         <Route path="/safety" element={<Safety />} />
+                        <Route path="/help-desk" element={<HelpDesk />} />
                         <Route path="*" element={<NotFound />} />
                     </Routes>
                 </Suspense>

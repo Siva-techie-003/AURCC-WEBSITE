@@ -8,7 +8,7 @@ const OfficePageTemplate = ({
     sections = [],
     contactEmail,
     contactButtonText = 'Apply Now / Contact Us',
-    heroHeightClasses = "min-h-[20vh] sm:min-h-[30vh] md:min-h-[40vh] lg:min-h-[48vh] xl:min-h-[55vh]",
+    heroHeightClasses = "min-h-[30vh] sm:min-h-[40vh] md:min-h-[50vh] lg:min-h-[60vh] xl:min-h-[70vh]",
     children
 }) => {
     const [currentSection, setCurrentSection] = useState(sections.length > 0 ? sections[0].key : '');
@@ -53,35 +53,13 @@ const OfficePageTemplate = ({
             <section className={`relative w-full ${heroHeightClasses} overflow-hidden flex items-center justify-center animate-fadeIn px-4 sm:px-6 lg:px-8`}>                <img src={heroImage} alt={officeName} className="absolute inset-0 w-full h-full object-cover object-top sm:object-center" />
                 <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-black/60 via-black/30 to-transparent"></div>
                 <div className="absolute inset-0 flex flex-col items-center justify-center z-10 px-3 sm:px-4">
-                    <div className="backdrop-blur-md bg-white/30 rounded-xl sm:rounded-2xl shadow-lg px-3 py-3 sm:px-6 sm:py-4 md:px-8 md:py-6 lg:px-12 lg:py-10 flex flex-col items-center w-full max-w-xs sm:max-w-lg md:max-w-2xl border border-white/30">
+                    <div className="backdrop-blur-md bg-white/30 rounded-xl sm:rounded-2xl shadow-lg px-3 py-3 sm:px-6 sm:py-4 md:px-8 md:py-6 lg:px-12 lg:py-10 flex flex-col items-center w-full max-w-[95%] sm:max-w-2xl md:max-w-4xl border border-white/30">
                         <h1 className="text-xl sm:text-2xl md:text-4xl lg:text-5xl font-extrabold text-white drop-shadow-lg tracking-wide text-center mb-2 leading-tight">{officeName}</h1>
                     </div>
                     <p className="text-sm sm:text-base md:text-lg lg:text-2xl text-white drop-shadow text-center font-medium pt-2">{heroSubtitle}</p>
 
                 </div>
             </section>
-
-            {/* Sticky Navigation Tabs */}
-            <div className="sticky top-0 z-20 hidden sm:block">
-                <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
-                    <div className="bg-white/95 backdrop-blur-sm shadow-lg rounded-full -mt-4 sm:-mt-6 py-1 px-2 flex justify-center overflow-x-auto no-scrollbar">
-                        <nav role="tablist" className="tabs flex space-x-1 sm:space-x-2">
-                            {sections.map(section => (
-                                <button
-                                    key={section.key}
-                                    onClick={() => scrollToSection(section.key)}
-                                    className={`font-medium px-3 sm:px-4 md:px-5 py-2 md:py-3 rounded-full text-xs sm:text-sm md:text-base transition duration-300 whitespace-nowrap touch-manipulation ${currentSection === section.key
-                                        ? 'bg-[rgb(115,40,40)] text-white shadow-lg'
-                                        : 'text-gray-700 hover:bg-gray-100 hover:shadow-md'
-                                        }`}
-                                >
-                                    {section.label}
-                                </button>
-                            ))}
-                        </nav>
-                    </div>
-                </div>
-            </div>
 
             {/* Content Sections */}
             <section className="max-w-7xl mx-auto py-8 sm:py-10 md:py-14 px-3 sm:px-4 md:px-6 lg:px-9 flex flex-col gap-8 sm:gap-10 md:gap-12">

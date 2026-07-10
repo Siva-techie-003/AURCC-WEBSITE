@@ -65,22 +65,7 @@ const POSH = () => {
                 </div>
             </section>
 
-            {/* Sticky Navigation Pill Bar - Overlapping design */}
-            <div className="hidden md:block sticky top-[116px] sm:top-[126px] lg:top-[136px] z-50 -mt-12 mb-4">
-                <div className="max-w-7xl mx-auto px-4 text-center">
-                    <div className="max-w-5xl mx-auto bg-white/95 backdrop-blur-md shadow-xl rounded-full py-2 px-3 flex justify-center overflow-x-auto no-scrollbar gap-2 border border-[rgb(220,140,140)]">
-                        {navSections.map((section, index) => (
-                            <button
-                                key={index}
-                                onClick={() => scrollToSection(section.ref)}
-                                className="font-bold px-6 py-3 rounded-full text-xs sm:text-sm lg:text-base transition-all duration-300 whitespace-nowrap text-gray-700 hover:bg-[rgb(220,140,140)] hover:text-[rgb(115,40,40)]"
-                            >
-                                {section.name.toUpperCase()}
-                            </button>
-                        ))}
-                    </div>
-                </div>
-            </div>
+
 
             {/* Content Section */}
             <section className="max-w-7xl mx-auto py-8 sm:py-12 lg:py-14 px-4 flex flex-col gap-12">
