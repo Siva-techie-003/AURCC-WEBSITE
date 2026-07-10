@@ -172,7 +172,7 @@ const PlacementCell = () => {
             {/* CUIC */}
             <section id="cuic" className="h-full flex flex-col">
               <div className="text-center mb-8">
-                <h2 className="text-base sm:text-xl md:text-2xl lg:text-3xl font-bold text-[rgb(100,25,25)] uppercase mb-2 whitespace-nowrap">
+                <h2 className="text-lg sm:text-2xl md:text-3xl lg:text-4xl font-bold text-[rgb(100,25,25)] uppercase mb-2 whitespace-nowrap">
                   CUIC: Your Gateway to Top Recruiters
                 </h2>
               </div>
@@ -290,7 +290,7 @@ const PlacementCell = () => {
               {/* 3-Card Carousel Container */}
               <div className="relative flex items-center justify-center gap-8 lg:gap-16 w-full max-w-none h-[280px] sm:h-[400px] lg:h-[550px]">
                 {/* Card 1 (Left - Lite Fade) */}
-                <div className="hidden md:flex w-[200px] lg:w-[350px] h-[150px] lg:h-[280px] bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg items-center justify-center p-4 opacity-40 transition-all duration-700 ease-in-out border-[3px] border-white/30 overflow-hidden">
+                <div className="hidden md:flex w-[200px] lg:w-[350px] h-[150px] lg:h-[280px] bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg items-center justify-center p-0 opacity-40 transition-all duration-700 ease-in-out border-[3px] border-white/30 overflow-hidden">
                   <img
                     src={
                       logos[
@@ -298,26 +298,26 @@ const PlacementCell = () => {
                       ]
                     }
                     alt="Partner Logo Left"
-                    className="w-full h-full object-contain grayscale opacity-50"
+                    className="w-full h-full object-cover grayscale opacity-50"
                   />
                 </div>
 
                 {/* Card 2 (Center - Clear/Active) */}
-                <div className="relative w-[280px] sm:w-[400px] lg:w-[650px] h-[200px] sm:h-[280px] lg:h-[450px] bg-white rounded-2xl sm:rounded-3xl shadow-2xl flex items-center justify-center p-6 transition-all duration-700 ease-in-out border-4 sm:border-[6px] border-[rgb(100,25,25)] z-10 overflow-hidden">
+                <div className="relative w-[280px] sm:w-[400px] lg:w-[650px] h-[200px] sm:h-[280px] lg:h-[450px] bg-white rounded-2xl sm:rounded-3xl shadow-2xl flex items-center justify-center p-0 transition-all duration-700 ease-in-out border-4 sm:border-[6px] border-[rgb(100,25,25)] z-10 overflow-hidden">
                   <img
                     key={currentLogoIndex}
                     src={logos[currentLogoIndex]}
                     alt="Active Partner Logo"
-                    className="w-full h-full object-contain animate-fadeInOnly"
+                    className="w-full h-full object-cover animate-fadeInOnly"
                   />
                 </div>
 
                 {/* Card 3 (Right - Lite Fade) */}
-                <div className="hidden md:flex w-[200px] lg:w-[350px] h-[150px] lg:h-[280px] bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg items-center justify-center p-4 opacity-40 transition-all duration-700 ease-in-out border-[3px] border-white/30 overflow-hidden">
+                <div className="hidden md:flex w-[200px] lg:w-[350px] h-[150px] lg:h-[280px] bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg items-center justify-center p-0 opacity-40 transition-all duration-700 ease-in-out border-[3px] border-white/30 overflow-hidden">
                   <img
                     src={logos[(currentLogoIndex + 1) % logos.length]}
                     alt="Partner Logo Right"
-                    className="w-full h-full object-contain grayscale opacity-50"
+                    className="w-full h-full object-cover grayscale opacity-50"
                   />
                 </div>
               </div>
