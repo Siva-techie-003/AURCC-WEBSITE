@@ -290,7 +290,7 @@ const PlacementCell = () => {
               {/* 3-Card Carousel Container */}
               <div className="relative flex items-center justify-center gap-8 lg:gap-16 w-full max-w-none h-[280px] sm:h-[400px] lg:h-[550px]">
                 {/* Card 1 (Left - Lite Fade) */}
-                <div className="hidden md:flex w-[200px] lg:w-[350px] h-[150px] lg:h-[280px] bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg items-center justify-center p-0 opacity-40 transition-all duration-700 ease-in-out border-[3px] border-white/30 overflow-hidden">
+                <div className="hidden md:flex w-[220px] lg:w-[320px] h-[220px] lg:h-[320px] bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg items-center justify-center p-0 opacity-40 transition-all duration-700 ease-in-out border-[3px] border-white/30 overflow-hidden">
                   <img
                     src={
                       logos[
@@ -303,7 +303,7 @@ const PlacementCell = () => {
                 </div>
 
                 {/* Card 2 (Center - Clear/Active) */}
-                <div className="relative w-[280px] sm:w-[400px] lg:w-[650px] h-[200px] sm:h-[280px] lg:h-[450px] bg-white rounded-2xl sm:rounded-3xl shadow-2xl flex items-center justify-center p-0 transition-all duration-700 ease-in-out border-4 sm:border-[6px] border-[rgb(100,25,25)] z-10 overflow-hidden">
+                <div className="relative w-[260px] sm:w-[380px] lg:w-[520px] h-[260px] sm:h-[380px] lg:h-[520px] bg-white rounded-2xl sm:rounded-3xl shadow-2xl flex items-center justify-center p-0 transition-all duration-700 ease-in-out border-4 sm:border-[6px] border-[rgb(100,25,25)] z-10 overflow-hidden">
                   <img
                     key={currentLogoIndex}
                     src={logos[currentLogoIndex]}
@@ -313,7 +313,7 @@ const PlacementCell = () => {
                 </div>
 
                 {/* Card 3 (Right - Lite Fade) */}
-                <div className="hidden md:flex w-[200px] lg:w-[350px] h-[150px] lg:h-[280px] bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg items-center justify-center p-0 opacity-40 transition-all duration-700 ease-in-out border-[3px] border-white/30 overflow-hidden">
+                <div className="hidden md:flex w-[220px] lg:w-[320px] h-[220px] lg:h-[320px] bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg items-center justify-center p-0 opacity-40 transition-all duration-700 ease-in-out border-[3px] border-white/30 overflow-hidden">
                   <img
                     src={logos[(currentLogoIndex + 1) % logos.length]}
                     alt="Partner Logo Right"
