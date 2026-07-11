@@ -119,7 +119,18 @@ const Footer = ({
   return (
     <footer
       className="text-white"
-      style={{ background: "linear-gradient(135deg, #6b1a1a 0%, #8b2a2a 40%, #6b1a1a 100%)" }}
+      style={{ 
+        backgroundImage: `
+          radial-gradient(rgba(255, 255, 255, 0.25) 1.5px, transparent 1.5px),
+          radial-gradient(rgba(255, 255, 255, 0.25) 1.5px, transparent 1.5px),
+          radial-gradient(rgba(255, 255, 255, 0.25) 1.5px, transparent 1.5px),
+          radial-gradient(rgba(255, 255, 255, 0.25) 1.5px, transparent 1.5px),
+          radial-gradient(rgba(255, 255, 255, 0.25) 1.5px, transparent 1.5px),
+          linear-gradient(135deg, #6b1a1a 0%, #8b2a2a 40%, #6b1a1a 100%)
+        `,
+        backgroundPosition: "0 0, 21px 21px, 27px 21px, 21px 27px, 27px 27px, 0 0",
+        backgroundSize: "48px 48px, 48px 48px, 48px 48px, 48px 48px, 48px 48px, 100% 100%"
+      }}
     >
       <div>
         <div className="container mx-auto px-2 sm:px-6 py-4 sm:py-12">

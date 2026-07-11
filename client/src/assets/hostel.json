@@ -44,8 +44,8 @@
     ],
     "Hostel Office Staffs": [
       {
-        "Name": "Uma Maheswari M",
-        "Designation": "Hostel Clerk",
+        "Name": "Panneerselvam S",
+        "Designation": "Manager - Hostel",
         "Phone No": "",
         "Email ID": ""
       },
@@ -81,35 +81,7 @@
         "Phone No": "8754350748",
         "Email ID": ""
       }
-    ],
-    "Student Secretaries": {
-      "Boys Hostel Student Secretary": [
-        {
-          "Secretary": "Hostel",
-          "Name of the Student": "Gokul",
-          "Year/Branch/Dept": "IV/B.E/ECE"
-        },
-        {
-          "Secretary": "Mess",
-          "Name of the Student": "Vinoth",
-          "Year/Branch/Dept": "IV/B.E/Mech"
-        }
-      ],
-      "Girls Hostel Student Secretary": [
-        {
-          "Phone No": "9095344271",
-          "Secretary": "Hostel",
-          "Name of the Student": "Nandhini Devi",
-          "Year/Branch/Dept": "IV/B.E/EEE"
-        },
-        {
-          "Phone No": "8220515079",
-          "Secretary": "Mess",
-          "Name of the Student": "Nivetha",
-          "Year/Branch/Dept": "IV/B.E/EEE"
-        }
-      ]
-    }
+    ]
   },
   "Fees Structure": {
     "New Admission": "https://services.sabpaisa.in/pages/annauniversityregionalcampus.html",
