@@ -60,7 +60,7 @@ useEffect(() => {
     return (
         <main className="bg-white min-h-screen font-sans text-gray-800 pt-[116px] sm:pt-[126px] lg:pt-[136px]">
             {/* Hero Section - No Gap with Header */}
-            <section className="relative w-full h-80 md:h-96 lg:h-[55vh] flex items-center justify-center overflow-hidden -mt-[116px] sm:-mt-[126px] lg:-mt-[136px]">
+            <section className="relative w-full h-64 md:h-80 lg:h-96 flex items-center justify-center overflow-hidden -mt-[116px] sm:-mt-[126px] lg:-mt-[136px]">
                 {/* Background Image */}
                 <img
                     src="/offices.webp"
@@ -79,7 +79,7 @@ useEffect(() => {
                                 rounded-2xl
                                 shadow-[0_20px_60px_rgba(0,0,0,0.4)]
                                 transition-all duration-500
-                                mt-[116px] sm:mt-[126px] lg:mt-[136px]">
+                                mt-24 md:mt-28 lg:mt-32">
 
                     <h1 className="text-xl sm:text-2xl lg:text-3xl 
                                    font-black text-white 
@@ -101,7 +101,7 @@ useEffect(() => {
             {/* Sticky Navigation Pill Bar - Overlapping design */}
             <div className="hidden sm:block sticky top-[116px] sm:top-[126px] lg:top-[136px] z-50 -mt-12 mb-4">
                 <div className="max-w-7xl mx-auto px-4 text-center">
-                    <div className="max-w-5xl mx-auto bg-white/95 backdrop-blur-md shadow-xl rounded-full py-2 px-3 flex justify-center overflow-x-auto no-scrollbar gap-2 border border-[rgb(220,140,140)]">
+                    <div className="max-w-5xl mx-auto bg-white/95 backdrop-blur-md shadow-xl rounded-full py-1 px-3 flex justify-center overflow-x-auto no-scrollbar gap-2 border border-[rgb(220,140,140)]">
                         {sections.map((section) => (
                             <button
                                 key={section.key}
@@ -120,44 +120,48 @@ useEffect(() => {
 
             {/* Content Sections */}
             <section className="max-w-7xl mx-auto py-8 sm:py-12 lg:py-14 px-2 md:px-9 flex flex-col gap-8 sm:gap-10 lg:gap-12">
-                {/* Approval Letters */}
-                <div id="approval_letters" ref={sectionRefs.approval_letters} className="bg-white/70 backdrop-blur-md rounded-2xl shadow-lg border border-gray-100 overflow-hidden">
-                    <div className="bg-[rgb(110,35,35)] py-4 sm:py-5 flex items-center justify-center gap-2 sm:gap-3">
-                        <span className="text-lg lg:text-xl text-white"></span>
-                        <h2 className="text-lg sm:text-xl lg:text-2xl xl:text-3xl font-bold text-white text-center">Approval Letters</h2>
+                {/* Objectives and Approval Letters Grid Container */}
+                <div className="flex flex-col lg:grid lg:grid-cols-3 gap-8 sm:gap-10 lg:gap-12">
+                    {/* Objectives */}
+                    <div id="objectives" ref={sectionRefs.objectives} className="lg:col-span-2 bg-white/70 backdrop-blur-md rounded-2xl shadow-lg border border-gray-100 overflow-hidden">
+                        <div className="bg-[rgb(110,35,35)] py-4 sm:py-5 flex items-center justify-center gap-2 sm:gap-3">
+                            <span className="text-lg lg:text-xl text-white"></span>
+                            <h2 className="text-lg sm:text-xl lg:text-2xl xl:text-3xl font-bold text-white text-center">Objectives</h2>
+                        </div>
+                        <div className="p-4 sm:p-6 md:p-8 lg:p-10 text-left">
+                            <ul className="list-disc pl-5 space-y-2">
+                                {data.home["Objectives of AICTE & MOE Cell"].map((objective, i)=> (
+                                    <li key={i} className="text-base lg:text-lg xl:text-xl text-gray-800">
+                                        {objective}
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
                     </div>
-                    <div className="p-4 sm:p-6 md:p-8 lg:p-10 text-left">
-                        <ul className="list-disc pl-5 space-y-2">
-                            {Object.entries({
+
+                    {/* Approval Letters */}
+                    <div id="approval_letters" ref={sectionRefs.approval_letters} className="lg:col-span-1 bg-white/70 backdrop-blur-md rounded-2xl shadow-lg border border-gray-100 overflow-hidden">
+                        <div className="bg-[rgb(110,35,35)] py-4 sm:py-5 flex items-center justify-center gap-2 sm:gap-3">
+                            <span className="text-lg lg:text-xl text-white"></span>
+                            <h2 className="text-lg sm:text-xl lg:text-2xl xl:text-3xl font-bold text-white text-center">Approval Letters</h2>
+                        </div>
+                        <div className="p-4 sm:p-6 md:p-8 lg:p-10 text-left">
+                            <ul className="list-disc pl-5 space-y-2">
+                                {Object.entries({
   "LOA(2019-20)": data["LOA(2019-20)"],
   "EOA(2020-21)": data["EOA(2020-21)"],
   "EOA(2021-22)": data["EOA(2021-22)"],
   "EOA(2022-23)": data["EOA(2022-23)"],
   "EOA(2023-24)": data["EOA(2023-24)"],
+  "EOA(2024-25)": data["EOA(2024-25)"],
   "EOA(2026-27)": data["EOA(2026-27)"]
 }).map(([title, link]) => (
-                                <li key={title} className="text-base lg:text-lg xl:text-xl">
-                                    <a href={link} target="_blank" rel="noopener noreferrer" className="text-black underline hover:text-[rgb(110,35,35)] hover:font-semibold transition">{title}</a>
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
-                </div>
-                
-                {/* Objectives */}
-                <div id="objectives" ref={sectionRefs.objectives} className="bg-white/70 backdrop-blur-md rounded-2xl shadow-lg border border-gray-100 overflow-hidden">
-                    <div className="bg-[rgb(110,35,35)] py-4 sm:py-5 flex items-center justify-center gap-2 sm:gap-3">
-                        <span className="text-lg lg:text-xl text-white"></span>
-                        <h2 className="text-lg sm:text-xl lg:text-2xl xl:text-3xl font-bold text-white text-center">Objectives</h2>
-                    </div>
-                    <div className="p-4 sm:p-6 md:p-8 lg:p-10 text-left">
-                        <ul className="list-disc pl-5 space-y-2">
-                            {data.home["Objectives of AICTE & MOE Cell"].map((objective, i)=> (
-                                <li key={i} className="text-base lg:text-lg xl:text-xl text-gray-800">
-                                    {objective}
-                                </li>
-                            ))}
-                        </ul>
+                                    <li key={title} className="text-base lg:text-lg xl:text-xl">
+                                        <a href={link} target="_blank" rel="noopener noreferrer" className="text-black underline hover:text-[rgb(110,35,35)] hover:font-semibold transition">{title}</a>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
                     </div>
                 </div>
 
@@ -210,7 +214,7 @@ useEffect(() => {
                                     image: "Balamurugan.webp"
                                 },
                                 {
-                                    name: "Mrs. R. Rajalakshmi",
+                                    name: "Dr. R. Rajalakshmi",
                                     position: "IIC Coordinator",
                                     department: "Institution's Innovation Council",
                                     university: "Anna University Regional Campus",

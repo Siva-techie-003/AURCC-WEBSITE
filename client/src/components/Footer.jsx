@@ -24,6 +24,8 @@ const Footer = ({
       { name: "www.cmeri.res.in", url: "https://www.cmeri.res.in" },
       { name: "www.entrepreneur.com", url: "https://www.entrepreneur.com" },
       { name: "www.howtoexportimport.com", url: "https://www.howtoexportimport.com" },
+      { name: "www.annauniv.edu", url: "https://www.annauniv.edu/" },
+      { name: "www.tneaonline.org", url: "https://www.tneaonline.org/" },
     ],
   },
 }) => {
@@ -119,8 +121,7 @@ const Footer = ({
   return (
     <footer
       className="text-white"
-      style={{ background: "#6b1a1a" }}
-    >
+      style={{ background: "#6b1a1a" }}>
       <div>
         <div className="container mx-auto px-2 sm:px-6 py-4 sm:py-12">
           <div className="grid grid-cols-4 gap-2 sm:gap-4 lg:gap-8">

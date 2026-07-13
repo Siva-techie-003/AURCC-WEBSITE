@@ -130,13 +130,14 @@
         "Post Graduate Programmes": "Admissions to all P.G. courses (M.E., M.Tech., MBA, etc.) are made by the Government of Tamil Nadu through TANCET (Tamil Nadu Common Entrance Test) administered by Anna University, Chennai. Further details are available at www.annauniv.edu.",
         "Research Programmes": "Admissions to Ph.D. programmes are made by the Centre for Research, Anna University, Chennai, twice a year. Interested research scholars are expected to get in touch with the recognized supervisors and obtain their consent for being a supervisor to the applicant. The details regarding the entrance tests for Ph.D. admission and other rules and regulations are available at www.annauniv.edu/research."
       },
-      "staff": [
+      "tfc_coordinator": [
         {
           "name": "Dr. T. Suganthalakshmi",
           "position": "TFC-62 Coordinator",
           "image": "suganthalakshmi.webp"
         }
       ],
+      "campus_admission_staff": [],
       "contact_us": {
         "address": "Anna University Regional Campus, Maruthamalai Main Road, Coimbatore (Dt). Pin-641 046.",
         "phone": "0422 2984009, 0422 2984011",

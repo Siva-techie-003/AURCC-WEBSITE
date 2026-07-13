@@ -14,7 +14,8 @@ const AdmissionView = () => {
         { key: 'overview', label: 'Overview' },
         { key: 'courses_offered', label: 'Courses Offered' },
         { key: 'eligibility', label: 'Eligibility Criteria' },
-        { key: 'staff', label: 'Staff' }
+        { key: 'tfc_coordinator', label: 'TFC Coordinator' },
+        { key: 'campus_admission_staff', label: 'Campus Admission Staff' }
     ];
 
     useEffect(() => {
@@ -129,17 +130,40 @@ const AdmissionView = () => {
                     </div>
                 </div>
 
-                {/* Staff */}
-                <div id="staff" className="scroll-mt-32">
+                {/* TFC Coordinator */}
+                <div id="tfc_coordinator" className="scroll-mt-32">
                     <div className="text-center mb-8">
-                        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-800 font-serif uppercase mb-2">Staff</h2>
+                        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-800 font-serif uppercase mb-2">TFC Coordinator</h2>
                         <div className="flex justify-center">
                             <span className="block w-24 h-1.5 rounded-full bg-[#f5c842]"></span>
                         </div>
                     </div>
                     <div className="max-w-6xl mx-auto">
                         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 justify-items-center">
-                            {(Array.isArray(data?.staff) ? data.staff : []).map((staff, index) => (
+                            {(Array.isArray(data?.tfc_coordinator) ? data.tfc_coordinator : []).map((staff, index) => (
+                                <StaffCard
+                                    key={index}
+                                    staff={{
+                                        ...staff,
+                                        image: staff.image
+                                    }}
+                                />
+                            ))}
+                        </div>
+                    </div>
+                </div>
+
+                {/* Campus Admission Staff */}
+                <div id="campus_admission_staff" className="scroll-mt-32">
+                    <div className="text-center mb-8">
+                        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-800 font-serif uppercase mb-2">Campus Admission Staff</h2>
+                        <div className="flex justify-center">
+                            <span className="block w-24 h-1.5 rounded-full bg-[#f5c842]"></span>
+                        </div>
+                    </div>
+                    <div className="max-w-6xl mx-auto">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 justify-items-center">
+                            {(Array.isArray(data?.campus_admission_staff) ? data.campus_admission_staff : []).map((staff, index) => (
                                 <StaffCard
                                     key={index}
                                     staff={{
