@@ -24,6 +24,8 @@ const Footer = ({
       { name: "www.cmeri.res.in", url: "https://www.cmeri.res.in" },
       { name: "www.entrepreneur.com", url: "https://www.entrepreneur.com" },
       { name: "www.howtoexportimport.com", url: "https://www.howtoexportimport.com" },
+      { name: "www.annauniv.edu", url: "https://www.annauniv.edu/" },
+      { name: "www.tneaonline.org", url: "https://www.tneaonline.org/" },
     ],
   },
 }) => {
@@ -119,17 +121,8 @@ const Footer = ({
   return (
     <footer
       className="text-white"
-      style={{ 
-        backgroundImage: `
-          radial-gradient(rgba(255, 255, 255, 0.25) 1.5px, transparent 1.5px),
-          radial-gradient(rgba(255, 255, 255, 0.25) 1.5px, transparent 1.5px),
-          radial-gradient(rgba(255, 255, 255, 0.25) 1.5px, transparent 1.5px),
-          radial-gradient(rgba(255, 255, 255, 0.25) 1.5px, transparent 1.5px),
-          radial-gradient(rgba(255, 255, 255, 0.25) 1.5px, transparent 1.5px),
-          linear-gradient(135deg, #6b1a1a 0%, #8b2a2a 40%, #6b1a1a 100%)
-        `,
-        backgroundPosition: "0 0, 21px 21px, 27px 21px, 21px 27px, 27px 27px, 0 0",
-        backgroundSize: "48px 48px, 48px 48px, 48px 48px, 48px 48px, 48px 48px, 100% 100%"
+      style={{
+        backgroundImage: "linear-gradient(135deg, #6b1a1a 0%, #8b2a2a 40%, #6b1a1a 100%)"
       }}
     >
       <div>
