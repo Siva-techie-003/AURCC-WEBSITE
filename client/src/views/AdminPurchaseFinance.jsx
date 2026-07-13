@@ -3,10 +3,10 @@ import React, { useState, useEffect } from 'react';
 const AdminStaffCard = ({ member }) => {
     const [error, setError] = useState(false);
     return (
-        <div className="admin-card bg-white rounded-xl shadow-lg border border-gray-200 overflow-hidden flex flex-col items-center transition-all duration-300 w-96 h-[360px]">
-            <div className="w-full h-24 bg-[rgb(110,35,35)] relative flex justify-center"></div>
-            <div className="relative -mt-[72px] flex justify-center">
-                <div className="w-36 h-36 rounded-full overflow-hidden border-4 border-white shadow-lg bg-white flex items-center justify-center">
+        <div className="admin-card bg-white rounded-xl shadow-lg border border-gray-200 overflow-hidden flex flex-col items-center transition-all duration-300 w-[270px] sm:w-96 h-[290px] sm:h-[360px]">
+            <div className="w-full h-16 sm:h-24 bg-[rgb(110,35,35)] relative flex justify-center"></div>
+            <div className="relative -mt-14 sm:-mt-[72px] flex justify-center">
+                <div className="w-24 h-24 sm:w-36 sm:h-36 rounded-full overflow-hidden border-4 border-white shadow-lg bg-white flex items-center justify-center">
                     {member.image && !error ? (
                         <img src={`/public/${member.image}`} alt={member.name} className="w-full h-full object-cover object-top" onError={() => setError(true)} />
                     ) : (
@@ -14,9 +14,9 @@ const AdminStaffCard = ({ member }) => {
                     )}
                 </div>
             </div>
-            <div className="w-full p-6 flex flex-col items-center flex-grow text-center justify-center">
-                <h2 className="text-xl font-bold text-[rgb(110,35,35)] font-serif mb-2">{member.name}</h2>
-                <p className="text-sm font-semibold text-gray-700 font-sans">{member.position || 'Position not available'}</p>
+            <div className="w-full px-2 py-2 sm:p-6 flex flex-col items-center flex-grow text-center justify-start pt-2 sm:pt-4 min-w-0">
+                <h2 className="text-base sm:text-xl font-bold text-[rgb(110,35,35)] font-serif mb-1 sm:mb-2">{member.name}</h2>
+                <p className="text-xs sm:text-sm font-semibold text-gray-700 font-sans break-words w-full px-1">{member.position || 'Position not available'}</p>
             </div>
         </div>
     );

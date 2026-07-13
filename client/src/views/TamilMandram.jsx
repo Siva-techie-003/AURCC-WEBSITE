@@ -66,7 +66,7 @@ const TamilMandram = () => {
   }
 
   return (
-    <main className="flex-grow min-h-screen pt-[126px] sm:pt-[130px]">
+    <main className="flex-grow min-h-screen pt-[106px] sm:pt-[130px]">
       {/* Hero section */}
       <section className="relative w-full min-h-[35vh] sm:min-h-[40vh] md:min-h-[50vh] lg:min-h-[60vh] overflow-hidden flex items-center justify-center">
         <img

@@ -59,7 +59,7 @@ const FineArtsClub = () => {
     }
 
     return (
-        <main className="flex-grow font-sans bg-white pt-[126px] sm:pt-[130px]">
+        <main className="flex-grow font-sans bg-white pt-[106px] sm:pt-[130px]">
             {/* Hero section */}
             <section className="relative w-full min-h-[35vh] sm:min-h-[40vh] md:min-h-[50vh] lg:min-h-[60vh] overflow-hidden flex items-center justify-center">
                 <img src="/sing.jpg" alt="Fine Arts Club" className="absolute inset-0 w-full h-full object-cover  blur-[0.5px]" />
