@@ -67,6 +67,10 @@ const HomeView = () => {
   // State for Database dynamic contents
   const [tickerItems, setTickerItems] = useState([
     {
+      name: "TNEA 2026",
+      url: "https://www.tneaonline.org/",
+    },
+    {
       name: "Anna University Grievances Cell",
       url: "https://www.annauniv.edu/auccgrcell/",
     },
@@ -759,28 +763,12 @@ const HomeView = () => {
                       abilities, and leadership qualities needed to excel in
                       their chosen fields.
                     </p>
-                  </div>
-
-                  {/* Fees PDF link cards moved here to left side */}
-                  <div className="w-full flex flex-col sm:flex-row justify-between gap-2 sm:gap-4 mt-4 sm:mt-auto pt-2">
-                    <a
-                      href="http://aurcc.ac.in/loginpage/loginpage/uploads/352.pdf"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="w-full sm:flex-1 bg-white hover:bg-[rgb(250,245,245)] border-[1.5px] border-[rgb(180,140,140)] rounded-xl p-3 flex flex-col items-center justify-center text-center shadow-sm transition-all duration-300 hover:scale-[1.03] group"
-                    >
-                      <span className="text-[9px] sm:text-[10px] font-bold text-[rgb(130,45,45)] uppercase tracking-wider mb-1">Anna University</span>
-                      <span className="text-sm sm:text-base font-extrabold text-[#1a2b4c] group-hover:text-[rgb(130,45,45)] transition-colors">Chennai</span>
-                      <span className="text-[8px] sm:text-[9px] text-slate-500 mt-1 font-semibold uppercase tracking-widest">UG / PG Fees</span>
-                    </a>
-                    <Link
-                      to="/coimbatore-fees"
-                      className="w-full sm:flex-1 bg-white hover:bg-[rgb(250,245,245)] border-[1.5px] border-[rgb(180,140,140)] rounded-xl p-3 flex flex-col items-center justify-center text-center shadow-sm transition-all duration-300 hover:scale-[1.03] group"
-                    >
-                      <span className="text-[9px] sm:text-[10px] font-bold text-[rgb(130,45,45)] uppercase tracking-wider mb-1">Anna University</span>
-                      <span className="text-sm sm:text-base font-extrabold text-[#1a2b4c] group-hover:text-[rgb(130,45,45)] transition-colors">Coimbatore</span>
-                      <span className="text-[8px] sm:text-[9px] text-slate-500 mt-1 font-semibold uppercase tracking-widest">UG / PG Fees</span>
-                    </Link>
+                    <p className="text-sm sm:text-xl text-gray-700 leading-relaxed mt-4">
+                      With a vibrant campus life, diverse student community, and 
+                      a strong emphasis on extracurricular activities alongside academics, 
+                      we aim to shape not just competent professionals, but responsible 
+                      citizens ready to contribute meaningfully to the global society.
+                    </p>
                   </div>
                 </div>
                 <div className="col-span-12 md:col-span-5 h-full">
@@ -796,6 +784,33 @@ const HomeView = () => {
                       </p>
                     </div>
                   </div>
+                </div>
+              </div>
+
+              {/* Fees Structure */}
+              <div className="bg-white/90 backdrop-blur-sm shadow-xl border border-[rgb(180,100,100)] rounded-xl w-full mb-12 sm:mb-16 overflow-hidden">
+                <h3 className="text-sm sm:text-base font-bold text-white bg-[rgb(115,25,25)] py-3 px-4 text-center uppercase tracking-wide m-0 border-b border-[rgb(180,100,100)]">
+                  Fees Structure
+                </h3>
+                <div className="p-4 sm:p-6 w-full flex flex-col sm:flex-row justify-between gap-3 sm:gap-5">
+                  <a
+                    href="/public/Anna-University-Chennai.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full sm:flex-1 bg-white hover:bg-[rgb(250,245,245)] border-[1.5px] border-[rgb(180,140,140)] rounded-xl p-3 flex flex-col items-center justify-center text-center shadow-sm transition-all duration-300 hover:scale-[1.03] group"
+                  >
+                    <span className="text-[9px] sm:text-[10px] font-bold text-[rgb(130,45,45)] uppercase tracking-wider mb-1">Anna University</span>
+                    <span className="text-sm sm:text-base font-extrabold text-[#1a2b4c] group-hover:text-[rgb(130,45,45)] transition-colors">Chennai</span>
+                    <span className="text-[8px] sm:text-[9px] text-slate-500 mt-1 font-semibold uppercase tracking-widest">UG / PG Fees</span>
+                  </a>
+                  <Link
+                    to="/coimbatore-fees"
+                    className="w-full sm:flex-1 bg-white hover:bg-[rgb(250,245,245)] border-[1.5px] border-[rgb(180,140,140)] rounded-xl p-3 flex flex-col items-center justify-center text-center shadow-sm transition-all duration-300 hover:scale-[1.03] group"
+                  >
+                    <span className="text-[9px] sm:text-[10px] font-bold text-[rgb(130,45,45)] uppercase tracking-wider mb-1">Anna University</span>
+                    <span className="text-sm sm:text-base font-extrabold text-[#1a2b4c] group-hover:text-[rgb(130,45,45)] transition-colors">Regional Campus Coimbatore</span>
+                    <span className="text-[8px] sm:text-[9px] text-slate-500 mt-1 font-semibold uppercase tracking-widest">UG / PG Fees</span>
+                  </Link>
                 </div>
               </div>
 
@@ -873,7 +888,7 @@ const HomeView = () => {
                     <div className="bg-gray-50 border-t border-gray-100 py-2 sm:py-3 px-4 flex justify-end">
                       <Link
                         to="/news"
-                        className="flex items-center text-[10px] sm:text-sm font-bold text-[rgb(110,35,35)] hover:text-[rgb(150,45,45)] transition-colors duration-200 group"
+                        className="flex items-center text-[10px] sm:text-sm font-bold text-white bg-[rgb(115,25,25)] hover:bg-[rgb(150,45,45)] px-4 py-1.5 sm:px-5 sm:py-2 rounded-md transition-colors duration-200 group shadow-sm"
                       >
                         View More
                         <svg
@@ -933,7 +948,7 @@ const HomeView = () => {
                     <div className="bg-gray-50 border-t border-gray-100 py-2 sm:py-3 px-4 flex justify-end">
                       <Link
                         to="/events"
-                        className="flex items-center text-[10px] sm:text-sm font-bold text-[rgb(110,35,35)] hover:text-[rgb(150,45,45)] transition-colors duration-200 group"
+                        className="flex items-center text-[10px] sm:text-sm font-bold text-white bg-[rgb(115,25,25)] hover:bg-[rgb(150,45,45)] px-4 py-1.5 sm:px-5 sm:py-2 rounded-md transition-colors duration-200 group shadow-sm"
                       >
                         View More
                         <svg

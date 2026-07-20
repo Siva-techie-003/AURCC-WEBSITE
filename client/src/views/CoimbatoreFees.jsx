@@ -6,9 +6,9 @@ const CoimbatoreFees = () => {
 
   const content = {
     en: {
-      title: "Fee Structure - Anna University Coimbatore",
-      academicTitle: "Collage Fee Details (General)",
-      hostelTitle: "Hostel Fee Details",
+      title: "Fee Structure - Anna University Regional Campus Coimbatore",
+      academicTitle: "Collage Fees Structure",
+      hostelTitle: "Hostel Fees Structure",
       academic: {
         headers: ["S.No", "Program Details", "One Time Admission Fee", "Caution Deposit", "Term Fee", "Grand Total"],
         sections: [
@@ -94,7 +94,7 @@ const CoimbatoreFees = () => {
       }
     },
     ta: {
-      title: "கட்டண விவரங்கள் - அண்ணா பல்கலைக்கழகம் கோயம்புத்தூர்",
+      title: "கட்டண விவரங்கள் - அண்ணா பல்கலைக்கழகம் மண்டல வளாகம் கோயம்புத்தூர்",
       academicTitle: "திருத்தப்பட்ட கட்டண விவரங்கள் (பொது)",
       hostelTitle: "விடுதி கட்டண விவரங்கள்",
       academic: {
@@ -107,17 +107,9 @@ const CoimbatoreFees = () => {
             ]
           },
           {
-            title: "எம்.இ / எம்.டெக்",
+            title: "எம்.பி.ஏ",
             rows: [
-              ["2", "எம்.இ / எம்.டெக் - (கேட்) முழு நேரம்", "7,960", "7,000", "20,200", "35,160"],
-              ["3", "எம்.இ / எம்.டெக் - (கேட் அல்லாத) முழு நேரம்", "6,860", "7,000", "25,200", "39,060"]
-            ]
-          },
-          {
-            title: "எம்.பி.ஏ / எம்.சி.ஏ",
-            rows: [
-              ["4", "எம்.பி.ஏ - முழு நேரம்", "7,160", "7,000", "30,215", "44,375"],
-              ["5", "எம்.சி.ஏ - முழு நேரம்", "7,160", "7,000", "18,165", "32,325"]
+              ["2", "எம்.பி.ஏ - முழு நேரம்", "7,160", "7,000", "30,215", "44,375"],
             ]
           }
         ]
@@ -195,11 +187,11 @@ const CoimbatoreFees = () => {
   return (
     <div className="min-h-screen bg-gray-50 pt-[160px] md:pt-[180px] pb-12 px-4 sm:px-6 lg:px-8 font-sans">
       <div className="max-w-6xl mx-auto">
-        <div className="flex flex-col sm:flex-row justify-between items-center mb-8 gap-4">
-          <h1 className="text-2xl sm:text-4xl font-bold text-[rgb(115,25,25)] text-center">
+        <div className="flex flex-col md:flex-row justify-between items-center mb-8 gap-4 w-full">
+          <h1 className="text-xl sm:text-2xl md:text-3xl font-bold text-[rgb(115,25,25)] text-center md:text-left flex-1 leading-snug">
             {current.title}
           </h1>
-          <div className="flex items-center bg-white rounded-full shadow-md p-1 border border-gray-200">
+          <div className="flex items-center bg-white rounded-full shadow-md p-1 border border-gray-200 whitespace-nowrap">
             <button
               onClick={() => setLang('en')}
               className={`px-4 py-2 rounded-full text-sm font-bold transition-colors duration-300 ${lang === 'en' ? 'bg-[rgb(115,25,25)] text-white' : 'text-gray-600 hover:bg-gray-100'}`}
@@ -300,12 +292,6 @@ const CoimbatoreFees = () => {
               </tbody>
             </table>
           </div>
-        </div>
-        
-        <div className="mt-8 flex justify-center">
-           <Link to="/" className="px-8 py-3 bg-[rgb(115,25,25)] text-white rounded-full font-bold shadow-lg hover:bg-[rgb(140,35,35)] transition-all hover:scale-105 duration-300">
-             &larr; {lang === 'en' ? 'Back to Home' : 'முகப்பிற்கு செல்க'}
-           </Link>
         </div>
       </div>
     </div>
