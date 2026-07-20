@@ -735,9 +735,9 @@ const HomeView = () => {
             </div>
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
               {/* Row 1: About Description + Featured Image */}
-              <div className="grid grid-cols-12 gap-2 sm:gap-16 items-center mb-12 sm:mb-16">
-                <div className="col-span-12 md:col-span-7 space-y-2 sm:space-y-8">
-                  <h2 className="text-base sm:text-3xl font-bold text-[rgb(100,25,25)] relative inline-block group">
+              <div className="grid grid-cols-12 gap-2 sm:gap-16 items-stretch mb-12 sm:mb-16">
+                <div className="col-span-12 md:col-span-7 space-y-4 sm:space-y-8 flex flex-col justify-between">
+                  <h2 className="text-base sm:text-3xl font-bold text-[rgb(100,25,25)] relative inline-block group self-start">
                     ABOUT OUR CAMPUS
                     <span className="absolute -bottom-1 sm:-bottom-3 left-1/2 transform -translate-x-1/2 h-[1px] sm:h-1 w-16 sm:w-40 lg:w-32 bg-yellow-500"></span>
                   </h2>
@@ -760,13 +760,37 @@ const HomeView = () => {
                       their chosen fields.
                     </p>
                   </div>
+
+                  {/* Fees PDF link cards moved here to left side */}
+                  <div className="w-full flex flex-col sm:flex-row justify-between gap-2 sm:gap-4 mt-4 sm:mt-auto pt-2">
+                    <a
+                      href="http://aurcc.ac.in/loginpage/loginpage/uploads/352.pdf"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full sm:flex-1 bg-white hover:bg-[rgb(250,245,245)] border-[1.5px] border-[rgb(180,140,140)] rounded-xl p-3 flex flex-col items-center justify-center text-center shadow-sm transition-all duration-300 hover:scale-[1.03] group"
+                    >
+                      <span className="text-[9px] sm:text-[10px] font-bold text-[rgb(130,45,45)] uppercase tracking-wider mb-1">Anna University</span>
+                      <span className="text-sm sm:text-base font-extrabold text-[#1a2b4c] group-hover:text-[rgb(130,45,45)] transition-colors">Chennai</span>
+                      <span className="text-[8px] sm:text-[9px] text-slate-500 mt-1 font-semibold uppercase tracking-widest">UG / PG Fees</span>
+                    </a>
+                    <a
+                      href="http://aurcc.ac.in/loginpage/loginpage/uploads/352.pdf"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full sm:flex-1 bg-white hover:bg-[rgb(250,245,245)] border-[1.5px] border-[rgb(180,140,140)] rounded-xl p-3 flex flex-col items-center justify-center text-center shadow-sm transition-all duration-300 hover:scale-[1.03] group"
+                    >
+                      <span className="text-[9px] sm:text-[10px] font-bold text-[rgb(130,45,45)] uppercase tracking-wider mb-1">Anna University</span>
+                      <span className="text-sm sm:text-base font-extrabold text-[#1a2b4c] group-hover:text-[rgb(130,45,45)] transition-colors">Coimbatore</span>
+                      <span className="text-[8px] sm:text-[9px] text-slate-500 mt-1 font-semibold uppercase tracking-widest">UG / PG Fees</span>
+                    </a>
+                  </div>
                 </div>
-                <div className="col-span-12 md:col-span-5 mt-4 md:mt-10">
-                  <div className="relative group overflow-hidden rounded-md sm:rounded-2xl shadow-2xl border-2 sm:border-4 border-white/50 transform hover:scale-[1.02] transition-all duration-500 hover:shadow-[0_0_30px_rgba(115,25,25,0.3)]">
+                <div className="col-span-12 md:col-span-5 h-full">
+                  <div className="relative group overflow-hidden rounded-md sm:rounded-2xl shadow-2xl border-2 sm:border-4 border-white/50 transform hover:scale-[1.02] transition-all duration-500 hover:shadow-[0_0_30px_rgba(115,25,25,0.3)] h-full">
                     <img
                       src="/ANN UNIV_WIDE.jpg"
                       alt="Campus Aerial View"
-                      className="w-full h-[200px] sm:h-[400px] object-cover"
+                      className="w-full h-[300px] md:h-full object-cover"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-[rgb(115,25,25)]/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-2 sm:p-6">
                       <p className="text-white font-black text-[9px] sm:text-sm uppercase tracking-widest leading-none">
@@ -779,7 +803,7 @@ const HomeView = () => {
 
               {/* Row 2: News & Events (Full Width) */}
               <div className="w-full">
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-6 relative">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 relative">
                   <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-20 z-0">
                     <svg
                       width="100%"
@@ -808,116 +832,122 @@ const HomeView = () => {
                   </div>
 
                   {/* News Card */}
-                  <div className="rounded-lg bg-white/80 backdrop-blur-sm shadow-lg overflow-hidden border border-[rgb(180,100,100)]">
-                    <div className="bg-[rgb(110,35,35)] py-1.5 sm:py-4 px-2.5 sm:px-6 flex items-center justify-between">
-                      <h3 className="text-xs sm:text-lg font-semibold text-white">
-                        News & Admissions
-                      </h3>
-                      <div className="w-5 h-5 sm:w-10 sm:h-10 bg-white/20 rounded-full flex items-center justify-center">
+                  <div className="rounded-lg bg-white/80 backdrop-blur-sm shadow-lg overflow-hidden border border-[rgb(180,100,100)] flex flex-col justify-between">
+                    <div>
+                      <div className="bg-[rgb(110,35,35)] py-1.5 sm:py-4 px-2.5 sm:px-6 flex items-center justify-between">
+                        <h3 className="text-xs sm:text-lg font-semibold text-white">
+                          News & Admissions
+                        </h3>
+                        <div className="w-5 h-5 sm:w-10 sm:h-10 bg-white/20 rounded-full flex items-center justify-center">
+                          <svg
+                            className="w-3 h-3 sm:w-5 sm:h-5 text-white"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="2"
+                          >
+                            <path d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"></path>
+                          </svg>
+                        </div>
+                      </div>
+                      <div className="p-1 sm:p-8 max-h-[180px] sm:max-h-[300px] overflow-hidden">
+                        <ul className="news-scroll w-full divide-y divide-gray-100">
+                          {[...news, ...news].map((item, idx) => (
+                            <li
+                              key={idx}
+                              className="flex font-bold items-center py-1.5 sm:py-3 px-1 sm:px-6 hover:bg-[rgb(220,140,140)] transition-colors duration-200 group cursor-pointer"
+                            >
+                              <div className="mr-1.5 sm:mr-3 flex-shrink-0 w-1 sm:w-2 h-1 sm:h-2 bg-[rgb(220,140,140)]0 rounded-full group-hover:scale-150 transition-transform duration-300"></div>
+                              <a
+                                href={item.url}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="transform translate-x-0 group-hover:translate-x-1 transition-transform duration-300 ease-out text-[10px] sm:text-base leading-tight"
+                              >
+                                {item.name}
+                              </a>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </div>
+                    {/* Dedicated View More button bar */}
+                    <div className="bg-gray-50 border-t border-gray-100 py-2 sm:py-3 px-4 flex justify-end">
+                      <Link
+                        to="/news"
+                        className="flex items-center text-[10px] sm:text-sm font-bold text-[rgb(110,35,35)] hover:text-[rgb(150,45,45)] transition-colors duration-200 group"
+                      >
+                        View More
                         <svg
-                          className="w-3 h-3 sm:w-5 sm:h-5 text-white"
+                          className="w-2.5 h-2.5 sm:w-4 sm:h-4 ml-1 sm:ml-2 group-hover:translate-x-1 transition-transform duration-300"
                           viewBox="0 0 24 24"
                           fill="none"
                           stroke="currentColor"
                           strokeWidth="2"
                         >
-                          <path d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"></path>
+                          <path d="M5 12h14M12 5l7 7-7 7"></path>
                         </svg>
-                      </div>
-                    </div>
-                    <div className="p-1 sm:p-8 max-h-[180px] sm:max-h-[300px] overflow-hidden">
-                      <ul className="news-scroll w-full divide-y divide-gray-100">
-                        {news.map((item, idx) => (
-                          <li
-                            key={idx}
-                            className="flex font-bold items-center py-1.5 sm:py-3 px-1 sm:px-6 hover:bg-[rgb(220,140,140)] transition-colors duration-200 group cursor-pointer"
-                          >
-                            <div className="mr-1.5 sm:mr-3 flex-shrink-0 w-1 sm:w-2 h-1 sm:h-2 bg-[rgb(220,140,140)]0 rounded-full group-hover:scale-150 transition-transform duration-300"></div>
-                            <a
-                              href={item.url}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="transform translate-x-0 group-hover:translate-x-1 transition-transform duration-300 ease-out text-[10px] sm:text-base leading-tight"
-                            >
-                              {item.name}
-                            </a>
-                          </li>
-                        ))}
-                        <li className="flex items-center py-1.5 sm:py-3 px-1 sm:px-6 text-[rgb(115,40,40)] font-medium group cursor-pointer hover:bg-[rgb(220,140,140)]">
-                          <Link
-                            to="/news"
-                            className="flex items-center transform group-hover:translate-x-1 transition-transform duration-300 text-[10px] sm:text-base leading-tight"
-                          >
-                            View All Announcements
-                            <svg
-                              className="w-2.5 h-2.5 sm:w-4 sm:h-4 ml-1 sm:ml-2 group-hover:translate-x-1 transition-transform duration-300"
-                              viewBox="0 0 24 24"
-                              fill="none"
-                              stroke="currentColor"
-                              strokeWidth="2"
-                            >
-                              <path d="M5 12h14M12 5l7 7-7 7"></path>
-                            </svg>
-                          </Link>
-                        </li>
-                      </ul>
+                      </Link>
                     </div>
                   </div>
 
                   {/* Events Card */}
-                  <div className="rounded-lg bg-white/80 backdrop-blur-sm shadow-lg overflow-hidden border border-[rgb(180,100,100)]">
-                    <div className="bg-[rgb(110,35,35)] py-1.5 sm:py-4 px-2.5 sm:px-6 flex items-center justify-between">
-                      <h3 className="text-xs sm:text-lg font-semibold text-white">
-                        Events & Scholarships
-                      </h3>
-                      <div className="w-5 h-5 sm:w-10 sm:h-10 bg-white/20 rounded-full flex items-center justify-center">
+                  <div className="rounded-lg bg-white/80 backdrop-blur-sm shadow-lg overflow-hidden border border-[rgb(180,100,100)] flex flex-col justify-between">
+                    <div>
+                      <div className="bg-[rgb(110,35,35)] py-1.5 sm:py-4 px-2.5 sm:px-6 flex items-center justify-between">
+                        <h3 className="text-xs sm:text-lg font-semibold text-white">
+                          Events & Scholarships
+                        </h3>
+                        <div className="w-5 h-5 sm:w-10 sm:h-10 bg-white/20 rounded-full flex items-center justify-center">
+                          <svg
+                            className="w-3 h-3 sm:w-5 sm:h-5 text-white"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="2"
+                          >
+                            <path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                          </svg>
+                        </div>
+                      </div>
+                      <div className="p-1 sm:p-8 max-h-[180px] sm:max-h-[300px] overflow-hidden">
+                        <ul className="events-scroll w-full divide-y divide-gray-100">
+                          {[...events, ...events].map((item, idx) => (
+                            <li
+                              key={idx}
+                              className="flex font-bold items-center py-1.5 sm:py-3 px-1 sm:px-6 hover:bg-[rgb(220,140,140)] transition-colors duration-200 group cursor-pointer"
+                            >
+                              <div className="mr-1.5 sm:mr-3 flex-shrink-0 w-1 sm:w-2 h-1 sm:h-2 bg-[rgb(220,140,140)]0 rounded-full group-hover:scale-150 transition-transform duration-300"></div>
+                              <a
+                                href={item.url}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="transform translate-x-0 group-hover:translate-x-1 transition-transform duration-300 ease-out text-[10px] sm:text-base leading-tight"
+                              >
+                                {item.name}
+                              </a>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </div>
+                    {/* Dedicated View More button bar */}
+                    <div className="bg-gray-50 border-t border-gray-100 py-2 sm:py-3 px-4 flex justify-end">
+                      <Link
+                        to="/events"
+                        className="flex items-center text-[10px] sm:text-sm font-bold text-[rgb(110,35,35)] hover:text-[rgb(150,45,45)] transition-colors duration-200 group"
+                      >
+                        View More
                         <svg
-                          className="w-3 h-3 sm:w-5 sm:h-5 text-white"
+                          className="w-2.5 h-2.5 sm:w-4 sm:h-4 ml-1 sm:ml-2 group-hover:translate-x-1 transition-transform duration-300"
                           viewBox="0 0 24 24"
                           fill="none"
                           stroke="currentColor"
                           strokeWidth="2"
                         >
-                          <path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                          <path d="M5 12h14M12 5l7 7-7 7"></path>
                         </svg>
-                      </div>
-                    </div>
-                    <div className="p-1 sm:p-8 max-h-[180px] sm:max-h-[300px] overflow-hidden">
-                      <ul className="events-scroll w-full divide-y divide-gray-100">
-                        {events.map((item, idx) => (
-                          <li
-                            key={idx}
-                            className="flex font-bold items-center py-1.5 sm:py-3 px-1 sm:px-6 hover:bg-[rgb(220,140,140)] transition-colors duration-200 group cursor-pointer"
-                          >
-                            <div className="mr-1.5 sm:mr-3 flex-shrink-0 w-1 sm:w-2 h-1 sm:h-2 bg-[rgb(220,140,140)]0 rounded-full group-hover:scale-150 transition-transform duration-300"></div>
-                            <a
-                              href={item.url}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="transform translate-x-0 group-hover:translate-x-1 transition-transform duration-300 ease-out text-[10px] sm:text-base leading-tight"
-                            >
-                              {item.name}
-                            </a>
-                          </li>
-                        ))}
-                        <li className="flex items-center py-1.5 sm:py-3 px-1 sm:px-6 text-[rgb(115,40,40)] font-medium group cursor-pointer hover:bg-[rgb(220,140,140)]">
-                          <Link
-                            to="/events"
-                            className="flex items-center transform group-hover:translate-x-1 transition-transform duration-300 text-[10px] sm:text-base leading-tight"
-                          >
-                            View All Events
-                            <svg
-                              className="w-2.5 h-2.5 sm:w-4 sm:h-4 ml-1 sm:ml-2 group-hover:translate-x-1 transition-transform duration-300"
-                              viewBox="0 0 24 24"
-                              fill="none"
-                              stroke="currentColor"
-                              strokeWidth="2"
-                            >
-                              <path d="M5 12h14M12 5l7 7-7 7"></path>
-                            </svg>
-                          </Link>
-                        </li>
-                      </ul>
+                      </Link>
                     </div>
                   </div>
                 </div>
