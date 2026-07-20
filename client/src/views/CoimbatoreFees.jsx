@@ -7,7 +7,7 @@ const CoimbatoreFees = () => {
   const content = {
     en: {
       title: "Fee Structure - Anna University Coimbatore",
-      academicTitle: "Revised Fee Details (General)",
+      academicTitle: "Collage Fee Details (General)",
       hostelTitle: "Hostel Fee Details",
       academic: {
         headers: ["S.No", "Program Details", "One Time Admission Fee", "Caution Deposit", "Term Fee", "Grand Total"],
