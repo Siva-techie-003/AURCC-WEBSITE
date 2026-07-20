@@ -773,16 +773,14 @@ const HomeView = () => {
                       <span className="text-sm sm:text-base font-extrabold text-[#1a2b4c] group-hover:text-[rgb(130,45,45)] transition-colors">Chennai</span>
                       <span className="text-[8px] sm:text-[9px] text-slate-500 mt-1 font-semibold uppercase tracking-widest">UG / PG Fees</span>
                     </a>
-                    <a
-                      href="http://aurcc.ac.in/loginpage/loginpage/uploads/352.pdf"
-                      target="_blank"
-                      rel="noopener noreferrer"
+                    <Link
+                      to="/coimbatore-fees"
                       className="w-full sm:flex-1 bg-white hover:bg-[rgb(250,245,245)] border-[1.5px] border-[rgb(180,140,140)] rounded-xl p-3 flex flex-col items-center justify-center text-center shadow-sm transition-all duration-300 hover:scale-[1.03] group"
                     >
                       <span className="text-[9px] sm:text-[10px] font-bold text-[rgb(130,45,45)] uppercase tracking-wider mb-1">Anna University</span>
                       <span className="text-sm sm:text-base font-extrabold text-[#1a2b4c] group-hover:text-[rgb(130,45,45)] transition-colors">Coimbatore</span>
                       <span className="text-[8px] sm:text-[9px] text-slate-500 mt-1 font-semibold uppercase tracking-widest">UG / PG Fees</span>
-                    </a>
+                    </Link>
                   </div>
                 </div>
                 <div className="col-span-12 md:col-span-5 h-full">

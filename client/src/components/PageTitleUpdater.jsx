@@ -115,7 +115,8 @@ function PageTitleUpdater() {
             '/departments/science-and-humanities': { title: 'Department of Science and Humanities', desc: 'Explore the Department of Science and Humanities at AURCC. Learn about our faculty, chemistry and physics labs, and academic foundations.' },
             '/iic': { title: 'Institution\'s Innovation Council', desc: 'Institution\'s Innovation Council (IIC) at AURCC fosters innovation, entrepreneurship, and intellectual growth.' },
             '/privacy': { title: 'Privacy Policy', desc: 'Read the Privacy Policy of Anna University Regional Campus Coimbatore official website.' },
-            '/safety': { title: 'Safety Measures', desc: 'Explore safety rules, campus health guidelines, and emergency protocols at AURCC.' }
+            '/safety': { title: 'Safety Measures', desc: 'Explore safety rules, campus health guidelines, and emergency protocols at AURCC.' },
+            '/coimbatore-fees': { title: 'AURCC Fees Details', desc: 'Detailed fee structure for Academic and Hostel facilities at Anna University Regional Campus Coimbatore.' }
         };
 
         const pathLower = pathname.toLowerCase();
