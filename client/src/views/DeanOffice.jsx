@@ -35,14 +35,14 @@ const DeanOffice = () => {
 
                 <div className="flex flex-wrap justify-center gap-8 sm:gap-12">
                     {staffList.map((member, i) => (
-                        <div key={i} className="dean-card bg-white rounded-xl shadow-lg border border-gray-200 overflow-hidden flex flex-col items-center transition-all duration-300 w-full max-w-96 h-[380px]">
+                        <div key={i} className="dean-card bg-white rounded-xl shadow-lg border border-gray-200 overflow-hidden flex flex-col items-center transition-all duration-300 w-[270px] sm:w-96 h-[300px] sm:h-[380px]">
                             {/* Header Section */}
-                            <div className="w-full h-24 bg-[rgb(110,35,35)] relative flex justify-center">
+                            <div className="w-full h-16 sm:h-24 bg-[rgb(110,35,35)] relative flex justify-center">
                             </div>
 
                             {/* Profile Image Section */}
-                            <div className="relative -mt-20 flex justify-center">
-                                <div className="w-32 h-40 rounded-full overflow-hidden border-4 border-white shadow-lg bg-white flex items-center justify-center">
+                            <div className="relative -mt-14 sm:-mt-20 flex justify-center">
+                                <div className="w-24 h-32 sm:w-32 sm:h-40 rounded-full overflow-hidden border-4 border-white shadow-lg bg-white flex items-center justify-center">
                                     {member.image ? (
                                         <img
                                             src={`${BACKEND_URL}/public/${member.image}`}
@@ -64,11 +64,11 @@ const DeanOffice = () => {
                             </div>
 
                             {/* Content Section */}
-                            <div className="w-full p-6 flex flex-col items-center flex-grow text-center justify-center">
-                                <h2 className="text-xl font-bold text-[rgb(110,35,35)] font-serif mb-2 leading-tight uppercase">{member.name}</h2>
-                                <div className="flex flex-col gap-1">
-                                    <p className="text-sm font-semibold text-gray-700 font-sans tracking-wide uppercase">{member.position || 'Position not available'}</p>
-                                    <p className="text-xs font-semibold text-black font-sans mt-2">Office of the Dean, Regional Campus Coimbatore</p>
+                            <div className="w-full px-2 py-2 sm:p-6 flex flex-col items-center flex-grow text-center justify-start pt-2 sm:pt-4 min-w-0">
+                                <h2 className="text-base sm:text-xl font-bold text-[rgb(110,35,35)] font-serif mb-1 sm:mb-2 leading-tight uppercase">{member.name}</h2>
+                                <div className="flex flex-col gap-1 w-full items-center">
+                                    <p className="text-xs sm:text-sm font-semibold text-gray-700 font-sans tracking-wide uppercase break-words w-full px-1">{member.position || 'Position not available'}</p>
+                                    <p className="text-[10px] sm:text-xs font-semibold text-black font-sans mt-1 leading-snug">Office of the Dean, Regional Campus Coimbatore</p>
                                 </div>
                             </div>
                         </div>

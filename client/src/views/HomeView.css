@@ -87,7 +87,7 @@
 
 .news-scroll,
 .events-scroll {
-    animation: scrollUp 10s linear infinite;
+    animation: scrollUp 30s linear infinite;
 }
 
 .news-scroll:hover,
@@ -281,7 +281,7 @@ details>summary {
     display: flex;
     align-items: center;
     width: max-content;
-    animation: scrollTicker 15s linear infinite;
+    animation: scrollTicker 30s linear infinite;
 }
 
 .ticker-content:hover {
@@ -289,12 +289,11 @@ details>summary {
 }
 
 @keyframes scrollTicker {
-    from {
-        transform: translateX(100%);
+    0% {
+        transform: translateX(0);
     }
-
-    to {
-        transform: translateX(-100%);
+    100% {
+        transform: translateX(-50%);
     }
 }
 

@@ -21,29 +21,24 @@ const Sports = () => {
   // Static Data
   const galleryImages = [
     {
-      src: "/public/1.webp",
-      alt: "College Event",
-      description: "Annual cultural festival celebrating diverse talents",
+      src: "/sports/1.jpeg",
+      alt: "Sports Event",
+      description: "Students actively participating in campus sports matches",
     },
     {
-      src: "/public/cse-girls-closeup.webp",
-      alt: "Students in Lab",
-      description: "Students collaborating on innovative projects",
+      src: "/sports/2.jpeg",
+      alt: "Athletics",
+      description: "Celebrating athletic excellence and team spirit",
     },
     {
-      src: "/public/4.webp",
-      alt: "Campus View",
-      description: "Our beautiful campus surrounded by greenery",
+      src: "/sports/3.jpeg",
+      alt: "Sports Tournament",
+      description: "Intense competitive tournament showing determination",
     },
     {
-      src: "/public/computer-lab.webp",
-      alt: "Computer Lab",
-      description: "State-of-the-art computer lab with latest equipment",
-    },
-    {
-      src: "/public/Drone_shot.jpg",
-      alt: "Aerial View",
-      description: "Aerial view of our sprawling campus facilities",
+      src: "/sports/4.jpeg",
+      alt: "Team Victory",
+      description: "Uniting for fitness and promoting a healthy lifestyle",
     },
   ];
 

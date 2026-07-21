@@ -52,7 +52,7 @@ const Team = () => {
     {
       name: "G . Dhivakar",
       role: "Frontend and SEO Professional",
-      image: "/dhivakar.jpeg",
+      image: "/dhivakar.webp",
       linkedin: "https://www.linkedin.com/in/dhivakar-g/"
     },
     {
@@ -82,7 +82,7 @@ const Team = () => {
   ];
 
   return (
-    <main className="flex-grow font-sans bg-white pt-[126px] sm:pt-[130px] lg:pt-[130px]">
+    <main className="flex-grow font-sans bg-white pt-[106px] sm:pt-[130px] lg:pt-[130px]">
       {/* Hero Header */}
       <section className="relative w-full overflow-hidden flex items-center justify-center bg-[rgb(110,35,35)] text-center pt-10 pb-8 sm:pt-12 sm:pb-10 px-4">
         <div className="absolute inset-0 bg-black/40 z-0"></div>

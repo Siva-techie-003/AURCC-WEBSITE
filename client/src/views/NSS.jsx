@@ -87,7 +87,7 @@ const NSS = () => {
   }
 
   return (
-    <main className="flex-grow font-sans bg-white pt-[126px] sm:pt-[130px]">
+    <main className="flex-grow font-sans bg-white pt-[106px] sm:pt-[130px]">
       {/* Hero section */}
       <section className="relative w-full min-h-[25vh] sm:min-h-[30vh] md:min-h-[35vh] lg:min-h-[40vh] overflow-hidden flex items-center justify-center border-b-4 border-[#f5c842] bg-white">
         <img

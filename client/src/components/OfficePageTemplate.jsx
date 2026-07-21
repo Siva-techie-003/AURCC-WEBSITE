@@ -48,7 +48,7 @@ const OfficePageTemplate = ({
     }, [sections, currentSection]);
 
     return (
-        <main className="bg-white min-h-screen font-sans text-gray-800 pt-[26px] sm:pt-0">
+        <main className="bg-white min-h-screen font-sans text-gray-800 pt-0">
             {/* Hero Section */}
             <section className={`relative w-full ${heroHeightClasses} overflow-hidden flex items-center justify-center animate-fadeIn px-4 sm:px-6 lg:px-8`}>                <img src={heroImage} alt={officeName} className="absolute inset-0 w-full h-full object-cover object-top sm:object-center" />
                 <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-black/60 via-black/30 to-transparent"></div>

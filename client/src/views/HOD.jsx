@@ -43,15 +43,15 @@ const HOD = () => {
                     {hods.map((hod, index) => (
                         <div
                             key={index}
-                            className="hod-card bg-white rounded-xl shadow-lg border border-gray-200 overflow-hidden flex flex-col items-center transition-all duration-300 w-full max-w-96 h-[350px] mx-auto animate-fadeInUp"
+                            className="hod-card bg-white rounded-xl shadow-lg border border-gray-200 overflow-hidden flex flex-col items-center transition-all duration-300 w-[270px] sm:w-96 h-[290px] sm:h-[350px] mx-auto animate-fadeInUp"
                         >
                             {/* Header Section */}
-                            <div className="w-full h-24 bg-[rgb(110,35,35)] relative flex justify-center">
+                            <div className="w-full h-16 sm:h-24 bg-[rgb(110,35,35)] relative flex justify-center">
                             </div>
 
                             {/* Profile Image Section */}
-                            <div className="relative -mt-20 flex justify-center">
-                                <div className="w-32 h-40 rounded-full overflow-hidden border-4 border-white shadow-lg bg-white flex items-center justify-center">
+                            <div className="relative -mt-14 sm:-mt-20 flex justify-center">
+                                <div className="w-24 h-32 sm:w-32 sm:h-40 rounded-full overflow-hidden border-4 border-white shadow-lg bg-white flex items-center justify-center">
                                     <img
                                         src={`${BACKEND_URL}/public/${hod.photo}`}
                                         alt={hod.name}
@@ -61,12 +61,12 @@ const HOD = () => {
                             </div>
 
                             {/* Content Section */}
-                            <div className="w-full px-2 py-4 sm:p-6 flex flex-col items-center flex-grow text-center justify-start pt-3 min-w-0">
-                                <h2 className="text-xl font-bold text-[rgb(110,35,35)] font-serif mb-2 leading-tight ">{hod.name}</h2>
+                            <div className="w-full px-2 py-2 sm:p-6 flex flex-col items-center flex-grow text-center justify-start pt-2 sm:pt-3 min-w-0">
+                                <h2 className="text-base sm:text-xl font-bold text-[rgb(110,35,35)] font-serif mb-1 sm:mb-2 leading-tight ">{hod.name}</h2>
                                 <div className="flex flex-col gap-2 w-full items-center">
                                     {hod.degree && (
                                         <div className="flex items-center justify-center max-w-full px-2">
-                                            <span className="text-[11px] sm:text-xs lg:text-[10px] xl:text-[11px] 2xl:text-xs font-bold text-[rgb(110,35,35)] text-center lg:whitespace-nowrap whitespace-normal">
+                                            <span className="text-[10px] sm:text-xs lg:text-[10px] xl:text-[11px] 2xl:text-xs font-bold text-[rgb(110,35,35)] text-center lg:whitespace-nowrap whitespace-normal">
                                                 {hod.degree}
                                             </span>
                                         </div>

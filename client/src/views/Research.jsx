@@ -1,6 +1,7 @@
-﻿import React, { useState,useEffect } from 'react';
+import React, { useState,useEffect } from 'react';
 import OfficePageTemplate from '../components/OfficePageTemplate';
 import OfficeContentSection from '../components/OfficeContentSection';
+import StaffCard from '../components/StaffCard';
 import './Research.css';
 
 const Research = () => {
@@ -8,7 +9,8 @@ const Research = () => {
 
     const sections = [
         { key: 'description', label: 'Description' },
-        { key: 'supervisors', label: 'Supervisors' }
+        { key: 'supervisors', label: 'Supervisors' },
+        { key: 'staff', label: 'Staff' }
     ];
 
     useEffect(() => {
@@ -100,6 +102,18 @@ if (!data) {
                                 </tr>
                             </tfoot>
                         </table>
+                    </div>
+                </OfficeContentSection>
+
+                {/* Staff Section */}
+                <OfficeContentSection sectionId="staff" title="Staff">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                        {(Array.isArray(data?.staff_members) ? data.staff_members : []).map((staff, index) => (
+                            <StaffCard
+                                key={index}
+                                staff={{ ...staff, image: staff.image }}
+                            />
+                        ))}
                     </div>
                 </OfficeContentSection>
             </div>
