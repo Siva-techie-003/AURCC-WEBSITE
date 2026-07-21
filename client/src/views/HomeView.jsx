@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef, useMemo } from "react";
+﻿import React, { useState, useEffect, useRef, useMemo } from "react";
 import { Link, useLocation } from "react-router-dom";
 import QuickLinksSidebar from "../components/QuickLinksSidebar";
 import "./HomeView.css";
@@ -744,12 +744,15 @@ const HomeView = () => {
                   <div className="bg-white/80 backdrop-blur-sm shadow-xl border border-[rgb(180,100,100)] p-5 sm:p-8 rounded-xl">
                     <p className="text-sm sm:text-xl text-gray-700 leading-relaxed">
                       The Regional Campus Coimbatore of Anna University,
-                      established in 2012, offers world-class education in
+                      established in 2007, offers world-class education in
                       Engineering and Technology. Nestled in a serene
                       environment away from the city's hustle, our campus boasts
                       state-of-the-art infrastructure and a team of highly
                       qualified faculty members dedicated to academic
                       excellence.
+                    </p>
+                    <p className="text-sm sm:text-xl text-gray-700 leading-relaxed mt-4">
+                      The university is guided by a distinguished faculty, with the majority of members holding doctoral degrees, ensuring high standards of teaching, research, and academic mentorship for every student. Spread across a lush green campus with more than 5,000 trees, it offers a peaceful, eco-friendly environment that enhances learning, innovation, and overall well-being.
                     </p>
                     <p className="text-sm sm:text-xl text-gray-700 leading-relaxed mt-4">
                       Our university is committed to holistic education with a
