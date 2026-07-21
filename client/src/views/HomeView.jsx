@@ -766,12 +766,6 @@ const HomeView = () => {
                       abilities, and leadership qualities needed to excel in
                       their chosen fields.
                     </p>
-                    <p className="text-sm sm:text-xl text-gray-700 leading-relaxed mt-4">
-                      With a vibrant campus life, diverse student community, and 
-                      a strong emphasis on extracurricular activities alongside academics, 
-                      we aim to shape not just competent professionals, but responsible 
-                      citizens ready to contribute meaningfully to the global society.
-                    </p>
                   </div>
                 </div>
                 <div className="col-span-12 md:col-span-5 h-full">
