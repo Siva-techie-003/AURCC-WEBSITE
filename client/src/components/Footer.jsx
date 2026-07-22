@@ -124,7 +124,182 @@ const Footer = ({
       style={{ background: "#6b1a1a" }}>
       <div>
         <div className="container mx-auto px-2 sm:px-6 py-4 sm:py-12">
-          <div className="grid grid-cols-4 gap-2 sm:gap-4 lg:gap-8">
+          {/* MOBILE VIEW */}
+          <div className="flex sm:hidden flex-col gap-4 w-full pt-2 pb-4">
+            
+            {/* 1 & 2: Campus Location & Map */}
+            <div className="grid grid-cols-2 gap-3 w-full">
+              <div className="flex flex-col justify-center gap-1.5 text-center items-center bg-black/20 p-2 rounded-xl border border-white/10 h-[130px]">
+                <h3 className="text-[11px] font-black uppercase tracking-wide leading-tight">
+                  Campus <span style={{ color: "#f5c842" }}>Location</span>
+                </h3>
+                <p className="font-bold text-[9px] leading-tight">Anna University Regional Campus Coimbatore</p>
+                <p className="text-[8px] text-white/70 leading-tight">
+                  Maruthamalai Road, Navavoor, Coimbatore - 641046
+                </p>
+                <p className="font-bold text-[9px] mt-0.5">Ph.No: 0422-2984007</p>
+              </div>
+
+              <div className="w-full h-[130px] rounded-xl overflow-hidden shadow-lg border border-white/15">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3916.123456789!2d76.8860657!3d11.0424918!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba85910327ab1e3%3A0x9f7a2b4ef20fe07!2sAnna%20University%20RC%20Coimbatore!5e0!3m2!1sen!2sin!4v1234567890123!5m2!1sen!2sin"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  loading="lazy"
+                  title="Campus Map"
+                />
+              </div>
+            </div>
+
+            {/* 3. Navigation & Portals */}
+            <div className="grid grid-cols-2 gap-4 w-full px-2 mt-1">
+              <div className="flex flex-col gap-2">
+                <h3 className="text-[10px] font-black uppercase tracking-wider border-b border-white/10 pb-1">
+                  Navigation <span style={{ color: "#f5c842" }}>Hub</span>
+                </h3>
+                <div className="flex flex-col gap-2">
+                  {navLinks.map((link, idx) => (
+                    <Link
+                      key={idx}
+                      to={link.to}
+                      className="flex items-center gap-2"
+                    >
+                      <div className="w-6 h-6 rounded flex items-center justify-center bg-white/10">
+                        <svg className="w-3 h-3" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                          <path d={link.icon} />
+                        </svg>
+                      </div>
+                      <span className="text-white/90 text-[10px] font-semibold">{link.label}</span>
+                    </Link>
+                  ))}
+                </div>
+              </div>
+
+              <div className="flex flex-col gap-2">
+                <h3 className="text-[10px] font-black uppercase tracking-wider border-b border-white/10 pb-1">
+                  Student <span style={{ color: "#f5c842" }}>Portal</span>
+                </h3>
+                <div className="flex flex-col gap-2">
+                  {portalLinks.map((link, idx) => {
+                    const isPdf = link.to.endsWith(".pdf");
+                    const LinkWrapper = isPdf ? 'a' : Link;
+                    const linkProps = isPdf 
+                      ? { href: link.to, target: "_blank", rel: "noopener noreferrer" } 
+                      : { to: link.to };
+
+                    return (
+                      <LinkWrapper
+                        key={idx}
+                        {...linkProps}
+                        className="flex items-center gap-2"
+                      >
+                        <div className="w-6 h-6 rounded flex items-center justify-center bg-white/10">
+                          <svg className="w-3 h-3" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                            <path d={link.icon} />
+                          </svg>
+                        </div>
+                        <span className="text-white/90 text-[10px] font-semibold">{link.label}</span>
+                      </LinkWrapper>
+                    );
+                  })}
+                </div>
+              </div>
+            </div>
+
+            {/* 4. Team (Same style as desktop, slightly reduced width) */}
+            <div className="flex flex-col items-center w-full mt-1">
+              <div
+                className="w-[80%] max-w-[280px] h-auto rounded-xl p-2 flex flex-col gap-1.5 justify-between mx-auto shadow-md"
+                style={{
+                  background: "#9b3535",
+                  border: "2px solid rgba(245,200,66,0.5)",
+                }}
+              >
+                <h3 className="text-[9px] font-black uppercase tracking-wide text-center leading-tight">
+                  Website <span style={{ color: "#f5c842" }}>Development</span> Team
+                </h3>
+
+                <div
+                  className="rounded-md p-1.5 text-center flex flex-col justify-center items-center gap-0.5"
+                  style={{
+                    background: "rgba(255,255,255,0.08)",
+                    border: "1px solid rgba(255,255,255,0.15)",
+                  }}
+                >
+                  <h4 className="text-[10px] font-bold leading-tight">
+                    Meet Our Team
+                  </h4>
+                  <p className="text-[8px] text-white/70 leading-normal">
+                    View the developers behind this website.
+                  </p>
+                  <Link
+                    to="/team"
+                    className="inline-flex items-center gap-1 px-3 py-1 mt-1 rounded font-bold text-[9px] transition-transform active:scale-95"
+                    style={{
+                      background: "#f5c842",
+                      color: "#6b1a1a",
+                    }}
+                  >
+                    View Team &rarr;
+                  </Link>
+                </div>
+              </div>
+            </div>
+
+            {/* 5. Useful Links (Auto Sliding) */}
+            <div className="flex flex-col gap-1.5 w-full bg-[#9b3535] rounded-xl border border-[#f5c842]/40 p-2 shadow-md mt-1 h-[120px]">
+              <h3 className="text-[11px] font-black uppercase tracking-wide text-center pb-1 border-b border-white/10">
+                Useful <span style={{ color: "#f5c842" }}>Links</span>
+              </h3>
+              <div className="relative overflow-hidden group flex-grow">
+                <div className="absolute inset-x-0 animate-marquee flex flex-col gap-1.5 px-1">
+                  {[...data.links, ...data.links].map((item, i) => (
+                    <a
+                      key={i}
+                      href={item.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-center py-1 px-2 rounded-full text-[8px] font-bold transition-colors truncate"
+                      style={{
+                        background: "rgb(140,45,45)",
+                        color: "#ffffff",
+                        border: "1px solid rgba(245,200,66,0.3)",
+                      }}
+                    >
+                      {item.name}
+                    </a>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            {/* 6. Social Media */}
+            <div className="flex flex-wrap justify-center items-center gap-4 pt-4 border-t border-white/10 w-full mt-2">
+              {socials.map((soc, idx) => (
+                <a
+                  key={idx}
+                  href={soc.url || "#"}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={soc.label}
+                  className="w-10 h-10 flex items-center justify-center rounded-full transition-transform active:scale-95 shadow-md"
+                  style={{
+                    background: "#f5c842",
+                    color: "rgb(140,45,45)",
+                  }}
+                >
+                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                    <path d={soc.icon} />
+                  </svg>
+                </a>
+              ))}
+            </div>
+
+          </div>
+
+          {/* DESKTOP VIEW */}
+          <div className="hidden sm:grid sm:grid-cols-4 gap-4 lg:gap-8">
 
             {/* ── COL 1 : CAMPUS LOCATION ── */}
             <div className="flex flex-col col-span-1 justify-between h-full">
@@ -383,19 +558,7 @@ const Footer = ({
 
             {/* RIGHT (FORCED CORNER) */}
             <div className="flex gap-2 sm:gap-6 items-center justify-end w-[35%] sm:w-1/4">
-              {["Team", "Privacy", "Safety"].map((item) => {
-                if (item === "Team") {
-                  return (
-                    <Link
-                      key={item}
-                      to="/team"
-                      className="text-white/60 hover:text-yellow-400 text-[6px] sm:text-xs font-black uppercase tracking-wider sm:tracking-widest transition-colors"
-                    >
-                      {item}
-                    </Link>
-                  );
-                }
-                                
+              {["Privacy", "Safety"].map((item) => {                       
                 if (item === "Privacy") {
                   return (
                     <Link
