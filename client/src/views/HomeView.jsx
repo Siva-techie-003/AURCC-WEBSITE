@@ -1,9 +1,11 @@
-﻿import React, { useState, useEffect, useRef, useMemo } from "react";
-import { Link, useLocation } from "react-router-dom";
+import React, { useState, useEffect, useRef, useMemo } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import QuickLinksSidebar from "../components/QuickLinksSidebar";
 import "./HomeView.css";
 
 const HomeView = () => {
+  const navigate = useNavigate();
+
   // State for Image Gallery
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [touchStartX, setTouchStartX] = useState(0);
@@ -457,8 +459,8 @@ const HomeView = () => {
 
     const targets = {
       alumni: 5000,
-      rank: 7,
-      years: 20,
+      rank: 38,
+      years: 19,
       placement: 100,
     };
 
@@ -659,10 +661,10 @@ const HomeView = () => {
                   ),
                 },
                 {
-                  label: "Rank in TNEA",
-                  value: "7th",
+                  label: "Districts Covered in TN",
+                  value: "38",
                   animatedValue: counts.rank,
-                  suffix: "th",
+                  suffix: "",
                   icon: (
                     <path d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
                   ),
@@ -786,27 +788,29 @@ const HomeView = () => {
 
               {/* Fees Structure */}
               <div className="bg-white/90 backdrop-blur-sm shadow-xl border border-[rgb(180,100,100)] rounded-xl w-full mb-12 sm:mb-16 overflow-hidden">
-                <h3 className="text-sm sm:text-base font-bold text-white bg-[rgb(115,25,25)] py-3 px-4 text-center uppercase tracking-wide m-0 border-b border-[rgb(180,100,100)]">
+                <h3 className="text-xl sm:text-2xl font-extrabold text-white bg-[rgb(115,25,25)] py-3 px-4 text-center uppercase tracking-wider m-0 border-b border-[rgb(180,100,100)]">
                   Fees Structure
                 </h3>
                 <div className="p-4 sm:p-6 w-full flex flex-col sm:flex-row justify-between gap-3 sm:gap-5">
-                  <a
-                    href="/public/Anna-University-Chennai.pdf"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-full sm:flex-1 bg-white hover:bg-[rgb(250,245,245)] border-[1.5px] border-[rgb(180,140,140)] rounded-xl p-3 flex flex-col items-center justify-center text-center shadow-sm transition-all duration-300 hover:scale-[1.03] group"
+                  <div
+                    onClick={() => navigate('/coimbatore-fees/tuition')}
+                    className="cursor-pointer w-full sm:flex-1 bg-white hover:bg-[rgb(250,245,245)] border-[1.5px] border-[rgb(180,140,140)] rounded-xl p-3 flex flex-col items-center justify-center text-center shadow-sm transition-all duration-300 hover:scale-[1.03] group"
                   >
-                    <span className="text-[9px] sm:text-[10px] font-bold text-[rgb(130,45,45)] uppercase tracking-wider mb-1">Anna University</span>
-                    <span className="text-sm sm:text-base font-extrabold text-[#1a2b4c] group-hover:text-[rgb(130,45,45)] transition-colors">Chennai</span>
-                    <span className="text-[8px] sm:text-[9px] text-slate-500 mt-1 font-semibold uppercase tracking-widest">UG / PG Fees</span>
-                  </a>
+                    <span className="text-xs sm:text-sm font-extrabold text-[rgb(130,45,45)] uppercase tracking-wider mb-1 text-center">Anna University Regional Campus Coimbatore</span>
+                    <span className="text-sm sm:text-base font-extrabold text-[#1a2b4c] group-hover:text-[rgb(130,45,45)] transition-colors mt-1">Tuition Fees</span>
+                    <div 
+                      onClick={(e) => { e.stopPropagation(); navigate('/coimbatore-fees/tuition#scholarship'); }}
+                      className="mt-2 flex items-center gap-1 text-[10px] sm:text-xs font-bold bg-[rgb(115,25,25)] text-yellow-400 px-3 py-1 rounded-full hover:bg-[rgb(90,20,20)] transition-colors animate-pulse shadow-md"
+                    >
+                      <span className="text-yellow-400 text-sm">★</span> Scholarship
+                    </div>
+                  </div>
                   <Link
-                    to="/coimbatore-fees"
+                    to="/coimbatore-fees/hostel"
                     className="w-full sm:flex-1 bg-white hover:bg-[rgb(250,245,245)] border-[1.5px] border-[rgb(180,140,140)] rounded-xl p-3 flex flex-col items-center justify-center text-center shadow-sm transition-all duration-300 hover:scale-[1.03] group"
                   >
-                    <span className="text-[9px] sm:text-[10px] font-bold text-[rgb(130,45,45)] uppercase tracking-wider mb-1">Anna University</span>
-                    <span className="text-sm sm:text-base font-extrabold text-[#1a2b4c] group-hover:text-[rgb(130,45,45)] transition-colors">Regional Campus Coimbatore</span>
-                    <span className="text-[8px] sm:text-[9px] text-slate-500 mt-1 font-semibold uppercase tracking-widest">UG / PG Fees</span>
+                    <span className="text-[9px] sm:text-[10px] font-extrabold text-[rgb(130,45,45)] uppercase tracking-wider mb-1">Anna University Regional Campus Coimbatore </span>
+                    <span className="text-sm sm:text-base font-extrabold text-[#1a2b4c] group-hover:text-[rgb(130,45,45)] transition-colors">Hostel Fees</span>
                   </Link>
                 </div>
               </div>
@@ -1160,7 +1164,7 @@ const HomeView = () => {
               <div className="text-center mt-2 sm:mt-4">
                 <h2 className="text-base sm:text-3xl lg:text-4xl font-bold text-white relative inline-block leading-tight">
                   OUR RECRUITERS
-                  <span className="absolute -bottom-1 sm:-bottom-3 left-1/2 -translate-x-1/2 h-[1px] sm:h-1 w-8 sm:w-20 bg-yellow-500"></span>
+                  <span className="absolute bottom-1 sm:-bottom-1 left-1/2 -translate-x-1/2 h-[1px] sm:h-[3px] w-12 sm:w-28 bg-yellow-500 rounded"></span>
                 </h2>
               </div>
 
@@ -1207,7 +1211,7 @@ const HomeView = () => {
                         <img
                           src={logo}
                           alt="Company Logo"
-                          className="max-h-4 sm:max-h-20 object-contain"
+                          className="max-h-6 sm:max-h-[90px] px-1 sm:px-4 object-contain"
                         />
                       </div>
                     ))}
@@ -1315,19 +1319,17 @@ const HomeView = () => {
                   <div className="flex flex-col gap-4 sm:gap-8">
                     {/* Card 3 */}
                     <div
-                      className="lg:ml-32 bg-white p-4 sm:p-6 rounded-md sm:rounded-xl shadow-md 
-  hover:bg-[rgb(110,35,35)]
-  hover:text-white hover:-translate-y-2 transition-all duration-300"
+                      className="lg:ml-32 bg-[rgb(110,35,35)] text-white p-4 sm:p-6 rounded-md sm:rounded-xl shadow-md"
                     >
                       <div className="flex gap-2 sm:gap-4">
-                        <span className="text-blue-600 text-sm sm:text-xl">✔</span>
+                        <span className="text-white text-sm sm:text-xl">✔</span>
 
                         <div>
-                          <h3 className="font-bold text-base sm:text-lg mb-1 sm:mb-2 leading-tight">
+                          <h3 className="font-bold text-base sm:text-lg mb-1 sm:mb-2 leading-tight text-yellow-500">
                             Career Development
                           </h3>
 
-                          <p className="text-sm sm:text-base leading-relaxed text-gray-700 hover:text-white/95">
+                          <p className="text-sm sm:text-base leading-relaxed text-white/95">
                             The Career Development supports students with mentorship, leadership training, and career guidance to shape confident professionals for future success.
                           </p>
                         </div>
@@ -1336,19 +1338,17 @@ const HomeView = () => {
 
                     {/* Card 2 */}
                     <div
-                      className="lg:ml-16 bg-white p-4 sm:p-6 rounded-md sm:rounded-xl shadow-md
-  hover:bg-[rgb(110,35,35)]
-  hover:text-white hover:-translate-y-2 transition-all duration-300"
+                      className="lg:ml-16 bg-[rgb(110,35,35)] text-white p-4 sm:p-6 rounded-md sm:rounded-xl shadow-md"
                     >
                       <div className="flex gap-2 sm:gap-4">
-                        <span className="text-blue-600 text-sm sm:text-xl">✔</span>
+                        <span className="text-white text-sm sm:text-xl">✔</span>
 
                         <div>
-                          <h3 className="font-bold text-base sm:text-lg mb-1 sm:mb-2 leading-tight">
+                          <h3 className="font-bold text-base sm:text-lg mb-1 sm:mb-2 leading-tight text-yellow-500">
                             Placement Support
                           </h3>
 
-                          <p className="text-sm sm:text-base leading-relaxed text-gray-700 hover:text-white/95">
+                          <p className="text-sm sm:text-base leading-relaxed text-white/95">
                             The Placement Assistance team prepares students through aptitude training, mock interviews, and industry guidance to achieve excellent placement opportunities.
                           </p>
                         </div>
@@ -1357,19 +1357,17 @@ const HomeView = () => {
 
                     {/* Card 1 */}
                     <div
-                      className="bg-white p-4 sm:p-6 rounded-md sm:rounded-xl shadow-md
-  hover:bg-[rgb(110,35,35)]
-  hover:text-white hover:-translate-y-2 transition-all duration-300"
+                      className="bg-[rgb(110,35,35)] text-white p-4 sm:p-6 rounded-md sm:rounded-xl shadow-md"
                     >
                       <div className="flex gap-2 sm:gap-4">
-                        <span className="text-blue-600 text-sm sm:text-xl">✔</span>
+                        <span className="text-white text-sm sm:text-xl">✔</span>
 
                         <div>
-                          <h3 className="font-bold text-base sm:text-lg mb-1 sm:mb-2 leading-tight">
+                          <h3 className="font-bold text-base sm:text-lg mb-1 sm:mb-2 leading-tight text-yellow-500">
                             Skill Development
                           </h3>
 
-                          <p className="text-sm sm:text-base leading-relaxed text-gray-700 hover:text-white/95">
+                          <p className="text-sm sm:text-base leading-relaxed text-white/95">
                             The Skill Development enhances students through technical training, innovative workshops, and real-world projects to strengthen professional abilities.
                           </p>
                         </div>

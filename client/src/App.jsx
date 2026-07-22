@@ -192,6 +192,7 @@ function App() {
                         <Route path="/safety" element={<Safety />} />
                         <Route path="/help-desk" element={<HelpDesk />} />
                         <Route path="/coimbatore-fees" element={<CoimbatoreFees />} />
+                        <Route path="/coimbatore-fees/:type" element={<CoimbatoreFees />} />
                         <Route path="*" element={<NotFound />} />
                     </Routes>
                 </Suspense>

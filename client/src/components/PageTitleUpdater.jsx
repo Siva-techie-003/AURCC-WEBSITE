@@ -116,7 +116,9 @@ function PageTitleUpdater() {
             '/iic': { title: 'Institution\'s Innovation Council', desc: 'Institution\'s Innovation Council (IIC) at AURCC fosters innovation, entrepreneurship, and intellectual growth.' },
             '/privacy': { title: 'Privacy Policy', desc: 'Read the Privacy Policy of Anna University Regional Campus Coimbatore official website.' },
             '/safety': { title: 'Safety Measures', desc: 'Explore safety rules, campus health guidelines, and emergency protocols at AURCC.' },
-            '/coimbatore-fees': { title: 'AURCC Fees Details', desc: 'Detailed fee structure for Academic and Hostel facilities at Anna University Regional Campus Coimbatore.' }
+            '/coimbatore-fees': { title: 'AURCC Fees Details', desc: 'Detailed fee structure for Academic and Hostel facilities at Anna University Regional Campus Coimbatore.' },
+            '/coimbatore-fees/tuition': { title: 'Tuition Fees', desc: 'Detailed tuition fee structure for academic programs at Anna University Regional Campus Coimbatore.' },
+            '/coimbatore-fees/hostel': { title: 'Hostel Fees', desc: 'Detailed hostel fee structure at Anna University Regional Campus Coimbatore.' }
         };
 
         const pathLower = pathname.toLowerCase();

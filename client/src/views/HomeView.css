@@ -281,7 +281,7 @@ details>summary {
     display: flex;
     align-items: center;
     width: max-content;
-    animation: scrollTicker 30s linear infinite;
+    animation: scrollTicker 15s linear infinite;
 }
 
 .ticker-content:hover {
@@ -289,11 +289,12 @@ details>summary {
 }
 
 @keyframes scrollTicker {
-    0% {
-        transform: translateX(0);
+    from {
+        transform: translateX(100%);
     }
-    100% {
-        transform: translateX(-50%);
+
+    to {
+        transform: translateX(-100%);
     }
 }
 
