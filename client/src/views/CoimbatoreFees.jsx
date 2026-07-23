@@ -25,7 +25,7 @@ const CoimbatoreFees = () => {
       academicTitle: "College Fees Structure",
       hostelTitle: "Hostel Fees Structure",
       academic: {
-        headers: ["S.No", "Program Details", "One Time Admission Fee", "Caution Deposit", "Term Fee", "Grand Total", "2nd Semester to 8th Semester\n(Each semester)"],
+        headers: ["S.No", "Program Details", "One Time Admission Fee", "Caution Deposit", "Term Fee", "Grand Total", "2nd Semester to 8th Semester"],
         sections: [
           {
             title: "B.E / B.Tech",
@@ -125,7 +125,7 @@ const CoimbatoreFees = () => {
       academicTitle: "திருத்தப்பட்ட கட்டண விவரங்கள் (பொது)",
       hostelTitle: "விடுதி கட்டண விவரங்கள்",
       academic: {
-        headers: ["வ.எண்", "பாடத்திட்ட விவரங்கள்", "ஒரு முறை சேர்க்கை கட்டணம்", "காப்புத் தொகை", "பருவக் கட்டணம்", "மொத்தம் கட்டணம்", "2 முதல் 8 வது பருவம் வரை\n(ஒவ்வொரு பருவமும்)"],
+        headers: ["வ.எண்", "பாடத்திட்ட விவரங்கள்", "ஒரு முறை சேர்க்கை கட்டணம்", "காப்புத் தொகை", "பருவக் கட்டணம்", "மொத்தம் கட்டணம்", "2 முதல் 8 வது பருவம் வரை"],
         sections: [
           {
             title: "பி.இ / பி.டெக்",
@@ -270,14 +270,15 @@ const CoimbatoreFees = () => {
                 <tr className="bg-gray-100 text-gray-800 text-sm uppercase tracking-wider border-b border-gray-200">
                   <th rowSpan="2" className="p-4 font-bold border-r border-gray-200">{current.academic.headers[0]}</th>
                   <th rowSpan="2" className="p-4 font-bold border-r border-gray-200">{current.academic.headers[1]}</th>
-                  <th colSpan="3" className="p-4 font-bold text-center border-b border-r border-gray-200 bg-gray-200/50">{lang === 'en' ? 'For 1st Semester' : 'முதல் பருவத்திற்கு'}</th>
+                  <th colSpan="3" className="p-4 font-bold text-center border-b border-r border-gray-200 bg-gray-300 text-gray-800">{lang === 'en' ? 'For 1st Semester' : 'முதல் பருவத்திற்கு'}</th>
                   <th rowSpan="2" className="p-4 font-bold border-r border-gray-200">{current.academic.headers[5]}</th>
-                  <th rowSpan="2" className="p-4 font-bold whitespace-pre-line">{current.academic.headers[6]}</th>
+                  <th className="p-4 font-bold border-b border-gray-200 text-center bg-gray-300 text-gray-800">{current.academic.headers[6]}</th>
                 </tr>
                 <tr className="bg-gray-100 text-gray-800 text-sm uppercase tracking-wider">
                   <th className="p-4 font-bold border-r border-gray-200 text-center">{current.academic.headers[2]}</th>
                   <th className="p-4 font-bold border-r border-gray-200 text-center">{current.academic.headers[3]}</th>
                   <th className="p-4 font-bold border-r border-gray-200 text-center">{current.academic.headers[4]}</th>
+                  <th className="p-4 font-bold text-center">{lang === 'en' ? 'Each semester' : 'ஒவ்வொரு பருவமும்'}</th>
                 </tr>
               </thead>
               <tbody>

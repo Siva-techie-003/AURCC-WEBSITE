@@ -794,23 +794,25 @@ const HomeView = () => {
                 <div className="p-4 sm:p-6 w-full flex flex-col sm:flex-row justify-between gap-3 sm:gap-5">
                   <div
                     onClick={() => navigate('/coimbatore-fees/tuition')}
-                    className="cursor-pointer w-full sm:flex-1 bg-white hover:bg-[rgb(250,245,245)] border-[1.5px] border-[rgb(180,140,140)] rounded-xl p-3 flex flex-col items-center justify-center text-center shadow-sm transition-all duration-300 hover:scale-[1.03] group"
+                    className="cursor-pointer w-full sm:flex-1 bg-white hover:bg-[rgb(250,245,245)] border-[1.5px] border-[rgb(180,140,140)] rounded-xl p-6 min-h-[120px] flex flex-col items-center justify-center text-center shadow-sm transition-all duration-300 hover:scale-[1.03] group"
                   >
-                    <span className="text-xs sm:text-sm font-extrabold text-[rgb(130,45,45)] uppercase tracking-wider mb-1 text-center">Anna University Regional Campus Coimbatore</span>
-                    <span className="text-sm sm:text-base font-extrabold text-[#1a2b4c] group-hover:text-[rgb(130,45,45)] transition-colors mt-1">Tuition Fees</span>
-                    <div 
-                      onClick={(e) => { e.stopPropagation(); navigate('/coimbatore-fees/tuition#scholarship'); }}
-                      className="mt-2 flex items-center gap-1 text-[10px] sm:text-xs font-bold bg-[rgb(115,25,25)] text-yellow-400 px-3 py-1 rounded-full hover:bg-[rgb(90,20,20)] transition-colors animate-pulse shadow-md"
-                    >
-                      <span className="text-yellow-400 text-sm">★</span> Scholarship
+                    <span className="text-xl sm:text-xl font-extrabold text-[rgb(130,45,45)] uppercase tracking-wider mb-1 text-center">Anna University Regional Campus Coimbatore</span>
+                    <div className="flex flex-row items-center justify-center gap-4 mt-1">
+                      <span className="text-lg sm:text-lg font-extrabold text-[#1a2b4c] group-hover:text-[rgb(130,45,45)] transition-colors">Tuition Fees</span>
+                      <div 
+                        onClick={(e) => { e.stopPropagation(); navigate('/coimbatore-fees/tuition#scholarship'); }}
+                        className="flex items-center gap-1 text-[10px] sm:text-xs font-bold px-3 py-1 rounded-full transition-colors shadow-md animate-blink-colors"
+                      >
+                        <span className="text-sm">★</span> Scholarship Details 
+                      </div>
                     </div>
                   </div>
                   <Link
                     to="/coimbatore-fees/hostel"
-                    className="w-full sm:flex-1 bg-white hover:bg-[rgb(250,245,245)] border-[1.5px] border-[rgb(180,140,140)] rounded-xl p-3 flex flex-col items-center justify-center text-center shadow-sm transition-all duration-300 hover:scale-[1.03] group"
+                    className="w-full sm:flex-1 bg-white hover:bg-[rgb(250,245,245)] border-[1.5px] border-[rgb(180,140,140)] rounded-xl p-6 min-h-[120px] flex flex-col items-center justify-center text-center shadow-sm transition-all duration-300 hover:scale-[1.03] group"
                   >
-                    <span className="text-[9px] sm:text-[10px] font-extrabold text-[rgb(130,45,45)] uppercase tracking-wider mb-1">Anna University Regional Campus Coimbatore </span>
-                    <span className="text-sm sm:text-base font-extrabold text-[#1a2b4c] group-hover:text-[rgb(130,45,45)] transition-colors">Hostel Fees</span>
+                    <span className="text-xl sm:text-xl font-extrabold text-[rgb(130,45,45)] uppercase tracking-wider mb-1">Anna University Regional Campus Coimbatore </span>
+                    <span className="text-lg sm:text-lg font-extrabold text-[#1a2b4c] group-hover:text-[rgb(130,45,45)] transition-colors">Hostel Fees</span>
                   </Link>
                 </div>
               </div>
