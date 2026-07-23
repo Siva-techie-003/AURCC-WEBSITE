@@ -126,18 +126,18 @@ const Footer = ({
         <div className="container mx-auto px-2 sm:px-6 py-4 sm:py-12">
           {/* MOBILE VIEW */}
           <div className="flex sm:hidden flex-col gap-4 w-full pt-2 pb-4">
-            
+
             {/* 1 & 2: Campus Location & Map */}
             <div className="grid grid-cols-2 gap-3 w-full">
               <div className="flex flex-col justify-center gap-1.5 text-center items-center bg-black/20 p-2 rounded-xl border border-white/10 h-[130px]">
-                <h3 className="text-[11px] font-black uppercase tracking-wide leading-tight">
+                <h3 className="text-[13px] font-black uppercase tracking-wide leading-tight">
                   Campus <span style={{ color: "#f5c842" }}>Location</span>
                 </h3>
-                <p className="font-bold text-[9px] leading-tight">Anna University Regional Campus Coimbatore</p>
-                <p className="text-[8px] text-white/70 leading-tight">
+                <p className="font-bold text-[11px] leading-tight">Anna University Regional Campus Coimbatore</p>
+                <p className="text-[10px] text-white/70 leading-tight">
                   Maruthamalai Road, Navavoor, Coimbatore - 641046
                 </p>
-                <p className="font-bold text-[9px] mt-0.5">Ph.No: 0422-2984007</p>
+                <p className="font-bold text-[11px] mt-0.5">Ph.No: 0422-2984007</p>
               </div>
 
               <div className="w-full h-[130px] rounded-xl overflow-hidden shadow-lg border border-white/15">
@@ -155,7 +155,7 @@ const Footer = ({
             {/* 3. Navigation & Portals */}
             <div className="grid grid-cols-2 gap-4 w-full px-2 mt-1">
               <div className="flex flex-col gap-2">
-                <h3 className="text-[10px] font-black uppercase tracking-wider border-b border-white/10 pb-1">
+                <h3 className="text-[12px] font-black uppercase tracking-wider border-b border-white/10 pb-1">
                   Navigation <span style={{ color: "#f5c842" }}>Hub</span>
                 </h3>
                 <div className="flex flex-col gap-2">
@@ -170,22 +170,22 @@ const Footer = ({
                           <path d={link.icon} />
                         </svg>
                       </div>
-                      <span className="text-white/90 text-[10px] font-semibold">{link.label}</span>
+                      <span className="text-white/90 text-[11px] font-semibold">{link.label}</span>
                     </Link>
                   ))}
                 </div>
               </div>
 
               <div className="flex flex-col gap-2">
-                <h3 className="text-[10px] font-black uppercase tracking-wider border-b border-white/10 pb-1">
+                <h3 className="text-[12px] font-black uppercase tracking-wider border-b border-white/10 pb-1">
                   Student <span style={{ color: "#f5c842" }}>Portal</span>
                 </h3>
                 <div className="flex flex-col gap-2">
                   {portalLinks.map((link, idx) => {
                     const isPdf = link.to.endsWith(".pdf");
                     const LinkWrapper = isPdf ? 'a' : Link;
-                    const linkProps = isPdf 
-                      ? { href: link.to, target: "_blank", rel: "noopener noreferrer" } 
+                    const linkProps = isPdf
+                      ? { href: link.to, target: "_blank", rel: "noopener noreferrer" }
                       : { to: link.to };
 
                     return (
@@ -199,7 +199,7 @@ const Footer = ({
                             <path d={link.icon} />
                           </svg>
                         </div>
-                        <span className="text-white/90 text-[10px] font-semibold">{link.label}</span>
+                        <span className="text-white/90 text-[11px] font-semibold">{link.label}</span>
                       </LinkWrapper>
                     );
                   })}
@@ -216,7 +216,7 @@ const Footer = ({
                   border: "2px solid rgba(245,200,66,0.5)",
                 }}
               >
-                <h3 className="text-[9px] font-black uppercase tracking-wide text-center leading-tight">
+                <h3 className="text-[11px] font-black uppercase tracking-wide text-center leading-tight">
                   Website <span style={{ color: "#f5c842" }}>Development</span> Team
                 </h3>
 
@@ -227,15 +227,15 @@ const Footer = ({
                     border: "1px solid rgba(255,255,255,0.15)",
                   }}
                 >
-                  <h4 className="text-[10px] font-bold leading-tight">
+                  <h4 className="text-[11px] font-bold leading-tight">
                     Meet Our Team
                   </h4>
-                  <p className="text-[8px] text-white/70 leading-normal">
+                  <p className="text-[10px] text-white/70 leading-normal">
                     View the developers behind this website.
                   </p>
                   <Link
                     to="/team"
-                    className="inline-flex items-center gap-1 px-3 py-1 mt-1 rounded font-bold text-[9px] transition-transform active:scale-95"
+                    className="inline-flex items-center gap-1 px-3 py-1 mt-1 rounded font-bold text-[11px] transition-transform active:scale-95"
                     style={{
                       background: "#f5c842",
                       color: "#6b1a1a",
@@ -248,8 +248,8 @@ const Footer = ({
             </div>
 
             {/* 5. Useful Links (Auto Sliding) */}
-            <div className="flex flex-col gap-1.5 w-full bg-[#9b3535] rounded-xl border border-[#f5c842]/40 p-2 shadow-md mt-1 h-[120px]">
-              <h3 className="text-[11px] font-black uppercase tracking-wide text-center pb-1 border-b border-white/10">
+            <div className="flex flex-col gap-1.5 w-[90%] mx-auto bg-[#9b3535] rounded-xl border border-[#f5c842]/40 p-2 shadow-md mt-1 h-[120px]">
+              <h3 className="text-[13px] font-black uppercase tracking-wide text-center pb-1 border-b border-white/10">
                 Useful <span style={{ color: "#f5c842" }}>Links</span>
               </h3>
               <div className="relative overflow-hidden group flex-grow">
@@ -260,7 +260,7 @@ const Footer = ({
                       href={item.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-center py-1 px-2 rounded-full text-[8px] font-bold transition-colors truncate"
+                      className="text-center py-1 px-2 rounded-full text-[10px] font-bold transition-colors truncate"
                       style={{
                         background: "rgb(140,45,45)",
                         color: "#ffffff",
@@ -374,8 +374,8 @@ const Footer = ({
                     {portalLinks.map((link, idx) => {
                       const isPdf = link.to.endsWith(".pdf");
                       const LinkWrapper = isPdf ? 'a' : Link;
-                      const linkProps = isPdf 
-                        ? { href: link.to, target: "_blank", rel: "noopener noreferrer" } 
+                      const linkProps = isPdf
+                        ? { href: link.to, target: "_blank", rel: "noopener noreferrer" }
                         : { to: link.to };
 
                       return (
@@ -550,47 +550,45 @@ const Footer = ({
             <div className="hidden sm:block w-1/4"></div>
 
             {/* CENTER */}
-            <div className="text-center w-[65%] sm:w-2/4">
-              <p className="text-white/60 text-[6px] sm:text-xs font-semibold uppercase tracking-wider sm:tracking-widest leading-normal">
-                © 2026 Anna University Regional Campus Coimbatore. All rights reserved.
-              </p>
+            <div className="text-center flex-1 sm:w-2/4">
+              <p className="text-white/60 text-[5px] sm:text-[6px] md:text-xs font-semibold uppercase tracking-wider sm:tracking-widest leading-normal whitespace-nowrap">
+                © 2026 Anna University Regional Campus Coimbatore. All rights reserved.              </p>
             </div>
 
             {/* RIGHT (FORCED CORNER) */}
-            <div className="flex gap-2 sm:gap-6 items-center justify-end w-[35%] sm:w-1/4">
-              {["Privacy", "Safety"].map((item) => {                       
-                if (item === "Privacy") {
-                  return (
-                    <Link
-                      key={item}
-                      to="/privacy"
-                      className="text-white/60 hover:text-yellow-400 text-[6px] sm:text-xs font-black uppercase tracking-wider sm:tracking-widest transition-colors"
-                    >
-                      {item}
-                    </Link>
-                  );
-                }                
-                if (item === "Safety") {
-                  return (
-                    <Link
-                      key={item}
-                      to="/safety"
-                      className="text-white/60 hover:text-yellow-400 text-[6px] sm:text-xs font-black uppercase tracking-wider sm:tracking-widest transition-colors"
-                    >
-                      {item}
-                    </Link>
-                  );
-                }
+            <div className="flex gap-2 sm:gap-6 items-center justify-end w-auto sm:w-1/4">              {["Privacy", "Safety"].map((item) => {
+              if (item === "Privacy") {
                 return (
-                  <a
+                  <Link
                     key={item}
-                    href="#"
-                    className="text-white/60 hover:text-yellow-400 text-[6px] sm:text-xs font-black uppercase tracking-wider sm:tracking-widest transition-colors"
+                    to="/privacy"
+                    className="text-white/60 hover:text-yellow-400 text-[9px] sm:text-xs font-black uppercase tracking-wider sm:tracking-widest transition-colors"
                   >
                     {item}
-                  </a>
+                  </Link>
                 );
-              })}
+              }
+              if (item === "Safety") {
+                return (
+                  <Link
+                    key={item}
+                    to="/safety"
+                    className="text-white/60 hover:text-yellow-400 text-[9px] sm:text-xs font-black uppercase tracking-wider sm:tracking-widest transition-colors"
+                  >
+                    {item}
+                  </Link>
+                );
+              }
+              return (
+                <a
+                  key={item}
+                  href="#"
+                  className="text-white/60 hover:text-yellow-400 text-[9px] sm:text-xs font-black uppercase tracking-wider sm:tracking-widest transition-colors"
+                >
+                  {item}
+                </a>
+              );
+            })}
             </div>
 
           </div>
