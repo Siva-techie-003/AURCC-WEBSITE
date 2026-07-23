@@ -122,3 +122,19 @@ img {
     display: none !important;
   }
 }
+
+/* Custom blink animation for Scholarship Button */
+@keyframes blink-maroon-yellow {
+  0%, 100% {
+    background-color: rgb(115, 25, 25);
+    color: white;
+  }
+  50% {
+    background-color: rgb(250, 204, 21);
+    color: white;
+  }
+}
+
+.animate-blink-colors {
+  animation: blink-maroon-yellow 1.5s infinite;
+}
