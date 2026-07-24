@@ -270,14 +270,14 @@ const CoimbatoreFees = () => {
                 <tr className="bg-gray-100 text-gray-800 text-sm uppercase tracking-wider border-b border-gray-200">
                   <th rowSpan="2" className="p-4 font-bold border-r border-gray-200">{current.academic.headers[0]}</th>
                   <th rowSpan="2" className="p-4 font-bold border-r border-gray-200">{current.academic.headers[1]}</th>
-                  <th colSpan="3" className="p-4 font-bold text-center border-b border-r border-gray-200 bg-gray-300 text-gray-800">{lang === 'en' ? 'For 1st Semester' : 'முதல் பருவத்திற்கு'}</th>
-                  <th rowSpan="2" className="p-4 font-bold border-r border-gray-200">{current.academic.headers[5]}</th>
+                  <th colSpan="4" className="p-4 font-bold text-center border-b border-r border-gray-200 bg-gray-300 text-gray-800">{lang === 'en' ? 'For 1st Semester' : 'முதல் பருவத்திற்கு'}</th>
                   <th className="p-4 font-bold border-b border-gray-200 text-center bg-gray-300 text-gray-800">{current.academic.headers[6]}</th>
                 </tr>
                 <tr className="bg-gray-100 text-gray-800 text-sm uppercase tracking-wider">
                   <th className="p-4 font-bold border-r border-gray-200 text-center">{current.academic.headers[2]}</th>
                   <th className="p-4 font-bold border-r border-gray-200 text-center">{current.academic.headers[3]}</th>
                   <th className="p-4 font-bold border-r border-gray-200 text-center">{current.academic.headers[4]}</th>
+                  <th className="p-4 font-bold border-r border-gray-200 text-center">{current.academic.headers[5]}</th>
                   <th className="p-4 font-bold text-center">{lang === 'en' ? 'Each semester' : 'ஒவ்வொரு பருவமும்'}</th>
                 </tr>
               </thead>

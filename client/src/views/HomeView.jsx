@@ -548,7 +548,7 @@ const HomeView = () => {
             {/* Scrolling Ticker Content */}
             <div className="ticker-container w-full">
               <div className="ticker-content">
-                {[...tickerItems, ...tickerItems].map((item, index) => (
+                {tickerItems.map((item, index) => (
                   <a
                     key={index}
                     href={item.url}
@@ -868,7 +868,7 @@ const HomeView = () => {
                       </div>
                       <div className="p-1 sm:p-8 max-h-[180px] sm:max-h-[300px] overflow-hidden">
                         <ul className="news-scroll w-full divide-y divide-gray-100">
-                          {[...news, ...news].map((item, idx) => (
+                          {news.map((item, idx) => (
                             <li
                               key={idx}
                               className="flex font-bold items-center py-1.5 sm:py-3 px-1 sm:px-6 hover:bg-[rgb(220,140,140)] transition-colors duration-200 group cursor-pointer"
@@ -928,7 +928,7 @@ const HomeView = () => {
                       </div>
                       <div className="p-1 sm:p-8 max-h-[180px] sm:max-h-[300px] overflow-hidden">
                         <ul className="events-scroll w-full divide-y divide-gray-100">
-                          {[...events, ...events].map((item, idx) => (
+                          {events.map((item, idx) => (
                             <li
                               key={idx}
                               className="flex font-bold items-center py-1.5 sm:py-3 px-1 sm:px-6 hover:bg-[rgb(220,140,140)] transition-colors duration-200 group cursor-pointer"
