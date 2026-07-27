@@ -115,7 +115,7 @@ const CoimbatoreFees = () => {
           ["2", "Post Metric SC&ST Scholarship", "Parental Annual Income Less than 2.5 Lakhs", "Rs.28,000/- to Rs.50,000/-\n(Depends on Hosteller /Dayscholar)"],
           ["3", "Higher Education Scholarship SC & ST", "1. Parental Annual Income Less than 1 Lakh\n2. Hostel Students Only", "Rs.8,000/- Per Year"],
           ["4", "Pudhumai Penn & TamilPuthalvan Scheme", "Govt. School Students studied from 6th to 12th Standard & Aided School(Tamil Medium only)", "Rs.1,000/- Per Month"],
-          ["5", "First Graduate", "First graduate certificate need to submit during counselling", "Tuition Fee deduction Rs.8000/- per semester"],
+          ["5", "First Graduate", "First graduate certificate need to submit during counselling", "Tuition Fee deduction Rs.6000/- per semester"],
           ["6", "Pragathi Scholarship", "1. Parental Annual Income Less than 8.0 Lakhs\n2. Girls students only", "Rs.50,000/- Per Year"]
         ]
       }
@@ -214,7 +214,7 @@ const CoimbatoreFees = () => {
           ["2", "Post Metric SC&ST Scholarship", "பெற்றோரின் ஆண்டு வருமானம் 2.5 லட்சத்திற்கும் குறைவு", "Rs.28,000/- முதல் Rs.50,000/- வரை\n(தங்கும் விடுதி/தினம் வருபவர் என்பதை பொறுத்து)"],
           ["3", "Higher Education Scholarship SC & ST", "1. பெற்றோரின் ஆண்டு வருமானம் 1 லட்சத்திற்கும் குறைவு\n2. விடுதி மாணவர்கள் மட்டும்", "ஆண்டுக்கு Rs.8,000/-"],
           ["4", "Pudhumai Penn & TamilPuthalvan Scheme", "அரசு மற்றும் அரசு உதவி பெறும் பள்ளிகளில் 6 முதல் 12 ஆம் வகுப்பு வரை படித்தவர்கள் (தமிழ் வழியில் மட்டும்)", "மாதம் Rs.1,000/-"],
-          ["5", "முதல் தலைமுறை பட்டதாரி", "முதல் தலைமுறை பட்டதாரி சான்றிதழ் உள்ளவர்கள்", "பருவத்திற்கு Rs.8000/- கல்வி கட்டண கழிவு"],
+          ["5", "முதல் தலைமுறை பட்டதாரி", "முதல் தலைமுறை பட்டதாரி சான்றிதழ் உள்ளவர்கள்", "பருவத்திற்கு Rs.6000/- கல்வி கட்டண கழிவு"],
           ["6", "Pragathi Scholarship", "1. பெற்றோரின் ஆண்டு வருமானம் 8.0 லட்சத்திற்கும் குறைவு\n2. மாணவிகள் மட்டும்", "ஆண்டுக்கு Rs.50,000/-"]
         ]
       }
