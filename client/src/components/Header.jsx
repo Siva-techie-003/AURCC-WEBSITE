@@ -60,6 +60,7 @@ const Header = () => {
       isOpen: false,
       links: [
         { name: "About Campus", route: "/", section: "about" },
+        { name: "Fees Structure", route: "/coimbatore-fees/tuition" },
         { name: "Dean Desk", route: "/", section: "deans-message" },
         { name: "Gallery of Memories", route: "/", section: "gallery" },
         { name: "Our Recruiters", route: "/", section: "our_recruiters" },

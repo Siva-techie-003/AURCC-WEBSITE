@@ -227,7 +227,7 @@ const CoimbatoreFees = () => {
     <div className="min-h-screen bg-gray-50 pt-[160px] md:pt-[180px] pb-12 px-2 sm:px-4 lg:px-6 font-sans">
       <div className="w-full mx-auto">
         <div className="flex flex-col md:flex-row justify-between items-center mb-8 gap-4 w-full">
-          <h1 className="text-xl sm:text-2xl md:text-3xl font-bold text-[rgb(115,25,25)] text-center md:text-left flex-1 leading-snug whitespace-nowrap truncate md:overflow-visible">
+          <h1 className="text-xl sm:text-2xl md:text-3xl font-bold text-[rgb(115,25,25)] text-center md:text-left flex-1 leading-snug">
             {current.title}
           </h1>
           <div className="flex items-center gap-3">
@@ -265,7 +265,7 @@ const CoimbatoreFees = () => {
             </h2>
           </div>
           <div className="overflow-x-auto p-4 sm:p-6">
-            <table className="w-full text-left border-collapse min-w-[800px]">
+            <table className="w-full text-left border-collapse min-w-max lg:min-w-full">
               <thead>
                 <tr className="bg-gray-100 text-gray-800 text-sm uppercase tracking-wider border-b border-gray-200">
                   <th rowSpan="2" className="p-4 font-bold border-r border-gray-200">{current.academic.headers[0]}</th>
@@ -315,7 +315,7 @@ const CoimbatoreFees = () => {
             </h2>
           </div>
           <div className="overflow-x-auto p-4 sm:p-6">
-            <table className="w-full text-left border-collapse border border-gray-300 min-w-[800px]">
+            <table className="w-full text-left border-collapse border border-gray-300 min-w-max lg:min-w-full">
               <thead>
                 <tr className="bg-gray-100 text-gray-800 text-sm uppercase tracking-wider border-b-2 border-gray-300">
                   {current.scholarship.headers.map((header, idx) => (
@@ -348,7 +348,7 @@ const CoimbatoreFees = () => {
             </h2>
           </div>
           <div className="overflow-x-auto p-4 sm:p-6">
-            <table className="w-full text-left border-collapse border border-gray-300 min-w-[800px]">
+            <table className="w-full text-left border-collapse border border-gray-300 min-w-max lg:min-w-full">
               <thead>
                 <tr className="bg-gray-100 text-gray-800 text-sm uppercase tracking-wider border-b-2 border-gray-300">
                   {current.hostel.headers.map((header, idx) => (
