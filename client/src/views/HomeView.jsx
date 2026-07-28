@@ -820,32 +820,7 @@ const HomeView = () => {
               {/* Row 2: News & Events (Full Width) */}
               <div className="w-full">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 relative">
-                  <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-20 z-0">
-                    <svg
-                      width="100%"
-                      height="100%"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <pattern
-                        id="triangle-pattern"
-                        width="60"
-                        height="60"
-                        patternUnits="userSpaceOnUse"
-                      >
-                        <path
-                          d="M0 60 L30 0 L60 60 Z"
-                          fill="none"
-                          stroke="currentColor"
-                          strokeWidth="1"
-                        />
-                      </pattern>
-                      <rect
-                        width="100%"
-                        height="100%"
-                        fill="url(#triangle-pattern)"
-                      />
-                    </svg>
-                  </div>
+
 
                   {/* News Card */}
                   <div className="rounded-lg bg-white/80 backdrop-blur-sm shadow-lg overflow-hidden border border-[rgb(180,100,100)] flex flex-col justify-between">
