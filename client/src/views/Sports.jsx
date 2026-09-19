@@ -24,7 +24,7 @@ const Sports = () => {
     {
       src: "/sports/5.jpg",
       alt: "Team Victory",
-      description: "AU-BIT  Tiruchi- Constituted Inter College Tour. 3rd Position among Tour.10.05.2025 to 11.5.2025",
+      description: "AU-BIT Trichy- Constituted Inter College Tour. 3rd Position among Tour.10.05.2025 to 11.5.2025",
     },
     {
       src: "/sports/6.jpg",
