@@ -19,7 +19,10 @@ const departmentSchema = new mongoose.Schema(
     achievements: [Object],
     facility: [Object],
     research_and_publications: [Object],
-    events: [Object]
+    events: [Object],
+    p1: String,
+    p2: String,
+    p3: String
   },
   { timestamps: true }
 );

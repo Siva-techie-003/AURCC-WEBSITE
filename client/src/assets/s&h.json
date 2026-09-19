@@ -1,15 +1,20 @@
 {
     "name": "Science and Humanities",
     "image": "s&h.webp",
-    "description": "The Department of Science and Humanities comprises of the faculty of Mathematics and English. The Faculty members of the department have rich academic experience in respective areas and research experience with outstanding research publications in reputed journals. The strength of the department is the excellent coordination in carrying out the academic responsibilities. It caters to the needs of the society and instills in students the spirit and commitment for acquiring knowledge and community service.",
-    "vision": "The vision of the Department of Science and Humanities is to be recognized globally for establishing Research and Development programme in all the areas of Fundamental Sciences that support Engineering and Technology",
-  "mission":[
-  
-    "To attain excellence in pedagogy, and provide potential skills in the areas of Humanities and Sciences",
-    " To enrich the students to possess the ability and passion to work wisely, creatively, and effectively for the benefit of society.",
-    "To prepare professional leaders to face the emerging global challenges and to foster cultural enrichment",
-    " To create an atmosphere of learning to enable the students to develop sound cognitive and problem solving skills."
+    "description": [
+        "The Department of Science and Humanities serves as the bedrock of our engineering institution, fostering the intellectual and analytical foundation upon which all future engineers are built. The department is a vibrant, multidisciplinary hub comprised of dedicated faculty from the core scientific disciplines including Mathematics, Physics, Chemistry alongside the essential humanities such as English and Tamil. The primary mission is to transcend traditional theoretical instruction, creating a dynamic learning environment where fundamental scientific principles are rigorously taught and seamlessly connected to practical engineering applications. In addition, students are motivated and groomed to enhance their critical thinking skills, problem-solving aptitude and scientific temperament necessary to not only excel in their core engineering curriculum but also to innovate and adapt in a rapidly evolving technological landscape.",
+        "Beyond the technical acumen, it is believed that the most impactful engineers are those who possess a profound understanding of the human context in which technology operates. The department is pivotal in nurturing the whole engineer, emphasizing the development of essential professional skills like effective communication, ethical reasoning, and collaborative teamwork. Through courses in the Humanities and Social Sciences the students are encouraged to think broadly, consider diverse perspectives and understand the societal and global implications of their work. We strive to instill a sense of social responsibility and a lifelong love for learning, ensuring our graduates are not just proficient technologists, but also thoughtful leaders and global citizens ready to shape a better future."
     ],
+    "vision": "To be a premier center of academic excellence that nurtures scientifically adept, analytically proficient, and ethically grounded engineers, who are empowered to drive innovation and address complex global challenges with a profound understanding of the human and social dimensions of technology.",
+    "mission": [
+        "To Build a Strong Foundational Core: To deliver rigorous and application-oriented education in Basic Sciences (Mathematics, Physics, Chemistry) and Humanities (English), equipping students with the critical thinking, problem-solving, and analytical skills essential for mastering advanced engineering disciplines.",
+        "To Develop Holistic Professionals: To foster effective communication, collaborative teamwork, ethical reasoning, and leadership qualities through a dynamic curriculum that integrates Humanities and Social Sciences with technical education.",
+        "To Bridge Theory with Practice: To promote an interdisciplinary approach by encouraging research, project-based learning, and industrial collaborations that demonstrate the practical relevance of Science and Humanities in real-world engineering contexts.",
+        "To Cultivate Lifelong Learners: To instill a spirit of intellectual curiosity, adaptability, and social responsibility, inspiring students to become empathetic leaders and conscientious global citizens who contribute meaningfully to society and sustainable development."
+    ],
+    "p1": "Greetings and a warm welcome to the Department of Science and Humanities at Anna University Regional Campus Coimbatore!",
+    "p2": "As the foundational pillar of engineering education, the department is privileged to shape the intellectual and ethical development of every student who walks through our doors. The Department of Science and Humanities is a vibrant multidisciplinary hub comprising expert faculty from Mathematics, Physics, Chemistry, English and Tamil all united by a shared commitment to academic excellence. The primary mission is to build a strong foundation in fundamental Sciences while simultaneously nurturing essential communication skills, critical thinking and ethical values. We believe the first year of engineering is not merely a transition but a transformative journey where young minds develop the mindset, analytical abilities and motivation to become future innovators and responsible citizens.",
+    "p3": "At our department, we strive to create a dynamic learning environment that seamlessly bridges theoretical knowledge with practical application. Our well-equipped laboratories, includes Physics, Chemistry and Language Labs are designed to promote experiential learning and research orientation. The students are encouraged to explore, experiment and evolve, fostering a spirit of intellectual curiosity and a lifelong passion for learning. Through an integrated approach that emphasizes both academic rigor and personal growth, it is aimed to instill professional integrity, social responsibility, and a global perspective in our students. We invite you to make the most of the opportunities for learning and personal development that our department provides, and look forward to partnering with you on this exciting academic journey.",
   
      "courses_offered":["Ph.D.,(FULL TIME and PART TIME) in English and Mathematics and need based Mathematics course to various UG , PG Programmes in the regional campus ,Coimbatore"], 
     "faculty": {
@@ -46,7 +51,27 @@
           "conferences": "Attended 18 international and national conferences.",
           "drive_link": "https://drive.google.com/open?id=1RBR_4m7ZGuhQGRlnNMgPO2l_Ivi4kOD3",
           "google_scholar": "https://scholar.google.com/citations?user=ODDosSEAAAAJ&hl=en",
-          "image": "Dr.S.N.M - mahalakshmi subramanian.webp"
+          "image": "Dr.S.N.M - mahalakshmi subramanian.webp",
+          "projects": [
+            "Principal Investigator: Adaptive Learning Platform For Fair And Inclusive Exam Preparation (Chief Minister’s Research Grant Project - Budget: Rs. 19,28,402)"
+          ],
+          "patents": [
+            "Method for Improving English Speaking Skills in Children Using an Interactive Learning Approach — Govt. of India (2025) | Publication Date: 22.08.2025",
+            "Automated English Grammar Correction and Enhancement System Using Deep Learning Techniques — Govt. of India (2025) | Publication Date: 05.09.2025",
+            "Enhancing Engagement in Informal Digital English Learning Among EFL Learners in Higher Education Through the Roles of Resilience and Flow — Govt. of India (2026) | Publication Date: 16.01.2026",
+            "Automated Contextual Understanding and Idiom Translation in English Language Processing — Govt. of India (2026) | Publication Date: 20.03.2026"
+          ],
+          "books_published": [
+            "Effective Communication: The Key to Personal and Professional Excellence, HSRA Publications (2025) (ISBN: 978-93-685062-0-1)",
+            "Professional English II, VK Publications (2024) (ISBN: 978-81-980712-0-0)"
+          ],
+          "research_papers": [
+            "The Pain of the Downtrodden in Reference to Joothan: A Dalit’s Life by Omprakash Valmiki - Research Journal of English Language and Literature (March 2025)",
+            "Death, the Leveller: A Study of Simone De Beauvoir’s 'All Men are Mortal' Through an Existential Lens - Journal of English Language and Literature (March 2025)"
+          ],
+          "book_chapters": [
+            "Eco–Narratives and Future Histories: A Comparative Analysis of Climate Fiction Theories and Kim Stanley Robinson’s The Ministry for the Future - Professional Publishers (September 2024)"
+          ]
       }  
       ],
       "assistant_professors": [
@@ -112,7 +137,18 @@
           ],
           "drive_link": "https://drive.google.com/open?id=1TVGOETNL3gzKWWxFdO9hq2kUeGlYXlfP",
           "google_scholar": "https://scholar.google.com/citations?user=4v1nHC0AAAAJ&hl=en&oi=ao",
-          "image": "Marshal.webp"
+          "image": "Marshal.webp",
+          "projects": [
+            "CSIR Project: Controllability of Nonlinear Stochastic Integrodifferential Systems (Rs.1,65,000/-)",
+            "NBHM Project: Design and Analysis of Robust Control for Uncertain Dynamical Systems (Rs.11,50,500/-)",
+            "Principal Investigator: Security control design for stochastic hybrid systems with uncertainties and disturbances (Chief Minister’s Research Grant Project - Budget: Rs. 23,41,133)"
+          ],
+          "awards": [
+            "Awarded SERB travel grant and attended the International Congress on Industrial and Applied Mathematics (ICIAM) 2023 at Waseda University, Tokyo, Japan during August 2023."
+          ],
+          "research_papers": [
+            "Event-Based Biological Pest Control: An LMI Approach - Journal of Theoretical Biology (July 2025)"
+          ]
         },
         {
           "name": "Dr. K. Rajasekar",
@@ -156,7 +192,13 @@
           "conferences": "Attended various international and national conferences.",
           "drive_link": "https://drive.google.com/open?id=1Qqw5lD0RjvGhI_y6axNWEWegT36cifB0",
           "google_scholar": "https://scholar.google.com/citations?user=hQG-NTcAAAAJ&hl=en",
-          "image": "rajasekar.webp"
+          "image": "rajasekar.webp",
+          "projects": [
+            "Principal Investigator: Development of a Robust AEM-Based Electrolyzer with Cost-Effective Catalysts for Green Hydrogen Production (Chief Minister’s Research Grant Project - Budget: Rs. 35,54,250)"
+          ],
+          "research_papers": [
+            "Ultrasonic Synthesis of Nanotubular Hausmannite with Peapod-Like Morphology for Sensitive and Selective Electrochemical Nicotine Detection - Electrocatalysis (June 2025)"
+          ]
         },
         {
           "name": "Dr. P. Renuka Devi",
@@ -197,7 +239,13 @@
           ],
           "publications": "https://scholar.google.co.in/citations?user=B5BUeTsAAAAJ&hl=en",
           "drive_link": "https://drive.google.com/open?id=1jzWlxcSO4lrJ_XGU0HhZ6Uyf4Gi6k1uH",
-          "image": "Renuka.webp"
+          "image": "Renuka.webp",
+          "awards": [
+            "Received the Excellence in Research and Extension award at the 9th Asian PGPR Indian Chapter National Conference on “The Beneficial Microbes as Integrated Approach for Sustainable Agriculture: Opportunities and Challenges” (30th July, 2024)."
+          ],
+          "research_papers": [
+            "Nutritional and Functional Composition of Winged Bean (Psophocarpus tetragonolobus): A Review of Its Potential as a Sustainable Food Resource - Journal of Food Composition and Analysis (December 2025)"
+          ]
         },
         {
           "name": "Dr. A. Leelamani",
@@ -229,7 +277,10 @@
           "conferences": "Details not provided.",
           "drive_link": "https://drive.google.com/open?id=1pEev3iwFB-aQZ8dTEZtqo-7GKdfS0BZm",
           "google_scholar": "Details not provided.",
-          "image": "leela.webp"
+          "image": "leela.webp",
+          "projects": [
+            "Co-Principal Investigator: Security control design for stochastic hybrid systems with uncertainties and disturbances (Chief Minister’s Research Grant Project - Budget: Rs. 23,41,133)"
+          ]
       },
       {
           "name": "Dr. J. Lakshmi",
@@ -334,7 +385,10 @@
           "conferences": null,
           "drive_link": "https://drive.google.com/open?id=1XfwNbkwva-mLJEIVRK2xarmRkJBa91iV",
           "google_scholar": null,
-          "image": "baasha.webp"
+          "image": "baasha.webp",
+          "patents": [
+            "Patent No.: 445351 | Title: Spinel Type Ternary Metal Chalcogenides Based Crystal Lattices and Process Thereof | Date of Grant: 17/08/2023, The Patent Office, Govt. of India."
+          ]
       },
       {
           "name": "Dr. J. Vernold Vivin",
@@ -470,9 +524,145 @@
           "drive_link": "https://drive.google.com/open?id=1gMCBm1liLuV6rALUZuAusvGAs8t5J48f",
           "google_scholar": null,
           "image": "meena.webp"
+      },
+      {
+          "name": "Dr. M. Krishnakumar",
+          "position": "Faculty Member",
+          "department": "Department of Science and Humanities (Physics)",
+          "email": "",
+          "profile": "",
+          "books_published": [
+            "Applied Physics-I, Maruthi Publishers (ISBN:978-93-93836-73-1)"
+          ],
+          "research_papers": [
+            "Investigations on Growth, X-ray, Dielectric, Hirshfeld Surface, and DFT Analysis of E-Ethyl 4-(4-Chlorobenzylidene Amino) Benzoate Crystals for Optical Limiting Application - Journal of Materials Science: Materials in Electronics (August 2025)"
+          ],
+          "image": "default_avatar.png"
       }
-        
-      ]
-    }
-  }
-  
+              ]
+    },
+    "facility": [
+        {
+            "name": "CHEMISTRY LABORATORY",
+            "image": "chemistrylab.png",
+            "description": [
+                "The Chemistry Laboratory at Anna University Regional Campus, Coimbatore, is equipped with sophisticated laboratory infrastructure and advanced research facilities that support high-quality research, innovation, and interdisciplinary collaborations in emerging areas of science and technology.",
+                "The laboratory supports practical learning in core areas of chemistry such as physical chemistry, organic reactions, inorganic analysis, water technology, electrochemistry, and material characterization. Through a series of structured experiments, students learn how to operate laboratory glassware and instruments, prepare accurate chemical solutions, perform titrations, measure reaction parameters, and analyze experimental outcomes. This practical experience helps students build confidence in handling chemicals safely and connecting theoretical concepts to real chemical processes. Moreover, Practical sessions encourage students to adopt a systematic, safety-oriented, and scientific approach to problem-solving. While conducting experiments, students learn to adhere strictly to safety protocols, follow step-by-step procedures, compare experimental observations with expected chemical behavior, and evaluate potential sources of experimental error. These activities develop essential skills such as keen observation, precise measurement, logical deduction, data interpretation, and analytical reasoning.",
+                "At Anna University Regional Campus, Coimbatore, the Chemistry Laboratory serves not merely as a venue for conducting experiments, but as an engaging environment that fosters scientific curiosity, analytical rigor, safety awareness, and technical innovation. It helps students build a strong chemical foundation, preparing them to apply their knowledge effectively across various engineering disciplines and future professional endeavors."
+            ]
+        },
+        {
+            "name": "PHYSICS LABORATORY",
+            "image": "phylab.png",
+            "description": [
+                "The Physics Laboratory at Anna University Regional Campus, Coimbatore, is an important learning space where students experience the practical side of the concepts they learn in the classroom. Physics is not only about understanding theories and equations; it is also about observing how these principles work in real situations. The laboratory provides students with opportunities to explore these concepts through experiments, measurements, observations, and analysis.",
+                "The laboratory supports practical learning in fundamental areas of physics such as mechanics, properties of matter, heat and thermodynamics, optics, electricity, magnetism, and other related topics. Through a range of experiments, students learn how to use laboratory instruments, make accurate measurements, record observations, analyse experimental results, and understand the possible sources of error. This hands-on experience helps students develop confidence in handling scientific equipment and applying theoretical knowledge to practical situations.",
+                "Practical sessions also encourage students to think independently and approach problems scientifically. While conducting an experiment, students learn to follow systematic procedures, compare experimental results with theoretical values, identify variations, and draw meaningful conclusions. These activities help strengthen important skills such as observation, logical thinking, problem-solving, data interpretation, and scientific reasoning.",
+                "The Physics Laboratory plays a significant role in connecting classroom learning with real-world applications. It enables students to understand that the principles of physics form the foundation of many technologies and engineering applications used in everyday life. By combining theoretical knowledge with practical experience, the laboratory contributes to the overall academic and technical development of students.",
+                "At Anna University Regional Campus, Coimbatore, the Physics Laboratory therefore serves not merely as a place for conducting experiments, but as an environment that encourages curiosity, careful observation, experimentation, and scientific thinking. It helps students build a strong foundation in physics and prepares them to apply their knowledge effectively in their engineering studies and future professional endeavours."
+            ]
+        }
+    ],
+    "events": [
+        {
+            "name": "Seminar on “Stochastic Processes and its Applications”",
+            "description": "Mathematics - By Dr. S. Dharmaraja, Prof. & Head, Dept. of Mathematics, IIT Delhi. (One day)",
+            "date": "04.05.2015"
+        },
+        {
+            "name": "Workshop on \"Effective Public Speaking\"",
+            "description": "English - By Mrs. Supriya Sathish, National Trainer (JCI INDIA) & Remedial Tutor, and Mrs. M. Gayathiridevi, Zone Trainer (JCI INDIA) & Corporate HR. (One day)",
+            "date": "29.09.2015"
+        },
+        {
+            "name": "Seminar on “Birth and Death Process Related to Orthogonal Polynomials”",
+            "description": "Mathematics - By Dr. A. Swaminathan, Associate Professor, Dept. of Mathematics, IIT Roorkee. (One day)",
+            "date": "09.02.2016"
+        },
+        {
+            "name": "International Conference on “Nonlinear Dynamical Systems”",
+            "description": "Mathematics - Jointly with Bharathiar University, Coimbatore. (Three days)",
+            "date": "24.03.2016 - 26.03.2016"
+        },
+        {
+            "name": "National Conference on “Computational Topology and Differential Equations”",
+            "description": "Mathematics - Jointly with DRDO Bharathiar University, CLS Centre, Coimbatore. (One day)",
+            "date": "21.04.2018"
+        },
+        {
+            "name": "Advanced Training Programme on Engineering Mathematics",
+            "description": "Mathematics - For first-year B.E. (Mechanical) & B.E. (ECE) by Dr. K. Kannan, Assistant Professor / Dept. of S&H, Hindusthan College of Engineering & Technology, Coimbatore. (One day)",
+            "date": "28.10.2018"
+        },
+        {
+            "name": "Guest Lecture on “What is a Career in MNC?”",
+            "description": "English - By Mr. R. Karthikeyan, Specialist (Product Lifecycle Management), Robert Bosch Engineering and Business Solutions. (One day)",
+            "date": "15.02.2019"
+        },
+        {
+            "name": "Workshop on “Effective Public Speaking Skills in English”",
+            "description": "English - By Mr. Harsha Shekhar Gupta, Language Trainer and Associate, Ford Motor Company, Coimbatore. (One day)",
+            "date": "19.02.2019"
+        },
+        {
+            "name": "Workshop on “Applied Mathematics”",
+            "description": "Mathematics - By Dr. S. Dharmaraja, Head (Training and Placement Unit), Professor and former Head, Dept. of Mathematics, IIT Delhi. (One day)",
+            "date": "27.03.2019"
+        },
+        {
+            "name": "15th Biennial Conference of Indian Society for Industrial and Applied Mathematics (ISIAM)",
+            "description": "Mathematics - Jointly with Bharathiar University. (Three days)",
+            "date": "05.12.2019 - 07.12.2019"
+        },
+        {
+            "name": "International Online Conference on Advances in Differential Equations and Numerical Analysis (ADENA 2020)",
+            "description": "Mathematics - Jointly with IIT Guwahati (Online Mode). (Four days)",
+            "date": "12.10.2020 - 15.10.2020"
+        },
+        {
+            "name": "Guest Lecture on “Telephonic Interview Skills”",
+            "description": "English - By Dr. A.S. Mohanagiri, Assistant Professor, Dept. of English, Government Arts College, Coimbatore. (One day)",
+            "date": "23.05.2022"
+        },
+        {
+            "name": "Guest Lecture on “Creativity and the English Language”",
+            "description": "English - By Dr. V. David Arputha Raj, Assistant Professor, Dept. of English and Foreign Languages, Bharathiar University, Coimbatore. (One day)",
+            "date": "12.12.2023"
+        },
+        {
+            "name": "Special Lecture on “Srinivasa Ramanujan and His Legacy”",
+            "description": "Mathematics - By Dr. Md. Golam Hafez, Dept. of Mathematics, Chittagong University of Engineering and Technology, Chattogram, Bangladesh. (One day)",
+            "date": "22.12.2023"
+        },
+        {
+            "name": "Seminar on “Mathematical Modeling and Analysis”",
+            "description": "Mathematics - By Prof. A.K. Nandhakumaran, Indian Institute of Science, Bangalore. (One day)",
+            "date": "11.05.2023"
+        },
+        {
+            "name": "Special Lecture on “From Lab to Market: Photonics for Life Science”",
+            "description": "English - By Dr. Nagarajan Subramaniyam (D.Sc.), Co-founder and CTO – Xfold Imaging Oy, Finland. (One day)",
+            "date": "21.08.2024"
+        },
+        {
+            "name": "Special Event: “Once Upon a Time: The Storytellers’ Arena”",
+            "description": "English - Special storytelling event. (One day)",
+            "date": "04.09.2024"
+        },
+        {
+            "name": "Guest Lecture on “GATE Examination is the Gateway for Engineers”",
+            "description": "English - By Prof. M. Jeyakumar, Assistant Professor, Dept. of English, RVS Technical Campus, Coimbatore. (One day)",
+            "date": "19.11.2024"
+        },
+        {
+            "name": "Workshop on “Mastering C Programming: Building a Strong Foundation in Coding”",
+            "description": "General Engineering - By Dr. Kannimuthu Subramanian, Professor, Dept. of CSE, Karpagam College of Engineering, Coimbatore. (One day)",
+            "date": "25.10.2025"
+        },
+        {
+            "name": "Workshop on “Motivation and Goal Setting”",
+            "description": "English - By Dr. G. Barani, Associate Professor, Bharathiar School of Management and Entrepreneur Development (BSMED), Coimbatore. (One day)",
+            "date": "06.02.2026"
+        }
+    ]
+}

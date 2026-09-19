@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef, useMemo } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import "./DepartmentsView.css";
+import shData from "../assets/s&h.json";
 
 const DepartmentsView = () => {
   const { departmentName } = useParams();
@@ -31,11 +32,26 @@ const DepartmentsView = () => {
     const fetchDepartment = async () => {
       try {
         const res = await fetch(`/api/departments/${departmentName}`);
-        const data = await res.json();
+        let data = await res.json();
 
         if (!data) {
           navigate("/programs_offered");
           return;
+        }
+
+        if (departmentName === "science-and-humanities") {
+          // Merge updated fields from local JSON file over the DB data
+          data = {
+            ...data,
+            description: shData.description,
+            vision: shData.vision,
+            mission: shData.mission,
+            p1: shData.p1,
+            p2: shData.p2,
+            p3: shData.p3,
+            facility: shData.facility,
+            events: shData.events
+          };
         }
 
         // Intercept and update HOD desk photo if department is MBA
@@ -250,7 +266,7 @@ const DepartmentsView = () => {
                         key={i}
                         className={`text-gray-700 leading-relaxed text-justify ${
                           i === 0
-                            ? "text-xl font-bold mb-3"
+                            ? "text-lg font-normal mb-3"
                             : i === 1
                               ? "text-lg font-normal mb-3"
                               : i === 2
@@ -605,7 +621,7 @@ const DepartmentsView = () => {
                         <div className="absolute inset-0 h-1/2 bg-[rgb(110,35,35)]"></div>
                         <div className="relative">
                           <img
-                            src={`${BACKEND_URL}/public/${staff.photo}`}
+                            src={`${BACKEND_URL}/public/${staff.photo || staff.image}`}
                             alt={staff.name}
                             className="w-36 h-44 object-cover rounded-full border-4 border-white shadow-lg"
                             onError={handleImageError}
@@ -735,10 +751,10 @@ const DepartmentsView = () => {
               </div>
             </div>
 
-            {/* Events Slider
+            {/* Events Slider */}
             <div
               id="events"
-              className="px-4 sm:px-6 border-4 lg:px-8 max-w-7xl mx-auto py-12 bg-white scroll-mt-40"
+              className="px-4 sm:px-6 border-2 border-[rgb(110,35,35)] rounded-xl lg:px-8 max-w-7xl mx-auto py-12 bg-white scroll-mt-40 shadow-sm my-8"
             >
               <h2 className="text-3xl md:text-4xl font-bold text-center mb-10 text-gray-800">
                 <span className="bg-[rgb(110,35,35)] bg-clip-text text-transparent">
@@ -751,10 +767,10 @@ const DepartmentsView = () => {
                     <div className="section-content">
                       <div className="flex flex-col md:flex-row md:items-center justify-between">
                         <div className="flex-grow mb-4 md:mb-0 md:mr-8 text-left">
-                          <h3 className="text-lg lg:text-xl xl:text-2xl font-bold mb-2 text-gray-800">
+                          <h3 className="text-base lg:text-lg xl:text-xl font-bold mb-2 text-gray-800">
                             {currentEvent.name}
                           </h3>
-                          <p className="text-sm lg:text-base xl:text-lg text-gray-600 mb-4">
+                          <p className="text-sm lg:text-base text-gray-600 mb-4">
                             {currentEvent.description}
                           </p>
                           <div className="flex items-center">
@@ -772,7 +788,7 @@ const DepartmentsView = () => {
                                 d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
                               />
                             </svg>
-                            <span className="text-sm lg:text-base text-[rgb(115,40,40)] font-medium">
+                            <span className="text-xs lg:text-sm text-[rgb(115,40,40)] font-medium">
                               {currentEvent.date}
                             </span>
                           </div>
@@ -851,7 +867,7 @@ const DepartmentsView = () => {
                   </p>
                 </div>
               )}
-            </div> */}
+            </div>
 
             <div className="px-4 sm:px-6 lg:px-8 max-w-full mx-auto py-12">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
@@ -1276,6 +1292,30 @@ const DepartmentsView = () => {
                       <ul className="list-disc pl-4 sm:pl-5 space-y-1 sm:space-y-1.5 mt-1.5">
                         {selectedStaff.publications.books.map((b, i) => (
                           <li key={i} className="text-xs sm:text-sm md:text-base text-gray-600 leading-relaxed">{b}</li>
+                        ))}
+                      </ul>
+                    </section>
+                  )}
+
+                  {/* RESEARCH PAPERS */}
+                  {selectedStaff.research_papers?.length > 0 && (
+                    <section>
+                      <h3 className="font-bold text-sm sm:text-base md:text-lg text-gray-800 border-b border-gray-100 pb-1">Research Papers Published</h3>
+                      <ul className="list-disc pl-4 sm:pl-5 space-y-1 sm:space-y-1.5 mt-1.5">
+                        {selectedStaff.research_papers.map((p, i) => (
+                          <li key={i} className="text-xs sm:text-sm md:text-base text-gray-600 leading-relaxed">{p}</li>
+                        ))}
+                      </ul>
+                    </section>
+                  )}
+
+                  {/* BOOK CHAPTERS */}
+                  {selectedStaff.book_chapters?.length > 0 && (
+                    <section>
+                      <h3 className="font-bold text-sm sm:text-base md:text-lg text-gray-800 border-b border-gray-100 pb-1">Book Chapters</h3>
+                      <ul className="list-disc pl-4 sm:pl-5 space-y-1 sm:space-y-1.5 mt-1.5">
+                        {selectedStaff.book_chapters.map((c, i) => (
+                          <li key={i} className="text-xs sm:text-sm md:text-base text-gray-600 leading-relaxed">{c}</li>
                         ))}
                       </ul>
                     </section>
