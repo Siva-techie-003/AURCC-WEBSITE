@@ -20,25 +20,96 @@ const Sports = () => {
 
   // Static Data
   const galleryImages = [
+
     {
-      src: "/sports/1.jpeg",
-      alt: "Sports Event",
-      description: "Students actively participating in campus sports matches",
+      src: "/sports/5.jpg",
+      alt: "Team Victory",
+      description: "AU-BIT  Tiruchi- Constituted Inter College Tour. 3rd Position among Tour.10.05.2025 to 11.5.2025",
     },
     {
-      src: "/sports/2.jpeg",
-      alt: "Athletics",
-      description: "Celebrating athletic excellence and team spirit",
+      src: "/sports/6.jpg",
+      alt: "Team Victory",
+      description: "Valedictory Function - Free Summer Coaching Camp-2025",
     },
     {
-      src: "/sports/3.jpeg",
-      alt: "Sports Tournament",
-      description: "Intense competitive tournament showing determination",
+      src: "/sports/7.jpg",
+      alt: "Team Victory",
+      description: "AUSB – 2024-2025 Zone XI- Cricket (Men) Tournament 22.9.2024. @ AURCC",
     },
     {
-      src: "/sports/4.jpeg",
+      src: "/sports/8.jpg",
+      alt: "Team Victory",
+      description: "Won the Gold Medal in the Tamil Nadu State Amateur Kickboxing Championship 2025",
+    },
+    {
+      src: "/sports/9.jpg",
+      alt: "Team Victory",
+      description: "The intra-college Kabaddi '2nd All Star League' Tournament organised by Department of Physical Education AURCC from 05/03/2026 to 10/03/2026",
+    },
+    {
+      src: "/sports/10.jpg",
+      alt: "Team Victory",
+      description: "Gold Medal (Champions), Anna University Zone XI Inter-Collegiate Cricket Tournament 2025–2026 – Men's Cricket Team, AURCC",
+    },
+    {
+      src: "/sports/11.jpg",
+      alt: "Team Victory",
+      description: "Our women’s volleyball team has secured third place (Bronze medal) in 2025 -2026 Zone 11 women’s volleyball tournament conducted by AUSB on 12-09-2025 at KGISL",
+    },
+    {
+      src: "/sports/12.jpg",
+      alt: "Team Victory",
+      description: "Our women’s volleyball team has secured third place (Bronze medal) in 2025 -2026 Zone 11 women’s volleyball tournament conducted by AUSB on 12-09-2025 at KGISL",
+    },
+    {
+      src: "/sports/13.jpg",
+      alt: "Team Victory",
+      description: "Anna University Zone 11 Football (M) Inter College Tournaments at Anna University Regional Campus, Coimbatore. Date: - 26.9.2025 to 28.9.2025",
+    },
+    {
+      src: "/sports/14.jpg",
+      alt: "Team Victory",
+      description: "Our AURCC College Cricket (Men) Team outstanding performance at the Inter College State Level Tournament held at University College of Engineering, BIT Campus, Trichy (28th–29th March 2026). Our team secured the Runner-Up",
+    },
+    {
+      src: "/sports/15.jpg",
+      alt: "Team Victory",
+      description: "2nd Alumni AURCC Football Tournament 2025–2026 – Participant | Match Date: 15 August 2025, at Anna University Regional Campus, Coimbatore",
+    },
+    {
+      src: "/sports/16.jpg",
+      alt: "Team Victory",
+      description: "Football intra college tournament, Alpha league 3rd season the winner of the tournament is Blue lions and the runner up is Fighter club",
+    },
+    {
+      src: "/sports/17.jpg",
+      alt: "Team Victory",
+      description: "Our AURCC College Football (Men) Team outstanding performance at the Inter College State Level Tournament held at University College of Engineering, BIT Campus, Trichy (14th–15th March 2026). Our team secured the 4th Place",
+    },
+    {
+      src: "/sports/18.jpg",
+      alt: "Team Victory",
+      description: "Chess APEX (Men) League | Date: 08 March 2026 to 17 March 2026 | The League Winners and Runners-up were awarded medals and certificates by the Dean Sir at the Dean’s Chamber, AURCC, on 18 March 202",
+    },
+    {
+      src: "/sports/19.jpg",
       alt: "Team Victory",
       description: "Uniting for fitness and promoting a healthy lifestyle",
+    },
+    {
+      src: "/sports/20.jpg",
+      alt: "Team Victory",
+      description: "The 3rd Year Free Summer Sports Coaching Camp was inaugurated on 01.05.2026 by the esteemed Dean of AURCC along with the presence of the Chief Guest, Dr. M. Rajkumar, Professor and Head, Department of Physical Education, Bharathiar University",
+    },
+    {
+      src: "/sports/21.jpg",
+      alt: "Team Victory",
+      description: "Valedictory Ceremony of the 2026 Free Summer Coaching Camp (20.05.2026)",
+    },
+    {
+      src: "/sports/22.jpeg",
+      alt: "Sports Event",
+      description: "Students actively participating in campus sports matches",
     },
   ];
 
