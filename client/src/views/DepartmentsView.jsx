@@ -50,7 +50,17 @@ const DepartmentsView = () => {
             p2: shData.p2,
             p3: shData.p3,
             facility: shData.facility,
-            events: shData.events
+            events: shData.events,
+            faculty: {
+              ...shData.faculty,
+              ...(data?.faculty || {}),
+              hod_desk: (data?.faculty?.hod_desk?.length > 0)
+                ? data.faculty.hod_desk
+                : shData.faculty.hod_desk,
+              assistant_professors: (data?.faculty?.assistant_professors?.length > 0)
+                ? data.faculty.assistant_professors
+                : shData.faculty.assistant_professors
+            }
           };
         }
 
@@ -65,7 +75,10 @@ const DepartmentsView = () => {
           const hodsList = hodsData[0]?.departments || [];
           if (data.faculty?.hod_desk?.length > 0) {
             data.faculty.hod_desk = data.faculty.hod_desk.map(staff => {
-              const matchingHod = hodsList.find(h => h.name === staff.name);
+              const matchingHod = hodsList.find(h => 
+                h.name === staff.name || 
+                h.name?.replace(/[\s.]+/g, '').toLowerCase() === staff.name?.replace(/[\s.]+/g, '').toLowerCase()
+              );
               if (matchingHod) {
                 return { ...staff, profile_photo: matchingHod.photo };
               }
@@ -79,6 +92,9 @@ const DepartmentsView = () => {
         setDepartment(data);
       } catch (error) {
         console.error("Error fetching department:", error);
+        if (departmentName === "science-and-humanities") {
+          setDepartment(shData);
+        }
       }
     };
 
@@ -1033,7 +1049,7 @@ const DepartmentsView = () => {
             onClick={() => setShowPopover(false)}
           >
             <div
-              className="relative bg-white rounded-2xl shadow-xl max-w-5xl w-full h-[85vh] md:h-[80vh] overflow-hidden flex flex-col md:flex-row mt-0 md:mt-[120px]"
+              className="relative bg-white rounded-2xl shadow-xl max-w-5xl w-full h-[85vh] md:h-[80vh] overflow-hidden flex flex-col md:flex-row my-auto"
               onClick={(e) => e.stopPropagation()}
             >
               {/* Close Button at top right corner of the entire modal box */}
@@ -1093,10 +1109,10 @@ const DepartmentsView = () => {
                 {/* 🔹 SCROLLABLE CONTENT */}
                 <div className="p-4 sm:p-6 overflow-y-auto space-y-5 sm:space-y-6 scrollbar-thin scrollbar-thumb-gray-400">
                   {/* ABOUT */}
-                  {selectedStaff.about && (
+                  {(selectedStaff.about || selectedStaff.profile) && (
                     <section>
                       <h3 className="font-bold text-sm sm:text-base md:text-lg text-gray-800 border-b border-gray-100 pb-1">About</h3>
-                      <p className="text-xs sm:text-sm md:text-base text-gray-600 leading-relaxed text-justify mt-1.5">{selectedStaff.about}</p>
+                      <p className="text-xs sm:text-sm md:text-base text-gray-600 leading-relaxed text-justify mt-1.5">{selectedStaff.about || selectedStaff.profile}</p>
                     </section>
                   )}
 
@@ -1221,7 +1237,11 @@ const DepartmentsView = () => {
                       <h3 className="font-bold text-sm sm:text-base md:text-lg text-gray-800 border-b border-gray-100 pb-1">Projects</h3>
                       <ul className="list-disc pl-4 sm:pl-5 space-y-1 sm:space-y-1.5 mt-1.5">
                         {selectedStaff.projects.map((p, i) => (
-                          <li key={i} className="text-xs sm:text-sm md:text-base text-gray-600 leading-relaxed">{p}</li>
+                          <li key={i} className="text-xs sm:text-sm md:text-base text-gray-600 leading-relaxed">
+                            {typeof p === "object" && p !== null
+                              ? `${p.role ? `${p.role}: ` : ""}${p.title || p.name || ""}${p.funding_agency ? ` (${p.funding_agency})` : ""}${p.funding_amount ? ` - Budget: ${p.funding_amount}` : ""}${p.duration ? ` [${p.duration}]` : ""}`
+                              : p}
+                          </li>
                         ))}
                       </ul>
                     </section>
@@ -1241,20 +1261,35 @@ const DepartmentsView = () => {
 
                   {/* PROFILES & LINKS */}
                   {(selectedStaff.research_ids?.google_scholar ||
+                    selectedStaff.google_scholar ||
+                    selectedStaff.drive_link ||
                     selectedStaff.research_ids?.scopus_id ||
                     selectedStaff.research_ids?.orcid_id ||
                     (selectedStaff.links && Object.keys(selectedStaff.links).length > 0)) && (
                     <section>
                       <h3 className="font-bold text-sm sm:text-base md:text-lg text-gray-800 border-b border-gray-100 pb-1">Profiles & Links</h3>
                       <ul className="list-disc pl-4 sm:pl-5 space-y-1 sm:space-y-1.5 mt-1.5">
-                        {selectedStaff.research_ids?.google_scholar && (
+                        {(selectedStaff.research_ids?.google_scholar || selectedStaff.google_scholar) && (
                           <li className="text-xs sm:text-sm md:text-base text-gray-600 leading-relaxed">
                             <a
-                              href={selectedStaff.research_ids.google_scholar}
+                              href={selectedStaff.research_ids?.google_scholar || selectedStaff.google_scholar}
                               target="_blank"
+                              rel="noopener noreferrer"
                               className="text-blue-600 hover:underline"
                             >
                               Google Scholar
+                            </a>
+                          </li>
+                        )}
+                        {selectedStaff.drive_link && (
+                          <li className="text-xs sm:text-sm md:text-base text-gray-600 leading-relaxed">
+                            <a
+                              href={selectedStaff.drive_link}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="text-blue-600 hover:underline"
+                            >
+                              Detailed Profile (Drive Link)
                             </a>
                           </li>
                         )}
@@ -1272,6 +1307,7 @@ const DepartmentsView = () => {
                               <a
                                 href={url}
                                 target="_blank"
+                                rel="noopener noreferrer"
                                 className="text-blue-600 hover:underline capitalize"
                               >
                                 {key.replace(/_/g, ' ')}
@@ -1285,13 +1321,29 @@ const DepartmentsView = () => {
                     </section>
                   )}
 
+                  {/* PUBLICATIONS - JOURNALS */}
+                  {selectedStaff.publications?.journals?.length > 0 && (
+                    <section>
+                      <h3 className="font-bold text-sm sm:text-base md:text-lg text-gray-800 border-b border-gray-100 pb-1">Journal Publications</h3>
+                      <ul className="list-disc pl-4 sm:pl-5 space-y-1 sm:space-y-1.5 mt-1.5">
+                        {selectedStaff.publications.journals.map((j, i) => (
+                          <li key={i} className="text-xs sm:text-sm md:text-base text-gray-600 leading-relaxed">
+                            {typeof j === "object" && j !== null ? (j.title || j.name || JSON.stringify(j)) : j}
+                          </li>
+                        ))}
+                      </ul>
+                    </section>
+                  )}
+
                   {/* PUBLICATIONS - BOOKS */}
-                  {selectedStaff.publications?.books?.length > 0 && (
+                  {((selectedStaff.publications?.books?.length > 0) || (Array.isArray(selectedStaff.books_published) && selectedStaff.books_published.length > 0)) && (
                     <section>
                       <h3 className="font-bold text-sm sm:text-base md:text-lg text-gray-800 border-b border-gray-100 pb-1">Books Published</h3>
                       <ul className="list-disc pl-4 sm:pl-5 space-y-1 sm:space-y-1.5 mt-1.5">
-                        {selectedStaff.publications.books.map((b, i) => (
-                          <li key={i} className="text-xs sm:text-sm md:text-base text-gray-600 leading-relaxed">{b}</li>
+                        {(selectedStaff.publications?.books || selectedStaff.books_published).map((b, i) => (
+                          <li key={i} className="text-xs sm:text-sm md:text-base text-gray-600 leading-relaxed">
+                            {typeof b === "object" && b !== null ? (b.title || b.name || JSON.stringify(b)) : b}
+                          </li>
                         ))}
                       </ul>
                     </section>
@@ -1341,7 +1393,11 @@ const DepartmentsView = () => {
                       <h3 className="font-bold text-sm sm:text-base md:text-lg text-gray-800 border-b border-gray-100 pb-1">Patents</h3>
                       <ul className="list-disc pl-4 sm:pl-5 space-y-1 sm:space-y-1.5 mt-1.5">
                         {selectedStaff.patents.map((p, i) => (
-                          <li key={i} className="text-xs sm:text-sm md:text-base text-gray-600 leading-relaxed">{p}</li>
+                          <li key={i} className="text-xs sm:text-sm md:text-base text-gray-600 leading-relaxed">
+                            {typeof p === "object" && p !== null
+                              ? `${p.title || p.name || ""}${p.status ? ` (${p.status})` : ""}${p.patent_number ? ` - ${p.patent_number}` : ""}${p.year ? ` [${p.year}]` : ""}`
+                              : p}
+                          </li>
                         ))}
                       </ul>
                     </section>
