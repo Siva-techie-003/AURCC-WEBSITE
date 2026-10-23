@@ -40,6 +40,7 @@ import studentAffairsRoutes from "./routes/studentAffairsRoutes.js";
 import homeRoutes from "./routes/homeRoutes.js";
 import contactRoutes from "./routes/contactRoutes.js";
 import siteSettingsRoutes from "./routes/siteSettingsRoutes.js";
+import teamRoutes from "./routes/teamRoutes.js";
 import { seedHomeData } from "./config/seedHomeData.js";
 
 import errorHandler from "./middleware/errorHandler.js";
@@ -97,6 +98,7 @@ app.use("/api/student-affairs", studentAffairsRoutes);
 app.use("/api/home", homeRoutes);
 app.use("/api/contact", contactRoutes);
 app.use("/api/site-settings", siteSettingsRoutes);
+app.use("/api/team", teamRoutes);
 
 /* Test API */
 app.get("/api/test", (req, res) => {

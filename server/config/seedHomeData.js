@@ -72,7 +72,21 @@ const siteSettingsData = {
     "/public/fineart_club/14.png",
     "/public/fineart_club/15.png",
     "/public/fineart_club/16.png",
-    "/public/fineart_club/17.png"
+    "/public/fineart_club/17.png",
+    "/public/fineart_club/18.jpg",
+    "/public/fineart_club/19.jpg",
+    "/public/fineart_club/20.jpg",
+    "/public/fineart_club/Picture4.jpg",
+    "/public/fineart_club/Picture5.jpg",
+    "/public/fineart_club/Picture6.jpg",
+    "/public/fineart_club/Picture7.jpg",
+    "/public/fineart_club/Picture8.jpg",
+    "/public/fineart_club/Picture9.jpg",
+    "/public/fineart_club/Picture11.jpg",
+    "/public/fineart_club/Picture12.jpg",
+    "/public/fineart_club/Picture13.jpg",
+    "/public/fineart_club/Picture14.jpg",
+    "/public/fineart_club/Picture15.jpg"
   ]
 };
 

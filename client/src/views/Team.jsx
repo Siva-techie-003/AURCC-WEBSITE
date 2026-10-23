@@ -1,5 +1,84 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useLocation, Link } from "react-router-dom";
+
+const defaultFaculty = [
+  {
+    name: "Dr. J. Preethi",
+    role: "Assistant Professor",
+    dept: "Department of CSE",
+    image: "/preethi.webp"
+  },
+  {
+    name: "Dr. M. Newlin Rajkumar",
+    role: "Assistant Professor",
+    dept: "Department of EEE",
+    image: "/newlin.webp"
+  },
+  {
+    name: "Mr. S. Benedict",
+    role: "Professional Assistant - I",
+    dept: "Department of CSE",
+    image: "/BENEDICT.webp"
+  },
+  {
+    name: "Ms. T. Mohanapriya",
+    role: "Professional Assistant - II",
+    dept: "Department of CSE",
+    image: "/mohanapriya.jpeg"
+  }
+];
+
+const defaultMembers = [
+  {
+    name: "Mr. E. Siva",
+    role: "Team Lead and Devops Engineer",
+    image: "/siva.png",
+    linkedin: "https://www.linkedin.com/in/siva-e/",
+    portfolio: ""
+  },
+  {
+    name: "Mr. G. Dhivakar",
+    role: "Frontend and SEO Professional",
+    image: "/dhivakar.webp",
+    linkedin: "https://www.linkedin.com/in/dhivakar-g/",
+    portfolio: ""
+  },
+  {
+    name: "Mr. V. Anbu Mani",
+    role: "Database Developer",
+    image: "/anbumani.jpeg",
+    linkedin: "https://www.linkedin.com/in/anbumani006/",
+    portfolio: ""
+  },
+  {
+    name: "Mr. S. Santhosh",
+    role: "Backend Developer",
+    image: "/santhosh.jpeg",
+    linkedin: "https://www.linkedin.com/in/callsanthosh/",
+    portfolio: ""
+  },
+  {
+    name: "Mr. P. Suresh Krishna",
+    role: "Frontend Developer",
+    image: "/suresh.png",
+    linkedin: "https://www.linkedin.com/in/suresh-krishna-p/",
+    portfolio: ""
+  },
+  {
+    name: "Mr. R. Sathyamoorthy",
+    role: "Visual and UI/UX Designer",
+    image: "/sathya.jpeg",
+    linkedin: "https://www.linkedin.com/in/sathyamoorthy-tech/",
+    portfolio: ""
+  }
+];
+
+const getExternalUrl = (url) => {
+  if (!url || !url.trim() || url === "#") return "#";
+  const trimmed = url.trim();
+  if (/^https?:\/\//i.test(trimmed)) return trimmed;
+  return `https://${trimmed}`;
+};
 
 const Team = () => {
   const location = useLocation();
@@ -11,75 +90,27 @@ const Team = () => {
   const showFaculty = isFacultyPage;
   const showDevelopers = isDevelopersPage;
 
-  const faculty = [
-    {
-      name: "Dr. J. Preethi",
-      role: "Assistant Professor",
-      dept: "Department of CSE",
-      image: "/preethi.webp"
-    }, {
-      name: "Dr. M. Newlin Rajkumar",
-      role: "Assistant Professor",
-      dept: "Department of EEE",
-      image: "/newlin.webp"
-    },
-    // {
-    //   name: "Mr. K.S.Babu Magendra",
-    //   role: "System Administrator",
-    //   dept: "Department of CSE",
-    //   image: "/babu.webp"
-    // }, 
-    {
-      name: "Mr. S. Benedict",
-      role: "Professional Assistant - I",
-      dept: "Department of CSE",
-      image: "/BENEDICT.webp"
-    }, {
-      name: "Ms. T. Mohanapriya",
-      role: "Professional Assistant - II",
-      dept: "Department of CSE",
-      image: "/mohanapriya.jpeg"
-    },
-  ];
+  const [teamData, setTeamData] = useState({
+    faculty: defaultFaculty,
+    members: defaultMembers
+  });
 
-  const members = [
-    {
-      name: "E . Siva",
-      role: "Team Lead and Deployment Engineer",
-      image: "/siva.png",
-      linkedin: "https://www.linkedin.com/in/siva-e/"
-    },
-    {
-      name: "G . Dhivakar",
-      role: "Frontend and SEO Professional",
-      image: "/dhivakar.webp",
-      linkedin: "https://www.linkedin.com/in/dhivakar-g/"
-    },
-    {
-      name: "V . Anbu Mani",
-      role: "Database Developer",
-      image: "/anbumani.jpeg",
-      linkedin: "https://www.linkedin.com/in/anbumani006/"
-    },
-    {
-      name: "S . Santhosh",
-      role: "Backend Developer",
-      image: "/santhosh.jpeg",
-      linkedin: "https://www.linkedin.com/in/callsanthosh/"
-    },
-    {
-      name: "P . Suresh Krishna",
-      role: "Frontend Developer",
-      image: "/suresh.png",
-      linkedin: "https://www.linkedin.com/in/suresh-krishna-p/"
-    },
-    {
-      name: "R . Sathyamoorthy",
-      role: "Visual and UI/UX Designer",
-      image: "/sathya.jpeg",
-      linkedin: "https://www.linkedin.com/in/sathyamoorthy-tech/"
-    }
-  ];
+  useEffect(() => {
+    fetch("/api/team")
+      .then((res) => res.json())
+      .then((data) => {
+        if (data) {
+          setTeamData({
+            faculty: Array.isArray(data.faculty) && data.faculty.length > 0 ? data.faculty : defaultFaculty,
+            members: Array.isArray(data.members) && data.members.length > 0 ? data.members : defaultMembers
+          });
+        }
+      })
+      .catch((err) => console.error("Error fetching team data from DB:", err));
+  }, []);
+
+  const faculty = teamData.faculty;
+  const members = teamData.members;
 
   return (
     <main className="flex-grow font-sans bg-white pt-[106px] sm:pt-[130px] lg:pt-[130px]">
@@ -195,7 +226,7 @@ const Team = () => {
               {members.map((m, i) => (
                 <div
                   key={i}
-                  className="bg-white rounded-2xl shadow-md border-2 border-gray-100 hover:border-[#f5c842] p-4 sm:p-6 flex flex-row items-center hover:shadow-xl hover:-translate-y-1 transition-all duration-300 w-full max-w-[620px] h-[180px] sm:h-[200px] mx-auto"
+                  className="bg-white rounded-2xl shadow-md border-2 border-gray-100 hover:border-[#f5c842] p-4 sm:p-6 flex flex-row items-center hover:shadow-xl hover:-translate-y-1 transition-all duration-300 w-full max-w-[620px] min-h-[180px] sm:min-h-[200px] h-auto mx-auto"
                 >
                   {/* Profile Image Section */}
                   <div className="w-24 h-24 sm:w-32 sm:h-32 flex-shrink-0 flex items-center justify-center rounded-full border-2 border-[rgb(110,35,35)] shadow-md overflow-hidden bg-white">
@@ -208,35 +239,67 @@ const Team = () => {
                   </div>
 
                   {/* Content Section */}
-                  <div className="ml-4 sm:ml-6 flex flex-col justify-center text-left min-w-0 flex-grow h-full">
+                  <div className="ml-4 sm:ml-6 flex flex-col justify-center text-left min-w-0 flex-grow h-full py-1">
                     <h3 className="text-base sm:text-xl font-bold text-[rgb(110,35,35)] mb-1 leading-tight">
                       {m.name}
                     </h3>
-                    <div className="my-1.5 self-start">
-                      <span className="inline-block px-2.5 py-1 bg-[rgb(245,240,240)] rounded-full border border-[rgb(220,200,200)] text-[9px] sm:text-xs font-semibold text-[rgb(110,35,35)] tracking-wide leading-tight">
+
+                    {/* Role - No background, bold text */}
+                    <div className="my-1 self-start">
+                      <span className="text-xs sm:text-sm font-bold text-gray-800 leading-snug">
                         {m.role}
                       </span>
                     </div>
 
-                    {/* LinkedIn Link at the bottom */}
-                    <a
-                      href={m.linkedin || "#"}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-1.5 mt-2.5 text-[#0a66c2] hover:text-[#004182] transition-colors duration-200 self-start group/link"
-                    >
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 24 24"
-                        fill="currentColor"
-                        className="w-5 h-5 transition-transform duration-200 group-hover/link:scale-110"
+                    {/* Links: LinkedIn and Portfolio */}
+                    <div className="flex items-center gap-3 mt-2.5 flex-wrap">
+                      <a
+                        href={getExternalUrl(m.linkedin)}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-1.5 text-[#0a66c2] hover:text-[#004182] transition-colors duration-200 group/link"
                       >
-                        <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
-                      </svg>
-                      <span className="text-xs sm:text-sm font-bold tracking-wider uppercase">
-                        LinkedIn
-                      </span>
-                    </a>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 24 24"
+                          fill="currentColor"
+                          className="w-5 h-5 transition-transform duration-200 group-hover/link:scale-110"
+                        >
+                          <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                        </svg>
+                        <span className="text-xs sm:text-sm font-bold tracking-wider uppercase">
+                          LinkedIn
+                        </span>
+                      </a>
+
+                      <a
+                        href={getExternalUrl(m.portfolio)}
+                        target={m.portfolio && m.portfolio.trim() !== "" && m.portfolio !== "#" ? "_blank" : undefined}
+                        rel={m.portfolio && m.portfolio.trim() !== "" && m.portfolio !== "#" ? "noopener noreferrer" : undefined}
+                        onClick={(e) => {
+                          if (!m.portfolio || m.portfolio.trim() === "" || m.portfolio === "#") {
+                            e.preventDefault();
+                            alert("Portfolio website link has not been added yet in DB.");
+                          }
+                        }}
+                        className="flex items-center gap-1.5 px-3 py-1  text-[rgb(110,35,35)] hover: transition-all duration-200 rounded-md shadow-sm hover:shadow text-xs sm:text-sm font-bold tracking-wider uppercase group/port cursor-pointer"
+                      >
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          className="w-4 h-4 transition-transform duration-200 group-hover/port:scale-110"
+                        >
+                          <rect x="2" y="7" width="20" height="14" rx="2" ry="2" />
+                          <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
+                        </svg>
+                        <span>Portfolio</span>
+                      </a>
+                    </div>
                   </div>
                 </div>
               ))}
