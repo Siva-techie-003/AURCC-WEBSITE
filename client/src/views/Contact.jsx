@@ -11,7 +11,7 @@ const Contact = () => {
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [submitStatus, setSubmitStatus] = useState(null); // 'success' | 'error' | null
     const [errorMessage, setErrorMessage] = useState('');
-    const [recipientEmail, setRecipientEmail] = useState('ucedean-kovai@annauniv.edu');
+    const [recipientEmail, setRecipientEmail] = useState('deancoimbatore@annauniv.edu');
 
     const handleChange = (e) => {
         const { id, value } = e.target;
@@ -135,7 +135,7 @@ const Contact = () => {
                     {[
                         { title: 'Campus Address', icon: '📍', content: ['Maruthamalai Road,', 'Navavoor, Coimbatore - 641046'], color: 'red' },
                         { title: 'Support Lines', icon: '📞', content: ['0422-2984007', '0422-2691124'], color: 'red' },
-                        { title: 'Email Enquiries', icon: '✉', content: ['info@aurcc.edu.in', 'admissions@aurcc.edu.in'], color: 'emerald' }
+                        { title: 'Email Enquiries', icon: '✉', content: ['info@aurcc.edu.in', 'admissions@aurcc.edu.in', 'deancoimbatore@annauniv.edu'], color: 'emerald' }
                     ].map((card, i) => (
                         <div key={i} className="bg-white p-6 sm:p-8 lg:p-10 rounded-3xl shadow-sm border border-gray-100 text-center hover:shadow-xl hover:-translate-y-2 transition-all group">
                             <div className={`w-20 h-20 bg-${card.color}-50 rounded-2xl flex items-center justify-center text-3xl mx-auto mb-6 group-hover: transition-transform`}>

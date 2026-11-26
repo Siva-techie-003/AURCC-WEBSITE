@@ -134,10 +134,9 @@ const Footer = ({
                   Campus <span style={{ color: "#f5c842" }}>Location</span>
                 </h3>
                 <p className="font-bold text-[11px] leading-tight">Anna University Regional Campus Coimbatore</p>
-                <p className="text-[10px] text-white/70 leading-tight">
-                  Maruthamalai Road, Navavoor, Coimbatore - 641046
-                </p>
-                <p className="font-bold text-[11px] mt-0.5">Ph.No: 0422-2984007</p>
+                <p className="text-[10px] text-white/70 leading-tight">Maruthamalai Road, Navavoor, Coimbatore - 641046 </p>
+                <p className="font-bold text-[11px] mt-0.5">Ph.No: 0422-2984007 </p>
+                <p className="font-bold text-white text-[11px] mt-0.5">Email: deancoimbatore@annauniv.edu</p>
               </div>
 
               <div className="w-full h-[130px] rounded-xl overflow-hidden shadow-lg border border-white/15">
@@ -312,6 +311,7 @@ const Footer = ({
                   Maruthamalai Road, Navavoor, Coimbatore - 641046
                 </p>
                 <p className="mt-[1px] lg:mt-2 font-bold text-[5px] sm:text-xs lg:text-sm leading-tight">Ph.No: 0422-2984007</p>
+                <p className="mt-[1px] lg:mt-1 font-bold text-[5px] sm:text-xs lg:text-sm leading-tight">Email: deancoimbatore@annauniv.edu</p>
               </div>
 
               {/* MAP */}
